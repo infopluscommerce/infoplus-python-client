@@ -23,7 +23,15 @@ from .integration_partner_api import IntegrationPartnerApi
 from .inventory_adjustment_api import InventoryAdjustmentApi
 from .inventory_detail_api import InventoryDetailApi
 from .item_api import ItemApi
+from .item_account_code_api import ItemAccountCodeApi
+from .item_buyer_api import ItemBuyerApi
+from .item_legacy_low_stock_contact_api import ItemLegacyLowStockContactApi
+from .item_low_stock_code_api import ItemLowStockCodeApi
+from .item_major_group_api import ItemMajorGroupApi
+from .item_product_code_api import ItemProductCodeApi
 from .item_receipt_api import ItemReceiptApi
+from .item_sub_group_api import ItemSubGroupApi
+from .item_summary_code_api import ItemSummaryCodeApi
 from .job_time_api import JobTimeApi
 from .job_type_api import JobTypeApi
 from .line_of_business_api import LineOfBusinessApi
@@ -32,6 +40,7 @@ from .location_address_scheme_api import LocationAddressSchemeApi
 from .location_billing_type_api import LocationBillingTypeApi
 from .location_footprint_api import LocationFootprintApi
 from .logged_time_api import LoggedTimeApi
+from .logged_time_type_api import LoggedTimeTypeApi
 from .low_stock_api import LowStockApi
 from .order_api import OrderApi
 from .order_line_api import OrderLineApi

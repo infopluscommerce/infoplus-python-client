@@ -50,6 +50,7 @@ class Work(object):
             'priority_code': 'int',
             'status': 'str',
             'user_id': 'int',
+            'lob_id': 'int',
             'work_batch_id': 'int'
         }
 
@@ -67,6 +68,7 @@ class Work(object):
             'priority_code': 'priorityCode',
             'status': 'status',
             'user_id': 'userId',
+            'lob_id': 'lobId',
             'work_batch_id': 'workBatchId'
         }
 
@@ -83,6 +85,7 @@ class Work(object):
         self._priority_code = None
         self._status = None
         self._user_id = None
+        self._lob_id = None
         self._work_batch_id = None
 
     @property
@@ -370,6 +373,28 @@ class Work(object):
         :type: int
         """
         self._user_id = user_id
+
+    @property
+    def lob_id(self):
+        """
+        Gets the lob_id of this Work.
+
+
+        :return: The lob_id of this Work.
+        :rtype: int
+        """
+        return self._lob_id
+
+    @lob_id.setter
+    def lob_id(self, lob_id):
+        """
+        Sets the lob_id of this Work.
+
+
+        :param lob_id: The lob_id of this Work.
+        :type: int
+        """
+        self._lob_id = lob_id
 
     @property
     def work_batch_id(self):

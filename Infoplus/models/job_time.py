@@ -44,7 +44,7 @@ class JobTime(object):
             'date': 'datetime',
             'user_id': 'int',
             'lob_id': 'int',
-            'job_type': 'str',
+            'job_type_id': 'int',
             'note': 'str'
         }
 
@@ -56,7 +56,7 @@ class JobTime(object):
             'date': 'date',
             'user_id': 'userId',
             'lob_id': 'lobId',
-            'job_type': 'jobType',
+            'job_type_id': 'jobTypeId',
             'note': 'note'
         }
 
@@ -67,7 +67,7 @@ class JobTime(object):
         self._date = None
         self._user_id = None
         self._lob_id = None
-        self._job_type = None
+        self._job_type_id = None
         self._note = None
 
     @property
@@ -225,26 +225,26 @@ class JobTime(object):
         self._lob_id = lob_id
 
     @property
-    def job_type(self):
+    def job_type_id(self):
         """
-        Gets the job_type of this JobTime.
+        Gets the job_type_id of this JobTime.
 
 
-        :return: The job_type of this JobTime.
-        :rtype: str
+        :return: The job_type_id of this JobTime.
+        :rtype: int
         """
-        return self._job_type
+        return self._job_type_id
 
-    @job_type.setter
-    def job_type(self, job_type):
+    @job_type_id.setter
+    def job_type_id(self, job_type_id):
         """
-        Sets the job_type of this JobTime.
+        Sets the job_type_id of this JobTime.
 
 
-        :param job_type: The job_type of this JobTime.
-        :type: str
+        :param job_type_id: The job_type_id of this JobTime.
+        :type: int
         """
-        self._job_type = job_type
+        self._job_type_id = job_type_id
 
     @property
     def note(self):

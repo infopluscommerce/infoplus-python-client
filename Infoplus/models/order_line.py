@@ -60,12 +60,12 @@ class OrderLine(object):
             'item_weight': 'float',
             'weight_per_wrap': 'float',
             'sector': 'str',
-            'account_code': 'str',
-            'low_stock_contact': 'str',
-            'major_group': 'str',
-            'sub_group': 'str',
-            'production_code': 'str',
-            'summary_code': 'str'
+            'item_account_code_id': 'int',
+            'item_legacy_low_stock_contact_id': 'int',
+            'item_major_group_id': 'int',
+            'item_sub_group_id': 'int',
+            'item_product_code_id': 'int',
+            'item_summary_code_id': 'int'
         }
 
         self.attribute_map = {
@@ -92,12 +92,12 @@ class OrderLine(object):
             'item_weight': 'itemWeight',
             'weight_per_wrap': 'weightPerWrap',
             'sector': 'sector',
-            'account_code': 'accountCode',
-            'low_stock_contact': 'lowStockContact',
-            'major_group': 'majorGroup',
-            'sub_group': 'subGroup',
-            'production_code': 'productionCode',
-            'summary_code': 'summaryCode'
+            'item_account_code_id': 'itemAccountCodeId',
+            'item_legacy_low_stock_contact_id': 'itemLegacyLowStockContactId',
+            'item_major_group_id': 'itemMajorGroupId',
+            'item_sub_group_id': 'itemSubGroupId',
+            'item_product_code_id': 'itemProductCodeId',
+            'item_summary_code_id': 'itemSummaryCodeId'
         }
 
         self._id = None
@@ -123,12 +123,12 @@ class OrderLine(object):
         self._item_weight = None
         self._weight_per_wrap = None
         self._sector = None
-        self._account_code = None
-        self._low_stock_contact = None
-        self._major_group = None
-        self._sub_group = None
-        self._production_code = None
-        self._summary_code = None
+        self._item_account_code_id = None
+        self._item_legacy_low_stock_contact_id = None
+        self._item_major_group_id = None
+        self._item_sub_group_id = None
+        self._item_product_code_id = None
+        self._item_summary_code_id = None
 
     @property
     def id(self):
@@ -637,136 +637,136 @@ class OrderLine(object):
         self._sector = sector
 
     @property
-    def account_code(self):
+    def item_account_code_id(self):
         """
-        Gets the account_code of this OrderLine.
+        Gets the item_account_code_id of this OrderLine.
 
 
-        :return: The account_code of this OrderLine.
-        :rtype: str
+        :return: The item_account_code_id of this OrderLine.
+        :rtype: int
         """
-        return self._account_code
+        return self._item_account_code_id
 
-    @account_code.setter
-    def account_code(self, account_code):
+    @item_account_code_id.setter
+    def item_account_code_id(self, item_account_code_id):
         """
-        Sets the account_code of this OrderLine.
+        Sets the item_account_code_id of this OrderLine.
 
 
-        :param account_code: The account_code of this OrderLine.
-        :type: str
+        :param item_account_code_id: The item_account_code_id of this OrderLine.
+        :type: int
         """
-        self._account_code = account_code
+        self._item_account_code_id = item_account_code_id
 
     @property
-    def low_stock_contact(self):
+    def item_legacy_low_stock_contact_id(self):
         """
-        Gets the low_stock_contact of this OrderLine.
+        Gets the item_legacy_low_stock_contact_id of this OrderLine.
 
 
-        :return: The low_stock_contact of this OrderLine.
-        :rtype: str
+        :return: The item_legacy_low_stock_contact_id of this OrderLine.
+        :rtype: int
         """
-        return self._low_stock_contact
+        return self._item_legacy_low_stock_contact_id
 
-    @low_stock_contact.setter
-    def low_stock_contact(self, low_stock_contact):
+    @item_legacy_low_stock_contact_id.setter
+    def item_legacy_low_stock_contact_id(self, item_legacy_low_stock_contact_id):
         """
-        Sets the low_stock_contact of this OrderLine.
+        Sets the item_legacy_low_stock_contact_id of this OrderLine.
 
 
-        :param low_stock_contact: The low_stock_contact of this OrderLine.
-        :type: str
+        :param item_legacy_low_stock_contact_id: The item_legacy_low_stock_contact_id of this OrderLine.
+        :type: int
         """
-        self._low_stock_contact = low_stock_contact
+        self._item_legacy_low_stock_contact_id = item_legacy_low_stock_contact_id
 
     @property
-    def major_group(self):
+    def item_major_group_id(self):
         """
-        Gets the major_group of this OrderLine.
+        Gets the item_major_group_id of this OrderLine.
 
 
-        :return: The major_group of this OrderLine.
-        :rtype: str
+        :return: The item_major_group_id of this OrderLine.
+        :rtype: int
         """
-        return self._major_group
+        return self._item_major_group_id
 
-    @major_group.setter
-    def major_group(self, major_group):
+    @item_major_group_id.setter
+    def item_major_group_id(self, item_major_group_id):
         """
-        Sets the major_group of this OrderLine.
+        Sets the item_major_group_id of this OrderLine.
 
 
-        :param major_group: The major_group of this OrderLine.
-        :type: str
+        :param item_major_group_id: The item_major_group_id of this OrderLine.
+        :type: int
         """
-        self._major_group = major_group
+        self._item_major_group_id = item_major_group_id
 
     @property
-    def sub_group(self):
+    def item_sub_group_id(self):
         """
-        Gets the sub_group of this OrderLine.
+        Gets the item_sub_group_id of this OrderLine.
 
 
-        :return: The sub_group of this OrderLine.
-        :rtype: str
+        :return: The item_sub_group_id of this OrderLine.
+        :rtype: int
         """
-        return self._sub_group
+        return self._item_sub_group_id
 
-    @sub_group.setter
-    def sub_group(self, sub_group):
+    @item_sub_group_id.setter
+    def item_sub_group_id(self, item_sub_group_id):
         """
-        Sets the sub_group of this OrderLine.
+        Sets the item_sub_group_id of this OrderLine.
 
 
-        :param sub_group: The sub_group of this OrderLine.
-        :type: str
+        :param item_sub_group_id: The item_sub_group_id of this OrderLine.
+        :type: int
         """
-        self._sub_group = sub_group
+        self._item_sub_group_id = item_sub_group_id
 
     @property
-    def production_code(self):
+    def item_product_code_id(self):
         """
-        Gets the production_code of this OrderLine.
+        Gets the item_product_code_id of this OrderLine.
 
 
-        :return: The production_code of this OrderLine.
-        :rtype: str
+        :return: The item_product_code_id of this OrderLine.
+        :rtype: int
         """
-        return self._production_code
+        return self._item_product_code_id
 
-    @production_code.setter
-    def production_code(self, production_code):
+    @item_product_code_id.setter
+    def item_product_code_id(self, item_product_code_id):
         """
-        Sets the production_code of this OrderLine.
+        Sets the item_product_code_id of this OrderLine.
 
 
-        :param production_code: The production_code of this OrderLine.
-        :type: str
+        :param item_product_code_id: The item_product_code_id of this OrderLine.
+        :type: int
         """
-        self._production_code = production_code
+        self._item_product_code_id = item_product_code_id
 
     @property
-    def summary_code(self):
+    def item_summary_code_id(self):
         """
-        Gets the summary_code of this OrderLine.
+        Gets the item_summary_code_id of this OrderLine.
 
 
-        :return: The summary_code of this OrderLine.
-        :rtype: str
+        :return: The item_summary_code_id of this OrderLine.
+        :rtype: int
         """
-        return self._summary_code
+        return self._item_summary_code_id
 
-    @summary_code.setter
-    def summary_code(self, summary_code):
+    @item_summary_code_id.setter
+    def item_summary_code_id(self, item_summary_code_id):
         """
-        Sets the summary_code of this OrderLine.
+        Sets the item_summary_code_id of this OrderLine.
 
 
-        :param summary_code: The summary_code of this OrderLine.
-        :type: str
+        :param item_summary_code_id: The item_summary_code_id of this OrderLine.
+        :type: int
         """
-        self._summary_code = summary_code
+        self._item_summary_code_id = item_summary_code_id
 
     def to_dict(self):
         """

@@ -56,7 +56,7 @@ class Configuration(object):
         Constructor
         """
         # Default Base url
-        self.host = "https://kingsrook.localhost-testsubdomain1.infopluswms.com:8443/infoplus-wms/api/v1.0"
+        self.host = "https://kingsrook.localhost-testsubdomain1.infopluswms.com:8443/infoplus-wms/api"
         # Default api client
         self.api_client = None
         # Temp file folder for downloading files

@@ -26,7 +26,15 @@ from .integration_partner import IntegrationPartner
 from .inventory_adjustment import InventoryAdjustment
 from .inventory_detail import InventoryDetail
 from .item import Item
+from .item_account_code import ItemAccountCode
+from .item_buyer import ItemBuyer
+from .item_legacy_low_stock_contact import ItemLegacyLowStockContact
+from .item_low_stock_code import ItemLowStockCode
+from .item_major_group import ItemMajorGroup
+from .item_product_code import ItemProductCode
 from .item_receipt import ItemReceipt
+from .item_sub_group import ItemSubGroup
+from .item_summary_code import ItemSummaryCode
 from .job_time import JobTime
 from .job_type import JobType
 from .line_of_business import LineOfBusiness
@@ -35,6 +43,7 @@ from .location_address_scheme import LocationAddressScheme
 from .location_billing_type import LocationBillingType
 from .location_footprint import LocationFootprint
 from .logged_time import LoggedTime
+from .logged_time_type import LoggedTimeType
 from .low_stock import LowStock
 from .order import Order
 from .order_line import OrderLine

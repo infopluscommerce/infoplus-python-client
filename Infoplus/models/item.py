@@ -38,15 +38,15 @@ class Item(object):
         """
         self.swagger_types = {
             'id': 'int',
-            'account_code': 'str',
+            'account_code_id': 'int',
             'low_stock_contact_id': 'int',
-            'legacy_low_stock_contact': 'str',
-            'low_stock_code': 'str',
-            'major_group': 'str',
-            'sub_group': 'str',
-            'production_code': 'str',
-            'summary_code': 'str',
-            'buyer': 'str',
+            'legacy_low_level_contact_id': 'int',
+            'low_stock_code_id': 'int',
+            'major_group_id': 'int',
+            'sub_group_id': 'int',
+            'product_code_id': 'int',
+            'summary_code_id': 'int',
+            'buyer_id': 'int',
             'lob_id': 'int',
             'sku': 'str',
             'vendor_sku': 'str',
@@ -102,15 +102,15 @@ class Item(object):
 
         self.attribute_map = {
             'id': 'id',
-            'account_code': 'accountCode',
+            'account_code_id': 'accountCodeId',
             'low_stock_contact_id': 'lowStockContactId',
-            'legacy_low_stock_contact': 'legacyLowStockContact',
-            'low_stock_code': 'lowStockCode',
-            'major_group': 'majorGroup',
-            'sub_group': 'subGroup',
-            'production_code': 'productionCode',
-            'summary_code': 'summaryCode',
-            'buyer': 'buyer',
+            'legacy_low_level_contact_id': 'legacyLowLevelContactId',
+            'low_stock_code_id': 'lowStockCodeId',
+            'major_group_id': 'majorGroupId',
+            'sub_group_id': 'subGroupId',
+            'product_code_id': 'productCodeId',
+            'summary_code_id': 'summaryCodeId',
+            'buyer_id': 'buyerId',
             'lob_id': 'lobId',
             'sku': 'sku',
             'vendor_sku': 'vendorSKU',
@@ -165,15 +165,15 @@ class Item(object):
         }
 
         self._id = None
-        self._account_code = None
+        self._account_code_id = None
         self._low_stock_contact_id = None
-        self._legacy_low_stock_contact = None
-        self._low_stock_code = None
-        self._major_group = None
-        self._sub_group = None
-        self._production_code = None
-        self._summary_code = None
-        self._buyer = None
+        self._legacy_low_level_contact_id = None
+        self._low_stock_code_id = None
+        self._major_group_id = None
+        self._sub_group_id = None
+        self._product_code_id = None
+        self._summary_code_id = None
+        self._buyer_id = None
         self._lob_id = None
         self._sku = None
         self._vendor_sku = None
@@ -249,26 +249,26 @@ class Item(object):
         self._id = id
 
     @property
-    def account_code(self):
+    def account_code_id(self):
         """
-        Gets the account_code of this Item.
+        Gets the account_code_id of this Item.
 
 
-        :return: The account_code of this Item.
-        :rtype: str
+        :return: The account_code_id of this Item.
+        :rtype: int
         """
-        return self._account_code
+        return self._account_code_id
 
-    @account_code.setter
-    def account_code(self, account_code):
+    @account_code_id.setter
+    def account_code_id(self, account_code_id):
         """
-        Sets the account_code of this Item.
+        Sets the account_code_id of this Item.
 
 
-        :param account_code: The account_code of this Item.
-        :type: str
+        :param account_code_id: The account_code_id of this Item.
+        :type: int
         """
-        self._account_code = account_code
+        self._account_code_id = account_code_id
 
     @property
     def low_stock_contact_id(self):
@@ -293,158 +293,158 @@ class Item(object):
         self._low_stock_contact_id = low_stock_contact_id
 
     @property
-    def legacy_low_stock_contact(self):
+    def legacy_low_level_contact_id(self):
         """
-        Gets the legacy_low_stock_contact of this Item.
+        Gets the legacy_low_level_contact_id of this Item.
 
 
-        :return: The legacy_low_stock_contact of this Item.
-        :rtype: str
+        :return: The legacy_low_level_contact_id of this Item.
+        :rtype: int
         """
-        return self._legacy_low_stock_contact
+        return self._legacy_low_level_contact_id
 
-    @legacy_low_stock_contact.setter
-    def legacy_low_stock_contact(self, legacy_low_stock_contact):
+    @legacy_low_level_contact_id.setter
+    def legacy_low_level_contact_id(self, legacy_low_level_contact_id):
         """
-        Sets the legacy_low_stock_contact of this Item.
+        Sets the legacy_low_level_contact_id of this Item.
 
 
-        :param legacy_low_stock_contact: The legacy_low_stock_contact of this Item.
-        :type: str
+        :param legacy_low_level_contact_id: The legacy_low_level_contact_id of this Item.
+        :type: int
         """
-        self._legacy_low_stock_contact = legacy_low_stock_contact
+        self._legacy_low_level_contact_id = legacy_low_level_contact_id
 
     @property
-    def low_stock_code(self):
+    def low_stock_code_id(self):
         """
-        Gets the low_stock_code of this Item.
+        Gets the low_stock_code_id of this Item.
 
 
-        :return: The low_stock_code of this Item.
-        :rtype: str
+        :return: The low_stock_code_id of this Item.
+        :rtype: int
         """
-        return self._low_stock_code
+        return self._low_stock_code_id
 
-    @low_stock_code.setter
-    def low_stock_code(self, low_stock_code):
+    @low_stock_code_id.setter
+    def low_stock_code_id(self, low_stock_code_id):
         """
-        Sets the low_stock_code of this Item.
+        Sets the low_stock_code_id of this Item.
 
 
-        :param low_stock_code: The low_stock_code of this Item.
-        :type: str
+        :param low_stock_code_id: The low_stock_code_id of this Item.
+        :type: int
         """
-        self._low_stock_code = low_stock_code
+        self._low_stock_code_id = low_stock_code_id
 
     @property
-    def major_group(self):
+    def major_group_id(self):
         """
-        Gets the major_group of this Item.
+        Gets the major_group_id of this Item.
 
 
-        :return: The major_group of this Item.
-        :rtype: str
+        :return: The major_group_id of this Item.
+        :rtype: int
         """
-        return self._major_group
+        return self._major_group_id
 
-    @major_group.setter
-    def major_group(self, major_group):
+    @major_group_id.setter
+    def major_group_id(self, major_group_id):
         """
-        Sets the major_group of this Item.
+        Sets the major_group_id of this Item.
 
 
-        :param major_group: The major_group of this Item.
-        :type: str
+        :param major_group_id: The major_group_id of this Item.
+        :type: int
         """
-        self._major_group = major_group
+        self._major_group_id = major_group_id
 
     @property
-    def sub_group(self):
+    def sub_group_id(self):
         """
-        Gets the sub_group of this Item.
+        Gets the sub_group_id of this Item.
 
 
-        :return: The sub_group of this Item.
-        :rtype: str
+        :return: The sub_group_id of this Item.
+        :rtype: int
         """
-        return self._sub_group
+        return self._sub_group_id
 
-    @sub_group.setter
-    def sub_group(self, sub_group):
+    @sub_group_id.setter
+    def sub_group_id(self, sub_group_id):
         """
-        Sets the sub_group of this Item.
+        Sets the sub_group_id of this Item.
 
 
-        :param sub_group: The sub_group of this Item.
-        :type: str
+        :param sub_group_id: The sub_group_id of this Item.
+        :type: int
         """
-        self._sub_group = sub_group
+        self._sub_group_id = sub_group_id
 
     @property
-    def production_code(self):
+    def product_code_id(self):
         """
-        Gets the production_code of this Item.
+        Gets the product_code_id of this Item.
 
 
-        :return: The production_code of this Item.
-        :rtype: str
+        :return: The product_code_id of this Item.
+        :rtype: int
         """
-        return self._production_code
+        return self._product_code_id
 
-    @production_code.setter
-    def production_code(self, production_code):
+    @product_code_id.setter
+    def product_code_id(self, product_code_id):
         """
-        Sets the production_code of this Item.
+        Sets the product_code_id of this Item.
 
 
-        :param production_code: The production_code of this Item.
-        :type: str
+        :param product_code_id: The product_code_id of this Item.
+        :type: int
         """
-        self._production_code = production_code
+        self._product_code_id = product_code_id
 
     @property
-    def summary_code(self):
+    def summary_code_id(self):
         """
-        Gets the summary_code of this Item.
+        Gets the summary_code_id of this Item.
 
 
-        :return: The summary_code of this Item.
-        :rtype: str
+        :return: The summary_code_id of this Item.
+        :rtype: int
         """
-        return self._summary_code
+        return self._summary_code_id
 
-    @summary_code.setter
-    def summary_code(self, summary_code):
+    @summary_code_id.setter
+    def summary_code_id(self, summary_code_id):
         """
-        Sets the summary_code of this Item.
+        Sets the summary_code_id of this Item.
 
 
-        :param summary_code: The summary_code of this Item.
-        :type: str
+        :param summary_code_id: The summary_code_id of this Item.
+        :type: int
         """
-        self._summary_code = summary_code
+        self._summary_code_id = summary_code_id
 
     @property
-    def buyer(self):
+    def buyer_id(self):
         """
-        Gets the buyer of this Item.
+        Gets the buyer_id of this Item.
 
 
-        :return: The buyer of this Item.
-        :rtype: str
+        :return: The buyer_id of this Item.
+        :rtype: int
         """
-        return self._buyer
+        return self._buyer_id
 
-    @buyer.setter
-    def buyer(self, buyer):
+    @buyer_id.setter
+    def buyer_id(self, buyer_id):
         """
-        Sets the buyer of this Item.
+        Sets the buyer_id of this Item.
 
 
-        :param buyer: The buyer of this Item.
-        :type: str
+        :param buyer_id: The buyer_id of this Item.
+        :type: int
         """
-        self._buyer = buyer
+        self._buyer_id = buyer_id
 
     @property
     def lob_id(self):

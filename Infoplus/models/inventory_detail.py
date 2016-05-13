@@ -45,6 +45,7 @@ class InventoryDetail(object):
             'units_per_wrap': 'int',
             'revision_date': 'str',
             'production_lot': 'str',
+            'oldest_receipt_date': 'datetime',
             'lob_id': 'int',
             'po_no': 'str',
             'sku': 'str'
@@ -59,6 +60,7 @@ class InventoryDetail(object):
             'units_per_wrap': 'unitsPerWrap',
             'revision_date': 'revisionDate',
             'production_lot': 'productionLot',
+            'oldest_receipt_date': 'oldestReceiptDate',
             'lob_id': 'lobId',
             'po_no': 'poNo',
             'sku': 'sku'
@@ -72,6 +74,7 @@ class InventoryDetail(object):
         self._units_per_wrap = None
         self._revision_date = None
         self._production_lot = None
+        self._oldest_receipt_date = None
         self._lob_id = None
         self._po_no = None
         self._sku = None
@@ -251,6 +254,28 @@ class InventoryDetail(object):
         :type: str
         """
         self._production_lot = production_lot
+
+    @property
+    def oldest_receipt_date(self):
+        """
+        Gets the oldest_receipt_date of this InventoryDetail.
+
+
+        :return: The oldest_receipt_date of this InventoryDetail.
+        :rtype: datetime
+        """
+        return self._oldest_receipt_date
+
+    @oldest_receipt_date.setter
+    def oldest_receipt_date(self, oldest_receipt_date):
+        """
+        Sets the oldest_receipt_date of this InventoryDetail.
+
+
+        :param oldest_receipt_date: The oldest_receipt_date of this InventoryDetail.
+        :type: datetime
+        """
+        self._oldest_receipt_date = oldest_receipt_date
 
     @property
     def lob_id(self):

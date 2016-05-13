@@ -44,7 +44,7 @@ class BillingCode(object):
             'date': 'datetime',
             'user_id': 'int',
             'lob_id': 'int',
-            'billing_code_type': 'str',
+            'billing_code_type_id': 'int',
             'note': 'str'
         }
 
@@ -56,7 +56,7 @@ class BillingCode(object):
             'date': 'date',
             'user_id': 'userId',
             'lob_id': 'lobId',
-            'billing_code_type': 'billingCodeType',
+            'billing_code_type_id': 'billingCodeTypeId',
             'note': 'note'
         }
 
@@ -67,7 +67,7 @@ class BillingCode(object):
         self._date = None
         self._user_id = None
         self._lob_id = None
-        self._billing_code_type = None
+        self._billing_code_type_id = None
         self._note = None
 
     @property
@@ -225,26 +225,26 @@ class BillingCode(object):
         self._lob_id = lob_id
 
     @property
-    def billing_code_type(self):
+    def billing_code_type_id(self):
         """
-        Gets the billing_code_type of this BillingCode.
+        Gets the billing_code_type_id of this BillingCode.
 
 
-        :return: The billing_code_type of this BillingCode.
-        :rtype: str
+        :return: The billing_code_type_id of this BillingCode.
+        :rtype: int
         """
-        return self._billing_code_type
+        return self._billing_code_type_id
 
-    @billing_code_type.setter
-    def billing_code_type(self, billing_code_type):
+    @billing_code_type_id.setter
+    def billing_code_type_id(self, billing_code_type_id):
         """
-        Sets the billing_code_type of this BillingCode.
+        Sets the billing_code_type_id of this BillingCode.
 
 
-        :param billing_code_type: The billing_code_type of this BillingCode.
-        :type: str
+        :param billing_code_type_id: The billing_code_type_id of this BillingCode.
+        :type: int
         """
-        self._billing_code_type = billing_code_type
+        self._billing_code_type_id = billing_code_type_id
 
     @property
     def note(self):

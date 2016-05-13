@@ -11,7 +11,7 @@ python setup.py install
 Or you can install from Github via pip:
 
 ```sh
-pip install git+https://github.com/infopluscommerce/python-client.git
+pip install git+https://github.com/infopluscommerce/infoplus-python-client.git
 ```
 
 To use the bindings, import the pacakge:

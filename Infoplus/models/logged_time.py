@@ -48,7 +48,7 @@ class LoggedTime(object):
             'user_id': 'int',
             'lob_id': 'int',
             'warehouse_id': 'int',
-            'logged_time_type': 'str',
+            'logged_time_type_id': 'int',
             'app_id': 'int'
         }
 
@@ -64,7 +64,7 @@ class LoggedTime(object):
             'user_id': 'userId',
             'lob_id': 'lobId',
             'warehouse_id': 'warehouseId',
-            'logged_time_type': 'loggedTimeType',
+            'logged_time_type_id': 'loggedTimeTypeId',
             'app_id': 'appId'
         }
 
@@ -79,7 +79,7 @@ class LoggedTime(object):
         self._user_id = None
         self._lob_id = None
         self._warehouse_id = None
-        self._logged_time_type = None
+        self._logged_time_type_id = None
         self._app_id = None
 
     @property
@@ -325,26 +325,26 @@ class LoggedTime(object):
         self._warehouse_id = warehouse_id
 
     @property
-    def logged_time_type(self):
+    def logged_time_type_id(self):
         """
-        Gets the logged_time_type of this LoggedTime.
+        Gets the logged_time_type_id of this LoggedTime.
 
 
-        :return: The logged_time_type of this LoggedTime.
-        :rtype: str
+        :return: The logged_time_type_id of this LoggedTime.
+        :rtype: int
         """
-        return self._logged_time_type
+        return self._logged_time_type_id
 
-    @logged_time_type.setter
-    def logged_time_type(self, logged_time_type):
+    @logged_time_type_id.setter
+    def logged_time_type_id(self, logged_time_type_id):
         """
-        Sets the logged_time_type of this LoggedTime.
+        Sets the logged_time_type_id of this LoggedTime.
 
 
-        :param logged_time_type: The logged_time_type of this LoggedTime.
-        :type: str
+        :param logged_time_type_id: The logged_time_type_id of this LoggedTime.
+        :type: int
         """
-        self._logged_time_type = logged_time_type
+        self._logged_time_type_id = logged_time_type_id
 
     @property
     def app_id(self):

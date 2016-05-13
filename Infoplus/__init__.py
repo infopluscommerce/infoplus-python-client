@@ -26,7 +26,15 @@ from .models.integration_partner import IntegrationPartner
 from .models.inventory_adjustment import InventoryAdjustment
 from .models.inventory_detail import InventoryDetail
 from .models.item import Item
+from .models.item_account_code import ItemAccountCode
+from .models.item_buyer import ItemBuyer
+from .models.item_legacy_low_stock_contact import ItemLegacyLowStockContact
+from .models.item_low_stock_code import ItemLowStockCode
+from .models.item_major_group import ItemMajorGroup
+from .models.item_product_code import ItemProductCode
 from .models.item_receipt import ItemReceipt
+from .models.item_sub_group import ItemSubGroup
+from .models.item_summary_code import ItemSummaryCode
 from .models.job_time import JobTime
 from .models.job_type import JobType
 from .models.line_of_business import LineOfBusiness
@@ -35,6 +43,7 @@ from .models.location_address_scheme import LocationAddressScheme
 from .models.location_billing_type import LocationBillingType
 from .models.location_footprint import LocationFootprint
 from .models.logged_time import LoggedTime
+from .models.logged_time_type import LoggedTimeType
 from .models.low_stock import LowStock
 from .models.order import Order
 from .models.order_line import OrderLine
@@ -92,7 +101,15 @@ from .apis.integration_partner_api import IntegrationPartnerApi
 from .apis.inventory_adjustment_api import InventoryAdjustmentApi
 from .apis.inventory_detail_api import InventoryDetailApi
 from .apis.item_api import ItemApi
+from .apis.item_account_code_api import ItemAccountCodeApi
+from .apis.item_buyer_api import ItemBuyerApi
+from .apis.item_legacy_low_stock_contact_api import ItemLegacyLowStockContactApi
+from .apis.item_low_stock_code_api import ItemLowStockCodeApi
+from .apis.item_major_group_api import ItemMajorGroupApi
+from .apis.item_product_code_api import ItemProductCodeApi
 from .apis.item_receipt_api import ItemReceiptApi
+from .apis.item_sub_group_api import ItemSubGroupApi
+from .apis.item_summary_code_api import ItemSummaryCodeApi
 from .apis.job_time_api import JobTimeApi
 from .apis.job_type_api import JobTypeApi
 from .apis.line_of_business_api import LineOfBusinessApi
@@ -101,6 +118,7 @@ from .apis.location_address_scheme_api import LocationAddressSchemeApi
 from .apis.location_billing_type_api import LocationBillingTypeApi
 from .apis.location_footprint_api import LocationFootprintApi
 from .apis.logged_time_api import LoggedTimeApi
+from .apis.logged_time_type_api import LoggedTimeTypeApi
 from .apis.low_stock_api import LowStockApi
 from .apis.order_api import OrderApi
 from .apis.order_line_api import OrderLineApi
