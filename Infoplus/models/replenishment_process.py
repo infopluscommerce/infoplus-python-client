@@ -43,7 +43,9 @@ class ReplenishmentProcess(object):
             'warehouse_id': 'int',
             'replenishment_plan_id': 'int',
             'status': 'str',
-            'estimated_work': 'int'
+            'estimated_work': 'int',
+            'work_batch_id': 'int',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -53,7 +55,9 @@ class ReplenishmentProcess(object):
             'warehouse_id': 'warehouseId',
             'replenishment_plan_id': 'replenishmentPlanId',
             'status': 'status',
-            'estimated_work': 'estimatedWork'
+            'estimated_work': 'estimatedWork',
+            'work_batch_id': 'workBatchId',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -63,6 +67,8 @@ class ReplenishmentProcess(object):
         self._replenishment_plan_id = None
         self._status = None
         self._estimated_work = None
+        self._work_batch_id = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -217,6 +223,50 @@ class ReplenishmentProcess(object):
         :type: int
         """
         self._estimated_work = estimated_work
+
+    @property
+    def work_batch_id(self):
+        """
+        Gets the work_batch_id of this ReplenishmentProcess.
+
+
+        :return: The work_batch_id of this ReplenishmentProcess.
+        :rtype: int
+        """
+        return self._work_batch_id
+
+    @work_batch_id.setter
+    def work_batch_id(self, work_batch_id):
+        """
+        Sets the work_batch_id of this ReplenishmentProcess.
+
+
+        :param work_batch_id: The work_batch_id of this ReplenishmentProcess.
+        :type: int
+        """
+        self._work_batch_id = work_batch_id
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ReplenishmentProcess.
+
+
+        :return: The custom_fields of this ReplenishmentProcess.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ReplenishmentProcess.
+
+
+        :param custom_fields: The custom_fields of this ReplenishmentProcess.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

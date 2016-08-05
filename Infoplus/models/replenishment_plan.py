@@ -42,7 +42,8 @@ class ReplenishmentPlan(object):
             'modify_date': 'datetime',
             'warehouse_id': 'int',
             'pick_face_assignment_smart_filter_id': 'int',
-            'name': 'str'
+            'name': 'str',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -51,7 +52,8 @@ class ReplenishmentPlan(object):
             'modify_date': 'modifyDate',
             'warehouse_id': 'warehouseId',
             'pick_face_assignment_smart_filter_id': 'pickFaceAssignmentSmartFilterId',
-            'name': 'name'
+            'name': 'name',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -60,6 +62,7 @@ class ReplenishmentPlan(object):
         self._warehouse_id = None
         self._pick_face_assignment_smart_filter_id = None
         self._name = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -192,6 +195,28 @@ class ReplenishmentPlan(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ReplenishmentPlan.
+
+
+        :return: The custom_fields of this ReplenishmentPlan.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ReplenishmentPlan.
+
+
+        :param custom_fields: The custom_fields of this ReplenishmentPlan.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

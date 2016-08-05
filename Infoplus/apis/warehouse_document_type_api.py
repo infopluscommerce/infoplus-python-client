@@ -83,7 +83,7 @@ class WarehouseDocumentTypeApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/warehouseDocumentType/search'.replace('{format}', 'json')
+        resource_path = '/beta/warehouseDocumentType/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -166,7 +166,7 @@ class WarehouseDocumentTypeApi(object):
         if ('warehouse_document_type_id' not in params) or (params['warehouse_document_type_id'] is None):
             raise ValueError("Missing the required parameter `warehouse_document_type_id` when calling `get_warehouse_document_type_by_id`")
 
-        resource_path = '/v1.0/warehouseDocumentType/{warehouseDocumentTypeId}'.replace('{format}', 'json')
+        resource_path = '/beta/warehouseDocumentType/{warehouseDocumentTypeId}'.replace('{format}', 'json')
         path_params = {}
         if 'warehouse_document_type_id' in params:
             path_params['warehouseDocumentTypeId'] = params['warehouse_document_type_id']

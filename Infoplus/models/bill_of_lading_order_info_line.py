@@ -41,7 +41,8 @@ class BillOfLadingOrderInfoLine(object):
             'no_packages': 'int',
             'weight': 'int',
             'palletslip': 'bool',
-            'additional_shipper_info': 'str'
+            'additional_shipper_info': 'str',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -49,7 +50,8 @@ class BillOfLadingOrderInfoLine(object):
             'no_packages': 'noPackages',
             'weight': 'weight',
             'palletslip': 'palletslip',
-            'additional_shipper_info': 'additionalShipperInfo'
+            'additional_shipper_info': 'additionalShipperInfo',
+            'custom_fields': 'customFields'
         }
 
         self._customer_order_no = None
@@ -57,6 +59,7 @@ class BillOfLadingOrderInfoLine(object):
         self._weight = None
         self._palletslip = False
         self._additional_shipper_info = None
+        self._custom_fields = None
 
     @property
     def customer_order_no(self):
@@ -167,6 +170,28 @@ class BillOfLadingOrderInfoLine(object):
         :type: str
         """
         self._additional_shipper_info = additional_shipper_info
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this BillOfLadingOrderInfoLine.
+
+
+        :return: The custom_fields of this BillOfLadingOrderInfoLine.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this BillOfLadingOrderInfoLine.
+
+
+        :param custom_fields: The custom_fields of this BillOfLadingOrderInfoLine.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

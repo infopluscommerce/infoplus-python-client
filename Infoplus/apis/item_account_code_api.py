@@ -82,7 +82,7 @@ class ItemAccountCodeApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/itemAccountCode/search'.replace('{format}', 'json')
+        resource_path = '/beta/itemAccountCode/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -163,7 +163,7 @@ class ItemAccountCodeApi(object):
         if ('item_account_code_id' not in params) or (params['item_account_code_id'] is None):
             raise ValueError("Missing the required parameter `item_account_code_id` when calling `get_translate_account_code_by_id`")
 
-        resource_path = '/v1.0/itemAccountCode/{itemAccountCodeId}'.replace('{format}', 'json')
+        resource_path = '/beta/itemAccountCode/{itemAccountCodeId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_account_code_id' in params:
             path_params['itemAccountCodeId'] = params['item_account_code_id']

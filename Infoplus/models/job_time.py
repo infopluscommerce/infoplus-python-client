@@ -45,7 +45,8 @@ class JobTime(object):
             'user_id': 'int',
             'lob_id': 'int',
             'job_type_id': 'int',
-            'note': 'str'
+            'note': 'str',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -57,7 +58,8 @@ class JobTime(object):
             'user_id': 'userId',
             'lob_id': 'lobId',
             'job_type_id': 'jobTypeId',
-            'note': 'note'
+            'note': 'note',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -69,6 +71,7 @@ class JobTime(object):
         self._lob_id = None
         self._job_type_id = None
         self._note = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -267,6 +270,28 @@ class JobTime(object):
         :type: str
         """
         self._note = note
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this JobTime.
+
+
+        :return: The custom_fields of this JobTime.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this JobTime.
+
+
+        :param custom_fields: The custom_fields of this JobTime.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

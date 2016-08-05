@@ -57,7 +57,8 @@ class ReceivingWorksheetLineItem(object):
             'carton_width': 'float',
             'carton_height': 'float',
             'put_away_plans': 'list[ReceivingWorksheetPutAwayPlan]',
-            'quantity': 'int'
+            'quantity': 'int',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -81,7 +82,8 @@ class ReceivingWorksheetLineItem(object):
             'carton_width': 'cartonWidth',
             'carton_height': 'cartonHeight',
             'put_away_plans': 'putAwayPlans',
-            'quantity': 'quantity'
+            'quantity': 'quantity',
+            'custom_fields': 'customFields'
         }
 
         self._sku = None
@@ -105,6 +107,7 @@ class ReceivingWorksheetLineItem(object):
         self._carton_height = None
         self._put_away_plans = None
         self._quantity = None
+        self._custom_fields = None
 
     @property
     def sku(self):
@@ -567,6 +570,28 @@ class ReceivingWorksheetLineItem(object):
         :type: int
         """
         self._quantity = quantity
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ReceivingWorksheetLineItem.
+
+
+        :return: The custom_fields of this ReceivingWorksheetLineItem.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ReceivingWorksheetLineItem.
+
+
+        :param custom_fields: The custom_fields of this ReceivingWorksheetLineItem.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

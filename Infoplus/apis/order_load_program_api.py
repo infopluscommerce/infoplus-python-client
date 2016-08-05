@@ -82,7 +82,7 @@ class OrderLoadProgramApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/orderLoadProgram/search'.replace('{format}', 'json')
+        resource_path = '/beta/orderLoadProgram/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -163,7 +163,7 @@ class OrderLoadProgramApi(object):
         if ('order_load_program_id' not in params) or (params['order_load_program_id'] is None):
             raise ValueError("Missing the required parameter `order_load_program_id` when calling `get_req_load_program_by_id`")
 
-        resource_path = '/v1.0/orderLoadProgram/{orderLoadProgramId}'.replace('{format}', 'json')
+        resource_path = '/beta/orderLoadProgram/{orderLoadProgramId}'.replace('{format}', 'json')
         path_params = {}
         if 'order_load_program_id' in params:
             path_params['orderLoadProgramId'] = params['order_load_program_id']

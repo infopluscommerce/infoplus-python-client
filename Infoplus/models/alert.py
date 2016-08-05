@@ -46,7 +46,8 @@ class Alert(object):
             'create_date': 'datetime',
             'modify_date': 'datetime',
             'expiration_date': 'datetime',
-            'acknowledge_date': 'datetime'
+            'acknowledge_date': 'datetime',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -59,7 +60,8 @@ class Alert(object):
             'create_date': 'createDate',
             'modify_date': 'modifyDate',
             'expiration_date': 'expirationDate',
-            'acknowledge_date': 'acknowledgeDate'
+            'acknowledge_date': 'acknowledgeDate',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -72,6 +74,7 @@ class Alert(object):
         self._modify_date = None
         self._expiration_date = None
         self._acknowledge_date = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -292,6 +295,28 @@ class Alert(object):
         :type: datetime
         """
         self._acknowledge_date = acknowledge_date
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this Alert.
+
+
+        :return: The custom_fields of this Alert.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this Alert.
+
+
+        :param custom_fields: The custom_fields of this Alert.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

@@ -38,7 +38,7 @@ class ItemReceipt(object):
         """
         self.swagger_types = {
             'id': 'int',
-            'po_no': 'str',
+            'po_no_id': 'int',
             'lob_id': 'int',
             'legacy_po_no': 'str',
             'warehouse_id': 'int',
@@ -105,12 +105,13 @@ class ItemReceipt(object):
             'dock_time': 'datetime',
             'modify_date': 'datetime',
             'impressions': 'int',
-            'asn_line': 'int'
+            'asn_line': 'int',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'po_no': 'poNo',
+            'po_no_id': 'poNoId',
             'lob_id': 'lobId',
             'legacy_po_no': 'legacyPoNo',
             'warehouse_id': 'warehouseId',
@@ -177,11 +178,12 @@ class ItemReceipt(object):
             'dock_time': 'dockTime',
             'modify_date': 'modifyDate',
             'impressions': 'impressions',
-            'asn_line': 'asnLine'
+            'asn_line': 'asnLine',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
-        self._po_no = None
+        self._po_no_id = None
         self._lob_id = None
         self._legacy_po_no = None
         self._warehouse_id = None
@@ -249,6 +251,7 @@ class ItemReceipt(object):
         self._modify_date = None
         self._impressions = None
         self._asn_line = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -273,26 +276,26 @@ class ItemReceipt(object):
         self._id = id
 
     @property
-    def po_no(self):
+    def po_no_id(self):
         """
-        Gets the po_no of this ItemReceipt.
+        Gets the po_no_id of this ItemReceipt.
 
 
-        :return: The po_no of this ItemReceipt.
-        :rtype: str
+        :return: The po_no_id of this ItemReceipt.
+        :rtype: int
         """
-        return self._po_no
+        return self._po_no_id
 
-    @po_no.setter
-    def po_no(self, po_no):
+    @po_no_id.setter
+    def po_no_id(self, po_no_id):
         """
-        Sets the po_no of this ItemReceipt.
+        Sets the po_no_id of this ItemReceipt.
 
 
-        :param po_no: The po_no of this ItemReceipt.
-        :type: str
+        :param po_no_id: The po_no_id of this ItemReceipt.
+        :type: int
         """
-        self._po_no = po_no
+        self._po_no_id = po_no_id
 
     @property
     def lob_id(self):
@@ -1767,6 +1770,28 @@ class ItemReceipt(object):
         :type: int
         """
         self._asn_line = asn_line
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ItemReceipt.
+
+
+        :return: The custom_fields of this ItemReceipt.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ItemReceipt.
+
+
+        :param custom_fields: The custom_fields of this ItemReceipt.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

@@ -82,7 +82,7 @@ class ItemLegacyLowStockContactApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/itemLegacyLowStockContact/search'.replace('{format}', 'json')
+        resource_path = '/beta/itemLegacyLowStockContact/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -163,7 +163,7 @@ class ItemLegacyLowStockContactApi(object):
         if ('item_legacy_low_stock_contact_id' not in params) or (params['item_legacy_low_stock_contact_id'] is None):
             raise ValueError("Missing the required parameter `item_legacy_low_stock_contact_id` when calling `get_translate_low_stock_contact_by_id`")
 
-        resource_path = '/v1.0/itemLegacyLowStockContact/{itemLegacyLowStockContactId}'.replace('{format}', 'json')
+        resource_path = '/beta/itemLegacyLowStockContact/{itemLegacyLowStockContactId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_legacy_low_stock_contact_id' in params:
             path_params['itemLegacyLowStockContactId'] = params['item_legacy_low_stock_contact_id']

@@ -84,7 +84,8 @@ class Customer(object):
             'extrinsic_decimal1': 'float',
             'extrinsic_decimal2': 'float',
             'modify_date': 'datetime',
-            'oms_customer_id': 'int'
+            'oms_customer_id': 'int',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -135,7 +136,8 @@ class Customer(object):
             'extrinsic_decimal1': 'extrinsicDecimal1',
             'extrinsic_decimal2': 'extrinsicDecimal2',
             'modify_date': 'modifyDate',
-            'oms_customer_id': 'omsCustomerId'
+            'oms_customer_id': 'omsCustomerId',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -186,6 +188,7 @@ class Customer(object):
         self._extrinsic_decimal2 = None
         self._modify_date = None
         self._oms_customer_id = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -1242,6 +1245,28 @@ class Customer(object):
         :type: int
         """
         self._oms_customer_id = oms_customer_id
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this Customer.
+
+
+        :return: The custom_fields of this Customer.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this Customer.
+
+
+        :param custom_fields: The custom_fields of this Customer.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

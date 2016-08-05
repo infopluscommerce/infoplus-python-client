@@ -37,6 +37,7 @@ from .models.item_sub_group import ItemSubGroup
 from .models.item_summary_code import ItemSummaryCode
 from .models.job_time import JobTime
 from .models.job_type import JobType
+from .models.kit import Kit
 from .models.line_of_business import LineOfBusiness
 from .models.location import Location
 from .models.location_address_scheme import LocationAddressScheme
@@ -45,6 +46,7 @@ from .models.location_footprint import LocationFootprint
 from .models.logged_time import LoggedTime
 from .models.logged_time_type import LoggedTimeType
 from .models.low_stock import LowStock
+from .models.manage_scheduled_plans import ManageScheduledPlans
 from .models.order import Order
 from .models.order_line import OrderLine
 from .models.order_load_program import OrderLoadProgram
@@ -65,8 +67,11 @@ from .models.receiving_worksheet_put_away_plan import ReceivingWorksheetPutAwayP
 from .models.replenishment import Replenishment
 from .models.replenishment_plan import ReplenishmentPlan
 from .models.replenishment_process import ReplenishmentProcess
+from .models.scheduled_plan_log import ScheduledPlanLog
 from .models.service_type import ServiceType
 from .models.shopping_cart_connection import ShoppingCartConnection
+from .models.substitution import Substitution
+from .models.supplement import Supplement
 from .models.third_party_parcel_account import ThirdPartyParcelAccount
 from .models.user import User
 from .models.vendor import Vendor
@@ -112,6 +117,7 @@ from .apis.item_sub_group_api import ItemSubGroupApi
 from .apis.item_summary_code_api import ItemSummaryCodeApi
 from .apis.job_time_api import JobTimeApi
 from .apis.job_type_api import JobTypeApi
+from .apis.kit_api import KitApi
 from .apis.line_of_business_api import LineOfBusinessApi
 from .apis.location_api import LocationApi
 from .apis.location_address_scheme_api import LocationAddressSchemeApi
@@ -120,6 +126,7 @@ from .apis.location_footprint_api import LocationFootprintApi
 from .apis.logged_time_api import LoggedTimeApi
 from .apis.logged_time_type_api import LoggedTimeTypeApi
 from .apis.low_stock_api import LowStockApi
+from .apis.manage_scheduled_plans_api import ManageScheduledPlansApi
 from .apis.order_api import OrderApi
 from .apis.order_line_api import OrderLineApi
 from .apis.order_load_program_api import OrderLoadProgramApi
@@ -138,8 +145,11 @@ from .apis.receiving_worksheet_api import ReceivingWorksheetApi
 from .apis.replenishment_api import ReplenishmentApi
 from .apis.replenishment_plan_api import ReplenishmentPlanApi
 from .apis.replenishment_process_api import ReplenishmentProcessApi
+from .apis.scheduled_plan_log_api import ScheduledPlanLogApi
 from .apis.service_type_api import ServiceTypeApi
 from .apis.shopping_cart_connection_api import ShoppingCartConnectionApi
+from .apis.substitution_api import SubstitutionApi
+from .apis.supplement_api import SupplementApi
 from .apis.third_party_parcel_account_api import ThirdPartyParcelAccountApi
 from .apis.user_api import UserApi
 from .apis.vendor_api import VendorApi

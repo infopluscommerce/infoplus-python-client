@@ -51,7 +51,8 @@ class Work(object):
             'status': 'str',
             'user_id': 'int',
             'lob_id': 'int',
-            'work_batch_id': 'int'
+            'work_batch_id': 'int',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -69,7 +70,8 @@ class Work(object):
             'status': 'status',
             'user_id': 'userId',
             'lob_id': 'lobId',
-            'work_batch_id': 'workBatchId'
+            'work_batch_id': 'workBatchId',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -87,6 +89,7 @@ class Work(object):
         self._user_id = None
         self._lob_id = None
         self._work_batch_id = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -417,6 +420,28 @@ class Work(object):
         :type: int
         """
         self._work_batch_id = work_batch_id
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this Work.
+
+
+        :return: The custom_fields of this Work.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this Work.
+
+
+        :param custom_fields: The custom_fields of this Work.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

@@ -97,7 +97,9 @@ class Item(object):
             'forward_item_mixing_rule': 'str',
             'storage_item_mixing_rule': 'str',
             'allocation_rule': 'str',
-            'hazmat': 'str'
+            'barcode_field': 'str',
+            'hazmat': 'str',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -161,7 +163,9 @@ class Item(object):
             'forward_item_mixing_rule': 'forwardItemMixingRule',
             'storage_item_mixing_rule': 'storageItemMixingRule',
             'allocation_rule': 'allocationRule',
-            'hazmat': 'hazmat'
+            'barcode_field': 'barcodeField',
+            'hazmat': 'hazmat',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -224,7 +228,9 @@ class Item(object):
         self._forward_item_mixing_rule = None
         self._storage_item_mixing_rule = None
         self._allocation_rule = None
+        self._barcode_field = None
         self._hazmat = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -1547,6 +1553,28 @@ class Item(object):
         self._allocation_rule = allocation_rule
 
     @property
+    def barcode_field(self):
+        """
+        Gets the barcode_field of this Item.
+
+
+        :return: The barcode_field of this Item.
+        :rtype: str
+        """
+        return self._barcode_field
+
+    @barcode_field.setter
+    def barcode_field(self, barcode_field):
+        """
+        Sets the barcode_field of this Item.
+
+
+        :param barcode_field: The barcode_field of this Item.
+        :type: str
+        """
+        self._barcode_field = barcode_field
+
+    @property
     def hazmat(self):
         """
         Gets the hazmat of this Item.
@@ -1567,6 +1595,28 @@ class Item(object):
         :type: str
         """
         self._hazmat = hazmat
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this Item.
+
+
+        :return: The custom_fields of this Item.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this Item.
+
+
+        :param custom_fields: The custom_fields of this Item.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

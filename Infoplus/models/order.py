@@ -88,8 +88,8 @@ class Order(object):
             'integration_partner_id': 'int',
             'number_of_line_items': 'int',
             'modify_date': 'datetime',
-            'oms_order_id': 'int',
             'oms_order_no': 'int',
+            'oms_customer_id': 'int',
             'order_load_program_id': 'int',
             'order_message': 'str',
             'order_reason': 'int',
@@ -123,7 +123,8 @@ class Order(object):
             'total_paid': 'float',
             'total_qty': 'int',
             'weight_lbs': 'float',
-            'line_items': 'list[OrderLine]'
+            'line_items': 'list[OrderLine]',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -178,8 +179,8 @@ class Order(object):
             'integration_partner_id': 'integrationPartnerId',
             'number_of_line_items': 'numberOfLineItems',
             'modify_date': 'modifyDate',
-            'oms_order_id': 'omsOrderId',
             'oms_order_no': 'omsOrderNo',
+            'oms_customer_id': 'omsCustomerId',
             'order_load_program_id': 'orderLoadProgramId',
             'order_message': 'orderMessage',
             'order_reason': 'orderReason',
@@ -213,7 +214,8 @@ class Order(object):
             'total_paid': 'totalPaid',
             'total_qty': 'totalQty',
             'weight_lbs': 'weightLbs',
-            'line_items': 'lineItems'
+            'line_items': 'lineItems',
+            'custom_fields': 'customFields'
         }
 
         self._order_no = None
@@ -267,8 +269,8 @@ class Order(object):
         self._integration_partner_id = None
         self._number_of_line_items = None
         self._modify_date = None
-        self._oms_order_id = None
         self._oms_order_no = None
+        self._oms_customer_id = None
         self._order_load_program_id = None
         self._order_message = None
         self._order_reason = None
@@ -303,6 +305,7 @@ class Order(object):
         self._total_qty = None
         self._weight_lbs = None
         self._line_items = None
+        self._custom_fields = None
 
     @property
     def order_no(self):
@@ -1427,28 +1430,6 @@ class Order(object):
         self._modify_date = modify_date
 
     @property
-    def oms_order_id(self):
-        """
-        Gets the oms_order_id of this Order.
-
-
-        :return: The oms_order_id of this Order.
-        :rtype: int
-        """
-        return self._oms_order_id
-
-    @oms_order_id.setter
-    def oms_order_id(self, oms_order_id):
-        """
-        Sets the oms_order_id of this Order.
-
-
-        :param oms_order_id: The oms_order_id of this Order.
-        :type: int
-        """
-        self._oms_order_id = oms_order_id
-
-    @property
     def oms_order_no(self):
         """
         Gets the oms_order_no of this Order.
@@ -1469,6 +1450,28 @@ class Order(object):
         :type: int
         """
         self._oms_order_no = oms_order_no
+
+    @property
+    def oms_customer_id(self):
+        """
+        Gets the oms_customer_id of this Order.
+
+
+        :return: The oms_customer_id of this Order.
+        :rtype: int
+        """
+        return self._oms_customer_id
+
+    @oms_customer_id.setter
+    def oms_customer_id(self, oms_customer_id):
+        """
+        Sets the oms_customer_id of this Order.
+
+
+        :param oms_customer_id: The oms_customer_id of this Order.
+        :type: int
+        """
+        self._oms_customer_id = oms_customer_id
 
     @property
     def order_load_program_id(self):
@@ -2217,6 +2220,28 @@ class Order(object):
         :type: list[OrderLine]
         """
         self._line_items = line_items
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this Order.
+
+
+        :return: The custom_fields of this Order.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this Order.
+
+
+        :param custom_fields: The custom_fields of this Order.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

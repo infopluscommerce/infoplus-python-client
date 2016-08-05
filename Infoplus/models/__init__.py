@@ -37,6 +37,7 @@ from .item_sub_group import ItemSubGroup
 from .item_summary_code import ItemSummaryCode
 from .job_time import JobTime
 from .job_type import JobType
+from .kit import Kit
 from .line_of_business import LineOfBusiness
 from .location import Location
 from .location_address_scheme import LocationAddressScheme
@@ -45,6 +46,7 @@ from .location_footprint import LocationFootprint
 from .logged_time import LoggedTime
 from .logged_time_type import LoggedTimeType
 from .low_stock import LowStock
+from .manage_scheduled_plans import ManageScheduledPlans
 from .order import Order
 from .order_line import OrderLine
 from .order_load_program import OrderLoadProgram
@@ -65,8 +67,11 @@ from .receiving_worksheet_put_away_plan import ReceivingWorksheetPutAwayPlan
 from .replenishment import Replenishment
 from .replenishment_plan import ReplenishmentPlan
 from .replenishment_process import ReplenishmentProcess
+from .scheduled_plan_log import ScheduledPlanLog
 from .service_type import ServiceType
 from .shopping_cart_connection import ShoppingCartConnection
+from .substitution import Substitution
+from .supplement import Supplement
 from .third_party_parcel_account import ThirdPartyParcelAccount
 from .user import User
 from .vendor import Vendor

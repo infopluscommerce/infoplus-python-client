@@ -40,20 +40,23 @@ class WarehouseDocumentType(object):
             'id': 'int',
             'name': 'str',
             'create_date': 'datetime',
-            'modify_date': 'datetime'
+            'modify_date': 'datetime',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'create_date': 'createDate',
-            'modify_date': 'modifyDate'
+            'modify_date': 'modifyDate',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
         self._name = None
         self._create_date = None
         self._modify_date = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -142,6 +145,28 @@ class WarehouseDocumentType(object):
         :type: datetime
         """
         self._modify_date = modify_date
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this WarehouseDocumentType.
+
+
+        :return: The custom_fields of this WarehouseDocumentType.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this WarehouseDocumentType.
+
+
+        :param custom_fields: The custom_fields of this WarehouseDocumentType.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

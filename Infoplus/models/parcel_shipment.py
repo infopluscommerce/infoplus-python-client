@@ -65,7 +65,8 @@ class ParcelShipment(object):
             'license_plate_number': 'str',
             'charged_freight_amount': 'float',
             'published_freight_amount': 'float',
-            'retail_freight_amount': 'float'
+            'retail_freight_amount': 'float',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -97,7 +98,8 @@ class ParcelShipment(object):
             'license_plate_number': 'licensePlateNumber',
             'charged_freight_amount': 'chargedFreightAmount',
             'published_freight_amount': 'publishedFreightAmount',
-            'retail_freight_amount': 'retailFreightAmount'
+            'retail_freight_amount': 'retailFreightAmount',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -129,6 +131,7 @@ class ParcelShipment(object):
         self._charged_freight_amount = None
         self._published_freight_amount = None
         self._retail_freight_amount = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -767,6 +770,28 @@ class ParcelShipment(object):
         :type: float
         """
         self._retail_freight_amount = retail_freight_amount
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ParcelShipment.
+
+
+        :return: The custom_fields of this ParcelShipment.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ParcelShipment.
+
+
+        :param custom_fields: The custom_fields of this ParcelShipment.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

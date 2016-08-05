@@ -64,6 +64,9 @@ class QuickReceipt(object):
             'cost': 'float',
             'sell': 'float',
             'pricing_per': 'str',
+            'generated_item_receipt_id': 'int',
+            'generated_asn_id': 'int',
+            'custom_fields': 'dict(str, object)',
             'sku': 'str'
         }
 
@@ -95,6 +98,9 @@ class QuickReceipt(object):
             'cost': 'cost',
             'sell': 'sell',
             'pricing_per': 'pricingPer',
+            'generated_item_receipt_id': 'generatedItemReceiptId',
+            'generated_asn_id': 'generatedASNId',
+            'custom_fields': 'customFields',
             'sku': 'sku'
         }
 
@@ -125,6 +131,9 @@ class QuickReceipt(object):
         self._cost = None
         self._sell = None
         self._pricing_per = None
+        self._generated_item_receipt_id = None
+        self._generated_asn_id = None
+        self._custom_fields = None
         self._sku = None
 
     @property
@@ -720,6 +729,72 @@ class QuickReceipt(object):
         :type: str
         """
         self._pricing_per = pricing_per
+
+    @property
+    def generated_item_receipt_id(self):
+        """
+        Gets the generated_item_receipt_id of this QuickReceipt.
+
+
+        :return: The generated_item_receipt_id of this QuickReceipt.
+        :rtype: int
+        """
+        return self._generated_item_receipt_id
+
+    @generated_item_receipt_id.setter
+    def generated_item_receipt_id(self, generated_item_receipt_id):
+        """
+        Sets the generated_item_receipt_id of this QuickReceipt.
+
+
+        :param generated_item_receipt_id: The generated_item_receipt_id of this QuickReceipt.
+        :type: int
+        """
+        self._generated_item_receipt_id = generated_item_receipt_id
+
+    @property
+    def generated_asn_id(self):
+        """
+        Gets the generated_asn_id of this QuickReceipt.
+
+
+        :return: The generated_asn_id of this QuickReceipt.
+        :rtype: int
+        """
+        return self._generated_asn_id
+
+    @generated_asn_id.setter
+    def generated_asn_id(self, generated_asn_id):
+        """
+        Sets the generated_asn_id of this QuickReceipt.
+
+
+        :param generated_asn_id: The generated_asn_id of this QuickReceipt.
+        :type: int
+        """
+        self._generated_asn_id = generated_asn_id
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this QuickReceipt.
+
+
+        :return: The custom_fields of this QuickReceipt.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this QuickReceipt.
+
+
+        :param custom_fields: The custom_fields of this QuickReceipt.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     @property
     def sku(self):

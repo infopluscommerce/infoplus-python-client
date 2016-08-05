@@ -48,7 +48,8 @@ class CartonType(object):
             'inner_height_in': 'float',
             'weight_lbs': 'float',
             'lob_id': 'int',
-            'is_active': 'bool'
+            'is_active': 'bool',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -63,7 +64,8 @@ class CartonType(object):
             'inner_height_in': 'innerHeightIn',
             'weight_lbs': 'weightLbs',
             'lob_id': 'lobId',
-            'is_active': 'isActive'
+            'is_active': 'isActive',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -78,6 +80,7 @@ class CartonType(object):
         self._weight_lbs = None
         self._lob_id = None
         self._is_active = False
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -342,6 +345,28 @@ class CartonType(object):
         :type: bool
         """
         self._is_active = is_active
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this CartonType.
+
+
+        :return: The custom_fields of this CartonType.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this CartonType.
+
+
+        :param custom_fields: The custom_fields of this CartonType.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

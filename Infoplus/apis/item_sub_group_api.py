@@ -82,7 +82,7 @@ class ItemSubGroupApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/itemSubGroup/search'.replace('{format}', 'json')
+        resource_path = '/beta/itemSubGroup/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -163,7 +163,7 @@ class ItemSubGroupApi(object):
         if ('item_sub_group_id' not in params) or (params['item_sub_group_id'] is None):
             raise ValueError("Missing the required parameter `item_sub_group_id` when calling `get_translate_sub_group_by_id`")
 
-        resource_path = '/v1.0/itemSubGroup/{itemSubGroupId}'.replace('{format}', 'json')
+        resource_path = '/beta/itemSubGroup/{itemSubGroupId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_sub_group_id' in params:
             path_params['itemSubGroupId'] = params['item_sub_group_id']

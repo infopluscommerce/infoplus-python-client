@@ -82,7 +82,7 @@ class ItemBuyerApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/itemBuyer/search'.replace('{format}', 'json')
+        resource_path = '/beta/itemBuyer/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -163,7 +163,7 @@ class ItemBuyerApi(object):
         if ('item_buyer_id' not in params) or (params['item_buyer_id'] is None):
             raise ValueError("Missing the required parameter `item_buyer_id` when calling `get_translate_buyer_by_id`")
 
-        resource_path = '/v1.0/itemBuyer/{itemBuyerId}'.replace('{format}', 'json')
+        resource_path = '/beta/itemBuyer/{itemBuyerId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_buyer_id' in params:
             path_params['itemBuyerId'] = params['item_buyer_id']

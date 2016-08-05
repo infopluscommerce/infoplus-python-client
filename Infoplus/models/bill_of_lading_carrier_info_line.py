@@ -46,7 +46,8 @@ class BillOfLadingCarrierInfoLine(object):
             'is_hazardous_material': 'bool',
             'commodity_description': 'str',
             'nfmc_no': 'str',
-            'carrier_class': 'str'
+            'carrier_class': 'str',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -59,7 +60,8 @@ class BillOfLadingCarrierInfoLine(object):
             'is_hazardous_material': 'isHazardousMaterial',
             'commodity_description': 'commodityDescription',
             'nfmc_no': 'nfmcNo',
-            'carrier_class': 'carrierClass'
+            'carrier_class': 'carrierClass',
+            'custom_fields': 'customFields'
         }
 
         self._seq_no = None
@@ -72,6 +74,7 @@ class BillOfLadingCarrierInfoLine(object):
         self._commodity_description = None
         self._nfmc_no = None
         self._carrier_class = None
+        self._custom_fields = None
 
     @property
     def seq_no(self):
@@ -292,6 +295,28 @@ class BillOfLadingCarrierInfoLine(object):
         :type: str
         """
         self._carrier_class = carrier_class
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this BillOfLadingCarrierInfoLine.
+
+
+        :return: The custom_fields of this BillOfLadingCarrierInfoLine.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this BillOfLadingCarrierInfoLine.
+
+
+        :param custom_fields: The custom_fields of this BillOfLadingCarrierInfoLine.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

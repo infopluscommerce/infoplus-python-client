@@ -46,6 +46,7 @@ class QuickAdjustment(object):
             'total_quantity': 'int',
             'message': 'str',
             'status': 'str',
+            'custom_fields': 'dict(str, object)',
             'sku': 'str'
         }
 
@@ -59,6 +60,7 @@ class QuickAdjustment(object):
             'total_quantity': 'totalQuantity',
             'message': 'message',
             'status': 'status',
+            'custom_fields': 'customFields',
             'sku': 'sku'
         }
 
@@ -71,6 +73,7 @@ class QuickAdjustment(object):
         self._total_quantity = None
         self._message = None
         self._status = None
+        self._custom_fields = None
         self._sku = None
 
     @property
@@ -270,6 +273,28 @@ class QuickAdjustment(object):
         :type: str
         """
         self._status = status
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this QuickAdjustment.
+
+
+        :return: The custom_fields of this QuickAdjustment.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this QuickAdjustment.
+
+
+        :param custom_fields: The custom_fields of this QuickAdjustment.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     @property
     def sku(self):

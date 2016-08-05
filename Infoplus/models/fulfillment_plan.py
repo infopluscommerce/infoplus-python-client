@@ -59,12 +59,14 @@ class FulfillmentPlan(object):
             'pick_summary_format': 'str',
             'pick_summary_layout': 'str',
             'pick_summary_sort': 'str',
+            'pick_scan_scheme_id': 'int',
             'cartonize_orders': 'bool',
             'auto_ship_casebreak_cartons': 'bool',
             'pre_generate_parcel_labels': 'bool',
             'override_packing_slip_template_id': 'int',
             'create_packing_slip': 'bool',
-            'create_order_assembly_guide': 'bool'
+            'create_order_assembly_guide': 'bool',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -90,12 +92,14 @@ class FulfillmentPlan(object):
             'pick_summary_format': 'pickSummaryFormat',
             'pick_summary_layout': 'pickSummaryLayout',
             'pick_summary_sort': 'pickSummarySort',
+            'pick_scan_scheme_id': 'pickScanSchemeId',
             'cartonize_orders': 'cartonizeOrders',
             'auto_ship_casebreak_cartons': 'autoShipCasebreakCartons',
             'pre_generate_parcel_labels': 'preGenerateParcelLabels',
             'override_packing_slip_template_id': 'overridePackingSlipTemplateId',
             'create_packing_slip': 'createPackingSlip',
-            'create_order_assembly_guide': 'createOrderAssemblyGuide'
+            'create_order_assembly_guide': 'createOrderAssemblyGuide',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -120,12 +124,14 @@ class FulfillmentPlan(object):
         self._pick_summary_format = None
         self._pick_summary_layout = None
         self._pick_summary_sort = None
+        self._pick_scan_scheme_id = None
         self._cartonize_orders = False
         self._auto_ship_casebreak_cartons = False
         self._pre_generate_parcel_labels = False
         self._override_packing_slip_template_id = None
         self._create_packing_slip = False
         self._create_order_assembly_guide = False
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -612,6 +618,28 @@ class FulfillmentPlan(object):
         self._pick_summary_sort = pick_summary_sort
 
     @property
+    def pick_scan_scheme_id(self):
+        """
+        Gets the pick_scan_scheme_id of this FulfillmentPlan.
+
+
+        :return: The pick_scan_scheme_id of this FulfillmentPlan.
+        :rtype: int
+        """
+        return self._pick_scan_scheme_id
+
+    @pick_scan_scheme_id.setter
+    def pick_scan_scheme_id(self, pick_scan_scheme_id):
+        """
+        Sets the pick_scan_scheme_id of this FulfillmentPlan.
+
+
+        :param pick_scan_scheme_id: The pick_scan_scheme_id of this FulfillmentPlan.
+        :type: int
+        """
+        self._pick_scan_scheme_id = pick_scan_scheme_id
+
+    @property
     def cartonize_orders(self):
         """
         Gets the cartonize_orders of this FulfillmentPlan.
@@ -742,6 +770,28 @@ class FulfillmentPlan(object):
         :type: bool
         """
         self._create_order_assembly_guide = create_order_assembly_guide
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this FulfillmentPlan.
+
+
+        :return: The custom_fields of this FulfillmentPlan.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this FulfillmentPlan.
+
+
+        :param custom_fields: The custom_fields of this FulfillmentPlan.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

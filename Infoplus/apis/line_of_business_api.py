@@ -83,7 +83,7 @@ class LineOfBusinessApi(object):
         if ('line_of_business_id' not in params) or (params['line_of_business_id'] is None):
             raise ValueError("Missing the required parameter `line_of_business_id` when calling `get_line_of_business_by_id`")
 
-        resource_path = '/v1.0/lineOfBusiness/{lineOfBusinessId}'.replace('{format}', 'json')
+        resource_path = '/beta/lineOfBusiness/{lineOfBusinessId}'.replace('{format}', 'json')
         path_params = {}
         if 'line_of_business_id' in params:
             path_params['lineOfBusinessId'] = params['line_of_business_id']
@@ -159,7 +159,7 @@ class LineOfBusinessApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/lineOfBusiness/search'.replace('{format}', 'json')
+        resource_path = '/beta/lineOfBusiness/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

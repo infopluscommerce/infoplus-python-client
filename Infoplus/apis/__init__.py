@@ -34,6 +34,7 @@ from .item_sub_group_api import ItemSubGroupApi
 from .item_summary_code_api import ItemSummaryCodeApi
 from .job_time_api import JobTimeApi
 from .job_type_api import JobTypeApi
+from .kit_api import KitApi
 from .line_of_business_api import LineOfBusinessApi
 from .location_api import LocationApi
 from .location_address_scheme_api import LocationAddressSchemeApi
@@ -42,6 +43,7 @@ from .location_footprint_api import LocationFootprintApi
 from .logged_time_api import LoggedTimeApi
 from .logged_time_type_api import LoggedTimeTypeApi
 from .low_stock_api import LowStockApi
+from .manage_scheduled_plans_api import ManageScheduledPlansApi
 from .order_api import OrderApi
 from .order_line_api import OrderLineApi
 from .order_load_program_api import OrderLoadProgramApi
@@ -60,8 +62,11 @@ from .receiving_worksheet_api import ReceivingWorksheetApi
 from .replenishment_api import ReplenishmentApi
 from .replenishment_plan_api import ReplenishmentPlanApi
 from .replenishment_process_api import ReplenishmentProcessApi
+from .scheduled_plan_log_api import ScheduledPlanLogApi
 from .service_type_api import ServiceTypeApi
 from .shopping_cart_connection_api import ShoppingCartConnectionApi
+from .substitution_api import SubstitutionApi
+from .supplement_api import SupplementApi
 from .third_party_parcel_account_api import ThirdPartyParcelAccountApi
 from .user_api import UserApi
 from .vendor_api import VendorApi

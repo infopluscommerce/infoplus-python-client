@@ -48,7 +48,8 @@ class OrderSource(object):
             'shipping_notes': 'str',
             'packing_slip_id': 'int',
             'order_confirmation_email_id': 'int',
-            'shipment_confirmation_email_id': 'int'
+            'shipment_confirmation_email_id': 'int',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -63,7 +64,8 @@ class OrderSource(object):
             'shipping_notes': 'shippingNotes',
             'packing_slip_id': 'packingSlipId',
             'order_confirmation_email_id': 'orderConfirmationEmailId',
-            'shipment_confirmation_email_id': 'shipmentConfirmationEmailId'
+            'shipment_confirmation_email_id': 'shipmentConfirmationEmailId',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -78,6 +80,7 @@ class OrderSource(object):
         self._packing_slip_id = None
         self._order_confirmation_email_id = None
         self._shipment_confirmation_email_id = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -342,6 +345,28 @@ class OrderSource(object):
         :type: int
         """
         self._shipment_confirmation_email_id = shipment_confirmation_email_id
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this OrderSource.
+
+
+        :return: The custom_fields of this OrderSource.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this OrderSource.
+
+
+        :param custom_fields: The custom_fields of this OrderSource.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

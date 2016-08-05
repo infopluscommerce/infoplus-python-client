@@ -48,7 +48,8 @@ class CartonContent(object):
             'completed': 'datetime',
             'tote_id': 'str',
             'picker_id': 'str',
-            'status': 'str'
+            'status': 'str',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -63,7 +64,8 @@ class CartonContent(object):
             'completed': 'completed',
             'tote_id': 'toteId',
             'picker_id': 'pickerId',
-            'status': 'status'
+            'status': 'status',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -78,6 +80,7 @@ class CartonContent(object):
         self._tote_id = None
         self._picker_id = None
         self._status = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -342,6 +345,28 @@ class CartonContent(object):
         :type: str
         """
         self._status = status
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this CartonContent.
+
+
+        :return: The custom_fields of this CartonContent.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this CartonContent.
+
+
+        :param custom_fields: The custom_fields of this CartonContent.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

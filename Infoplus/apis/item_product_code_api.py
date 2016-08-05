@@ -82,7 +82,7 @@ class ItemProductCodeApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/itemProductCode/search'.replace('{format}', 'json')
+        resource_path = '/beta/itemProductCode/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -163,7 +163,7 @@ class ItemProductCodeApi(object):
         if ('item_product_code_id' not in params) or (params['item_product_code_id'] is None):
             raise ValueError("Missing the required parameter `item_product_code_id` when calling `get_translate_product_code_by_id`")
 
-        resource_path = '/v1.0/itemProductCode/{itemProductCodeId}'.replace('{format}', 'json')
+        resource_path = '/beta/itemProductCode/{itemProductCodeId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_product_code_id' in params:
             path_params['itemProductCodeId'] = params['item_product_code_id']

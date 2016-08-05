@@ -47,7 +47,8 @@ class Zone(object):
             'is_frozen': 'bool',
             'is_refrigerated': 'bool',
             'create_date': 'datetime',
-            'modify_date': 'datetime'
+            'modify_date': 'datetime',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -61,7 +62,8 @@ class Zone(object):
             'is_frozen': 'isFrozen',
             'is_refrigerated': 'isRefrigerated',
             'create_date': 'createDate',
-            'modify_date': 'modifyDate'
+            'modify_date': 'modifyDate',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -75,6 +77,7 @@ class Zone(object):
         self._is_refrigerated = False
         self._create_date = None
         self._modify_date = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -317,6 +320,28 @@ class Zone(object):
         :type: datetime
         """
         self._modify_date = modify_date
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this Zone.
+
+
+        :return: The custom_fields of this Zone.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this Zone.
+
+
+        :param custom_fields: The custom_fields of this Zone.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

@@ -56,7 +56,8 @@ class ShoppingCartConnection(object):
             'sync_orders': 'bool',
             'sync_inventory': 'bool',
             'sync_tracking_data': 'bool',
-            'sync_inventory_levels_last_run_time': 'datetime'
+            'sync_inventory_levels_last_run_time': 'datetime',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -79,7 +80,8 @@ class ShoppingCartConnection(object):
             'sync_orders': 'syncOrders',
             'sync_inventory': 'syncInventory',
             'sync_tracking_data': 'syncTrackingData',
-            'sync_inventory_levels_last_run_time': 'syncInventoryLevelsLastRunTime'
+            'sync_inventory_levels_last_run_time': 'syncInventoryLevelsLastRunTime',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -102,6 +104,7 @@ class ShoppingCartConnection(object):
         self._sync_inventory = False
         self._sync_tracking_data = False
         self._sync_inventory_levels_last_run_time = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -542,6 +545,28 @@ class ShoppingCartConnection(object):
         :type: datetime
         """
         self._sync_inventory_levels_last_run_time = sync_inventory_levels_last_run_time
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ShoppingCartConnection.
+
+
+        :return: The custom_fields of this ShoppingCartConnection.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ShoppingCartConnection.
+
+
+        :param custom_fields: The custom_fields of this ShoppingCartConnection.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

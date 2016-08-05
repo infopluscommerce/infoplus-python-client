@@ -51,7 +51,8 @@ class OverrideReturnAddress(object):
             'state': 'str',
             'zip': 'str',
             'country': 'str',
-            'phone': 'str'
+            'phone': 'str',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -69,7 +70,8 @@ class OverrideReturnAddress(object):
             'state': 'state',
             'zip': 'zip',
             'country': 'country',
-            'phone': 'phone'
+            'phone': 'phone',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -87,6 +89,7 @@ class OverrideReturnAddress(object):
         self._zip = None
         self._country = None
         self._phone = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -417,6 +420,28 @@ class OverrideReturnAddress(object):
         :type: str
         """
         self._phone = phone
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this OverrideReturnAddress.
+
+
+        :return: The custom_fields of this OverrideReturnAddress.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this OverrideReturnAddress.
+
+
+        :param custom_fields: The custom_fields of this OverrideReturnAddress.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

@@ -84,7 +84,8 @@ class BillOfLading(object):
             'by_driver_pieces': 'bool',
             'special_instructions': 'str',
             'order_info_lines': 'list[BillOfLadingOrderInfoLine]',
-            'carrier_info_lines': 'list[BillOfLadingCarrierInfoLine]'
+            'carrier_info_lines': 'list[BillOfLadingCarrierInfoLine]',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -135,7 +136,8 @@ class BillOfLading(object):
             'by_driver_pieces': 'byDriverPieces',
             'special_instructions': 'specialInstructions',
             'order_info_lines': 'orderInfoLines',
-            'carrier_info_lines': 'carrierInfoLines'
+            'carrier_info_lines': 'carrierInfoLines',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -186,6 +188,7 @@ class BillOfLading(object):
         self._special_instructions = None
         self._order_info_lines = None
         self._carrier_info_lines = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -1242,6 +1245,28 @@ class BillOfLading(object):
         :type: list[BillOfLadingCarrierInfoLine]
         """
         self._carrier_info_lines = carrier_info_lines
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this BillOfLading.
+
+
+        :return: The custom_fields of this BillOfLading.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this BillOfLading.
+
+
+        :param custom_fields: The custom_fields of this BillOfLading.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

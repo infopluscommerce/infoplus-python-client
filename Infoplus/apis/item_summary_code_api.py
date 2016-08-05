@@ -82,7 +82,7 @@ class ItemSummaryCodeApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/itemSummaryCode/search'.replace('{format}', 'json')
+        resource_path = '/beta/itemSummaryCode/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -163,7 +163,7 @@ class ItemSummaryCodeApi(object):
         if ('item_summary_code_id' not in params) or (params['item_summary_code_id'] is None):
             raise ValueError("Missing the required parameter `item_summary_code_id` when calling `get_translate_summary_code_by_id`")
 
-        resource_path = '/v1.0/itemSummaryCode/{itemSummaryCodeId}'.replace('{format}', 'json')
+        resource_path = '/beta/itemSummaryCode/{itemSummaryCodeId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_summary_code_id' in params:
             path_params['itemSummaryCodeId'] = params['item_summary_code_id']

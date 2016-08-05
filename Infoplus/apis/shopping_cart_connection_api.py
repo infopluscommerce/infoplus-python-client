@@ -83,7 +83,7 @@ class ShoppingCartConnectionApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_shopping_cart_connection`")
 
-        resource_path = '/v1.0/shoppingCartConnection'.replace('{format}', 'json')
+        resource_path = '/beta/shoppingCartConnection'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -160,7 +160,7 @@ class ShoppingCartConnectionApi(object):
         if ('shopping_cart_connection_id' not in params) or (params['shopping_cart_connection_id'] is None):
             raise ValueError("Missing the required parameter `shopping_cart_connection_id` when calling `delete_shopping_cart_connection`")
 
-        resource_path = '/v1.0/shoppingCartConnection/{shoppingCartConnectionId}'.replace('{format}', 'json')
+        resource_path = '/beta/shoppingCartConnection/{shoppingCartConnectionId}'.replace('{format}', 'json')
         path_params = {}
         if 'shopping_cart_connection_id' in params:
             path_params['shoppingCartConnectionId'] = params['shopping_cart_connection_id']
@@ -237,7 +237,7 @@ class ShoppingCartConnectionApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/shoppingCartConnection/search'.replace('{format}', 'json')
+        resource_path = '/beta/shoppingCartConnection/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -320,7 +320,7 @@ class ShoppingCartConnectionApi(object):
         if ('shopping_cart_connection_id' not in params) or (params['shopping_cart_connection_id'] is None):
             raise ValueError("Missing the required parameter `shopping_cart_connection_id` when calling `get_shopping_cart_connection_by_id`")
 
-        resource_path = '/v1.0/shoppingCartConnection/{shoppingCartConnectionId}'.replace('{format}', 'json')
+        resource_path = '/beta/shoppingCartConnection/{shoppingCartConnectionId}'.replace('{format}', 'json')
         path_params = {}
         if 'shopping_cart_connection_id' in params:
             path_params['shoppingCartConnectionId'] = params['shopping_cart_connection_id']
@@ -397,7 +397,84 @@ class ShoppingCartConnectionApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_shopping_cart_connection`")
 
-        resource_path = '/v1.0/shoppingCartConnection'.replace('{format}', 'json')
+        resource_path = '/beta/shoppingCartConnection'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_shopping_cart_connection_custom_fields(self, body, **kwargs):
+        """
+        Update a shoppingCartConnection custom fields
+        Updates an existing shoppingCartConnection custom fields using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_shopping_cart_connection_custom_fields(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ShoppingCartConnection body: ShoppingCartConnection to be updated. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_shopping_cart_connection_custom_fields" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_shopping_cart_connection_custom_fields`")
+
+        resource_path = '/beta/shoppingCartConnection/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

@@ -44,7 +44,8 @@ class BusinessTransaction(object):
             'queue_name': 'str',
             'lob_id': 'int',
             'message_body': 'str',
-            'status': 'str'
+            'status': 'str',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -55,7 +56,8 @@ class BusinessTransaction(object):
             'queue_name': 'queueName',
             'lob_id': 'lobId',
             'message_body': 'messageBody',
-            'status': 'status'
+            'status': 'status',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -66,6 +68,7 @@ class BusinessTransaction(object):
         self._lob_id = None
         self._message_body = None
         self._status = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -242,6 +245,28 @@ class BusinessTransaction(object):
         :type: str
         """
         self._status = status
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this BusinessTransaction.
+
+
+        :return: The custom_fields of this BusinessTransaction.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this BusinessTransaction.
+
+
+        :param custom_fields: The custom_fields of this BusinessTransaction.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

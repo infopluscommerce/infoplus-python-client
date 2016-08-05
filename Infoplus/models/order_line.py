@@ -58,6 +58,7 @@ class OrderLine(object):
             'extended_sell': 'float',
             'nc_extended_sell': 'float',
             'item_weight': 'float',
+            'production_lot': 'str',
             'weight_per_wrap': 'float',
             'sector': 'str',
             'item_account_code_id': 'int',
@@ -65,7 +66,8 @@ class OrderLine(object):
             'item_major_group_id': 'int',
             'item_sub_group_id': 'int',
             'item_product_code_id': 'int',
-            'item_summary_code_id': 'int'
+            'item_summary_code_id': 'int',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -90,6 +92,7 @@ class OrderLine(object):
             'extended_sell': 'extendedSell',
             'nc_extended_sell': 'ncExtendedSell',
             'item_weight': 'itemWeight',
+            'production_lot': 'productionLot',
             'weight_per_wrap': 'weightPerWrap',
             'sector': 'sector',
             'item_account_code_id': 'itemAccountCodeId',
@@ -97,7 +100,8 @@ class OrderLine(object):
             'item_major_group_id': 'itemMajorGroupId',
             'item_sub_group_id': 'itemSubGroupId',
             'item_product_code_id': 'itemProductCodeId',
-            'item_summary_code_id': 'itemSummaryCodeId'
+            'item_summary_code_id': 'itemSummaryCodeId',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -121,6 +125,7 @@ class OrderLine(object):
         self._extended_sell = None
         self._nc_extended_sell = None
         self._item_weight = None
+        self._production_lot = None
         self._weight_per_wrap = None
         self._sector = None
         self._item_account_code_id = None
@@ -129,6 +134,7 @@ class OrderLine(object):
         self._item_sub_group_id = None
         self._item_product_code_id = None
         self._item_summary_code_id = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -593,6 +599,28 @@ class OrderLine(object):
         self._item_weight = item_weight
 
     @property
+    def production_lot(self):
+        """
+        Gets the production_lot of this OrderLine.
+
+
+        :return: The production_lot of this OrderLine.
+        :rtype: str
+        """
+        return self._production_lot
+
+    @production_lot.setter
+    def production_lot(self, production_lot):
+        """
+        Sets the production_lot of this OrderLine.
+
+
+        :param production_lot: The production_lot of this OrderLine.
+        :type: str
+        """
+        self._production_lot = production_lot
+
+    @property
     def weight_per_wrap(self):
         """
         Gets the weight_per_wrap of this OrderLine.
@@ -767,6 +795,28 @@ class OrderLine(object):
         :type: int
         """
         self._item_summary_code_id = item_summary_code_id
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this OrderLine.
+
+
+        :return: The custom_fields of this OrderLine.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this OrderLine.
+
+
+        :param custom_fields: The custom_fields of this OrderLine.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

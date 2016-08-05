@@ -49,7 +49,8 @@ class InventoryAdjustment(object):
             'authorized_by': 'str',
             'printed': 'str',
             'order_no': 'float',
-            'adjustment_code': 'str'
+            'adjustment_code': 'str',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -65,7 +66,8 @@ class InventoryAdjustment(object):
             'authorized_by': 'authorizedBy',
             'printed': 'printed',
             'order_no': 'orderNo',
-            'adjustment_code': 'adjustmentCode'
+            'adjustment_code': 'adjustmentCode',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -81,6 +83,7 @@ class InventoryAdjustment(object):
         self._printed = None
         self._order_no = None
         self._adjustment_code = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -367,6 +370,28 @@ class InventoryAdjustment(object):
         :type: str
         """
         self._adjustment_code = adjustment_code
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this InventoryAdjustment.
+
+
+        :return: The custom_fields of this InventoryAdjustment.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this InventoryAdjustment.
+
+
+        :param custom_fields: The custom_fields of this InventoryAdjustment.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

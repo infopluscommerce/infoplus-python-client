@@ -83,7 +83,7 @@ class LowStockApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/lowStock/search'.replace('{format}', 'json')
+        resource_path = '/beta/lowStock/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -166,7 +166,7 @@ class LowStockApi(object):
         if ('low_stock_id' not in params) or (params['low_stock_id'] is None):
             raise ValueError("Missing the required parameter `low_stock_id` when calling `get_low_stock_by_id`")
 
-        resource_path = '/v1.0/lowStock/{lowStockId}'.replace('{format}', 'json')
+        resource_path = '/beta/lowStock/{lowStockId}'.replace('{format}', 'json')
         path_params = {}
         if 'low_stock_id' in params:
             path_params['lowStockId'] = params['low_stock_id']

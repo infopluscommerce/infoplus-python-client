@@ -43,7 +43,8 @@ class FulfillmentProcess(object):
             'process_no': 'int',
             'work_batch_id': 'int',
             'warehouse_id': 'int',
-            'allocation_plan_id': 'int',
+            'fulfillment_plan_id': 'int',
+            'pick_scan_scheme_id': 'int',
             'status': 'str',
             'order_smart_filter_id': 'int',
             'location_smart_filter_id': 'int',
@@ -79,7 +80,8 @@ class FulfillmentProcess(object):
             'cartonize_orders': 'bool',
             'create_packing_slip': 'bool',
             'override_packing_slip_template_id': 'int',
-            'create_order_assembly_guide': 'bool'
+            'create_order_assembly_guide': 'bool',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -89,7 +91,8 @@ class FulfillmentProcess(object):
             'process_no': 'processNo',
             'work_batch_id': 'workBatchId',
             'warehouse_id': 'warehouseId',
-            'allocation_plan_id': 'allocationPlanId',
+            'fulfillment_plan_id': 'fulfillmentPlanId',
+            'pick_scan_scheme_id': 'pickScanSchemeId',
             'status': 'status',
             'order_smart_filter_id': 'orderSmartFilterId',
             'location_smart_filter_id': 'locationSmartFilterId',
@@ -125,7 +128,8 @@ class FulfillmentProcess(object):
             'cartonize_orders': 'cartonizeOrders',
             'create_packing_slip': 'createPackingSlip',
             'override_packing_slip_template_id': 'overridePackingSlipTemplateId',
-            'create_order_assembly_guide': 'createOrderAssemblyGuide'
+            'create_order_assembly_guide': 'createOrderAssemblyGuide',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -134,7 +138,8 @@ class FulfillmentProcess(object):
         self._process_no = None
         self._work_batch_id = None
         self._warehouse_id = None
-        self._allocation_plan_id = None
+        self._fulfillment_plan_id = None
+        self._pick_scan_scheme_id = None
         self._status = None
         self._order_smart_filter_id = None
         self._location_smart_filter_id = None
@@ -171,6 +176,7 @@ class FulfillmentProcess(object):
         self._create_packing_slip = False
         self._override_packing_slip_template_id = None
         self._create_order_assembly_guide = False
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -305,26 +311,48 @@ class FulfillmentProcess(object):
         self._warehouse_id = warehouse_id
 
     @property
-    def allocation_plan_id(self):
+    def fulfillment_plan_id(self):
         """
-        Gets the allocation_plan_id of this FulfillmentProcess.
+        Gets the fulfillment_plan_id of this FulfillmentProcess.
 
 
-        :return: The allocation_plan_id of this FulfillmentProcess.
+        :return: The fulfillment_plan_id of this FulfillmentProcess.
         :rtype: int
         """
-        return self._allocation_plan_id
+        return self._fulfillment_plan_id
 
-    @allocation_plan_id.setter
-    def allocation_plan_id(self, allocation_plan_id):
+    @fulfillment_plan_id.setter
+    def fulfillment_plan_id(self, fulfillment_plan_id):
         """
-        Sets the allocation_plan_id of this FulfillmentProcess.
+        Sets the fulfillment_plan_id of this FulfillmentProcess.
 
 
-        :param allocation_plan_id: The allocation_plan_id of this FulfillmentProcess.
+        :param fulfillment_plan_id: The fulfillment_plan_id of this FulfillmentProcess.
         :type: int
         """
-        self._allocation_plan_id = allocation_plan_id
+        self._fulfillment_plan_id = fulfillment_plan_id
+
+    @property
+    def pick_scan_scheme_id(self):
+        """
+        Gets the pick_scan_scheme_id of this FulfillmentProcess.
+
+
+        :return: The pick_scan_scheme_id of this FulfillmentProcess.
+        :rtype: int
+        """
+        return self._pick_scan_scheme_id
+
+    @pick_scan_scheme_id.setter
+    def pick_scan_scheme_id(self, pick_scan_scheme_id):
+        """
+        Sets the pick_scan_scheme_id of this FulfillmentProcess.
+
+
+        :param pick_scan_scheme_id: The pick_scan_scheme_id of this FulfillmentProcess.
+        :type: int
+        """
+        self._pick_scan_scheme_id = pick_scan_scheme_id
 
     @property
     def status(self):
@@ -1117,6 +1145,28 @@ class FulfillmentProcess(object):
         :type: bool
         """
         self._create_order_assembly_guide = create_order_assembly_guide
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this FulfillmentProcess.
+
+
+        :return: The custom_fields of this FulfillmentProcess.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this FulfillmentProcess.
+
+
+        :param custom_fields: The custom_fields of this FulfillmentProcess.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

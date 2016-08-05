@@ -82,7 +82,7 @@ class ItemLowStockCodeApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/itemLowStockCode/search'.replace('{format}', 'json')
+        resource_path = '/beta/itemLowStockCode/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -163,7 +163,7 @@ class ItemLowStockCodeApi(object):
         if ('item_low_stock_code_id' not in params) or (params['item_low_stock_code_id'] is None):
             raise ValueError("Missing the required parameter `item_low_stock_code_id` when calling `get_translate_low_stock_code_by_id`")
 
-        resource_path = '/v1.0/itemLowStockCode/{itemLowStockCodeId}'.replace('{format}', 'json')
+        resource_path = '/beta/itemLowStockCode/{itemLowStockCodeId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_low_stock_code_id' in params:
             path_params['itemLowStockCodeId'] = params['item_low_stock_code_id']

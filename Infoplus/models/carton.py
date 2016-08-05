@@ -42,7 +42,8 @@ class Carton(object):
             'carton_no': 'int',
             'carton_type_id': 'int',
             'carton_lpn': 'str',
-            'weight_lbs': 'float'
+            'weight_lbs': 'float',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -51,7 +52,8 @@ class Carton(object):
             'carton_no': 'cartonNo',
             'carton_type_id': 'cartonTypeId',
             'carton_lpn': 'cartonLPN',
-            'weight_lbs': 'weightLbs'
+            'weight_lbs': 'weightLbs',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -60,6 +62,7 @@ class Carton(object):
         self._carton_type_id = None
         self._carton_lpn = None
         self._weight_lbs = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -192,6 +195,28 @@ class Carton(object):
         :type: float
         """
         self._weight_lbs = weight_lbs
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this Carton.
+
+
+        :return: The custom_fields of this Carton.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this Carton.
+
+
+        :param custom_fields: The custom_fields of this Carton.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

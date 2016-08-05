@@ -53,7 +53,8 @@ class ExternalShipment(object):
             'dim_weight': 'float',
             'residential': 'bool',
             'zone': 'str',
-            'status': 'str'
+            'status': 'str',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -73,7 +74,8 @@ class ExternalShipment(object):
             'dim_weight': 'dimWeight',
             'residential': 'residential',
             'zone': 'zone',
-            'status': 'status'
+            'status': 'status',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -93,6 +95,7 @@ class ExternalShipment(object):
         self._residential = False
         self._zone = None
         self._status = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -467,6 +470,28 @@ class ExternalShipment(object):
         :type: str
         """
         self._status = status
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ExternalShipment.
+
+
+        :return: The custom_fields of this ExternalShipment.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ExternalShipment.
+
+
+        :param custom_fields: The custom_fields of this ExternalShipment.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

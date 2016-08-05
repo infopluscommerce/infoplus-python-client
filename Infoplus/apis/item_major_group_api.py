@@ -82,7 +82,7 @@ class ItemMajorGroupApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/itemMajorGroup/search'.replace('{format}', 'json')
+        resource_path = '/beta/itemMajorGroup/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -163,7 +163,7 @@ class ItemMajorGroupApi(object):
         if ('item_major_group_id' not in params) or (params['item_major_group_id'] is None):
             raise ValueError("Missing the required parameter `item_major_group_id` when calling `get_translate_major_group_by_id`")
 
-        resource_path = '/v1.0/itemMajorGroup/{itemMajorGroupId}'.replace('{format}', 'json')
+        resource_path = '/beta/itemMajorGroup/{itemMajorGroupId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_major_group_id' in params:
             path_params['itemMajorGroupId'] = params['item_major_group_id']
