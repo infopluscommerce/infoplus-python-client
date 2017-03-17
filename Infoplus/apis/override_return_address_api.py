@@ -83,7 +83,7 @@ class OverrideReturnAddressApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_override_return_address`")
 
-        resource_path = '/v1.0/overrideReturnAddress'.replace('{format}', 'json')
+        resource_path = '/beta/overrideReturnAddress'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,6 +118,172 @@ class OverrideReturnAddressApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='OverrideReturnAddress',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_override_return_address_audit(self, override_return_address_id, override_return_address_audit, **kwargs):
+        """
+        Add new audit for an overrideReturnAddress
+        Adds an audit to an existing overrideReturnAddress.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_override_return_address_audit(override_return_address_id, override_return_address_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int override_return_address_id: Id of the overrideReturnAddress to add an audit to (required)
+        :param str override_return_address_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['override_return_address_id', 'override_return_address_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_override_return_address_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'override_return_address_id' is set
+        if ('override_return_address_id' not in params) or (params['override_return_address_id'] is None):
+            raise ValueError("Missing the required parameter `override_return_address_id` when calling `add_override_return_address_audit`")
+        # verify the required parameter 'override_return_address_audit' is set
+        if ('override_return_address_audit' not in params) or (params['override_return_address_audit'] is None):
+            raise ValueError("Missing the required parameter `override_return_address_audit` when calling `add_override_return_address_audit`")
+
+        resource_path = '/beta/overrideReturnAddress/{overrideReturnAddressId}/audit/{overrideReturnAddressAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'override_return_address_id' in params:
+            path_params['overrideReturnAddressId'] = params['override_return_address_id']
+        if 'override_return_address_audit' in params:
+            path_params['overrideReturnAddressAudit'] = params['override_return_address_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_override_return_address_tag(self, override_return_address_id, override_return_address_tag, **kwargs):
+        """
+        Add new tags for an overrideReturnAddress.
+        Adds a tag to an existing overrideReturnAddress.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_override_return_address_tag(override_return_address_id, override_return_address_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int override_return_address_id: Id of the overrideReturnAddress to add a tag to (required)
+        :param str override_return_address_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['override_return_address_id', 'override_return_address_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_override_return_address_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'override_return_address_id' is set
+        if ('override_return_address_id' not in params) or (params['override_return_address_id'] is None):
+            raise ValueError("Missing the required parameter `override_return_address_id` when calling `add_override_return_address_tag`")
+        # verify the required parameter 'override_return_address_tag' is set
+        if ('override_return_address_tag' not in params) or (params['override_return_address_tag'] is None):
+            raise ValueError("Missing the required parameter `override_return_address_tag` when calling `add_override_return_address_tag`")
+
+        resource_path = '/beta/overrideReturnAddress/{overrideReturnAddressId}/tag/{overrideReturnAddressTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'override_return_address_id' in params:
+            path_params['overrideReturnAddressId'] = params['override_return_address_id']
+        if 'override_return_address_tag' in params:
+            path_params['overrideReturnAddressTag'] = params['override_return_address_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -160,7 +326,7 @@ class OverrideReturnAddressApi(object):
         if ('override_return_address_id' not in params) or (params['override_return_address_id'] is None):
             raise ValueError("Missing the required parameter `override_return_address_id` when calling `delete_override_return_address`")
 
-        resource_path = '/v1.0/overrideReturnAddress/{overrideReturnAddressId}'.replace('{format}', 'json')
+        resource_path = '/beta/overrideReturnAddress/{overrideReturnAddressId}'.replace('{format}', 'json')
         path_params = {}
         if 'override_return_address_id' in params:
             path_params['overrideReturnAddressId'] = params['override_return_address_id']
@@ -195,6 +361,166 @@ class OverrideReturnAddressApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_override_return_address_tag(self, override_return_address_id, override_return_address_tag, **kwargs):
+        """
+        Delete a tag for an overrideReturnAddress.
+        Deletes an existing overrideReturnAddress tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_override_return_address_tag(override_return_address_id, override_return_address_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int override_return_address_id: Id of the overrideReturnAddress to remove tag from (required)
+        :param str override_return_address_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['override_return_address_id', 'override_return_address_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_override_return_address_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'override_return_address_id' is set
+        if ('override_return_address_id' not in params) or (params['override_return_address_id'] is None):
+            raise ValueError("Missing the required parameter `override_return_address_id` when calling `delete_override_return_address_tag`")
+        # verify the required parameter 'override_return_address_tag' is set
+        if ('override_return_address_tag' not in params) or (params['override_return_address_tag'] is None):
+            raise ValueError("Missing the required parameter `override_return_address_tag` when calling `delete_override_return_address_tag`")
+
+        resource_path = '/beta/overrideReturnAddress/{overrideReturnAddressId}/tag/{overrideReturnAddressTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'override_return_address_id' in params:
+            path_params['overrideReturnAddressId'] = params['override_return_address_id']
+        if 'override_return_address_tag' in params:
+            path_params['overrideReturnAddressTag'] = params['override_return_address_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_override_return_address_by_id(self, override_return_address_id, **kwargs):
+        """
+        Get a duplicated an overrideReturnAddress by id
+        Returns a duplicated overrideReturnAddress identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_override_return_address_by_id(override_return_address_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int override_return_address_id: Id of the overrideReturnAddress to be duplicated. (required)
+        :return: OverrideReturnAddress
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['override_return_address_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_override_return_address_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'override_return_address_id' is set
+        if ('override_return_address_id' not in params) or (params['override_return_address_id'] is None):
+            raise ValueError("Missing the required parameter `override_return_address_id` when calling `get_duplicate_override_return_address_by_id`")
+
+        resource_path = '/beta/overrideReturnAddress/duplicate/{overrideReturnAddressId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'override_return_address_id' in params:
+            path_params['overrideReturnAddressId'] = params['override_return_address_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OverrideReturnAddress',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -237,7 +563,7 @@ class OverrideReturnAddressApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/overrideReturnAddress/search'.replace('{format}', 'json')
+        resource_path = '/beta/overrideReturnAddress/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -320,7 +646,7 @@ class OverrideReturnAddressApi(object):
         if ('override_return_address_id' not in params) or (params['override_return_address_id'] is None):
             raise ValueError("Missing the required parameter `override_return_address_id` when calling `get_override_return_address_by_id`")
 
-        resource_path = '/v1.0/overrideReturnAddress/{overrideReturnAddressId}'.replace('{format}', 'json')
+        resource_path = '/beta/overrideReturnAddress/{overrideReturnAddressId}'.replace('{format}', 'json')
         path_params = {}
         if 'override_return_address_id' in params:
             path_params['overrideReturnAddressId'] = params['override_return_address_id']
@@ -355,6 +681,83 @@ class OverrideReturnAddressApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='OverrideReturnAddress',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_override_return_address_tags(self, override_return_address_id, **kwargs):
+        """
+        Get the tags for an overrideReturnAddress.
+        Get all existing overrideReturnAddress tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_override_return_address_tags(override_return_address_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int override_return_address_id: Id of the overrideReturnAddress to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['override_return_address_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_override_return_address_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'override_return_address_id' is set
+        if ('override_return_address_id' not in params) or (params['override_return_address_id'] is None):
+            raise ValueError("Missing the required parameter `override_return_address_id` when calling `get_override_return_address_tags`")
+
+        resource_path = '/beta/overrideReturnAddress/{overrideReturnAddressId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'override_return_address_id' in params:
+            path_params['overrideReturnAddressId'] = params['override_return_address_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -397,7 +800,84 @@ class OverrideReturnAddressApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_override_return_address`")
 
-        resource_path = '/v1.0/overrideReturnAddress'.replace('{format}', 'json')
+        resource_path = '/beta/overrideReturnAddress'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_override_return_address_custom_fields(self, body, **kwargs):
+        """
+        Update an overrideReturnAddress custom fields
+        Updates an existing overrideReturnAddress custom fields using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_override_return_address_custom_fields(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param OverrideReturnAddress body: OverrideReturnAddress to be updated. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_override_return_address_custom_fields" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_override_return_address_custom_fields`")
+
+        resource_path = '/beta/overrideReturnAddress/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

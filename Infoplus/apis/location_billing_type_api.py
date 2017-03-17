@@ -83,7 +83,7 @@ class LocationBillingTypeApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_location_billing_type`")
 
-        resource_path = '/v1.0/locationBillingType'.replace('{format}', 'json')
+        resource_path = '/beta/locationBillingType'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,6 +118,172 @@ class LocationBillingTypeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LocationBillingType',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_location_billing_type_audit(self, location_billing_type_id, location_billing_type_audit, **kwargs):
+        """
+        Add new audit for a locationBillingType
+        Adds an audit to an existing locationBillingType.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_location_billing_type_audit(location_billing_type_id, location_billing_type_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int location_billing_type_id: Id of the locationBillingType to add an audit to (required)
+        :param str location_billing_type_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['location_billing_type_id', 'location_billing_type_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_location_billing_type_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'location_billing_type_id' is set
+        if ('location_billing_type_id' not in params) or (params['location_billing_type_id'] is None):
+            raise ValueError("Missing the required parameter `location_billing_type_id` when calling `add_location_billing_type_audit`")
+        # verify the required parameter 'location_billing_type_audit' is set
+        if ('location_billing_type_audit' not in params) or (params['location_billing_type_audit'] is None):
+            raise ValueError("Missing the required parameter `location_billing_type_audit` when calling `add_location_billing_type_audit`")
+
+        resource_path = '/beta/locationBillingType/{locationBillingTypeId}/audit/{locationBillingTypeAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'location_billing_type_id' in params:
+            path_params['locationBillingTypeId'] = params['location_billing_type_id']
+        if 'location_billing_type_audit' in params:
+            path_params['locationBillingTypeAudit'] = params['location_billing_type_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_location_billing_type_tag(self, location_billing_type_id, location_billing_type_tag, **kwargs):
+        """
+        Add new tags for a locationBillingType.
+        Adds a tag to an existing locationBillingType.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_location_billing_type_tag(location_billing_type_id, location_billing_type_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int location_billing_type_id: Id of the locationBillingType to add a tag to (required)
+        :param str location_billing_type_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['location_billing_type_id', 'location_billing_type_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_location_billing_type_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'location_billing_type_id' is set
+        if ('location_billing_type_id' not in params) or (params['location_billing_type_id'] is None):
+            raise ValueError("Missing the required parameter `location_billing_type_id` when calling `add_location_billing_type_tag`")
+        # verify the required parameter 'location_billing_type_tag' is set
+        if ('location_billing_type_tag' not in params) or (params['location_billing_type_tag'] is None):
+            raise ValueError("Missing the required parameter `location_billing_type_tag` when calling `add_location_billing_type_tag`")
+
+        resource_path = '/beta/locationBillingType/{locationBillingTypeId}/tag/{locationBillingTypeTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'location_billing_type_id' in params:
+            path_params['locationBillingTypeId'] = params['location_billing_type_id']
+        if 'location_billing_type_tag' in params:
+            path_params['locationBillingTypeTag'] = params['location_billing_type_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -160,7 +326,7 @@ class LocationBillingTypeApi(object):
         if ('location_billing_type_id' not in params) or (params['location_billing_type_id'] is None):
             raise ValueError("Missing the required parameter `location_billing_type_id` when calling `delete_location_billing_type`")
 
-        resource_path = '/v1.0/locationBillingType/{locationBillingTypeId}'.replace('{format}', 'json')
+        resource_path = '/beta/locationBillingType/{locationBillingTypeId}'.replace('{format}', 'json')
         path_params = {}
         if 'location_billing_type_id' in params:
             path_params['locationBillingTypeId'] = params['location_billing_type_id']
@@ -195,6 +361,166 @@ class LocationBillingTypeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_location_billing_type_tag(self, location_billing_type_id, location_billing_type_tag, **kwargs):
+        """
+        Delete a tag for a locationBillingType.
+        Deletes an existing locationBillingType tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_location_billing_type_tag(location_billing_type_id, location_billing_type_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int location_billing_type_id: Id of the locationBillingType to remove tag from (required)
+        :param str location_billing_type_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['location_billing_type_id', 'location_billing_type_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_location_billing_type_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'location_billing_type_id' is set
+        if ('location_billing_type_id' not in params) or (params['location_billing_type_id'] is None):
+            raise ValueError("Missing the required parameter `location_billing_type_id` when calling `delete_location_billing_type_tag`")
+        # verify the required parameter 'location_billing_type_tag' is set
+        if ('location_billing_type_tag' not in params) or (params['location_billing_type_tag'] is None):
+            raise ValueError("Missing the required parameter `location_billing_type_tag` when calling `delete_location_billing_type_tag`")
+
+        resource_path = '/beta/locationBillingType/{locationBillingTypeId}/tag/{locationBillingTypeTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'location_billing_type_id' in params:
+            path_params['locationBillingTypeId'] = params['location_billing_type_id']
+        if 'location_billing_type_tag' in params:
+            path_params['locationBillingTypeTag'] = params['location_billing_type_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_location_billing_type_by_id(self, location_billing_type_id, **kwargs):
+        """
+        Get a duplicated a locationBillingType by id
+        Returns a duplicated locationBillingType identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_location_billing_type_by_id(location_billing_type_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int location_billing_type_id: Id of the locationBillingType to be duplicated. (required)
+        :return: LocationBillingType
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['location_billing_type_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_location_billing_type_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'location_billing_type_id' is set
+        if ('location_billing_type_id' not in params) or (params['location_billing_type_id'] is None):
+            raise ValueError("Missing the required parameter `location_billing_type_id` when calling `get_duplicate_location_billing_type_by_id`")
+
+        resource_path = '/beta/locationBillingType/duplicate/{locationBillingTypeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'location_billing_type_id' in params:
+            path_params['locationBillingTypeId'] = params['location_billing_type_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LocationBillingType',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -237,7 +563,7 @@ class LocationBillingTypeApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/locationBillingType/search'.replace('{format}', 'json')
+        resource_path = '/beta/locationBillingType/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -320,7 +646,7 @@ class LocationBillingTypeApi(object):
         if ('location_billing_type_id' not in params) or (params['location_billing_type_id'] is None):
             raise ValueError("Missing the required parameter `location_billing_type_id` when calling `get_location_billing_type_by_id`")
 
-        resource_path = '/v1.0/locationBillingType/{locationBillingTypeId}'.replace('{format}', 'json')
+        resource_path = '/beta/locationBillingType/{locationBillingTypeId}'.replace('{format}', 'json')
         path_params = {}
         if 'location_billing_type_id' in params:
             path_params['locationBillingTypeId'] = params['location_billing_type_id']
@@ -355,6 +681,83 @@ class LocationBillingTypeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LocationBillingType',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_location_billing_type_tags(self, location_billing_type_id, **kwargs):
+        """
+        Get the tags for a locationBillingType.
+        Get all existing locationBillingType tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_location_billing_type_tags(location_billing_type_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int location_billing_type_id: Id of the locationBillingType to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['location_billing_type_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_location_billing_type_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'location_billing_type_id' is set
+        if ('location_billing_type_id' not in params) or (params['location_billing_type_id'] is None):
+            raise ValueError("Missing the required parameter `location_billing_type_id` when calling `get_location_billing_type_tags`")
+
+        resource_path = '/beta/locationBillingType/{locationBillingTypeId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'location_billing_type_id' in params:
+            path_params['locationBillingTypeId'] = params['location_billing_type_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -397,7 +800,84 @@ class LocationBillingTypeApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_location_billing_type`")
 
-        resource_path = '/v1.0/locationBillingType'.replace('{format}', 'json')
+        resource_path = '/beta/locationBillingType'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_location_billing_type_custom_fields(self, body, **kwargs):
+        """
+        Update a locationBillingType custom fields
+        Updates an existing locationBillingType custom fields using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_location_billing_type_custom_fields(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param LocationBillingType body: LocationBillingType to be updated. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_location_billing_type_custom_fields" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_location_billing_type_custom_fields`")
+
+        resource_path = '/beta/locationBillingType/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

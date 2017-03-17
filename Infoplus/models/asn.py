@@ -81,7 +81,9 @@ class Asn(object):
             'terms': 'str',
             'used_by': 'str',
             'line_items': 'list[ItemReceipt]',
-            'status': 'str'
+            'status': 'str',
+            'transfer_order_id': 'float',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -129,7 +131,9 @@ class Asn(object):
             'terms': 'terms',
             'used_by': 'usedBy',
             'line_items': 'lineItems',
-            'status': 'status'
+            'status': 'status',
+            'transfer_order_id': 'transferOrderId',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -177,6 +181,8 @@ class Asn(object):
         self._used_by = None
         self._line_items = None
         self._status = None
+        self._transfer_order_id = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -1167,6 +1173,50 @@ class Asn(object):
         :type: str
         """
         self._status = status
+
+    @property
+    def transfer_order_id(self):
+        """
+        Gets the transfer_order_id of this Asn.
+
+
+        :return: The transfer_order_id of this Asn.
+        :rtype: float
+        """
+        return self._transfer_order_id
+
+    @transfer_order_id.setter
+    def transfer_order_id(self, transfer_order_id):
+        """
+        Sets the transfer_order_id of this Asn.
+
+
+        :param transfer_order_id: The transfer_order_id of this Asn.
+        :type: float
+        """
+        self._transfer_order_id = transfer_order_id
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this Asn.
+
+
+        :return: The custom_fields of this Asn.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this Asn.
+
+
+        :param custom_fields: The custom_fields of this Asn.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

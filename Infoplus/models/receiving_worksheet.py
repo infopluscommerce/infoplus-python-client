@@ -44,6 +44,8 @@ class ReceivingWorksheet(object):
             'vendor_id': 'int',
             'status': 'str',
             'service_level': 'str',
+            'receiving_process_id': 'int',
+            'dock_date': 'datetime',
             'created_by': 'int',
             'worksheet_name': 'str',
             'carrier': 'str',
@@ -53,7 +55,8 @@ class ReceivingWorksheet(object):
             'notes': 'str',
             'work_batch_id': 'int',
             'create_date': 'datetime',
-            'modify_date': 'datetime'
+            'modify_date': 'datetime',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -64,6 +67,8 @@ class ReceivingWorksheet(object):
             'vendor_id': 'vendorId',
             'status': 'status',
             'service_level': 'serviceLevel',
+            'receiving_process_id': 'receivingProcessId',
+            'dock_date': 'dockDate',
             'created_by': 'createdBy',
             'worksheet_name': 'worksheetName',
             'carrier': 'carrier',
@@ -73,7 +78,8 @@ class ReceivingWorksheet(object):
             'notes': 'notes',
             'work_batch_id': 'workBatchId',
             'create_date': 'createDate',
-            'modify_date': 'modifyDate'
+            'modify_date': 'modifyDate',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -83,6 +89,8 @@ class ReceivingWorksheet(object):
         self._vendor_id = None
         self._status = None
         self._service_level = None
+        self._receiving_process_id = None
+        self._dock_date = None
         self._created_by = None
         self._worksheet_name = None
         self._carrier = None
@@ -93,6 +101,7 @@ class ReceivingWorksheet(object):
         self._work_batch_id = None
         self._create_date = None
         self._modify_date = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -247,6 +256,50 @@ class ReceivingWorksheet(object):
         :type: str
         """
         self._service_level = service_level
+
+    @property
+    def receiving_process_id(self):
+        """
+        Gets the receiving_process_id of this ReceivingWorksheet.
+
+
+        :return: The receiving_process_id of this ReceivingWorksheet.
+        :rtype: int
+        """
+        return self._receiving_process_id
+
+    @receiving_process_id.setter
+    def receiving_process_id(self, receiving_process_id):
+        """
+        Sets the receiving_process_id of this ReceivingWorksheet.
+
+
+        :param receiving_process_id: The receiving_process_id of this ReceivingWorksheet.
+        :type: int
+        """
+        self._receiving_process_id = receiving_process_id
+
+    @property
+    def dock_date(self):
+        """
+        Gets the dock_date of this ReceivingWorksheet.
+
+
+        :return: The dock_date of this ReceivingWorksheet.
+        :rtype: datetime
+        """
+        return self._dock_date
+
+    @dock_date.setter
+    def dock_date(self, dock_date):
+        """
+        Sets the dock_date of this ReceivingWorksheet.
+
+
+        :param dock_date: The dock_date of this ReceivingWorksheet.
+        :type: datetime
+        """
+        self._dock_date = dock_date
 
     @property
     def created_by(self):
@@ -467,6 +520,28 @@ class ReceivingWorksheet(object):
         :type: datetime
         """
         self._modify_date = modify_date
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ReceivingWorksheet.
+
+
+        :return: The custom_fields of this ReceivingWorksheet.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ReceivingWorksheet.
+
+
+        :param custom_fields: The custom_fields of this ReceivingWorksheet.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

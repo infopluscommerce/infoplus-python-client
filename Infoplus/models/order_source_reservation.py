@@ -42,6 +42,7 @@ class OrderSourceReservation(object):
             'create_date': 'datetime',
             'modify_date': 'datetime',
             'reserved_quantity': 'int',
+            'custom_fields': 'dict(str, object)',
             'sku': 'str'
         }
 
@@ -51,6 +52,7 @@ class OrderSourceReservation(object):
             'create_date': 'createDate',
             'modify_date': 'modifyDate',
             'reserved_quantity': 'reservedQuantity',
+            'custom_fields': 'customFields',
             'sku': 'sku'
         }
 
@@ -59,6 +61,7 @@ class OrderSourceReservation(object):
         self._create_date = None
         self._modify_date = None
         self._reserved_quantity = None
+        self._custom_fields = None
         self._sku = None
 
     @property
@@ -170,6 +173,28 @@ class OrderSourceReservation(object):
         :type: int
         """
         self._reserved_quantity = reserved_quantity
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this OrderSourceReservation.
+
+
+        :return: The custom_fields of this OrderSourceReservation.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this OrderSourceReservation.
+
+
+        :param custom_fields: The custom_fields of this OrderSourceReservation.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     @property
     def sku(self):

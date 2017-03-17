@@ -45,6 +45,486 @@ class ProductionLotApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def add_production_lot(self, body, **kwargs):
+        """
+        Create a productionLot
+        Inserts a new productionLot using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_production_lot(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ProductionLot body: ProductionLot to be inserted. (required)
+        :return: ProductionLot
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_production_lot" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `add_production_lot`")
+
+        resource_path = '/beta/productionLot'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ProductionLot',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_production_lot_audit(self, production_lot_id, production_lot_audit, **kwargs):
+        """
+        Add new audit for a productionLot
+        Adds an audit to an existing productionLot.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_production_lot_audit(production_lot_id, production_lot_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int production_lot_id: Id of the productionLot to add an audit to (required)
+        :param str production_lot_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['production_lot_id', 'production_lot_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_production_lot_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'production_lot_id' is set
+        if ('production_lot_id' not in params) or (params['production_lot_id'] is None):
+            raise ValueError("Missing the required parameter `production_lot_id` when calling `add_production_lot_audit`")
+        # verify the required parameter 'production_lot_audit' is set
+        if ('production_lot_audit' not in params) or (params['production_lot_audit'] is None):
+            raise ValueError("Missing the required parameter `production_lot_audit` when calling `add_production_lot_audit`")
+
+        resource_path = '/beta/productionLot/{productionLotId}/audit/{productionLotAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'production_lot_id' in params:
+            path_params['productionLotId'] = params['production_lot_id']
+        if 'production_lot_audit' in params:
+            path_params['productionLotAudit'] = params['production_lot_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_production_lot_tag(self, production_lot_id, production_lot_tag, **kwargs):
+        """
+        Add new tags for a productionLot.
+        Adds a tag to an existing productionLot.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_production_lot_tag(production_lot_id, production_lot_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int production_lot_id: Id of the productionLot to add a tag to (required)
+        :param str production_lot_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['production_lot_id', 'production_lot_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_production_lot_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'production_lot_id' is set
+        if ('production_lot_id' not in params) or (params['production_lot_id'] is None):
+            raise ValueError("Missing the required parameter `production_lot_id` when calling `add_production_lot_tag`")
+        # verify the required parameter 'production_lot_tag' is set
+        if ('production_lot_tag' not in params) or (params['production_lot_tag'] is None):
+            raise ValueError("Missing the required parameter `production_lot_tag` when calling `add_production_lot_tag`")
+
+        resource_path = '/beta/productionLot/{productionLotId}/tag/{productionLotTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'production_lot_id' in params:
+            path_params['productionLotId'] = params['production_lot_id']
+        if 'production_lot_tag' in params:
+            path_params['productionLotTag'] = params['production_lot_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_production_lot(self, production_lot_id, **kwargs):
+        """
+        Delete a productionLot
+        Deletes the productionLot identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_production_lot(production_lot_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int production_lot_id: Id of the productionLot to be deleted. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['production_lot_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_production_lot" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'production_lot_id' is set
+        if ('production_lot_id' not in params) or (params['production_lot_id'] is None):
+            raise ValueError("Missing the required parameter `production_lot_id` when calling `delete_production_lot`")
+
+        resource_path = '/beta/productionLot/{productionLotId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'production_lot_id' in params:
+            path_params['productionLotId'] = params['production_lot_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_production_lot_tag(self, production_lot_id, production_lot_tag, **kwargs):
+        """
+        Delete a tag for a productionLot.
+        Deletes an existing productionLot tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_production_lot_tag(production_lot_id, production_lot_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int production_lot_id: Id of the productionLot to remove tag from (required)
+        :param str production_lot_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['production_lot_id', 'production_lot_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_production_lot_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'production_lot_id' is set
+        if ('production_lot_id' not in params) or (params['production_lot_id'] is None):
+            raise ValueError("Missing the required parameter `production_lot_id` when calling `delete_production_lot_tag`")
+        # verify the required parameter 'production_lot_tag' is set
+        if ('production_lot_tag' not in params) or (params['production_lot_tag'] is None):
+            raise ValueError("Missing the required parameter `production_lot_tag` when calling `delete_production_lot_tag`")
+
+        resource_path = '/beta/productionLot/{productionLotId}/tag/{productionLotTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'production_lot_id' in params:
+            path_params['productionLotId'] = params['production_lot_id']
+        if 'production_lot_tag' in params:
+            path_params['productionLotTag'] = params['production_lot_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_production_lot_by_id(self, production_lot_id, **kwargs):
+        """
+        Get a duplicated a productionLot by id
+        Returns a duplicated productionLot identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_production_lot_by_id(production_lot_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int production_lot_id: Id of the productionLot to be duplicated. (required)
+        :return: ProductionLot
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['production_lot_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_production_lot_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'production_lot_id' is set
+        if ('production_lot_id' not in params) or (params['production_lot_id'] is None):
+            raise ValueError("Missing the required parameter `production_lot_id` when calling `get_duplicate_production_lot_by_id`")
+
+        resource_path = '/beta/productionLot/duplicate/{productionLotId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'production_lot_id' in params:
+            path_params['productionLotId'] = params['production_lot_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ProductionLot',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_production_lot_by_filter(self, **kwargs):
         """
         Search productionLots by filter
@@ -83,7 +563,7 @@ class ProductionLotApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/productionLot/search'.replace('{format}', 'json')
+        resource_path = '/beta/productionLot/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -166,7 +646,7 @@ class ProductionLotApi(object):
         if ('production_lot_id' not in params) or (params['production_lot_id'] is None):
             raise ValueError("Missing the required parameter `production_lot_id` when calling `get_production_lot_by_id`")
 
-        resource_path = '/v1.0/productionLot/{productionLotId}'.replace('{format}', 'json')
+        resource_path = '/beta/productionLot/{productionLotId}'.replace('{format}', 'json')
         path_params = {}
         if 'production_lot_id' in params:
             path_params['productionLotId'] = params['production_lot_id']
@@ -201,6 +681,237 @@ class ProductionLotApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ProductionLot',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_production_lot_tags(self, production_lot_id, **kwargs):
+        """
+        Get the tags for a productionLot.
+        Get all existing productionLot tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_production_lot_tags(production_lot_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int production_lot_id: Id of the productionLot to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['production_lot_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_production_lot_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'production_lot_id' is set
+        if ('production_lot_id' not in params) or (params['production_lot_id'] is None):
+            raise ValueError("Missing the required parameter `production_lot_id` when calling `get_production_lot_tags`")
+
+        resource_path = '/beta/productionLot/{productionLotId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'production_lot_id' in params:
+            path_params['productionLotId'] = params['production_lot_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_production_lot(self, body, **kwargs):
+        """
+        Update a productionLot
+        Updates an existing productionLot using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_production_lot(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ProductionLot body: ProductionLot to be updated. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_production_lot" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_production_lot`")
+
+        resource_path = '/beta/productionLot'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_production_lot_custom_fields(self, body, **kwargs):
+        """
+        Update a productionLot custom fields
+        Updates an existing productionLot custom fields using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_production_lot_custom_fields(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ProductionLot body: ProductionLot to be updated. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_production_lot_custom_fields" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_production_lot_custom_fields`")
+
+        resource_path = '/beta/productionLot/customFields'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

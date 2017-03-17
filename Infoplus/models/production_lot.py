@@ -41,6 +41,7 @@ class ProductionLot(object):
             'lob_id': 'int',
             'production_lot': 'str',
             'quantity': 'int',
+            'custom_fields': 'dict(str, object)',
             'sku': 'str'
         }
 
@@ -49,6 +50,7 @@ class ProductionLot(object):
             'lob_id': 'lobId',
             'production_lot': 'productionLot',
             'quantity': 'quantity',
+            'custom_fields': 'customFields',
             'sku': 'sku'
         }
 
@@ -56,6 +58,7 @@ class ProductionLot(object):
         self._lob_id = None
         self._production_lot = None
         self._quantity = None
+        self._custom_fields = None
         self._sku = None
 
     @property
@@ -145,6 +148,28 @@ class ProductionLot(object):
         :type: int
         """
         self._quantity = quantity
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ProductionLot.
+
+
+        :return: The custom_fields of this ProductionLot.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ProductionLot.
+
+
+        :param custom_fields: The custom_fields of this ProductionLot.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     @property
     def sku(self):

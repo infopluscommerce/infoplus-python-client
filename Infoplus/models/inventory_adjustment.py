@@ -38,7 +38,7 @@ class InventoryAdjustment(object):
         """
         self.swagger_types = {
             'id': 'int',
-            'lob': 'int',
+            'lob_id': 'int',
             'sku_id': 'int',
             'po_no_id': 'int',
             'adjustment_date': 'datetime',
@@ -49,12 +49,13 @@ class InventoryAdjustment(object):
             'authorized_by': 'str',
             'printed': 'str',
             'order_no': 'float',
-            'adjustment_code': 'str'
+            'adjustment_code': 'str',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'lob': 'lob',
+            'lob_id': 'lobId',
             'sku_id': 'skuId',
             'po_no_id': 'poNoId',
             'adjustment_date': 'adjustmentDate',
@@ -65,11 +66,12 @@ class InventoryAdjustment(object):
             'authorized_by': 'authorizedBy',
             'printed': 'printed',
             'order_no': 'orderNo',
-            'adjustment_code': 'adjustmentCode'
+            'adjustment_code': 'adjustmentCode',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
-        self._lob = None
+        self._lob_id = None
         self._sku_id = None
         self._po_no_id = None
         self._adjustment_date = None
@@ -81,6 +83,7 @@ class InventoryAdjustment(object):
         self._printed = None
         self._order_no = None
         self._adjustment_code = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -105,26 +108,26 @@ class InventoryAdjustment(object):
         self._id = id
 
     @property
-    def lob(self):
+    def lob_id(self):
         """
-        Gets the lob of this InventoryAdjustment.
+        Gets the lob_id of this InventoryAdjustment.
 
 
-        :return: The lob of this InventoryAdjustment.
+        :return: The lob_id of this InventoryAdjustment.
         :rtype: int
         """
-        return self._lob
+        return self._lob_id
 
-    @lob.setter
-    def lob(self, lob):
+    @lob_id.setter
+    def lob_id(self, lob_id):
         """
-        Sets the lob of this InventoryAdjustment.
+        Sets the lob_id of this InventoryAdjustment.
 
 
-        :param lob: The lob of this InventoryAdjustment.
+        :param lob_id: The lob_id of this InventoryAdjustment.
         :type: int
         """
-        self._lob = lob
+        self._lob_id = lob_id
 
     @property
     def sku_id(self):
@@ -367,6 +370,28 @@ class InventoryAdjustment(object):
         :type: str
         """
         self._adjustment_code = adjustment_code
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this InventoryAdjustment.
+
+
+        :return: The custom_fields of this InventoryAdjustment.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this InventoryAdjustment.
+
+
+        :param custom_fields: The custom_fields of this InventoryAdjustment.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

@@ -45,6 +45,332 @@ class InventoryAdjustmentApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def add_inventory_adjustment_audit(self, inventory_adjustment_id, inventory_adjustment_audit, **kwargs):
+        """
+        Add new audit for an inventoryAdjustment
+        Adds an audit to an existing inventoryAdjustment.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_inventory_adjustment_audit(inventory_adjustment_id, inventory_adjustment_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int inventory_adjustment_id: Id of the inventoryAdjustment to add an audit to (required)
+        :param str inventory_adjustment_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['inventory_adjustment_id', 'inventory_adjustment_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_inventory_adjustment_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'inventory_adjustment_id' is set
+        if ('inventory_adjustment_id' not in params) or (params['inventory_adjustment_id'] is None):
+            raise ValueError("Missing the required parameter `inventory_adjustment_id` when calling `add_inventory_adjustment_audit`")
+        # verify the required parameter 'inventory_adjustment_audit' is set
+        if ('inventory_adjustment_audit' not in params) or (params['inventory_adjustment_audit'] is None):
+            raise ValueError("Missing the required parameter `inventory_adjustment_audit` when calling `add_inventory_adjustment_audit`")
+
+        resource_path = '/beta/inventoryAdjustment/{inventoryAdjustmentId}/audit/{inventoryAdjustmentAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'inventory_adjustment_id' in params:
+            path_params['inventoryAdjustmentId'] = params['inventory_adjustment_id']
+        if 'inventory_adjustment_audit' in params:
+            path_params['inventoryAdjustmentAudit'] = params['inventory_adjustment_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_inventory_adjustment_tag(self, inventory_adjustment_id, inventory_adjustment_tag, **kwargs):
+        """
+        Add new tags for an inventoryAdjustment.
+        Adds a tag to an existing inventoryAdjustment.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_inventory_adjustment_tag(inventory_adjustment_id, inventory_adjustment_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int inventory_adjustment_id: Id of the inventoryAdjustment to add a tag to (required)
+        :param str inventory_adjustment_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['inventory_adjustment_id', 'inventory_adjustment_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_inventory_adjustment_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'inventory_adjustment_id' is set
+        if ('inventory_adjustment_id' not in params) or (params['inventory_adjustment_id'] is None):
+            raise ValueError("Missing the required parameter `inventory_adjustment_id` when calling `add_inventory_adjustment_tag`")
+        # verify the required parameter 'inventory_adjustment_tag' is set
+        if ('inventory_adjustment_tag' not in params) or (params['inventory_adjustment_tag'] is None):
+            raise ValueError("Missing the required parameter `inventory_adjustment_tag` when calling `add_inventory_adjustment_tag`")
+
+        resource_path = '/beta/inventoryAdjustment/{inventoryAdjustmentId}/tag/{inventoryAdjustmentTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'inventory_adjustment_id' in params:
+            path_params['inventoryAdjustmentId'] = params['inventory_adjustment_id']
+        if 'inventory_adjustment_tag' in params:
+            path_params['inventoryAdjustmentTag'] = params['inventory_adjustment_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_inventory_adjustment_tag(self, inventory_adjustment_id, inventory_adjustment_tag, **kwargs):
+        """
+        Delete a tag for an inventoryAdjustment.
+        Deletes an existing inventoryAdjustment tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_inventory_adjustment_tag(inventory_adjustment_id, inventory_adjustment_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int inventory_adjustment_id: Id of the inventoryAdjustment to remove tag from (required)
+        :param str inventory_adjustment_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['inventory_adjustment_id', 'inventory_adjustment_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_inventory_adjustment_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'inventory_adjustment_id' is set
+        if ('inventory_adjustment_id' not in params) or (params['inventory_adjustment_id'] is None):
+            raise ValueError("Missing the required parameter `inventory_adjustment_id` when calling `delete_inventory_adjustment_tag`")
+        # verify the required parameter 'inventory_adjustment_tag' is set
+        if ('inventory_adjustment_tag' not in params) or (params['inventory_adjustment_tag'] is None):
+            raise ValueError("Missing the required parameter `inventory_adjustment_tag` when calling `delete_inventory_adjustment_tag`")
+
+        resource_path = '/beta/inventoryAdjustment/{inventoryAdjustmentId}/tag/{inventoryAdjustmentTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'inventory_adjustment_id' in params:
+            path_params['inventoryAdjustmentId'] = params['inventory_adjustment_id']
+        if 'inventory_adjustment_tag' in params:
+            path_params['inventoryAdjustmentTag'] = params['inventory_adjustment_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_inventory_adjustment_by_id(self, inventory_adjustment_id, **kwargs):
+        """
+        Get a duplicated an inventoryAdjustment by id
+        Returns a duplicated inventoryAdjustment identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_inventory_adjustment_by_id(inventory_adjustment_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int inventory_adjustment_id: Id of the inventoryAdjustment to be duplicated. (required)
+        :return: InventoryAdjustment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['inventory_adjustment_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_inventory_adjustment_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'inventory_adjustment_id' is set
+        if ('inventory_adjustment_id' not in params) or (params['inventory_adjustment_id'] is None):
+            raise ValueError("Missing the required parameter `inventory_adjustment_id` when calling `get_duplicate_inventory_adjustment_by_id`")
+
+        resource_path = '/beta/inventoryAdjustment/duplicate/{inventoryAdjustmentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'inventory_adjustment_id' in params:
+            path_params['inventoryAdjustmentId'] = params['inventory_adjustment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='InventoryAdjustment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_inventory_adjustment_by_filter(self, **kwargs):
         """
         Search inventoryAdjustments by filter
@@ -83,7 +409,7 @@ class InventoryAdjustmentApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/inventoryAdjustment/search'.replace('{format}', 'json')
+        resource_path = '/beta/inventoryAdjustment/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -166,7 +492,7 @@ class InventoryAdjustmentApi(object):
         if ('inventory_adjustment_id' not in params) or (params['inventory_adjustment_id'] is None):
             raise ValueError("Missing the required parameter `inventory_adjustment_id` when calling `get_inventory_adjustment_by_id`")
 
-        resource_path = '/v1.0/inventoryAdjustment/{inventoryAdjustmentId}'.replace('{format}', 'json')
+        resource_path = '/beta/inventoryAdjustment/{inventoryAdjustmentId}'.replace('{format}', 'json')
         path_params = {}
         if 'inventory_adjustment_id' in params:
             path_params['inventoryAdjustmentId'] = params['inventory_adjustment_id']
@@ -201,6 +527,160 @@ class InventoryAdjustmentApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='InventoryAdjustment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_inventory_adjustment_tags(self, inventory_adjustment_id, **kwargs):
+        """
+        Get the tags for an inventoryAdjustment.
+        Get all existing inventoryAdjustment tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_inventory_adjustment_tags(inventory_adjustment_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int inventory_adjustment_id: Id of the inventoryAdjustment to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['inventory_adjustment_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_inventory_adjustment_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'inventory_adjustment_id' is set
+        if ('inventory_adjustment_id' not in params) or (params['inventory_adjustment_id'] is None):
+            raise ValueError("Missing the required parameter `inventory_adjustment_id` when calling `get_inventory_adjustment_tags`")
+
+        resource_path = '/beta/inventoryAdjustment/{inventoryAdjustmentId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'inventory_adjustment_id' in params:
+            path_params['inventoryAdjustmentId'] = params['inventory_adjustment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_inventory_adjustment_custom_fields(self, body, **kwargs):
+        """
+        Update an inventoryAdjustment custom fields
+        Updates an existing inventoryAdjustment custom fields using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_inventory_adjustment_custom_fields(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param InventoryAdjustment body: InventoryAdjustment to be updated. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_inventory_adjustment_custom_fields" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_inventory_adjustment_custom_fields`")
+
+        resource_path = '/beta/inventoryAdjustment/customFields'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -45,6 +45,7 @@ class LowStock(object):
             'is_delayed': 'bool',
             'create_date': 'datetime',
             'modify_date': 'datetime',
+            'custom_fields': 'dict(str, object)',
             'sku': 'str'
         }
 
@@ -57,6 +58,7 @@ class LowStock(object):
             'is_delayed': 'isDelayed',
             'create_date': 'createDate',
             'modify_date': 'modifyDate',
+            'custom_fields': 'customFields',
             'sku': 'sku'
         }
 
@@ -68,6 +70,7 @@ class LowStock(object):
         self._is_delayed = False
         self._create_date = None
         self._modify_date = None
+        self._custom_fields = None
         self._sku = None
 
     @property
@@ -245,6 +248,28 @@ class LowStock(object):
         :type: datetime
         """
         self._modify_date = modify_date
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this LowStock.
+
+
+        :return: The custom_fields of this LowStock.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this LowStock.
+
+
+        :param custom_fields: The custom_fields of this LowStock.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     @property
     def sku(self):

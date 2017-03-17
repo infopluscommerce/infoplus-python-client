@@ -42,8 +42,10 @@ class PickFaceAssignment(object):
             'location_id': 'int',
             'replenishment_point': 'int',
             'max_quantity': 'int',
+            'active': 'bool',
             'create_date': 'datetime',
             'modify_date': 'datetime',
+            'custom_fields': 'dict(str, object)',
             'sku': 'str'
         }
 
@@ -53,8 +55,10 @@ class PickFaceAssignment(object):
             'location_id': 'locationId',
             'replenishment_point': 'replenishmentPoint',
             'max_quantity': 'maxQuantity',
+            'active': 'active',
             'create_date': 'createDate',
             'modify_date': 'modifyDate',
+            'custom_fields': 'customFields',
             'sku': 'sku'
         }
 
@@ -63,8 +67,10 @@ class PickFaceAssignment(object):
         self._location_id = None
         self._replenishment_point = None
         self._max_quantity = None
+        self._active = False
         self._create_date = None
         self._modify_date = None
+        self._custom_fields = None
         self._sku = None
 
     @property
@@ -178,6 +184,28 @@ class PickFaceAssignment(object):
         self._max_quantity = max_quantity
 
     @property
+    def active(self):
+        """
+        Gets the active of this PickFaceAssignment.
+
+
+        :return: The active of this PickFaceAssignment.
+        :rtype: bool
+        """
+        return self._active
+
+    @active.setter
+    def active(self, active):
+        """
+        Sets the active of this PickFaceAssignment.
+
+
+        :param active: The active of this PickFaceAssignment.
+        :type: bool
+        """
+        self._active = active
+
+    @property
     def create_date(self):
         """
         Gets the create_date of this PickFaceAssignment.
@@ -220,6 +248,28 @@ class PickFaceAssignment(object):
         :type: datetime
         """
         self._modify_date = modify_date
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this PickFaceAssignment.
+
+
+        :return: The custom_fields of this PickFaceAssignment.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this PickFaceAssignment.
+
+
+        :param custom_fields: The custom_fields of this PickFaceAssignment.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     @property
     def sku(self):

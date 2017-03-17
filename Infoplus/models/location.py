@@ -53,9 +53,11 @@ class Location(object):
             'number': 'int',
             'online': 'bool',
             'priority_code': 'int',
+            'cost': 'int',
             'allow_item_mixing': 'bool',
             'create_date': 'datetime',
-            'modify_date': 'datetime'
+            'modify_date': 'datetime',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -75,9 +77,11 @@ class Location(object):
             'number': 'number',
             'online': 'online',
             'priority_code': 'priorityCode',
+            'cost': 'cost',
             'allow_item_mixing': 'allowItemMixing',
             'create_date': 'createDate',
-            'modify_date': 'modifyDate'
+            'modify_date': 'modifyDate',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -96,9 +100,11 @@ class Location(object):
         self._number = None
         self._online = False
         self._priority_code = None
+        self._cost = None
         self._allow_item_mixing = False
         self._create_date = None
         self._modify_date = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -453,6 +459,28 @@ class Location(object):
         self._priority_code = priority_code
 
     @property
+    def cost(self):
+        """
+        Gets the cost of this Location.
+
+
+        :return: The cost of this Location.
+        :rtype: int
+        """
+        return self._cost
+
+    @cost.setter
+    def cost(self, cost):
+        """
+        Sets the cost of this Location.
+
+
+        :param cost: The cost of this Location.
+        :type: int
+        """
+        self._cost = cost
+
+    @property
     def allow_item_mixing(self):
         """
         Gets the allow_item_mixing of this Location.
@@ -517,6 +545,28 @@ class Location(object):
         :type: datetime
         """
         self._modify_date = modify_date
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this Location.
+
+
+        :return: The custom_fields of this Location.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this Location.
+
+
+        :param custom_fields: The custom_fields of this Location.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

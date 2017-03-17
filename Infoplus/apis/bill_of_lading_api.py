@@ -83,7 +83,7 @@ class BillOfLadingApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_bill_of_lading`")
 
-        resource_path = '/v1.0/billOfLading'.replace('{format}', 'json')
+        resource_path = '/beta/billOfLading'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,6 +118,172 @@ class BillOfLadingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BillOfLading',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_bill_of_lading_audit(self, bill_of_lading_id, bill_of_lading_audit, **kwargs):
+        """
+        Add new audit for a billOfLading
+        Adds an audit to an existing billOfLading.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_bill_of_lading_audit(bill_of_lading_id, bill_of_lading_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int bill_of_lading_id: Id of the billOfLading to add an audit to (required)
+        :param str bill_of_lading_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bill_of_lading_id', 'bill_of_lading_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_bill_of_lading_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bill_of_lading_id' is set
+        if ('bill_of_lading_id' not in params) or (params['bill_of_lading_id'] is None):
+            raise ValueError("Missing the required parameter `bill_of_lading_id` when calling `add_bill_of_lading_audit`")
+        # verify the required parameter 'bill_of_lading_audit' is set
+        if ('bill_of_lading_audit' not in params) or (params['bill_of_lading_audit'] is None):
+            raise ValueError("Missing the required parameter `bill_of_lading_audit` when calling `add_bill_of_lading_audit`")
+
+        resource_path = '/beta/billOfLading/{billOfLadingId}/audit/{billOfLadingAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'bill_of_lading_id' in params:
+            path_params['billOfLadingId'] = params['bill_of_lading_id']
+        if 'bill_of_lading_audit' in params:
+            path_params['billOfLadingAudit'] = params['bill_of_lading_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_bill_of_lading_tag(self, bill_of_lading_id, bill_of_lading_tag, **kwargs):
+        """
+        Add new tags for a billOfLading.
+        Adds a tag to an existing billOfLading.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_bill_of_lading_tag(bill_of_lading_id, bill_of_lading_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int bill_of_lading_id: Id of the billOfLading to add a tag to (required)
+        :param str bill_of_lading_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bill_of_lading_id', 'bill_of_lading_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_bill_of_lading_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bill_of_lading_id' is set
+        if ('bill_of_lading_id' not in params) or (params['bill_of_lading_id'] is None):
+            raise ValueError("Missing the required parameter `bill_of_lading_id` when calling `add_bill_of_lading_tag`")
+        # verify the required parameter 'bill_of_lading_tag' is set
+        if ('bill_of_lading_tag' not in params) or (params['bill_of_lading_tag'] is None):
+            raise ValueError("Missing the required parameter `bill_of_lading_tag` when calling `add_bill_of_lading_tag`")
+
+        resource_path = '/beta/billOfLading/{billOfLadingId}/tag/{billOfLadingTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'bill_of_lading_id' in params:
+            path_params['billOfLadingId'] = params['bill_of_lading_id']
+        if 'bill_of_lading_tag' in params:
+            path_params['billOfLadingTag'] = params['bill_of_lading_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -160,10 +326,93 @@ class BillOfLadingApi(object):
         if ('bill_of_lading_id' not in params) or (params['bill_of_lading_id'] is None):
             raise ValueError("Missing the required parameter `bill_of_lading_id` when calling `delete_bill_of_lading`")
 
-        resource_path = '/v1.0/billOfLading/{billOfLadingId}'.replace('{format}', 'json')
+        resource_path = '/beta/billOfLading/{billOfLadingId}'.replace('{format}', 'json')
         path_params = {}
         if 'bill_of_lading_id' in params:
             path_params['billOfLadingId'] = params['bill_of_lading_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_bill_of_lading_tag(self, bill_of_lading_id, bill_of_lading_tag, **kwargs):
+        """
+        Delete a tag for a billOfLading.
+        Deletes an existing billOfLading tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_bill_of_lading_tag(bill_of_lading_id, bill_of_lading_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int bill_of_lading_id: Id of the billOfLading to remove tag from (required)
+        :param str bill_of_lading_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bill_of_lading_id', 'bill_of_lading_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_bill_of_lading_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bill_of_lading_id' is set
+        if ('bill_of_lading_id' not in params) or (params['bill_of_lading_id'] is None):
+            raise ValueError("Missing the required parameter `bill_of_lading_id` when calling `delete_bill_of_lading_tag`")
+        # verify the required parameter 'bill_of_lading_tag' is set
+        if ('bill_of_lading_tag' not in params) or (params['bill_of_lading_tag'] is None):
+            raise ValueError("Missing the required parameter `bill_of_lading_tag` when calling `delete_bill_of_lading_tag`")
+
+        resource_path = '/beta/billOfLading/{billOfLadingId}/tag/{billOfLadingTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'bill_of_lading_id' in params:
+            path_params['billOfLadingId'] = params['bill_of_lading_id']
+        if 'bill_of_lading_tag' in params:
+            path_params['billOfLadingTag'] = params['bill_of_lading_tag']
 
         query_params = {}
 
@@ -237,7 +486,7 @@ class BillOfLadingApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/billOfLading/search'.replace('{format}', 'json')
+        resource_path = '/beta/billOfLading/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -320,7 +569,161 @@ class BillOfLadingApi(object):
         if ('bill_of_lading_id' not in params) or (params['bill_of_lading_id'] is None):
             raise ValueError("Missing the required parameter `bill_of_lading_id` when calling `get_bill_of_lading_by_id`")
 
-        resource_path = '/v1.0/billOfLading/{billOfLadingId}'.replace('{format}', 'json')
+        resource_path = '/beta/billOfLading/{billOfLadingId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'bill_of_lading_id' in params:
+            path_params['billOfLadingId'] = params['bill_of_lading_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BillOfLading',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_bill_of_lading_tags(self, bill_of_lading_id, **kwargs):
+        """
+        Get the tags for a billOfLading.
+        Get all existing billOfLading tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_bill_of_lading_tags(bill_of_lading_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int bill_of_lading_id: Id of the billOfLading to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bill_of_lading_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_bill_of_lading_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bill_of_lading_id' is set
+        if ('bill_of_lading_id' not in params) or (params['bill_of_lading_id'] is None):
+            raise ValueError("Missing the required parameter `bill_of_lading_id` when calling `get_bill_of_lading_tags`")
+
+        resource_path = '/beta/billOfLading/{billOfLadingId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'bill_of_lading_id' in params:
+            path_params['billOfLadingId'] = params['bill_of_lading_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_bill_of_lading_by_id(self, bill_of_lading_id, **kwargs):
+        """
+        Get a duplicated a billOfLading by id
+        Returns a duplicated billOfLading identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_bill_of_lading_by_id(bill_of_lading_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int bill_of_lading_id: Id of the billOfLading to be duplicated. (required)
+        :return: BillOfLading
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bill_of_lading_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_bill_of_lading_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bill_of_lading_id' is set
+        if ('bill_of_lading_id' not in params) or (params['bill_of_lading_id'] is None):
+            raise ValueError("Missing the required parameter `bill_of_lading_id` when calling `get_duplicate_bill_of_lading_by_id`")
+
+        resource_path = '/beta/billOfLading/duplicate/{billOfLadingId}'.replace('{format}', 'json')
         path_params = {}
         if 'bill_of_lading_id' in params:
             path_params['billOfLadingId'] = params['bill_of_lading_id']
@@ -397,7 +800,84 @@ class BillOfLadingApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_bill_of_lading`")
 
-        resource_path = '/v1.0/billOfLading'.replace('{format}', 'json')
+        resource_path = '/beta/billOfLading'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_bill_of_lading_custom_fields(self, body, **kwargs):
+        """
+        Update a billOfLading custom fields
+        Updates an existing billOfLading custom fields using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_bill_of_lading_custom_fields(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param BillOfLading body: BillOfLading to be updated. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_bill_of_lading_custom_fields" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_bill_of_lading_custom_fields`")
+
+        resource_path = '/beta/billOfLading/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

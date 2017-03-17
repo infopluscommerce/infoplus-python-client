@@ -45,6 +45,332 @@ class WorkBatchApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def add_work_batch_audit(self, work_batch_id, work_batch_audit, **kwargs):
+        """
+        Add new audit for a workBatch
+        Adds an audit to an existing workBatch.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_work_batch_audit(work_batch_id, work_batch_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int work_batch_id: Id of the workBatch to add an audit to (required)
+        :param str work_batch_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['work_batch_id', 'work_batch_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_work_batch_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'work_batch_id' is set
+        if ('work_batch_id' not in params) or (params['work_batch_id'] is None):
+            raise ValueError("Missing the required parameter `work_batch_id` when calling `add_work_batch_audit`")
+        # verify the required parameter 'work_batch_audit' is set
+        if ('work_batch_audit' not in params) or (params['work_batch_audit'] is None):
+            raise ValueError("Missing the required parameter `work_batch_audit` when calling `add_work_batch_audit`")
+
+        resource_path = '/beta/workBatch/{workBatchId}/audit/{workBatchAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'work_batch_id' in params:
+            path_params['workBatchId'] = params['work_batch_id']
+        if 'work_batch_audit' in params:
+            path_params['workBatchAudit'] = params['work_batch_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_work_batch_tag(self, work_batch_id, work_batch_tag, **kwargs):
+        """
+        Add new tags for a workBatch.
+        Adds a tag to an existing workBatch.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_work_batch_tag(work_batch_id, work_batch_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int work_batch_id: Id of the workBatch to add a tag to (required)
+        :param str work_batch_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['work_batch_id', 'work_batch_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_work_batch_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'work_batch_id' is set
+        if ('work_batch_id' not in params) or (params['work_batch_id'] is None):
+            raise ValueError("Missing the required parameter `work_batch_id` when calling `add_work_batch_tag`")
+        # verify the required parameter 'work_batch_tag' is set
+        if ('work_batch_tag' not in params) or (params['work_batch_tag'] is None):
+            raise ValueError("Missing the required parameter `work_batch_tag` when calling `add_work_batch_tag`")
+
+        resource_path = '/beta/workBatch/{workBatchId}/tag/{workBatchTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'work_batch_id' in params:
+            path_params['workBatchId'] = params['work_batch_id']
+        if 'work_batch_tag' in params:
+            path_params['workBatchTag'] = params['work_batch_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_work_batch_tag(self, work_batch_id, work_batch_tag, **kwargs):
+        """
+        Delete a tag for a workBatch.
+        Deletes an existing workBatch tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_work_batch_tag(work_batch_id, work_batch_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int work_batch_id: Id of the workBatch to remove tag from (required)
+        :param str work_batch_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['work_batch_id', 'work_batch_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_work_batch_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'work_batch_id' is set
+        if ('work_batch_id' not in params) or (params['work_batch_id'] is None):
+            raise ValueError("Missing the required parameter `work_batch_id` when calling `delete_work_batch_tag`")
+        # verify the required parameter 'work_batch_tag' is set
+        if ('work_batch_tag' not in params) or (params['work_batch_tag'] is None):
+            raise ValueError("Missing the required parameter `work_batch_tag` when calling `delete_work_batch_tag`")
+
+        resource_path = '/beta/workBatch/{workBatchId}/tag/{workBatchTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'work_batch_id' in params:
+            path_params['workBatchId'] = params['work_batch_id']
+        if 'work_batch_tag' in params:
+            path_params['workBatchTag'] = params['work_batch_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_work_batch_by_id(self, work_batch_id, **kwargs):
+        """
+        Get a duplicated a workBatch by id
+        Returns a duplicated workBatch identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_work_batch_by_id(work_batch_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int work_batch_id: Id of the workBatch to be duplicated. (required)
+        :return: WorkBatch
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['work_batch_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_work_batch_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'work_batch_id' is set
+        if ('work_batch_id' not in params) or (params['work_batch_id'] is None):
+            raise ValueError("Missing the required parameter `work_batch_id` when calling `get_duplicate_work_batch_by_id`")
+
+        resource_path = '/beta/workBatch/duplicate/{workBatchId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'work_batch_id' in params:
+            path_params['workBatchId'] = params['work_batch_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkBatch',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_work_batch_by_filter(self, **kwargs):
         """
         Search workBatchs by filter
@@ -83,7 +409,7 @@ class WorkBatchApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/workBatch/search'.replace('{format}', 'json')
+        resource_path = '/beta/workBatch/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -166,7 +492,7 @@ class WorkBatchApi(object):
         if ('work_batch_id' not in params) or (params['work_batch_id'] is None):
             raise ValueError("Missing the required parameter `work_batch_id` when calling `get_work_batch_by_id`")
 
-        resource_path = '/v1.0/workBatch/{workBatchId}'.replace('{format}', 'json')
+        resource_path = '/beta/workBatch/{workBatchId}'.replace('{format}', 'json')
         path_params = {}
         if 'work_batch_id' in params:
             path_params['workBatchId'] = params['work_batch_id']
@@ -201,6 +527,160 @@ class WorkBatchApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='WorkBatch',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_work_batch_tags(self, work_batch_id, **kwargs):
+        """
+        Get the tags for a workBatch.
+        Get all existing workBatch tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_work_batch_tags(work_batch_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int work_batch_id: Id of the workBatch to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['work_batch_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_work_batch_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'work_batch_id' is set
+        if ('work_batch_id' not in params) or (params['work_batch_id'] is None):
+            raise ValueError("Missing the required parameter `work_batch_id` when calling `get_work_batch_tags`")
+
+        resource_path = '/beta/workBatch/{workBatchId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'work_batch_id' in params:
+            path_params['workBatchId'] = params['work_batch_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_work_batch_custom_fields(self, body, **kwargs):
+        """
+        Update a workBatch custom fields
+        Updates an existing workBatch custom fields using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_work_batch_custom_fields(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param WorkBatch body: WorkBatch to be updated. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_work_batch_custom_fields" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_work_batch_custom_fields`")
+
+        resource_path = '/beta/workBatch/customFields'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

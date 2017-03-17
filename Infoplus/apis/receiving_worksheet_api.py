@@ -83,7 +83,7 @@ class ReceivingWorksheetApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_receiving_worksheet`")
 
-        resource_path = '/v1.0/receivingWorksheet'.replace('{format}', 'json')
+        resource_path = '/beta/receivingWorksheet'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,6 +118,172 @@ class ReceivingWorksheetApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ReceivingWorksheet',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_receiving_worksheet_audit(self, receiving_worksheet_id, receiving_worksheet_audit, **kwargs):
+        """
+        Add new audit for a receivingWorksheet
+        Adds an audit to an existing receivingWorksheet.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_receiving_worksheet_audit(receiving_worksheet_id, receiving_worksheet_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int receiving_worksheet_id: Id of the receivingWorksheet to add an audit to (required)
+        :param str receiving_worksheet_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['receiving_worksheet_id', 'receiving_worksheet_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_receiving_worksheet_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'receiving_worksheet_id' is set
+        if ('receiving_worksheet_id' not in params) or (params['receiving_worksheet_id'] is None):
+            raise ValueError("Missing the required parameter `receiving_worksheet_id` when calling `add_receiving_worksheet_audit`")
+        # verify the required parameter 'receiving_worksheet_audit' is set
+        if ('receiving_worksheet_audit' not in params) or (params['receiving_worksheet_audit'] is None):
+            raise ValueError("Missing the required parameter `receiving_worksheet_audit` when calling `add_receiving_worksheet_audit`")
+
+        resource_path = '/beta/receivingWorksheet/{receivingWorksheetId}/audit/{receivingWorksheetAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'receiving_worksheet_id' in params:
+            path_params['receivingWorksheetId'] = params['receiving_worksheet_id']
+        if 'receiving_worksheet_audit' in params:
+            path_params['receivingWorksheetAudit'] = params['receiving_worksheet_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_receiving_worksheet_tag(self, receiving_worksheet_id, receiving_worksheet_tag, **kwargs):
+        """
+        Add new tags for a receivingWorksheet.
+        Adds a tag to an existing receivingWorksheet.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_receiving_worksheet_tag(receiving_worksheet_id, receiving_worksheet_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int receiving_worksheet_id: Id of the receivingWorksheet to add a tag to (required)
+        :param str receiving_worksheet_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['receiving_worksheet_id', 'receiving_worksheet_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_receiving_worksheet_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'receiving_worksheet_id' is set
+        if ('receiving_worksheet_id' not in params) or (params['receiving_worksheet_id'] is None):
+            raise ValueError("Missing the required parameter `receiving_worksheet_id` when calling `add_receiving_worksheet_tag`")
+        # verify the required parameter 'receiving_worksheet_tag' is set
+        if ('receiving_worksheet_tag' not in params) or (params['receiving_worksheet_tag'] is None):
+            raise ValueError("Missing the required parameter `receiving_worksheet_tag` when calling `add_receiving_worksheet_tag`")
+
+        resource_path = '/beta/receivingWorksheet/{receivingWorksheetId}/tag/{receivingWorksheetTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'receiving_worksheet_id' in params:
+            path_params['receivingWorksheetId'] = params['receiving_worksheet_id']
+        if 'receiving_worksheet_tag' in params:
+            path_params['receivingWorksheetTag'] = params['receiving_worksheet_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -160,7 +326,7 @@ class ReceivingWorksheetApi(object):
         if ('receiving_worksheet_id' not in params) or (params['receiving_worksheet_id'] is None):
             raise ValueError("Missing the required parameter `receiving_worksheet_id` when calling `delete_receiving_worksheet`")
 
-        resource_path = '/v1.0/receivingWorksheet/{receivingWorksheetId}'.replace('{format}', 'json')
+        resource_path = '/beta/receivingWorksheet/{receivingWorksheetId}'.replace('{format}', 'json')
         path_params = {}
         if 'receiving_worksheet_id' in params:
             path_params['receivingWorksheetId'] = params['receiving_worksheet_id']
@@ -195,6 +361,166 @@ class ReceivingWorksheetApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_receiving_worksheet_tag(self, receiving_worksheet_id, receiving_worksheet_tag, **kwargs):
+        """
+        Delete a tag for a receivingWorksheet.
+        Deletes an existing receivingWorksheet tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_receiving_worksheet_tag(receiving_worksheet_id, receiving_worksheet_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int receiving_worksheet_id: Id of the receivingWorksheet to remove tag from (required)
+        :param str receiving_worksheet_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['receiving_worksheet_id', 'receiving_worksheet_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_receiving_worksheet_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'receiving_worksheet_id' is set
+        if ('receiving_worksheet_id' not in params) or (params['receiving_worksheet_id'] is None):
+            raise ValueError("Missing the required parameter `receiving_worksheet_id` when calling `delete_receiving_worksheet_tag`")
+        # verify the required parameter 'receiving_worksheet_tag' is set
+        if ('receiving_worksheet_tag' not in params) or (params['receiving_worksheet_tag'] is None):
+            raise ValueError("Missing the required parameter `receiving_worksheet_tag` when calling `delete_receiving_worksheet_tag`")
+
+        resource_path = '/beta/receivingWorksheet/{receivingWorksheetId}/tag/{receivingWorksheetTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'receiving_worksheet_id' in params:
+            path_params['receivingWorksheetId'] = params['receiving_worksheet_id']
+        if 'receiving_worksheet_tag' in params:
+            path_params['receivingWorksheetTag'] = params['receiving_worksheet_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_receiving_worksheet_by_id(self, receiving_worksheet_id, **kwargs):
+        """
+        Get a duplicated a receivingWorksheet by id
+        Returns a duplicated receivingWorksheet identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_receiving_worksheet_by_id(receiving_worksheet_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int receiving_worksheet_id: Id of the receivingWorksheet to be duplicated. (required)
+        :return: ReceivingWorksheet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['receiving_worksheet_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_receiving_worksheet_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'receiving_worksheet_id' is set
+        if ('receiving_worksheet_id' not in params) or (params['receiving_worksheet_id'] is None):
+            raise ValueError("Missing the required parameter `receiving_worksheet_id` when calling `get_duplicate_receiving_worksheet_by_id`")
+
+        resource_path = '/beta/receivingWorksheet/duplicate/{receivingWorksheetId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'receiving_worksheet_id' in params:
+            path_params['receivingWorksheetId'] = params['receiving_worksheet_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ReceivingWorksheet',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -237,7 +563,7 @@ class ReceivingWorksheetApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/receivingWorksheet/search'.replace('{format}', 'json')
+        resource_path = '/beta/receivingWorksheet/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -320,7 +646,7 @@ class ReceivingWorksheetApi(object):
         if ('receiving_worksheet_id' not in params) or (params['receiving_worksheet_id'] is None):
             raise ValueError("Missing the required parameter `receiving_worksheet_id` when calling `get_receiving_worksheet_by_id`")
 
-        resource_path = '/v1.0/receivingWorksheet/{receivingWorksheetId}'.replace('{format}', 'json')
+        resource_path = '/beta/receivingWorksheet/{receivingWorksheetId}'.replace('{format}', 'json')
         path_params = {}
         if 'receiving_worksheet_id' in params:
             path_params['receivingWorksheetId'] = params['receiving_worksheet_id']
@@ -355,6 +681,83 @@ class ReceivingWorksheetApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ReceivingWorksheet',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_receiving_worksheet_tags(self, receiving_worksheet_id, **kwargs):
+        """
+        Get the tags for a receivingWorksheet.
+        Get all existing receivingWorksheet tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_receiving_worksheet_tags(receiving_worksheet_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int receiving_worksheet_id: Id of the receivingWorksheet to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['receiving_worksheet_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_receiving_worksheet_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'receiving_worksheet_id' is set
+        if ('receiving_worksheet_id' not in params) or (params['receiving_worksheet_id'] is None):
+            raise ValueError("Missing the required parameter `receiving_worksheet_id` when calling `get_receiving_worksheet_tags`")
+
+        resource_path = '/beta/receivingWorksheet/{receivingWorksheetId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'receiving_worksheet_id' in params:
+            path_params['receivingWorksheetId'] = params['receiving_worksheet_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -397,7 +800,84 @@ class ReceivingWorksheetApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_receiving_worksheet`")
 
-        resource_path = '/v1.0/receivingWorksheet'.replace('{format}', 'json')
+        resource_path = '/beta/receivingWorksheet'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_receiving_worksheet_custom_fields(self, body, **kwargs):
+        """
+        Update a receivingWorksheet custom fields
+        Updates an existing receivingWorksheet custom fields using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_receiving_worksheet_custom_fields(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ReceivingWorksheet body: ReceivingWorksheet to be updated. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_receiving_worksheet_custom_fields" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_receiving_worksheet_custom_fields`")
+
+        resource_path = '/beta/receivingWorksheet/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

@@ -54,7 +54,8 @@ class LocationAddressScheme(object):
             'bay_number_zero_padded': 'bool',
             'bay_number_minimum_number_of_digits': 'int',
             'create_date': 'datetime',
-            'modify_date': 'datetime'
+            'modify_date': 'datetime',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -75,7 +76,8 @@ class LocationAddressScheme(object):
             'bay_number_zero_padded': 'bayNumberZeroPadded',
             'bay_number_minimum_number_of_digits': 'bayNumberMinimumNumberOfDigits',
             'create_date': 'createDate',
-            'modify_date': 'modifyDate'
+            'modify_date': 'modifyDate',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -96,6 +98,7 @@ class LocationAddressScheme(object):
         self._bay_number_minimum_number_of_digits = None
         self._create_date = None
         self._modify_date = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -492,6 +495,28 @@ class LocationAddressScheme(object):
         :type: datetime
         """
         self._modify_date = modify_date
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this LocationAddressScheme.
+
+
+        :return: The custom_fields of this LocationAddressScheme.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this LocationAddressScheme.
+
+
+        :param custom_fields: The custom_fields of this LocationAddressScheme.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

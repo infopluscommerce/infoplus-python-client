@@ -43,6 +43,7 @@ class FulfillmentPlan(object):
             'name': 'str',
             'description': 'str',
             'warehouse_id': 'int',
+            'last_run_time': 'datetime',
             'order_smart_filter_id': 'int',
             'location_smart_filter_id': 'int',
             'maximum_number_of_orders': 'int',
@@ -59,12 +60,18 @@ class FulfillmentPlan(object):
             'pick_summary_format': 'str',
             'pick_summary_layout': 'str',
             'pick_summary_sort': 'str',
+            'pick_scan_scheme_id': 'int',
             'cartonize_orders': 'bool',
             'auto_ship_casebreak_cartons': 'bool',
             'pre_generate_parcel_labels': 'bool',
+            'create_packing_slip': 'str',
             'override_packing_slip_template_id': 'int',
-            'create_packing_slip': 'bool',
-            'create_order_assembly_guide': 'bool'
+            'create_order_assembly_guide': 'bool',
+            'create_order_invoice': 'str',
+            'override_order_invoice_template_id': 'int',
+            'send_to_external_shipping_system': 'bool',
+            'external_shipping_system_id': 'int',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -74,6 +81,7 @@ class FulfillmentPlan(object):
             'name': 'name',
             'description': 'description',
             'warehouse_id': 'warehouseId',
+            'last_run_time': 'lastRunTime',
             'order_smart_filter_id': 'orderSmartFilterId',
             'location_smart_filter_id': 'locationSmartFilterId',
             'maximum_number_of_orders': 'maximumNumberOfOrders',
@@ -90,12 +98,18 @@ class FulfillmentPlan(object):
             'pick_summary_format': 'pickSummaryFormat',
             'pick_summary_layout': 'pickSummaryLayout',
             'pick_summary_sort': 'pickSummarySort',
+            'pick_scan_scheme_id': 'pickScanSchemeId',
             'cartonize_orders': 'cartonizeOrders',
             'auto_ship_casebreak_cartons': 'autoShipCasebreakCartons',
             'pre_generate_parcel_labels': 'preGenerateParcelLabels',
-            'override_packing_slip_template_id': 'overridePackingSlipTemplateId',
             'create_packing_slip': 'createPackingSlip',
-            'create_order_assembly_guide': 'createOrderAssemblyGuide'
+            'override_packing_slip_template_id': 'overridePackingSlipTemplateId',
+            'create_order_assembly_guide': 'createOrderAssemblyGuide',
+            'create_order_invoice': 'createOrderInvoice',
+            'override_order_invoice_template_id': 'overrideOrderInvoiceTemplateId',
+            'send_to_external_shipping_system': 'sendToExternalShippingSystem',
+            'external_shipping_system_id': 'externalShippingSystemId',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -104,6 +118,7 @@ class FulfillmentPlan(object):
         self._name = None
         self._description = None
         self._warehouse_id = None
+        self._last_run_time = None
         self._order_smart_filter_id = None
         self._location_smart_filter_id = None
         self._maximum_number_of_orders = None
@@ -120,12 +135,18 @@ class FulfillmentPlan(object):
         self._pick_summary_format = None
         self._pick_summary_layout = None
         self._pick_summary_sort = None
+        self._pick_scan_scheme_id = None
         self._cartonize_orders = False
         self._auto_ship_casebreak_cartons = False
         self._pre_generate_parcel_labels = False
+        self._create_packing_slip = None
         self._override_packing_slip_template_id = None
-        self._create_packing_slip = False
         self._create_order_assembly_guide = False
+        self._create_order_invoice = None
+        self._override_order_invoice_template_id = None
+        self._send_to_external_shipping_system = False
+        self._external_shipping_system_id = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -258,6 +279,28 @@ class FulfillmentPlan(object):
         :type: int
         """
         self._warehouse_id = warehouse_id
+
+    @property
+    def last_run_time(self):
+        """
+        Gets the last_run_time of this FulfillmentPlan.
+
+
+        :return: The last_run_time of this FulfillmentPlan.
+        :rtype: datetime
+        """
+        return self._last_run_time
+
+    @last_run_time.setter
+    def last_run_time(self, last_run_time):
+        """
+        Sets the last_run_time of this FulfillmentPlan.
+
+
+        :param last_run_time: The last_run_time of this FulfillmentPlan.
+        :type: datetime
+        """
+        self._last_run_time = last_run_time
 
     @property
     def order_smart_filter_id(self):
@@ -612,6 +655,28 @@ class FulfillmentPlan(object):
         self._pick_summary_sort = pick_summary_sort
 
     @property
+    def pick_scan_scheme_id(self):
+        """
+        Gets the pick_scan_scheme_id of this FulfillmentPlan.
+
+
+        :return: The pick_scan_scheme_id of this FulfillmentPlan.
+        :rtype: int
+        """
+        return self._pick_scan_scheme_id
+
+    @pick_scan_scheme_id.setter
+    def pick_scan_scheme_id(self, pick_scan_scheme_id):
+        """
+        Sets the pick_scan_scheme_id of this FulfillmentPlan.
+
+
+        :param pick_scan_scheme_id: The pick_scan_scheme_id of this FulfillmentPlan.
+        :type: int
+        """
+        self._pick_scan_scheme_id = pick_scan_scheme_id
+
+    @property
     def cartonize_orders(self):
         """
         Gets the cartonize_orders of this FulfillmentPlan.
@@ -678,6 +743,28 @@ class FulfillmentPlan(object):
         self._pre_generate_parcel_labels = pre_generate_parcel_labels
 
     @property
+    def create_packing_slip(self):
+        """
+        Gets the create_packing_slip of this FulfillmentPlan.
+
+
+        :return: The create_packing_slip of this FulfillmentPlan.
+        :rtype: str
+        """
+        return self._create_packing_slip
+
+    @create_packing_slip.setter
+    def create_packing_slip(self, create_packing_slip):
+        """
+        Sets the create_packing_slip of this FulfillmentPlan.
+
+
+        :param create_packing_slip: The create_packing_slip of this FulfillmentPlan.
+        :type: str
+        """
+        self._create_packing_slip = create_packing_slip
+
+    @property
     def override_packing_slip_template_id(self):
         """
         Gets the override_packing_slip_template_id of this FulfillmentPlan.
@@ -700,28 +787,6 @@ class FulfillmentPlan(object):
         self._override_packing_slip_template_id = override_packing_slip_template_id
 
     @property
-    def create_packing_slip(self):
-        """
-        Gets the create_packing_slip of this FulfillmentPlan.
-
-
-        :return: The create_packing_slip of this FulfillmentPlan.
-        :rtype: bool
-        """
-        return self._create_packing_slip
-
-    @create_packing_slip.setter
-    def create_packing_slip(self, create_packing_slip):
-        """
-        Sets the create_packing_slip of this FulfillmentPlan.
-
-
-        :param create_packing_slip: The create_packing_slip of this FulfillmentPlan.
-        :type: bool
-        """
-        self._create_packing_slip = create_packing_slip
-
-    @property
     def create_order_assembly_guide(self):
         """
         Gets the create_order_assembly_guide of this FulfillmentPlan.
@@ -742,6 +807,116 @@ class FulfillmentPlan(object):
         :type: bool
         """
         self._create_order_assembly_guide = create_order_assembly_guide
+
+    @property
+    def create_order_invoice(self):
+        """
+        Gets the create_order_invoice of this FulfillmentPlan.
+
+
+        :return: The create_order_invoice of this FulfillmentPlan.
+        :rtype: str
+        """
+        return self._create_order_invoice
+
+    @create_order_invoice.setter
+    def create_order_invoice(self, create_order_invoice):
+        """
+        Sets the create_order_invoice of this FulfillmentPlan.
+
+
+        :param create_order_invoice: The create_order_invoice of this FulfillmentPlan.
+        :type: str
+        """
+        self._create_order_invoice = create_order_invoice
+
+    @property
+    def override_order_invoice_template_id(self):
+        """
+        Gets the override_order_invoice_template_id of this FulfillmentPlan.
+
+
+        :return: The override_order_invoice_template_id of this FulfillmentPlan.
+        :rtype: int
+        """
+        return self._override_order_invoice_template_id
+
+    @override_order_invoice_template_id.setter
+    def override_order_invoice_template_id(self, override_order_invoice_template_id):
+        """
+        Sets the override_order_invoice_template_id of this FulfillmentPlan.
+
+
+        :param override_order_invoice_template_id: The override_order_invoice_template_id of this FulfillmentPlan.
+        :type: int
+        """
+        self._override_order_invoice_template_id = override_order_invoice_template_id
+
+    @property
+    def send_to_external_shipping_system(self):
+        """
+        Gets the send_to_external_shipping_system of this FulfillmentPlan.
+
+
+        :return: The send_to_external_shipping_system of this FulfillmentPlan.
+        :rtype: bool
+        """
+        return self._send_to_external_shipping_system
+
+    @send_to_external_shipping_system.setter
+    def send_to_external_shipping_system(self, send_to_external_shipping_system):
+        """
+        Sets the send_to_external_shipping_system of this FulfillmentPlan.
+
+
+        :param send_to_external_shipping_system: The send_to_external_shipping_system of this FulfillmentPlan.
+        :type: bool
+        """
+        self._send_to_external_shipping_system = send_to_external_shipping_system
+
+    @property
+    def external_shipping_system_id(self):
+        """
+        Gets the external_shipping_system_id of this FulfillmentPlan.
+
+
+        :return: The external_shipping_system_id of this FulfillmentPlan.
+        :rtype: int
+        """
+        return self._external_shipping_system_id
+
+    @external_shipping_system_id.setter
+    def external_shipping_system_id(self, external_shipping_system_id):
+        """
+        Sets the external_shipping_system_id of this FulfillmentPlan.
+
+
+        :param external_shipping_system_id: The external_shipping_system_id of this FulfillmentPlan.
+        :type: int
+        """
+        self._external_shipping_system_id = external_shipping_system_id
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this FulfillmentPlan.
+
+
+        :return: The custom_fields of this FulfillmentPlan.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this FulfillmentPlan.
+
+
+        :param custom_fields: The custom_fields of this FulfillmentPlan.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

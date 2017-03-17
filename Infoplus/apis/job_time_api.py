@@ -83,7 +83,7 @@ class JobTimeApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_job_time`")
 
-        resource_path = '/v1.0/jobTime'.replace('{format}', 'json')
+        resource_path = '/beta/jobTime'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,6 +118,172 @@ class JobTimeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='JobTime',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_job_time_audit(self, job_time_id, job_time_audit, **kwargs):
+        """
+        Add new audit for a jobTime
+        Adds an audit to an existing jobTime.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_job_time_audit(job_time_id, job_time_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int job_time_id: Id of the jobTime to add an audit to (required)
+        :param str job_time_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_time_id', 'job_time_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_job_time_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_time_id' is set
+        if ('job_time_id' not in params) or (params['job_time_id'] is None):
+            raise ValueError("Missing the required parameter `job_time_id` when calling `add_job_time_audit`")
+        # verify the required parameter 'job_time_audit' is set
+        if ('job_time_audit' not in params) or (params['job_time_audit'] is None):
+            raise ValueError("Missing the required parameter `job_time_audit` when calling `add_job_time_audit`")
+
+        resource_path = '/beta/jobTime/{jobTimeId}/audit/{jobTimeAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_time_id' in params:
+            path_params['jobTimeId'] = params['job_time_id']
+        if 'job_time_audit' in params:
+            path_params['jobTimeAudit'] = params['job_time_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_job_time_tag(self, job_time_id, job_time_tag, **kwargs):
+        """
+        Add new tags for a jobTime.
+        Adds a tag to an existing jobTime.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_job_time_tag(job_time_id, job_time_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int job_time_id: Id of the jobTime to add a tag to (required)
+        :param str job_time_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_time_id', 'job_time_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_job_time_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_time_id' is set
+        if ('job_time_id' not in params) or (params['job_time_id'] is None):
+            raise ValueError("Missing the required parameter `job_time_id` when calling `add_job_time_tag`")
+        # verify the required parameter 'job_time_tag' is set
+        if ('job_time_tag' not in params) or (params['job_time_tag'] is None):
+            raise ValueError("Missing the required parameter `job_time_tag` when calling `add_job_time_tag`")
+
+        resource_path = '/beta/jobTime/{jobTimeId}/tag/{jobTimeTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_time_id' in params:
+            path_params['jobTimeId'] = params['job_time_id']
+        if 'job_time_tag' in params:
+            path_params['jobTimeTag'] = params['job_time_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -160,7 +326,7 @@ class JobTimeApi(object):
         if ('job_time_id' not in params) or (params['job_time_id'] is None):
             raise ValueError("Missing the required parameter `job_time_id` when calling `delete_job_time`")
 
-        resource_path = '/v1.0/jobTime/{jobTimeId}'.replace('{format}', 'json')
+        resource_path = '/beta/jobTime/{jobTimeId}'.replace('{format}', 'json')
         path_params = {}
         if 'job_time_id' in params:
             path_params['jobTimeId'] = params['job_time_id']
@@ -195,6 +361,166 @@ class JobTimeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_job_time_tag(self, job_time_id, job_time_tag, **kwargs):
+        """
+        Delete a tag for a jobTime.
+        Deletes an existing jobTime tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_job_time_tag(job_time_id, job_time_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int job_time_id: Id of the jobTime to remove tag from (required)
+        :param str job_time_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_time_id', 'job_time_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_job_time_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_time_id' is set
+        if ('job_time_id' not in params) or (params['job_time_id'] is None):
+            raise ValueError("Missing the required parameter `job_time_id` when calling `delete_job_time_tag`")
+        # verify the required parameter 'job_time_tag' is set
+        if ('job_time_tag' not in params) or (params['job_time_tag'] is None):
+            raise ValueError("Missing the required parameter `job_time_tag` when calling `delete_job_time_tag`")
+
+        resource_path = '/beta/jobTime/{jobTimeId}/tag/{jobTimeTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_time_id' in params:
+            path_params['jobTimeId'] = params['job_time_id']
+        if 'job_time_tag' in params:
+            path_params['jobTimeTag'] = params['job_time_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_job_time_by_id(self, job_time_id, **kwargs):
+        """
+        Get a duplicated a jobTime by id
+        Returns a duplicated jobTime identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_job_time_by_id(job_time_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int job_time_id: Id of the jobTime to be duplicated. (required)
+        :return: JobTime
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_time_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_job_time_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_time_id' is set
+        if ('job_time_id' not in params) or (params['job_time_id'] is None):
+            raise ValueError("Missing the required parameter `job_time_id` when calling `get_duplicate_job_time_by_id`")
+
+        resource_path = '/beta/jobTime/duplicate/{jobTimeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_time_id' in params:
+            path_params['jobTimeId'] = params['job_time_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JobTime',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -237,7 +563,7 @@ class JobTimeApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/jobTime/search'.replace('{format}', 'json')
+        resource_path = '/beta/jobTime/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -320,7 +646,7 @@ class JobTimeApi(object):
         if ('job_time_id' not in params) or (params['job_time_id'] is None):
             raise ValueError("Missing the required parameter `job_time_id` when calling `get_job_time_by_id`")
 
-        resource_path = '/v1.0/jobTime/{jobTimeId}'.replace('{format}', 'json')
+        resource_path = '/beta/jobTime/{jobTimeId}'.replace('{format}', 'json')
         path_params = {}
         if 'job_time_id' in params:
             path_params['jobTimeId'] = params['job_time_id']
@@ -355,6 +681,83 @@ class JobTimeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='JobTime',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_job_time_tags(self, job_time_id, **kwargs):
+        """
+        Get the tags for a jobTime.
+        Get all existing jobTime tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_job_time_tags(job_time_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int job_time_id: Id of the jobTime to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_time_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_job_time_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_time_id' is set
+        if ('job_time_id' not in params) or (params['job_time_id'] is None):
+            raise ValueError("Missing the required parameter `job_time_id` when calling `get_job_time_tags`")
+
+        resource_path = '/beta/jobTime/{jobTimeId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_time_id' in params:
+            path_params['jobTimeId'] = params['job_time_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -397,7 +800,84 @@ class JobTimeApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_job_time`")
 
-        resource_path = '/v1.0/jobTime'.replace('{format}', 'json')
+        resource_path = '/beta/jobTime'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_job_time_custom_fields(self, body, **kwargs):
+        """
+        Update a jobTime custom fields
+        Updates an existing jobTime custom fields using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_job_time_custom_fields(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param JobTime body: JobTime to be updated. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_job_time_custom_fields" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_job_time_custom_fields`")
+
+        resource_path = '/beta/jobTime/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

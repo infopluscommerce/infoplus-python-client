@@ -53,7 +53,8 @@ class Warehouse(object):
             'location_barcode_prefix': 'str',
             'lpn_prefix': 'str',
             'create_date': 'datetime',
-            'modify_date': 'datetime'
+            'modify_date': 'datetime',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -73,7 +74,8 @@ class Warehouse(object):
             'location_barcode_prefix': 'locationBarcodePrefix',
             'lpn_prefix': 'lpnPrefix',
             'create_date': 'createDate',
-            'modify_date': 'modifyDate'
+            'modify_date': 'modifyDate',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -93,6 +95,7 @@ class Warehouse(object):
         self._lpn_prefix = None
         self._create_date = None
         self._modify_date = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -467,6 +470,28 @@ class Warehouse(object):
         :type: datetime
         """
         self._modify_date = modify_date
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this Warehouse.
+
+
+        :return: The custom_fields of this Warehouse.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this Warehouse.
+
+
+        :param custom_fields: The custom_fields of this Warehouse.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

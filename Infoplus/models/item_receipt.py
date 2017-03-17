@@ -38,7 +38,7 @@ class ItemReceipt(object):
         """
         self.swagger_types = {
             'id': 'int',
-            'po_no': 'str',
+            'po_no_id': 'int',
             'lob_id': 'int',
             'legacy_po_no': 'str',
             'warehouse_id': 'int',
@@ -97,20 +97,22 @@ class ItemReceipt(object):
             'received_by': 'str',
             'line_no': 'int',
             'prod_lot': 'str',
+            'product_id_tag': 'str',
             'units_per_case': 'int',
             'case_weight': 'float',
             'height': 'float',
             'width': 'float',
             'length': 'float',
-            'dock_time': 'datetime',
+            'dock_date': 'datetime',
             'modify_date': 'datetime',
             'impressions': 'int',
-            'asn_line': 'int'
+            'asn_line': 'int',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'po_no': 'poNo',
+            'po_no_id': 'poNoId',
             'lob_id': 'lobId',
             'legacy_po_no': 'legacyPoNo',
             'warehouse_id': 'warehouseId',
@@ -169,19 +171,21 @@ class ItemReceipt(object):
             'received_by': 'receivedBy',
             'line_no': 'lineNo',
             'prod_lot': 'prodLot',
+            'product_id_tag': 'productIdTag',
             'units_per_case': 'unitsPerCase',
             'case_weight': 'caseWeight',
             'height': 'height',
             'width': 'width',
             'length': 'length',
-            'dock_time': 'dockTime',
+            'dock_date': 'dockDate',
             'modify_date': 'modifyDate',
             'impressions': 'impressions',
-            'asn_line': 'asnLine'
+            'asn_line': 'asnLine',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
-        self._po_no = None
+        self._po_no_id = None
         self._lob_id = None
         self._legacy_po_no = None
         self._warehouse_id = None
@@ -240,15 +244,17 @@ class ItemReceipt(object):
         self._received_by = None
         self._line_no = None
         self._prod_lot = None
+        self._product_id_tag = None
         self._units_per_case = None
         self._case_weight = None
         self._height = None
         self._width = None
         self._length = None
-        self._dock_time = None
+        self._dock_date = None
         self._modify_date = None
         self._impressions = None
         self._asn_line = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -273,26 +279,26 @@ class ItemReceipt(object):
         self._id = id
 
     @property
-    def po_no(self):
+    def po_no_id(self):
         """
-        Gets the po_no of this ItemReceipt.
+        Gets the po_no_id of this ItemReceipt.
 
 
-        :return: The po_no of this ItemReceipt.
-        :rtype: str
+        :return: The po_no_id of this ItemReceipt.
+        :rtype: int
         """
-        return self._po_no
+        return self._po_no_id
 
-    @po_no.setter
-    def po_no(self, po_no):
+    @po_no_id.setter
+    def po_no_id(self, po_no_id):
         """
-        Sets the po_no of this ItemReceipt.
+        Sets the po_no_id of this ItemReceipt.
 
 
-        :param po_no: The po_no of this ItemReceipt.
-        :type: str
+        :param po_no_id: The po_no_id of this ItemReceipt.
+        :type: int
         """
-        self._po_no = po_no
+        self._po_no_id = po_no_id
 
     @property
     def lob_id(self):
@@ -1571,6 +1577,28 @@ class ItemReceipt(object):
         self._prod_lot = prod_lot
 
     @property
+    def product_id_tag(self):
+        """
+        Gets the product_id_tag of this ItemReceipt.
+
+
+        :return: The product_id_tag of this ItemReceipt.
+        :rtype: str
+        """
+        return self._product_id_tag
+
+    @product_id_tag.setter
+    def product_id_tag(self, product_id_tag):
+        """
+        Sets the product_id_tag of this ItemReceipt.
+
+
+        :param product_id_tag: The product_id_tag of this ItemReceipt.
+        :type: str
+        """
+        self._product_id_tag = product_id_tag
+
+    @property
     def units_per_case(self):
         """
         Gets the units_per_case of this ItemReceipt.
@@ -1681,26 +1709,26 @@ class ItemReceipt(object):
         self._length = length
 
     @property
-    def dock_time(self):
+    def dock_date(self):
         """
-        Gets the dock_time of this ItemReceipt.
+        Gets the dock_date of this ItemReceipt.
 
 
-        :return: The dock_time of this ItemReceipt.
+        :return: The dock_date of this ItemReceipt.
         :rtype: datetime
         """
-        return self._dock_time
+        return self._dock_date
 
-    @dock_time.setter
-    def dock_time(self, dock_time):
+    @dock_date.setter
+    def dock_date(self, dock_date):
         """
-        Sets the dock_time of this ItemReceipt.
+        Sets the dock_date of this ItemReceipt.
 
 
-        :param dock_time: The dock_time of this ItemReceipt.
+        :param dock_date: The dock_date of this ItemReceipt.
         :type: datetime
         """
-        self._dock_time = dock_time
+        self._dock_date = dock_date
 
     @property
     def modify_date(self):
@@ -1767,6 +1795,28 @@ class ItemReceipt(object):
         :type: int
         """
         self._asn_line = asn_line
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ItemReceipt.
+
+
+        :return: The custom_fields of this ItemReceipt.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ItemReceipt.
+
+
+        :param custom_fields: The custom_fields of this ItemReceipt.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

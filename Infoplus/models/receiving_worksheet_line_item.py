@@ -38,6 +38,7 @@ class ReceivingWorksheetLineItem(object):
         """
         self.swagger_types = {
             'sku': 'str',
+            'sku2': 'str',
             'full_description': 'str',
             'ordered_qty': 'int',
             'prev_received_qty': 'int',
@@ -51,17 +52,20 @@ class ReceivingWorksheetLineItem(object):
             'weight_per_wrap': 'float',
             'weight_per_case': 'float',
             'production_lot': 'str',
+            'product_id_tag': 'str',
             'revision_date': 'str',
             'origin': 'str',
             'carton_length': 'float',
             'carton_width': 'float',
             'carton_height': 'float',
             'put_away_plans': 'list[ReceivingWorksheetPutAwayPlan]',
-            'quantity': 'int'
+            'quantity': 'int',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'sku': 'sku',
+            'sku2': 'sku2',
             'full_description': 'fullDescription',
             'ordered_qty': 'orderedQty',
             'prev_received_qty': 'prevReceivedQty',
@@ -75,16 +79,19 @@ class ReceivingWorksheetLineItem(object):
             'weight_per_wrap': 'weightPerWrap',
             'weight_per_case': 'weightPerCase',
             'production_lot': 'productionLot',
+            'product_id_tag': 'productIdTag',
             'revision_date': 'revisionDate',
             'origin': 'origin',
             'carton_length': 'cartonLength',
             'carton_width': 'cartonWidth',
             'carton_height': 'cartonHeight',
             'put_away_plans': 'putAwayPlans',
-            'quantity': 'quantity'
+            'quantity': 'quantity',
+            'custom_fields': 'customFields'
         }
 
         self._sku = None
+        self._sku2 = None
         self._full_description = None
         self._ordered_qty = None
         self._prev_received_qty = None
@@ -98,6 +105,7 @@ class ReceivingWorksheetLineItem(object):
         self._weight_per_wrap = None
         self._weight_per_case = None
         self._production_lot = None
+        self._product_id_tag = None
         self._revision_date = None
         self._origin = None
         self._carton_length = None
@@ -105,6 +113,7 @@ class ReceivingWorksheetLineItem(object):
         self._carton_height = None
         self._put_away_plans = None
         self._quantity = None
+        self._custom_fields = None
 
     @property
     def sku(self):
@@ -127,6 +136,28 @@ class ReceivingWorksheetLineItem(object):
         :type: str
         """
         self._sku = sku
+
+    @property
+    def sku2(self):
+        """
+        Gets the sku2 of this ReceivingWorksheetLineItem.
+
+
+        :return: The sku2 of this ReceivingWorksheetLineItem.
+        :rtype: str
+        """
+        return self._sku2
+
+    @sku2.setter
+    def sku2(self, sku2):
+        """
+        Sets the sku2 of this ReceivingWorksheetLineItem.
+
+
+        :param sku2: The sku2 of this ReceivingWorksheetLineItem.
+        :type: str
+        """
+        self._sku2 = sku2
 
     @property
     def full_description(self):
@@ -415,6 +446,28 @@ class ReceivingWorksheetLineItem(object):
         self._production_lot = production_lot
 
     @property
+    def product_id_tag(self):
+        """
+        Gets the product_id_tag of this ReceivingWorksheetLineItem.
+
+
+        :return: The product_id_tag of this ReceivingWorksheetLineItem.
+        :rtype: str
+        """
+        return self._product_id_tag
+
+    @product_id_tag.setter
+    def product_id_tag(self, product_id_tag):
+        """
+        Sets the product_id_tag of this ReceivingWorksheetLineItem.
+
+
+        :param product_id_tag: The product_id_tag of this ReceivingWorksheetLineItem.
+        :type: str
+        """
+        self._product_id_tag = product_id_tag
+
+    @property
     def revision_date(self):
         """
         Gets the revision_date of this ReceivingWorksheetLineItem.
@@ -567,6 +620,28 @@ class ReceivingWorksheetLineItem(object):
         :type: int
         """
         self._quantity = quantity
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ReceivingWorksheetLineItem.
+
+
+        :return: The custom_fields of this ReceivingWorksheetLineItem.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ReceivingWorksheetLineItem.
+
+
+        :param custom_fields: The custom_fields of this ReceivingWorksheetLineItem.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

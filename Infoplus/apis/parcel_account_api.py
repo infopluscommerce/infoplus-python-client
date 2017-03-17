@@ -45,6 +45,332 @@ class ParcelAccountApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def add_parcel_account_audit(self, parcel_account_id, parcel_account_audit, **kwargs):
+        """
+        Add new audit for a parcelAccount
+        Adds an audit to an existing parcelAccount.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_parcel_account_audit(parcel_account_id, parcel_account_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int parcel_account_id: Id of the parcelAccount to add an audit to (required)
+        :param str parcel_account_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['parcel_account_id', 'parcel_account_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_parcel_account_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'parcel_account_id' is set
+        if ('parcel_account_id' not in params) or (params['parcel_account_id'] is None):
+            raise ValueError("Missing the required parameter `parcel_account_id` when calling `add_parcel_account_audit`")
+        # verify the required parameter 'parcel_account_audit' is set
+        if ('parcel_account_audit' not in params) or (params['parcel_account_audit'] is None):
+            raise ValueError("Missing the required parameter `parcel_account_audit` when calling `add_parcel_account_audit`")
+
+        resource_path = '/beta/parcelAccount/{parcelAccountId}/audit/{parcelAccountAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'parcel_account_id' in params:
+            path_params['parcelAccountId'] = params['parcel_account_id']
+        if 'parcel_account_audit' in params:
+            path_params['parcelAccountAudit'] = params['parcel_account_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_parcel_account_tag(self, parcel_account_id, parcel_account_tag, **kwargs):
+        """
+        Add new tags for a parcelAccount.
+        Adds a tag to an existing parcelAccount.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_parcel_account_tag(parcel_account_id, parcel_account_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int parcel_account_id: Id of the parcelAccount to add a tag to (required)
+        :param str parcel_account_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['parcel_account_id', 'parcel_account_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_parcel_account_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'parcel_account_id' is set
+        if ('parcel_account_id' not in params) or (params['parcel_account_id'] is None):
+            raise ValueError("Missing the required parameter `parcel_account_id` when calling `add_parcel_account_tag`")
+        # verify the required parameter 'parcel_account_tag' is set
+        if ('parcel_account_tag' not in params) or (params['parcel_account_tag'] is None):
+            raise ValueError("Missing the required parameter `parcel_account_tag` when calling `add_parcel_account_tag`")
+
+        resource_path = '/beta/parcelAccount/{parcelAccountId}/tag/{parcelAccountTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'parcel_account_id' in params:
+            path_params['parcelAccountId'] = params['parcel_account_id']
+        if 'parcel_account_tag' in params:
+            path_params['parcelAccountTag'] = params['parcel_account_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_parcel_account_tag(self, parcel_account_id, parcel_account_tag, **kwargs):
+        """
+        Delete a tag for a parcelAccount.
+        Deletes an existing parcelAccount tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_parcel_account_tag(parcel_account_id, parcel_account_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int parcel_account_id: Id of the parcelAccount to remove tag from (required)
+        :param str parcel_account_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['parcel_account_id', 'parcel_account_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_parcel_account_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'parcel_account_id' is set
+        if ('parcel_account_id' not in params) or (params['parcel_account_id'] is None):
+            raise ValueError("Missing the required parameter `parcel_account_id` when calling `delete_parcel_account_tag`")
+        # verify the required parameter 'parcel_account_tag' is set
+        if ('parcel_account_tag' not in params) or (params['parcel_account_tag'] is None):
+            raise ValueError("Missing the required parameter `parcel_account_tag` when calling `delete_parcel_account_tag`")
+
+        resource_path = '/beta/parcelAccount/{parcelAccountId}/tag/{parcelAccountTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'parcel_account_id' in params:
+            path_params['parcelAccountId'] = params['parcel_account_id']
+        if 'parcel_account_tag' in params:
+            path_params['parcelAccountTag'] = params['parcel_account_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_parcel_account_by_id(self, parcel_account_id, **kwargs):
+        """
+        Get a duplicated a parcelAccount by id
+        Returns a duplicated parcelAccount identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_parcel_account_by_id(parcel_account_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int parcel_account_id: Id of the parcelAccount to be duplicated. (required)
+        :return: ParcelAccount
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['parcel_account_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_parcel_account_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'parcel_account_id' is set
+        if ('parcel_account_id' not in params) or (params['parcel_account_id'] is None):
+            raise ValueError("Missing the required parameter `parcel_account_id` when calling `get_duplicate_parcel_account_by_id`")
+
+        resource_path = '/beta/parcelAccount/duplicate/{parcelAccountId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'parcel_account_id' in params:
+            path_params['parcelAccountId'] = params['parcel_account_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ParcelAccount',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_parcel_account_by_filter(self, **kwargs):
         """
         Search parcelAccounts by filter
@@ -83,7 +409,7 @@ class ParcelAccountApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/parcelAccount/search'.replace('{format}', 'json')
+        resource_path = '/beta/parcelAccount/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -166,7 +492,7 @@ class ParcelAccountApi(object):
         if ('parcel_account_id' not in params) or (params['parcel_account_id'] is None):
             raise ValueError("Missing the required parameter `parcel_account_id` when calling `get_parcel_account_by_id`")
 
-        resource_path = '/v1.0/parcelAccount/{parcelAccountId}'.replace('{format}', 'json')
+        resource_path = '/beta/parcelAccount/{parcelAccountId}'.replace('{format}', 'json')
         path_params = {}
         if 'parcel_account_id' in params:
             path_params['parcelAccountId'] = params['parcel_account_id']
@@ -201,6 +527,160 @@ class ParcelAccountApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ParcelAccount',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_parcel_account_tags(self, parcel_account_id, **kwargs):
+        """
+        Get the tags for a parcelAccount.
+        Get all existing parcelAccount tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_parcel_account_tags(parcel_account_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int parcel_account_id: Id of the parcelAccount to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['parcel_account_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_parcel_account_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'parcel_account_id' is set
+        if ('parcel_account_id' not in params) or (params['parcel_account_id'] is None):
+            raise ValueError("Missing the required parameter `parcel_account_id` when calling `get_parcel_account_tags`")
+
+        resource_path = '/beta/parcelAccount/{parcelAccountId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'parcel_account_id' in params:
+            path_params['parcelAccountId'] = params['parcel_account_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_parcel_account_custom_fields(self, body, **kwargs):
+        """
+        Update a parcelAccount custom fields
+        Updates an existing parcelAccount custom fields using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_parcel_account_custom_fields(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ParcelAccount body: ParcelAccount to be updated. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_parcel_account_custom_fields" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_parcel_account_custom_fields`")
+
+        resource_path = '/beta/parcelAccount/customFields'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

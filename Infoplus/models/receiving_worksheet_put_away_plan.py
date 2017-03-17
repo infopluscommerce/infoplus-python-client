@@ -37,14 +37,17 @@ class ReceivingWorksheetPutAwayPlan(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'quantity': 'int'
+            'quantity': 'int',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
-            'quantity': 'quantity'
+            'quantity': 'quantity',
+            'custom_fields': 'customFields'
         }
 
         self._quantity = None
+        self._custom_fields = None
 
     @property
     def quantity(self):
@@ -67,6 +70,28 @@ class ReceivingWorksheetPutAwayPlan(object):
         :type: int
         """
         self._quantity = quantity
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ReceivingWorksheetPutAwayPlan.
+
+
+        :return: The custom_fields of this ReceivingWorksheetPutAwayPlan.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ReceivingWorksheetPutAwayPlan.
+
+
+        :param custom_fields: The custom_fields of this ReceivingWorksheetPutAwayPlan.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

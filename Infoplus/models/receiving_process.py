@@ -43,7 +43,8 @@ class ReceivingProcess(object):
             'work_batch_id': 'int',
             'receiving_worksheet_id': 'int',
             'create_date': 'datetime',
-            'modify_date': 'datetime'
+            'modify_date': 'datetime',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -53,7 +54,8 @@ class ReceivingProcess(object):
             'work_batch_id': 'workBatchId',
             'receiving_worksheet_id': 'receivingWorksheetId',
             'create_date': 'createDate',
-            'modify_date': 'modifyDate'
+            'modify_date': 'modifyDate',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -63,6 +65,7 @@ class ReceivingProcess(object):
         self._receiving_worksheet_id = None
         self._create_date = None
         self._modify_date = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -217,6 +220,28 @@ class ReceivingProcess(object):
         :type: datetime
         """
         self._modify_date = modify_date
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ReceivingProcess.
+
+
+        :return: The custom_fields of this ReceivingProcess.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ReceivingProcess.
+
+
+        :param custom_fields: The custom_fields of this ReceivingProcess.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

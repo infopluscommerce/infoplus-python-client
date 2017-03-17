@@ -44,7 +44,8 @@ class BillingCodeType(object):
             'name': 'str',
             'description': 'str',
             'billing_code': 'str',
-            'is_active': 'bool'
+            'is_active': 'bool',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -55,7 +56,8 @@ class BillingCodeType(object):
             'name': 'name',
             'description': 'description',
             'billing_code': 'billingCode',
-            'is_active': 'isActive'
+            'is_active': 'isActive',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -66,6 +68,7 @@ class BillingCodeType(object):
         self._description = None
         self._billing_code = None
         self._is_active = False
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -242,6 +245,28 @@ class BillingCodeType(object):
         :type: bool
         """
         self._is_active = is_active
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this BillingCodeType.
+
+
+        :return: The custom_fields of this BillingCodeType.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this BillingCodeType.
+
+
+        :param custom_fields: The custom_fields of this BillingCodeType.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

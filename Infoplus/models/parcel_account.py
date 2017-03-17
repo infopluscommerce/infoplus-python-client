@@ -44,7 +44,8 @@ class ParcelAccount(object):
             'account_no': 'str',
             'client': 'int',
             'name': 'str',
-            'manifest_partner_id': 'str'
+            'manifest_partner_id': 'str',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -55,7 +56,8 @@ class ParcelAccount(object):
             'account_no': 'accountNo',
             'client': 'client',
             'name': 'name',
-            'manifest_partner_id': 'manifestPartnerId'
+            'manifest_partner_id': 'manifestPartnerId',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -66,6 +68,7 @@ class ParcelAccount(object):
         self._client = None
         self._name = None
         self._manifest_partner_id = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -242,6 +245,28 @@ class ParcelAccount(object):
         :type: str
         """
         self._manifest_partner_id = manifest_partner_id
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ParcelAccount.
+
+
+        :return: The custom_fields of this ParcelAccount.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ParcelAccount.
+
+
+        :param custom_fields: The custom_fields of this ParcelAccount.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

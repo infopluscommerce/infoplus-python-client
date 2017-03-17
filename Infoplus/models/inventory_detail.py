@@ -48,6 +48,7 @@ class InventoryDetail(object):
             'oldest_receipt_date': 'datetime',
             'lob_id': 'int',
             'po_no': 'str',
+            'custom_fields': 'dict(str, object)',
             'sku': 'str'
         }
 
@@ -63,6 +64,7 @@ class InventoryDetail(object):
             'oldest_receipt_date': 'oldestReceiptDate',
             'lob_id': 'lobId',
             'po_no': 'poNo',
+            'custom_fields': 'customFields',
             'sku': 'sku'
         }
 
@@ -77,6 +79,7 @@ class InventoryDetail(object):
         self._oldest_receipt_date = None
         self._lob_id = None
         self._po_no = None
+        self._custom_fields = None
         self._sku = None
 
     @property
@@ -320,6 +323,28 @@ class InventoryDetail(object):
         :type: str
         """
         self._po_no = po_no
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this InventoryDetail.
+
+
+        :return: The custom_fields of this InventoryDetail.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this InventoryDetail.
+
+
+        :param custom_fields: The custom_fields of this InventoryDetail.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     @property
     def sku(self):

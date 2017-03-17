@@ -54,10 +54,13 @@ class OrderLine(object):
             'order_source_sku': 'str',
             'unit_cost': 'float',
             'unit_sell': 'float',
+            'unit_discount': 'float',
             'extended_cost': 'float',
             'extended_sell': 'float',
+            'extended_discount': 'float',
             'nc_extended_sell': 'float',
             'item_weight': 'float',
+            'production_lot': 'str',
             'weight_per_wrap': 'float',
             'sector': 'str',
             'item_account_code_id': 'int',
@@ -65,7 +68,8 @@ class OrderLine(object):
             'item_major_group_id': 'int',
             'item_sub_group_id': 'int',
             'item_product_code_id': 'int',
-            'item_summary_code_id': 'int'
+            'item_summary_code_id': 'int',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -86,10 +90,13 @@ class OrderLine(object):
             'order_source_sku': 'orderSourceSKU',
             'unit_cost': 'unitCost',
             'unit_sell': 'unitSell',
+            'unit_discount': 'unitDiscount',
             'extended_cost': 'extendedCost',
             'extended_sell': 'extendedSell',
+            'extended_discount': 'extendedDiscount',
             'nc_extended_sell': 'ncExtendedSell',
             'item_weight': 'itemWeight',
+            'production_lot': 'productionLot',
             'weight_per_wrap': 'weightPerWrap',
             'sector': 'sector',
             'item_account_code_id': 'itemAccountCodeId',
@@ -97,7 +104,8 @@ class OrderLine(object):
             'item_major_group_id': 'itemMajorGroupId',
             'item_sub_group_id': 'itemSubGroupId',
             'item_product_code_id': 'itemProductCodeId',
-            'item_summary_code_id': 'itemSummaryCodeId'
+            'item_summary_code_id': 'itemSummaryCodeId',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -117,10 +125,13 @@ class OrderLine(object):
         self._order_source_sku = None
         self._unit_cost = None
         self._unit_sell = None
+        self._unit_discount = None
         self._extended_cost = None
         self._extended_sell = None
+        self._extended_discount = None
         self._nc_extended_sell = None
         self._item_weight = None
+        self._production_lot = None
         self._weight_per_wrap = None
         self._sector = None
         self._item_account_code_id = None
@@ -129,6 +140,7 @@ class OrderLine(object):
         self._item_sub_group_id = None
         self._item_product_code_id = None
         self._item_summary_code_id = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -505,6 +517,28 @@ class OrderLine(object):
         self._unit_sell = unit_sell
 
     @property
+    def unit_discount(self):
+        """
+        Gets the unit_discount of this OrderLine.
+
+
+        :return: The unit_discount of this OrderLine.
+        :rtype: float
+        """
+        return self._unit_discount
+
+    @unit_discount.setter
+    def unit_discount(self, unit_discount):
+        """
+        Sets the unit_discount of this OrderLine.
+
+
+        :param unit_discount: The unit_discount of this OrderLine.
+        :type: float
+        """
+        self._unit_discount = unit_discount
+
+    @property
     def extended_cost(self):
         """
         Gets the extended_cost of this OrderLine.
@@ -549,6 +583,28 @@ class OrderLine(object):
         self._extended_sell = extended_sell
 
     @property
+    def extended_discount(self):
+        """
+        Gets the extended_discount of this OrderLine.
+
+
+        :return: The extended_discount of this OrderLine.
+        :rtype: float
+        """
+        return self._extended_discount
+
+    @extended_discount.setter
+    def extended_discount(self, extended_discount):
+        """
+        Sets the extended_discount of this OrderLine.
+
+
+        :param extended_discount: The extended_discount of this OrderLine.
+        :type: float
+        """
+        self._extended_discount = extended_discount
+
+    @property
     def nc_extended_sell(self):
         """
         Gets the nc_extended_sell of this OrderLine.
@@ -591,6 +647,28 @@ class OrderLine(object):
         :type: float
         """
         self._item_weight = item_weight
+
+    @property
+    def production_lot(self):
+        """
+        Gets the production_lot of this OrderLine.
+
+
+        :return: The production_lot of this OrderLine.
+        :rtype: str
+        """
+        return self._production_lot
+
+    @production_lot.setter
+    def production_lot(self, production_lot):
+        """
+        Sets the production_lot of this OrderLine.
+
+
+        :param production_lot: The production_lot of this OrderLine.
+        :type: str
+        """
+        self._production_lot = production_lot
 
     @property
     def weight_per_wrap(self):
@@ -767,6 +845,28 @@ class OrderLine(object):
         :type: int
         """
         self._item_summary_code_id = item_summary_code_id
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this OrderLine.
+
+
+        :return: The custom_fields of this OrderLine.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this OrderLine.
+
+
+        :param custom_fields: The custom_fields of this OrderLine.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

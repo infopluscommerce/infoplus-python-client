@@ -41,7 +41,8 @@ class VendorComplianceSurvey(object):
             'worksheet_id': 'int',
             'create_date': 'datetime',
             'modify_date': 'datetime',
-            'survey_questions': 'str'
+            'survey_questions': 'str',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -49,7 +50,8 @@ class VendorComplianceSurvey(object):
             'worksheet_id': 'worksheetId',
             'create_date': 'createDate',
             'modify_date': 'modifyDate',
-            'survey_questions': 'surveyQuestions'
+            'survey_questions': 'surveyQuestions',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -57,6 +59,7 @@ class VendorComplianceSurvey(object):
         self._create_date = None
         self._modify_date = None
         self._survey_questions = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -167,6 +170,28 @@ class VendorComplianceSurvey(object):
         :type: str
         """
         self._survey_questions = survey_questions
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this VendorComplianceSurvey.
+
+
+        :return: The custom_fields of this VendorComplianceSurvey.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this VendorComplianceSurvey.
+
+
+        :param custom_fields: The custom_fields of this VendorComplianceSurvey.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

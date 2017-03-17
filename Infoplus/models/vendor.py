@@ -78,7 +78,8 @@ class Vendor(object):
             'pod_email': 'str',
             'create_date': 'datetime',
             'modify_date': 'datetime',
-            'inactive': 'str'
+            'inactive': 'str',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -123,7 +124,8 @@ class Vendor(object):
             'pod_email': 'podEmail',
             'create_date': 'createDate',
             'modify_date': 'modifyDate',
-            'inactive': 'inactive'
+            'inactive': 'inactive',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -168,6 +170,7 @@ class Vendor(object):
         self._create_date = None
         self._modify_date = None
         self._inactive = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -1092,6 +1095,28 @@ class Vendor(object):
         :type: str
         """
         self._inactive = inactive
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this Vendor.
+
+
+        :return: The custom_fields of this Vendor.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this Vendor.
+
+
+        :param custom_fields: The custom_fields of this Vendor.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

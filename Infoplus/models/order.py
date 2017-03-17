@@ -43,6 +43,7 @@ class Order(object):
             'warehouse_id': 'int',
             'order_date': 'datetime',
             'customer_no': 'str',
+            'use_order_no_root': 'int',
             'first_ship_date': 'datetime',
             'last_ship_date': 'datetime',
             'deliver_on_date': 'datetime',
@@ -73,6 +74,7 @@ class Order(object):
             'number_of_pallets': 'int',
             'completion_status': 'str',
             'parcel_account_id': 'int',
+            'third_party_parcel_account_id': 'int',
             'cost_center': 'str',
             'create_date': 'datetime',
             'customer_po_no': 'str',
@@ -87,17 +89,20 @@ class Order(object):
             'hold_code': 'str',
             'integration_partner_id': 'int',
             'number_of_line_items': 'int',
+            'estimated_number_of_picks': 'int',
             'modify_date': 'datetime',
-            'oms_order_id': 'int',
             'oms_order_no': 'int',
+            'oms_customer_id': 'int',
             'order_load_program_id': 'int',
             'order_message': 'str',
             'order_reason': 'int',
             'order_source_id': 'int',
             'packing_slip_template_id': 'int',
+            'order_invoice_template_id': 'int',
             'order_confirmation_email_template_id': 'int',
             'shipment_confirmation_email_template_id': 'int',
             'price_level': 'str',
+            'price_mode': 'str',
             'priority_code': 'int',
             'fulfillment_process_id': 'int',
             'ship_by': 'datetime',
@@ -123,7 +128,11 @@ class Order(object):
             'total_paid': 'float',
             'total_qty': 'int',
             'weight_lbs': 'float',
-            'line_items': 'list[OrderLine]'
+            'line_items': 'list[OrderLine]',
+            'extra_order_data': 'list[OrderExtraOrderData]',
+            'extra_line_item_data': 'list[OrderExtraLineItemData]',
+            'external_shipping_system_id': 'int',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -133,6 +142,7 @@ class Order(object):
             'warehouse_id': 'warehouseId',
             'order_date': 'orderDate',
             'customer_no': 'customerNo',
+            'use_order_no_root': 'useOrderNoRoot',
             'first_ship_date': 'firstShipDate',
             'last_ship_date': 'lastShipDate',
             'deliver_on_date': 'deliverOnDate',
@@ -163,6 +173,7 @@ class Order(object):
             'number_of_pallets': 'numberOfPallets',
             'completion_status': 'completionStatus',
             'parcel_account_id': 'parcelAccountId',
+            'third_party_parcel_account_id': 'thirdPartyParcelAccountId',
             'cost_center': 'costCenter',
             'create_date': 'createDate',
             'customer_po_no': 'customerPONo',
@@ -177,17 +188,20 @@ class Order(object):
             'hold_code': 'holdCode',
             'integration_partner_id': 'integrationPartnerId',
             'number_of_line_items': 'numberOfLineItems',
+            'estimated_number_of_picks': 'estimatedNumberOfPicks',
             'modify_date': 'modifyDate',
-            'oms_order_id': 'omsOrderId',
             'oms_order_no': 'omsOrderNo',
+            'oms_customer_id': 'omsCustomerId',
             'order_load_program_id': 'orderLoadProgramId',
             'order_message': 'orderMessage',
             'order_reason': 'orderReason',
             'order_source_id': 'orderSourceId',
             'packing_slip_template_id': 'packingSlipTemplateId',
+            'order_invoice_template_id': 'orderInvoiceTemplateId',
             'order_confirmation_email_template_id': 'orderConfirmationEmailTemplateId',
             'shipment_confirmation_email_template_id': 'shipmentConfirmationEmailTemplateId',
             'price_level': 'priceLevel',
+            'price_mode': 'priceMode',
             'priority_code': 'priorityCode',
             'fulfillment_process_id': 'fulfillmentProcessId',
             'ship_by': 'shipBy',
@@ -213,7 +227,11 @@ class Order(object):
             'total_paid': 'totalPaid',
             'total_qty': 'totalQty',
             'weight_lbs': 'weightLbs',
-            'line_items': 'lineItems'
+            'line_items': 'lineItems',
+            'extra_order_data': 'extraOrderData',
+            'extra_line_item_data': 'extraLineItemData',
+            'external_shipping_system_id': 'externalShippingSystemId',
+            'custom_fields': 'customFields'
         }
 
         self._order_no = None
@@ -222,6 +240,7 @@ class Order(object):
         self._warehouse_id = None
         self._order_date = None
         self._customer_no = None
+        self._use_order_no_root = None
         self._first_ship_date = None
         self._last_ship_date = None
         self._deliver_on_date = None
@@ -252,6 +271,7 @@ class Order(object):
         self._number_of_pallets = None
         self._completion_status = None
         self._parcel_account_id = None
+        self._third_party_parcel_account_id = None
         self._cost_center = None
         self._create_date = None
         self._customer_po_no = None
@@ -266,17 +286,20 @@ class Order(object):
         self._hold_code = None
         self._integration_partner_id = None
         self._number_of_line_items = None
+        self._estimated_number_of_picks = None
         self._modify_date = None
-        self._oms_order_id = None
         self._oms_order_no = None
+        self._oms_customer_id = None
         self._order_load_program_id = None
         self._order_message = None
         self._order_reason = None
         self._order_source_id = None
         self._packing_slip_template_id = None
+        self._order_invoice_template_id = None
         self._order_confirmation_email_template_id = None
         self._shipment_confirmation_email_template_id = None
         self._price_level = None
+        self._price_mode = None
         self._priority_code = None
         self._fulfillment_process_id = None
         self._ship_by = None
@@ -303,6 +326,10 @@ class Order(object):
         self._total_qty = None
         self._weight_lbs = None
         self._line_items = None
+        self._extra_order_data = None
+        self._extra_line_item_data = None
+        self._external_shipping_system_id = None
+        self._custom_fields = None
 
     @property
     def order_no(self):
@@ -435,6 +462,28 @@ class Order(object):
         :type: str
         """
         self._customer_no = customer_no
+
+    @property
+    def use_order_no_root(self):
+        """
+        Gets the use_order_no_root of this Order.
+
+
+        :return: The use_order_no_root of this Order.
+        :rtype: int
+        """
+        return self._use_order_no_root
+
+    @use_order_no_root.setter
+    def use_order_no_root(self, use_order_no_root):
+        """
+        Sets the use_order_no_root of this Order.
+
+
+        :param use_order_no_root: The use_order_no_root of this Order.
+        :type: int
+        """
+        self._use_order_no_root = use_order_no_root
 
     @property
     def first_ship_date(self):
@@ -1097,6 +1146,28 @@ class Order(object):
         self._parcel_account_id = parcel_account_id
 
     @property
+    def third_party_parcel_account_id(self):
+        """
+        Gets the third_party_parcel_account_id of this Order.
+
+
+        :return: The third_party_parcel_account_id of this Order.
+        :rtype: int
+        """
+        return self._third_party_parcel_account_id
+
+    @third_party_parcel_account_id.setter
+    def third_party_parcel_account_id(self, third_party_parcel_account_id):
+        """
+        Sets the third_party_parcel_account_id of this Order.
+
+
+        :param third_party_parcel_account_id: The third_party_parcel_account_id of this Order.
+        :type: int
+        """
+        self._third_party_parcel_account_id = third_party_parcel_account_id
+
+    @property
     def cost_center(self):
         """
         Gets the cost_center of this Order.
@@ -1405,6 +1476,28 @@ class Order(object):
         self._number_of_line_items = number_of_line_items
 
     @property
+    def estimated_number_of_picks(self):
+        """
+        Gets the estimated_number_of_picks of this Order.
+
+
+        :return: The estimated_number_of_picks of this Order.
+        :rtype: int
+        """
+        return self._estimated_number_of_picks
+
+    @estimated_number_of_picks.setter
+    def estimated_number_of_picks(self, estimated_number_of_picks):
+        """
+        Sets the estimated_number_of_picks of this Order.
+
+
+        :param estimated_number_of_picks: The estimated_number_of_picks of this Order.
+        :type: int
+        """
+        self._estimated_number_of_picks = estimated_number_of_picks
+
+    @property
     def modify_date(self):
         """
         Gets the modify_date of this Order.
@@ -1427,28 +1520,6 @@ class Order(object):
         self._modify_date = modify_date
 
     @property
-    def oms_order_id(self):
-        """
-        Gets the oms_order_id of this Order.
-
-
-        :return: The oms_order_id of this Order.
-        :rtype: int
-        """
-        return self._oms_order_id
-
-    @oms_order_id.setter
-    def oms_order_id(self, oms_order_id):
-        """
-        Sets the oms_order_id of this Order.
-
-
-        :param oms_order_id: The oms_order_id of this Order.
-        :type: int
-        """
-        self._oms_order_id = oms_order_id
-
-    @property
     def oms_order_no(self):
         """
         Gets the oms_order_no of this Order.
@@ -1469,6 +1540,28 @@ class Order(object):
         :type: int
         """
         self._oms_order_no = oms_order_no
+
+    @property
+    def oms_customer_id(self):
+        """
+        Gets the oms_customer_id of this Order.
+
+
+        :return: The oms_customer_id of this Order.
+        :rtype: int
+        """
+        return self._oms_customer_id
+
+    @oms_customer_id.setter
+    def oms_customer_id(self, oms_customer_id):
+        """
+        Sets the oms_customer_id of this Order.
+
+
+        :param oms_customer_id: The oms_customer_id of this Order.
+        :type: int
+        """
+        self._oms_customer_id = oms_customer_id
 
     @property
     def order_load_program_id(self):
@@ -1581,6 +1674,28 @@ class Order(object):
         self._packing_slip_template_id = packing_slip_template_id
 
     @property
+    def order_invoice_template_id(self):
+        """
+        Gets the order_invoice_template_id of this Order.
+
+
+        :return: The order_invoice_template_id of this Order.
+        :rtype: int
+        """
+        return self._order_invoice_template_id
+
+    @order_invoice_template_id.setter
+    def order_invoice_template_id(self, order_invoice_template_id):
+        """
+        Sets the order_invoice_template_id of this Order.
+
+
+        :param order_invoice_template_id: The order_invoice_template_id of this Order.
+        :type: int
+        """
+        self._order_invoice_template_id = order_invoice_template_id
+
+    @property
     def order_confirmation_email_template_id(self):
         """
         Gets the order_confirmation_email_template_id of this Order.
@@ -1645,6 +1760,28 @@ class Order(object):
         :type: str
         """
         self._price_level = price_level
+
+    @property
+    def price_mode(self):
+        """
+        Gets the price_mode of this Order.
+
+
+        :return: The price_mode of this Order.
+        :rtype: str
+        """
+        return self._price_mode
+
+    @price_mode.setter
+    def price_mode(self, price_mode):
+        """
+        Sets the price_mode of this Order.
+
+
+        :param price_mode: The price_mode of this Order.
+        :type: str
+        """
+        self._price_mode = price_mode
 
     @property
     def priority_code(self):
@@ -2217,6 +2354,94 @@ class Order(object):
         :type: list[OrderLine]
         """
         self._line_items = line_items
+
+    @property
+    def extra_order_data(self):
+        """
+        Gets the extra_order_data of this Order.
+
+
+        :return: The extra_order_data of this Order.
+        :rtype: list[OrderExtraOrderData]
+        """
+        return self._extra_order_data
+
+    @extra_order_data.setter
+    def extra_order_data(self, extra_order_data):
+        """
+        Sets the extra_order_data of this Order.
+
+
+        :param extra_order_data: The extra_order_data of this Order.
+        :type: list[OrderExtraOrderData]
+        """
+        self._extra_order_data = extra_order_data
+
+    @property
+    def extra_line_item_data(self):
+        """
+        Gets the extra_line_item_data of this Order.
+
+
+        :return: The extra_line_item_data of this Order.
+        :rtype: list[OrderExtraLineItemData]
+        """
+        return self._extra_line_item_data
+
+    @extra_line_item_data.setter
+    def extra_line_item_data(self, extra_line_item_data):
+        """
+        Sets the extra_line_item_data of this Order.
+
+
+        :param extra_line_item_data: The extra_line_item_data of this Order.
+        :type: list[OrderExtraLineItemData]
+        """
+        self._extra_line_item_data = extra_line_item_data
+
+    @property
+    def external_shipping_system_id(self):
+        """
+        Gets the external_shipping_system_id of this Order.
+
+
+        :return: The external_shipping_system_id of this Order.
+        :rtype: int
+        """
+        return self._external_shipping_system_id
+
+    @external_shipping_system_id.setter
+    def external_shipping_system_id(self, external_shipping_system_id):
+        """
+        Sets the external_shipping_system_id of this Order.
+
+
+        :param external_shipping_system_id: The external_shipping_system_id of this Order.
+        :type: int
+        """
+        self._external_shipping_system_id = external_shipping_system_id
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this Order.
+
+
+        :return: The custom_fields of this Order.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this Order.
+
+
+        :param custom_fields: The custom_fields of this Order.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

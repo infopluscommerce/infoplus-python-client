@@ -83,7 +83,7 @@ class IntegrationPartnerApi(object):
         if ('integration_partner_id' not in params) or (params['integration_partner_id'] is None):
             raise ValueError("Missing the required parameter `integration_partner_id` when calling `get_integration_partner_by_id`")
 
-        resource_path = '/v1.0/integrationPartner/{integrationPartnerId}'.replace('{format}', 'json')
+        resource_path = '/beta/integrationPartner/{integrationPartnerId}'.replace('{format}', 'json')
         path_params = {}
         if 'integration_partner_id' in params:
             path_params['integrationPartnerId'] = params['integration_partner_id']
@@ -159,7 +159,7 @@ class IntegrationPartnerApi(object):
         del params['kwargs']
 
 
-        resource_path = '/v1.0/integrationPartner/search'.replace('{format}', 'json')
+        resource_path = '/beta/integrationPartner/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

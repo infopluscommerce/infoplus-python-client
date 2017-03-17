@@ -44,6 +44,7 @@ class Replenishment(object):
             'pick_face_assignment': 'int',
             'location_id': 'int',
             'quantity': 'int',
+            'custom_fields': 'dict(str, object)',
             'sku': 'str'
         }
 
@@ -55,6 +56,7 @@ class Replenishment(object):
             'pick_face_assignment': 'pickFaceAssignment',
             'location_id': 'locationId',
             'quantity': 'quantity',
+            'custom_fields': 'customFields',
             'sku': 'sku'
         }
 
@@ -65,6 +67,7 @@ class Replenishment(object):
         self._pick_face_assignment = None
         self._location_id = None
         self._quantity = None
+        self._custom_fields = None
         self._sku = None
 
     @property
@@ -220,6 +223,28 @@ class Replenishment(object):
         :type: int
         """
         self._quantity = quantity
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this Replenishment.
+
+
+        :return: The custom_fields of this Replenishment.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this Replenishment.
+
+
+        :param custom_fields: The custom_fields of this Replenishment.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     @property
     def sku(self):

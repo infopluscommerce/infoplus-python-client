@@ -49,7 +49,8 @@ class LoggedTime(object):
             'lob_id': 'int',
             'warehouse_id': 'int',
             'logged_time_type_id': 'int',
-            'app_id': 'int'
+            'app_id': 'int',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -65,7 +66,8 @@ class LoggedTime(object):
             'lob_id': 'lobId',
             'warehouse_id': 'warehouseId',
             'logged_time_type_id': 'loggedTimeTypeId',
-            'app_id': 'appId'
+            'app_id': 'appId',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -81,6 +83,7 @@ class LoggedTime(object):
         self._warehouse_id = None
         self._logged_time_type_id = None
         self._app_id = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -367,6 +370,28 @@ class LoggedTime(object):
         :type: int
         """
         self._app_id = app_id
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this LoggedTime.
+
+
+        :return: The custom_fields of this LoggedTime.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this LoggedTime.
+
+
+        :param custom_fields: The custom_fields of this LoggedTime.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

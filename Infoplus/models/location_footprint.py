@@ -44,7 +44,8 @@ class LocationFootprint(object):
             'depth': 'int',
             'height': 'int',
             'create_date': 'datetime',
-            'modify_date': 'datetime'
+            'modify_date': 'datetime',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -55,7 +56,8 @@ class LocationFootprint(object):
             'depth': 'depth',
             'height': 'height',
             'create_date': 'createDate',
-            'modify_date': 'modifyDate'
+            'modify_date': 'modifyDate',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -66,6 +68,7 @@ class LocationFootprint(object):
         self._height = None
         self._create_date = None
         self._modify_date = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -242,6 +245,28 @@ class LocationFootprint(object):
         :type: datetime
         """
         self._modify_date = modify_date
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this LocationFootprint.
+
+
+        :return: The custom_fields of this LocationFootprint.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this LocationFootprint.
+
+
+        :param custom_fields: The custom_fields of this LocationFootprint.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """
