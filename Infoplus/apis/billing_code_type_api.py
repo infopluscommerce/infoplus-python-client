@@ -122,6 +122,172 @@ class BillingCodeTypeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def add_billing_code_type_audit(self, billing_code_type_id, billing_code_type_audit, **kwargs):
+        """
+        Add new audit for a billingCodeType
+        Adds an audit to an existing billingCodeType.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_billing_code_type_audit(billing_code_type_id, billing_code_type_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int billing_code_type_id: Id of the billingCodeType to add an audit to (required)
+        :param str billing_code_type_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['billing_code_type_id', 'billing_code_type_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_billing_code_type_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'billing_code_type_id' is set
+        if ('billing_code_type_id' not in params) or (params['billing_code_type_id'] is None):
+            raise ValueError("Missing the required parameter `billing_code_type_id` when calling `add_billing_code_type_audit`")
+        # verify the required parameter 'billing_code_type_audit' is set
+        if ('billing_code_type_audit' not in params) or (params['billing_code_type_audit'] is None):
+            raise ValueError("Missing the required parameter `billing_code_type_audit` when calling `add_billing_code_type_audit`")
+
+        resource_path = '/beta/billingCodeType/{billingCodeTypeId}/audit/{billingCodeTypeAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'billing_code_type_id' in params:
+            path_params['billingCodeTypeId'] = params['billing_code_type_id']
+        if 'billing_code_type_audit' in params:
+            path_params['billingCodeTypeAudit'] = params['billing_code_type_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_billing_code_type_tag(self, billing_code_type_id, billing_code_type_tag, **kwargs):
+        """
+        Add new tags for a billingCodeType.
+        Adds a tag to an existing billingCodeType.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_billing_code_type_tag(billing_code_type_id, billing_code_type_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int billing_code_type_id: Id of the billingCodeType to add a tag to (required)
+        :param str billing_code_type_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['billing_code_type_id', 'billing_code_type_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_billing_code_type_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'billing_code_type_id' is set
+        if ('billing_code_type_id' not in params) or (params['billing_code_type_id'] is None):
+            raise ValueError("Missing the required parameter `billing_code_type_id` when calling `add_billing_code_type_tag`")
+        # verify the required parameter 'billing_code_type_tag' is set
+        if ('billing_code_type_tag' not in params) or (params['billing_code_type_tag'] is None):
+            raise ValueError("Missing the required parameter `billing_code_type_tag` when calling `add_billing_code_type_tag`")
+
+        resource_path = '/beta/billingCodeType/{billingCodeTypeId}/tag/{billingCodeTypeTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'billing_code_type_id' in params:
+            path_params['billingCodeTypeId'] = params['billing_code_type_id']
+        if 'billing_code_type_tag' in params:
+            path_params['billingCodeTypeTag'] = params['billing_code_type_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_billing_code_type(self, billing_code_type_id, **kwargs):
         """
         Delete a billingCodeType
@@ -164,6 +330,89 @@ class BillingCodeTypeApi(object):
         path_params = {}
         if 'billing_code_type_id' in params:
             path_params['billingCodeTypeId'] = params['billing_code_type_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_billing_code_type_tag(self, billing_code_type_id, billing_code_type_tag, **kwargs):
+        """
+        Delete a tag for a billingCodeType.
+        Deletes an existing billingCodeType tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_billing_code_type_tag(billing_code_type_id, billing_code_type_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int billing_code_type_id: Id of the billingCodeType to remove tag from (required)
+        :param str billing_code_type_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['billing_code_type_id', 'billing_code_type_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_billing_code_type_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'billing_code_type_id' is set
+        if ('billing_code_type_id' not in params) or (params['billing_code_type_id'] is None):
+            raise ValueError("Missing the required parameter `billing_code_type_id` when calling `delete_billing_code_type_tag`")
+        # verify the required parameter 'billing_code_type_tag' is set
+        if ('billing_code_type_tag' not in params) or (params['billing_code_type_tag'] is None):
+            raise ValueError("Missing the required parameter `billing_code_type_tag` when calling `delete_billing_code_type_tag`")
+
+        resource_path = '/beta/billingCodeType/{billingCodeTypeId}/tag/{billingCodeTypeTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'billing_code_type_id' in params:
+            path_params['billingCodeTypeId'] = params['billing_code_type_id']
+        if 'billing_code_type_tag' in params:
+            path_params['billingCodeTypeTag'] = params['billing_code_type_tag']
 
         query_params = {}
 
@@ -321,6 +570,160 @@ class BillingCodeTypeApi(object):
             raise ValueError("Missing the required parameter `billing_code_type_id` when calling `get_billing_code_type_by_id`")
 
         resource_path = '/beta/billingCodeType/{billingCodeTypeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'billing_code_type_id' in params:
+            path_params['billingCodeTypeId'] = params['billing_code_type_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BillingCodeType',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_billing_code_type_tags(self, billing_code_type_id, **kwargs):
+        """
+        Get the tags for a billingCodeType.
+        Get all existing billingCodeType tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_billing_code_type_tags(billing_code_type_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int billing_code_type_id: Id of the billingCodeType to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['billing_code_type_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_billing_code_type_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'billing_code_type_id' is set
+        if ('billing_code_type_id' not in params) or (params['billing_code_type_id'] is None):
+            raise ValueError("Missing the required parameter `billing_code_type_id` when calling `get_billing_code_type_tags`")
+
+        resource_path = '/beta/billingCodeType/{billingCodeTypeId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'billing_code_type_id' in params:
+            path_params['billingCodeTypeId'] = params['billing_code_type_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_billing_code_type_by_id(self, billing_code_type_id, **kwargs):
+        """
+        Get a duplicated a billingCodeType by id
+        Returns a duplicated billingCodeType identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_billing_code_type_by_id(billing_code_type_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int billing_code_type_id: Id of the billingCodeType to be duplicated. (required)
+        :return: BillingCodeType
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['billing_code_type_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_billing_code_type_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'billing_code_type_id' is set
+        if ('billing_code_type_id' not in params) or (params['billing_code_type_id'] is None):
+            raise ValueError("Missing the required parameter `billing_code_type_id` when calling `get_duplicate_billing_code_type_by_id`")
+
+        resource_path = '/beta/billingCodeType/duplicate/{billingCodeTypeId}'.replace('{format}', 'json')
         path_params = {}
         if 'billing_code_type_id' in params:
             path_params['billingCodeTypeId'] = params['billing_code_type_id']

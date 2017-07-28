@@ -122,6 +122,172 @@ class OrderSourceApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def add_order_source_audit(self, order_source_id, order_source_audit, **kwargs):
+        """
+        Add new audit for an orderSource
+        Adds an audit to an existing orderSource.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_order_source_audit(order_source_id, order_source_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int order_source_id: Id of the orderSource to add an audit to (required)
+        :param str order_source_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['order_source_id', 'order_source_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_order_source_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'order_source_id' is set
+        if ('order_source_id' not in params) or (params['order_source_id'] is None):
+            raise ValueError("Missing the required parameter `order_source_id` when calling `add_order_source_audit`")
+        # verify the required parameter 'order_source_audit' is set
+        if ('order_source_audit' not in params) or (params['order_source_audit'] is None):
+            raise ValueError("Missing the required parameter `order_source_audit` when calling `add_order_source_audit`")
+
+        resource_path = '/beta/orderSource/{orderSourceId}/audit/{orderSourceAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'order_source_id' in params:
+            path_params['orderSourceId'] = params['order_source_id']
+        if 'order_source_audit' in params:
+            path_params['orderSourceAudit'] = params['order_source_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_order_source_tag(self, order_source_id, order_source_tag, **kwargs):
+        """
+        Add new tags for an orderSource.
+        Adds a tag to an existing orderSource.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_order_source_tag(order_source_id, order_source_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int order_source_id: Id of the orderSource to add a tag to (required)
+        :param str order_source_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['order_source_id', 'order_source_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_order_source_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'order_source_id' is set
+        if ('order_source_id' not in params) or (params['order_source_id'] is None):
+            raise ValueError("Missing the required parameter `order_source_id` when calling `add_order_source_tag`")
+        # verify the required parameter 'order_source_tag' is set
+        if ('order_source_tag' not in params) or (params['order_source_tag'] is None):
+            raise ValueError("Missing the required parameter `order_source_tag` when calling `add_order_source_tag`")
+
+        resource_path = '/beta/orderSource/{orderSourceId}/tag/{orderSourceTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'order_source_id' in params:
+            path_params['orderSourceId'] = params['order_source_id']
+        if 'order_source_tag' in params:
+            path_params['orderSourceTag'] = params['order_source_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_order_source(self, order_source_id, **kwargs):
         """
         Delete an orderSource
@@ -195,6 +361,166 @@ class OrderSourceApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_order_source_tag(self, order_source_id, order_source_tag, **kwargs):
+        """
+        Delete a tag for an orderSource.
+        Deletes an existing orderSource tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_order_source_tag(order_source_id, order_source_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int order_source_id: Id of the orderSource to remove tag from (required)
+        :param str order_source_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['order_source_id', 'order_source_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_order_source_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'order_source_id' is set
+        if ('order_source_id' not in params) or (params['order_source_id'] is None):
+            raise ValueError("Missing the required parameter `order_source_id` when calling `delete_order_source_tag`")
+        # verify the required parameter 'order_source_tag' is set
+        if ('order_source_tag' not in params) or (params['order_source_tag'] is None):
+            raise ValueError("Missing the required parameter `order_source_tag` when calling `delete_order_source_tag`")
+
+        resource_path = '/beta/orderSource/{orderSourceId}/tag/{orderSourceTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'order_source_id' in params:
+            path_params['orderSourceId'] = params['order_source_id']
+        if 'order_source_tag' in params:
+            path_params['orderSourceTag'] = params['order_source_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_order_source_by_id(self, order_source_id, **kwargs):
+        """
+        Get a duplicated an orderSource by id
+        Returns a duplicated orderSource identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_order_source_by_id(order_source_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int order_source_id: Id of the orderSource to be duplicated. (required)
+        :return: OrderSource
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['order_source_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_order_source_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'order_source_id' is set
+        if ('order_source_id' not in params) or (params['order_source_id'] is None):
+            raise ValueError("Missing the required parameter `order_source_id` when calling `get_duplicate_order_source_by_id`")
+
+        resource_path = '/beta/orderSource/duplicate/{orderSourceId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'order_source_id' in params:
+            path_params['orderSourceId'] = params['order_source_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OrderSource',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -355,6 +681,83 @@ class OrderSourceApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='OrderSource',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_order_source_tags(self, order_source_id, **kwargs):
+        """
+        Get the tags for an orderSource.
+        Get all existing orderSource tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_order_source_tags(order_source_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int order_source_id: Id of the orderSource to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['order_source_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_order_source_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'order_source_id' is set
+        if ('order_source_id' not in params) or (params['order_source_id'] is None):
+            raise ValueError("Missing the required parameter `order_source_id` when calling `get_order_source_tags`")
+
+        resource_path = '/beta/orderSource/{orderSourceId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'order_source_id' in params:
+            path_params['orderSourceId'] = params['order_source_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

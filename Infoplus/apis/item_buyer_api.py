@@ -45,10 +45,10 @@ class ItemBuyerApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_item_buyer_by_search_text(self, **kwargs):
+    def add_item_buyer(self, body, **kwargs):
         """
-        Search itemBuyers
-        Returns the list of itemBuyers that match the given searchText.
+        Create an itemBuyer
+        Inserts a new itemBuyer using the specified data.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -56,19 +56,17 @@ class ItemBuyerApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_item_buyer_by_search_text(callback=callback_function)
+        >>> thread = api.add_item_buyer(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str search_text: Search text, used to filter results.
-        :param int page: Result page number.  Defaults to 1.
-        :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
-        :return: list[ItemBuyer]
+        :param ItemBuyer body: ItemBuyer to be inserted. (required)
+        :return: ItemBuyer
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['search_text', 'page', 'limit']
+        all_params = ['body']
         all_params.append('callback')
 
         params = locals()
@@ -76,7 +74,490 @@ class ItemBuyerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_item_buyer_by_search_text" % key
+                    " to method add_item_buyer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `add_item_buyer`")
+
+        resource_path = '/beta/itemBuyer'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ItemBuyer',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_item_buyer_audit(self, item_buyer_id, item_buyer_audit, **kwargs):
+        """
+        Add new audit for an itemBuyer
+        Adds an audit to an existing itemBuyer.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_item_buyer_audit(item_buyer_id, item_buyer_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int item_buyer_id: Id of the itemBuyer to add an audit to (required)
+        :param str item_buyer_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['item_buyer_id', 'item_buyer_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_item_buyer_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'item_buyer_id' is set
+        if ('item_buyer_id' not in params) or (params['item_buyer_id'] is None):
+            raise ValueError("Missing the required parameter `item_buyer_id` when calling `add_item_buyer_audit`")
+        # verify the required parameter 'item_buyer_audit' is set
+        if ('item_buyer_audit' not in params) or (params['item_buyer_audit'] is None):
+            raise ValueError("Missing the required parameter `item_buyer_audit` when calling `add_item_buyer_audit`")
+
+        resource_path = '/beta/itemBuyer/{itemBuyerId}/audit/{itemBuyerAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'item_buyer_id' in params:
+            path_params['itemBuyerId'] = params['item_buyer_id']
+        if 'item_buyer_audit' in params:
+            path_params['itemBuyerAudit'] = params['item_buyer_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_item_buyer_tag(self, item_buyer_id, item_buyer_tag, **kwargs):
+        """
+        Add new tags for an itemBuyer.
+        Adds a tag to an existing itemBuyer.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_item_buyer_tag(item_buyer_id, item_buyer_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int item_buyer_id: Id of the itemBuyer to add a tag to (required)
+        :param str item_buyer_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['item_buyer_id', 'item_buyer_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_item_buyer_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'item_buyer_id' is set
+        if ('item_buyer_id' not in params) or (params['item_buyer_id'] is None):
+            raise ValueError("Missing the required parameter `item_buyer_id` when calling `add_item_buyer_tag`")
+        # verify the required parameter 'item_buyer_tag' is set
+        if ('item_buyer_tag' not in params) or (params['item_buyer_tag'] is None):
+            raise ValueError("Missing the required parameter `item_buyer_tag` when calling `add_item_buyer_tag`")
+
+        resource_path = '/beta/itemBuyer/{itemBuyerId}/tag/{itemBuyerTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'item_buyer_id' in params:
+            path_params['itemBuyerId'] = params['item_buyer_id']
+        if 'item_buyer_tag' in params:
+            path_params['itemBuyerTag'] = params['item_buyer_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_item_buyer(self, item_buyer_id, **kwargs):
+        """
+        Delete an itemBuyer
+        Deletes the itemBuyer identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_item_buyer(item_buyer_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int item_buyer_id: Id of the itemBuyer to be deleted. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['item_buyer_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_item_buyer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'item_buyer_id' is set
+        if ('item_buyer_id' not in params) or (params['item_buyer_id'] is None):
+            raise ValueError("Missing the required parameter `item_buyer_id` when calling `delete_item_buyer`")
+
+        resource_path = '/beta/itemBuyer/{itemBuyerId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'item_buyer_id' in params:
+            path_params['itemBuyerId'] = params['item_buyer_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_item_buyer_tag(self, item_buyer_id, item_buyer_tag, **kwargs):
+        """
+        Delete a tag for an itemBuyer.
+        Deletes an existing itemBuyer tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_item_buyer_tag(item_buyer_id, item_buyer_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int item_buyer_id: Id of the itemBuyer to remove tag from (required)
+        :param str item_buyer_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['item_buyer_id', 'item_buyer_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_item_buyer_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'item_buyer_id' is set
+        if ('item_buyer_id' not in params) or (params['item_buyer_id'] is None):
+            raise ValueError("Missing the required parameter `item_buyer_id` when calling `delete_item_buyer_tag`")
+        # verify the required parameter 'item_buyer_tag' is set
+        if ('item_buyer_tag' not in params) or (params['item_buyer_tag'] is None):
+            raise ValueError("Missing the required parameter `item_buyer_tag` when calling `delete_item_buyer_tag`")
+
+        resource_path = '/beta/itemBuyer/{itemBuyerId}/tag/{itemBuyerTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'item_buyer_id' in params:
+            path_params['itemBuyerId'] = params['item_buyer_id']
+        if 'item_buyer_tag' in params:
+            path_params['itemBuyerTag'] = params['item_buyer_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_item_buyer_by_id(self, item_buyer_id, **kwargs):
+        """
+        Get a duplicated an itemBuyer by id
+        Returns a duplicated itemBuyer identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_item_buyer_by_id(item_buyer_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int item_buyer_id: Id of the itemBuyer to be duplicated. (required)
+        :return: ItemBuyer
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['item_buyer_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_item_buyer_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'item_buyer_id' is set
+        if ('item_buyer_id' not in params) or (params['item_buyer_id'] is None):
+            raise ValueError("Missing the required parameter `item_buyer_id` when calling `get_duplicate_item_buyer_by_id`")
+
+        resource_path = '/beta/itemBuyer/duplicate/{itemBuyerId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'item_buyer_id' in params:
+            path_params['itemBuyerId'] = params['item_buyer_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ItemBuyer',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_item_buyer_by_filter(self, **kwargs):
+        """
+        Search itemBuyers by filter
+        Returns the list of itemBuyers that match the given filter.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_item_buyer_by_filter(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str filter: Query string, used to filter results.
+        :param int page: Result page number.  Defaults to 1.
+        :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+        :param str sort: Sort results by specified field.
+        :return: list[ItemBuyer]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['filter', 'page', 'limit', 'sort']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_item_buyer_by_filter" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -86,12 +567,14 @@ class ItemBuyerApi(object):
         path_params = {}
 
         query_params = {}
-        if 'search_text' in params:
-            query_params['searchText'] = params['search_text']
+        if 'filter' in params:
+            query_params['filter'] = params['filter']
         if 'page' in params:
             query_params['page'] = params['page']
         if 'limit' in params:
             query_params['limit'] = params['limit']
+        if 'sort' in params:
+            query_params['sort'] = params['sort']
 
         header_params = {}
 
@@ -125,7 +608,7 @@ class ItemBuyerApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_translate_buyer_by_id(self, item_buyer_id, **kwargs):
+    def get_item_buyer_by_id(self, item_buyer_id, **kwargs):
         """
         Get an itemBuyer by id
         Returns the itemBuyer identified by the specified id.
@@ -136,11 +619,11 @@ class ItemBuyerApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_translate_buyer_by_id(item_buyer_id, callback=callback_function)
+        >>> thread = api.get_item_buyer_by_id(item_buyer_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str item_buyer_id: Id of itemBuyer to be returned. (required)
+        :param int item_buyer_id: Id of the itemBuyer to be returned. (required)
         :return: ItemBuyer
                  If the method is called asynchronously,
                  returns the request thread.
@@ -154,14 +637,14 @@ class ItemBuyerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_translate_buyer_by_id" % key
+                    " to method get_item_buyer_by_id" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'item_buyer_id' is set
         if ('item_buyer_id' not in params) or (params['item_buyer_id'] is None):
-            raise ValueError("Missing the required parameter `item_buyer_id` when calling `get_translate_buyer_by_id`")
+            raise ValueError("Missing the required parameter `item_buyer_id` when calling `get_item_buyer_by_id`")
 
         resource_path = '/beta/itemBuyer/{itemBuyerId}'.replace('{format}', 'json')
         path_params = {}
@@ -198,6 +681,160 @@ class ItemBuyerApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ItemBuyer',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_item_buyer_tags(self, item_buyer_id, **kwargs):
+        """
+        Get the tags for an itemBuyer.
+        Get all existing itemBuyer tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_item_buyer_tags(item_buyer_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int item_buyer_id: Id of the itemBuyer to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['item_buyer_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_item_buyer_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'item_buyer_id' is set
+        if ('item_buyer_id' not in params) or (params['item_buyer_id'] is None):
+            raise ValueError("Missing the required parameter `item_buyer_id` when calling `get_item_buyer_tags`")
+
+        resource_path = '/beta/itemBuyer/{itemBuyerId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'item_buyer_id' in params:
+            path_params['itemBuyerId'] = params['item_buyer_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_item_buyer(self, body, **kwargs):
+        """
+        Update an itemBuyer
+        Updates an existing itemBuyer using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_item_buyer(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ItemBuyer body: ItemBuyer to be updated. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_item_buyer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_item_buyer`")
+
+        resource_path = '/beta/itemBuyer'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

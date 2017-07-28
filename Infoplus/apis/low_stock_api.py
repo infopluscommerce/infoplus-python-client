@@ -45,6 +45,332 @@ class LowStockApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def add_low_stock_audit(self, low_stock_id, low_stock_audit, **kwargs):
+        """
+        Add new audit for a lowStock
+        Adds an audit to an existing lowStock.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_low_stock_audit(low_stock_id, low_stock_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int low_stock_id: Id of the lowStock to add an audit to (required)
+        :param str low_stock_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['low_stock_id', 'low_stock_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_low_stock_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'low_stock_id' is set
+        if ('low_stock_id' not in params) or (params['low_stock_id'] is None):
+            raise ValueError("Missing the required parameter `low_stock_id` when calling `add_low_stock_audit`")
+        # verify the required parameter 'low_stock_audit' is set
+        if ('low_stock_audit' not in params) or (params['low_stock_audit'] is None):
+            raise ValueError("Missing the required parameter `low_stock_audit` when calling `add_low_stock_audit`")
+
+        resource_path = '/beta/lowStock/{lowStockId}/audit/{lowStockAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'low_stock_id' in params:
+            path_params['lowStockId'] = params['low_stock_id']
+        if 'low_stock_audit' in params:
+            path_params['lowStockAudit'] = params['low_stock_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_low_stock_tag(self, low_stock_id, low_stock_tag, **kwargs):
+        """
+        Add new tags for a lowStock.
+        Adds a tag to an existing lowStock.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_low_stock_tag(low_stock_id, low_stock_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int low_stock_id: Id of the lowStock to add a tag to (required)
+        :param str low_stock_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['low_stock_id', 'low_stock_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_low_stock_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'low_stock_id' is set
+        if ('low_stock_id' not in params) or (params['low_stock_id'] is None):
+            raise ValueError("Missing the required parameter `low_stock_id` when calling `add_low_stock_tag`")
+        # verify the required parameter 'low_stock_tag' is set
+        if ('low_stock_tag' not in params) or (params['low_stock_tag'] is None):
+            raise ValueError("Missing the required parameter `low_stock_tag` when calling `add_low_stock_tag`")
+
+        resource_path = '/beta/lowStock/{lowStockId}/tag/{lowStockTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'low_stock_id' in params:
+            path_params['lowStockId'] = params['low_stock_id']
+        if 'low_stock_tag' in params:
+            path_params['lowStockTag'] = params['low_stock_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_low_stock_tag(self, low_stock_id, low_stock_tag, **kwargs):
+        """
+        Delete a tag for a lowStock.
+        Deletes an existing lowStock tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_low_stock_tag(low_stock_id, low_stock_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int low_stock_id: Id of the lowStock to remove tag from (required)
+        :param str low_stock_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['low_stock_id', 'low_stock_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_low_stock_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'low_stock_id' is set
+        if ('low_stock_id' not in params) or (params['low_stock_id'] is None):
+            raise ValueError("Missing the required parameter `low_stock_id` when calling `delete_low_stock_tag`")
+        # verify the required parameter 'low_stock_tag' is set
+        if ('low_stock_tag' not in params) or (params['low_stock_tag'] is None):
+            raise ValueError("Missing the required parameter `low_stock_tag` when calling `delete_low_stock_tag`")
+
+        resource_path = '/beta/lowStock/{lowStockId}/tag/{lowStockTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'low_stock_id' in params:
+            path_params['lowStockId'] = params['low_stock_id']
+        if 'low_stock_tag' in params:
+            path_params['lowStockTag'] = params['low_stock_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_low_stock_by_id(self, low_stock_id, **kwargs):
+        """
+        Get a duplicated a lowStock by id
+        Returns a duplicated lowStock identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_low_stock_by_id(low_stock_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int low_stock_id: Id of the lowStock to be duplicated. (required)
+        :return: LowStock
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['low_stock_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_low_stock_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'low_stock_id' is set
+        if ('low_stock_id' not in params) or (params['low_stock_id'] is None):
+            raise ValueError("Missing the required parameter `low_stock_id` when calling `get_duplicate_low_stock_by_id`")
+
+        resource_path = '/beta/lowStock/duplicate/{lowStockId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'low_stock_id' in params:
+            path_params['lowStockId'] = params['low_stock_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LowStock',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_low_stock_by_filter(self, **kwargs):
         """
         Search lowStocks by filter
@@ -201,6 +527,83 @@ class LowStockApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LowStock',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_low_stock_tags(self, low_stock_id, **kwargs):
+        """
+        Get the tags for a lowStock.
+        Get all existing lowStock tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_low_stock_tags(low_stock_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int low_stock_id: Id of the lowStock to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['low_stock_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_low_stock_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'low_stock_id' is set
+        if ('low_stock_id' not in params) or (params['low_stock_id'] is None):
+            raise ValueError("Missing the required parameter `low_stock_id` when calling `get_low_stock_tags`")
+
+        resource_path = '/beta/lowStock/{lowStockId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'low_stock_id' in params:
+            path_params['lowStockId'] = params['low_stock_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

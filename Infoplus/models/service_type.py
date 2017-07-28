@@ -38,16 +38,19 @@ class ServiceType(object):
         """
         self.swagger_types = {
             'service_type': 'str',
-            'label': 'str'
+            'label': 'str',
+            'full_entity_class_name': 'str'
         }
 
         self.attribute_map = {
             'service_type': 'serviceType',
-            'label': 'label'
+            'label': 'label',
+            'full_entity_class_name': 'fullEntityClassName'
         }
 
         self._service_type = None
         self._label = None
+        self._full_entity_class_name = None
 
     @property
     def service_type(self):
@@ -92,6 +95,28 @@ class ServiceType(object):
         :type: str
         """
         self._label = label
+
+    @property
+    def full_entity_class_name(self):
+        """
+        Gets the full_entity_class_name of this ServiceType.
+
+
+        :return: The full_entity_class_name of this ServiceType.
+        :rtype: str
+        """
+        return self._full_entity_class_name
+
+    @full_entity_class_name.setter
+    def full_entity_class_name(self, full_entity_class_name):
+        """
+        Sets the full_entity_class_name of this ServiceType.
+
+
+        :param full_entity_class_name: The full_entity_class_name of this ServiceType.
+        :type: str
+        """
+        self._full_entity_class_name = full_entity_class_name
 
     def to_dict(self):
         """

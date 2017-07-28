@@ -45,6 +45,172 @@ class ReceivingProcessApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def add_receiving_process_audit(self, receiving_process_id, receiving_process_audit, **kwargs):
+        """
+        Add new audit for a receivingProcess
+        Adds an audit to an existing receivingProcess.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_receiving_process_audit(receiving_process_id, receiving_process_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int receiving_process_id: Id of the receivingProcess to add an audit to (required)
+        :param str receiving_process_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['receiving_process_id', 'receiving_process_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_receiving_process_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'receiving_process_id' is set
+        if ('receiving_process_id' not in params) or (params['receiving_process_id'] is None):
+            raise ValueError("Missing the required parameter `receiving_process_id` when calling `add_receiving_process_audit`")
+        # verify the required parameter 'receiving_process_audit' is set
+        if ('receiving_process_audit' not in params) or (params['receiving_process_audit'] is None):
+            raise ValueError("Missing the required parameter `receiving_process_audit` when calling `add_receiving_process_audit`")
+
+        resource_path = '/beta/receivingProcess/{receivingProcessId}/audit/{receivingProcessAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'receiving_process_id' in params:
+            path_params['receivingProcessId'] = params['receiving_process_id']
+        if 'receiving_process_audit' in params:
+            path_params['receivingProcessAudit'] = params['receiving_process_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_receiving_process_tag(self, receiving_process_id, receiving_process_tag, **kwargs):
+        """
+        Add new tags for a receivingProcess.
+        Adds a tag to an existing receivingProcess.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_receiving_process_tag(receiving_process_id, receiving_process_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int receiving_process_id: Id of the receivingProcess to add a tag to (required)
+        :param str receiving_process_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['receiving_process_id', 'receiving_process_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_receiving_process_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'receiving_process_id' is set
+        if ('receiving_process_id' not in params) or (params['receiving_process_id'] is None):
+            raise ValueError("Missing the required parameter `receiving_process_id` when calling `add_receiving_process_tag`")
+        # verify the required parameter 'receiving_process_tag' is set
+        if ('receiving_process_tag' not in params) or (params['receiving_process_tag'] is None):
+            raise ValueError("Missing the required parameter `receiving_process_tag` when calling `add_receiving_process_tag`")
+
+        resource_path = '/beta/receivingProcess/{receivingProcessId}/tag/{receivingProcessTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'receiving_process_id' in params:
+            path_params['receivingProcessId'] = params['receiving_process_id']
+        if 'receiving_process_tag' in params:
+            path_params['receivingProcessTag'] = params['receiving_process_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_receiving_process(self, receiving_process_id, **kwargs):
         """
         Delete a receivingProcess
@@ -118,6 +284,166 @@ class ReceivingProcessApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_receiving_process_tag(self, receiving_process_id, receiving_process_tag, **kwargs):
+        """
+        Delete a tag for a receivingProcess.
+        Deletes an existing receivingProcess tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_receiving_process_tag(receiving_process_id, receiving_process_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int receiving_process_id: Id of the receivingProcess to remove tag from (required)
+        :param str receiving_process_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['receiving_process_id', 'receiving_process_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_receiving_process_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'receiving_process_id' is set
+        if ('receiving_process_id' not in params) or (params['receiving_process_id'] is None):
+            raise ValueError("Missing the required parameter `receiving_process_id` when calling `delete_receiving_process_tag`")
+        # verify the required parameter 'receiving_process_tag' is set
+        if ('receiving_process_tag' not in params) or (params['receiving_process_tag'] is None):
+            raise ValueError("Missing the required parameter `receiving_process_tag` when calling `delete_receiving_process_tag`")
+
+        resource_path = '/beta/receivingProcess/{receivingProcessId}/tag/{receivingProcessTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'receiving_process_id' in params:
+            path_params['receivingProcessId'] = params['receiving_process_id']
+        if 'receiving_process_tag' in params:
+            path_params['receivingProcessTag'] = params['receiving_process_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_receiving_process_by_id(self, receiving_process_id, **kwargs):
+        """
+        Get a duplicated a receivingProcess by id
+        Returns a duplicated receivingProcess identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_receiving_process_by_id(receiving_process_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int receiving_process_id: Id of the receivingProcess to be duplicated. (required)
+        :return: ReceivingProcess
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['receiving_process_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_receiving_process_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'receiving_process_id' is set
+        if ('receiving_process_id' not in params) or (params['receiving_process_id'] is None):
+            raise ValueError("Missing the required parameter `receiving_process_id` when calling `get_duplicate_receiving_process_by_id`")
+
+        resource_path = '/beta/receivingProcess/duplicate/{receivingProcessId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'receiving_process_id' in params:
+            path_params['receivingProcessId'] = params['receiving_process_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ReceivingProcess',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -278,6 +604,83 @@ class ReceivingProcessApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ReceivingProcess',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_receiving_process_tags(self, receiving_process_id, **kwargs):
+        """
+        Get the tags for a receivingProcess.
+        Get all existing receivingProcess tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_receiving_process_tags(receiving_process_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int receiving_process_id: Id of the receivingProcess to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['receiving_process_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_receiving_process_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'receiving_process_id' is set
+        if ('receiving_process_id' not in params) or (params['receiving_process_id'] is None):
+            raise ValueError("Missing the required parameter `receiving_process_id` when calling `get_receiving_process_tags`")
+
+        resource_path = '/beta/receivingProcess/{receivingProcessId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'receiving_process_id' in params:
+            path_params['receivingProcessId'] = params['receiving_process_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -39,7 +39,7 @@ class Kit(object):
         self.swagger_types = {
             'lob_id': 'int',
             'id': 'int',
-            'kit_sku_id': 'int',
+            'kit_sku': 'str',
             'packaging_type': 'str',
             'other': 'str',
             'number_of_components': 'int',
@@ -59,13 +59,14 @@ class Kit(object):
             'max_inv_qty': 'int',
             'is_kod': 'str',
             'kod_type': 'str',
+            'kit_component_list': 'list[KitComponent]',
             'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'lob_id': 'lobId',
             'id': 'id',
-            'kit_sku_id': 'kitSKUId',
+            'kit_sku': 'kitSKU',
             'packaging_type': 'packagingType',
             'other': 'other',
             'number_of_components': 'numberOfComponents',
@@ -85,12 +86,13 @@ class Kit(object):
             'max_inv_qty': 'maxInvQty',
             'is_kod': 'isKOD',
             'kod_type': 'kodType',
+            'kit_component_list': 'kitComponentList',
             'custom_fields': 'customFields'
         }
 
         self._lob_id = None
         self._id = None
-        self._kit_sku_id = None
+        self._kit_sku = None
         self._packaging_type = None
         self._other = None
         self._number_of_components = None
@@ -110,6 +112,7 @@ class Kit(object):
         self._max_inv_qty = None
         self._is_kod = None
         self._kod_type = None
+        self._kit_component_list = None
         self._custom_fields = None
 
     @property
@@ -157,26 +160,26 @@ class Kit(object):
         self._id = id
 
     @property
-    def kit_sku_id(self):
+    def kit_sku(self):
         """
-        Gets the kit_sku_id of this Kit.
+        Gets the kit_sku of this Kit.
 
 
-        :return: The kit_sku_id of this Kit.
-        :rtype: int
+        :return: The kit_sku of this Kit.
+        :rtype: str
         """
-        return self._kit_sku_id
+        return self._kit_sku
 
-    @kit_sku_id.setter
-    def kit_sku_id(self, kit_sku_id):
+    @kit_sku.setter
+    def kit_sku(self, kit_sku):
         """
-        Sets the kit_sku_id of this Kit.
+        Sets the kit_sku of this Kit.
 
 
-        :param kit_sku_id: The kit_sku_id of this Kit.
-        :type: int
+        :param kit_sku: The kit_sku of this Kit.
+        :type: str
         """
-        self._kit_sku_id = kit_sku_id
+        self._kit_sku = kit_sku
 
     @property
     def packaging_type(self):
@@ -595,6 +598,28 @@ class Kit(object):
         :type: str
         """
         self._kod_type = kod_type
+
+    @property
+    def kit_component_list(self):
+        """
+        Gets the kit_component_list of this Kit.
+
+
+        :return: The kit_component_list of this Kit.
+        :rtype: list[KitComponent]
+        """
+        return self._kit_component_list
+
+    @kit_component_list.setter
+    def kit_component_list(self, kit_component_list):
+        """
+        Sets the kit_component_list of this Kit.
+
+
+        :param kit_component_list: The kit_component_list of this Kit.
+        :type: list[KitComponent]
+        """
+        self._kit_component_list = kit_component_list
 
     @property
     def custom_fields(self):

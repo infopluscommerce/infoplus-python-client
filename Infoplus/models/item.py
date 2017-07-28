@@ -98,7 +98,39 @@ class Item(object):
             'storage_item_mixing_rule': 'str',
             'allocation_rule': 'str',
             'barcode_field': 'str',
+            'warehouse_display_field': 'str',
+            'product_id_tag_scheme_id': 'int',
             'hazmat': 'str',
+            'is_alcohol': 'bool',
+            'alcohol_type': 'str',
+            'alcohol_content': 'float',
+            'alcohol_container': 'str',
+            'alcohol_vintage_year': 'str',
+            'alcohol_country': 'str',
+            'alcohol_state': 'str',
+            'alcohol_region': 'str',
+            'alcohol_brand': 'str',
+            'alcohol_upc_code': 'str',
+            'alcohol_nambca_code': 'str',
+            'alcohol_unimerc_code': 'str',
+            'alcohol_scc_code': 'str',
+            'length': 'float',
+            'width': 'float',
+            'height': 'float',
+            'top_up': 'bool',
+            'ship_solo': 'bool',
+            'inventory_update_timestamp': 'datetime',
+            'available_quantity': 'int',
+            'damaged_quantity': 'int',
+            'in_fulfillment_process_quantity': 'int',
+            'on_hand_quantity': 'int',
+            'open_order_quantity': 'int',
+            'open_po_quantity': 'int',
+            'orderable_quantity': 'int',
+            'unallocatable_quantity': 'int',
+            'unavailable_quantity': 'int',
+            'overall_days_on_hand': 'int',
+            'overall_stock_status': 'str',
             'custom_fields': 'dict(str, object)'
         }
 
@@ -164,7 +196,39 @@ class Item(object):
             'storage_item_mixing_rule': 'storageItemMixingRule',
             'allocation_rule': 'allocationRule',
             'barcode_field': 'barcodeField',
+            'warehouse_display_field': 'warehouseDisplayField',
+            'product_id_tag_scheme_id': 'productIdTagSchemeId',
             'hazmat': 'hazmat',
+            'is_alcohol': 'isAlcohol',
+            'alcohol_type': 'alcoholType',
+            'alcohol_content': 'alcoholContent',
+            'alcohol_container': 'alcoholContainer',
+            'alcohol_vintage_year': 'alcoholVintageYear',
+            'alcohol_country': 'alcoholCountry',
+            'alcohol_state': 'alcoholState',
+            'alcohol_region': 'alcoholRegion',
+            'alcohol_brand': 'alcoholBrand',
+            'alcohol_upc_code': 'alcoholUPCCode',
+            'alcohol_nambca_code': 'alcoholNAMBCACode',
+            'alcohol_unimerc_code': 'alcoholUNIMERCCode',
+            'alcohol_scc_code': 'alcoholSCCCode',
+            'length': 'length',
+            'width': 'width',
+            'height': 'height',
+            'top_up': 'topUp',
+            'ship_solo': 'shipSolo',
+            'inventory_update_timestamp': 'inventoryUpdateTimestamp',
+            'available_quantity': 'availableQuantity',
+            'damaged_quantity': 'damagedQuantity',
+            'in_fulfillment_process_quantity': 'inFulfillmentProcessQuantity',
+            'on_hand_quantity': 'onHandQuantity',
+            'open_order_quantity': 'openOrderQuantity',
+            'open_po_quantity': 'openPOQuantity',
+            'orderable_quantity': 'orderableQuantity',
+            'unallocatable_quantity': 'unallocatableQuantity',
+            'unavailable_quantity': 'unavailableQuantity',
+            'overall_days_on_hand': 'overallDaysOnHand',
+            'overall_stock_status': 'overallStockStatus',
             'custom_fields': 'customFields'
         }
 
@@ -229,7 +293,39 @@ class Item(object):
         self._storage_item_mixing_rule = None
         self._allocation_rule = None
         self._barcode_field = None
+        self._warehouse_display_field = None
+        self._product_id_tag_scheme_id = None
         self._hazmat = None
+        self._is_alcohol = False
+        self._alcohol_type = None
+        self._alcohol_content = None
+        self._alcohol_container = None
+        self._alcohol_vintage_year = None
+        self._alcohol_country = None
+        self._alcohol_state = None
+        self._alcohol_region = None
+        self._alcohol_brand = None
+        self._alcohol_upc_code = None
+        self._alcohol_nambca_code = None
+        self._alcohol_unimerc_code = None
+        self._alcohol_scc_code = None
+        self._length = None
+        self._width = None
+        self._height = None
+        self._top_up = False
+        self._ship_solo = False
+        self._inventory_update_timestamp = None
+        self._available_quantity = None
+        self._damaged_quantity = None
+        self._in_fulfillment_process_quantity = None
+        self._on_hand_quantity = None
+        self._open_order_quantity = None
+        self._open_po_quantity = None
+        self._orderable_quantity = None
+        self._unallocatable_quantity = None
+        self._unavailable_quantity = None
+        self._overall_days_on_hand = None
+        self._overall_stock_status = None
         self._custom_fields = None
 
     @property
@@ -1575,6 +1671,50 @@ class Item(object):
         self._barcode_field = barcode_field
 
     @property
+    def warehouse_display_field(self):
+        """
+        Gets the warehouse_display_field of this Item.
+
+
+        :return: The warehouse_display_field of this Item.
+        :rtype: str
+        """
+        return self._warehouse_display_field
+
+    @warehouse_display_field.setter
+    def warehouse_display_field(self, warehouse_display_field):
+        """
+        Sets the warehouse_display_field of this Item.
+
+
+        :param warehouse_display_field: The warehouse_display_field of this Item.
+        :type: str
+        """
+        self._warehouse_display_field = warehouse_display_field
+
+    @property
+    def product_id_tag_scheme_id(self):
+        """
+        Gets the product_id_tag_scheme_id of this Item.
+
+
+        :return: The product_id_tag_scheme_id of this Item.
+        :rtype: int
+        """
+        return self._product_id_tag_scheme_id
+
+    @product_id_tag_scheme_id.setter
+    def product_id_tag_scheme_id(self, product_id_tag_scheme_id):
+        """
+        Sets the product_id_tag_scheme_id of this Item.
+
+
+        :param product_id_tag_scheme_id: The product_id_tag_scheme_id of this Item.
+        :type: int
+        """
+        self._product_id_tag_scheme_id = product_id_tag_scheme_id
+
+    @property
     def hazmat(self):
         """
         Gets the hazmat of this Item.
@@ -1595,6 +1735,666 @@ class Item(object):
         :type: str
         """
         self._hazmat = hazmat
+
+    @property
+    def is_alcohol(self):
+        """
+        Gets the is_alcohol of this Item.
+
+
+        :return: The is_alcohol of this Item.
+        :rtype: bool
+        """
+        return self._is_alcohol
+
+    @is_alcohol.setter
+    def is_alcohol(self, is_alcohol):
+        """
+        Sets the is_alcohol of this Item.
+
+
+        :param is_alcohol: The is_alcohol of this Item.
+        :type: bool
+        """
+        self._is_alcohol = is_alcohol
+
+    @property
+    def alcohol_type(self):
+        """
+        Gets the alcohol_type of this Item.
+
+
+        :return: The alcohol_type of this Item.
+        :rtype: str
+        """
+        return self._alcohol_type
+
+    @alcohol_type.setter
+    def alcohol_type(self, alcohol_type):
+        """
+        Sets the alcohol_type of this Item.
+
+
+        :param alcohol_type: The alcohol_type of this Item.
+        :type: str
+        """
+        self._alcohol_type = alcohol_type
+
+    @property
+    def alcohol_content(self):
+        """
+        Gets the alcohol_content of this Item.
+
+
+        :return: The alcohol_content of this Item.
+        :rtype: float
+        """
+        return self._alcohol_content
+
+    @alcohol_content.setter
+    def alcohol_content(self, alcohol_content):
+        """
+        Sets the alcohol_content of this Item.
+
+
+        :param alcohol_content: The alcohol_content of this Item.
+        :type: float
+        """
+        self._alcohol_content = alcohol_content
+
+    @property
+    def alcohol_container(self):
+        """
+        Gets the alcohol_container of this Item.
+
+
+        :return: The alcohol_container of this Item.
+        :rtype: str
+        """
+        return self._alcohol_container
+
+    @alcohol_container.setter
+    def alcohol_container(self, alcohol_container):
+        """
+        Sets the alcohol_container of this Item.
+
+
+        :param alcohol_container: The alcohol_container of this Item.
+        :type: str
+        """
+        self._alcohol_container = alcohol_container
+
+    @property
+    def alcohol_vintage_year(self):
+        """
+        Gets the alcohol_vintage_year of this Item.
+
+
+        :return: The alcohol_vintage_year of this Item.
+        :rtype: str
+        """
+        return self._alcohol_vintage_year
+
+    @alcohol_vintage_year.setter
+    def alcohol_vintage_year(self, alcohol_vintage_year):
+        """
+        Sets the alcohol_vintage_year of this Item.
+
+
+        :param alcohol_vintage_year: The alcohol_vintage_year of this Item.
+        :type: str
+        """
+        self._alcohol_vintage_year = alcohol_vintage_year
+
+    @property
+    def alcohol_country(self):
+        """
+        Gets the alcohol_country of this Item.
+
+
+        :return: The alcohol_country of this Item.
+        :rtype: str
+        """
+        return self._alcohol_country
+
+    @alcohol_country.setter
+    def alcohol_country(self, alcohol_country):
+        """
+        Sets the alcohol_country of this Item.
+
+
+        :param alcohol_country: The alcohol_country of this Item.
+        :type: str
+        """
+        self._alcohol_country = alcohol_country
+
+    @property
+    def alcohol_state(self):
+        """
+        Gets the alcohol_state of this Item.
+
+
+        :return: The alcohol_state of this Item.
+        :rtype: str
+        """
+        return self._alcohol_state
+
+    @alcohol_state.setter
+    def alcohol_state(self, alcohol_state):
+        """
+        Sets the alcohol_state of this Item.
+
+
+        :param alcohol_state: The alcohol_state of this Item.
+        :type: str
+        """
+        self._alcohol_state = alcohol_state
+
+    @property
+    def alcohol_region(self):
+        """
+        Gets the alcohol_region of this Item.
+
+
+        :return: The alcohol_region of this Item.
+        :rtype: str
+        """
+        return self._alcohol_region
+
+    @alcohol_region.setter
+    def alcohol_region(self, alcohol_region):
+        """
+        Sets the alcohol_region of this Item.
+
+
+        :param alcohol_region: The alcohol_region of this Item.
+        :type: str
+        """
+        self._alcohol_region = alcohol_region
+
+    @property
+    def alcohol_brand(self):
+        """
+        Gets the alcohol_brand of this Item.
+
+
+        :return: The alcohol_brand of this Item.
+        :rtype: str
+        """
+        return self._alcohol_brand
+
+    @alcohol_brand.setter
+    def alcohol_brand(self, alcohol_brand):
+        """
+        Sets the alcohol_brand of this Item.
+
+
+        :param alcohol_brand: The alcohol_brand of this Item.
+        :type: str
+        """
+        self._alcohol_brand = alcohol_brand
+
+    @property
+    def alcohol_upc_code(self):
+        """
+        Gets the alcohol_upc_code of this Item.
+
+
+        :return: The alcohol_upc_code of this Item.
+        :rtype: str
+        """
+        return self._alcohol_upc_code
+
+    @alcohol_upc_code.setter
+    def alcohol_upc_code(self, alcohol_upc_code):
+        """
+        Sets the alcohol_upc_code of this Item.
+
+
+        :param alcohol_upc_code: The alcohol_upc_code of this Item.
+        :type: str
+        """
+        self._alcohol_upc_code = alcohol_upc_code
+
+    @property
+    def alcohol_nambca_code(self):
+        """
+        Gets the alcohol_nambca_code of this Item.
+
+
+        :return: The alcohol_nambca_code of this Item.
+        :rtype: str
+        """
+        return self._alcohol_nambca_code
+
+    @alcohol_nambca_code.setter
+    def alcohol_nambca_code(self, alcohol_nambca_code):
+        """
+        Sets the alcohol_nambca_code of this Item.
+
+
+        :param alcohol_nambca_code: The alcohol_nambca_code of this Item.
+        :type: str
+        """
+        self._alcohol_nambca_code = alcohol_nambca_code
+
+    @property
+    def alcohol_unimerc_code(self):
+        """
+        Gets the alcohol_unimerc_code of this Item.
+
+
+        :return: The alcohol_unimerc_code of this Item.
+        :rtype: str
+        """
+        return self._alcohol_unimerc_code
+
+    @alcohol_unimerc_code.setter
+    def alcohol_unimerc_code(self, alcohol_unimerc_code):
+        """
+        Sets the alcohol_unimerc_code of this Item.
+
+
+        :param alcohol_unimerc_code: The alcohol_unimerc_code of this Item.
+        :type: str
+        """
+        self._alcohol_unimerc_code = alcohol_unimerc_code
+
+    @property
+    def alcohol_scc_code(self):
+        """
+        Gets the alcohol_scc_code of this Item.
+
+
+        :return: The alcohol_scc_code of this Item.
+        :rtype: str
+        """
+        return self._alcohol_scc_code
+
+    @alcohol_scc_code.setter
+    def alcohol_scc_code(self, alcohol_scc_code):
+        """
+        Sets the alcohol_scc_code of this Item.
+
+
+        :param alcohol_scc_code: The alcohol_scc_code of this Item.
+        :type: str
+        """
+        self._alcohol_scc_code = alcohol_scc_code
+
+    @property
+    def length(self):
+        """
+        Gets the length of this Item.
+
+
+        :return: The length of this Item.
+        :rtype: float
+        """
+        return self._length
+
+    @length.setter
+    def length(self, length):
+        """
+        Sets the length of this Item.
+
+
+        :param length: The length of this Item.
+        :type: float
+        """
+        self._length = length
+
+    @property
+    def width(self):
+        """
+        Gets the width of this Item.
+
+
+        :return: The width of this Item.
+        :rtype: float
+        """
+        return self._width
+
+    @width.setter
+    def width(self, width):
+        """
+        Sets the width of this Item.
+
+
+        :param width: The width of this Item.
+        :type: float
+        """
+        self._width = width
+
+    @property
+    def height(self):
+        """
+        Gets the height of this Item.
+
+
+        :return: The height of this Item.
+        :rtype: float
+        """
+        return self._height
+
+    @height.setter
+    def height(self, height):
+        """
+        Sets the height of this Item.
+
+
+        :param height: The height of this Item.
+        :type: float
+        """
+        self._height = height
+
+    @property
+    def top_up(self):
+        """
+        Gets the top_up of this Item.
+
+
+        :return: The top_up of this Item.
+        :rtype: bool
+        """
+        return self._top_up
+
+    @top_up.setter
+    def top_up(self, top_up):
+        """
+        Sets the top_up of this Item.
+
+
+        :param top_up: The top_up of this Item.
+        :type: bool
+        """
+        self._top_up = top_up
+
+    @property
+    def ship_solo(self):
+        """
+        Gets the ship_solo of this Item.
+
+
+        :return: The ship_solo of this Item.
+        :rtype: bool
+        """
+        return self._ship_solo
+
+    @ship_solo.setter
+    def ship_solo(self, ship_solo):
+        """
+        Sets the ship_solo of this Item.
+
+
+        :param ship_solo: The ship_solo of this Item.
+        :type: bool
+        """
+        self._ship_solo = ship_solo
+
+    @property
+    def inventory_update_timestamp(self):
+        """
+        Gets the inventory_update_timestamp of this Item.
+
+
+        :return: The inventory_update_timestamp of this Item.
+        :rtype: datetime
+        """
+        return self._inventory_update_timestamp
+
+    @inventory_update_timestamp.setter
+    def inventory_update_timestamp(self, inventory_update_timestamp):
+        """
+        Sets the inventory_update_timestamp of this Item.
+
+
+        :param inventory_update_timestamp: The inventory_update_timestamp of this Item.
+        :type: datetime
+        """
+        self._inventory_update_timestamp = inventory_update_timestamp
+
+    @property
+    def available_quantity(self):
+        """
+        Gets the available_quantity of this Item.
+
+
+        :return: The available_quantity of this Item.
+        :rtype: int
+        """
+        return self._available_quantity
+
+    @available_quantity.setter
+    def available_quantity(self, available_quantity):
+        """
+        Sets the available_quantity of this Item.
+
+
+        :param available_quantity: The available_quantity of this Item.
+        :type: int
+        """
+        self._available_quantity = available_quantity
+
+    @property
+    def damaged_quantity(self):
+        """
+        Gets the damaged_quantity of this Item.
+
+
+        :return: The damaged_quantity of this Item.
+        :rtype: int
+        """
+        return self._damaged_quantity
+
+    @damaged_quantity.setter
+    def damaged_quantity(self, damaged_quantity):
+        """
+        Sets the damaged_quantity of this Item.
+
+
+        :param damaged_quantity: The damaged_quantity of this Item.
+        :type: int
+        """
+        self._damaged_quantity = damaged_quantity
+
+    @property
+    def in_fulfillment_process_quantity(self):
+        """
+        Gets the in_fulfillment_process_quantity of this Item.
+
+
+        :return: The in_fulfillment_process_quantity of this Item.
+        :rtype: int
+        """
+        return self._in_fulfillment_process_quantity
+
+    @in_fulfillment_process_quantity.setter
+    def in_fulfillment_process_quantity(self, in_fulfillment_process_quantity):
+        """
+        Sets the in_fulfillment_process_quantity of this Item.
+
+
+        :param in_fulfillment_process_quantity: The in_fulfillment_process_quantity of this Item.
+        :type: int
+        """
+        self._in_fulfillment_process_quantity = in_fulfillment_process_quantity
+
+    @property
+    def on_hand_quantity(self):
+        """
+        Gets the on_hand_quantity of this Item.
+
+
+        :return: The on_hand_quantity of this Item.
+        :rtype: int
+        """
+        return self._on_hand_quantity
+
+    @on_hand_quantity.setter
+    def on_hand_quantity(self, on_hand_quantity):
+        """
+        Sets the on_hand_quantity of this Item.
+
+
+        :param on_hand_quantity: The on_hand_quantity of this Item.
+        :type: int
+        """
+        self._on_hand_quantity = on_hand_quantity
+
+    @property
+    def open_order_quantity(self):
+        """
+        Gets the open_order_quantity of this Item.
+
+
+        :return: The open_order_quantity of this Item.
+        :rtype: int
+        """
+        return self._open_order_quantity
+
+    @open_order_quantity.setter
+    def open_order_quantity(self, open_order_quantity):
+        """
+        Sets the open_order_quantity of this Item.
+
+
+        :param open_order_quantity: The open_order_quantity of this Item.
+        :type: int
+        """
+        self._open_order_quantity = open_order_quantity
+
+    @property
+    def open_po_quantity(self):
+        """
+        Gets the open_po_quantity of this Item.
+
+
+        :return: The open_po_quantity of this Item.
+        :rtype: int
+        """
+        return self._open_po_quantity
+
+    @open_po_quantity.setter
+    def open_po_quantity(self, open_po_quantity):
+        """
+        Sets the open_po_quantity of this Item.
+
+
+        :param open_po_quantity: The open_po_quantity of this Item.
+        :type: int
+        """
+        self._open_po_quantity = open_po_quantity
+
+    @property
+    def orderable_quantity(self):
+        """
+        Gets the orderable_quantity of this Item.
+
+
+        :return: The orderable_quantity of this Item.
+        :rtype: int
+        """
+        return self._orderable_quantity
+
+    @orderable_quantity.setter
+    def orderable_quantity(self, orderable_quantity):
+        """
+        Sets the orderable_quantity of this Item.
+
+
+        :param orderable_quantity: The orderable_quantity of this Item.
+        :type: int
+        """
+        self._orderable_quantity = orderable_quantity
+
+    @property
+    def unallocatable_quantity(self):
+        """
+        Gets the unallocatable_quantity of this Item.
+
+
+        :return: The unallocatable_quantity of this Item.
+        :rtype: int
+        """
+        return self._unallocatable_quantity
+
+    @unallocatable_quantity.setter
+    def unallocatable_quantity(self, unallocatable_quantity):
+        """
+        Sets the unallocatable_quantity of this Item.
+
+
+        :param unallocatable_quantity: The unallocatable_quantity of this Item.
+        :type: int
+        """
+        self._unallocatable_quantity = unallocatable_quantity
+
+    @property
+    def unavailable_quantity(self):
+        """
+        Gets the unavailable_quantity of this Item.
+
+
+        :return: The unavailable_quantity of this Item.
+        :rtype: int
+        """
+        return self._unavailable_quantity
+
+    @unavailable_quantity.setter
+    def unavailable_quantity(self, unavailable_quantity):
+        """
+        Sets the unavailable_quantity of this Item.
+
+
+        :param unavailable_quantity: The unavailable_quantity of this Item.
+        :type: int
+        """
+        self._unavailable_quantity = unavailable_quantity
+
+    @property
+    def overall_days_on_hand(self):
+        """
+        Gets the overall_days_on_hand of this Item.
+
+
+        :return: The overall_days_on_hand of this Item.
+        :rtype: int
+        """
+        return self._overall_days_on_hand
+
+    @overall_days_on_hand.setter
+    def overall_days_on_hand(self, overall_days_on_hand):
+        """
+        Sets the overall_days_on_hand of this Item.
+
+
+        :param overall_days_on_hand: The overall_days_on_hand of this Item.
+        :type: int
+        """
+        self._overall_days_on_hand = overall_days_on_hand
+
+    @property
+    def overall_stock_status(self):
+        """
+        Gets the overall_stock_status of this Item.
+
+
+        :return: The overall_stock_status of this Item.
+        :rtype: str
+        """
+        return self._overall_stock_status
+
+    @overall_stock_status.setter
+    def overall_stock_status(self, overall_stock_status):
+        """
+        Sets the overall_stock_status of this Item.
+
+
+        :param overall_stock_status: The overall_stock_status of this Item.
+        :type: str
+        """
+        self._overall_stock_status = overall_stock_status
 
     @property
     def custom_fields(self):

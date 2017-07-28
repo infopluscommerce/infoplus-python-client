@@ -45,6 +45,332 @@ class ScheduledPlanLogApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def add_scheduled_plan_log_audit(self, scheduled_plan_log_id, scheduled_plan_log_audit, **kwargs):
+        """
+        Add new audit for a scheduledPlanLog
+        Adds an audit to an existing scheduledPlanLog.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_scheduled_plan_log_audit(scheduled_plan_log_id, scheduled_plan_log_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int scheduled_plan_log_id: Id of the scheduledPlanLog to add an audit to (required)
+        :param str scheduled_plan_log_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['scheduled_plan_log_id', 'scheduled_plan_log_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_scheduled_plan_log_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'scheduled_plan_log_id' is set
+        if ('scheduled_plan_log_id' not in params) or (params['scheduled_plan_log_id'] is None):
+            raise ValueError("Missing the required parameter `scheduled_plan_log_id` when calling `add_scheduled_plan_log_audit`")
+        # verify the required parameter 'scheduled_plan_log_audit' is set
+        if ('scheduled_plan_log_audit' not in params) or (params['scheduled_plan_log_audit'] is None):
+            raise ValueError("Missing the required parameter `scheduled_plan_log_audit` when calling `add_scheduled_plan_log_audit`")
+
+        resource_path = '/beta/scheduledPlanLog/{scheduledPlanLogId}/audit/{scheduledPlanLogAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'scheduled_plan_log_id' in params:
+            path_params['scheduledPlanLogId'] = params['scheduled_plan_log_id']
+        if 'scheduled_plan_log_audit' in params:
+            path_params['scheduledPlanLogAudit'] = params['scheduled_plan_log_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_scheduled_plan_log_tag(self, scheduled_plan_log_id, scheduled_plan_log_tag, **kwargs):
+        """
+        Add new tags for a scheduledPlanLog.
+        Adds a tag to an existing scheduledPlanLog.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_scheduled_plan_log_tag(scheduled_plan_log_id, scheduled_plan_log_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int scheduled_plan_log_id: Id of the scheduledPlanLog to add a tag to (required)
+        :param str scheduled_plan_log_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['scheduled_plan_log_id', 'scheduled_plan_log_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_scheduled_plan_log_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'scheduled_plan_log_id' is set
+        if ('scheduled_plan_log_id' not in params) or (params['scheduled_plan_log_id'] is None):
+            raise ValueError("Missing the required parameter `scheduled_plan_log_id` when calling `add_scheduled_plan_log_tag`")
+        # verify the required parameter 'scheduled_plan_log_tag' is set
+        if ('scheduled_plan_log_tag' not in params) or (params['scheduled_plan_log_tag'] is None):
+            raise ValueError("Missing the required parameter `scheduled_plan_log_tag` when calling `add_scheduled_plan_log_tag`")
+
+        resource_path = '/beta/scheduledPlanLog/{scheduledPlanLogId}/tag/{scheduledPlanLogTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'scheduled_plan_log_id' in params:
+            path_params['scheduledPlanLogId'] = params['scheduled_plan_log_id']
+        if 'scheduled_plan_log_tag' in params:
+            path_params['scheduledPlanLogTag'] = params['scheduled_plan_log_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_scheduled_plan_log_tag(self, scheduled_plan_log_id, scheduled_plan_log_tag, **kwargs):
+        """
+        Delete a tag for a scheduledPlanLog.
+        Deletes an existing scheduledPlanLog tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_scheduled_plan_log_tag(scheduled_plan_log_id, scheduled_plan_log_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int scheduled_plan_log_id: Id of the scheduledPlanLog to remove tag from (required)
+        :param str scheduled_plan_log_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['scheduled_plan_log_id', 'scheduled_plan_log_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_scheduled_plan_log_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'scheduled_plan_log_id' is set
+        if ('scheduled_plan_log_id' not in params) or (params['scheduled_plan_log_id'] is None):
+            raise ValueError("Missing the required parameter `scheduled_plan_log_id` when calling `delete_scheduled_plan_log_tag`")
+        # verify the required parameter 'scheduled_plan_log_tag' is set
+        if ('scheduled_plan_log_tag' not in params) or (params['scheduled_plan_log_tag'] is None):
+            raise ValueError("Missing the required parameter `scheduled_plan_log_tag` when calling `delete_scheduled_plan_log_tag`")
+
+        resource_path = '/beta/scheduledPlanLog/{scheduledPlanLogId}/tag/{scheduledPlanLogTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'scheduled_plan_log_id' in params:
+            path_params['scheduledPlanLogId'] = params['scheduled_plan_log_id']
+        if 'scheduled_plan_log_tag' in params:
+            path_params['scheduledPlanLogTag'] = params['scheduled_plan_log_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_scheduled_plan_log_by_id(self, scheduled_plan_log_id, **kwargs):
+        """
+        Get a duplicated a scheduledPlanLog by id
+        Returns a duplicated scheduledPlanLog identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_scheduled_plan_log_by_id(scheduled_plan_log_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int scheduled_plan_log_id: Id of the scheduledPlanLog to be duplicated. (required)
+        :return: ScheduledPlanLog
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['scheduled_plan_log_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_scheduled_plan_log_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'scheduled_plan_log_id' is set
+        if ('scheduled_plan_log_id' not in params) or (params['scheduled_plan_log_id'] is None):
+            raise ValueError("Missing the required parameter `scheduled_plan_log_id` when calling `get_duplicate_scheduled_plan_log_by_id`")
+
+        resource_path = '/beta/scheduledPlanLog/duplicate/{scheduledPlanLogId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'scheduled_plan_log_id' in params:
+            path_params['scheduledPlanLogId'] = params['scheduled_plan_log_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ScheduledPlanLog',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_scheduled_plan_log_by_filter(self, **kwargs):
         """
         Search scheduledPlanLogs by filter
@@ -201,6 +527,83 @@ class ScheduledPlanLogApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ScheduledPlanLog',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_scheduled_plan_log_tags(self, scheduled_plan_log_id, **kwargs):
+        """
+        Get the tags for a scheduledPlanLog.
+        Get all existing scheduledPlanLog tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_scheduled_plan_log_tags(scheduled_plan_log_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int scheduled_plan_log_id: Id of the scheduledPlanLog to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['scheduled_plan_log_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_scheduled_plan_log_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'scheduled_plan_log_id' is set
+        if ('scheduled_plan_log_id' not in params) or (params['scheduled_plan_log_id'] is None):
+            raise ValueError("Missing the required parameter `scheduled_plan_log_id` when calling `get_scheduled_plan_log_tags`")
+
+        resource_path = '/beta/scheduledPlanLog/{scheduledPlanLogId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'scheduled_plan_log_id' in params:
+            path_params['scheduledPlanLogId'] = params['scheduled_plan_log_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

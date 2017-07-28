@@ -37,17 +37,70 @@ class ItemProductCode(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'int',
-            'label': 'str'
+            'lob_id': 'int',
+            'internal_id': 'int',
+            'id': 'str',
+            'name': 'str',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
+            'lob_id': 'lobId',
+            'internal_id': 'internalId',
             'id': 'id',
-            'label': 'label'
+            'name': 'name',
+            'custom_fields': 'customFields'
         }
 
+        self._lob_id = None
+        self._internal_id = None
         self._id = None
-        self._label = None
+        self._name = None
+        self._custom_fields = None
+
+    @property
+    def lob_id(self):
+        """
+        Gets the lob_id of this ItemProductCode.
+
+
+        :return: The lob_id of this ItemProductCode.
+        :rtype: int
+        """
+        return self._lob_id
+
+    @lob_id.setter
+    def lob_id(self, lob_id):
+        """
+        Sets the lob_id of this ItemProductCode.
+
+
+        :param lob_id: The lob_id of this ItemProductCode.
+        :type: int
+        """
+        self._lob_id = lob_id
+
+    @property
+    def internal_id(self):
+        """
+        Gets the internal_id of this ItemProductCode.
+
+
+        :return: The internal_id of this ItemProductCode.
+        :rtype: int
+        """
+        return self._internal_id
+
+    @internal_id.setter
+    def internal_id(self, internal_id):
+        """
+        Sets the internal_id of this ItemProductCode.
+
+
+        :param internal_id: The internal_id of this ItemProductCode.
+        :type: int
+        """
+        self._internal_id = internal_id
 
     @property
     def id(self):
@@ -56,7 +109,7 @@ class ItemProductCode(object):
 
 
         :return: The id of this ItemProductCode.
-        :rtype: int
+        :rtype: str
         """
         return self._id
 
@@ -67,31 +120,53 @@ class ItemProductCode(object):
 
 
         :param id: The id of this ItemProductCode.
-        :type: int
+        :type: str
         """
         self._id = id
 
     @property
-    def label(self):
+    def name(self):
         """
-        Gets the label of this ItemProductCode.
+        Gets the name of this ItemProductCode.
 
 
-        :return: The label of this ItemProductCode.
+        :return: The name of this ItemProductCode.
         :rtype: str
         """
-        return self._label
+        return self._name
 
-    @label.setter
-    def label(self, label):
+    @name.setter
+    def name(self, name):
         """
-        Sets the label of this ItemProductCode.
+        Sets the name of this ItemProductCode.
 
 
-        :param label: The label of this ItemProductCode.
+        :param name: The name of this ItemProductCode.
         :type: str
         """
-        self._label = label
+        self._name = name
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ItemProductCode.
+
+
+        :return: The custom_fields of this ItemProductCode.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ItemProductCode.
+
+
+        :param custom_fields: The custom_fields of this ItemProductCode.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

@@ -122,6 +122,172 @@ class FulfillmentPlanApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def add_fulfillment_plan_audit(self, fulfillment_plan_id, fulfillment_plan_audit, **kwargs):
+        """
+        Add new audit for a fulfillmentPlan
+        Adds an audit to an existing fulfillmentPlan.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_fulfillment_plan_audit(fulfillment_plan_id, fulfillment_plan_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int fulfillment_plan_id: Id of the fulfillmentPlan to add an audit to (required)
+        :param str fulfillment_plan_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['fulfillment_plan_id', 'fulfillment_plan_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_fulfillment_plan_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'fulfillment_plan_id' is set
+        if ('fulfillment_plan_id' not in params) or (params['fulfillment_plan_id'] is None):
+            raise ValueError("Missing the required parameter `fulfillment_plan_id` when calling `add_fulfillment_plan_audit`")
+        # verify the required parameter 'fulfillment_plan_audit' is set
+        if ('fulfillment_plan_audit' not in params) or (params['fulfillment_plan_audit'] is None):
+            raise ValueError("Missing the required parameter `fulfillment_plan_audit` when calling `add_fulfillment_plan_audit`")
+
+        resource_path = '/beta/fulfillmentPlan/{fulfillmentPlanId}/audit/{fulfillmentPlanAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'fulfillment_plan_id' in params:
+            path_params['fulfillmentPlanId'] = params['fulfillment_plan_id']
+        if 'fulfillment_plan_audit' in params:
+            path_params['fulfillmentPlanAudit'] = params['fulfillment_plan_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_fulfillment_plan_tag(self, fulfillment_plan_id, fulfillment_plan_tag, **kwargs):
+        """
+        Add new tags for a fulfillmentPlan.
+        Adds a tag to an existing fulfillmentPlan.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_fulfillment_plan_tag(fulfillment_plan_id, fulfillment_plan_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int fulfillment_plan_id: Id of the fulfillmentPlan to add a tag to (required)
+        :param str fulfillment_plan_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['fulfillment_plan_id', 'fulfillment_plan_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_fulfillment_plan_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'fulfillment_plan_id' is set
+        if ('fulfillment_plan_id' not in params) or (params['fulfillment_plan_id'] is None):
+            raise ValueError("Missing the required parameter `fulfillment_plan_id` when calling `add_fulfillment_plan_tag`")
+        # verify the required parameter 'fulfillment_plan_tag' is set
+        if ('fulfillment_plan_tag' not in params) or (params['fulfillment_plan_tag'] is None):
+            raise ValueError("Missing the required parameter `fulfillment_plan_tag` when calling `add_fulfillment_plan_tag`")
+
+        resource_path = '/beta/fulfillmentPlan/{fulfillmentPlanId}/tag/{fulfillmentPlanTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'fulfillment_plan_id' in params:
+            path_params['fulfillmentPlanId'] = params['fulfillment_plan_id']
+        if 'fulfillment_plan_tag' in params:
+            path_params['fulfillmentPlanTag'] = params['fulfillment_plan_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_fulfillment_plan(self, fulfillment_plan_id, **kwargs):
         """
         Delete a fulfillmentPlan
@@ -195,6 +361,166 @@ class FulfillmentPlanApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_fulfillment_plan_tag(self, fulfillment_plan_id, fulfillment_plan_tag, **kwargs):
+        """
+        Delete a tag for a fulfillmentPlan.
+        Deletes an existing fulfillmentPlan tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_fulfillment_plan_tag(fulfillment_plan_id, fulfillment_plan_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int fulfillment_plan_id: Id of the fulfillmentPlan to remove tag from (required)
+        :param str fulfillment_plan_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['fulfillment_plan_id', 'fulfillment_plan_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_fulfillment_plan_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'fulfillment_plan_id' is set
+        if ('fulfillment_plan_id' not in params) or (params['fulfillment_plan_id'] is None):
+            raise ValueError("Missing the required parameter `fulfillment_plan_id` when calling `delete_fulfillment_plan_tag`")
+        # verify the required parameter 'fulfillment_plan_tag' is set
+        if ('fulfillment_plan_tag' not in params) or (params['fulfillment_plan_tag'] is None):
+            raise ValueError("Missing the required parameter `fulfillment_plan_tag` when calling `delete_fulfillment_plan_tag`")
+
+        resource_path = '/beta/fulfillmentPlan/{fulfillmentPlanId}/tag/{fulfillmentPlanTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'fulfillment_plan_id' in params:
+            path_params['fulfillmentPlanId'] = params['fulfillment_plan_id']
+        if 'fulfillment_plan_tag' in params:
+            path_params['fulfillmentPlanTag'] = params['fulfillment_plan_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_fulfillment_plan_by_id(self, fulfillment_plan_id, **kwargs):
+        """
+        Get a duplicated a fulfillmentPlan by id
+        Returns a duplicated fulfillmentPlan identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_fulfillment_plan_by_id(fulfillment_plan_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int fulfillment_plan_id: Id of the fulfillmentPlan to be duplicated. (required)
+        :return: FulfillmentPlan
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['fulfillment_plan_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_fulfillment_plan_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'fulfillment_plan_id' is set
+        if ('fulfillment_plan_id' not in params) or (params['fulfillment_plan_id'] is None):
+            raise ValueError("Missing the required parameter `fulfillment_plan_id` when calling `get_duplicate_fulfillment_plan_by_id`")
+
+        resource_path = '/beta/fulfillmentPlan/duplicate/{fulfillmentPlanId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'fulfillment_plan_id' in params:
+            path_params['fulfillmentPlanId'] = params['fulfillment_plan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FulfillmentPlan',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -355,6 +681,83 @@ class FulfillmentPlanApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='FulfillmentPlan',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_fulfillment_plan_tags(self, fulfillment_plan_id, **kwargs):
+        """
+        Get the tags for a fulfillmentPlan.
+        Get all existing fulfillmentPlan tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_fulfillment_plan_tags(fulfillment_plan_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int fulfillment_plan_id: Id of the fulfillmentPlan to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['fulfillment_plan_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_fulfillment_plan_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'fulfillment_plan_id' is set
+        if ('fulfillment_plan_id' not in params) or (params['fulfillment_plan_id'] is None):
+            raise ValueError("Missing the required parameter `fulfillment_plan_id` when calling `get_fulfillment_plan_tags`")
+
+        resource_path = '/beta/fulfillmentPlan/{fulfillmentPlanId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'fulfillment_plan_id' in params:
+            path_params['fulfillmentPlanId'] = params['fulfillment_plan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

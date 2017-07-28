@@ -66,6 +66,8 @@ class QuickReceipt(object):
             'pricing_per': 'str',
             'generated_item_receipt_id': 'int',
             'generated_asn_id': 'int',
+            'dock_date': 'datetime',
+            'product_id_tag': 'str',
             'custom_fields': 'dict(str, object)',
             'sku': 'str'
         }
@@ -100,6 +102,8 @@ class QuickReceipt(object):
             'pricing_per': 'pricingPer',
             'generated_item_receipt_id': 'generatedItemReceiptId',
             'generated_asn_id': 'generatedASNId',
+            'dock_date': 'dockDate',
+            'product_id_tag': 'productIdTag',
             'custom_fields': 'customFields',
             'sku': 'sku'
         }
@@ -133,6 +137,8 @@ class QuickReceipt(object):
         self._pricing_per = None
         self._generated_item_receipt_id = None
         self._generated_asn_id = None
+        self._dock_date = None
+        self._product_id_tag = None
         self._custom_fields = None
         self._sku = None
 
@@ -773,6 +779,50 @@ class QuickReceipt(object):
         :type: int
         """
         self._generated_asn_id = generated_asn_id
+
+    @property
+    def dock_date(self):
+        """
+        Gets the dock_date of this QuickReceipt.
+
+
+        :return: The dock_date of this QuickReceipt.
+        :rtype: datetime
+        """
+        return self._dock_date
+
+    @dock_date.setter
+    def dock_date(self, dock_date):
+        """
+        Sets the dock_date of this QuickReceipt.
+
+
+        :param dock_date: The dock_date of this QuickReceipt.
+        :type: datetime
+        """
+        self._dock_date = dock_date
+
+    @property
+    def product_id_tag(self):
+        """
+        Gets the product_id_tag of this QuickReceipt.
+
+
+        :return: The product_id_tag of this QuickReceipt.
+        :rtype: str
+        """
+        return self._product_id_tag
+
+    @product_id_tag.setter
+    def product_id_tag(self, product_id_tag):
+        """
+        Sets the product_id_tag of this QuickReceipt.
+
+
+        :param product_id_tag: The product_id_tag of this QuickReceipt.
+        :type: str
+        """
+        self._product_id_tag = product_id_tag
 
     @property
     def custom_fields(self):

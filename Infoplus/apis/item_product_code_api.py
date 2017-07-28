@@ -45,10 +45,10 @@ class ItemProductCodeApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_item_product_code_by_search_text(self, **kwargs):
+    def add_item_product_code(self, body, **kwargs):
         """
-        Search itemProductCodes
-        Returns the list of itemProductCodes that match the given searchText.
+        Create an itemProductCode
+        Inserts a new itemProductCode using the specified data.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -56,19 +56,17 @@ class ItemProductCodeApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_item_product_code_by_search_text(callback=callback_function)
+        >>> thread = api.add_item_product_code(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str search_text: Search text, used to filter results.
-        :param int page: Result page number.  Defaults to 1.
-        :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
-        :return: list[ItemProductCode]
+        :param ItemProductCode body: ItemProductCode to be inserted. (required)
+        :return: ItemProductCode
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['search_text', 'page', 'limit']
+        all_params = ['body']
         all_params.append('callback')
 
         params = locals()
@@ -76,7 +74,490 @@ class ItemProductCodeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_item_product_code_by_search_text" % key
+                    " to method add_item_product_code" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `add_item_product_code`")
+
+        resource_path = '/beta/itemProductCode'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ItemProductCode',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_item_product_code_audit(self, item_product_code_id, item_product_code_audit, **kwargs):
+        """
+        Add new audit for an itemProductCode
+        Adds an audit to an existing itemProductCode.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_item_product_code_audit(item_product_code_id, item_product_code_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int item_product_code_id: Id of the itemProductCode to add an audit to (required)
+        :param str item_product_code_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['item_product_code_id', 'item_product_code_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_item_product_code_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'item_product_code_id' is set
+        if ('item_product_code_id' not in params) or (params['item_product_code_id'] is None):
+            raise ValueError("Missing the required parameter `item_product_code_id` when calling `add_item_product_code_audit`")
+        # verify the required parameter 'item_product_code_audit' is set
+        if ('item_product_code_audit' not in params) or (params['item_product_code_audit'] is None):
+            raise ValueError("Missing the required parameter `item_product_code_audit` when calling `add_item_product_code_audit`")
+
+        resource_path = '/beta/itemProductCode/{itemProductCodeId}/audit/{itemProductCodeAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'item_product_code_id' in params:
+            path_params['itemProductCodeId'] = params['item_product_code_id']
+        if 'item_product_code_audit' in params:
+            path_params['itemProductCodeAudit'] = params['item_product_code_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_item_product_code_tag(self, item_product_code_id, item_product_code_tag, **kwargs):
+        """
+        Add new tags for an itemProductCode.
+        Adds a tag to an existing itemProductCode.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_item_product_code_tag(item_product_code_id, item_product_code_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int item_product_code_id: Id of the itemProductCode to add a tag to (required)
+        :param str item_product_code_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['item_product_code_id', 'item_product_code_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_item_product_code_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'item_product_code_id' is set
+        if ('item_product_code_id' not in params) or (params['item_product_code_id'] is None):
+            raise ValueError("Missing the required parameter `item_product_code_id` when calling `add_item_product_code_tag`")
+        # verify the required parameter 'item_product_code_tag' is set
+        if ('item_product_code_tag' not in params) or (params['item_product_code_tag'] is None):
+            raise ValueError("Missing the required parameter `item_product_code_tag` when calling `add_item_product_code_tag`")
+
+        resource_path = '/beta/itemProductCode/{itemProductCodeId}/tag/{itemProductCodeTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'item_product_code_id' in params:
+            path_params['itemProductCodeId'] = params['item_product_code_id']
+        if 'item_product_code_tag' in params:
+            path_params['itemProductCodeTag'] = params['item_product_code_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_item_product_code(self, item_product_code_id, **kwargs):
+        """
+        Delete an itemProductCode
+        Deletes the itemProductCode identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_item_product_code(item_product_code_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int item_product_code_id: Id of the itemProductCode to be deleted. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['item_product_code_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_item_product_code" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'item_product_code_id' is set
+        if ('item_product_code_id' not in params) or (params['item_product_code_id'] is None):
+            raise ValueError("Missing the required parameter `item_product_code_id` when calling `delete_item_product_code`")
+
+        resource_path = '/beta/itemProductCode/{itemProductCodeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'item_product_code_id' in params:
+            path_params['itemProductCodeId'] = params['item_product_code_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_item_product_code_tag(self, item_product_code_id, item_product_code_tag, **kwargs):
+        """
+        Delete a tag for an itemProductCode.
+        Deletes an existing itemProductCode tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_item_product_code_tag(item_product_code_id, item_product_code_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int item_product_code_id: Id of the itemProductCode to remove tag from (required)
+        :param str item_product_code_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['item_product_code_id', 'item_product_code_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_item_product_code_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'item_product_code_id' is set
+        if ('item_product_code_id' not in params) or (params['item_product_code_id'] is None):
+            raise ValueError("Missing the required parameter `item_product_code_id` when calling `delete_item_product_code_tag`")
+        # verify the required parameter 'item_product_code_tag' is set
+        if ('item_product_code_tag' not in params) or (params['item_product_code_tag'] is None):
+            raise ValueError("Missing the required parameter `item_product_code_tag` when calling `delete_item_product_code_tag`")
+
+        resource_path = '/beta/itemProductCode/{itemProductCodeId}/tag/{itemProductCodeTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'item_product_code_id' in params:
+            path_params['itemProductCodeId'] = params['item_product_code_id']
+        if 'item_product_code_tag' in params:
+            path_params['itemProductCodeTag'] = params['item_product_code_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_item_product_code_by_id(self, item_product_code_id, **kwargs):
+        """
+        Get a duplicated an itemProductCode by id
+        Returns a duplicated itemProductCode identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_item_product_code_by_id(item_product_code_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int item_product_code_id: Id of the itemProductCode to be duplicated. (required)
+        :return: ItemProductCode
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['item_product_code_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_item_product_code_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'item_product_code_id' is set
+        if ('item_product_code_id' not in params) or (params['item_product_code_id'] is None):
+            raise ValueError("Missing the required parameter `item_product_code_id` when calling `get_duplicate_item_product_code_by_id`")
+
+        resource_path = '/beta/itemProductCode/duplicate/{itemProductCodeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'item_product_code_id' in params:
+            path_params['itemProductCodeId'] = params['item_product_code_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ItemProductCode',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_item_product_code_by_filter(self, **kwargs):
+        """
+        Search itemProductCodes by filter
+        Returns the list of itemProductCodes that match the given filter.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_item_product_code_by_filter(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str filter: Query string, used to filter results.
+        :param int page: Result page number.  Defaults to 1.
+        :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
+        :param str sort: Sort results by specified field.
+        :return: list[ItemProductCode]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['filter', 'page', 'limit', 'sort']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_item_product_code_by_filter" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -86,12 +567,14 @@ class ItemProductCodeApi(object):
         path_params = {}
 
         query_params = {}
-        if 'search_text' in params:
-            query_params['searchText'] = params['search_text']
+        if 'filter' in params:
+            query_params['filter'] = params['filter']
         if 'page' in params:
             query_params['page'] = params['page']
         if 'limit' in params:
             query_params['limit'] = params['limit']
+        if 'sort' in params:
+            query_params['sort'] = params['sort']
 
         header_params = {}
 
@@ -125,7 +608,7 @@ class ItemProductCodeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_translate_product_code_by_id(self, item_product_code_id, **kwargs):
+    def get_item_product_code_by_id(self, item_product_code_id, **kwargs):
         """
         Get an itemProductCode by id
         Returns the itemProductCode identified by the specified id.
@@ -136,11 +619,11 @@ class ItemProductCodeApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_translate_product_code_by_id(item_product_code_id, callback=callback_function)
+        >>> thread = api.get_item_product_code_by_id(item_product_code_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str item_product_code_id: Id of itemProductCode to be returned. (required)
+        :param int item_product_code_id: Id of the itemProductCode to be returned. (required)
         :return: ItemProductCode
                  If the method is called asynchronously,
                  returns the request thread.
@@ -154,14 +637,14 @@ class ItemProductCodeApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_translate_product_code_by_id" % key
+                    " to method get_item_product_code_by_id" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'item_product_code_id' is set
         if ('item_product_code_id' not in params) or (params['item_product_code_id'] is None):
-            raise ValueError("Missing the required parameter `item_product_code_id` when calling `get_translate_product_code_by_id`")
+            raise ValueError("Missing the required parameter `item_product_code_id` when calling `get_item_product_code_by_id`")
 
         resource_path = '/beta/itemProductCode/{itemProductCodeId}'.replace('{format}', 'json')
         path_params = {}
@@ -198,6 +681,160 @@ class ItemProductCodeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ItemProductCode',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_item_product_code_tags(self, item_product_code_id, **kwargs):
+        """
+        Get the tags for an itemProductCode.
+        Get all existing itemProductCode tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_item_product_code_tags(item_product_code_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int item_product_code_id: Id of the itemProductCode to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['item_product_code_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_item_product_code_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'item_product_code_id' is set
+        if ('item_product_code_id' not in params) or (params['item_product_code_id'] is None):
+            raise ValueError("Missing the required parameter `item_product_code_id` when calling `get_item_product_code_tags`")
+
+        resource_path = '/beta/itemProductCode/{itemProductCodeId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'item_product_code_id' in params:
+            path_params['itemProductCodeId'] = params['item_product_code_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_item_product_code(self, body, **kwargs):
+        """
+        Update an itemProductCode
+        Updates an existing itemProductCode using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_item_product_code(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ItemProductCode body: ItemProductCode to be updated. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_item_product_code" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_item_product_code`")
+
+        resource_path = '/beta/itemProductCode'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

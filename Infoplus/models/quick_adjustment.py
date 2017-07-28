@@ -46,6 +46,7 @@ class QuickAdjustment(object):
             'total_quantity': 'int',
             'message': 'str',
             'status': 'str',
+            'product_id_tag': 'str',
             'custom_fields': 'dict(str, object)',
             'sku': 'str'
         }
@@ -60,6 +61,7 @@ class QuickAdjustment(object):
             'total_quantity': 'totalQuantity',
             'message': 'message',
             'status': 'status',
+            'product_id_tag': 'productIdTag',
             'custom_fields': 'customFields',
             'sku': 'sku'
         }
@@ -73,6 +75,7 @@ class QuickAdjustment(object):
         self._total_quantity = None
         self._message = None
         self._status = None
+        self._product_id_tag = None
         self._custom_fields = None
         self._sku = None
 
@@ -273,6 +276,28 @@ class QuickAdjustment(object):
         :type: str
         """
         self._status = status
+
+    @property
+    def product_id_tag(self):
+        """
+        Gets the product_id_tag of this QuickAdjustment.
+
+
+        :return: The product_id_tag of this QuickAdjustment.
+        :rtype: str
+        """
+        return self._product_id_tag
+
+    @product_id_tag.setter
+    def product_id_tag(self, product_id_tag):
+        """
+        Sets the product_id_tag of this QuickAdjustment.
+
+
+        :param product_id_tag: The product_id_tag of this QuickAdjustment.
+        :type: str
+        """
+        self._product_id_tag = product_id_tag
 
     @property
     def custom_fields(self):

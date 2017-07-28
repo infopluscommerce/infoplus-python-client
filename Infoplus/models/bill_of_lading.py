@@ -41,28 +41,35 @@ class BillOfLading(object):
             'create_date': 'datetime',
             'modify_date': 'datetime',
             'lob_id': 'int',
+            'order_no': 'float',
             'bol_no': 'str',
             'bol_date': 'datetime',
             'ship_from_name': 'str',
+            'ship_from_attention': 'str',
             'ship_from_address': 'str',
             'ship_from_city': 'str',
             'ship_from_state': 'str',
             'ship_from_zip': 'str',
+            'ship_from_country': 'str',
             'sid': 'str',
             'is_ship_from_fob': 'bool',
             'ship_to_name': 'str',
+            'ship_to_attention': 'str',
             'ship_to_address': 'str',
             'ship_to_city': 'str',
             'ship_to_state': 'str',
             'ship_to_zip': 'str',
+            'ship_to_country': 'str',
             'ship_to_location_no': 'str',
             'cid': 'str',
             'is_ship_to_fob': 'bool',
             'bill_to_name': 'str',
+            'bill_to_attention': 'str',
             'bill_to_address': 'str',
             'bill_to_city': 'str',
             'bill_to_state': 'str',
             'bill_to_zip': 'str',
+            'bill_to_country': 'str',
             'is_trailer_loaded_by_shipper': 'bool',
             'by_driver': 'bool',
             'cod_amount': 'float',
@@ -93,28 +100,35 @@ class BillOfLading(object):
             'create_date': 'createDate',
             'modify_date': 'modifyDate',
             'lob_id': 'lobId',
+            'order_no': 'orderNo',
             'bol_no': 'bolNo',
             'bol_date': 'bolDate',
             'ship_from_name': 'shipFromName',
+            'ship_from_attention': 'shipFromAttention',
             'ship_from_address': 'shipFromAddress',
             'ship_from_city': 'shipFromCity',
             'ship_from_state': 'shipFromState',
             'ship_from_zip': 'shipFromZip',
+            'ship_from_country': 'shipFromCountry',
             'sid': 'sid',
             'is_ship_from_fob': 'isShipFromFOB',
             'ship_to_name': 'shipToName',
+            'ship_to_attention': 'shipToAttention',
             'ship_to_address': 'shipToAddress',
             'ship_to_city': 'shipToCity',
             'ship_to_state': 'shipToState',
             'ship_to_zip': 'shipToZip',
+            'ship_to_country': 'shipToCountry',
             'ship_to_location_no': 'shipToLocationNo',
             'cid': 'cid',
             'is_ship_to_fob': 'isShipToFOB',
             'bill_to_name': 'billToName',
+            'bill_to_attention': 'billToAttention',
             'bill_to_address': 'billToAddress',
             'bill_to_city': 'billToCity',
             'bill_to_state': 'billToState',
             'bill_to_zip': 'billToZip',
+            'bill_to_country': 'billToCountry',
             'is_trailer_loaded_by_shipper': 'isTrailerLoadedByShipper',
             'by_driver': 'byDriver',
             'cod_amount': 'codAmount',
@@ -144,28 +158,35 @@ class BillOfLading(object):
         self._create_date = None
         self._modify_date = None
         self._lob_id = None
+        self._order_no = None
         self._bol_no = None
         self._bol_date = None
         self._ship_from_name = None
+        self._ship_from_attention = None
         self._ship_from_address = None
         self._ship_from_city = None
         self._ship_from_state = None
         self._ship_from_zip = None
+        self._ship_from_country = None
         self._sid = None
         self._is_ship_from_fob = False
         self._ship_to_name = None
+        self._ship_to_attention = None
         self._ship_to_address = None
         self._ship_to_city = None
         self._ship_to_state = None
         self._ship_to_zip = None
+        self._ship_to_country = None
         self._ship_to_location_no = None
         self._cid = None
         self._is_ship_to_fob = False
         self._bill_to_name = None
+        self._bill_to_attention = None
         self._bill_to_address = None
         self._bill_to_city = None
         self._bill_to_state = None
         self._bill_to_zip = None
+        self._bill_to_country = None
         self._is_trailer_loaded_by_shipper = False
         self._by_driver = False
         self._cod_amount = None
@@ -279,6 +300,28 @@ class BillOfLading(object):
         self._lob_id = lob_id
 
     @property
+    def order_no(self):
+        """
+        Gets the order_no of this BillOfLading.
+
+
+        :return: The order_no of this BillOfLading.
+        :rtype: float
+        """
+        return self._order_no
+
+    @order_no.setter
+    def order_no(self, order_no):
+        """
+        Sets the order_no of this BillOfLading.
+
+
+        :param order_no: The order_no of this BillOfLading.
+        :type: float
+        """
+        self._order_no = order_no
+
+    @property
     def bol_no(self):
         """
         Gets the bol_no of this BillOfLading.
@@ -343,6 +386,28 @@ class BillOfLading(object):
         :type: str
         """
         self._ship_from_name = ship_from_name
+
+    @property
+    def ship_from_attention(self):
+        """
+        Gets the ship_from_attention of this BillOfLading.
+
+
+        :return: The ship_from_attention of this BillOfLading.
+        :rtype: str
+        """
+        return self._ship_from_attention
+
+    @ship_from_attention.setter
+    def ship_from_attention(self, ship_from_attention):
+        """
+        Sets the ship_from_attention of this BillOfLading.
+
+
+        :param ship_from_attention: The ship_from_attention of this BillOfLading.
+        :type: str
+        """
+        self._ship_from_attention = ship_from_attention
 
     @property
     def ship_from_address(self):
@@ -433,6 +498,28 @@ class BillOfLading(object):
         self._ship_from_zip = ship_from_zip
 
     @property
+    def ship_from_country(self):
+        """
+        Gets the ship_from_country of this BillOfLading.
+
+
+        :return: The ship_from_country of this BillOfLading.
+        :rtype: str
+        """
+        return self._ship_from_country
+
+    @ship_from_country.setter
+    def ship_from_country(self, ship_from_country):
+        """
+        Sets the ship_from_country of this BillOfLading.
+
+
+        :param ship_from_country: The ship_from_country of this BillOfLading.
+        :type: str
+        """
+        self._ship_from_country = ship_from_country
+
+    @property
     def sid(self):
         """
         Gets the sid of this BillOfLading.
@@ -497,6 +584,28 @@ class BillOfLading(object):
         :type: str
         """
         self._ship_to_name = ship_to_name
+
+    @property
+    def ship_to_attention(self):
+        """
+        Gets the ship_to_attention of this BillOfLading.
+
+
+        :return: The ship_to_attention of this BillOfLading.
+        :rtype: str
+        """
+        return self._ship_to_attention
+
+    @ship_to_attention.setter
+    def ship_to_attention(self, ship_to_attention):
+        """
+        Sets the ship_to_attention of this BillOfLading.
+
+
+        :param ship_to_attention: The ship_to_attention of this BillOfLading.
+        :type: str
+        """
+        self._ship_to_attention = ship_to_attention
 
     @property
     def ship_to_address(self):
@@ -587,6 +696,28 @@ class BillOfLading(object):
         self._ship_to_zip = ship_to_zip
 
     @property
+    def ship_to_country(self):
+        """
+        Gets the ship_to_country of this BillOfLading.
+
+
+        :return: The ship_to_country of this BillOfLading.
+        :rtype: str
+        """
+        return self._ship_to_country
+
+    @ship_to_country.setter
+    def ship_to_country(self, ship_to_country):
+        """
+        Sets the ship_to_country of this BillOfLading.
+
+
+        :param ship_to_country: The ship_to_country of this BillOfLading.
+        :type: str
+        """
+        self._ship_to_country = ship_to_country
+
+    @property
     def ship_to_location_no(self):
         """
         Gets the ship_to_location_no of this BillOfLading.
@@ -675,6 +806,28 @@ class BillOfLading(object):
         self._bill_to_name = bill_to_name
 
     @property
+    def bill_to_attention(self):
+        """
+        Gets the bill_to_attention of this BillOfLading.
+
+
+        :return: The bill_to_attention of this BillOfLading.
+        :rtype: str
+        """
+        return self._bill_to_attention
+
+    @bill_to_attention.setter
+    def bill_to_attention(self, bill_to_attention):
+        """
+        Sets the bill_to_attention of this BillOfLading.
+
+
+        :param bill_to_attention: The bill_to_attention of this BillOfLading.
+        :type: str
+        """
+        self._bill_to_attention = bill_to_attention
+
+    @property
     def bill_to_address(self):
         """
         Gets the bill_to_address of this BillOfLading.
@@ -761,6 +914,28 @@ class BillOfLading(object):
         :type: str
         """
         self._bill_to_zip = bill_to_zip
+
+    @property
+    def bill_to_country(self):
+        """
+        Gets the bill_to_country of this BillOfLading.
+
+
+        :return: The bill_to_country of this BillOfLading.
+        :rtype: str
+        """
+        return self._bill_to_country
+
+    @bill_to_country.setter
+    def bill_to_country(self, bill_to_country):
+        """
+        Sets the bill_to_country of this BillOfLading.
+
+
+        :param bill_to_country: The bill_to_country of this BillOfLading.
+        :type: str
+        """
+        self._bill_to_country = bill_to_country
 
     @property
     def is_trailer_loaded_by_shipper(self):

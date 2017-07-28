@@ -38,8 +38,8 @@ class InventoryAdjustment(object):
         """
         self.swagger_types = {
             'id': 'int',
-            'lob': 'int',
-            'sku_id': 'int',
+            'lob_id': 'int',
+            'sku': 'str',
             'po_no_id': 'int',
             'adjustment_date': 'datetime',
             'adjustment_time': 'str',
@@ -55,8 +55,8 @@ class InventoryAdjustment(object):
 
         self.attribute_map = {
             'id': 'id',
-            'lob': 'lob',
-            'sku_id': 'skuId',
+            'lob_id': 'lobId',
+            'sku': 'sku',
             'po_no_id': 'poNoId',
             'adjustment_date': 'adjustmentDate',
             'adjustment_time': 'adjustmentTime',
@@ -71,8 +71,8 @@ class InventoryAdjustment(object):
         }
 
         self._id = None
-        self._lob = None
-        self._sku_id = None
+        self._lob_id = None
+        self._sku = None
         self._po_no_id = None
         self._adjustment_date = None
         self._adjustment_time = None
@@ -108,48 +108,48 @@ class InventoryAdjustment(object):
         self._id = id
 
     @property
-    def lob(self):
+    def lob_id(self):
         """
-        Gets the lob of this InventoryAdjustment.
+        Gets the lob_id of this InventoryAdjustment.
 
 
-        :return: The lob of this InventoryAdjustment.
+        :return: The lob_id of this InventoryAdjustment.
         :rtype: int
         """
-        return self._lob
+        return self._lob_id
 
-    @lob.setter
-    def lob(self, lob):
+    @lob_id.setter
+    def lob_id(self, lob_id):
         """
-        Sets the lob of this InventoryAdjustment.
+        Sets the lob_id of this InventoryAdjustment.
 
 
-        :param lob: The lob of this InventoryAdjustment.
+        :param lob_id: The lob_id of this InventoryAdjustment.
         :type: int
         """
-        self._lob = lob
+        self._lob_id = lob_id
 
     @property
-    def sku_id(self):
+    def sku(self):
         """
-        Gets the sku_id of this InventoryAdjustment.
+        Gets the sku of this InventoryAdjustment.
 
 
-        :return: The sku_id of this InventoryAdjustment.
-        :rtype: int
+        :return: The sku of this InventoryAdjustment.
+        :rtype: str
         """
-        return self._sku_id
+        return self._sku
 
-    @sku_id.setter
-    def sku_id(self, sku_id):
+    @sku.setter
+    def sku(self, sku):
         """
-        Sets the sku_id of this InventoryAdjustment.
+        Sets the sku of this InventoryAdjustment.
 
 
-        :param sku_id: The sku_id of this InventoryAdjustment.
-        :type: int
+        :param sku: The sku of this InventoryAdjustment.
+        :type: str
         """
-        self._sku_id = sku_id
+        self._sku = sku
 
     @property
     def po_no_id(self):

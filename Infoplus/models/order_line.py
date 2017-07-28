@@ -54,13 +54,16 @@ class OrderLine(object):
             'order_source_sku': 'str',
             'unit_cost': 'float',
             'unit_sell': 'float',
+            'unit_discount': 'float',
             'extended_cost': 'float',
             'extended_sell': 'float',
+            'extended_discount': 'float',
             'nc_extended_sell': 'float',
             'item_weight': 'float',
             'production_lot': 'str',
             'weight_per_wrap': 'float',
             'sector': 'str',
+            'order_assembly_instructions': 'str',
             'item_account_code_id': 'int',
             'item_legacy_low_stock_contact_id': 'int',
             'item_major_group_id': 'int',
@@ -88,13 +91,16 @@ class OrderLine(object):
             'order_source_sku': 'orderSourceSKU',
             'unit_cost': 'unitCost',
             'unit_sell': 'unitSell',
+            'unit_discount': 'unitDiscount',
             'extended_cost': 'extendedCost',
             'extended_sell': 'extendedSell',
+            'extended_discount': 'extendedDiscount',
             'nc_extended_sell': 'ncExtendedSell',
             'item_weight': 'itemWeight',
             'production_lot': 'productionLot',
             'weight_per_wrap': 'weightPerWrap',
             'sector': 'sector',
+            'order_assembly_instructions': 'orderAssemblyInstructions',
             'item_account_code_id': 'itemAccountCodeId',
             'item_legacy_low_stock_contact_id': 'itemLegacyLowStockContactId',
             'item_major_group_id': 'itemMajorGroupId',
@@ -121,13 +127,16 @@ class OrderLine(object):
         self._order_source_sku = None
         self._unit_cost = None
         self._unit_sell = None
+        self._unit_discount = None
         self._extended_cost = None
         self._extended_sell = None
+        self._extended_discount = None
         self._nc_extended_sell = None
         self._item_weight = None
         self._production_lot = None
         self._weight_per_wrap = None
         self._sector = None
+        self._order_assembly_instructions = None
         self._item_account_code_id = None
         self._item_legacy_low_stock_contact_id = None
         self._item_major_group_id = None
@@ -511,6 +520,28 @@ class OrderLine(object):
         self._unit_sell = unit_sell
 
     @property
+    def unit_discount(self):
+        """
+        Gets the unit_discount of this OrderLine.
+
+
+        :return: The unit_discount of this OrderLine.
+        :rtype: float
+        """
+        return self._unit_discount
+
+    @unit_discount.setter
+    def unit_discount(self, unit_discount):
+        """
+        Sets the unit_discount of this OrderLine.
+
+
+        :param unit_discount: The unit_discount of this OrderLine.
+        :type: float
+        """
+        self._unit_discount = unit_discount
+
+    @property
     def extended_cost(self):
         """
         Gets the extended_cost of this OrderLine.
@@ -553,6 +584,28 @@ class OrderLine(object):
         :type: float
         """
         self._extended_sell = extended_sell
+
+    @property
+    def extended_discount(self):
+        """
+        Gets the extended_discount of this OrderLine.
+
+
+        :return: The extended_discount of this OrderLine.
+        :rtype: float
+        """
+        return self._extended_discount
+
+    @extended_discount.setter
+    def extended_discount(self, extended_discount):
+        """
+        Sets the extended_discount of this OrderLine.
+
+
+        :param extended_discount: The extended_discount of this OrderLine.
+        :type: float
+        """
+        self._extended_discount = extended_discount
 
     @property
     def nc_extended_sell(self):
@@ -663,6 +716,28 @@ class OrderLine(object):
         :type: str
         """
         self._sector = sector
+
+    @property
+    def order_assembly_instructions(self):
+        """
+        Gets the order_assembly_instructions of this OrderLine.
+
+
+        :return: The order_assembly_instructions of this OrderLine.
+        :rtype: str
+        """
+        return self._order_assembly_instructions
+
+    @order_assembly_instructions.setter
+    def order_assembly_instructions(self, order_assembly_instructions):
+        """
+        Sets the order_assembly_instructions of this OrderLine.
+
+
+        :param order_assembly_instructions: The order_assembly_instructions of this OrderLine.
+        :type: str
+        """
+        self._order_assembly_instructions = order_assembly_instructions
 
     @property
     def item_account_code_id(self):

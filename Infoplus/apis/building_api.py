@@ -122,6 +122,172 @@ class BuildingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def add_building_audit(self, building_id, building_audit, **kwargs):
+        """
+        Add new audit for a building
+        Adds an audit to an existing building.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_building_audit(building_id, building_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int building_id: Id of the building to add an audit to (required)
+        :param str building_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['building_id', 'building_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_building_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'building_id' is set
+        if ('building_id' not in params) or (params['building_id'] is None):
+            raise ValueError("Missing the required parameter `building_id` when calling `add_building_audit`")
+        # verify the required parameter 'building_audit' is set
+        if ('building_audit' not in params) or (params['building_audit'] is None):
+            raise ValueError("Missing the required parameter `building_audit` when calling `add_building_audit`")
+
+        resource_path = '/beta/building/{buildingId}/audit/{buildingAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'building_id' in params:
+            path_params['buildingId'] = params['building_id']
+        if 'building_audit' in params:
+            path_params['buildingAudit'] = params['building_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_building_tag(self, building_id, building_tag, **kwargs):
+        """
+        Add new tags for a building.
+        Adds a tag to an existing building.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_building_tag(building_id, building_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int building_id: Id of the building to add a tag to (required)
+        :param str building_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['building_id', 'building_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_building_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'building_id' is set
+        if ('building_id' not in params) or (params['building_id'] is None):
+            raise ValueError("Missing the required parameter `building_id` when calling `add_building_tag`")
+        # verify the required parameter 'building_tag' is set
+        if ('building_tag' not in params) or (params['building_tag'] is None):
+            raise ValueError("Missing the required parameter `building_tag` when calling `add_building_tag`")
+
+        resource_path = '/beta/building/{buildingId}/tag/{buildingTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'building_id' in params:
+            path_params['buildingId'] = params['building_id']
+        if 'building_tag' in params:
+            path_params['buildingTag'] = params['building_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_building(self, building_id, **kwargs):
         """
         Delete a building
@@ -164,6 +330,89 @@ class BuildingApi(object):
         path_params = {}
         if 'building_id' in params:
             path_params['buildingId'] = params['building_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_building_tag(self, building_id, building_tag, **kwargs):
+        """
+        Delete a tag for a building.
+        Deletes an existing building tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_building_tag(building_id, building_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int building_id: Id of the building to remove tag from (required)
+        :param str building_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['building_id', 'building_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_building_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'building_id' is set
+        if ('building_id' not in params) or (params['building_id'] is None):
+            raise ValueError("Missing the required parameter `building_id` when calling `delete_building_tag`")
+        # verify the required parameter 'building_tag' is set
+        if ('building_tag' not in params) or (params['building_tag'] is None):
+            raise ValueError("Missing the required parameter `building_tag` when calling `delete_building_tag`")
+
+        resource_path = '/beta/building/{buildingId}/tag/{buildingTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'building_id' in params:
+            path_params['buildingId'] = params['building_id']
+        if 'building_tag' in params:
+            path_params['buildingTag'] = params['building_tag']
 
         query_params = {}
 
@@ -321,6 +570,160 @@ class BuildingApi(object):
             raise ValueError("Missing the required parameter `building_id` when calling `get_building_by_id`")
 
         resource_path = '/beta/building/{buildingId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'building_id' in params:
+            path_params['buildingId'] = params['building_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Building',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_building_tags(self, building_id, **kwargs):
+        """
+        Get the tags for a building.
+        Get all existing building tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_building_tags(building_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int building_id: Id of the building to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['building_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_building_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'building_id' is set
+        if ('building_id' not in params) or (params['building_id'] is None):
+            raise ValueError("Missing the required parameter `building_id` when calling `get_building_tags`")
+
+        resource_path = '/beta/building/{buildingId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'building_id' in params:
+            path_params['buildingId'] = params['building_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_building_by_id(self, building_id, **kwargs):
+        """
+        Get a duplicated a building by id
+        Returns a duplicated building identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_building_by_id(building_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int building_id: Id of the building to be duplicated. (required)
+        :return: Building
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['building_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_building_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'building_id' is set
+        if ('building_id' not in params) or (params['building_id'] is None):
+            raise ValueError("Missing the required parameter `building_id` when calling `get_duplicate_building_by_id`")
+
+        resource_path = '/beta/building/duplicate/{buildingId}'.replace('{format}', 'json')
         path_params = {}
         if 'building_id' in params:
             path_params['buildingId'] = params['building_id']

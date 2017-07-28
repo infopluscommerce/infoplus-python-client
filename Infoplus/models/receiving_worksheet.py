@@ -45,6 +45,7 @@ class ReceivingWorksheet(object):
             'status': 'str',
             'service_level': 'str',
             'receiving_process_id': 'int',
+            'dock_date': 'datetime',
             'created_by': 'int',
             'worksheet_name': 'str',
             'carrier': 'str',
@@ -67,6 +68,7 @@ class ReceivingWorksheet(object):
             'status': 'status',
             'service_level': 'serviceLevel',
             'receiving_process_id': 'receivingProcessId',
+            'dock_date': 'dockDate',
             'created_by': 'createdBy',
             'worksheet_name': 'worksheetName',
             'carrier': 'carrier',
@@ -88,6 +90,7 @@ class ReceivingWorksheet(object):
         self._status = None
         self._service_level = None
         self._receiving_process_id = None
+        self._dock_date = None
         self._created_by = None
         self._worksheet_name = None
         self._carrier = None
@@ -275,6 +278,28 @@ class ReceivingWorksheet(object):
         :type: int
         """
         self._receiving_process_id = receiving_process_id
+
+    @property
+    def dock_date(self):
+        """
+        Gets the dock_date of this ReceivingWorksheet.
+
+
+        :return: The dock_date of this ReceivingWorksheet.
+        :rtype: datetime
+        """
+        return self._dock_date
+
+    @dock_date.setter
+    def dock_date(self, dock_date):
+        """
+        Sets the dock_date of this ReceivingWorksheet.
+
+
+        :param dock_date: The dock_date of this ReceivingWorksheet.
+        :type: datetime
+        """
+        self._dock_date = dock_date
 
     @property
     def created_by(self):

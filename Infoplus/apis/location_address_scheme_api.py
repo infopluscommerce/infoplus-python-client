@@ -122,6 +122,172 @@ class LocationAddressSchemeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def add_location_address_scheme_audit(self, location_address_scheme_id, location_address_scheme_audit, **kwargs):
+        """
+        Add new audit for a locationAddressScheme
+        Adds an audit to an existing locationAddressScheme.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_location_address_scheme_audit(location_address_scheme_id, location_address_scheme_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int location_address_scheme_id: Id of the locationAddressScheme to add an audit to (required)
+        :param str location_address_scheme_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['location_address_scheme_id', 'location_address_scheme_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_location_address_scheme_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'location_address_scheme_id' is set
+        if ('location_address_scheme_id' not in params) or (params['location_address_scheme_id'] is None):
+            raise ValueError("Missing the required parameter `location_address_scheme_id` when calling `add_location_address_scheme_audit`")
+        # verify the required parameter 'location_address_scheme_audit' is set
+        if ('location_address_scheme_audit' not in params) or (params['location_address_scheme_audit'] is None):
+            raise ValueError("Missing the required parameter `location_address_scheme_audit` when calling `add_location_address_scheme_audit`")
+
+        resource_path = '/beta/locationAddressScheme/{locationAddressSchemeId}/audit/{locationAddressSchemeAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'location_address_scheme_id' in params:
+            path_params['locationAddressSchemeId'] = params['location_address_scheme_id']
+        if 'location_address_scheme_audit' in params:
+            path_params['locationAddressSchemeAudit'] = params['location_address_scheme_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_location_address_scheme_tag(self, location_address_scheme_id, location_address_scheme_tag, **kwargs):
+        """
+        Add new tags for a locationAddressScheme.
+        Adds a tag to an existing locationAddressScheme.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_location_address_scheme_tag(location_address_scheme_id, location_address_scheme_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int location_address_scheme_id: Id of the locationAddressScheme to add a tag to (required)
+        :param str location_address_scheme_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['location_address_scheme_id', 'location_address_scheme_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_location_address_scheme_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'location_address_scheme_id' is set
+        if ('location_address_scheme_id' not in params) or (params['location_address_scheme_id'] is None):
+            raise ValueError("Missing the required parameter `location_address_scheme_id` when calling `add_location_address_scheme_tag`")
+        # verify the required parameter 'location_address_scheme_tag' is set
+        if ('location_address_scheme_tag' not in params) or (params['location_address_scheme_tag'] is None):
+            raise ValueError("Missing the required parameter `location_address_scheme_tag` when calling `add_location_address_scheme_tag`")
+
+        resource_path = '/beta/locationAddressScheme/{locationAddressSchemeId}/tag/{locationAddressSchemeTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'location_address_scheme_id' in params:
+            path_params['locationAddressSchemeId'] = params['location_address_scheme_id']
+        if 'location_address_scheme_tag' in params:
+            path_params['locationAddressSchemeTag'] = params['location_address_scheme_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_location_address_scheme(self, location_address_scheme_id, **kwargs):
         """
         Delete a locationAddressScheme
@@ -195,6 +361,166 @@ class LocationAddressSchemeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_location_address_scheme_tag(self, location_address_scheme_id, location_address_scheme_tag, **kwargs):
+        """
+        Delete a tag for a locationAddressScheme.
+        Deletes an existing locationAddressScheme tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_location_address_scheme_tag(location_address_scheme_id, location_address_scheme_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int location_address_scheme_id: Id of the locationAddressScheme to remove tag from (required)
+        :param str location_address_scheme_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['location_address_scheme_id', 'location_address_scheme_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_location_address_scheme_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'location_address_scheme_id' is set
+        if ('location_address_scheme_id' not in params) or (params['location_address_scheme_id'] is None):
+            raise ValueError("Missing the required parameter `location_address_scheme_id` when calling `delete_location_address_scheme_tag`")
+        # verify the required parameter 'location_address_scheme_tag' is set
+        if ('location_address_scheme_tag' not in params) or (params['location_address_scheme_tag'] is None):
+            raise ValueError("Missing the required parameter `location_address_scheme_tag` when calling `delete_location_address_scheme_tag`")
+
+        resource_path = '/beta/locationAddressScheme/{locationAddressSchemeId}/tag/{locationAddressSchemeTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'location_address_scheme_id' in params:
+            path_params['locationAddressSchemeId'] = params['location_address_scheme_id']
+        if 'location_address_scheme_tag' in params:
+            path_params['locationAddressSchemeTag'] = params['location_address_scheme_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_location_address_scheme_by_id(self, location_address_scheme_id, **kwargs):
+        """
+        Get a duplicated a locationAddressScheme by id
+        Returns a duplicated locationAddressScheme identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_location_address_scheme_by_id(location_address_scheme_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int location_address_scheme_id: Id of the locationAddressScheme to be duplicated. (required)
+        :return: LocationAddressScheme
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['location_address_scheme_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_location_address_scheme_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'location_address_scheme_id' is set
+        if ('location_address_scheme_id' not in params) or (params['location_address_scheme_id'] is None):
+            raise ValueError("Missing the required parameter `location_address_scheme_id` when calling `get_duplicate_location_address_scheme_by_id`")
+
+        resource_path = '/beta/locationAddressScheme/duplicate/{locationAddressSchemeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'location_address_scheme_id' in params:
+            path_params['locationAddressSchemeId'] = params['location_address_scheme_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LocationAddressScheme',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -355,6 +681,83 @@ class LocationAddressSchemeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LocationAddressScheme',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_location_address_scheme_tags(self, location_address_scheme_id, **kwargs):
+        """
+        Get the tags for a locationAddressScheme.
+        Get all existing locationAddressScheme tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_location_address_scheme_tags(location_address_scheme_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int location_address_scheme_id: Id of the locationAddressScheme to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['location_address_scheme_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_location_address_scheme_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'location_address_scheme_id' is set
+        if ('location_address_scheme_id' not in params) or (params['location_address_scheme_id'] is None):
+            raise ValueError("Missing the required parameter `location_address_scheme_id` when calling `get_location_address_scheme_tags`")
+
+        resource_path = '/beta/locationAddressScheme/{locationAddressSchemeId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'location_address_scheme_id' in params:
+            path_params['locationAddressSchemeId'] = params['location_address_scheme_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

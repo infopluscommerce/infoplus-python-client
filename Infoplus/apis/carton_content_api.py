@@ -122,6 +122,172 @@ class CartonContentApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def add_carton_content_audit(self, carton_content_id, carton_content_audit, **kwargs):
+        """
+        Add new audit for a cartonContent
+        Adds an audit to an existing cartonContent.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_carton_content_audit(carton_content_id, carton_content_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int carton_content_id: Id of the cartonContent to add an audit to (required)
+        :param str carton_content_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['carton_content_id', 'carton_content_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_carton_content_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'carton_content_id' is set
+        if ('carton_content_id' not in params) or (params['carton_content_id'] is None):
+            raise ValueError("Missing the required parameter `carton_content_id` when calling `add_carton_content_audit`")
+        # verify the required parameter 'carton_content_audit' is set
+        if ('carton_content_audit' not in params) or (params['carton_content_audit'] is None):
+            raise ValueError("Missing the required parameter `carton_content_audit` when calling `add_carton_content_audit`")
+
+        resource_path = '/beta/cartonContent/{cartonContentId}/audit/{cartonContentAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'carton_content_id' in params:
+            path_params['cartonContentId'] = params['carton_content_id']
+        if 'carton_content_audit' in params:
+            path_params['cartonContentAudit'] = params['carton_content_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_carton_content_tag(self, carton_content_id, carton_content_tag, **kwargs):
+        """
+        Add new tags for a cartonContent.
+        Adds a tag to an existing cartonContent.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_carton_content_tag(carton_content_id, carton_content_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int carton_content_id: Id of the cartonContent to add a tag to (required)
+        :param str carton_content_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['carton_content_id', 'carton_content_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_carton_content_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'carton_content_id' is set
+        if ('carton_content_id' not in params) or (params['carton_content_id'] is None):
+            raise ValueError("Missing the required parameter `carton_content_id` when calling `add_carton_content_tag`")
+        # verify the required parameter 'carton_content_tag' is set
+        if ('carton_content_tag' not in params) or (params['carton_content_tag'] is None):
+            raise ValueError("Missing the required parameter `carton_content_tag` when calling `add_carton_content_tag`")
+
+        resource_path = '/beta/cartonContent/{cartonContentId}/tag/{cartonContentTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'carton_content_id' in params:
+            path_params['cartonContentId'] = params['carton_content_id']
+        if 'carton_content_tag' in params:
+            path_params['cartonContentTag'] = params['carton_content_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_carton_content(self, carton_content_id, **kwargs):
         """
         Delete a cartonContent
@@ -164,6 +330,89 @@ class CartonContentApi(object):
         path_params = {}
         if 'carton_content_id' in params:
             path_params['cartonContentId'] = params['carton_content_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_carton_content_tag(self, carton_content_id, carton_content_tag, **kwargs):
+        """
+        Delete a tag for a cartonContent.
+        Deletes an existing cartonContent tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_carton_content_tag(carton_content_id, carton_content_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int carton_content_id: Id of the cartonContent to remove tag from (required)
+        :param str carton_content_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['carton_content_id', 'carton_content_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_carton_content_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'carton_content_id' is set
+        if ('carton_content_id' not in params) or (params['carton_content_id'] is None):
+            raise ValueError("Missing the required parameter `carton_content_id` when calling `delete_carton_content_tag`")
+        # verify the required parameter 'carton_content_tag' is set
+        if ('carton_content_tag' not in params) or (params['carton_content_tag'] is None):
+            raise ValueError("Missing the required parameter `carton_content_tag` when calling `delete_carton_content_tag`")
+
+        resource_path = '/beta/cartonContent/{cartonContentId}/tag/{cartonContentTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'carton_content_id' in params:
+            path_params['cartonContentId'] = params['carton_content_id']
+        if 'carton_content_tag' in params:
+            path_params['cartonContentTag'] = params['carton_content_tag']
 
         query_params = {}
 
@@ -321,6 +570,160 @@ class CartonContentApi(object):
             raise ValueError("Missing the required parameter `carton_content_id` when calling `get_carton_content_by_id`")
 
         resource_path = '/beta/cartonContent/{cartonContentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'carton_content_id' in params:
+            path_params['cartonContentId'] = params['carton_content_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CartonContent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_carton_content_tags(self, carton_content_id, **kwargs):
+        """
+        Get the tags for a cartonContent.
+        Get all existing cartonContent tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_carton_content_tags(carton_content_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int carton_content_id: Id of the cartonContent to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['carton_content_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_carton_content_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'carton_content_id' is set
+        if ('carton_content_id' not in params) or (params['carton_content_id'] is None):
+            raise ValueError("Missing the required parameter `carton_content_id` when calling `get_carton_content_tags`")
+
+        resource_path = '/beta/cartonContent/{cartonContentId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'carton_content_id' in params:
+            path_params['cartonContentId'] = params['carton_content_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_carton_content_by_id(self, carton_content_id, **kwargs):
+        """
+        Get a duplicated a cartonContent by id
+        Returns a duplicated cartonContent identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_carton_content_by_id(carton_content_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int carton_content_id: Id of the cartonContent to be duplicated. (required)
+        :return: CartonContent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['carton_content_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_carton_content_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'carton_content_id' is set
+        if ('carton_content_id' not in params) or (params['carton_content_id'] is None):
+            raise ValueError("Missing the required parameter `carton_content_id` when calling `get_duplicate_carton_content_by_id`")
+
+        resource_path = '/beta/cartonContent/duplicate/{cartonContentId}'.replace('{format}', 'json')
         path_params = {}
         if 'carton_content_id' in params:
             path_params['cartonContentId'] = params['carton_content_id']

@@ -122,6 +122,172 @@ class OrderSourceReservationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def add_order_source_reservation_audit(self, order_source_reservation_id, order_source_reservation_audit, **kwargs):
+        """
+        Add new audit for an orderSourceReservation
+        Adds an audit to an existing orderSourceReservation.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_order_source_reservation_audit(order_source_reservation_id, order_source_reservation_audit, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int order_source_reservation_id: Id of the orderSourceReservation to add an audit to (required)
+        :param str order_source_reservation_audit: The audit to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['order_source_reservation_id', 'order_source_reservation_audit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_order_source_reservation_audit" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'order_source_reservation_id' is set
+        if ('order_source_reservation_id' not in params) or (params['order_source_reservation_id'] is None):
+            raise ValueError("Missing the required parameter `order_source_reservation_id` when calling `add_order_source_reservation_audit`")
+        # verify the required parameter 'order_source_reservation_audit' is set
+        if ('order_source_reservation_audit' not in params) or (params['order_source_reservation_audit'] is None):
+            raise ValueError("Missing the required parameter `order_source_reservation_audit` when calling `add_order_source_reservation_audit`")
+
+        resource_path = '/beta/orderSourceReservation/{orderSourceReservationId}/audit/{orderSourceReservationAudit}'.replace('{format}', 'json')
+        path_params = {}
+        if 'order_source_reservation_id' in params:
+            path_params['orderSourceReservationId'] = params['order_source_reservation_id']
+        if 'order_source_reservation_audit' in params:
+            path_params['orderSourceReservationAudit'] = params['order_source_reservation_audit']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def add_order_source_reservation_tag(self, order_source_reservation_id, order_source_reservation_tag, **kwargs):
+        """
+        Add new tags for an orderSourceReservation.
+        Adds a tag to an existing orderSourceReservation.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.add_order_source_reservation_tag(order_source_reservation_id, order_source_reservation_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int order_source_reservation_id: Id of the orderSourceReservation to add a tag to (required)
+        :param str order_source_reservation_tag: The tag to add (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['order_source_reservation_id', 'order_source_reservation_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_order_source_reservation_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'order_source_reservation_id' is set
+        if ('order_source_reservation_id' not in params) or (params['order_source_reservation_id'] is None):
+            raise ValueError("Missing the required parameter `order_source_reservation_id` when calling `add_order_source_reservation_tag`")
+        # verify the required parameter 'order_source_reservation_tag' is set
+        if ('order_source_reservation_tag' not in params) or (params['order_source_reservation_tag'] is None):
+            raise ValueError("Missing the required parameter `order_source_reservation_tag` when calling `add_order_source_reservation_tag`")
+
+        resource_path = '/beta/orderSourceReservation/{orderSourceReservationId}/tag/{orderSourceReservationTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'order_source_reservation_id' in params:
+            path_params['orderSourceReservationId'] = params['order_source_reservation_id']
+        if 'order_source_reservation_tag' in params:
+            path_params['orderSourceReservationTag'] = params['order_source_reservation_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_order_source_reservation(self, order_source_reservation_id, **kwargs):
         """
         Delete an orderSourceReservation
@@ -195,6 +361,166 @@ class OrderSourceReservationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_order_source_reservation_tag(self, order_source_reservation_id, order_source_reservation_tag, **kwargs):
+        """
+        Delete a tag for an orderSourceReservation.
+        Deletes an existing orderSourceReservation tag using the specified data.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_order_source_reservation_tag(order_source_reservation_id, order_source_reservation_tag, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int order_source_reservation_id: Id of the orderSourceReservation to remove tag from (required)
+        :param str order_source_reservation_tag: The tag to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['order_source_reservation_id', 'order_source_reservation_tag']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_order_source_reservation_tag" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'order_source_reservation_id' is set
+        if ('order_source_reservation_id' not in params) or (params['order_source_reservation_id'] is None):
+            raise ValueError("Missing the required parameter `order_source_reservation_id` when calling `delete_order_source_reservation_tag`")
+        # verify the required parameter 'order_source_reservation_tag' is set
+        if ('order_source_reservation_tag' not in params) or (params['order_source_reservation_tag'] is None):
+            raise ValueError("Missing the required parameter `order_source_reservation_tag` when calling `delete_order_source_reservation_tag`")
+
+        resource_path = '/beta/orderSourceReservation/{orderSourceReservationId}/tag/{orderSourceReservationTag}'.replace('{format}', 'json')
+        path_params = {}
+        if 'order_source_reservation_id' in params:
+            path_params['orderSourceReservationId'] = params['order_source_reservation_id']
+        if 'order_source_reservation_tag' in params:
+            path_params['orderSourceReservationTag'] = params['order_source_reservation_tag']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_duplicate_order_source_reservation_by_id(self, order_source_reservation_id, **kwargs):
+        """
+        Get a duplicated an orderSourceReservation by id
+        Returns a duplicated orderSourceReservation identified by the specified id.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_duplicate_order_source_reservation_by_id(order_source_reservation_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int order_source_reservation_id: Id of the orderSourceReservation to be duplicated. (required)
+        :return: OrderSourceReservation
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['order_source_reservation_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_duplicate_order_source_reservation_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'order_source_reservation_id' is set
+        if ('order_source_reservation_id' not in params) or (params['order_source_reservation_id'] is None):
+            raise ValueError("Missing the required parameter `order_source_reservation_id` when calling `get_duplicate_order_source_reservation_by_id`")
+
+        resource_path = '/beta/orderSourceReservation/duplicate/{orderSourceReservationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'order_source_reservation_id' in params:
+            path_params['orderSourceReservationId'] = params['order_source_reservation_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OrderSourceReservation',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -355,6 +681,83 @@ class OrderSourceReservationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='OrderSourceReservation',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_order_source_reservation_tags(self, order_source_reservation_id, **kwargs):
+        """
+        Get the tags for an orderSourceReservation.
+        Get all existing orderSourceReservation tags.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_order_source_reservation_tags(order_source_reservation_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int order_source_reservation_id: Id of the orderSourceReservation to get tags for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['order_source_reservation_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_order_source_reservation_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'order_source_reservation_id' is set
+        if ('order_source_reservation_id' not in params) or (params['order_source_reservation_id'] is None):
+            raise ValueError("Missing the required parameter `order_source_reservation_id` when calling `get_order_source_reservation_tags`")
+
+        resource_path = '/beta/orderSourceReservation/{orderSourceReservationId}/tag'.replace('{format}', 'json')
+        path_params = {}
+        if 'order_source_reservation_id' in params:
+            path_params['orderSourceReservationId'] = params['order_source_reservation_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type([])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

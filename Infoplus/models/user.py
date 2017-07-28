@@ -38,16 +38,19 @@ class User(object):
         """
         self.swagger_types = {
             'user_id': 'int',
-            'label': 'str'
+            'label': 'str',
+            'full_entity_class_name': 'str'
         }
 
         self.attribute_map = {
             'user_id': 'userId',
-            'label': 'label'
+            'label': 'label',
+            'full_entity_class_name': 'fullEntityClassName'
         }
 
         self._user_id = None
         self._label = None
+        self._full_entity_class_name = None
 
     @property
     def user_id(self):
@@ -92,6 +95,28 @@ class User(object):
         :type: str
         """
         self._label = label
+
+    @property
+    def full_entity_class_name(self):
+        """
+        Gets the full_entity_class_name of this User.
+
+
+        :return: The full_entity_class_name of this User.
+        :rtype: str
+        """
+        return self._full_entity_class_name
+
+    @full_entity_class_name.setter
+    def full_entity_class_name(self, full_entity_class_name):
+        """
+        Sets the full_entity_class_name of this User.
+
+
+        :param full_entity_class_name: The full_entity_class_name of this User.
+        :type: str
+        """
+        self._full_entity_class_name = full_entity_class_name
 
     def to_dict(self):
         """

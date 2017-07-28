@@ -38,16 +38,19 @@ class CarrierService(object):
         """
         self.swagger_types = {
             'id': 'int',
-            'label': 'str'
+            'label': 'str',
+            'full_entity_class_name': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'label': 'label'
+            'label': 'label',
+            'full_entity_class_name': 'fullEntityClassName'
         }
 
         self._id = None
         self._label = None
+        self._full_entity_class_name = None
 
     @property
     def id(self):
@@ -92,6 +95,28 @@ class CarrierService(object):
         :type: str
         """
         self._label = label
+
+    @property
+    def full_entity_class_name(self):
+        """
+        Gets the full_entity_class_name of this CarrierService.
+
+
+        :return: The full_entity_class_name of this CarrierService.
+        :rtype: str
+        """
+        return self._full_entity_class_name
+
+    @full_entity_class_name.setter
+    def full_entity_class_name(self, full_entity_class_name):
+        """
+        Sets the full_entity_class_name of this CarrierService.
+
+
+        :param full_entity_class_name: The full_entity_class_name of this CarrierService.
+        :type: str
+        """
+        self._full_entity_class_name = full_entity_class_name
 
     def to_dict(self):
         """
