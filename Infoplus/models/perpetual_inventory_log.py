@@ -38,6 +38,7 @@ class PerpetualInventoryLog(object):
         """
         self.swagger_types = {
             'id': 'int',
+            'item_receipt_location_id': 'int',
             'item_receipt_id': 'int',
             'sku_id': 'int',
             'asn_id': 'int',
@@ -127,6 +128,7 @@ class PerpetualInventoryLog(object):
 
         self.attribute_map = {
             'id': 'id',
+            'item_receipt_location_id': 'itemReceiptLocationId',
             'item_receipt_id': 'itemReceiptId',
             'sku_id': 'skuId',
             'asn_id': 'asnId',
@@ -215,6 +217,7 @@ class PerpetualInventoryLog(object):
         }
 
         self._id = None
+        self._item_receipt_location_id = None
         self._item_receipt_id = None
         self._sku_id = None
         self._asn_id = None
@@ -322,6 +325,28 @@ class PerpetualInventoryLog(object):
         :type: int
         """
         self._id = id
+
+    @property
+    def item_receipt_location_id(self):
+        """
+        Gets the item_receipt_location_id of this PerpetualInventoryLog.
+
+
+        :return: The item_receipt_location_id of this PerpetualInventoryLog.
+        :rtype: int
+        """
+        return self._item_receipt_location_id
+
+    @item_receipt_location_id.setter
+    def item_receipt_location_id(self, item_receipt_location_id):
+        """
+        Sets the item_receipt_location_id of this PerpetualInventoryLog.
+
+
+        :param item_receipt_location_id: The item_receipt_location_id of this PerpetualInventoryLog.
+        :type: int
+        """
+        self._item_receipt_location_id = item_receipt_location_id
 
     @property
     def item_receipt_id(self):

@@ -22,6 +22,8 @@ from .models.carton_type import CartonType
 from .models.customer import Customer
 from .models.e_di_document_type import EDIDocumentType
 from .models.email_template import EmailTemplate
+from .models.execute_quick_adjustment_input_api_model import ExecuteQuickAdjustmentInputAPIModel
+from .models.execute_quick_receipt_input_api_model import ExecuteQuickReceiptInputAPIModel
 from .models.external_shipment import ExternalShipment
 from .models.external_shipping_system import ExternalShippingSystem
 from .models.fulfillment_plan import FulfillmentPlan
@@ -78,6 +80,7 @@ from .models.parcel_invoice_line import ParcelInvoiceLine
 from .models.perpetual_inventory_log import PerpetualInventoryLog
 from .models.pick_face_assignment import PickFaceAssignment
 from .models.predefined_carton import PredefinedCarton
+from .models.process_output_api_model import ProcessOutputAPIModel
 from .models.product_type import ProductType
 from .models.production_lot import ProductionLot
 from .models.quick_adjustment import QuickAdjustment

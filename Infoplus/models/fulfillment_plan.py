@@ -47,6 +47,7 @@ class FulfillmentPlan(object):
             'order_smart_filter_id': 'int',
             'location_smart_filter_id': 'int',
             'maximum_number_of_orders': 'int',
+            'version': 'str',
             'create_pick_work': 'bool',
             'picking_rule': 'str',
             'layout_rule': 'str',
@@ -85,6 +86,7 @@ class FulfillmentPlan(object):
             'order_smart_filter_id': 'orderSmartFilterId',
             'location_smart_filter_id': 'locationSmartFilterId',
             'maximum_number_of_orders': 'maximumNumberOfOrders',
+            'version': 'version',
             'create_pick_work': 'createPickWork',
             'picking_rule': 'pickingRule',
             'layout_rule': 'layoutRule',
@@ -122,6 +124,7 @@ class FulfillmentPlan(object):
         self._order_smart_filter_id = None
         self._location_smart_filter_id = None
         self._maximum_number_of_orders = None
+        self._version = None
         self._create_pick_work = False
         self._picking_rule = None
         self._layout_rule = None
@@ -367,6 +370,28 @@ class FulfillmentPlan(object):
         :type: int
         """
         self._maximum_number_of_orders = maximum_number_of_orders
+
+    @property
+    def version(self):
+        """
+        Gets the version of this FulfillmentPlan.
+
+
+        :return: The version of this FulfillmentPlan.
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this FulfillmentPlan.
+
+
+        :param version: The version of this FulfillmentPlan.
+        :type: str
+        """
+        self._version = version
 
     @property
     def create_pick_work(self):

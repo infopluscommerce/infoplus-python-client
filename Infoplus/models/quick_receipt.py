@@ -62,7 +62,7 @@ class QuickReceipt(object):
             'carton_width': 'float',
             'carton_height': 'float',
             'cost': 'float',
-            'sell': 'float',
+            'sell_price': 'float',
             'pricing_per': 'str',
             'generated_item_receipt_id': 'int',
             'generated_asn_id': 'int',
@@ -98,7 +98,7 @@ class QuickReceipt(object):
             'carton_width': 'cartonWidth',
             'carton_height': 'cartonHeight',
             'cost': 'cost',
-            'sell': 'sell',
+            'sell_price': 'sellPrice',
             'pricing_per': 'pricingPer',
             'generated_item_receipt_id': 'generatedItemReceiptId',
             'generated_asn_id': 'generatedASNId',
@@ -133,7 +133,7 @@ class QuickReceipt(object):
         self._carton_width = None
         self._carton_height = None
         self._cost = None
-        self._sell = None
+        self._sell_price = None
         self._pricing_per = None
         self._generated_item_receipt_id = None
         self._generated_asn_id = None
@@ -693,26 +693,26 @@ class QuickReceipt(object):
         self._cost = cost
 
     @property
-    def sell(self):
+    def sell_price(self):
         """
-        Gets the sell of this QuickReceipt.
+        Gets the sell_price of this QuickReceipt.
 
 
-        :return: The sell of this QuickReceipt.
+        :return: The sell_price of this QuickReceipt.
         :rtype: float
         """
-        return self._sell
+        return self._sell_price
 
-    @sell.setter
-    def sell(self, sell):
+    @sell_price.setter
+    def sell_price(self, sell_price):
         """
-        Sets the sell of this QuickReceipt.
+        Sets the sell_price of this QuickReceipt.
 
 
-        :param sell: The sell of this QuickReceipt.
+        :param sell_price: The sell_price of this QuickReceipt.
         :type: float
         """
-        self._sell = sell
+        self._sell_price = sell_price
 
     @property
     def pricing_per(self):

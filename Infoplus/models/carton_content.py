@@ -40,6 +40,7 @@ class CartonContent(object):
             'id': 'int',
             'group_order_id': 'float',
             'order_no': 'float',
+            'carton_no': 'int',
             'carton_id': 'int',
             'line_item_id': 'int',
             'location': 'str',
@@ -56,6 +57,7 @@ class CartonContent(object):
             'id': 'id',
             'group_order_id': 'groupOrderId',
             'order_no': 'orderNo',
+            'carton_no': 'cartonNo',
             'carton_id': 'cartonId',
             'line_item_id': 'lineItemId',
             'location': 'location',
@@ -71,6 +73,7 @@ class CartonContent(object):
         self._id = None
         self._group_order_id = None
         self._order_no = None
+        self._carton_no = None
         self._carton_id = None
         self._line_item_id = None
         self._location = None
@@ -147,6 +150,28 @@ class CartonContent(object):
         :type: float
         """
         self._order_no = order_no
+
+    @property
+    def carton_no(self):
+        """
+        Gets the carton_no of this CartonContent.
+
+
+        :return: The carton_no of this CartonContent.
+        :rtype: int
+        """
+        return self._carton_no
+
+    @carton_no.setter
+    def carton_no(self, carton_no):
+        """
+        Sets the carton_no of this CartonContent.
+
+
+        :param carton_no: The carton_no of this CartonContent.
+        :type: int
+        """
+        self._carton_no = carton_no
 
     @property
     def carton_id(self):

@@ -67,6 +67,8 @@ class CartonActivity(object):
             'charged_freight_amount': 'float',
             'published_freight_amount': 'float',
             'retail_freight_amount': 'float',
+            'carton_create_date': 'datetime',
+            'carton_modify_date': 'datetime',
             'alternate_usage': 'str',
             'group_order_id': 'float',
             'order_status': 'str',
@@ -89,6 +91,7 @@ class CartonActivity(object):
             'customer_order_no': 'str',
             'price_level': 'str',
             'order_create_date': 'datetime',
+            'order_modify_date': 'datetime',
             'ship_by': 'datetime',
             'stop_back_orders': 'str',
             'order_source_id': 'int',
@@ -202,6 +205,8 @@ class CartonActivity(object):
             'charged_freight_amount': 'chargedFreightAmount',
             'published_freight_amount': 'publishedFreightAmount',
             'retail_freight_amount': 'retailFreightAmount',
+            'carton_create_date': 'cartonCreateDate',
+            'carton_modify_date': 'cartonModifyDate',
             'alternate_usage': 'alternateUsage',
             'group_order_id': 'groupOrderId',
             'order_status': 'orderStatus',
@@ -224,6 +229,7 @@ class CartonActivity(object):
             'customer_order_no': 'customerOrderNo',
             'price_level': 'priceLevel',
             'order_create_date': 'orderCreateDate',
+            'order_modify_date': 'orderModifyDate',
             'ship_by': 'shipBy',
             'stop_back_orders': 'stopBackOrders',
             'order_source_id': 'orderSourceId',
@@ -336,6 +342,8 @@ class CartonActivity(object):
         self._charged_freight_amount = None
         self._published_freight_amount = None
         self._retail_freight_amount = None
+        self._carton_create_date = None
+        self._carton_modify_date = None
         self._alternate_usage = None
         self._group_order_id = None
         self._order_status = None
@@ -358,6 +366,7 @@ class CartonActivity(object):
         self._customer_order_no = None
         self._price_level = None
         self._order_create_date = None
+        self._order_modify_date = None
         self._ship_by = None
         self._stop_back_orders = None
         self._order_source_id = None
@@ -1100,6 +1109,50 @@ class CartonActivity(object):
         self._retail_freight_amount = retail_freight_amount
 
     @property
+    def carton_create_date(self):
+        """
+        Gets the carton_create_date of this CartonActivity.
+
+
+        :return: The carton_create_date of this CartonActivity.
+        :rtype: datetime
+        """
+        return self._carton_create_date
+
+    @carton_create_date.setter
+    def carton_create_date(self, carton_create_date):
+        """
+        Sets the carton_create_date of this CartonActivity.
+
+
+        :param carton_create_date: The carton_create_date of this CartonActivity.
+        :type: datetime
+        """
+        self._carton_create_date = carton_create_date
+
+    @property
+    def carton_modify_date(self):
+        """
+        Gets the carton_modify_date of this CartonActivity.
+
+
+        :return: The carton_modify_date of this CartonActivity.
+        :rtype: datetime
+        """
+        return self._carton_modify_date
+
+    @carton_modify_date.setter
+    def carton_modify_date(self, carton_modify_date):
+        """
+        Sets the carton_modify_date of this CartonActivity.
+
+
+        :param carton_modify_date: The carton_modify_date of this CartonActivity.
+        :type: datetime
+        """
+        self._carton_modify_date = carton_modify_date
+
+    @property
     def alternate_usage(self):
         """
         Gets the alternate_usage of this CartonActivity.
@@ -1582,6 +1635,28 @@ class CartonActivity(object):
         :type: datetime
         """
         self._order_create_date = order_create_date
+
+    @property
+    def order_modify_date(self):
+        """
+        Gets the order_modify_date of this CartonActivity.
+
+
+        :return: The order_modify_date of this CartonActivity.
+        :rtype: datetime
+        """
+        return self._order_modify_date
+
+    @order_modify_date.setter
+    def order_modify_date(self, order_modify_date):
+        """
+        Sets the order_modify_date of this CartonActivity.
+
+
+        :param order_modify_date: The order_modify_date of this CartonActivity.
+        :type: datetime
+        """
+        self._order_modify_date = order_modify_date
 
     @property
     def ship_by(self):

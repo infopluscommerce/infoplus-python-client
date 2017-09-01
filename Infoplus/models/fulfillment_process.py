@@ -49,6 +49,7 @@ class FulfillmentProcess(object):
             'order_smart_filter_id': 'int',
             'location_smart_filter_id': 'int',
             'order_limit': 'int',
+            'version': 'str',
             'number_of_orders': 'int',
             'number_of_lines': 'int',
             'number_of_sk_us': 'int',
@@ -101,6 +102,7 @@ class FulfillmentProcess(object):
             'order_smart_filter_id': 'orderSmartFilterId',
             'location_smart_filter_id': 'locationSmartFilterId',
             'order_limit': 'orderLimit',
+            'version': 'version',
             'number_of_orders': 'numberOfOrders',
             'number_of_lines': 'numberOfLines',
             'number_of_sk_us': 'numberOfSKUs',
@@ -152,6 +154,7 @@ class FulfillmentProcess(object):
         self._order_smart_filter_id = None
         self._location_smart_filter_id = None
         self._order_limit = None
+        self._version = None
         self._number_of_orders = None
         self._number_of_lines = None
         self._number_of_sk_us = None
@@ -453,6 +456,28 @@ class FulfillmentProcess(object):
         :type: int
         """
         self._order_limit = order_limit
+
+    @property
+    def version(self):
+        """
+        Gets the version of this FulfillmentProcess.
+
+
+        :return: The version of this FulfillmentProcess.
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this FulfillmentProcess.
+
+
+        :param version: The version of this FulfillmentProcess.
+        :type: str
+        """
+        self._version = version
 
     @property
     def number_of_orders(self):

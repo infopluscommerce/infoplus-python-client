@@ -62,7 +62,8 @@ class OrderActivity(object):
             'order_reason': 'int',
             'customer_order_no': 'str',
             'price_level': 'str',
-            'entry_time': 'datetime',
+            'order_create_date': 'datetime',
+            'order_modify_date': 'datetime',
             'ship_by': 'datetime',
             'stop_back_orders': 'str',
             'warehouse_id': 'int',
@@ -138,6 +139,9 @@ class OrderActivity(object):
             'lead_package_id': 'str',
             'delivered_date': 'datetime',
             'total_qty': 'int',
+            'number_of_wraps': 'int',
+            'number_of_cases': 'int',
+            'number_of_touches': 'int',
             'estimated_number_of_picks': 'int',
             'order_confirmation_email_template_id': 'int',
             'shipment_confirmation_email_template_id': 'int',
@@ -174,7 +178,8 @@ class OrderActivity(object):
             'order_reason': 'orderReason',
             'customer_order_no': 'customerOrderNo',
             'price_level': 'priceLevel',
-            'entry_time': 'entryTime',
+            'order_create_date': 'orderCreateDate',
+            'order_modify_date': 'orderModifyDate',
             'ship_by': 'shipBy',
             'stop_back_orders': 'stopBackOrders',
             'warehouse_id': 'warehouseId',
@@ -250,6 +255,9 @@ class OrderActivity(object):
             'lead_package_id': 'leadPackageId',
             'delivered_date': 'deliveredDate',
             'total_qty': 'totalQty',
+            'number_of_wraps': 'numberOfWraps',
+            'number_of_cases': 'numberOfCases',
+            'number_of_touches': 'numberOfTouches',
             'estimated_number_of_picks': 'estimatedNumberOfPicks',
             'order_confirmation_email_template_id': 'orderConfirmationEmailTemplateId',
             'shipment_confirmation_email_template_id': 'shipmentConfirmationEmailTemplateId',
@@ -285,7 +293,8 @@ class OrderActivity(object):
         self._order_reason = None
         self._customer_order_no = None
         self._price_level = None
-        self._entry_time = None
+        self._order_create_date = None
+        self._order_modify_date = None
         self._ship_by = None
         self._stop_back_orders = None
         self._warehouse_id = None
@@ -361,6 +370,9 @@ class OrderActivity(object):
         self._lead_package_id = None
         self._delivered_date = None
         self._total_qty = None
+        self._number_of_wraps = None
+        self._number_of_cases = None
+        self._number_of_touches = None
         self._estimated_number_of_picks = None
         self._order_confirmation_email_template_id = None
         self._shipment_confirmation_email_template_id = None
@@ -921,26 +933,48 @@ class OrderActivity(object):
         self._price_level = price_level
 
     @property
-    def entry_time(self):
+    def order_create_date(self):
         """
-        Gets the entry_time of this OrderActivity.
+        Gets the order_create_date of this OrderActivity.
 
 
-        :return: The entry_time of this OrderActivity.
+        :return: The order_create_date of this OrderActivity.
         :rtype: datetime
         """
-        return self._entry_time
+        return self._order_create_date
 
-    @entry_time.setter
-    def entry_time(self, entry_time):
+    @order_create_date.setter
+    def order_create_date(self, order_create_date):
         """
-        Sets the entry_time of this OrderActivity.
+        Sets the order_create_date of this OrderActivity.
 
 
-        :param entry_time: The entry_time of this OrderActivity.
+        :param order_create_date: The order_create_date of this OrderActivity.
         :type: datetime
         """
-        self._entry_time = entry_time
+        self._order_create_date = order_create_date
+
+    @property
+    def order_modify_date(self):
+        """
+        Gets the order_modify_date of this OrderActivity.
+
+
+        :return: The order_modify_date of this OrderActivity.
+        :rtype: datetime
+        """
+        return self._order_modify_date
+
+    @order_modify_date.setter
+    def order_modify_date(self, order_modify_date):
+        """
+        Sets the order_modify_date of this OrderActivity.
+
+
+        :param order_modify_date: The order_modify_date of this OrderActivity.
+        :type: datetime
+        """
+        self._order_modify_date = order_modify_date
 
     @property
     def ship_by(self):
@@ -2591,6 +2625,72 @@ class OrderActivity(object):
         :type: int
         """
         self._total_qty = total_qty
+
+    @property
+    def number_of_wraps(self):
+        """
+        Gets the number_of_wraps of this OrderActivity.
+
+
+        :return: The number_of_wraps of this OrderActivity.
+        :rtype: int
+        """
+        return self._number_of_wraps
+
+    @number_of_wraps.setter
+    def number_of_wraps(self, number_of_wraps):
+        """
+        Sets the number_of_wraps of this OrderActivity.
+
+
+        :param number_of_wraps: The number_of_wraps of this OrderActivity.
+        :type: int
+        """
+        self._number_of_wraps = number_of_wraps
+
+    @property
+    def number_of_cases(self):
+        """
+        Gets the number_of_cases of this OrderActivity.
+
+
+        :return: The number_of_cases of this OrderActivity.
+        :rtype: int
+        """
+        return self._number_of_cases
+
+    @number_of_cases.setter
+    def number_of_cases(self, number_of_cases):
+        """
+        Sets the number_of_cases of this OrderActivity.
+
+
+        :param number_of_cases: The number_of_cases of this OrderActivity.
+        :type: int
+        """
+        self._number_of_cases = number_of_cases
+
+    @property
+    def number_of_touches(self):
+        """
+        Gets the number_of_touches of this OrderActivity.
+
+
+        :return: The number_of_touches of this OrderActivity.
+        :rtype: int
+        """
+        return self._number_of_touches
+
+    @number_of_touches.setter
+    def number_of_touches(self, number_of_touches):
+        """
+        Sets the number_of_touches of this OrderActivity.
+
+
+        :param number_of_touches: The number_of_touches of this OrderActivity.
+        :type: int
+        """
+        self._number_of_touches = number_of_touches
 
     @property
     def estimated_number_of_picks(self):

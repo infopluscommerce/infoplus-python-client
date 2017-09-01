@@ -110,6 +110,8 @@ class WorkActivity(object):
             'destination_priority_code': 'int',
             'destination_cost': 'int',
             'destination_allow_item_mixing': 'bool',
+            'work_create_date': 'datetime',
+            'work_modify_date': 'datetime',
             'master_ref': 'int',
             'weight_per_wrap': 'float',
             'sku': 'str',
@@ -119,6 +121,10 @@ class WorkActivity(object):
             'unit_code': 'str',
             'wrap_code': 'str',
             'units_per_wrap': 'int',
+            'quantity': 'int',
+            'number_of_wraps': 'int',
+            'number_of_cases': 'int',
+            'pick_touches': 'int',
             'class_restriction': 'str',
             'max_cycle': 'int',
             'max_interim': 'int',
@@ -260,6 +266,8 @@ class WorkActivity(object):
             'destination_priority_code': 'destinationPriorityCode',
             'destination_cost': 'destinationCost',
             'destination_allow_item_mixing': 'destinationAllowItemMixing',
+            'work_create_date': 'workCreateDate',
+            'work_modify_date': 'workModifyDate',
             'master_ref': 'masterRef',
             'weight_per_wrap': 'weightPerWrap',
             'sku': 'sku',
@@ -269,6 +277,10 @@ class WorkActivity(object):
             'unit_code': 'unitCode',
             'wrap_code': 'wrapCode',
             'units_per_wrap': 'unitsPerWrap',
+            'quantity': 'quantity',
+            'number_of_wraps': 'numberOfWraps',
+            'number_of_cases': 'numberOfCases',
+            'pick_touches': 'pickTouches',
             'class_restriction': 'classRestriction',
             'max_cycle': 'maxCycle',
             'max_interim': 'maxInterim',
@@ -409,6 +421,8 @@ class WorkActivity(object):
         self._destination_priority_code = None
         self._destination_cost = None
         self._destination_allow_item_mixing = False
+        self._work_create_date = None
+        self._work_modify_date = None
         self._master_ref = None
         self._weight_per_wrap = None
         self._sku = None
@@ -418,6 +432,10 @@ class WorkActivity(object):
         self._unit_code = None
         self._wrap_code = None
         self._units_per_wrap = None
+        self._quantity = None
+        self._number_of_wraps = None
+        self._number_of_cases = None
+        self._pick_touches = None
         self._class_restriction = None
         self._max_cycle = None
         self._max_interim = None
@@ -2091,6 +2109,50 @@ class WorkActivity(object):
         self._destination_allow_item_mixing = destination_allow_item_mixing
 
     @property
+    def work_create_date(self):
+        """
+        Gets the work_create_date of this WorkActivity.
+
+
+        :return: The work_create_date of this WorkActivity.
+        :rtype: datetime
+        """
+        return self._work_create_date
+
+    @work_create_date.setter
+    def work_create_date(self, work_create_date):
+        """
+        Sets the work_create_date of this WorkActivity.
+
+
+        :param work_create_date: The work_create_date of this WorkActivity.
+        :type: datetime
+        """
+        self._work_create_date = work_create_date
+
+    @property
+    def work_modify_date(self):
+        """
+        Gets the work_modify_date of this WorkActivity.
+
+
+        :return: The work_modify_date of this WorkActivity.
+        :rtype: datetime
+        """
+        return self._work_modify_date
+
+    @work_modify_date.setter
+    def work_modify_date(self, work_modify_date):
+        """
+        Sets the work_modify_date of this WorkActivity.
+
+
+        :param work_modify_date: The work_modify_date of this WorkActivity.
+        :type: datetime
+        """
+        self._work_modify_date = work_modify_date
+
+    @property
     def master_ref(self):
         """
         Gets the master_ref of this WorkActivity.
@@ -2287,6 +2349,94 @@ class WorkActivity(object):
         :type: int
         """
         self._units_per_wrap = units_per_wrap
+
+    @property
+    def quantity(self):
+        """
+        Gets the quantity of this WorkActivity.
+
+
+        :return: The quantity of this WorkActivity.
+        :rtype: int
+        """
+        return self._quantity
+
+    @quantity.setter
+    def quantity(self, quantity):
+        """
+        Sets the quantity of this WorkActivity.
+
+
+        :param quantity: The quantity of this WorkActivity.
+        :type: int
+        """
+        self._quantity = quantity
+
+    @property
+    def number_of_wraps(self):
+        """
+        Gets the number_of_wraps of this WorkActivity.
+
+
+        :return: The number_of_wraps of this WorkActivity.
+        :rtype: int
+        """
+        return self._number_of_wraps
+
+    @number_of_wraps.setter
+    def number_of_wraps(self, number_of_wraps):
+        """
+        Sets the number_of_wraps of this WorkActivity.
+
+
+        :param number_of_wraps: The number_of_wraps of this WorkActivity.
+        :type: int
+        """
+        self._number_of_wraps = number_of_wraps
+
+    @property
+    def number_of_cases(self):
+        """
+        Gets the number_of_cases of this WorkActivity.
+
+
+        :return: The number_of_cases of this WorkActivity.
+        :rtype: int
+        """
+        return self._number_of_cases
+
+    @number_of_cases.setter
+    def number_of_cases(self, number_of_cases):
+        """
+        Sets the number_of_cases of this WorkActivity.
+
+
+        :param number_of_cases: The number_of_cases of this WorkActivity.
+        :type: int
+        """
+        self._number_of_cases = number_of_cases
+
+    @property
+    def pick_touches(self):
+        """
+        Gets the pick_touches of this WorkActivity.
+
+
+        :return: The pick_touches of this WorkActivity.
+        :rtype: int
+        """
+        return self._pick_touches
+
+    @pick_touches.setter
+    def pick_touches(self, pick_touches):
+        """
+        Sets the pick_touches of this WorkActivity.
+
+
+        :param pick_touches: The pick_touches of this WorkActivity.
+        :type: int
+        """
+        self._pick_touches = pick_touches
 
     @property
     def class_restriction(self):

@@ -43,6 +43,7 @@ class ItemReceipt(object):
             'legacy_po_no': 'str',
             'warehouse_id': 'int',
             'order_date': 'datetime',
+            'full_description': 'str',
             'fact_cost': 'float',
             'ml_cost': 'float',
             'sku': 'str',
@@ -52,7 +53,7 @@ class ItemReceipt(object):
             'wrap_code': 'str',
             'units_per_wrap': 'int',
             'cost': 'float',
-            'sell': 'float',
+            'sell_price': 'float',
             'pricing_per': 'str',
             'max_freight': 'float',
             'charge_freight': 'str',
@@ -117,6 +118,7 @@ class ItemReceipt(object):
             'legacy_po_no': 'legacyPoNo',
             'warehouse_id': 'warehouseId',
             'order_date': 'orderDate',
+            'full_description': 'fullDescription',
             'fact_cost': 'factCost',
             'ml_cost': 'mlCost',
             'sku': 'sku',
@@ -126,7 +128,7 @@ class ItemReceipt(object):
             'wrap_code': 'wrapCode',
             'units_per_wrap': 'unitsPerWrap',
             'cost': 'cost',
-            'sell': 'sell',
+            'sell_price': 'sellPrice',
             'pricing_per': 'pricingPer',
             'max_freight': 'maxFreight',
             'charge_freight': 'chargeFreight',
@@ -190,6 +192,7 @@ class ItemReceipt(object):
         self._legacy_po_no = None
         self._warehouse_id = None
         self._order_date = None
+        self._full_description = None
         self._fact_cost = None
         self._ml_cost = None
         self._sku = None
@@ -199,7 +202,7 @@ class ItemReceipt(object):
         self._wrap_code = None
         self._units_per_wrap = None
         self._cost = None
-        self._sell = None
+        self._sell_price = None
         self._pricing_per = None
         self._max_freight = None
         self._charge_freight = None
@@ -387,6 +390,28 @@ class ItemReceipt(object):
         :type: datetime
         """
         self._order_date = order_date
+
+    @property
+    def full_description(self):
+        """
+        Gets the full_description of this ItemReceipt.
+
+
+        :return: The full_description of this ItemReceipt.
+        :rtype: str
+        """
+        return self._full_description
+
+    @full_description.setter
+    def full_description(self, full_description):
+        """
+        Sets the full_description of this ItemReceipt.
+
+
+        :param full_description: The full_description of this ItemReceipt.
+        :type: str
+        """
+        self._full_description = full_description
 
     @property
     def fact_cost(self):
@@ -587,26 +612,26 @@ class ItemReceipt(object):
         self._cost = cost
 
     @property
-    def sell(self):
+    def sell_price(self):
         """
-        Gets the sell of this ItemReceipt.
+        Gets the sell_price of this ItemReceipt.
 
 
-        :return: The sell of this ItemReceipt.
+        :return: The sell_price of this ItemReceipt.
         :rtype: float
         """
-        return self._sell
+        return self._sell_price
 
-    @sell.setter
-    def sell(self, sell):
+    @sell_price.setter
+    def sell_price(self, sell_price):
         """
-        Sets the sell of this ItemReceipt.
+        Sets the sell_price of this ItemReceipt.
 
 
-        :param sell: The sell of this ItemReceipt.
+        :param sell_price: The sell_price of this ItemReceipt.
         :type: float
         """
-        self._sell = sell
+        self._sell_price = sell_price
 
     @property
     def pricing_per(self):

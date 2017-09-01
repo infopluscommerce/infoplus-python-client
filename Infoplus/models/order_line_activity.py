@@ -44,8 +44,10 @@ class OrderLineActivity(object):
             'lob_id': 'int',
             'sku': 'str',
             'po_no_id': 'int',
+            'order_create_date': 'datetime',
+            'order_modify_date': 'datetime',
             'cross_dock': 'int',
-            'process_no': 'int',
+            'process_no_id': 'int',
             'ordered_qty': 'int',
             'allowed_qty': 'int',
             'shipped_qty': 'int',
@@ -83,6 +85,9 @@ class OrderLineActivity(object):
             'weight_per_wrap': 'float',
             'item_weight': 'float',
             'production_lot': 'str',
+            'number_of_wraps': 'int',
+            'number_of_cases': 'int',
+            'number_of_touches': 'int',
             'alcohol_type_id': 'int',
             'alcohol_type_name': 'str',
             'alcohol_content': 'float',
@@ -99,6 +104,103 @@ class OrderLineActivity(object):
             'alcohol_nabca_code': 'str',
             'alcohol_unimerc_code': 'str',
             'alcohol_scc_code': 'str',
+            'alternate_usage': 'str',
+            'group_order_id': 'float',
+            'order_status': 'str',
+            'order_status_name': 'str',
+            'carrier_id': 'int',
+            'carrier_name': 'str',
+            'media_code': 'str',
+            'legacy_restriction_type': 'str',
+            'req_type_name': 'str',
+            'service_type_id': 'str',
+            'service_type_name': 'str',
+            'alcohol_order_type': 'str',
+            'distribution_channel': 'str',
+            'distribution_channel_name': 'str',
+            'priority_code': 'int',
+            'order_date': 'datetime',
+            'entered_by': 'str',
+            'order_reason': 'int',
+            'customer_order_no': 'str',
+            'price_level': 'str',
+            'ship_by': 'datetime',
+            'stop_back_orders': 'str',
+            'order_source_id': 'int',
+            'order_source_name': 'str',
+            'integration_partner_id': 'int',
+            'integration_partner_name': 'str',
+            'order_load_program_id': 'int',
+            'order_load_program_name': 'str',
+            'oms_order_no': 'int',
+            'oms_customer_id': 'int',
+            'ship_to_attention': 'str',
+            'ship_to_company': 'str',
+            'ship_to_street': 'str',
+            'ship_to_street2': 'str',
+            'ship_to_street3': 'str',
+            'ship_to_city': 'str',
+            'ship_to_state': 'str',
+            'ship_to_zip': 'str',
+            'ship_to_country': 'str',
+            'ship_to_phone': 'str',
+            'ship_to_email': 'str',
+            'bill_to_attention': 'str',
+            'bill_to_company': 'str',
+            'bill_to_street': 'str',
+            'bill_to_street2': 'str',
+            'bill_to_street3': 'str',
+            'bill_to_city': 'str',
+            'bill_to_state': 'str',
+            'bill_to_zip': 'str',
+            'bill_to_country': 'str',
+            'bill_to_phone': 'str',
+            'bill_to_email': 'str',
+            'order_ship_date': 'datetime',
+            'freight': 'float',
+            'order_weight_lbs': 'float',
+            'order_estimated_weight_lbs': 'float',
+            'number_of_pallets': 'int',
+            'number_of_line_items': 'int',
+            'completion_status': 'str',
+            'hold_code': 'str',
+            'ship_code': 'str',
+            'order_message': 'str',
+            'division': 'int',
+            'cost_center': 'str',
+            'authorized_by': 'str',
+            'batch_no': 'str',
+            'first_ship_date': 'datetime',
+            'last_ship_date': 'datetime',
+            'deliver_on_date': 'datetime',
+            'customer_po_no': 'str',
+            'ship_via': 'str',
+            'need_by_date': 'datetime',
+            'total': 'float',
+            'balance_due': 'float',
+            'total_paid': 'float',
+            'authorization_amount': 'float',
+            'subtotal': 'float',
+            'tax_on_freight': 'float',
+            'tax': 'float',
+            'distribution_charges': 'float',
+            'shipping_charge': 'float',
+            'total_discount': 'float',
+            'parcel_account_id': 'int',
+            'packing_slip_template_id': 'int',
+            'gift_message': 'str',
+            'branch_sector': 'str',
+            'branch_area': 'str',
+            'branch_customer_type': 'str',
+            'branch_id': 'str',
+            'order_code': 'str',
+            'lead_package_id': 'str',
+            'total_qty': 'int',
+            'estimated_number_of_picks': 'int',
+            'order_confirmation_email_template_id': 'int',
+            'shipment_confirmation_email_template_id': 'int',
+            'order_invoice_template_id': 'int',
+            'price_mode': 'str',
             'custom_fields': 'dict(str, object)'
         }
 
@@ -110,8 +212,10 @@ class OrderLineActivity(object):
             'lob_id': 'lobId',
             'sku': 'sku',
             'po_no_id': 'poNoId',
+            'order_create_date': 'orderCreateDate',
+            'order_modify_date': 'orderModifyDate',
             'cross_dock': 'crossDock',
-            'process_no': 'processNo',
+            'process_no_id': 'processNoId',
             'ordered_qty': 'orderedQty',
             'allowed_qty': 'allowedQty',
             'shipped_qty': 'shippedQty',
@@ -149,6 +253,9 @@ class OrderLineActivity(object):
             'weight_per_wrap': 'weightPerWrap',
             'item_weight': 'itemWeight',
             'production_lot': 'productionLot',
+            'number_of_wraps': 'numberOfWraps',
+            'number_of_cases': 'numberOfCases',
+            'number_of_touches': 'numberOfTouches',
             'alcohol_type_id': 'alcoholTypeId',
             'alcohol_type_name': 'alcoholTypeName',
             'alcohol_content': 'alcoholContent',
@@ -165,6 +272,103 @@ class OrderLineActivity(object):
             'alcohol_nabca_code': 'alcoholNABCACode',
             'alcohol_unimerc_code': 'alcoholUNIMERCCode',
             'alcohol_scc_code': 'alcoholSCCCode',
+            'alternate_usage': 'alternateUsage',
+            'group_order_id': 'groupOrderId',
+            'order_status': 'orderStatus',
+            'order_status_name': 'orderStatusName',
+            'carrier_id': 'carrierId',
+            'carrier_name': 'carrierName',
+            'media_code': 'mediaCode',
+            'legacy_restriction_type': 'legacyRestrictionType',
+            'req_type_name': 'reqTypeName',
+            'service_type_id': 'serviceTypeId',
+            'service_type_name': 'serviceTypeName',
+            'alcohol_order_type': 'alcoholOrderType',
+            'distribution_channel': 'distributionChannel',
+            'distribution_channel_name': 'distributionChannelName',
+            'priority_code': 'priorityCode',
+            'order_date': 'orderDate',
+            'entered_by': 'enteredBy',
+            'order_reason': 'orderReason',
+            'customer_order_no': 'customerOrderNo',
+            'price_level': 'priceLevel',
+            'ship_by': 'shipBy',
+            'stop_back_orders': 'stopBackOrders',
+            'order_source_id': 'orderSourceId',
+            'order_source_name': 'orderSourceName',
+            'integration_partner_id': 'integrationPartnerId',
+            'integration_partner_name': 'integrationPartnerName',
+            'order_load_program_id': 'orderLoadProgramId',
+            'order_load_program_name': 'orderLoadProgramName',
+            'oms_order_no': 'omsOrderNo',
+            'oms_customer_id': 'omsCustomerId',
+            'ship_to_attention': 'shipToAttention',
+            'ship_to_company': 'shipToCompany',
+            'ship_to_street': 'shipToStreet',
+            'ship_to_street2': 'shipToStreet2',
+            'ship_to_street3': 'shipToStreet3',
+            'ship_to_city': 'shipToCity',
+            'ship_to_state': 'shipToState',
+            'ship_to_zip': 'shipToZip',
+            'ship_to_country': 'shipToCountry',
+            'ship_to_phone': 'shipToPhone',
+            'ship_to_email': 'shipToEmail',
+            'bill_to_attention': 'billToAttention',
+            'bill_to_company': 'billToCompany',
+            'bill_to_street': 'billToStreet',
+            'bill_to_street2': 'billToStreet2',
+            'bill_to_street3': 'billToStreet3',
+            'bill_to_city': 'billToCity',
+            'bill_to_state': 'billToState',
+            'bill_to_zip': 'billToZip',
+            'bill_to_country': 'billToCountry',
+            'bill_to_phone': 'billToPhone',
+            'bill_to_email': 'billToEmail',
+            'order_ship_date': 'orderShipDate',
+            'freight': 'freight',
+            'order_weight_lbs': 'orderWeightLbs',
+            'order_estimated_weight_lbs': 'orderEstimatedWeightLbs',
+            'number_of_pallets': 'numberOfPallets',
+            'number_of_line_items': 'numberOfLineItems',
+            'completion_status': 'completionStatus',
+            'hold_code': 'holdCode',
+            'ship_code': 'shipCode',
+            'order_message': 'orderMessage',
+            'division': 'division',
+            'cost_center': 'costCenter',
+            'authorized_by': 'authorizedBy',
+            'batch_no': 'batchNo',
+            'first_ship_date': 'firstShipDate',
+            'last_ship_date': 'lastShipDate',
+            'deliver_on_date': 'deliverOnDate',
+            'customer_po_no': 'customerPONo',
+            'ship_via': 'shipVia',
+            'need_by_date': 'needByDate',
+            'total': 'total',
+            'balance_due': 'balanceDue',
+            'total_paid': 'totalPaid',
+            'authorization_amount': 'authorizationAmount',
+            'subtotal': 'subtotal',
+            'tax_on_freight': 'taxOnFreight',
+            'tax': 'tax',
+            'distribution_charges': 'distributionCharges',
+            'shipping_charge': 'shippingCharge',
+            'total_discount': 'totalDiscount',
+            'parcel_account_id': 'parcelAccountId',
+            'packing_slip_template_id': 'packingSlipTemplateId',
+            'gift_message': 'giftMessage',
+            'branch_sector': 'branchSector',
+            'branch_area': 'branchArea',
+            'branch_customer_type': 'branchCustomerType',
+            'branch_id': 'branchId',
+            'order_code': 'orderCode',
+            'lead_package_id': 'leadPackageId',
+            'total_qty': 'totalQty',
+            'estimated_number_of_picks': 'estimatedNumberOfPicks',
+            'order_confirmation_email_template_id': 'orderConfirmationEmailTemplateId',
+            'shipment_confirmation_email_template_id': 'shipmentConfirmationEmailTemplateId',
+            'order_invoice_template_id': 'orderInvoiceTemplateId',
+            'price_mode': 'priceMode',
             'custom_fields': 'customFields'
         }
 
@@ -175,8 +379,10 @@ class OrderLineActivity(object):
         self._lob_id = None
         self._sku = None
         self._po_no_id = None
+        self._order_create_date = None
+        self._order_modify_date = None
         self._cross_dock = None
-        self._process_no = None
+        self._process_no_id = None
         self._ordered_qty = None
         self._allowed_qty = None
         self._shipped_qty = None
@@ -214,6 +420,9 @@ class OrderLineActivity(object):
         self._weight_per_wrap = None
         self._item_weight = None
         self._production_lot = None
+        self._number_of_wraps = None
+        self._number_of_cases = None
+        self._number_of_touches = None
         self._alcohol_type_id = None
         self._alcohol_type_name = None
         self._alcohol_content = None
@@ -230,6 +439,103 @@ class OrderLineActivity(object):
         self._alcohol_nabca_code = None
         self._alcohol_unimerc_code = None
         self._alcohol_scc_code = None
+        self._alternate_usage = None
+        self._group_order_id = None
+        self._order_status = None
+        self._order_status_name = None
+        self._carrier_id = None
+        self._carrier_name = None
+        self._media_code = None
+        self._legacy_restriction_type = None
+        self._req_type_name = None
+        self._service_type_id = None
+        self._service_type_name = None
+        self._alcohol_order_type = None
+        self._distribution_channel = None
+        self._distribution_channel_name = None
+        self._priority_code = None
+        self._order_date = None
+        self._entered_by = None
+        self._order_reason = None
+        self._customer_order_no = None
+        self._price_level = None
+        self._ship_by = None
+        self._stop_back_orders = None
+        self._order_source_id = None
+        self._order_source_name = None
+        self._integration_partner_id = None
+        self._integration_partner_name = None
+        self._order_load_program_id = None
+        self._order_load_program_name = None
+        self._oms_order_no = None
+        self._oms_customer_id = None
+        self._ship_to_attention = None
+        self._ship_to_company = None
+        self._ship_to_street = None
+        self._ship_to_street2 = None
+        self._ship_to_street3 = None
+        self._ship_to_city = None
+        self._ship_to_state = None
+        self._ship_to_zip = None
+        self._ship_to_country = None
+        self._ship_to_phone = None
+        self._ship_to_email = None
+        self._bill_to_attention = None
+        self._bill_to_company = None
+        self._bill_to_street = None
+        self._bill_to_street2 = None
+        self._bill_to_street3 = None
+        self._bill_to_city = None
+        self._bill_to_state = None
+        self._bill_to_zip = None
+        self._bill_to_country = None
+        self._bill_to_phone = None
+        self._bill_to_email = None
+        self._order_ship_date = None
+        self._freight = None
+        self._order_weight_lbs = None
+        self._order_estimated_weight_lbs = None
+        self._number_of_pallets = None
+        self._number_of_line_items = None
+        self._completion_status = None
+        self._hold_code = None
+        self._ship_code = None
+        self._order_message = None
+        self._division = None
+        self._cost_center = None
+        self._authorized_by = None
+        self._batch_no = None
+        self._first_ship_date = None
+        self._last_ship_date = None
+        self._deliver_on_date = None
+        self._customer_po_no = None
+        self._ship_via = None
+        self._need_by_date = None
+        self._total = None
+        self._balance_due = None
+        self._total_paid = None
+        self._authorization_amount = None
+        self._subtotal = None
+        self._tax_on_freight = None
+        self._tax = None
+        self._distribution_charges = None
+        self._shipping_charge = None
+        self._total_discount = None
+        self._parcel_account_id = None
+        self._packing_slip_template_id = None
+        self._gift_message = None
+        self._branch_sector = None
+        self._branch_area = None
+        self._branch_customer_type = None
+        self._branch_id = None
+        self._order_code = None
+        self._lead_package_id = None
+        self._total_qty = None
+        self._estimated_number_of_picks = None
+        self._order_confirmation_email_template_id = None
+        self._shipment_confirmation_email_template_id = None
+        self._order_invoice_template_id = None
+        self._price_mode = None
         self._custom_fields = None
 
     @property
@@ -387,6 +693,50 @@ class OrderLineActivity(object):
         self._po_no_id = po_no_id
 
     @property
+    def order_create_date(self):
+        """
+        Gets the order_create_date of this OrderLineActivity.
+
+
+        :return: The order_create_date of this OrderLineActivity.
+        :rtype: datetime
+        """
+        return self._order_create_date
+
+    @order_create_date.setter
+    def order_create_date(self, order_create_date):
+        """
+        Sets the order_create_date of this OrderLineActivity.
+
+
+        :param order_create_date: The order_create_date of this OrderLineActivity.
+        :type: datetime
+        """
+        self._order_create_date = order_create_date
+
+    @property
+    def order_modify_date(self):
+        """
+        Gets the order_modify_date of this OrderLineActivity.
+
+
+        :return: The order_modify_date of this OrderLineActivity.
+        :rtype: datetime
+        """
+        return self._order_modify_date
+
+    @order_modify_date.setter
+    def order_modify_date(self, order_modify_date):
+        """
+        Sets the order_modify_date of this OrderLineActivity.
+
+
+        :param order_modify_date: The order_modify_date of this OrderLineActivity.
+        :type: datetime
+        """
+        self._order_modify_date = order_modify_date
+
+    @property
     def cross_dock(self):
         """
         Gets the cross_dock of this OrderLineActivity.
@@ -409,26 +759,26 @@ class OrderLineActivity(object):
         self._cross_dock = cross_dock
 
     @property
-    def process_no(self):
+    def process_no_id(self):
         """
-        Gets the process_no of this OrderLineActivity.
+        Gets the process_no_id of this OrderLineActivity.
 
 
-        :return: The process_no of this OrderLineActivity.
+        :return: The process_no_id of this OrderLineActivity.
         :rtype: int
         """
-        return self._process_no
+        return self._process_no_id
 
-    @process_no.setter
-    def process_no(self, process_no):
+    @process_no_id.setter
+    def process_no_id(self, process_no_id):
         """
-        Sets the process_no of this OrderLineActivity.
+        Sets the process_no_id of this OrderLineActivity.
 
 
-        :param process_no: The process_no of this OrderLineActivity.
+        :param process_no_id: The process_no_id of this OrderLineActivity.
         :type: int
         """
-        self._process_no = process_no
+        self._process_no_id = process_no_id
 
     @property
     def ordered_qty(self):
@@ -1245,6 +1595,72 @@ class OrderLineActivity(object):
         self._production_lot = production_lot
 
     @property
+    def number_of_wraps(self):
+        """
+        Gets the number_of_wraps of this OrderLineActivity.
+
+
+        :return: The number_of_wraps of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._number_of_wraps
+
+    @number_of_wraps.setter
+    def number_of_wraps(self, number_of_wraps):
+        """
+        Sets the number_of_wraps of this OrderLineActivity.
+
+
+        :param number_of_wraps: The number_of_wraps of this OrderLineActivity.
+        :type: int
+        """
+        self._number_of_wraps = number_of_wraps
+
+    @property
+    def number_of_cases(self):
+        """
+        Gets the number_of_cases of this OrderLineActivity.
+
+
+        :return: The number_of_cases of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._number_of_cases
+
+    @number_of_cases.setter
+    def number_of_cases(self, number_of_cases):
+        """
+        Sets the number_of_cases of this OrderLineActivity.
+
+
+        :param number_of_cases: The number_of_cases of this OrderLineActivity.
+        :type: int
+        """
+        self._number_of_cases = number_of_cases
+
+    @property
+    def number_of_touches(self):
+        """
+        Gets the number_of_touches of this OrderLineActivity.
+
+
+        :return: The number_of_touches of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._number_of_touches
+
+    @number_of_touches.setter
+    def number_of_touches(self, number_of_touches):
+        """
+        Sets the number_of_touches of this OrderLineActivity.
+
+
+        :param number_of_touches: The number_of_touches of this OrderLineActivity.
+        :type: int
+        """
+        self._number_of_touches = number_of_touches
+
+    @property
     def alcohol_type_id(self):
         """
         Gets the alcohol_type_id of this OrderLineActivity.
@@ -1595,6 +2011,2140 @@ class OrderLineActivity(object):
         :type: str
         """
         self._alcohol_scc_code = alcohol_scc_code
+
+    @property
+    def alternate_usage(self):
+        """
+        Gets the alternate_usage of this OrderLineActivity.
+
+
+        :return: The alternate_usage of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._alternate_usage
+
+    @alternate_usage.setter
+    def alternate_usage(self, alternate_usage):
+        """
+        Sets the alternate_usage of this OrderLineActivity.
+
+
+        :param alternate_usage: The alternate_usage of this OrderLineActivity.
+        :type: str
+        """
+        self._alternate_usage = alternate_usage
+
+    @property
+    def group_order_id(self):
+        """
+        Gets the group_order_id of this OrderLineActivity.
+
+
+        :return: The group_order_id of this OrderLineActivity.
+        :rtype: float
+        """
+        return self._group_order_id
+
+    @group_order_id.setter
+    def group_order_id(self, group_order_id):
+        """
+        Sets the group_order_id of this OrderLineActivity.
+
+
+        :param group_order_id: The group_order_id of this OrderLineActivity.
+        :type: float
+        """
+        self._group_order_id = group_order_id
+
+    @property
+    def order_status(self):
+        """
+        Gets the order_status of this OrderLineActivity.
+
+
+        :return: The order_status of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._order_status
+
+    @order_status.setter
+    def order_status(self, order_status):
+        """
+        Sets the order_status of this OrderLineActivity.
+
+
+        :param order_status: The order_status of this OrderLineActivity.
+        :type: str
+        """
+        self._order_status = order_status
+
+    @property
+    def order_status_name(self):
+        """
+        Gets the order_status_name of this OrderLineActivity.
+
+
+        :return: The order_status_name of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._order_status_name
+
+    @order_status_name.setter
+    def order_status_name(self, order_status_name):
+        """
+        Sets the order_status_name of this OrderLineActivity.
+
+
+        :param order_status_name: The order_status_name of this OrderLineActivity.
+        :type: str
+        """
+        self._order_status_name = order_status_name
+
+    @property
+    def carrier_id(self):
+        """
+        Gets the carrier_id of this OrderLineActivity.
+
+
+        :return: The carrier_id of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._carrier_id
+
+    @carrier_id.setter
+    def carrier_id(self, carrier_id):
+        """
+        Sets the carrier_id of this OrderLineActivity.
+
+
+        :param carrier_id: The carrier_id of this OrderLineActivity.
+        :type: int
+        """
+        self._carrier_id = carrier_id
+
+    @property
+    def carrier_name(self):
+        """
+        Gets the carrier_name of this OrderLineActivity.
+
+
+        :return: The carrier_name of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._carrier_name
+
+    @carrier_name.setter
+    def carrier_name(self, carrier_name):
+        """
+        Sets the carrier_name of this OrderLineActivity.
+
+
+        :param carrier_name: The carrier_name of this OrderLineActivity.
+        :type: str
+        """
+        self._carrier_name = carrier_name
+
+    @property
+    def media_code(self):
+        """
+        Gets the media_code of this OrderLineActivity.
+
+
+        :return: The media_code of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._media_code
+
+    @media_code.setter
+    def media_code(self, media_code):
+        """
+        Sets the media_code of this OrderLineActivity.
+
+
+        :param media_code: The media_code of this OrderLineActivity.
+        :type: str
+        """
+        self._media_code = media_code
+
+    @property
+    def legacy_restriction_type(self):
+        """
+        Gets the legacy_restriction_type of this OrderLineActivity.
+
+
+        :return: The legacy_restriction_type of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._legacy_restriction_type
+
+    @legacy_restriction_type.setter
+    def legacy_restriction_type(self, legacy_restriction_type):
+        """
+        Sets the legacy_restriction_type of this OrderLineActivity.
+
+
+        :param legacy_restriction_type: The legacy_restriction_type of this OrderLineActivity.
+        :type: str
+        """
+        self._legacy_restriction_type = legacy_restriction_type
+
+    @property
+    def req_type_name(self):
+        """
+        Gets the req_type_name of this OrderLineActivity.
+
+
+        :return: The req_type_name of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._req_type_name
+
+    @req_type_name.setter
+    def req_type_name(self, req_type_name):
+        """
+        Sets the req_type_name of this OrderLineActivity.
+
+
+        :param req_type_name: The req_type_name of this OrderLineActivity.
+        :type: str
+        """
+        self._req_type_name = req_type_name
+
+    @property
+    def service_type_id(self):
+        """
+        Gets the service_type_id of this OrderLineActivity.
+
+
+        :return: The service_type_id of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._service_type_id
+
+    @service_type_id.setter
+    def service_type_id(self, service_type_id):
+        """
+        Sets the service_type_id of this OrderLineActivity.
+
+
+        :param service_type_id: The service_type_id of this OrderLineActivity.
+        :type: str
+        """
+        self._service_type_id = service_type_id
+
+    @property
+    def service_type_name(self):
+        """
+        Gets the service_type_name of this OrderLineActivity.
+
+
+        :return: The service_type_name of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._service_type_name
+
+    @service_type_name.setter
+    def service_type_name(self, service_type_name):
+        """
+        Sets the service_type_name of this OrderLineActivity.
+
+
+        :param service_type_name: The service_type_name of this OrderLineActivity.
+        :type: str
+        """
+        self._service_type_name = service_type_name
+
+    @property
+    def alcohol_order_type(self):
+        """
+        Gets the alcohol_order_type of this OrderLineActivity.
+
+
+        :return: The alcohol_order_type of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._alcohol_order_type
+
+    @alcohol_order_type.setter
+    def alcohol_order_type(self, alcohol_order_type):
+        """
+        Sets the alcohol_order_type of this OrderLineActivity.
+
+
+        :param alcohol_order_type: The alcohol_order_type of this OrderLineActivity.
+        :type: str
+        """
+        self._alcohol_order_type = alcohol_order_type
+
+    @property
+    def distribution_channel(self):
+        """
+        Gets the distribution_channel of this OrderLineActivity.
+
+
+        :return: The distribution_channel of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._distribution_channel
+
+    @distribution_channel.setter
+    def distribution_channel(self, distribution_channel):
+        """
+        Sets the distribution_channel of this OrderLineActivity.
+
+
+        :param distribution_channel: The distribution_channel of this OrderLineActivity.
+        :type: str
+        """
+        self._distribution_channel = distribution_channel
+
+    @property
+    def distribution_channel_name(self):
+        """
+        Gets the distribution_channel_name of this OrderLineActivity.
+
+
+        :return: The distribution_channel_name of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._distribution_channel_name
+
+    @distribution_channel_name.setter
+    def distribution_channel_name(self, distribution_channel_name):
+        """
+        Sets the distribution_channel_name of this OrderLineActivity.
+
+
+        :param distribution_channel_name: The distribution_channel_name of this OrderLineActivity.
+        :type: str
+        """
+        self._distribution_channel_name = distribution_channel_name
+
+    @property
+    def priority_code(self):
+        """
+        Gets the priority_code of this OrderLineActivity.
+
+
+        :return: The priority_code of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._priority_code
+
+    @priority_code.setter
+    def priority_code(self, priority_code):
+        """
+        Sets the priority_code of this OrderLineActivity.
+
+
+        :param priority_code: The priority_code of this OrderLineActivity.
+        :type: int
+        """
+        self._priority_code = priority_code
+
+    @property
+    def order_date(self):
+        """
+        Gets the order_date of this OrderLineActivity.
+
+
+        :return: The order_date of this OrderLineActivity.
+        :rtype: datetime
+        """
+        return self._order_date
+
+    @order_date.setter
+    def order_date(self, order_date):
+        """
+        Sets the order_date of this OrderLineActivity.
+
+
+        :param order_date: The order_date of this OrderLineActivity.
+        :type: datetime
+        """
+        self._order_date = order_date
+
+    @property
+    def entered_by(self):
+        """
+        Gets the entered_by of this OrderLineActivity.
+
+
+        :return: The entered_by of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._entered_by
+
+    @entered_by.setter
+    def entered_by(self, entered_by):
+        """
+        Sets the entered_by of this OrderLineActivity.
+
+
+        :param entered_by: The entered_by of this OrderLineActivity.
+        :type: str
+        """
+        self._entered_by = entered_by
+
+    @property
+    def order_reason(self):
+        """
+        Gets the order_reason of this OrderLineActivity.
+
+
+        :return: The order_reason of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._order_reason
+
+    @order_reason.setter
+    def order_reason(self, order_reason):
+        """
+        Sets the order_reason of this OrderLineActivity.
+
+
+        :param order_reason: The order_reason of this OrderLineActivity.
+        :type: int
+        """
+        self._order_reason = order_reason
+
+    @property
+    def customer_order_no(self):
+        """
+        Gets the customer_order_no of this OrderLineActivity.
+
+
+        :return: The customer_order_no of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._customer_order_no
+
+    @customer_order_no.setter
+    def customer_order_no(self, customer_order_no):
+        """
+        Sets the customer_order_no of this OrderLineActivity.
+
+
+        :param customer_order_no: The customer_order_no of this OrderLineActivity.
+        :type: str
+        """
+        self._customer_order_no = customer_order_no
+
+    @property
+    def price_level(self):
+        """
+        Gets the price_level of this OrderLineActivity.
+
+
+        :return: The price_level of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._price_level
+
+    @price_level.setter
+    def price_level(self, price_level):
+        """
+        Sets the price_level of this OrderLineActivity.
+
+
+        :param price_level: The price_level of this OrderLineActivity.
+        :type: str
+        """
+        self._price_level = price_level
+
+    @property
+    def ship_by(self):
+        """
+        Gets the ship_by of this OrderLineActivity.
+
+
+        :return: The ship_by of this OrderLineActivity.
+        :rtype: datetime
+        """
+        return self._ship_by
+
+    @ship_by.setter
+    def ship_by(self, ship_by):
+        """
+        Sets the ship_by of this OrderLineActivity.
+
+
+        :param ship_by: The ship_by of this OrderLineActivity.
+        :type: datetime
+        """
+        self._ship_by = ship_by
+
+    @property
+    def stop_back_orders(self):
+        """
+        Gets the stop_back_orders of this OrderLineActivity.
+
+
+        :return: The stop_back_orders of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._stop_back_orders
+
+    @stop_back_orders.setter
+    def stop_back_orders(self, stop_back_orders):
+        """
+        Sets the stop_back_orders of this OrderLineActivity.
+
+
+        :param stop_back_orders: The stop_back_orders of this OrderLineActivity.
+        :type: str
+        """
+        self._stop_back_orders = stop_back_orders
+
+    @property
+    def order_source_id(self):
+        """
+        Gets the order_source_id of this OrderLineActivity.
+
+
+        :return: The order_source_id of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._order_source_id
+
+    @order_source_id.setter
+    def order_source_id(self, order_source_id):
+        """
+        Sets the order_source_id of this OrderLineActivity.
+
+
+        :param order_source_id: The order_source_id of this OrderLineActivity.
+        :type: int
+        """
+        self._order_source_id = order_source_id
+
+    @property
+    def order_source_name(self):
+        """
+        Gets the order_source_name of this OrderLineActivity.
+
+
+        :return: The order_source_name of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._order_source_name
+
+    @order_source_name.setter
+    def order_source_name(self, order_source_name):
+        """
+        Sets the order_source_name of this OrderLineActivity.
+
+
+        :param order_source_name: The order_source_name of this OrderLineActivity.
+        :type: str
+        """
+        self._order_source_name = order_source_name
+
+    @property
+    def integration_partner_id(self):
+        """
+        Gets the integration_partner_id of this OrderLineActivity.
+
+
+        :return: The integration_partner_id of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._integration_partner_id
+
+    @integration_partner_id.setter
+    def integration_partner_id(self, integration_partner_id):
+        """
+        Sets the integration_partner_id of this OrderLineActivity.
+
+
+        :param integration_partner_id: The integration_partner_id of this OrderLineActivity.
+        :type: int
+        """
+        self._integration_partner_id = integration_partner_id
+
+    @property
+    def integration_partner_name(self):
+        """
+        Gets the integration_partner_name of this OrderLineActivity.
+
+
+        :return: The integration_partner_name of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._integration_partner_name
+
+    @integration_partner_name.setter
+    def integration_partner_name(self, integration_partner_name):
+        """
+        Sets the integration_partner_name of this OrderLineActivity.
+
+
+        :param integration_partner_name: The integration_partner_name of this OrderLineActivity.
+        :type: str
+        """
+        self._integration_partner_name = integration_partner_name
+
+    @property
+    def order_load_program_id(self):
+        """
+        Gets the order_load_program_id of this OrderLineActivity.
+
+
+        :return: The order_load_program_id of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._order_load_program_id
+
+    @order_load_program_id.setter
+    def order_load_program_id(self, order_load_program_id):
+        """
+        Sets the order_load_program_id of this OrderLineActivity.
+
+
+        :param order_load_program_id: The order_load_program_id of this OrderLineActivity.
+        :type: int
+        """
+        self._order_load_program_id = order_load_program_id
+
+    @property
+    def order_load_program_name(self):
+        """
+        Gets the order_load_program_name of this OrderLineActivity.
+
+
+        :return: The order_load_program_name of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._order_load_program_name
+
+    @order_load_program_name.setter
+    def order_load_program_name(self, order_load_program_name):
+        """
+        Sets the order_load_program_name of this OrderLineActivity.
+
+
+        :param order_load_program_name: The order_load_program_name of this OrderLineActivity.
+        :type: str
+        """
+        self._order_load_program_name = order_load_program_name
+
+    @property
+    def oms_order_no(self):
+        """
+        Gets the oms_order_no of this OrderLineActivity.
+
+
+        :return: The oms_order_no of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._oms_order_no
+
+    @oms_order_no.setter
+    def oms_order_no(self, oms_order_no):
+        """
+        Sets the oms_order_no of this OrderLineActivity.
+
+
+        :param oms_order_no: The oms_order_no of this OrderLineActivity.
+        :type: int
+        """
+        self._oms_order_no = oms_order_no
+
+    @property
+    def oms_customer_id(self):
+        """
+        Gets the oms_customer_id of this OrderLineActivity.
+
+
+        :return: The oms_customer_id of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._oms_customer_id
+
+    @oms_customer_id.setter
+    def oms_customer_id(self, oms_customer_id):
+        """
+        Sets the oms_customer_id of this OrderLineActivity.
+
+
+        :param oms_customer_id: The oms_customer_id of this OrderLineActivity.
+        :type: int
+        """
+        self._oms_customer_id = oms_customer_id
+
+    @property
+    def ship_to_attention(self):
+        """
+        Gets the ship_to_attention of this OrderLineActivity.
+
+
+        :return: The ship_to_attention of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._ship_to_attention
+
+    @ship_to_attention.setter
+    def ship_to_attention(self, ship_to_attention):
+        """
+        Sets the ship_to_attention of this OrderLineActivity.
+
+
+        :param ship_to_attention: The ship_to_attention of this OrderLineActivity.
+        :type: str
+        """
+        self._ship_to_attention = ship_to_attention
+
+    @property
+    def ship_to_company(self):
+        """
+        Gets the ship_to_company of this OrderLineActivity.
+
+
+        :return: The ship_to_company of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._ship_to_company
+
+    @ship_to_company.setter
+    def ship_to_company(self, ship_to_company):
+        """
+        Sets the ship_to_company of this OrderLineActivity.
+
+
+        :param ship_to_company: The ship_to_company of this OrderLineActivity.
+        :type: str
+        """
+        self._ship_to_company = ship_to_company
+
+    @property
+    def ship_to_street(self):
+        """
+        Gets the ship_to_street of this OrderLineActivity.
+
+
+        :return: The ship_to_street of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._ship_to_street
+
+    @ship_to_street.setter
+    def ship_to_street(self, ship_to_street):
+        """
+        Sets the ship_to_street of this OrderLineActivity.
+
+
+        :param ship_to_street: The ship_to_street of this OrderLineActivity.
+        :type: str
+        """
+        self._ship_to_street = ship_to_street
+
+    @property
+    def ship_to_street2(self):
+        """
+        Gets the ship_to_street2 of this OrderLineActivity.
+
+
+        :return: The ship_to_street2 of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._ship_to_street2
+
+    @ship_to_street2.setter
+    def ship_to_street2(self, ship_to_street2):
+        """
+        Sets the ship_to_street2 of this OrderLineActivity.
+
+
+        :param ship_to_street2: The ship_to_street2 of this OrderLineActivity.
+        :type: str
+        """
+        self._ship_to_street2 = ship_to_street2
+
+    @property
+    def ship_to_street3(self):
+        """
+        Gets the ship_to_street3 of this OrderLineActivity.
+
+
+        :return: The ship_to_street3 of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._ship_to_street3
+
+    @ship_to_street3.setter
+    def ship_to_street3(self, ship_to_street3):
+        """
+        Sets the ship_to_street3 of this OrderLineActivity.
+
+
+        :param ship_to_street3: The ship_to_street3 of this OrderLineActivity.
+        :type: str
+        """
+        self._ship_to_street3 = ship_to_street3
+
+    @property
+    def ship_to_city(self):
+        """
+        Gets the ship_to_city of this OrderLineActivity.
+
+
+        :return: The ship_to_city of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._ship_to_city
+
+    @ship_to_city.setter
+    def ship_to_city(self, ship_to_city):
+        """
+        Sets the ship_to_city of this OrderLineActivity.
+
+
+        :param ship_to_city: The ship_to_city of this OrderLineActivity.
+        :type: str
+        """
+        self._ship_to_city = ship_to_city
+
+    @property
+    def ship_to_state(self):
+        """
+        Gets the ship_to_state of this OrderLineActivity.
+
+
+        :return: The ship_to_state of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._ship_to_state
+
+    @ship_to_state.setter
+    def ship_to_state(self, ship_to_state):
+        """
+        Sets the ship_to_state of this OrderLineActivity.
+
+
+        :param ship_to_state: The ship_to_state of this OrderLineActivity.
+        :type: str
+        """
+        self._ship_to_state = ship_to_state
+
+    @property
+    def ship_to_zip(self):
+        """
+        Gets the ship_to_zip of this OrderLineActivity.
+
+
+        :return: The ship_to_zip of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._ship_to_zip
+
+    @ship_to_zip.setter
+    def ship_to_zip(self, ship_to_zip):
+        """
+        Sets the ship_to_zip of this OrderLineActivity.
+
+
+        :param ship_to_zip: The ship_to_zip of this OrderLineActivity.
+        :type: str
+        """
+        self._ship_to_zip = ship_to_zip
+
+    @property
+    def ship_to_country(self):
+        """
+        Gets the ship_to_country of this OrderLineActivity.
+
+
+        :return: The ship_to_country of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._ship_to_country
+
+    @ship_to_country.setter
+    def ship_to_country(self, ship_to_country):
+        """
+        Sets the ship_to_country of this OrderLineActivity.
+
+
+        :param ship_to_country: The ship_to_country of this OrderLineActivity.
+        :type: str
+        """
+        self._ship_to_country = ship_to_country
+
+    @property
+    def ship_to_phone(self):
+        """
+        Gets the ship_to_phone of this OrderLineActivity.
+
+
+        :return: The ship_to_phone of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._ship_to_phone
+
+    @ship_to_phone.setter
+    def ship_to_phone(self, ship_to_phone):
+        """
+        Sets the ship_to_phone of this OrderLineActivity.
+
+
+        :param ship_to_phone: The ship_to_phone of this OrderLineActivity.
+        :type: str
+        """
+        self._ship_to_phone = ship_to_phone
+
+    @property
+    def ship_to_email(self):
+        """
+        Gets the ship_to_email of this OrderLineActivity.
+
+
+        :return: The ship_to_email of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._ship_to_email
+
+    @ship_to_email.setter
+    def ship_to_email(self, ship_to_email):
+        """
+        Sets the ship_to_email of this OrderLineActivity.
+
+
+        :param ship_to_email: The ship_to_email of this OrderLineActivity.
+        :type: str
+        """
+        self._ship_to_email = ship_to_email
+
+    @property
+    def bill_to_attention(self):
+        """
+        Gets the bill_to_attention of this OrderLineActivity.
+
+
+        :return: The bill_to_attention of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._bill_to_attention
+
+    @bill_to_attention.setter
+    def bill_to_attention(self, bill_to_attention):
+        """
+        Sets the bill_to_attention of this OrderLineActivity.
+
+
+        :param bill_to_attention: The bill_to_attention of this OrderLineActivity.
+        :type: str
+        """
+        self._bill_to_attention = bill_to_attention
+
+    @property
+    def bill_to_company(self):
+        """
+        Gets the bill_to_company of this OrderLineActivity.
+
+
+        :return: The bill_to_company of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._bill_to_company
+
+    @bill_to_company.setter
+    def bill_to_company(self, bill_to_company):
+        """
+        Sets the bill_to_company of this OrderLineActivity.
+
+
+        :param bill_to_company: The bill_to_company of this OrderLineActivity.
+        :type: str
+        """
+        self._bill_to_company = bill_to_company
+
+    @property
+    def bill_to_street(self):
+        """
+        Gets the bill_to_street of this OrderLineActivity.
+
+
+        :return: The bill_to_street of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._bill_to_street
+
+    @bill_to_street.setter
+    def bill_to_street(self, bill_to_street):
+        """
+        Sets the bill_to_street of this OrderLineActivity.
+
+
+        :param bill_to_street: The bill_to_street of this OrderLineActivity.
+        :type: str
+        """
+        self._bill_to_street = bill_to_street
+
+    @property
+    def bill_to_street2(self):
+        """
+        Gets the bill_to_street2 of this OrderLineActivity.
+
+
+        :return: The bill_to_street2 of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._bill_to_street2
+
+    @bill_to_street2.setter
+    def bill_to_street2(self, bill_to_street2):
+        """
+        Sets the bill_to_street2 of this OrderLineActivity.
+
+
+        :param bill_to_street2: The bill_to_street2 of this OrderLineActivity.
+        :type: str
+        """
+        self._bill_to_street2 = bill_to_street2
+
+    @property
+    def bill_to_street3(self):
+        """
+        Gets the bill_to_street3 of this OrderLineActivity.
+
+
+        :return: The bill_to_street3 of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._bill_to_street3
+
+    @bill_to_street3.setter
+    def bill_to_street3(self, bill_to_street3):
+        """
+        Sets the bill_to_street3 of this OrderLineActivity.
+
+
+        :param bill_to_street3: The bill_to_street3 of this OrderLineActivity.
+        :type: str
+        """
+        self._bill_to_street3 = bill_to_street3
+
+    @property
+    def bill_to_city(self):
+        """
+        Gets the bill_to_city of this OrderLineActivity.
+
+
+        :return: The bill_to_city of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._bill_to_city
+
+    @bill_to_city.setter
+    def bill_to_city(self, bill_to_city):
+        """
+        Sets the bill_to_city of this OrderLineActivity.
+
+
+        :param bill_to_city: The bill_to_city of this OrderLineActivity.
+        :type: str
+        """
+        self._bill_to_city = bill_to_city
+
+    @property
+    def bill_to_state(self):
+        """
+        Gets the bill_to_state of this OrderLineActivity.
+
+
+        :return: The bill_to_state of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._bill_to_state
+
+    @bill_to_state.setter
+    def bill_to_state(self, bill_to_state):
+        """
+        Sets the bill_to_state of this OrderLineActivity.
+
+
+        :param bill_to_state: The bill_to_state of this OrderLineActivity.
+        :type: str
+        """
+        self._bill_to_state = bill_to_state
+
+    @property
+    def bill_to_zip(self):
+        """
+        Gets the bill_to_zip of this OrderLineActivity.
+
+
+        :return: The bill_to_zip of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._bill_to_zip
+
+    @bill_to_zip.setter
+    def bill_to_zip(self, bill_to_zip):
+        """
+        Sets the bill_to_zip of this OrderLineActivity.
+
+
+        :param bill_to_zip: The bill_to_zip of this OrderLineActivity.
+        :type: str
+        """
+        self._bill_to_zip = bill_to_zip
+
+    @property
+    def bill_to_country(self):
+        """
+        Gets the bill_to_country of this OrderLineActivity.
+
+
+        :return: The bill_to_country of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._bill_to_country
+
+    @bill_to_country.setter
+    def bill_to_country(self, bill_to_country):
+        """
+        Sets the bill_to_country of this OrderLineActivity.
+
+
+        :param bill_to_country: The bill_to_country of this OrderLineActivity.
+        :type: str
+        """
+        self._bill_to_country = bill_to_country
+
+    @property
+    def bill_to_phone(self):
+        """
+        Gets the bill_to_phone of this OrderLineActivity.
+
+
+        :return: The bill_to_phone of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._bill_to_phone
+
+    @bill_to_phone.setter
+    def bill_to_phone(self, bill_to_phone):
+        """
+        Sets the bill_to_phone of this OrderLineActivity.
+
+
+        :param bill_to_phone: The bill_to_phone of this OrderLineActivity.
+        :type: str
+        """
+        self._bill_to_phone = bill_to_phone
+
+    @property
+    def bill_to_email(self):
+        """
+        Gets the bill_to_email of this OrderLineActivity.
+
+
+        :return: The bill_to_email of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._bill_to_email
+
+    @bill_to_email.setter
+    def bill_to_email(self, bill_to_email):
+        """
+        Sets the bill_to_email of this OrderLineActivity.
+
+
+        :param bill_to_email: The bill_to_email of this OrderLineActivity.
+        :type: str
+        """
+        self._bill_to_email = bill_to_email
+
+    @property
+    def order_ship_date(self):
+        """
+        Gets the order_ship_date of this OrderLineActivity.
+
+
+        :return: The order_ship_date of this OrderLineActivity.
+        :rtype: datetime
+        """
+        return self._order_ship_date
+
+    @order_ship_date.setter
+    def order_ship_date(self, order_ship_date):
+        """
+        Sets the order_ship_date of this OrderLineActivity.
+
+
+        :param order_ship_date: The order_ship_date of this OrderLineActivity.
+        :type: datetime
+        """
+        self._order_ship_date = order_ship_date
+
+    @property
+    def freight(self):
+        """
+        Gets the freight of this OrderLineActivity.
+
+
+        :return: The freight of this OrderLineActivity.
+        :rtype: float
+        """
+        return self._freight
+
+    @freight.setter
+    def freight(self, freight):
+        """
+        Sets the freight of this OrderLineActivity.
+
+
+        :param freight: The freight of this OrderLineActivity.
+        :type: float
+        """
+        self._freight = freight
+
+    @property
+    def order_weight_lbs(self):
+        """
+        Gets the order_weight_lbs of this OrderLineActivity.
+
+
+        :return: The order_weight_lbs of this OrderLineActivity.
+        :rtype: float
+        """
+        return self._order_weight_lbs
+
+    @order_weight_lbs.setter
+    def order_weight_lbs(self, order_weight_lbs):
+        """
+        Sets the order_weight_lbs of this OrderLineActivity.
+
+
+        :param order_weight_lbs: The order_weight_lbs of this OrderLineActivity.
+        :type: float
+        """
+        self._order_weight_lbs = order_weight_lbs
+
+    @property
+    def order_estimated_weight_lbs(self):
+        """
+        Gets the order_estimated_weight_lbs of this OrderLineActivity.
+
+
+        :return: The order_estimated_weight_lbs of this OrderLineActivity.
+        :rtype: float
+        """
+        return self._order_estimated_weight_lbs
+
+    @order_estimated_weight_lbs.setter
+    def order_estimated_weight_lbs(self, order_estimated_weight_lbs):
+        """
+        Sets the order_estimated_weight_lbs of this OrderLineActivity.
+
+
+        :param order_estimated_weight_lbs: The order_estimated_weight_lbs of this OrderLineActivity.
+        :type: float
+        """
+        self._order_estimated_weight_lbs = order_estimated_weight_lbs
+
+    @property
+    def number_of_pallets(self):
+        """
+        Gets the number_of_pallets of this OrderLineActivity.
+
+
+        :return: The number_of_pallets of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._number_of_pallets
+
+    @number_of_pallets.setter
+    def number_of_pallets(self, number_of_pallets):
+        """
+        Sets the number_of_pallets of this OrderLineActivity.
+
+
+        :param number_of_pallets: The number_of_pallets of this OrderLineActivity.
+        :type: int
+        """
+        self._number_of_pallets = number_of_pallets
+
+    @property
+    def number_of_line_items(self):
+        """
+        Gets the number_of_line_items of this OrderLineActivity.
+
+
+        :return: The number_of_line_items of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._number_of_line_items
+
+    @number_of_line_items.setter
+    def number_of_line_items(self, number_of_line_items):
+        """
+        Sets the number_of_line_items of this OrderLineActivity.
+
+
+        :param number_of_line_items: The number_of_line_items of this OrderLineActivity.
+        :type: int
+        """
+        self._number_of_line_items = number_of_line_items
+
+    @property
+    def completion_status(self):
+        """
+        Gets the completion_status of this OrderLineActivity.
+
+
+        :return: The completion_status of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._completion_status
+
+    @completion_status.setter
+    def completion_status(self, completion_status):
+        """
+        Sets the completion_status of this OrderLineActivity.
+
+
+        :param completion_status: The completion_status of this OrderLineActivity.
+        :type: str
+        """
+        self._completion_status = completion_status
+
+    @property
+    def hold_code(self):
+        """
+        Gets the hold_code of this OrderLineActivity.
+
+
+        :return: The hold_code of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._hold_code
+
+    @hold_code.setter
+    def hold_code(self, hold_code):
+        """
+        Sets the hold_code of this OrderLineActivity.
+
+
+        :param hold_code: The hold_code of this OrderLineActivity.
+        :type: str
+        """
+        self._hold_code = hold_code
+
+    @property
+    def ship_code(self):
+        """
+        Gets the ship_code of this OrderLineActivity.
+
+
+        :return: The ship_code of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._ship_code
+
+    @ship_code.setter
+    def ship_code(self, ship_code):
+        """
+        Sets the ship_code of this OrderLineActivity.
+
+
+        :param ship_code: The ship_code of this OrderLineActivity.
+        :type: str
+        """
+        self._ship_code = ship_code
+
+    @property
+    def order_message(self):
+        """
+        Gets the order_message of this OrderLineActivity.
+
+
+        :return: The order_message of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._order_message
+
+    @order_message.setter
+    def order_message(self, order_message):
+        """
+        Sets the order_message of this OrderLineActivity.
+
+
+        :param order_message: The order_message of this OrderLineActivity.
+        :type: str
+        """
+        self._order_message = order_message
+
+    @property
+    def division(self):
+        """
+        Gets the division of this OrderLineActivity.
+
+
+        :return: The division of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division):
+        """
+        Sets the division of this OrderLineActivity.
+
+
+        :param division: The division of this OrderLineActivity.
+        :type: int
+        """
+        self._division = division
+
+    @property
+    def cost_center(self):
+        """
+        Gets the cost_center of this OrderLineActivity.
+
+
+        :return: The cost_center of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._cost_center
+
+    @cost_center.setter
+    def cost_center(self, cost_center):
+        """
+        Sets the cost_center of this OrderLineActivity.
+
+
+        :param cost_center: The cost_center of this OrderLineActivity.
+        :type: str
+        """
+        self._cost_center = cost_center
+
+    @property
+    def authorized_by(self):
+        """
+        Gets the authorized_by of this OrderLineActivity.
+
+
+        :return: The authorized_by of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._authorized_by
+
+    @authorized_by.setter
+    def authorized_by(self, authorized_by):
+        """
+        Sets the authorized_by of this OrderLineActivity.
+
+
+        :param authorized_by: The authorized_by of this OrderLineActivity.
+        :type: str
+        """
+        self._authorized_by = authorized_by
+
+    @property
+    def batch_no(self):
+        """
+        Gets the batch_no of this OrderLineActivity.
+
+
+        :return: The batch_no of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._batch_no
+
+    @batch_no.setter
+    def batch_no(self, batch_no):
+        """
+        Sets the batch_no of this OrderLineActivity.
+
+
+        :param batch_no: The batch_no of this OrderLineActivity.
+        :type: str
+        """
+        self._batch_no = batch_no
+
+    @property
+    def first_ship_date(self):
+        """
+        Gets the first_ship_date of this OrderLineActivity.
+
+
+        :return: The first_ship_date of this OrderLineActivity.
+        :rtype: datetime
+        """
+        return self._first_ship_date
+
+    @first_ship_date.setter
+    def first_ship_date(self, first_ship_date):
+        """
+        Sets the first_ship_date of this OrderLineActivity.
+
+
+        :param first_ship_date: The first_ship_date of this OrderLineActivity.
+        :type: datetime
+        """
+        self._first_ship_date = first_ship_date
+
+    @property
+    def last_ship_date(self):
+        """
+        Gets the last_ship_date of this OrderLineActivity.
+
+
+        :return: The last_ship_date of this OrderLineActivity.
+        :rtype: datetime
+        """
+        return self._last_ship_date
+
+    @last_ship_date.setter
+    def last_ship_date(self, last_ship_date):
+        """
+        Sets the last_ship_date of this OrderLineActivity.
+
+
+        :param last_ship_date: The last_ship_date of this OrderLineActivity.
+        :type: datetime
+        """
+        self._last_ship_date = last_ship_date
+
+    @property
+    def deliver_on_date(self):
+        """
+        Gets the deliver_on_date of this OrderLineActivity.
+
+
+        :return: The deliver_on_date of this OrderLineActivity.
+        :rtype: datetime
+        """
+        return self._deliver_on_date
+
+    @deliver_on_date.setter
+    def deliver_on_date(self, deliver_on_date):
+        """
+        Sets the deliver_on_date of this OrderLineActivity.
+
+
+        :param deliver_on_date: The deliver_on_date of this OrderLineActivity.
+        :type: datetime
+        """
+        self._deliver_on_date = deliver_on_date
+
+    @property
+    def customer_po_no(self):
+        """
+        Gets the customer_po_no of this OrderLineActivity.
+
+
+        :return: The customer_po_no of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._customer_po_no
+
+    @customer_po_no.setter
+    def customer_po_no(self, customer_po_no):
+        """
+        Sets the customer_po_no of this OrderLineActivity.
+
+
+        :param customer_po_no: The customer_po_no of this OrderLineActivity.
+        :type: str
+        """
+        self._customer_po_no = customer_po_no
+
+    @property
+    def ship_via(self):
+        """
+        Gets the ship_via of this OrderLineActivity.
+
+
+        :return: The ship_via of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._ship_via
+
+    @ship_via.setter
+    def ship_via(self, ship_via):
+        """
+        Sets the ship_via of this OrderLineActivity.
+
+
+        :param ship_via: The ship_via of this OrderLineActivity.
+        :type: str
+        """
+        self._ship_via = ship_via
+
+    @property
+    def need_by_date(self):
+        """
+        Gets the need_by_date of this OrderLineActivity.
+
+
+        :return: The need_by_date of this OrderLineActivity.
+        :rtype: datetime
+        """
+        return self._need_by_date
+
+    @need_by_date.setter
+    def need_by_date(self, need_by_date):
+        """
+        Sets the need_by_date of this OrderLineActivity.
+
+
+        :param need_by_date: The need_by_date of this OrderLineActivity.
+        :type: datetime
+        """
+        self._need_by_date = need_by_date
+
+    @property
+    def total(self):
+        """
+        Gets the total of this OrderLineActivity.
+
+
+        :return: The total of this OrderLineActivity.
+        :rtype: float
+        """
+        return self._total
+
+    @total.setter
+    def total(self, total):
+        """
+        Sets the total of this OrderLineActivity.
+
+
+        :param total: The total of this OrderLineActivity.
+        :type: float
+        """
+        self._total = total
+
+    @property
+    def balance_due(self):
+        """
+        Gets the balance_due of this OrderLineActivity.
+
+
+        :return: The balance_due of this OrderLineActivity.
+        :rtype: float
+        """
+        return self._balance_due
+
+    @balance_due.setter
+    def balance_due(self, balance_due):
+        """
+        Sets the balance_due of this OrderLineActivity.
+
+
+        :param balance_due: The balance_due of this OrderLineActivity.
+        :type: float
+        """
+        self._balance_due = balance_due
+
+    @property
+    def total_paid(self):
+        """
+        Gets the total_paid of this OrderLineActivity.
+
+
+        :return: The total_paid of this OrderLineActivity.
+        :rtype: float
+        """
+        return self._total_paid
+
+    @total_paid.setter
+    def total_paid(self, total_paid):
+        """
+        Sets the total_paid of this OrderLineActivity.
+
+
+        :param total_paid: The total_paid of this OrderLineActivity.
+        :type: float
+        """
+        self._total_paid = total_paid
+
+    @property
+    def authorization_amount(self):
+        """
+        Gets the authorization_amount of this OrderLineActivity.
+
+
+        :return: The authorization_amount of this OrderLineActivity.
+        :rtype: float
+        """
+        return self._authorization_amount
+
+    @authorization_amount.setter
+    def authorization_amount(self, authorization_amount):
+        """
+        Sets the authorization_amount of this OrderLineActivity.
+
+
+        :param authorization_amount: The authorization_amount of this OrderLineActivity.
+        :type: float
+        """
+        self._authorization_amount = authorization_amount
+
+    @property
+    def subtotal(self):
+        """
+        Gets the subtotal of this OrderLineActivity.
+
+
+        :return: The subtotal of this OrderLineActivity.
+        :rtype: float
+        """
+        return self._subtotal
+
+    @subtotal.setter
+    def subtotal(self, subtotal):
+        """
+        Sets the subtotal of this OrderLineActivity.
+
+
+        :param subtotal: The subtotal of this OrderLineActivity.
+        :type: float
+        """
+        self._subtotal = subtotal
+
+    @property
+    def tax_on_freight(self):
+        """
+        Gets the tax_on_freight of this OrderLineActivity.
+
+
+        :return: The tax_on_freight of this OrderLineActivity.
+        :rtype: float
+        """
+        return self._tax_on_freight
+
+    @tax_on_freight.setter
+    def tax_on_freight(self, tax_on_freight):
+        """
+        Sets the tax_on_freight of this OrderLineActivity.
+
+
+        :param tax_on_freight: The tax_on_freight of this OrderLineActivity.
+        :type: float
+        """
+        self._tax_on_freight = tax_on_freight
+
+    @property
+    def tax(self):
+        """
+        Gets the tax of this OrderLineActivity.
+
+
+        :return: The tax of this OrderLineActivity.
+        :rtype: float
+        """
+        return self._tax
+
+    @tax.setter
+    def tax(self, tax):
+        """
+        Sets the tax of this OrderLineActivity.
+
+
+        :param tax: The tax of this OrderLineActivity.
+        :type: float
+        """
+        self._tax = tax
+
+    @property
+    def distribution_charges(self):
+        """
+        Gets the distribution_charges of this OrderLineActivity.
+
+
+        :return: The distribution_charges of this OrderLineActivity.
+        :rtype: float
+        """
+        return self._distribution_charges
+
+    @distribution_charges.setter
+    def distribution_charges(self, distribution_charges):
+        """
+        Sets the distribution_charges of this OrderLineActivity.
+
+
+        :param distribution_charges: The distribution_charges of this OrderLineActivity.
+        :type: float
+        """
+        self._distribution_charges = distribution_charges
+
+    @property
+    def shipping_charge(self):
+        """
+        Gets the shipping_charge of this OrderLineActivity.
+
+
+        :return: The shipping_charge of this OrderLineActivity.
+        :rtype: float
+        """
+        return self._shipping_charge
+
+    @shipping_charge.setter
+    def shipping_charge(self, shipping_charge):
+        """
+        Sets the shipping_charge of this OrderLineActivity.
+
+
+        :param shipping_charge: The shipping_charge of this OrderLineActivity.
+        :type: float
+        """
+        self._shipping_charge = shipping_charge
+
+    @property
+    def total_discount(self):
+        """
+        Gets the total_discount of this OrderLineActivity.
+
+
+        :return: The total_discount of this OrderLineActivity.
+        :rtype: float
+        """
+        return self._total_discount
+
+    @total_discount.setter
+    def total_discount(self, total_discount):
+        """
+        Sets the total_discount of this OrderLineActivity.
+
+
+        :param total_discount: The total_discount of this OrderLineActivity.
+        :type: float
+        """
+        self._total_discount = total_discount
+
+    @property
+    def parcel_account_id(self):
+        """
+        Gets the parcel_account_id of this OrderLineActivity.
+
+
+        :return: The parcel_account_id of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._parcel_account_id
+
+    @parcel_account_id.setter
+    def parcel_account_id(self, parcel_account_id):
+        """
+        Sets the parcel_account_id of this OrderLineActivity.
+
+
+        :param parcel_account_id: The parcel_account_id of this OrderLineActivity.
+        :type: int
+        """
+        self._parcel_account_id = parcel_account_id
+
+    @property
+    def packing_slip_template_id(self):
+        """
+        Gets the packing_slip_template_id of this OrderLineActivity.
+
+
+        :return: The packing_slip_template_id of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._packing_slip_template_id
+
+    @packing_slip_template_id.setter
+    def packing_slip_template_id(self, packing_slip_template_id):
+        """
+        Sets the packing_slip_template_id of this OrderLineActivity.
+
+
+        :param packing_slip_template_id: The packing_slip_template_id of this OrderLineActivity.
+        :type: int
+        """
+        self._packing_slip_template_id = packing_slip_template_id
+
+    @property
+    def gift_message(self):
+        """
+        Gets the gift_message of this OrderLineActivity.
+
+
+        :return: The gift_message of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._gift_message
+
+    @gift_message.setter
+    def gift_message(self, gift_message):
+        """
+        Sets the gift_message of this OrderLineActivity.
+
+
+        :param gift_message: The gift_message of this OrderLineActivity.
+        :type: str
+        """
+        self._gift_message = gift_message
+
+    @property
+    def branch_sector(self):
+        """
+        Gets the branch_sector of this OrderLineActivity.
+
+
+        :return: The branch_sector of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._branch_sector
+
+    @branch_sector.setter
+    def branch_sector(self, branch_sector):
+        """
+        Sets the branch_sector of this OrderLineActivity.
+
+
+        :param branch_sector: The branch_sector of this OrderLineActivity.
+        :type: str
+        """
+        self._branch_sector = branch_sector
+
+    @property
+    def branch_area(self):
+        """
+        Gets the branch_area of this OrderLineActivity.
+
+
+        :return: The branch_area of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._branch_area
+
+    @branch_area.setter
+    def branch_area(self, branch_area):
+        """
+        Sets the branch_area of this OrderLineActivity.
+
+
+        :param branch_area: The branch_area of this OrderLineActivity.
+        :type: str
+        """
+        self._branch_area = branch_area
+
+    @property
+    def branch_customer_type(self):
+        """
+        Gets the branch_customer_type of this OrderLineActivity.
+
+
+        :return: The branch_customer_type of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._branch_customer_type
+
+    @branch_customer_type.setter
+    def branch_customer_type(self, branch_customer_type):
+        """
+        Sets the branch_customer_type of this OrderLineActivity.
+
+
+        :param branch_customer_type: The branch_customer_type of this OrderLineActivity.
+        :type: str
+        """
+        self._branch_customer_type = branch_customer_type
+
+    @property
+    def branch_id(self):
+        """
+        Gets the branch_id of this OrderLineActivity.
+
+
+        :return: The branch_id of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._branch_id
+
+    @branch_id.setter
+    def branch_id(self, branch_id):
+        """
+        Sets the branch_id of this OrderLineActivity.
+
+
+        :param branch_id: The branch_id of this OrderLineActivity.
+        :type: str
+        """
+        self._branch_id = branch_id
+
+    @property
+    def order_code(self):
+        """
+        Gets the order_code of this OrderLineActivity.
+
+
+        :return: The order_code of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._order_code
+
+    @order_code.setter
+    def order_code(self, order_code):
+        """
+        Sets the order_code of this OrderLineActivity.
+
+
+        :param order_code: The order_code of this OrderLineActivity.
+        :type: str
+        """
+        self._order_code = order_code
+
+    @property
+    def lead_package_id(self):
+        """
+        Gets the lead_package_id of this OrderLineActivity.
+
+
+        :return: The lead_package_id of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._lead_package_id
+
+    @lead_package_id.setter
+    def lead_package_id(self, lead_package_id):
+        """
+        Sets the lead_package_id of this OrderLineActivity.
+
+
+        :param lead_package_id: The lead_package_id of this OrderLineActivity.
+        :type: str
+        """
+        self._lead_package_id = lead_package_id
+
+    @property
+    def total_qty(self):
+        """
+        Gets the total_qty of this OrderLineActivity.
+
+
+        :return: The total_qty of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._total_qty
+
+    @total_qty.setter
+    def total_qty(self, total_qty):
+        """
+        Sets the total_qty of this OrderLineActivity.
+
+
+        :param total_qty: The total_qty of this OrderLineActivity.
+        :type: int
+        """
+        self._total_qty = total_qty
+
+    @property
+    def estimated_number_of_picks(self):
+        """
+        Gets the estimated_number_of_picks of this OrderLineActivity.
+
+
+        :return: The estimated_number_of_picks of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._estimated_number_of_picks
+
+    @estimated_number_of_picks.setter
+    def estimated_number_of_picks(self, estimated_number_of_picks):
+        """
+        Sets the estimated_number_of_picks of this OrderLineActivity.
+
+
+        :param estimated_number_of_picks: The estimated_number_of_picks of this OrderLineActivity.
+        :type: int
+        """
+        self._estimated_number_of_picks = estimated_number_of_picks
+
+    @property
+    def order_confirmation_email_template_id(self):
+        """
+        Gets the order_confirmation_email_template_id of this OrderLineActivity.
+
+
+        :return: The order_confirmation_email_template_id of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._order_confirmation_email_template_id
+
+    @order_confirmation_email_template_id.setter
+    def order_confirmation_email_template_id(self, order_confirmation_email_template_id):
+        """
+        Sets the order_confirmation_email_template_id of this OrderLineActivity.
+
+
+        :param order_confirmation_email_template_id: The order_confirmation_email_template_id of this OrderLineActivity.
+        :type: int
+        """
+        self._order_confirmation_email_template_id = order_confirmation_email_template_id
+
+    @property
+    def shipment_confirmation_email_template_id(self):
+        """
+        Gets the shipment_confirmation_email_template_id of this OrderLineActivity.
+
+
+        :return: The shipment_confirmation_email_template_id of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._shipment_confirmation_email_template_id
+
+    @shipment_confirmation_email_template_id.setter
+    def shipment_confirmation_email_template_id(self, shipment_confirmation_email_template_id):
+        """
+        Sets the shipment_confirmation_email_template_id of this OrderLineActivity.
+
+
+        :param shipment_confirmation_email_template_id: The shipment_confirmation_email_template_id of this OrderLineActivity.
+        :type: int
+        """
+        self._shipment_confirmation_email_template_id = shipment_confirmation_email_template_id
+
+    @property
+    def order_invoice_template_id(self):
+        """
+        Gets the order_invoice_template_id of this OrderLineActivity.
+
+
+        :return: The order_invoice_template_id of this OrderLineActivity.
+        :rtype: int
+        """
+        return self._order_invoice_template_id
+
+    @order_invoice_template_id.setter
+    def order_invoice_template_id(self, order_invoice_template_id):
+        """
+        Sets the order_invoice_template_id of this OrderLineActivity.
+
+
+        :param order_invoice_template_id: The order_invoice_template_id of this OrderLineActivity.
+        :type: int
+        """
+        self._order_invoice_template_id = order_invoice_template_id
+
+    @property
+    def price_mode(self):
+        """
+        Gets the price_mode of this OrderLineActivity.
+
+
+        :return: The price_mode of this OrderLineActivity.
+        :rtype: str
+        """
+        return self._price_mode
+
+    @price_mode.setter
+    def price_mode(self, price_mode):
+        """
+        Sets the price_mode of this OrderLineActivity.
+
+
+        :param price_mode: The price_mode of this OrderLineActivity.
+        :type: str
+        """
+        self._price_mode = price_mode
 
     @property
     def custom_fields(self):

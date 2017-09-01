@@ -40,6 +40,8 @@ class ItemReceiptActivity(object):
             'id': 'int',
             'create_date': 'datetime',
             'modify_date': 'datetime',
+            'receipt_asn_create_date': 'datetime',
+            'receipt_modify_date': 'datetime',
             'item_receipt_id': 'int',
             'lob_id': 'int',
             'po_no': 'str',
@@ -49,14 +51,20 @@ class ItemReceiptActivity(object):
             'receipt_revision_date': 'str',
             'receipt_production_lot': 'str',
             'receipt_receive_date': 'datetime',
+            'receipt_receive_quantity': 'int',
+            'receipt_number_of_cases': 'int',
             'receipt_status': 'str',
             'receipt_status_name': 'str',
             'receipt_unit_code': 'int',
             'receipt_unit_code_text': 'str',
             'receipt_wrap_code': 'int',
             'receipt_wrap_code_text': 'str',
+            'receipt_wrap_unit_weight': 'float',
             'receipt_case_weight': 'float',
             'receipt_product_id_tag': 'str',
+            'receipt_entered_by': 'str',
+            'receipt_received_by': 'str',
+            'receipt_type': 'str',
             'warehouse_id': 'int',
             'warehouse_name': 'str',
             'item_id': 'int',
@@ -117,6 +125,8 @@ class ItemReceiptActivity(object):
             'id': 'id',
             'create_date': 'createDate',
             'modify_date': 'modifyDate',
+            'receipt_asn_create_date': 'receiptASNCreateDate',
+            'receipt_modify_date': 'receiptModifyDate',
             'item_receipt_id': 'itemReceiptId',
             'lob_id': 'lobId',
             'po_no': 'poNo',
@@ -126,14 +136,20 @@ class ItemReceiptActivity(object):
             'receipt_revision_date': 'receiptRevisionDate',
             'receipt_production_lot': 'receiptProductionLot',
             'receipt_receive_date': 'receiptReceiveDate',
+            'receipt_receive_quantity': 'receiptReceiveQuantity',
+            'receipt_number_of_cases': 'receiptNumberOfCases',
             'receipt_status': 'receiptStatus',
             'receipt_status_name': 'receiptStatusName',
             'receipt_unit_code': 'receiptUnitCode',
             'receipt_unit_code_text': 'receiptUnitCodeText',
             'receipt_wrap_code': 'receiptWrapCode',
             'receipt_wrap_code_text': 'receiptWrapCodeText',
+            'receipt_wrap_unit_weight': 'receiptWrapUnitWeight',
             'receipt_case_weight': 'receiptCaseWeight',
             'receipt_product_id_tag': 'receiptProductIdTag',
+            'receipt_entered_by': 'receiptEnteredBy',
+            'receipt_received_by': 'receiptReceivedBy',
+            'receipt_type': 'receiptType',
             'warehouse_id': 'warehouseId',
             'warehouse_name': 'warehouseName',
             'item_id': 'itemId',
@@ -193,6 +209,8 @@ class ItemReceiptActivity(object):
         self._id = None
         self._create_date = None
         self._modify_date = None
+        self._receipt_asn_create_date = None
+        self._receipt_modify_date = None
         self._item_receipt_id = None
         self._lob_id = None
         self._po_no = None
@@ -202,14 +220,20 @@ class ItemReceiptActivity(object):
         self._receipt_revision_date = None
         self._receipt_production_lot = None
         self._receipt_receive_date = None
+        self._receipt_receive_quantity = None
+        self._receipt_number_of_cases = None
         self._receipt_status = None
         self._receipt_status_name = None
         self._receipt_unit_code = None
         self._receipt_unit_code_text = None
         self._receipt_wrap_code = None
         self._receipt_wrap_code_text = None
+        self._receipt_wrap_unit_weight = None
         self._receipt_case_weight = None
         self._receipt_product_id_tag = None
+        self._receipt_entered_by = None
+        self._receipt_received_by = None
+        self._receipt_type = None
         self._warehouse_id = None
         self._warehouse_name = None
         self._item_id = None
@@ -330,6 +354,50 @@ class ItemReceiptActivity(object):
         :type: datetime
         """
         self._modify_date = modify_date
+
+    @property
+    def receipt_asn_create_date(self):
+        """
+        Gets the receipt_asn_create_date of this ItemReceiptActivity.
+
+
+        :return: The receipt_asn_create_date of this ItemReceiptActivity.
+        :rtype: datetime
+        """
+        return self._receipt_asn_create_date
+
+    @receipt_asn_create_date.setter
+    def receipt_asn_create_date(self, receipt_asn_create_date):
+        """
+        Sets the receipt_asn_create_date of this ItemReceiptActivity.
+
+
+        :param receipt_asn_create_date: The receipt_asn_create_date of this ItemReceiptActivity.
+        :type: datetime
+        """
+        self._receipt_asn_create_date = receipt_asn_create_date
+
+    @property
+    def receipt_modify_date(self):
+        """
+        Gets the receipt_modify_date of this ItemReceiptActivity.
+
+
+        :return: The receipt_modify_date of this ItemReceiptActivity.
+        :rtype: datetime
+        """
+        return self._receipt_modify_date
+
+    @receipt_modify_date.setter
+    def receipt_modify_date(self, receipt_modify_date):
+        """
+        Sets the receipt_modify_date of this ItemReceiptActivity.
+
+
+        :param receipt_modify_date: The receipt_modify_date of this ItemReceiptActivity.
+        :type: datetime
+        """
+        self._receipt_modify_date = receipt_modify_date
 
     @property
     def item_receipt_id(self):
@@ -530,6 +598,50 @@ class ItemReceiptActivity(object):
         self._receipt_receive_date = receipt_receive_date
 
     @property
+    def receipt_receive_quantity(self):
+        """
+        Gets the receipt_receive_quantity of this ItemReceiptActivity.
+
+
+        :return: The receipt_receive_quantity of this ItemReceiptActivity.
+        :rtype: int
+        """
+        return self._receipt_receive_quantity
+
+    @receipt_receive_quantity.setter
+    def receipt_receive_quantity(self, receipt_receive_quantity):
+        """
+        Sets the receipt_receive_quantity of this ItemReceiptActivity.
+
+
+        :param receipt_receive_quantity: The receipt_receive_quantity of this ItemReceiptActivity.
+        :type: int
+        """
+        self._receipt_receive_quantity = receipt_receive_quantity
+
+    @property
+    def receipt_number_of_cases(self):
+        """
+        Gets the receipt_number_of_cases of this ItemReceiptActivity.
+
+
+        :return: The receipt_number_of_cases of this ItemReceiptActivity.
+        :rtype: int
+        """
+        return self._receipt_number_of_cases
+
+    @receipt_number_of_cases.setter
+    def receipt_number_of_cases(self, receipt_number_of_cases):
+        """
+        Sets the receipt_number_of_cases of this ItemReceiptActivity.
+
+
+        :param receipt_number_of_cases: The receipt_number_of_cases of this ItemReceiptActivity.
+        :type: int
+        """
+        self._receipt_number_of_cases = receipt_number_of_cases
+
+    @property
     def receipt_status(self):
         """
         Gets the receipt_status of this ItemReceiptActivity.
@@ -662,6 +774,28 @@ class ItemReceiptActivity(object):
         self._receipt_wrap_code_text = receipt_wrap_code_text
 
     @property
+    def receipt_wrap_unit_weight(self):
+        """
+        Gets the receipt_wrap_unit_weight of this ItemReceiptActivity.
+
+
+        :return: The receipt_wrap_unit_weight of this ItemReceiptActivity.
+        :rtype: float
+        """
+        return self._receipt_wrap_unit_weight
+
+    @receipt_wrap_unit_weight.setter
+    def receipt_wrap_unit_weight(self, receipt_wrap_unit_weight):
+        """
+        Sets the receipt_wrap_unit_weight of this ItemReceiptActivity.
+
+
+        :param receipt_wrap_unit_weight: The receipt_wrap_unit_weight of this ItemReceiptActivity.
+        :type: float
+        """
+        self._receipt_wrap_unit_weight = receipt_wrap_unit_weight
+
+    @property
     def receipt_case_weight(self):
         """
         Gets the receipt_case_weight of this ItemReceiptActivity.
@@ -704,6 +838,72 @@ class ItemReceiptActivity(object):
         :type: str
         """
         self._receipt_product_id_tag = receipt_product_id_tag
+
+    @property
+    def receipt_entered_by(self):
+        """
+        Gets the receipt_entered_by of this ItemReceiptActivity.
+
+
+        :return: The receipt_entered_by of this ItemReceiptActivity.
+        :rtype: str
+        """
+        return self._receipt_entered_by
+
+    @receipt_entered_by.setter
+    def receipt_entered_by(self, receipt_entered_by):
+        """
+        Sets the receipt_entered_by of this ItemReceiptActivity.
+
+
+        :param receipt_entered_by: The receipt_entered_by of this ItemReceiptActivity.
+        :type: str
+        """
+        self._receipt_entered_by = receipt_entered_by
+
+    @property
+    def receipt_received_by(self):
+        """
+        Gets the receipt_received_by of this ItemReceiptActivity.
+
+
+        :return: The receipt_received_by of this ItemReceiptActivity.
+        :rtype: str
+        """
+        return self._receipt_received_by
+
+    @receipt_received_by.setter
+    def receipt_received_by(self, receipt_received_by):
+        """
+        Sets the receipt_received_by of this ItemReceiptActivity.
+
+
+        :param receipt_received_by: The receipt_received_by of this ItemReceiptActivity.
+        :type: str
+        """
+        self._receipt_received_by = receipt_received_by
+
+    @property
+    def receipt_type(self):
+        """
+        Gets the receipt_type of this ItemReceiptActivity.
+
+
+        :return: The receipt_type of this ItemReceiptActivity.
+        :rtype: str
+        """
+        return self._receipt_type
+
+    @receipt_type.setter
+    def receipt_type(self, receipt_type):
+        """
+        Sets the receipt_type of this ItemReceiptActivity.
+
+
+        :param receipt_type: The receipt_type of this ItemReceiptActivity.
+        :type: str
+        """
+        self._receipt_type = receipt_type
 
     @property
     def warehouse_id(self):

@@ -48,6 +48,9 @@ class InventoryStorageActivity(object):
             'is_mixed_receipts': 'bool',
             'quantity': 'int',
             'address': 'str',
+            'number_of_cases': 'int',
+            'inventory_value': 'float',
+            'inventory_age_days': 'int',
             'warehouse_id': 'int',
             'warehouse_name': 'str',
             'warehouse_zone_id': 'int',
@@ -75,7 +78,7 @@ class InventoryStorageActivity(object):
             'warehouse_location_priority_code': 'int',
             'warehouse_location_allow_item_mixing': 'bool',
             'warehouse_location_cost': 'int',
-            'control_no': 'str',
+            'sku': 'str',
             'item_vendor_sku': 'str',
             'item_upc': 'str',
             'item_major_group': 'int',
@@ -135,6 +138,9 @@ class InventoryStorageActivity(object):
             'is_mixed_receipts': 'isMixedReceipts',
             'quantity': 'quantity',
             'address': 'address',
+            'number_of_cases': 'numberOfCases',
+            'inventory_value': 'inventoryValue',
+            'inventory_age_days': 'inventoryAgeDays',
             'warehouse_id': 'warehouseId',
             'warehouse_name': 'warehouseName',
             'warehouse_zone_id': 'warehouseZoneId',
@@ -162,7 +168,7 @@ class InventoryStorageActivity(object):
             'warehouse_location_priority_code': 'warehouseLocationPriorityCode',
             'warehouse_location_allow_item_mixing': 'warehouseLocationAllowItemMixing',
             'warehouse_location_cost': 'warehouseLocationCost',
-            'control_no': 'controlNo',
+            'sku': 'sku',
             'item_vendor_sku': 'itemVendorSku',
             'item_upc': 'itemUpc',
             'item_major_group': 'itemMajorGroup',
@@ -221,6 +227,9 @@ class InventoryStorageActivity(object):
         self._is_mixed_receipts = False
         self._quantity = None
         self._address = None
+        self._number_of_cases = None
+        self._inventory_value = None
+        self._inventory_age_days = None
         self._warehouse_id = None
         self._warehouse_name = None
         self._warehouse_zone_id = None
@@ -248,7 +257,7 @@ class InventoryStorageActivity(object):
         self._warehouse_location_priority_code = None
         self._warehouse_location_allow_item_mixing = False
         self._warehouse_location_cost = None
-        self._control_no = None
+        self._sku = None
         self._item_vendor_sku = None
         self._item_upc = None
         self._item_major_group = None
@@ -536,6 +545,72 @@ class InventoryStorageActivity(object):
         :type: str
         """
         self._address = address
+
+    @property
+    def number_of_cases(self):
+        """
+        Gets the number_of_cases of this InventoryStorageActivity.
+
+
+        :return: The number_of_cases of this InventoryStorageActivity.
+        :rtype: int
+        """
+        return self._number_of_cases
+
+    @number_of_cases.setter
+    def number_of_cases(self, number_of_cases):
+        """
+        Sets the number_of_cases of this InventoryStorageActivity.
+
+
+        :param number_of_cases: The number_of_cases of this InventoryStorageActivity.
+        :type: int
+        """
+        self._number_of_cases = number_of_cases
+
+    @property
+    def inventory_value(self):
+        """
+        Gets the inventory_value of this InventoryStorageActivity.
+
+
+        :return: The inventory_value of this InventoryStorageActivity.
+        :rtype: float
+        """
+        return self._inventory_value
+
+    @inventory_value.setter
+    def inventory_value(self, inventory_value):
+        """
+        Sets the inventory_value of this InventoryStorageActivity.
+
+
+        :param inventory_value: The inventory_value of this InventoryStorageActivity.
+        :type: float
+        """
+        self._inventory_value = inventory_value
+
+    @property
+    def inventory_age_days(self):
+        """
+        Gets the inventory_age_days of this InventoryStorageActivity.
+
+
+        :return: The inventory_age_days of this InventoryStorageActivity.
+        :rtype: int
+        """
+        return self._inventory_age_days
+
+    @inventory_age_days.setter
+    def inventory_age_days(self, inventory_age_days):
+        """
+        Sets the inventory_age_days of this InventoryStorageActivity.
+
+
+        :param inventory_age_days: The inventory_age_days of this InventoryStorageActivity.
+        :type: int
+        """
+        self._inventory_age_days = inventory_age_days
 
     @property
     def warehouse_id(self):
@@ -1132,26 +1207,26 @@ class InventoryStorageActivity(object):
         self._warehouse_location_cost = warehouse_location_cost
 
     @property
-    def control_no(self):
+    def sku(self):
         """
-        Gets the control_no of this InventoryStorageActivity.
+        Gets the sku of this InventoryStorageActivity.
 
 
-        :return: The control_no of this InventoryStorageActivity.
+        :return: The sku of this InventoryStorageActivity.
         :rtype: str
         """
-        return self._control_no
+        return self._sku
 
-    @control_no.setter
-    def control_no(self, control_no):
+    @sku.setter
+    def sku(self, sku):
         """
-        Sets the control_no of this InventoryStorageActivity.
+        Sets the sku of this InventoryStorageActivity.
 
 
-        :param control_no: The control_no of this InventoryStorageActivity.
+        :param sku: The sku of this InventoryStorageActivity.
         :type: str
         """
-        self._control_no = control_no
+        self._sku = sku
 
     @property
     def item_vendor_sku(self):

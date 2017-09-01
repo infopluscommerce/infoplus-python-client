@@ -63,7 +63,8 @@ class Item(object):
             'critical_amount': 'int',
             'overall_fixed_reorder_point': 'int',
             'overall_lead_time': 'int',
-            'list_price': 'float',
+            'sell_price': 'float',
+            'pricing_per': 'str',
             'lot_control_flag': 'str',
             'max_cycle': 'int',
             'max_interim': 'int',
@@ -91,6 +92,9 @@ class Item(object):
             'extrinsic_decimal1': 'float',
             'extrinsic_decimal2': 'float',
             'casebreak_enabled': 'str',
+            'vendor_id': 'int',
+            'vendor_price': 'float',
+            'vendor_per': 'str',
             'modify_date': 'datetime',
             'forward_lot_mixing_rule': 'str',
             'storage_lot_mixing_rule': 'str',
@@ -161,7 +165,8 @@ class Item(object):
             'critical_amount': 'criticalAmount',
             'overall_fixed_reorder_point': 'overallFixedReorderPoint',
             'overall_lead_time': 'overallLeadTime',
-            'list_price': 'listPrice',
+            'sell_price': 'sellPrice',
+            'pricing_per': 'pricingPer',
             'lot_control_flag': 'lotControlFlag',
             'max_cycle': 'maxCycle',
             'max_interim': 'maxInterim',
@@ -189,6 +194,9 @@ class Item(object):
             'extrinsic_decimal1': 'extrinsicDecimal1',
             'extrinsic_decimal2': 'extrinsicDecimal2',
             'casebreak_enabled': 'casebreakEnabled',
+            'vendor_id': 'vendorId',
+            'vendor_price': 'vendorPrice',
+            'vendor_per': 'vendorPer',
             'modify_date': 'modifyDate',
             'forward_lot_mixing_rule': 'forwardLotMixingRule',
             'storage_lot_mixing_rule': 'storageLotMixingRule',
@@ -258,7 +266,8 @@ class Item(object):
         self._critical_amount = None
         self._overall_fixed_reorder_point = None
         self._overall_lead_time = None
-        self._list_price = None
+        self._sell_price = None
+        self._pricing_per = None
         self._lot_control_flag = None
         self._max_cycle = None
         self._max_interim = None
@@ -286,6 +295,9 @@ class Item(object):
         self._extrinsic_decimal1 = None
         self._extrinsic_decimal2 = None
         self._casebreak_enabled = None
+        self._vendor_id = None
+        self._vendor_price = None
+        self._vendor_per = None
         self._modify_date = None
         self._forward_lot_mixing_rule = None
         self._storage_lot_mixing_rule = None
@@ -901,26 +913,48 @@ class Item(object):
         self._overall_lead_time = overall_lead_time
 
     @property
-    def list_price(self):
+    def sell_price(self):
         """
-        Gets the list_price of this Item.
+        Gets the sell_price of this Item.
 
 
-        :return: The list_price of this Item.
+        :return: The sell_price of this Item.
         :rtype: float
         """
-        return self._list_price
+        return self._sell_price
 
-    @list_price.setter
-    def list_price(self, list_price):
+    @sell_price.setter
+    def sell_price(self, sell_price):
         """
-        Sets the list_price of this Item.
+        Sets the sell_price of this Item.
 
 
-        :param list_price: The list_price of this Item.
+        :param sell_price: The sell_price of this Item.
         :type: float
         """
-        self._list_price = list_price
+        self._sell_price = sell_price
+
+    @property
+    def pricing_per(self):
+        """
+        Gets the pricing_per of this Item.
+
+
+        :return: The pricing_per of this Item.
+        :rtype: str
+        """
+        return self._pricing_per
+
+    @pricing_per.setter
+    def pricing_per(self, pricing_per):
+        """
+        Sets the pricing_per of this Item.
+
+
+        :param pricing_per: The pricing_per of this Item.
+        :type: str
+        """
+        self._pricing_per = pricing_per
 
     @property
     def lot_control_flag(self):
@@ -1515,6 +1549,72 @@ class Item(object):
         :type: str
         """
         self._casebreak_enabled = casebreak_enabled
+
+    @property
+    def vendor_id(self):
+        """
+        Gets the vendor_id of this Item.
+
+
+        :return: The vendor_id of this Item.
+        :rtype: int
+        """
+        return self._vendor_id
+
+    @vendor_id.setter
+    def vendor_id(self, vendor_id):
+        """
+        Sets the vendor_id of this Item.
+
+
+        :param vendor_id: The vendor_id of this Item.
+        :type: int
+        """
+        self._vendor_id = vendor_id
+
+    @property
+    def vendor_price(self):
+        """
+        Gets the vendor_price of this Item.
+
+
+        :return: The vendor_price of this Item.
+        :rtype: float
+        """
+        return self._vendor_price
+
+    @vendor_price.setter
+    def vendor_price(self, vendor_price):
+        """
+        Sets the vendor_price of this Item.
+
+
+        :param vendor_price: The vendor_price of this Item.
+        :type: float
+        """
+        self._vendor_price = vendor_price
+
+    @property
+    def vendor_per(self):
+        """
+        Gets the vendor_per of this Item.
+
+
+        :return: The vendor_per of this Item.
+        :rtype: str
+        """
+        return self._vendor_per
+
+    @vendor_per.setter
+    def vendor_per(self, vendor_per):
+        """
+        Sets the vendor_per of this Item.
+
+
+        :param vendor_per: The vendor_per of this Item.
+        :type: str
+        """
+        self._vendor_per = vendor_per
 
     @property
     def modify_date(self):
