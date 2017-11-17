@@ -83,7 +83,7 @@ class VendorApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_vendor`")
 
-        resource_path = '/beta/vendor'.replace('{format}', 'json')
+        resource_path = '/v2.0/vendor'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class VendorApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Vendor',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_vendor_audit(self, vendor_id, vendor_audit, **kwargs):
-        """
-        Add new audit for a vendor
-        Adds an audit to an existing vendor.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_vendor_audit(vendor_id, vendor_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int vendor_id: Id of the vendor to add an audit to (required)
-        :param str vendor_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vendor_id', 'vendor_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_vendor_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'vendor_id' is set
-        if ('vendor_id' not in params) or (params['vendor_id'] is None):
-            raise ValueError("Missing the required parameter `vendor_id` when calling `add_vendor_audit`")
-        # verify the required parameter 'vendor_audit' is set
-        if ('vendor_audit' not in params) or (params['vendor_audit'] is None):
-            raise ValueError("Missing the required parameter `vendor_audit` when calling `add_vendor_audit`")
-
-        resource_path = '/beta/vendor/{vendorId}/audit/{vendorAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'vendor_id' in params:
-            path_params['vendorId'] = params['vendor_id']
-        if 'vendor_audit' in params:
-            path_params['vendorAudit'] = params['vendor_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_vendor_tag(self, vendor_id, vendor_tag, **kwargs):
-        """
-        Add new tags for a vendor.
-        Adds a tag to an existing vendor.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_vendor_tag(vendor_id, vendor_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int vendor_id: Id of the vendor to add a tag to (required)
-        :param str vendor_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vendor_id', 'vendor_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_vendor_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'vendor_id' is set
-        if ('vendor_id' not in params) or (params['vendor_id'] is None):
-            raise ValueError("Missing the required parameter `vendor_id` when calling `add_vendor_tag`")
-        # verify the required parameter 'vendor_tag' is set
-        if ('vendor_tag' not in params) or (params['vendor_tag'] is None):
-            raise ValueError("Missing the required parameter `vendor_tag` when calling `add_vendor_tag`")
-
-        resource_path = '/beta/vendor/{vendorId}/tag/{vendorTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'vendor_id' in params:
-            path_params['vendorId'] = params['vendor_id']
-        if 'vendor_tag' in params:
-            path_params['vendorTag'] = params['vendor_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class VendorApi(object):
         if ('vendor_id' not in params) or (params['vendor_id'] is None):
             raise ValueError("Missing the required parameter `vendor_id` when calling `delete_vendor`")
 
-        resource_path = '/beta/vendor/{vendorId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/vendor/{vendorId}'.replace('{format}', 'json')
         path_params = {}
         if 'vendor_id' in params:
             path_params['vendorId'] = params['vendor_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_vendor_tag(self, vendor_id, vendor_tag, **kwargs):
-        """
-        Delete a tag for a vendor.
-        Deletes an existing vendor tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_vendor_tag(vendor_id, vendor_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int vendor_id: Id of the vendor to remove tag from (required)
-        :param str vendor_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vendor_id', 'vendor_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_vendor_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'vendor_id' is set
-        if ('vendor_id' not in params) or (params['vendor_id'] is None):
-            raise ValueError("Missing the required parameter `vendor_id` when calling `delete_vendor_tag`")
-        # verify the required parameter 'vendor_tag' is set
-        if ('vendor_tag' not in params) or (params['vendor_tag'] is None):
-            raise ValueError("Missing the required parameter `vendor_tag` when calling `delete_vendor_tag`")
-
-        resource_path = '/beta/vendor/{vendorId}/tag/{vendorTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'vendor_id' in params:
-            path_params['vendorId'] = params['vendor_id']
-        if 'vendor_tag' in params:
-            path_params['vendorTag'] = params['vendor_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class VendorApi(object):
         if ('vendor_id' not in params) or (params['vendor_id'] is None):
             raise ValueError("Missing the required parameter `vendor_id` when calling `get_duplicate_vendor_by_id`")
 
-        resource_path = '/beta/vendor/duplicate/{vendorId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/vendor/duplicate/{vendorId}'.replace('{format}', 'json')
         path_params = {}
         if 'vendor_id' in params:
             path_params['vendorId'] = params['vendor_id']
@@ -563,7 +314,7 @@ class VendorApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/vendor/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/vendor/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -646,7 +397,7 @@ class VendorApi(object):
         if ('vendor_id' not in params) or (params['vendor_id'] is None):
             raise ValueError("Missing the required parameter `vendor_id` when calling `get_vendor_by_id`")
 
-        resource_path = '/beta/vendor/{vendorId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/vendor/{vendorId}'.replace('{format}', 'json')
         path_params = {}
         if 'vendor_id' in params:
             path_params['vendorId'] = params['vendor_id']
@@ -681,83 +432,6 @@ class VendorApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Vendor',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_vendor_tags(self, vendor_id, **kwargs):
-        """
-        Get the tags for a vendor.
-        Get all existing vendor tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_vendor_tags(vendor_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int vendor_id: Id of the vendor to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vendor_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_vendor_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'vendor_id' is set
-        if ('vendor_id' not in params) or (params['vendor_id'] is None):
-            raise ValueError("Missing the required parameter `vendor_id` when calling `get_vendor_tags`")
-
-        resource_path = '/beta/vendor/{vendorId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'vendor_id' in params:
-            path_params['vendorId'] = params['vendor_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -800,7 +474,7 @@ class VendorApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_vendor`")
 
-        resource_path = '/beta/vendor'.replace('{format}', 'json')
+        resource_path = '/v2.0/vendor'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -877,7 +551,7 @@ class VendorApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_vendor_custom_fields`")
 
-        resource_path = '/beta/vendor/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/vendor/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

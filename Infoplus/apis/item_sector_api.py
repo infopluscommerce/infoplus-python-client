@@ -83,7 +83,7 @@ class ItemSectorApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_item_sector`")
 
-        resource_path = '/beta/itemSector'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemSector'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class ItemSectorApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ItemSector',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_item_sector_audit(self, item_sector_id, item_sector_audit, **kwargs):
-        """
-        Add new audit for an itemSector
-        Adds an audit to an existing itemSector.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_item_sector_audit(item_sector_id, item_sector_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int item_sector_id: Id of the itemSector to add an audit to (required)
-        :param str item_sector_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['item_sector_id', 'item_sector_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_item_sector_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'item_sector_id' is set
-        if ('item_sector_id' not in params) or (params['item_sector_id'] is None):
-            raise ValueError("Missing the required parameter `item_sector_id` when calling `add_item_sector_audit`")
-        # verify the required parameter 'item_sector_audit' is set
-        if ('item_sector_audit' not in params) or (params['item_sector_audit'] is None):
-            raise ValueError("Missing the required parameter `item_sector_audit` when calling `add_item_sector_audit`")
-
-        resource_path = '/beta/itemSector/{itemSectorId}/audit/{itemSectorAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'item_sector_id' in params:
-            path_params['itemSectorId'] = params['item_sector_id']
-        if 'item_sector_audit' in params:
-            path_params['itemSectorAudit'] = params['item_sector_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_item_sector_tag(self, item_sector_id, item_sector_tag, **kwargs):
-        """
-        Add new tags for an itemSector.
-        Adds a tag to an existing itemSector.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_item_sector_tag(item_sector_id, item_sector_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int item_sector_id: Id of the itemSector to add a tag to (required)
-        :param str item_sector_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['item_sector_id', 'item_sector_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_item_sector_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'item_sector_id' is set
-        if ('item_sector_id' not in params) or (params['item_sector_id'] is None):
-            raise ValueError("Missing the required parameter `item_sector_id` when calling `add_item_sector_tag`")
-        # verify the required parameter 'item_sector_tag' is set
-        if ('item_sector_tag' not in params) or (params['item_sector_tag'] is None):
-            raise ValueError("Missing the required parameter `item_sector_tag` when calling `add_item_sector_tag`")
-
-        resource_path = '/beta/itemSector/{itemSectorId}/tag/{itemSectorTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'item_sector_id' in params:
-            path_params['itemSectorId'] = params['item_sector_id']
-        if 'item_sector_tag' in params:
-            path_params['itemSectorTag'] = params['item_sector_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class ItemSectorApi(object):
         if ('item_sector_id' not in params) or (params['item_sector_id'] is None):
             raise ValueError("Missing the required parameter `item_sector_id` when calling `delete_item_sector`")
 
-        resource_path = '/beta/itemSector/{itemSectorId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemSector/{itemSectorId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_sector_id' in params:
             path_params['itemSectorId'] = params['item_sector_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_item_sector_tag(self, item_sector_id, item_sector_tag, **kwargs):
-        """
-        Delete a tag for an itemSector.
-        Deletes an existing itemSector tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_item_sector_tag(item_sector_id, item_sector_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int item_sector_id: Id of the itemSector to remove tag from (required)
-        :param str item_sector_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['item_sector_id', 'item_sector_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_item_sector_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'item_sector_id' is set
-        if ('item_sector_id' not in params) or (params['item_sector_id'] is None):
-            raise ValueError("Missing the required parameter `item_sector_id` when calling `delete_item_sector_tag`")
-        # verify the required parameter 'item_sector_tag' is set
-        if ('item_sector_tag' not in params) or (params['item_sector_tag'] is None):
-            raise ValueError("Missing the required parameter `item_sector_tag` when calling `delete_item_sector_tag`")
-
-        resource_path = '/beta/itemSector/{itemSectorId}/tag/{itemSectorTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'item_sector_id' in params:
-            path_params['itemSectorId'] = params['item_sector_id']
-        if 'item_sector_tag' in params:
-            path_params['itemSectorTag'] = params['item_sector_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class ItemSectorApi(object):
         if ('item_sector_id' not in params) or (params['item_sector_id'] is None):
             raise ValueError("Missing the required parameter `item_sector_id` when calling `get_duplicate_item_sector_by_id`")
 
-        resource_path = '/beta/itemSector/duplicate/{itemSectorId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemSector/duplicate/{itemSectorId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_sector_id' in params:
             path_params['itemSectorId'] = params['item_sector_id']
@@ -563,7 +314,7 @@ class ItemSectorApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/itemSector/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemSector/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -646,7 +397,7 @@ class ItemSectorApi(object):
         if ('item_sector_id' not in params) or (params['item_sector_id'] is None):
             raise ValueError("Missing the required parameter `item_sector_id` when calling `get_item_sector_by_id`")
 
-        resource_path = '/beta/itemSector/{itemSectorId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemSector/{itemSectorId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_sector_id' in params:
             path_params['itemSectorId'] = params['item_sector_id']
@@ -681,83 +432,6 @@ class ItemSectorApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ItemSector',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_item_sector_tags(self, item_sector_id, **kwargs):
-        """
-        Get the tags for an itemSector.
-        Get all existing itemSector tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_item_sector_tags(item_sector_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int item_sector_id: Id of the itemSector to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['item_sector_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_item_sector_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'item_sector_id' is set
-        if ('item_sector_id' not in params) or (params['item_sector_id'] is None):
-            raise ValueError("Missing the required parameter `item_sector_id` when calling `get_item_sector_tags`")
-
-        resource_path = '/beta/itemSector/{itemSectorId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'item_sector_id' in params:
-            path_params['itemSectorId'] = params['item_sector_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -800,7 +474,7 @@ class ItemSectorApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_item_sector`")
 
-        resource_path = '/beta/itemSector'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemSector'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

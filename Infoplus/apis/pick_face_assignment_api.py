@@ -83,7 +83,7 @@ class PickFaceAssignmentApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_pick_face_assignment`")
 
-        resource_path = '/beta/pickFaceAssignment'.replace('{format}', 'json')
+        resource_path = '/v2.0/pickFaceAssignment'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class PickFaceAssignmentApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='PickFaceAssignment',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_pick_face_assignment_audit(self, pick_face_assignment_id, pick_face_assignment_audit, **kwargs):
-        """
-        Add new audit for a pickFaceAssignment
-        Adds an audit to an existing pickFaceAssignment.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_pick_face_assignment_audit(pick_face_assignment_id, pick_face_assignment_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int pick_face_assignment_id: Id of the pickFaceAssignment to add an audit to (required)
-        :param str pick_face_assignment_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pick_face_assignment_id', 'pick_face_assignment_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_pick_face_assignment_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'pick_face_assignment_id' is set
-        if ('pick_face_assignment_id' not in params) or (params['pick_face_assignment_id'] is None):
-            raise ValueError("Missing the required parameter `pick_face_assignment_id` when calling `add_pick_face_assignment_audit`")
-        # verify the required parameter 'pick_face_assignment_audit' is set
-        if ('pick_face_assignment_audit' not in params) or (params['pick_face_assignment_audit'] is None):
-            raise ValueError("Missing the required parameter `pick_face_assignment_audit` when calling `add_pick_face_assignment_audit`")
-
-        resource_path = '/beta/pickFaceAssignment/{pickFaceAssignmentId}/audit/{pickFaceAssignmentAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'pick_face_assignment_id' in params:
-            path_params['pickFaceAssignmentId'] = params['pick_face_assignment_id']
-        if 'pick_face_assignment_audit' in params:
-            path_params['pickFaceAssignmentAudit'] = params['pick_face_assignment_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_pick_face_assignment_tag(self, pick_face_assignment_id, pick_face_assignment_tag, **kwargs):
-        """
-        Add new tags for a pickFaceAssignment.
-        Adds a tag to an existing pickFaceAssignment.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_pick_face_assignment_tag(pick_face_assignment_id, pick_face_assignment_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int pick_face_assignment_id: Id of the pickFaceAssignment to add a tag to (required)
-        :param str pick_face_assignment_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pick_face_assignment_id', 'pick_face_assignment_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_pick_face_assignment_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'pick_face_assignment_id' is set
-        if ('pick_face_assignment_id' not in params) or (params['pick_face_assignment_id'] is None):
-            raise ValueError("Missing the required parameter `pick_face_assignment_id` when calling `add_pick_face_assignment_tag`")
-        # verify the required parameter 'pick_face_assignment_tag' is set
-        if ('pick_face_assignment_tag' not in params) or (params['pick_face_assignment_tag'] is None):
-            raise ValueError("Missing the required parameter `pick_face_assignment_tag` when calling `add_pick_face_assignment_tag`")
-
-        resource_path = '/beta/pickFaceAssignment/{pickFaceAssignmentId}/tag/{pickFaceAssignmentTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'pick_face_assignment_id' in params:
-            path_params['pickFaceAssignmentId'] = params['pick_face_assignment_id']
-        if 'pick_face_assignment_tag' in params:
-            path_params['pickFaceAssignmentTag'] = params['pick_face_assignment_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class PickFaceAssignmentApi(object):
         if ('pick_face_assignment_id' not in params) or (params['pick_face_assignment_id'] is None):
             raise ValueError("Missing the required parameter `pick_face_assignment_id` when calling `delete_pick_face_assignment`")
 
-        resource_path = '/beta/pickFaceAssignment/{pickFaceAssignmentId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/pickFaceAssignment/{pickFaceAssignmentId}'.replace('{format}', 'json')
         path_params = {}
         if 'pick_face_assignment_id' in params:
             path_params['pickFaceAssignmentId'] = params['pick_face_assignment_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_pick_face_assignment_tag(self, pick_face_assignment_id, pick_face_assignment_tag, **kwargs):
-        """
-        Delete a tag for a pickFaceAssignment.
-        Deletes an existing pickFaceAssignment tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_pick_face_assignment_tag(pick_face_assignment_id, pick_face_assignment_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int pick_face_assignment_id: Id of the pickFaceAssignment to remove tag from (required)
-        :param str pick_face_assignment_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pick_face_assignment_id', 'pick_face_assignment_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_pick_face_assignment_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'pick_face_assignment_id' is set
-        if ('pick_face_assignment_id' not in params) or (params['pick_face_assignment_id'] is None):
-            raise ValueError("Missing the required parameter `pick_face_assignment_id` when calling `delete_pick_face_assignment_tag`")
-        # verify the required parameter 'pick_face_assignment_tag' is set
-        if ('pick_face_assignment_tag' not in params) or (params['pick_face_assignment_tag'] is None):
-            raise ValueError("Missing the required parameter `pick_face_assignment_tag` when calling `delete_pick_face_assignment_tag`")
-
-        resource_path = '/beta/pickFaceAssignment/{pickFaceAssignmentId}/tag/{pickFaceAssignmentTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'pick_face_assignment_id' in params:
-            path_params['pickFaceAssignmentId'] = params['pick_face_assignment_id']
-        if 'pick_face_assignment_tag' in params:
-            path_params['pickFaceAssignmentTag'] = params['pick_face_assignment_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class PickFaceAssignmentApi(object):
         if ('pick_face_assignment_id' not in params) or (params['pick_face_assignment_id'] is None):
             raise ValueError("Missing the required parameter `pick_face_assignment_id` when calling `get_duplicate_pick_face_assignment_by_id`")
 
-        resource_path = '/beta/pickFaceAssignment/duplicate/{pickFaceAssignmentId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/pickFaceAssignment/duplicate/{pickFaceAssignmentId}'.replace('{format}', 'json')
         path_params = {}
         if 'pick_face_assignment_id' in params:
             path_params['pickFaceAssignmentId'] = params['pick_face_assignment_id']
@@ -563,7 +314,7 @@ class PickFaceAssignmentApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/pickFaceAssignment/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/pickFaceAssignment/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -646,7 +397,7 @@ class PickFaceAssignmentApi(object):
         if ('pick_face_assignment_id' not in params) or (params['pick_face_assignment_id'] is None):
             raise ValueError("Missing the required parameter `pick_face_assignment_id` when calling `get_pick_face_assignment_by_id`")
 
-        resource_path = '/beta/pickFaceAssignment/{pickFaceAssignmentId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/pickFaceAssignment/{pickFaceAssignmentId}'.replace('{format}', 'json')
         path_params = {}
         if 'pick_face_assignment_id' in params:
             path_params['pickFaceAssignmentId'] = params['pick_face_assignment_id']
@@ -681,83 +432,6 @@ class PickFaceAssignmentApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='PickFaceAssignment',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_pick_face_assignment_tags(self, pick_face_assignment_id, **kwargs):
-        """
-        Get the tags for a pickFaceAssignment.
-        Get all existing pickFaceAssignment tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_pick_face_assignment_tags(pick_face_assignment_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int pick_face_assignment_id: Id of the pickFaceAssignment to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['pick_face_assignment_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_pick_face_assignment_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'pick_face_assignment_id' is set
-        if ('pick_face_assignment_id' not in params) or (params['pick_face_assignment_id'] is None):
-            raise ValueError("Missing the required parameter `pick_face_assignment_id` when calling `get_pick_face_assignment_tags`")
-
-        resource_path = '/beta/pickFaceAssignment/{pickFaceAssignmentId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'pick_face_assignment_id' in params:
-            path_params['pickFaceAssignmentId'] = params['pick_face_assignment_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -800,7 +474,7 @@ class PickFaceAssignmentApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_pick_face_assignment`")
 
-        resource_path = '/beta/pickFaceAssignment'.replace('{format}', 'json')
+        resource_path = '/v2.0/pickFaceAssignment'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -877,7 +551,7 @@ class PickFaceAssignmentApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_pick_face_assignment_custom_fields`")
 
-        resource_path = '/beta/pickFaceAssignment/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/pickFaceAssignment/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

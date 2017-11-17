@@ -98,8 +98,6 @@ class Item(object):
             'storage_item_mixing_rule': 'str',
             'allocation_rule': 'str',
             'barcode_field': 'str',
-            'warehouse_display_field': 'str',
-            'product_id_tag_scheme_id': 'int',
             'hazmat': 'str',
             'is_alcohol': 'bool',
             'alcohol_type': 'str',
@@ -119,17 +117,6 @@ class Item(object):
             'height': 'float',
             'top_up': 'bool',
             'ship_solo': 'bool',
-            'available_quantity': 'int',
-            'damaged_quantity': 'int',
-            'in_fulfillment_process_quantity': 'int',
-            'on_hand_quantity': 'int',
-            'open_order_quantity': 'int',
-            'open_po_quantity': 'int',
-            'orderable_quantity': 'int',
-            'unallocatable_quantity': 'int',
-            'unavailable_quantity': 'int',
-            'overall_days_on_hand': 'int',
-            'overall_stock_status': 'str',
             'custom_fields': 'dict(str, object)'
         }
 
@@ -195,8 +182,6 @@ class Item(object):
             'storage_item_mixing_rule': 'storageItemMixingRule',
             'allocation_rule': 'allocationRule',
             'barcode_field': 'barcodeField',
-            'warehouse_display_field': 'warehouseDisplayField',
-            'product_id_tag_scheme_id': 'productIdTagSchemeId',
             'hazmat': 'hazmat',
             'is_alcohol': 'isAlcohol',
             'alcohol_type': 'alcoholType',
@@ -216,17 +201,6 @@ class Item(object):
             'height': 'height',
             'top_up': 'topUp',
             'ship_solo': 'shipSolo',
-            'available_quantity': 'availableQuantity',
-            'damaged_quantity': 'damagedQuantity',
-            'in_fulfillment_process_quantity': 'inFulfillmentProcessQuantity',
-            'on_hand_quantity': 'onHandQuantity',
-            'open_order_quantity': 'openOrderQuantity',
-            'open_po_quantity': 'openPOQuantity',
-            'orderable_quantity': 'orderableQuantity',
-            'unallocatable_quantity': 'unallocatableQuantity',
-            'unavailable_quantity': 'unavailableQuantity',
-            'overall_days_on_hand': 'overallDaysOnHand',
-            'overall_stock_status': 'overallStockStatus',
             'custom_fields': 'customFields'
         }
 
@@ -291,8 +265,6 @@ class Item(object):
         self._storage_item_mixing_rule = None
         self._allocation_rule = None
         self._barcode_field = None
-        self._warehouse_display_field = None
-        self._product_id_tag_scheme_id = None
         self._hazmat = None
         self._is_alcohol = False
         self._alcohol_type = None
@@ -312,17 +284,6 @@ class Item(object):
         self._height = None
         self._top_up = False
         self._ship_solo = False
-        self._available_quantity = None
-        self._damaged_quantity = None
-        self._in_fulfillment_process_quantity = None
-        self._on_hand_quantity = None
-        self._open_order_quantity = None
-        self._open_po_quantity = None
-        self._orderable_quantity = None
-        self._unallocatable_quantity = None
-        self._unavailable_quantity = None
-        self._overall_days_on_hand = None
-        self._overall_stock_status = None
         self._custom_fields = None
 
     @property
@@ -1668,50 +1629,6 @@ class Item(object):
         self._barcode_field = barcode_field
 
     @property
-    def warehouse_display_field(self):
-        """
-        Gets the warehouse_display_field of this Item.
-
-
-        :return: The warehouse_display_field of this Item.
-        :rtype: str
-        """
-        return self._warehouse_display_field
-
-    @warehouse_display_field.setter
-    def warehouse_display_field(self, warehouse_display_field):
-        """
-        Sets the warehouse_display_field of this Item.
-
-
-        :param warehouse_display_field: The warehouse_display_field of this Item.
-        :type: str
-        """
-        self._warehouse_display_field = warehouse_display_field
-
-    @property
-    def product_id_tag_scheme_id(self):
-        """
-        Gets the product_id_tag_scheme_id of this Item.
-
-
-        :return: The product_id_tag_scheme_id of this Item.
-        :rtype: int
-        """
-        return self._product_id_tag_scheme_id
-
-    @product_id_tag_scheme_id.setter
-    def product_id_tag_scheme_id(self, product_id_tag_scheme_id):
-        """
-        Sets the product_id_tag_scheme_id of this Item.
-
-
-        :param product_id_tag_scheme_id: The product_id_tag_scheme_id of this Item.
-        :type: int
-        """
-        self._product_id_tag_scheme_id = product_id_tag_scheme_id
-
-    @property
     def hazmat(self):
         """
         Gets the hazmat of this Item.
@@ -2128,248 +2045,6 @@ class Item(object):
         :type: bool
         """
         self._ship_solo = ship_solo
-
-    @property
-    def available_quantity(self):
-        """
-        Gets the available_quantity of this Item.
-
-
-        :return: The available_quantity of this Item.
-        :rtype: int
-        """
-        return self._available_quantity
-
-    @available_quantity.setter
-    def available_quantity(self, available_quantity):
-        """
-        Sets the available_quantity of this Item.
-
-
-        :param available_quantity: The available_quantity of this Item.
-        :type: int
-        """
-        self._available_quantity = available_quantity
-
-    @property
-    def damaged_quantity(self):
-        """
-        Gets the damaged_quantity of this Item.
-
-
-        :return: The damaged_quantity of this Item.
-        :rtype: int
-        """
-        return self._damaged_quantity
-
-    @damaged_quantity.setter
-    def damaged_quantity(self, damaged_quantity):
-        """
-        Sets the damaged_quantity of this Item.
-
-
-        :param damaged_quantity: The damaged_quantity of this Item.
-        :type: int
-        """
-        self._damaged_quantity = damaged_quantity
-
-    @property
-    def in_fulfillment_process_quantity(self):
-        """
-        Gets the in_fulfillment_process_quantity of this Item.
-
-
-        :return: The in_fulfillment_process_quantity of this Item.
-        :rtype: int
-        """
-        return self._in_fulfillment_process_quantity
-
-    @in_fulfillment_process_quantity.setter
-    def in_fulfillment_process_quantity(self, in_fulfillment_process_quantity):
-        """
-        Sets the in_fulfillment_process_quantity of this Item.
-
-
-        :param in_fulfillment_process_quantity: The in_fulfillment_process_quantity of this Item.
-        :type: int
-        """
-        self._in_fulfillment_process_quantity = in_fulfillment_process_quantity
-
-    @property
-    def on_hand_quantity(self):
-        """
-        Gets the on_hand_quantity of this Item.
-
-
-        :return: The on_hand_quantity of this Item.
-        :rtype: int
-        """
-        return self._on_hand_quantity
-
-    @on_hand_quantity.setter
-    def on_hand_quantity(self, on_hand_quantity):
-        """
-        Sets the on_hand_quantity of this Item.
-
-
-        :param on_hand_quantity: The on_hand_quantity of this Item.
-        :type: int
-        """
-        self._on_hand_quantity = on_hand_quantity
-
-    @property
-    def open_order_quantity(self):
-        """
-        Gets the open_order_quantity of this Item.
-
-
-        :return: The open_order_quantity of this Item.
-        :rtype: int
-        """
-        return self._open_order_quantity
-
-    @open_order_quantity.setter
-    def open_order_quantity(self, open_order_quantity):
-        """
-        Sets the open_order_quantity of this Item.
-
-
-        :param open_order_quantity: The open_order_quantity of this Item.
-        :type: int
-        """
-        self._open_order_quantity = open_order_quantity
-
-    @property
-    def open_po_quantity(self):
-        """
-        Gets the open_po_quantity of this Item.
-
-
-        :return: The open_po_quantity of this Item.
-        :rtype: int
-        """
-        return self._open_po_quantity
-
-    @open_po_quantity.setter
-    def open_po_quantity(self, open_po_quantity):
-        """
-        Sets the open_po_quantity of this Item.
-
-
-        :param open_po_quantity: The open_po_quantity of this Item.
-        :type: int
-        """
-        self._open_po_quantity = open_po_quantity
-
-    @property
-    def orderable_quantity(self):
-        """
-        Gets the orderable_quantity of this Item.
-
-
-        :return: The orderable_quantity of this Item.
-        :rtype: int
-        """
-        return self._orderable_quantity
-
-    @orderable_quantity.setter
-    def orderable_quantity(self, orderable_quantity):
-        """
-        Sets the orderable_quantity of this Item.
-
-
-        :param orderable_quantity: The orderable_quantity of this Item.
-        :type: int
-        """
-        self._orderable_quantity = orderable_quantity
-
-    @property
-    def unallocatable_quantity(self):
-        """
-        Gets the unallocatable_quantity of this Item.
-
-
-        :return: The unallocatable_quantity of this Item.
-        :rtype: int
-        """
-        return self._unallocatable_quantity
-
-    @unallocatable_quantity.setter
-    def unallocatable_quantity(self, unallocatable_quantity):
-        """
-        Sets the unallocatable_quantity of this Item.
-
-
-        :param unallocatable_quantity: The unallocatable_quantity of this Item.
-        :type: int
-        """
-        self._unallocatable_quantity = unallocatable_quantity
-
-    @property
-    def unavailable_quantity(self):
-        """
-        Gets the unavailable_quantity of this Item.
-
-
-        :return: The unavailable_quantity of this Item.
-        :rtype: int
-        """
-        return self._unavailable_quantity
-
-    @unavailable_quantity.setter
-    def unavailable_quantity(self, unavailable_quantity):
-        """
-        Sets the unavailable_quantity of this Item.
-
-
-        :param unavailable_quantity: The unavailable_quantity of this Item.
-        :type: int
-        """
-        self._unavailable_quantity = unavailable_quantity
-
-    @property
-    def overall_days_on_hand(self):
-        """
-        Gets the overall_days_on_hand of this Item.
-
-
-        :return: The overall_days_on_hand of this Item.
-        :rtype: int
-        """
-        return self._overall_days_on_hand
-
-    @overall_days_on_hand.setter
-    def overall_days_on_hand(self, overall_days_on_hand):
-        """
-        Sets the overall_days_on_hand of this Item.
-
-
-        :param overall_days_on_hand: The overall_days_on_hand of this Item.
-        :type: int
-        """
-        self._overall_days_on_hand = overall_days_on_hand
-
-    @property
-    def overall_stock_status(self):
-        """
-        Gets the overall_stock_status of this Item.
-
-
-        :return: The overall_stock_status of this Item.
-        :rtype: str
-        """
-        return self._overall_stock_status
-
-    @overall_stock_status.setter
-    def overall_stock_status(self, overall_stock_status):
-        """
-        Sets the overall_stock_status of this Item.
-
-
-        :param overall_stock_status: The overall_stock_status of this Item.
-        :type: str
-        """
-        self._overall_stock_status = overall_stock_status
 
     @property
     def custom_fields(self):

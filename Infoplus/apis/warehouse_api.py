@@ -45,255 +45,6 @@ class WarehouseApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def add_warehouse_audit(self, warehouse_id, warehouse_audit, **kwargs):
-        """
-        Add new audit for a warehouse
-        Adds an audit to an existing warehouse.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_warehouse_audit(warehouse_id, warehouse_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int warehouse_id: Id of the warehouse to add an audit to (required)
-        :param str warehouse_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['warehouse_id', 'warehouse_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_warehouse_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'warehouse_id' is set
-        if ('warehouse_id' not in params) or (params['warehouse_id'] is None):
-            raise ValueError("Missing the required parameter `warehouse_id` when calling `add_warehouse_audit`")
-        # verify the required parameter 'warehouse_audit' is set
-        if ('warehouse_audit' not in params) or (params['warehouse_audit'] is None):
-            raise ValueError("Missing the required parameter `warehouse_audit` when calling `add_warehouse_audit`")
-
-        resource_path = '/beta/warehouse/{warehouseId}/audit/{warehouseAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'warehouse_id' in params:
-            path_params['warehouseId'] = params['warehouse_id']
-        if 'warehouse_audit' in params:
-            path_params['warehouseAudit'] = params['warehouse_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_warehouse_tag(self, warehouse_id, warehouse_tag, **kwargs):
-        """
-        Add new tags for a warehouse.
-        Adds a tag to an existing warehouse.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_warehouse_tag(warehouse_id, warehouse_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int warehouse_id: Id of the warehouse to add a tag to (required)
-        :param str warehouse_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['warehouse_id', 'warehouse_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_warehouse_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'warehouse_id' is set
-        if ('warehouse_id' not in params) or (params['warehouse_id'] is None):
-            raise ValueError("Missing the required parameter `warehouse_id` when calling `add_warehouse_tag`")
-        # verify the required parameter 'warehouse_tag' is set
-        if ('warehouse_tag' not in params) or (params['warehouse_tag'] is None):
-            raise ValueError("Missing the required parameter `warehouse_tag` when calling `add_warehouse_tag`")
-
-        resource_path = '/beta/warehouse/{warehouseId}/tag/{warehouseTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'warehouse_id' in params:
-            path_params['warehouseId'] = params['warehouse_id']
-        if 'warehouse_tag' in params:
-            path_params['warehouseTag'] = params['warehouse_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_warehouse_tag(self, warehouse_id, warehouse_tag, **kwargs):
-        """
-        Delete a tag for a warehouse.
-        Deletes an existing warehouse tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_warehouse_tag(warehouse_id, warehouse_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int warehouse_id: Id of the warehouse to remove tag from (required)
-        :param str warehouse_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['warehouse_id', 'warehouse_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_warehouse_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'warehouse_id' is set
-        if ('warehouse_id' not in params) or (params['warehouse_id'] is None):
-            raise ValueError("Missing the required parameter `warehouse_id` when calling `delete_warehouse_tag`")
-        # verify the required parameter 'warehouse_tag' is set
-        if ('warehouse_tag' not in params) or (params['warehouse_tag'] is None):
-            raise ValueError("Missing the required parameter `warehouse_tag` when calling `delete_warehouse_tag`")
-
-        resource_path = '/beta/warehouse/{warehouseId}/tag/{warehouseTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'warehouse_id' in params:
-            path_params['warehouseId'] = params['warehouse_id']
-        if 'warehouse_tag' in params:
-            path_params['warehouseTag'] = params['warehouse_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
     def get_duplicate_warehouse_by_id(self, warehouse_id, **kwargs):
         """
         Get a duplicated a warehouse by id
@@ -332,7 +83,7 @@ class WarehouseApi(object):
         if ('warehouse_id' not in params) or (params['warehouse_id'] is None):
             raise ValueError("Missing the required parameter `warehouse_id` when calling `get_duplicate_warehouse_by_id`")
 
-        resource_path = '/beta/warehouse/duplicate/{warehouseId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/warehouse/duplicate/{warehouseId}'.replace('{format}', 'json')
         path_params = {}
         if 'warehouse_id' in params:
             path_params['warehouseId'] = params['warehouse_id']
@@ -409,7 +160,7 @@ class WarehouseApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/warehouse/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/warehouse/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -492,7 +243,7 @@ class WarehouseApi(object):
         if ('warehouse_id' not in params) or (params['warehouse_id'] is None):
             raise ValueError("Missing the required parameter `warehouse_id` when calling `get_warehouse_by_id`")
 
-        resource_path = '/beta/warehouse/{warehouseId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/warehouse/{warehouseId}'.replace('{format}', 'json')
         path_params = {}
         if 'warehouse_id' in params:
             path_params['warehouseId'] = params['warehouse_id']
@@ -527,83 +278,6 @@ class WarehouseApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Warehouse',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_warehouse_tags(self, warehouse_id, **kwargs):
-        """
-        Get the tags for a warehouse.
-        Get all existing warehouse tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_warehouse_tags(warehouse_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int warehouse_id: Id of the warehouse to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['warehouse_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_warehouse_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'warehouse_id' is set
-        if ('warehouse_id' not in params) or (params['warehouse_id'] is None):
-            raise ValueError("Missing the required parameter `warehouse_id` when calling `get_warehouse_tags`")
-
-        resource_path = '/beta/warehouse/{warehouseId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'warehouse_id' in params:
-            path_params['warehouseId'] = params['warehouse_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -646,7 +320,7 @@ class WarehouseApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_warehouse`")
 
-        resource_path = '/beta/warehouse'.replace('{format}', 'json')
+        resource_path = '/v2.0/warehouse'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -723,7 +397,7 @@ class WarehouseApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_warehouse_custom_fields`")
 
-        resource_path = '/beta/warehouse/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/warehouse/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

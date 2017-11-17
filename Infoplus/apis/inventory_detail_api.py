@@ -45,255 +45,6 @@ class InventoryDetailApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def add_inventory_detail_audit(self, inventory_detail_id, inventory_detail_audit, **kwargs):
-        """
-        Add new audit for an inventoryDetail
-        Adds an audit to an existing inventoryDetail.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_inventory_detail_audit(inventory_detail_id, inventory_detail_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int inventory_detail_id: Id of the inventoryDetail to add an audit to (required)
-        :param str inventory_detail_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['inventory_detail_id', 'inventory_detail_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_inventory_detail_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'inventory_detail_id' is set
-        if ('inventory_detail_id' not in params) or (params['inventory_detail_id'] is None):
-            raise ValueError("Missing the required parameter `inventory_detail_id` when calling `add_inventory_detail_audit`")
-        # verify the required parameter 'inventory_detail_audit' is set
-        if ('inventory_detail_audit' not in params) or (params['inventory_detail_audit'] is None):
-            raise ValueError("Missing the required parameter `inventory_detail_audit` when calling `add_inventory_detail_audit`")
-
-        resource_path = '/beta/inventoryDetail/{inventoryDetailId}/audit/{inventoryDetailAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'inventory_detail_id' in params:
-            path_params['inventoryDetailId'] = params['inventory_detail_id']
-        if 'inventory_detail_audit' in params:
-            path_params['inventoryDetailAudit'] = params['inventory_detail_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_inventory_detail_tag(self, inventory_detail_id, inventory_detail_tag, **kwargs):
-        """
-        Add new tags for an inventoryDetail.
-        Adds a tag to an existing inventoryDetail.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_inventory_detail_tag(inventory_detail_id, inventory_detail_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int inventory_detail_id: Id of the inventoryDetail to add a tag to (required)
-        :param str inventory_detail_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['inventory_detail_id', 'inventory_detail_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_inventory_detail_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'inventory_detail_id' is set
-        if ('inventory_detail_id' not in params) or (params['inventory_detail_id'] is None):
-            raise ValueError("Missing the required parameter `inventory_detail_id` when calling `add_inventory_detail_tag`")
-        # verify the required parameter 'inventory_detail_tag' is set
-        if ('inventory_detail_tag' not in params) or (params['inventory_detail_tag'] is None):
-            raise ValueError("Missing the required parameter `inventory_detail_tag` when calling `add_inventory_detail_tag`")
-
-        resource_path = '/beta/inventoryDetail/{inventoryDetailId}/tag/{inventoryDetailTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'inventory_detail_id' in params:
-            path_params['inventoryDetailId'] = params['inventory_detail_id']
-        if 'inventory_detail_tag' in params:
-            path_params['inventoryDetailTag'] = params['inventory_detail_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_inventory_detail_tag(self, inventory_detail_id, inventory_detail_tag, **kwargs):
-        """
-        Delete a tag for an inventoryDetail.
-        Deletes an existing inventoryDetail tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_inventory_detail_tag(inventory_detail_id, inventory_detail_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int inventory_detail_id: Id of the inventoryDetail to remove tag from (required)
-        :param str inventory_detail_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['inventory_detail_id', 'inventory_detail_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_inventory_detail_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'inventory_detail_id' is set
-        if ('inventory_detail_id' not in params) or (params['inventory_detail_id'] is None):
-            raise ValueError("Missing the required parameter `inventory_detail_id` when calling `delete_inventory_detail_tag`")
-        # verify the required parameter 'inventory_detail_tag' is set
-        if ('inventory_detail_tag' not in params) or (params['inventory_detail_tag'] is None):
-            raise ValueError("Missing the required parameter `inventory_detail_tag` when calling `delete_inventory_detail_tag`")
-
-        resource_path = '/beta/inventoryDetail/{inventoryDetailId}/tag/{inventoryDetailTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'inventory_detail_id' in params:
-            path_params['inventoryDetailId'] = params['inventory_detail_id']
-        if 'inventory_detail_tag' in params:
-            path_params['inventoryDetailTag'] = params['inventory_detail_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
     def get_duplicate_inventory_detail_by_id(self, inventory_detail_id, **kwargs):
         """
         Get a duplicated an inventoryDetail by id
@@ -332,7 +83,7 @@ class InventoryDetailApi(object):
         if ('inventory_detail_id' not in params) or (params['inventory_detail_id'] is None):
             raise ValueError("Missing the required parameter `inventory_detail_id` when calling `get_duplicate_inventory_detail_by_id`")
 
-        resource_path = '/beta/inventoryDetail/duplicate/{inventoryDetailId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/inventoryDetail/duplicate/{inventoryDetailId}'.replace('{format}', 'json')
         path_params = {}
         if 'inventory_detail_id' in params:
             path_params['inventoryDetailId'] = params['inventory_detail_id']
@@ -409,7 +160,7 @@ class InventoryDetailApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/inventoryDetail/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/inventoryDetail/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -492,7 +243,7 @@ class InventoryDetailApi(object):
         if ('inventory_detail_id' not in params) or (params['inventory_detail_id'] is None):
             raise ValueError("Missing the required parameter `inventory_detail_id` when calling `get_inventory_detail_by_id`")
 
-        resource_path = '/beta/inventoryDetail/{inventoryDetailId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/inventoryDetail/{inventoryDetailId}'.replace('{format}', 'json')
         path_params = {}
         if 'inventory_detail_id' in params:
             path_params['inventoryDetailId'] = params['inventory_detail_id']
@@ -527,83 +278,6 @@ class InventoryDetailApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='InventoryDetail',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_inventory_detail_tags(self, inventory_detail_id, **kwargs):
-        """
-        Get the tags for an inventoryDetail.
-        Get all existing inventoryDetail tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_inventory_detail_tags(inventory_detail_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int inventory_detail_id: Id of the inventoryDetail to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['inventory_detail_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_inventory_detail_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'inventory_detail_id' is set
-        if ('inventory_detail_id' not in params) or (params['inventory_detail_id'] is None):
-            raise ValueError("Missing the required parameter `inventory_detail_id` when calling `get_inventory_detail_tags`")
-
-        resource_path = '/beta/inventoryDetail/{inventoryDetailId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'inventory_detail_id' in params:
-            path_params['inventoryDetailId'] = params['inventory_detail_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -646,7 +320,7 @@ class InventoryDetailApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_inventory_detail_custom_fields`")
 
-        resource_path = '/beta/inventoryDetail/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/inventoryDetail/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

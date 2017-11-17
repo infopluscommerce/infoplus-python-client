@@ -83,7 +83,7 @@ class AisleApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_aisle`")
 
-        resource_path = '/beta/aisle'.replace('{format}', 'json')
+        resource_path = '/v2.0/aisle'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class AisleApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Aisle',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_aisle_audit(self, aisle_id, aisle_audit, **kwargs):
-        """
-        Add new audit for an aisle
-        Adds an audit to an existing aisle.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_aisle_audit(aisle_id, aisle_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int aisle_id: Id of the aisle to add an audit to (required)
-        :param str aisle_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['aisle_id', 'aisle_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_aisle_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'aisle_id' is set
-        if ('aisle_id' not in params) or (params['aisle_id'] is None):
-            raise ValueError("Missing the required parameter `aisle_id` when calling `add_aisle_audit`")
-        # verify the required parameter 'aisle_audit' is set
-        if ('aisle_audit' not in params) or (params['aisle_audit'] is None):
-            raise ValueError("Missing the required parameter `aisle_audit` when calling `add_aisle_audit`")
-
-        resource_path = '/beta/aisle/{aisleId}/audit/{aisleAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'aisle_id' in params:
-            path_params['aisleId'] = params['aisle_id']
-        if 'aisle_audit' in params:
-            path_params['aisleAudit'] = params['aisle_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_aisle_tag(self, aisle_id, aisle_tag, **kwargs):
-        """
-        Add new tags for an aisle.
-        Adds a tag to an existing aisle.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_aisle_tag(aisle_id, aisle_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int aisle_id: Id of the aisle to add a tag to (required)
-        :param str aisle_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['aisle_id', 'aisle_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_aisle_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'aisle_id' is set
-        if ('aisle_id' not in params) or (params['aisle_id'] is None):
-            raise ValueError("Missing the required parameter `aisle_id` when calling `add_aisle_tag`")
-        # verify the required parameter 'aisle_tag' is set
-        if ('aisle_tag' not in params) or (params['aisle_tag'] is None):
-            raise ValueError("Missing the required parameter `aisle_tag` when calling `add_aisle_tag`")
-
-        resource_path = '/beta/aisle/{aisleId}/tag/{aisleTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'aisle_id' in params:
-            path_params['aisleId'] = params['aisle_id']
-        if 'aisle_tag' in params:
-            path_params['aisleTag'] = params['aisle_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class AisleApi(object):
         if ('aisle_id' not in params) or (params['aisle_id'] is None):
             raise ValueError("Missing the required parameter `aisle_id` when calling `delete_aisle`")
 
-        resource_path = '/beta/aisle/{aisleId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/aisle/{aisleId}'.replace('{format}', 'json')
         path_params = {}
         if 'aisle_id' in params:
             path_params['aisleId'] = params['aisle_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_aisle_tag(self, aisle_id, aisle_tag, **kwargs):
-        """
-        Delete a tag for an aisle.
-        Deletes an existing aisle tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_aisle_tag(aisle_id, aisle_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int aisle_id: Id of the aisle to remove tag from (required)
-        :param str aisle_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['aisle_id', 'aisle_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_aisle_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'aisle_id' is set
-        if ('aisle_id' not in params) or (params['aisle_id'] is None):
-            raise ValueError("Missing the required parameter `aisle_id` when calling `delete_aisle_tag`")
-        # verify the required parameter 'aisle_tag' is set
-        if ('aisle_tag' not in params) or (params['aisle_tag'] is None):
-            raise ValueError("Missing the required parameter `aisle_tag` when calling `delete_aisle_tag`")
-
-        resource_path = '/beta/aisle/{aisleId}/tag/{aisleTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'aisle_id' in params:
-            path_params['aisleId'] = params['aisle_id']
-        if 'aisle_tag' in params:
-            path_params['aisleTag'] = params['aisle_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class AisleApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/aisle/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/aisle/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -569,7 +320,7 @@ class AisleApi(object):
         if ('aisle_id' not in params) or (params['aisle_id'] is None):
             raise ValueError("Missing the required parameter `aisle_id` when calling `get_aisle_by_id`")
 
-        resource_path = '/beta/aisle/{aisleId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/aisle/{aisleId}'.replace('{format}', 'json')
         path_params = {}
         if 'aisle_id' in params:
             path_params['aisleId'] = params['aisle_id']
@@ -604,83 +355,6 @@ class AisleApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Aisle',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_aisle_tags(self, aisle_id, **kwargs):
-        """
-        Get the tags for an aisle.
-        Get all existing aisle tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_aisle_tags(aisle_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int aisle_id: Id of the aisle to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['aisle_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_aisle_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'aisle_id' is set
-        if ('aisle_id' not in params) or (params['aisle_id'] is None):
-            raise ValueError("Missing the required parameter `aisle_id` when calling `get_aisle_tags`")
-
-        resource_path = '/beta/aisle/{aisleId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'aisle_id' in params:
-            path_params['aisleId'] = params['aisle_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -723,7 +397,7 @@ class AisleApi(object):
         if ('aisle_id' not in params) or (params['aisle_id'] is None):
             raise ValueError("Missing the required parameter `aisle_id` when calling `get_duplicate_aisle_by_id`")
 
-        resource_path = '/beta/aisle/duplicate/{aisleId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/aisle/duplicate/{aisleId}'.replace('{format}', 'json')
         path_params = {}
         if 'aisle_id' in params:
             path_params['aisleId'] = params['aisle_id']
@@ -800,7 +474,7 @@ class AisleApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_aisle`")
 
-        resource_path = '/beta/aisle'.replace('{format}', 'json')
+        resource_path = '/v2.0/aisle'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -877,7 +551,7 @@ class AisleApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_aisle_custom_fields`")
 
-        resource_path = '/beta/aisle/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/aisle/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

@@ -55,14 +55,10 @@ class ShoppingCartConnection(object):
             'access_token': 'str',
             'username': 'str',
             'password': 'str',
-            'default_carrier_id': 'int',
-            'order_shipment_level': 'str',
             'sync_orders': 'bool',
             'sync_inventory': 'bool',
             'sync_tracking_data': 'bool',
-            'fulfill_all_items': 'bool',
             'sync_inventory_levels_last_run_time': 'datetime',
-            'sync_orders_last_run_time': 'datetime',
             'custom_fields': 'dict(str, object)'
         }
 
@@ -85,14 +81,10 @@ class ShoppingCartConnection(object):
             'access_token': 'accessToken',
             'username': 'username',
             'password': 'password',
-            'default_carrier_id': 'defaultCarrierId',
-            'order_shipment_level': 'orderShipmentLevel',
             'sync_orders': 'syncOrders',
             'sync_inventory': 'syncInventory',
             'sync_tracking_data': 'syncTrackingData',
-            'fulfill_all_items': 'fulfillAllItems',
             'sync_inventory_levels_last_run_time': 'syncInventoryLevelsLastRunTime',
-            'sync_orders_last_run_time': 'syncOrdersLastRunTime',
             'custom_fields': 'customFields'
         }
 
@@ -114,14 +106,10 @@ class ShoppingCartConnection(object):
         self._access_token = None
         self._username = None
         self._password = None
-        self._default_carrier_id = None
-        self._order_shipment_level = None
         self._sync_orders = False
         self._sync_inventory = False
         self._sync_tracking_data = False
-        self._fulfill_all_items = False
         self._sync_inventory_levels_last_run_time = None
-        self._sync_orders_last_run_time = None
         self._custom_fields = None
 
     @property
@@ -521,50 +509,6 @@ class ShoppingCartConnection(object):
         self._password = password
 
     @property
-    def default_carrier_id(self):
-        """
-        Gets the default_carrier_id of this ShoppingCartConnection.
-
-
-        :return: The default_carrier_id of this ShoppingCartConnection.
-        :rtype: int
-        """
-        return self._default_carrier_id
-
-    @default_carrier_id.setter
-    def default_carrier_id(self, default_carrier_id):
-        """
-        Sets the default_carrier_id of this ShoppingCartConnection.
-
-
-        :param default_carrier_id: The default_carrier_id of this ShoppingCartConnection.
-        :type: int
-        """
-        self._default_carrier_id = default_carrier_id
-
-    @property
-    def order_shipment_level(self):
-        """
-        Gets the order_shipment_level of this ShoppingCartConnection.
-
-
-        :return: The order_shipment_level of this ShoppingCartConnection.
-        :rtype: str
-        """
-        return self._order_shipment_level
-
-    @order_shipment_level.setter
-    def order_shipment_level(self, order_shipment_level):
-        """
-        Sets the order_shipment_level of this ShoppingCartConnection.
-
-
-        :param order_shipment_level: The order_shipment_level of this ShoppingCartConnection.
-        :type: str
-        """
-        self._order_shipment_level = order_shipment_level
-
-    @property
     def sync_orders(self):
         """
         Gets the sync_orders of this ShoppingCartConnection.
@@ -631,28 +575,6 @@ class ShoppingCartConnection(object):
         self._sync_tracking_data = sync_tracking_data
 
     @property
-    def fulfill_all_items(self):
-        """
-        Gets the fulfill_all_items of this ShoppingCartConnection.
-
-
-        :return: The fulfill_all_items of this ShoppingCartConnection.
-        :rtype: bool
-        """
-        return self._fulfill_all_items
-
-    @fulfill_all_items.setter
-    def fulfill_all_items(self, fulfill_all_items):
-        """
-        Sets the fulfill_all_items of this ShoppingCartConnection.
-
-
-        :param fulfill_all_items: The fulfill_all_items of this ShoppingCartConnection.
-        :type: bool
-        """
-        self._fulfill_all_items = fulfill_all_items
-
-    @property
     def sync_inventory_levels_last_run_time(self):
         """
         Gets the sync_inventory_levels_last_run_time of this ShoppingCartConnection.
@@ -673,28 +595,6 @@ class ShoppingCartConnection(object):
         :type: datetime
         """
         self._sync_inventory_levels_last_run_time = sync_inventory_levels_last_run_time
-
-    @property
-    def sync_orders_last_run_time(self):
-        """
-        Gets the sync_orders_last_run_time of this ShoppingCartConnection.
-
-
-        :return: The sync_orders_last_run_time of this ShoppingCartConnection.
-        :rtype: datetime
-        """
-        return self._sync_orders_last_run_time
-
-    @sync_orders_last_run_time.setter
-    def sync_orders_last_run_time(self, sync_orders_last_run_time):
-        """
-        Sets the sync_orders_last_run_time of this ShoppingCartConnection.
-
-
-        :param sync_orders_last_run_time: The sync_orders_last_run_time of this ShoppingCartConnection.
-        :type: datetime
-        """
-        self._sync_orders_last_run_time = sync_orders_last_run_time
 
     @property
     def custom_fields(self):

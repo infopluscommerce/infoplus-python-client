@@ -49,7 +49,6 @@ class CartonType(object):
             'weight_lbs': 'float',
             'lob_id': 'int',
             'is_active': 'bool',
-            'predefined_package_type_id': 'int',
             'custom_fields': 'dict(str, object)'
         }
 
@@ -66,7 +65,6 @@ class CartonType(object):
             'weight_lbs': 'weightLbs',
             'lob_id': 'lobId',
             'is_active': 'isActive',
-            'predefined_package_type_id': 'predefinedPackageTypeId',
             'custom_fields': 'customFields'
         }
 
@@ -82,7 +80,6 @@ class CartonType(object):
         self._weight_lbs = None
         self._lob_id = None
         self._is_active = False
-        self._predefined_package_type_id = None
         self._custom_fields = None
 
     @property
@@ -348,28 +345,6 @@ class CartonType(object):
         :type: bool
         """
         self._is_active = is_active
-
-    @property
-    def predefined_package_type_id(self):
-        """
-        Gets the predefined_package_type_id of this CartonType.
-
-
-        :return: The predefined_package_type_id of this CartonType.
-        :rtype: int
-        """
-        return self._predefined_package_type_id
-
-    @predefined_package_type_id.setter
-    def predefined_package_type_id(self, predefined_package_type_id):
-        """
-        Sets the predefined_package_type_id of this CartonType.
-
-
-        :param predefined_package_type_id: The predefined_package_type_id of this CartonType.
-        :type: int
-        """
-        self._predefined_package_type_id = predefined_package_type_id
 
     @property
     def custom_fields(self):

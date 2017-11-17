@@ -83,7 +83,7 @@ class LocationApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_location`")
 
-        resource_path = '/beta/location'.replace('{format}', 'json')
+        resource_path = '/v2.0/location'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class LocationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Location',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_location_audit(self, location_id, location_audit, **kwargs):
-        """
-        Add new audit for a location
-        Adds an audit to an existing location.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_location_audit(location_id, location_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int location_id: Id of the location to add an audit to (required)
-        :param str location_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['location_id', 'location_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_location_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'location_id' is set
-        if ('location_id' not in params) or (params['location_id'] is None):
-            raise ValueError("Missing the required parameter `location_id` when calling `add_location_audit`")
-        # verify the required parameter 'location_audit' is set
-        if ('location_audit' not in params) or (params['location_audit'] is None):
-            raise ValueError("Missing the required parameter `location_audit` when calling `add_location_audit`")
-
-        resource_path = '/beta/location/{locationId}/audit/{locationAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'location_id' in params:
-            path_params['locationId'] = params['location_id']
-        if 'location_audit' in params:
-            path_params['locationAudit'] = params['location_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_location_tag(self, location_id, location_tag, **kwargs):
-        """
-        Add new tags for a location.
-        Adds a tag to an existing location.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_location_tag(location_id, location_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int location_id: Id of the location to add a tag to (required)
-        :param str location_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['location_id', 'location_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_location_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'location_id' is set
-        if ('location_id' not in params) or (params['location_id'] is None):
-            raise ValueError("Missing the required parameter `location_id` when calling `add_location_tag`")
-        # verify the required parameter 'location_tag' is set
-        if ('location_tag' not in params) or (params['location_tag'] is None):
-            raise ValueError("Missing the required parameter `location_tag` when calling `add_location_tag`")
-
-        resource_path = '/beta/location/{locationId}/tag/{locationTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'location_id' in params:
-            path_params['locationId'] = params['location_id']
-        if 'location_tag' in params:
-            path_params['locationTag'] = params['location_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class LocationApi(object):
         if ('location_id' not in params) or (params['location_id'] is None):
             raise ValueError("Missing the required parameter `location_id` when calling `delete_location`")
 
-        resource_path = '/beta/location/{locationId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/location/{locationId}'.replace('{format}', 'json')
         path_params = {}
         if 'location_id' in params:
             path_params['locationId'] = params['location_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_location_tag(self, location_id, location_tag, **kwargs):
-        """
-        Delete a tag for a location.
-        Deletes an existing location tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_location_tag(location_id, location_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int location_id: Id of the location to remove tag from (required)
-        :param str location_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['location_id', 'location_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_location_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'location_id' is set
-        if ('location_id' not in params) or (params['location_id'] is None):
-            raise ValueError("Missing the required parameter `location_id` when calling `delete_location_tag`")
-        # verify the required parameter 'location_tag' is set
-        if ('location_tag' not in params) or (params['location_tag'] is None):
-            raise ValueError("Missing the required parameter `location_tag` when calling `delete_location_tag`")
-
-        resource_path = '/beta/location/{locationId}/tag/{locationTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'location_id' in params:
-            path_params['locationId'] = params['location_id']
-        if 'location_tag' in params:
-            path_params['locationTag'] = params['location_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class LocationApi(object):
         if ('location_id' not in params) or (params['location_id'] is None):
             raise ValueError("Missing the required parameter `location_id` when calling `get_duplicate_location_by_id`")
 
-        resource_path = '/beta/location/duplicate/{locationId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/location/duplicate/{locationId}'.replace('{format}', 'json')
         path_params = {}
         if 'location_id' in params:
             path_params['locationId'] = params['location_id']
@@ -563,7 +314,7 @@ class LocationApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/location/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/location/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -646,7 +397,7 @@ class LocationApi(object):
         if ('location_id' not in params) or (params['location_id'] is None):
             raise ValueError("Missing the required parameter `location_id` when calling `get_location_by_id`")
 
-        resource_path = '/beta/location/{locationId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/location/{locationId}'.replace('{format}', 'json')
         path_params = {}
         if 'location_id' in params:
             path_params['locationId'] = params['location_id']
@@ -681,83 +432,6 @@ class LocationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Location',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_location_tags(self, location_id, **kwargs):
-        """
-        Get the tags for a location.
-        Get all existing location tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_location_tags(location_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int location_id: Id of the location to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['location_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_location_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'location_id' is set
-        if ('location_id' not in params) or (params['location_id'] is None):
-            raise ValueError("Missing the required parameter `location_id` when calling `get_location_tags`")
-
-        resource_path = '/beta/location/{locationId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'location_id' in params:
-            path_params['locationId'] = params['location_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -800,7 +474,7 @@ class LocationApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_location`")
 
-        resource_path = '/beta/location'.replace('{format}', 'json')
+        resource_path = '/v2.0/location'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -877,7 +551,7 @@ class LocationApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_location_custom_fields`")
 
-        resource_path = '/beta/location/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/location/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

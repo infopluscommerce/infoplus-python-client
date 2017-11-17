@@ -83,7 +83,7 @@ class ShoppingCartConnectionApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_shopping_cart_connection`")
 
-        resource_path = '/beta/shoppingCartConnection'.replace('{format}', 'json')
+        resource_path = '/v2.0/shoppingCartConnection'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class ShoppingCartConnectionApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ShoppingCartConnection',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_shopping_cart_connection_audit(self, shopping_cart_connection_id, shopping_cart_connection_audit, **kwargs):
-        """
-        Add new audit for a shoppingCartConnection
-        Adds an audit to an existing shoppingCartConnection.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_shopping_cart_connection_audit(shopping_cart_connection_id, shopping_cart_connection_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int shopping_cart_connection_id: Id of the shoppingCartConnection to add an audit to (required)
-        :param str shopping_cart_connection_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['shopping_cart_connection_id', 'shopping_cart_connection_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_shopping_cart_connection_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'shopping_cart_connection_id' is set
-        if ('shopping_cart_connection_id' not in params) or (params['shopping_cart_connection_id'] is None):
-            raise ValueError("Missing the required parameter `shopping_cart_connection_id` when calling `add_shopping_cart_connection_audit`")
-        # verify the required parameter 'shopping_cart_connection_audit' is set
-        if ('shopping_cart_connection_audit' not in params) or (params['shopping_cart_connection_audit'] is None):
-            raise ValueError("Missing the required parameter `shopping_cart_connection_audit` when calling `add_shopping_cart_connection_audit`")
-
-        resource_path = '/beta/shoppingCartConnection/{shoppingCartConnectionId}/audit/{shoppingCartConnectionAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'shopping_cart_connection_id' in params:
-            path_params['shoppingCartConnectionId'] = params['shopping_cart_connection_id']
-        if 'shopping_cart_connection_audit' in params:
-            path_params['shoppingCartConnectionAudit'] = params['shopping_cart_connection_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_shopping_cart_connection_tag(self, shopping_cart_connection_id, shopping_cart_connection_tag, **kwargs):
-        """
-        Add new tags for a shoppingCartConnection.
-        Adds a tag to an existing shoppingCartConnection.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_shopping_cart_connection_tag(shopping_cart_connection_id, shopping_cart_connection_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int shopping_cart_connection_id: Id of the shoppingCartConnection to add a tag to (required)
-        :param str shopping_cart_connection_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['shopping_cart_connection_id', 'shopping_cart_connection_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_shopping_cart_connection_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'shopping_cart_connection_id' is set
-        if ('shopping_cart_connection_id' not in params) or (params['shopping_cart_connection_id'] is None):
-            raise ValueError("Missing the required parameter `shopping_cart_connection_id` when calling `add_shopping_cart_connection_tag`")
-        # verify the required parameter 'shopping_cart_connection_tag' is set
-        if ('shopping_cart_connection_tag' not in params) or (params['shopping_cart_connection_tag'] is None):
-            raise ValueError("Missing the required parameter `shopping_cart_connection_tag` when calling `add_shopping_cart_connection_tag`")
-
-        resource_path = '/beta/shoppingCartConnection/{shoppingCartConnectionId}/tag/{shoppingCartConnectionTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'shopping_cart_connection_id' in params:
-            path_params['shoppingCartConnectionId'] = params['shopping_cart_connection_id']
-        if 'shopping_cart_connection_tag' in params:
-            path_params['shoppingCartConnectionTag'] = params['shopping_cart_connection_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class ShoppingCartConnectionApi(object):
         if ('shopping_cart_connection_id' not in params) or (params['shopping_cart_connection_id'] is None):
             raise ValueError("Missing the required parameter `shopping_cart_connection_id` when calling `delete_shopping_cart_connection`")
 
-        resource_path = '/beta/shoppingCartConnection/{shoppingCartConnectionId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/shoppingCartConnection/{shoppingCartConnectionId}'.replace('{format}', 'json')
         path_params = {}
         if 'shopping_cart_connection_id' in params:
             path_params['shoppingCartConnectionId'] = params['shopping_cart_connection_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_shopping_cart_connection_tag(self, shopping_cart_connection_id, shopping_cart_connection_tag, **kwargs):
-        """
-        Delete a tag for a shoppingCartConnection.
-        Deletes an existing shoppingCartConnection tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_shopping_cart_connection_tag(shopping_cart_connection_id, shopping_cart_connection_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int shopping_cart_connection_id: Id of the shoppingCartConnection to remove tag from (required)
-        :param str shopping_cart_connection_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['shopping_cart_connection_id', 'shopping_cart_connection_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_shopping_cart_connection_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'shopping_cart_connection_id' is set
-        if ('shopping_cart_connection_id' not in params) or (params['shopping_cart_connection_id'] is None):
-            raise ValueError("Missing the required parameter `shopping_cart_connection_id` when calling `delete_shopping_cart_connection_tag`")
-        # verify the required parameter 'shopping_cart_connection_tag' is set
-        if ('shopping_cart_connection_tag' not in params) or (params['shopping_cart_connection_tag'] is None):
-            raise ValueError("Missing the required parameter `shopping_cart_connection_tag` when calling `delete_shopping_cart_connection_tag`")
-
-        resource_path = '/beta/shoppingCartConnection/{shoppingCartConnectionId}/tag/{shoppingCartConnectionTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'shopping_cart_connection_id' in params:
-            path_params['shoppingCartConnectionId'] = params['shopping_cart_connection_id']
-        if 'shopping_cart_connection_tag' in params:
-            path_params['shoppingCartConnectionTag'] = params['shopping_cart_connection_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class ShoppingCartConnectionApi(object):
         if ('shopping_cart_connection_id' not in params) or (params['shopping_cart_connection_id'] is None):
             raise ValueError("Missing the required parameter `shopping_cart_connection_id` when calling `get_duplicate_shopping_cart_connection_by_id`")
 
-        resource_path = '/beta/shoppingCartConnection/duplicate/{shoppingCartConnectionId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/shoppingCartConnection/duplicate/{shoppingCartConnectionId}'.replace('{format}', 'json')
         path_params = {}
         if 'shopping_cart_connection_id' in params:
             path_params['shoppingCartConnectionId'] = params['shopping_cart_connection_id']
@@ -563,7 +314,7 @@ class ShoppingCartConnectionApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/shoppingCartConnection/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/shoppingCartConnection/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -646,7 +397,7 @@ class ShoppingCartConnectionApi(object):
         if ('shopping_cart_connection_id' not in params) or (params['shopping_cart_connection_id'] is None):
             raise ValueError("Missing the required parameter `shopping_cart_connection_id` when calling `get_shopping_cart_connection_by_id`")
 
-        resource_path = '/beta/shoppingCartConnection/{shoppingCartConnectionId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/shoppingCartConnection/{shoppingCartConnectionId}'.replace('{format}', 'json')
         path_params = {}
         if 'shopping_cart_connection_id' in params:
             path_params['shoppingCartConnectionId'] = params['shopping_cart_connection_id']
@@ -681,83 +432,6 @@ class ShoppingCartConnectionApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ShoppingCartConnection',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_shopping_cart_connection_tags(self, shopping_cart_connection_id, **kwargs):
-        """
-        Get the tags for a shoppingCartConnection.
-        Get all existing shoppingCartConnection tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_shopping_cart_connection_tags(shopping_cart_connection_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int shopping_cart_connection_id: Id of the shoppingCartConnection to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['shopping_cart_connection_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_shopping_cart_connection_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'shopping_cart_connection_id' is set
-        if ('shopping_cart_connection_id' not in params) or (params['shopping_cart_connection_id'] is None):
-            raise ValueError("Missing the required parameter `shopping_cart_connection_id` when calling `get_shopping_cart_connection_tags`")
-
-        resource_path = '/beta/shoppingCartConnection/{shoppingCartConnectionId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'shopping_cart_connection_id' in params:
-            path_params['shoppingCartConnectionId'] = params['shopping_cart_connection_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -800,7 +474,7 @@ class ShoppingCartConnectionApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_shopping_cart_connection`")
 
-        resource_path = '/beta/shoppingCartConnection'.replace('{format}', 'json')
+        resource_path = '/v2.0/shoppingCartConnection'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -877,7 +551,7 @@ class ShoppingCartConnectionApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_shopping_cart_connection_custom_fields`")
 
-        resource_path = '/beta/shoppingCartConnection/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/shoppingCartConnection/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

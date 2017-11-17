@@ -45,255 +45,6 @@ class ReplenishmentApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def add_replenishment_audit(self, replenishment_id, replenishment_audit, **kwargs):
-        """
-        Add new audit for a replenishment
-        Adds an audit to an existing replenishment.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_replenishment_audit(replenishment_id, replenishment_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int replenishment_id: Id of the replenishment to add an audit to (required)
-        :param str replenishment_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['replenishment_id', 'replenishment_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_replenishment_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'replenishment_id' is set
-        if ('replenishment_id' not in params) or (params['replenishment_id'] is None):
-            raise ValueError("Missing the required parameter `replenishment_id` when calling `add_replenishment_audit`")
-        # verify the required parameter 'replenishment_audit' is set
-        if ('replenishment_audit' not in params) or (params['replenishment_audit'] is None):
-            raise ValueError("Missing the required parameter `replenishment_audit` when calling `add_replenishment_audit`")
-
-        resource_path = '/beta/replenishment/{replenishmentId}/audit/{replenishmentAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'replenishment_id' in params:
-            path_params['replenishmentId'] = params['replenishment_id']
-        if 'replenishment_audit' in params:
-            path_params['replenishmentAudit'] = params['replenishment_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_replenishment_tag(self, replenishment_id, replenishment_tag, **kwargs):
-        """
-        Add new tags for a replenishment.
-        Adds a tag to an existing replenishment.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_replenishment_tag(replenishment_id, replenishment_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int replenishment_id: Id of the replenishment to add a tag to (required)
-        :param str replenishment_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['replenishment_id', 'replenishment_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_replenishment_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'replenishment_id' is set
-        if ('replenishment_id' not in params) or (params['replenishment_id'] is None):
-            raise ValueError("Missing the required parameter `replenishment_id` when calling `add_replenishment_tag`")
-        # verify the required parameter 'replenishment_tag' is set
-        if ('replenishment_tag' not in params) or (params['replenishment_tag'] is None):
-            raise ValueError("Missing the required parameter `replenishment_tag` when calling `add_replenishment_tag`")
-
-        resource_path = '/beta/replenishment/{replenishmentId}/tag/{replenishmentTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'replenishment_id' in params:
-            path_params['replenishmentId'] = params['replenishment_id']
-        if 'replenishment_tag' in params:
-            path_params['replenishmentTag'] = params['replenishment_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_replenishment_tag(self, replenishment_id, replenishment_tag, **kwargs):
-        """
-        Delete a tag for a replenishment.
-        Deletes an existing replenishment tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_replenishment_tag(replenishment_id, replenishment_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int replenishment_id: Id of the replenishment to remove tag from (required)
-        :param str replenishment_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['replenishment_id', 'replenishment_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_replenishment_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'replenishment_id' is set
-        if ('replenishment_id' not in params) or (params['replenishment_id'] is None):
-            raise ValueError("Missing the required parameter `replenishment_id` when calling `delete_replenishment_tag`")
-        # verify the required parameter 'replenishment_tag' is set
-        if ('replenishment_tag' not in params) or (params['replenishment_tag'] is None):
-            raise ValueError("Missing the required parameter `replenishment_tag` when calling `delete_replenishment_tag`")
-
-        resource_path = '/beta/replenishment/{replenishmentId}/tag/{replenishmentTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'replenishment_id' in params:
-            path_params['replenishmentId'] = params['replenishment_id']
-        if 'replenishment_tag' in params:
-            path_params['replenishmentTag'] = params['replenishment_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
     def get_duplicate_replenishment_by_id(self, replenishment_id, **kwargs):
         """
         Get a duplicated a replenishment by id
@@ -332,7 +83,7 @@ class ReplenishmentApi(object):
         if ('replenishment_id' not in params) or (params['replenishment_id'] is None):
             raise ValueError("Missing the required parameter `replenishment_id` when calling `get_duplicate_replenishment_by_id`")
 
-        resource_path = '/beta/replenishment/duplicate/{replenishmentId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/replenishment/duplicate/{replenishmentId}'.replace('{format}', 'json')
         path_params = {}
         if 'replenishment_id' in params:
             path_params['replenishmentId'] = params['replenishment_id']
@@ -409,7 +160,7 @@ class ReplenishmentApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/replenishment/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/replenishment/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -492,7 +243,7 @@ class ReplenishmentApi(object):
         if ('replenishment_id' not in params) or (params['replenishment_id'] is None):
             raise ValueError("Missing the required parameter `replenishment_id` when calling `get_replenishment_by_id`")
 
-        resource_path = '/beta/replenishment/{replenishmentId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/replenishment/{replenishmentId}'.replace('{format}', 'json')
         path_params = {}
         if 'replenishment_id' in params:
             path_params['replenishmentId'] = params['replenishment_id']
@@ -527,83 +278,6 @@ class ReplenishmentApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Replenishment',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_replenishment_tags(self, replenishment_id, **kwargs):
-        """
-        Get the tags for a replenishment.
-        Get all existing replenishment tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_replenishment_tags(replenishment_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int replenishment_id: Id of the replenishment to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['replenishment_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_replenishment_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'replenishment_id' is set
-        if ('replenishment_id' not in params) or (params['replenishment_id'] is None):
-            raise ValueError("Missing the required parameter `replenishment_id` when calling `get_replenishment_tags`")
-
-        resource_path = '/beta/replenishment/{replenishmentId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'replenishment_id' in params:
-            path_params['replenishmentId'] = params['replenishment_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -646,7 +320,7 @@ class ReplenishmentApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_replenishment_custom_fields`")
 
-        resource_path = '/beta/replenishment/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/replenishment/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

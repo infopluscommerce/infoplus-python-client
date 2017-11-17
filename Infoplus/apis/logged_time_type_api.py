@@ -83,7 +83,7 @@ class LoggedTimeTypeApi(object):
         if ('logged_time_type_id' not in params) or (params['logged_time_type_id'] is None):
             raise ValueError("Missing the required parameter `logged_time_type_id` when calling `get_logged_time_type_by_id`")
 
-        resource_path = '/beta/loggedTimeType/{loggedTimeTypeId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/loggedTimeType/{loggedTimeTypeId}'.replace('{format}', 'json')
         path_params = {}
         if 'logged_time_type_id' in params:
             path_params['loggedTimeTypeId'] = params['logged_time_type_id']
@@ -159,7 +159,7 @@ class LoggedTimeTypeApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/loggedTimeType/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/loggedTimeType/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

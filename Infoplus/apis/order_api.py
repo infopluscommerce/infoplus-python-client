@@ -83,7 +83,7 @@ class OrderApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_order`")
 
-        resource_path = '/beta/order'.replace('{format}', 'json')
+        resource_path = '/v2.0/order'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class OrderApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Order',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_order_audit(self, order_id, order_audit, **kwargs):
-        """
-        Add new audit for an order
-        Adds an audit to an existing order.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_order_audit(order_id, order_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param float order_id: Id of the order to add an audit to (required)
-        :param str order_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['order_id', 'order_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_order_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'order_id' is set
-        if ('order_id' not in params) or (params['order_id'] is None):
-            raise ValueError("Missing the required parameter `order_id` when calling `add_order_audit`")
-        # verify the required parameter 'order_audit' is set
-        if ('order_audit' not in params) or (params['order_audit'] is None):
-            raise ValueError("Missing the required parameter `order_audit` when calling `add_order_audit`")
-
-        resource_path = '/beta/order/{orderId}/audit/{orderAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'order_id' in params:
-            path_params['orderId'] = params['order_id']
-        if 'order_audit' in params:
-            path_params['orderAudit'] = params['order_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_order_tag(self, order_id, order_tag, **kwargs):
-        """
-        Add new tags for an order.
-        Adds a tag to an existing order.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_order_tag(order_id, order_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param float order_id: Id of the order to add a tag to (required)
-        :param str order_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['order_id', 'order_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_order_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'order_id' is set
-        if ('order_id' not in params) or (params['order_id'] is None):
-            raise ValueError("Missing the required parameter `order_id` when calling `add_order_tag`")
-        # verify the required parameter 'order_tag' is set
-        if ('order_tag' not in params) or (params['order_tag'] is None):
-            raise ValueError("Missing the required parameter `order_tag` when calling `add_order_tag`")
-
-        resource_path = '/beta/order/{orderId}/tag/{orderTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'order_id' in params:
-            path_params['orderId'] = params['order_id']
-        if 'order_tag' in params:
-            path_params['orderTag'] = params['order_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class OrderApi(object):
         if ('order_id' not in params) or (params['order_id'] is None):
             raise ValueError("Missing the required parameter `order_id` when calling `delete_order`")
 
-        resource_path = '/beta/order/{orderId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/order/{orderId}'.replace('{format}', 'json')
         path_params = {}
         if 'order_id' in params:
             path_params['orderId'] = params['order_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_order_tag(self, order_id, order_tag, **kwargs):
-        """
-        Delete a tag for an order.
-        Deletes an existing order tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_order_tag(order_id, order_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param float order_id: Id of the order to remove tag from (required)
-        :param str order_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['order_id', 'order_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_order_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'order_id' is set
-        if ('order_id' not in params) or (params['order_id'] is None):
-            raise ValueError("Missing the required parameter `order_id` when calling `delete_order_tag`")
-        # verify the required parameter 'order_tag' is set
-        if ('order_tag' not in params) or (params['order_tag'] is None):
-            raise ValueError("Missing the required parameter `order_tag` when calling `delete_order_tag`")
-
-        resource_path = '/beta/order/{orderId}/tag/{orderTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'order_id' in params:
-            path_params['orderId'] = params['order_id']
-        if 'order_tag' in params:
-            path_params['orderTag'] = params['order_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class OrderApi(object):
         if ('order_id' not in params) or (params['order_id'] is None):
             raise ValueError("Missing the required parameter `order_id` when calling `get_duplicate_order_by_id`")
 
-        resource_path = '/beta/order/duplicate/{orderId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/order/duplicate/{orderId}'.replace('{format}', 'json')
         path_params = {}
         if 'order_id' in params:
             path_params['orderId'] = params['order_id']
@@ -563,7 +314,7 @@ class OrderApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/order/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/order/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -646,7 +397,7 @@ class OrderApi(object):
         if ('order_id' not in params) or (params['order_id'] is None):
             raise ValueError("Missing the required parameter `order_id` when calling `get_order_by_id`")
 
-        resource_path = '/beta/order/{orderId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/order/{orderId}'.replace('{format}', 'json')
         path_params = {}
         if 'order_id' in params:
             path_params['orderId'] = params['order_id']
@@ -681,83 +432,6 @@ class OrderApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Order',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_order_tags(self, order_id, **kwargs):
-        """
-        Get the tags for an order.
-        Get all existing order tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_order_tags(order_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param float order_id: Id of the order to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['order_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_order_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'order_id' is set
-        if ('order_id' not in params) or (params['order_id'] is None):
-            raise ValueError("Missing the required parameter `order_id` when calling `get_order_tags`")
-
-        resource_path = '/beta/order/{orderId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'order_id' in params:
-            path_params['orderId'] = params['order_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -800,7 +474,7 @@ class OrderApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_order`")
 
-        resource_path = '/beta/order'.replace('{format}', 'json')
+        resource_path = '/v2.0/order'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -877,7 +551,7 @@ class OrderApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_order_custom_fields`")
 
-        resource_path = '/beta/order/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/order/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

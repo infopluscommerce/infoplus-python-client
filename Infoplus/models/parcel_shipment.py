@@ -65,7 +65,9 @@ class ParcelShipment(object):
             'license_plate_number': 'str',
             'charged_freight_amount': 'float',
             'published_freight_amount': 'float',
-            'retail_freight_amount': 'float'
+            'retail_freight_amount': 'float',
+            'external_shipping_system_id': 'int',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -97,7 +99,9 @@ class ParcelShipment(object):
             'license_plate_number': 'licensePlateNumber',
             'charged_freight_amount': 'chargedFreightAmount',
             'published_freight_amount': 'publishedFreightAmount',
-            'retail_freight_amount': 'retailFreightAmount'
+            'retail_freight_amount': 'retailFreightAmount',
+            'external_shipping_system_id': 'externalShippingSystemId',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
@@ -129,6 +133,8 @@ class ParcelShipment(object):
         self._charged_freight_amount = None
         self._published_freight_amount = None
         self._retail_freight_amount = None
+        self._external_shipping_system_id = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -767,6 +773,50 @@ class ParcelShipment(object):
         :type: float
         """
         self._retail_freight_amount = retail_freight_amount
+
+    @property
+    def external_shipping_system_id(self):
+        """
+        Gets the external_shipping_system_id of this ParcelShipment.
+
+
+        :return: The external_shipping_system_id of this ParcelShipment.
+        :rtype: int
+        """
+        return self._external_shipping_system_id
+
+    @external_shipping_system_id.setter
+    def external_shipping_system_id(self, external_shipping_system_id):
+        """
+        Sets the external_shipping_system_id of this ParcelShipment.
+
+
+        :param external_shipping_system_id: The external_shipping_system_id of this ParcelShipment.
+        :type: int
+        """
+        self._external_shipping_system_id = external_shipping_system_id
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this ParcelShipment.
+
+
+        :return: The custom_fields of this ParcelShipment.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this ParcelShipment.
+
+
+        :param custom_fields: The custom_fields of this ParcelShipment.
+        :type: dict(str, object)
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

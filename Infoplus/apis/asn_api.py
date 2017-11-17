@@ -83,7 +83,7 @@ class AsnApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_asn`")
 
-        resource_path = '/beta/asn'.replace('{format}', 'json')
+        resource_path = '/v2.0/asn'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class AsnApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Asn',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_asn_audit(self, asn_id, asn_audit, **kwargs):
-        """
-        Add new audit for an asn
-        Adds an audit to an existing asn.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_asn_audit(asn_id, asn_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int asn_id: Id of the asn to add an audit to (required)
-        :param str asn_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['asn_id', 'asn_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_asn_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'asn_id' is set
-        if ('asn_id' not in params) or (params['asn_id'] is None):
-            raise ValueError("Missing the required parameter `asn_id` when calling `add_asn_audit`")
-        # verify the required parameter 'asn_audit' is set
-        if ('asn_audit' not in params) or (params['asn_audit'] is None):
-            raise ValueError("Missing the required parameter `asn_audit` when calling `add_asn_audit`")
-
-        resource_path = '/beta/asn/{asnId}/audit/{asnAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'asn_id' in params:
-            path_params['asnId'] = params['asn_id']
-        if 'asn_audit' in params:
-            path_params['asnAudit'] = params['asn_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_asn_tag(self, asn_id, asn_tag, **kwargs):
-        """
-        Add new tags for an asn.
-        Adds a tag to an existing asn.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_asn_tag(asn_id, asn_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int asn_id: Id of the asn to add a tag to (required)
-        :param str asn_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['asn_id', 'asn_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_asn_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'asn_id' is set
-        if ('asn_id' not in params) or (params['asn_id'] is None):
-            raise ValueError("Missing the required parameter `asn_id` when calling `add_asn_tag`")
-        # verify the required parameter 'asn_tag' is set
-        if ('asn_tag' not in params) or (params['asn_tag'] is None):
-            raise ValueError("Missing the required parameter `asn_tag` when calling `add_asn_tag`")
-
-        resource_path = '/beta/asn/{asnId}/tag/{asnTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'asn_id' in params:
-            path_params['asnId'] = params['asn_id']
-        if 'asn_tag' in params:
-            path_params['asnTag'] = params['asn_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class AsnApi(object):
         if ('asn_id' not in params) or (params['asn_id'] is None):
             raise ValueError("Missing the required parameter `asn_id` when calling `delete_asn`")
 
-        resource_path = '/beta/asn/{asnId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/asn/{asnId}'.replace('{format}', 'json')
         path_params = {}
         if 'asn_id' in params:
             path_params['asnId'] = params['asn_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_asn_tag(self, asn_id, asn_tag, **kwargs):
-        """
-        Delete a tag for an asn.
-        Deletes an existing asn tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_asn_tag(asn_id, asn_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int asn_id: Id of the asn to remove tag from (required)
-        :param str asn_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['asn_id', 'asn_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_asn_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'asn_id' is set
-        if ('asn_id' not in params) or (params['asn_id'] is None):
-            raise ValueError("Missing the required parameter `asn_id` when calling `delete_asn_tag`")
-        # verify the required parameter 'asn_tag' is set
-        if ('asn_tag' not in params) or (params['asn_tag'] is None):
-            raise ValueError("Missing the required parameter `asn_tag` when calling `delete_asn_tag`")
-
-        resource_path = '/beta/asn/{asnId}/tag/{asnTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'asn_id' in params:
-            path_params['asnId'] = params['asn_id']
-        if 'asn_tag' in params:
-            path_params['asnTag'] = params['asn_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class AsnApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/asn/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/asn/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -569,7 +320,7 @@ class AsnApi(object):
         if ('asn_id' not in params) or (params['asn_id'] is None):
             raise ValueError("Missing the required parameter `asn_id` when calling `get_asn_by_id`")
 
-        resource_path = '/beta/asn/{asnId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/asn/{asnId}'.replace('{format}', 'json')
         path_params = {}
         if 'asn_id' in params:
             path_params['asnId'] = params['asn_id']
@@ -604,83 +355,6 @@ class AsnApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Asn',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_asn_tags(self, asn_id, **kwargs):
-        """
-        Get the tags for an asn.
-        Get all existing asn tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_asn_tags(asn_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int asn_id: Id of the asn to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['asn_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_asn_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'asn_id' is set
-        if ('asn_id' not in params) or (params['asn_id'] is None):
-            raise ValueError("Missing the required parameter `asn_id` when calling `get_asn_tags`")
-
-        resource_path = '/beta/asn/{asnId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'asn_id' in params:
-            path_params['asnId'] = params['asn_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -723,7 +397,7 @@ class AsnApi(object):
         if ('asn_id' not in params) or (params['asn_id'] is None):
             raise ValueError("Missing the required parameter `asn_id` when calling `get_duplicate_asn_by_id`")
 
-        resource_path = '/beta/asn/duplicate/{asnId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/asn/duplicate/{asnId}'.replace('{format}', 'json')
         path_params = {}
         if 'asn_id' in params:
             path_params['asnId'] = params['asn_id']
@@ -800,7 +474,7 @@ class AsnApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_asn`")
 
-        resource_path = '/beta/asn'.replace('{format}', 'json')
+        resource_path = '/v2.0/asn'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -877,7 +551,7 @@ class AsnApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_asn_custom_fields`")
 
-        resource_path = '/beta/asn/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/asn/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

@@ -83,7 +83,7 @@ class EmailTemplateApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_email_template`")
 
-        resource_path = '/beta/emailTemplate'.replace('{format}', 'json')
+        resource_path = '/v2.0/emailTemplate'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class EmailTemplateApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='EmailTemplate',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_email_template_audit(self, email_template_id, email_template_audit, **kwargs):
-        """
-        Add new audit for an emailTemplate
-        Adds an audit to an existing emailTemplate.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_email_template_audit(email_template_id, email_template_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int email_template_id: Id of the emailTemplate to add an audit to (required)
-        :param str email_template_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['email_template_id', 'email_template_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_email_template_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'email_template_id' is set
-        if ('email_template_id' not in params) or (params['email_template_id'] is None):
-            raise ValueError("Missing the required parameter `email_template_id` when calling `add_email_template_audit`")
-        # verify the required parameter 'email_template_audit' is set
-        if ('email_template_audit' not in params) or (params['email_template_audit'] is None):
-            raise ValueError("Missing the required parameter `email_template_audit` when calling `add_email_template_audit`")
-
-        resource_path = '/beta/emailTemplate/{emailTemplateId}/audit/{emailTemplateAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'email_template_id' in params:
-            path_params['emailTemplateId'] = params['email_template_id']
-        if 'email_template_audit' in params:
-            path_params['emailTemplateAudit'] = params['email_template_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_email_template_tag(self, email_template_id, email_template_tag, **kwargs):
-        """
-        Add new tags for an emailTemplate.
-        Adds a tag to an existing emailTemplate.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_email_template_tag(email_template_id, email_template_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int email_template_id: Id of the emailTemplate to add a tag to (required)
-        :param str email_template_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['email_template_id', 'email_template_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_email_template_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'email_template_id' is set
-        if ('email_template_id' not in params) or (params['email_template_id'] is None):
-            raise ValueError("Missing the required parameter `email_template_id` when calling `add_email_template_tag`")
-        # verify the required parameter 'email_template_tag' is set
-        if ('email_template_tag' not in params) or (params['email_template_tag'] is None):
-            raise ValueError("Missing the required parameter `email_template_tag` when calling `add_email_template_tag`")
-
-        resource_path = '/beta/emailTemplate/{emailTemplateId}/tag/{emailTemplateTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'email_template_id' in params:
-            path_params['emailTemplateId'] = params['email_template_id']
-        if 'email_template_tag' in params:
-            path_params['emailTemplateTag'] = params['email_template_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class EmailTemplateApi(object):
         if ('email_template_id' not in params) or (params['email_template_id'] is None):
             raise ValueError("Missing the required parameter `email_template_id` when calling `delete_email_template`")
 
-        resource_path = '/beta/emailTemplate/{emailTemplateId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/emailTemplate/{emailTemplateId}'.replace('{format}', 'json')
         path_params = {}
         if 'email_template_id' in params:
             path_params['emailTemplateId'] = params['email_template_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_email_template_tag(self, email_template_id, email_template_tag, **kwargs):
-        """
-        Delete a tag for an emailTemplate.
-        Deletes an existing emailTemplate tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_email_template_tag(email_template_id, email_template_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int email_template_id: Id of the emailTemplate to remove tag from (required)
-        :param str email_template_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['email_template_id', 'email_template_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_email_template_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'email_template_id' is set
-        if ('email_template_id' not in params) or (params['email_template_id'] is None):
-            raise ValueError("Missing the required parameter `email_template_id` when calling `delete_email_template_tag`")
-        # verify the required parameter 'email_template_tag' is set
-        if ('email_template_tag' not in params) or (params['email_template_tag'] is None):
-            raise ValueError("Missing the required parameter `email_template_tag` when calling `delete_email_template_tag`")
-
-        resource_path = '/beta/emailTemplate/{emailTemplateId}/tag/{emailTemplateTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'email_template_id' in params:
-            path_params['emailTemplateId'] = params['email_template_id']
-        if 'email_template_tag' in params:
-            path_params['emailTemplateTag'] = params['email_template_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class EmailTemplateApi(object):
         if ('email_template_id' not in params) or (params['email_template_id'] is None):
             raise ValueError("Missing the required parameter `email_template_id` when calling `get_duplicate_email_template_by_id`")
 
-        resource_path = '/beta/emailTemplate/duplicate/{emailTemplateId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/emailTemplate/duplicate/{emailTemplateId}'.replace('{format}', 'json')
         path_params = {}
         if 'email_template_id' in params:
             path_params['emailTemplateId'] = params['email_template_id']
@@ -563,7 +314,7 @@ class EmailTemplateApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/emailTemplate/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/emailTemplate/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -646,7 +397,7 @@ class EmailTemplateApi(object):
         if ('email_template_id' not in params) or (params['email_template_id'] is None):
             raise ValueError("Missing the required parameter `email_template_id` when calling `get_email_template_by_id`")
 
-        resource_path = '/beta/emailTemplate/{emailTemplateId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/emailTemplate/{emailTemplateId}'.replace('{format}', 'json')
         path_params = {}
         if 'email_template_id' in params:
             path_params['emailTemplateId'] = params['email_template_id']
@@ -681,83 +432,6 @@ class EmailTemplateApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='EmailTemplate',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_email_template_tags(self, email_template_id, **kwargs):
-        """
-        Get the tags for an emailTemplate.
-        Get all existing emailTemplate tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_email_template_tags(email_template_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int email_template_id: Id of the emailTemplate to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['email_template_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_email_template_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'email_template_id' is set
-        if ('email_template_id' not in params) or (params['email_template_id'] is None):
-            raise ValueError("Missing the required parameter `email_template_id` when calling `get_email_template_tags`")
-
-        resource_path = '/beta/emailTemplate/{emailTemplateId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'email_template_id' in params:
-            path_params['emailTemplateId'] = params['email_template_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -800,7 +474,7 @@ class EmailTemplateApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_email_template`")
 
-        resource_path = '/beta/emailTemplate'.replace('{format}', 'json')
+        resource_path = '/v2.0/emailTemplate'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -877,7 +551,7 @@ class EmailTemplateApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_email_template_custom_fields`")
 
-        resource_path = '/beta/emailTemplate/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/emailTemplate/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

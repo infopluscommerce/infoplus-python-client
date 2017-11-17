@@ -83,7 +83,7 @@ class ProductTypeApi(object):
         if ('product_type_id' not in params) or (params['product_type_id'] is None):
             raise ValueError("Missing the required parameter `product_type_id` when calling `get_product_type_by_id`")
 
-        resource_path = '/beta/productType/{productTypeId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/productType/{productTypeId}'.replace('{format}', 'json')
         path_params = {}
         if 'product_type_id' in params:
             path_params['productTypeId'] = params['product_type_id']
@@ -159,7 +159,7 @@ class ProductTypeApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/productType/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/productType/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

@@ -83,7 +83,7 @@ class ServiceTypeApi(object):
         if ('service_type_id' not in params) or (params['service_type_id'] is None):
             raise ValueError("Missing the required parameter `service_type_id` when calling `get_service_type_by_id`")
 
-        resource_path = '/beta/serviceType/{serviceTypeId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/serviceType/{serviceTypeId}'.replace('{format}', 'json')
         path_params = {}
         if 'service_type_id' in params:
             path_params['serviceTypeId'] = params['service_type_id']
@@ -159,7 +159,7 @@ class ServiceTypeApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/serviceType/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/serviceType/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

@@ -47,7 +47,6 @@ class OrderSource(object):
             'require_gs1128_label': 'bool',
             'shipping_notes': 'str',
             'packing_slip_id': 'int',
-            'order_invoice_id': 'int',
             'order_confirmation_email_id': 'int',
             'shipment_confirmation_email_id': 'int',
             'custom_fields': 'dict(str, object)'
@@ -64,7 +63,6 @@ class OrderSource(object):
             'require_gs1128_label': 'requireGS1128Label',
             'shipping_notes': 'shippingNotes',
             'packing_slip_id': 'packingSlipId',
-            'order_invoice_id': 'orderInvoiceId',
             'order_confirmation_email_id': 'orderConfirmationEmailId',
             'shipment_confirmation_email_id': 'shipmentConfirmationEmailId',
             'custom_fields': 'customFields'
@@ -80,7 +78,6 @@ class OrderSource(object):
         self._require_gs1128_label = False
         self._shipping_notes = None
         self._packing_slip_id = None
-        self._order_invoice_id = None
         self._order_confirmation_email_id = None
         self._shipment_confirmation_email_id = None
         self._custom_fields = None
@@ -304,28 +301,6 @@ class OrderSource(object):
         :type: int
         """
         self._packing_slip_id = packing_slip_id
-
-    @property
-    def order_invoice_id(self):
-        """
-        Gets the order_invoice_id of this OrderSource.
-
-
-        :return: The order_invoice_id of this OrderSource.
-        :rtype: int
-        """
-        return self._order_invoice_id
-
-    @order_invoice_id.setter
-    def order_invoice_id(self, order_invoice_id):
-        """
-        Sets the order_invoice_id of this OrderSource.
-
-
-        :param order_invoice_id: The order_invoice_id of this OrderSource.
-        :type: int
-        """
-        self._order_invoice_id = order_invoice_id
 
     @property
     def order_confirmation_email_id(self):

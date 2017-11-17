@@ -83,7 +83,7 @@ class UserApi(object):
         if ('user_id' not in params) or (params['user_id'] is None):
             raise ValueError("Missing the required parameter `user_id` when calling `get_user_by_id`")
 
-        resource_path = '/beta/user/{userId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/user/{userId}'.replace('{format}', 'json')
         path_params = {}
         if 'user_id' in params:
             path_params['userId'] = params['user_id']
@@ -159,7 +159,7 @@ class UserApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/user/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/user/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

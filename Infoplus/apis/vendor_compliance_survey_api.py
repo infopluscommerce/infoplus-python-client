@@ -83,7 +83,7 @@ class VendorComplianceSurveyApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_vendor_compliance_survey`")
 
-        resource_path = '/beta/vendorComplianceSurvey'.replace('{format}', 'json')
+        resource_path = '/v2.0/vendorComplianceSurvey'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class VendorComplianceSurveyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='VendorComplianceSurvey',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_vendor_compliance_survey_audit(self, vendor_compliance_survey_id, vendor_compliance_survey_audit, **kwargs):
-        """
-        Add new audit for a vendorComplianceSurvey
-        Adds an audit to an existing vendorComplianceSurvey.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_vendor_compliance_survey_audit(vendor_compliance_survey_id, vendor_compliance_survey_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int vendor_compliance_survey_id: Id of the vendorComplianceSurvey to add an audit to (required)
-        :param str vendor_compliance_survey_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vendor_compliance_survey_id', 'vendor_compliance_survey_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_vendor_compliance_survey_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'vendor_compliance_survey_id' is set
-        if ('vendor_compliance_survey_id' not in params) or (params['vendor_compliance_survey_id'] is None):
-            raise ValueError("Missing the required parameter `vendor_compliance_survey_id` when calling `add_vendor_compliance_survey_audit`")
-        # verify the required parameter 'vendor_compliance_survey_audit' is set
-        if ('vendor_compliance_survey_audit' not in params) or (params['vendor_compliance_survey_audit'] is None):
-            raise ValueError("Missing the required parameter `vendor_compliance_survey_audit` when calling `add_vendor_compliance_survey_audit`")
-
-        resource_path = '/beta/vendorComplianceSurvey/{vendorComplianceSurveyId}/audit/{vendorComplianceSurveyAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'vendor_compliance_survey_id' in params:
-            path_params['vendorComplianceSurveyId'] = params['vendor_compliance_survey_id']
-        if 'vendor_compliance_survey_audit' in params:
-            path_params['vendorComplianceSurveyAudit'] = params['vendor_compliance_survey_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_vendor_compliance_survey_tag(self, vendor_compliance_survey_id, vendor_compliance_survey_tag, **kwargs):
-        """
-        Add new tags for a vendorComplianceSurvey.
-        Adds a tag to an existing vendorComplianceSurvey.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_vendor_compliance_survey_tag(vendor_compliance_survey_id, vendor_compliance_survey_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int vendor_compliance_survey_id: Id of the vendorComplianceSurvey to add a tag to (required)
-        :param str vendor_compliance_survey_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vendor_compliance_survey_id', 'vendor_compliance_survey_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_vendor_compliance_survey_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'vendor_compliance_survey_id' is set
-        if ('vendor_compliance_survey_id' not in params) or (params['vendor_compliance_survey_id'] is None):
-            raise ValueError("Missing the required parameter `vendor_compliance_survey_id` when calling `add_vendor_compliance_survey_tag`")
-        # verify the required parameter 'vendor_compliance_survey_tag' is set
-        if ('vendor_compliance_survey_tag' not in params) or (params['vendor_compliance_survey_tag'] is None):
-            raise ValueError("Missing the required parameter `vendor_compliance_survey_tag` when calling `add_vendor_compliance_survey_tag`")
-
-        resource_path = '/beta/vendorComplianceSurvey/{vendorComplianceSurveyId}/tag/{vendorComplianceSurveyTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'vendor_compliance_survey_id' in params:
-            path_params['vendorComplianceSurveyId'] = params['vendor_compliance_survey_id']
-        if 'vendor_compliance_survey_tag' in params:
-            path_params['vendorComplianceSurveyTag'] = params['vendor_compliance_survey_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class VendorComplianceSurveyApi(object):
         if ('vendor_compliance_survey_id' not in params) or (params['vendor_compliance_survey_id'] is None):
             raise ValueError("Missing the required parameter `vendor_compliance_survey_id` when calling `delete_vendor_compliance_survey`")
 
-        resource_path = '/beta/vendorComplianceSurvey/{vendorComplianceSurveyId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/vendorComplianceSurvey/{vendorComplianceSurveyId}'.replace('{format}', 'json')
         path_params = {}
         if 'vendor_compliance_survey_id' in params:
             path_params['vendorComplianceSurveyId'] = params['vendor_compliance_survey_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_vendor_compliance_survey_tag(self, vendor_compliance_survey_id, vendor_compliance_survey_tag, **kwargs):
-        """
-        Delete a tag for a vendorComplianceSurvey.
-        Deletes an existing vendorComplianceSurvey tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_vendor_compliance_survey_tag(vendor_compliance_survey_id, vendor_compliance_survey_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int vendor_compliance_survey_id: Id of the vendorComplianceSurvey to remove tag from (required)
-        :param str vendor_compliance_survey_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vendor_compliance_survey_id', 'vendor_compliance_survey_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_vendor_compliance_survey_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'vendor_compliance_survey_id' is set
-        if ('vendor_compliance_survey_id' not in params) or (params['vendor_compliance_survey_id'] is None):
-            raise ValueError("Missing the required parameter `vendor_compliance_survey_id` when calling `delete_vendor_compliance_survey_tag`")
-        # verify the required parameter 'vendor_compliance_survey_tag' is set
-        if ('vendor_compliance_survey_tag' not in params) or (params['vendor_compliance_survey_tag'] is None):
-            raise ValueError("Missing the required parameter `vendor_compliance_survey_tag` when calling `delete_vendor_compliance_survey_tag`")
-
-        resource_path = '/beta/vendorComplianceSurvey/{vendorComplianceSurveyId}/tag/{vendorComplianceSurveyTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'vendor_compliance_survey_id' in params:
-            path_params['vendorComplianceSurveyId'] = params['vendor_compliance_survey_id']
-        if 'vendor_compliance_survey_tag' in params:
-            path_params['vendorComplianceSurveyTag'] = params['vendor_compliance_survey_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class VendorComplianceSurveyApi(object):
         if ('vendor_compliance_survey_id' not in params) or (params['vendor_compliance_survey_id'] is None):
             raise ValueError("Missing the required parameter `vendor_compliance_survey_id` when calling `get_duplicate_vendor_compliance_survey_by_id`")
 
-        resource_path = '/beta/vendorComplianceSurvey/duplicate/{vendorComplianceSurveyId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/vendorComplianceSurvey/duplicate/{vendorComplianceSurveyId}'.replace('{format}', 'json')
         path_params = {}
         if 'vendor_compliance_survey_id' in params:
             path_params['vendorComplianceSurveyId'] = params['vendor_compliance_survey_id']
@@ -563,7 +314,7 @@ class VendorComplianceSurveyApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/vendorComplianceSurvey/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/vendorComplianceSurvey/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -646,7 +397,7 @@ class VendorComplianceSurveyApi(object):
         if ('vendor_compliance_survey_id' not in params) or (params['vendor_compliance_survey_id'] is None):
             raise ValueError("Missing the required parameter `vendor_compliance_survey_id` when calling `get_vendor_compliance_survey_by_id`")
 
-        resource_path = '/beta/vendorComplianceSurvey/{vendorComplianceSurveyId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/vendorComplianceSurvey/{vendorComplianceSurveyId}'.replace('{format}', 'json')
         path_params = {}
         if 'vendor_compliance_survey_id' in params:
             path_params['vendorComplianceSurveyId'] = params['vendor_compliance_survey_id']
@@ -681,83 +432,6 @@ class VendorComplianceSurveyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='VendorComplianceSurvey',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_vendor_compliance_survey_tags(self, vendor_compliance_survey_id, **kwargs):
-        """
-        Get the tags for a vendorComplianceSurvey.
-        Get all existing vendorComplianceSurvey tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_vendor_compliance_survey_tags(vendor_compliance_survey_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int vendor_compliance_survey_id: Id of the vendorComplianceSurvey to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['vendor_compliance_survey_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_vendor_compliance_survey_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'vendor_compliance_survey_id' is set
-        if ('vendor_compliance_survey_id' not in params) or (params['vendor_compliance_survey_id'] is None):
-            raise ValueError("Missing the required parameter `vendor_compliance_survey_id` when calling `get_vendor_compliance_survey_tags`")
-
-        resource_path = '/beta/vendorComplianceSurvey/{vendorComplianceSurveyId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'vendor_compliance_survey_id' in params:
-            path_params['vendorComplianceSurveyId'] = params['vendor_compliance_survey_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -800,7 +474,7 @@ class VendorComplianceSurveyApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_vendor_compliance_survey`")
 
-        resource_path = '/beta/vendorComplianceSurvey'.replace('{format}', 'json')
+        resource_path = '/v2.0/vendorComplianceSurvey'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -877,7 +551,7 @@ class VendorComplianceSurveyApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_vendor_compliance_survey_custom_fields`")
 
-        resource_path = '/beta/vendorComplianceSurvey/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/vendorComplianceSurvey/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

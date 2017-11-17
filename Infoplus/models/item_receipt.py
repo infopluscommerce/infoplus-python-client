@@ -97,13 +97,12 @@ class ItemReceipt(object):
             'received_by': 'str',
             'line_no': 'int',
             'prod_lot': 'str',
-            'product_id_tag': 'str',
             'units_per_case': 'int',
             'case_weight': 'float',
             'height': 'float',
             'width': 'float',
             'length': 'float',
-            'dock_date': 'datetime',
+            'dock_time': 'datetime',
             'modify_date': 'datetime',
             'impressions': 'int',
             'asn_line': 'int',
@@ -171,13 +170,12 @@ class ItemReceipt(object):
             'received_by': 'receivedBy',
             'line_no': 'lineNo',
             'prod_lot': 'prodLot',
-            'product_id_tag': 'productIdTag',
             'units_per_case': 'unitsPerCase',
             'case_weight': 'caseWeight',
             'height': 'height',
             'width': 'width',
             'length': 'length',
-            'dock_date': 'dockDate',
+            'dock_time': 'dockTime',
             'modify_date': 'modifyDate',
             'impressions': 'impressions',
             'asn_line': 'asnLine',
@@ -244,13 +242,12 @@ class ItemReceipt(object):
         self._received_by = None
         self._line_no = None
         self._prod_lot = None
-        self._product_id_tag = None
         self._units_per_case = None
         self._case_weight = None
         self._height = None
         self._width = None
         self._length = None
-        self._dock_date = None
+        self._dock_time = None
         self._modify_date = None
         self._impressions = None
         self._asn_line = None
@@ -1577,28 +1574,6 @@ class ItemReceipt(object):
         self._prod_lot = prod_lot
 
     @property
-    def product_id_tag(self):
-        """
-        Gets the product_id_tag of this ItemReceipt.
-
-
-        :return: The product_id_tag of this ItemReceipt.
-        :rtype: str
-        """
-        return self._product_id_tag
-
-    @product_id_tag.setter
-    def product_id_tag(self, product_id_tag):
-        """
-        Sets the product_id_tag of this ItemReceipt.
-
-
-        :param product_id_tag: The product_id_tag of this ItemReceipt.
-        :type: str
-        """
-        self._product_id_tag = product_id_tag
-
-    @property
     def units_per_case(self):
         """
         Gets the units_per_case of this ItemReceipt.
@@ -1709,26 +1684,26 @@ class ItemReceipt(object):
         self._length = length
 
     @property
-    def dock_date(self):
+    def dock_time(self):
         """
-        Gets the dock_date of this ItemReceipt.
+        Gets the dock_time of this ItemReceipt.
 
 
-        :return: The dock_date of this ItemReceipt.
+        :return: The dock_time of this ItemReceipt.
         :rtype: datetime
         """
-        return self._dock_date
+        return self._dock_time
 
-    @dock_date.setter
-    def dock_date(self, dock_date):
+    @dock_time.setter
+    def dock_time(self, dock_time):
         """
-        Sets the dock_date of this ItemReceipt.
+        Sets the dock_time of this ItemReceipt.
 
 
-        :param dock_date: The dock_date of this ItemReceipt.
+        :param dock_time: The dock_time of this ItemReceipt.
         :type: datetime
         """
-        self._dock_date = dock_date
+        self._dock_time = dock_time
 
     @property
     def modify_date(self):

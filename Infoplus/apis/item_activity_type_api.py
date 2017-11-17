@@ -83,7 +83,7 @@ class ItemActivityTypeApi(object):
         if ('item_activity_type_id' not in params) or (params['item_activity_type_id'] is None):
             raise ValueError("Missing the required parameter `item_activity_type_id` when calling `get_item_activity_type_by_id`")
 
-        resource_path = '/beta/itemActivityType/{itemActivityTypeId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemActivityType/{itemActivityTypeId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_activity_type_id' in params:
             path_params['itemActivityTypeId'] = params['item_activity_type_id']
@@ -159,7 +159,7 @@ class ItemActivityTypeApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/itemActivityType/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemActivityType/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

@@ -45,255 +45,6 @@ class LoggedTimeApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def add_logged_time_audit(self, logged_time_id, logged_time_audit, **kwargs):
-        """
-        Add new audit for a loggedTime
-        Adds an audit to an existing loggedTime.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_logged_time_audit(logged_time_id, logged_time_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int logged_time_id: Id of the loggedTime to add an audit to (required)
-        :param str logged_time_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['logged_time_id', 'logged_time_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_logged_time_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'logged_time_id' is set
-        if ('logged_time_id' not in params) or (params['logged_time_id'] is None):
-            raise ValueError("Missing the required parameter `logged_time_id` when calling `add_logged_time_audit`")
-        # verify the required parameter 'logged_time_audit' is set
-        if ('logged_time_audit' not in params) or (params['logged_time_audit'] is None):
-            raise ValueError("Missing the required parameter `logged_time_audit` when calling `add_logged_time_audit`")
-
-        resource_path = '/beta/loggedTime/{loggedTimeId}/audit/{loggedTimeAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'logged_time_id' in params:
-            path_params['loggedTimeId'] = params['logged_time_id']
-        if 'logged_time_audit' in params:
-            path_params['loggedTimeAudit'] = params['logged_time_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_logged_time_tag(self, logged_time_id, logged_time_tag, **kwargs):
-        """
-        Add new tags for a loggedTime.
-        Adds a tag to an existing loggedTime.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_logged_time_tag(logged_time_id, logged_time_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int logged_time_id: Id of the loggedTime to add a tag to (required)
-        :param str logged_time_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['logged_time_id', 'logged_time_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_logged_time_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'logged_time_id' is set
-        if ('logged_time_id' not in params) or (params['logged_time_id'] is None):
-            raise ValueError("Missing the required parameter `logged_time_id` when calling `add_logged_time_tag`")
-        # verify the required parameter 'logged_time_tag' is set
-        if ('logged_time_tag' not in params) or (params['logged_time_tag'] is None):
-            raise ValueError("Missing the required parameter `logged_time_tag` when calling `add_logged_time_tag`")
-
-        resource_path = '/beta/loggedTime/{loggedTimeId}/tag/{loggedTimeTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'logged_time_id' in params:
-            path_params['loggedTimeId'] = params['logged_time_id']
-        if 'logged_time_tag' in params:
-            path_params['loggedTimeTag'] = params['logged_time_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_logged_time_tag(self, logged_time_id, logged_time_tag, **kwargs):
-        """
-        Delete a tag for a loggedTime.
-        Deletes an existing loggedTime tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_logged_time_tag(logged_time_id, logged_time_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int logged_time_id: Id of the loggedTime to remove tag from (required)
-        :param str logged_time_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['logged_time_id', 'logged_time_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_logged_time_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'logged_time_id' is set
-        if ('logged_time_id' not in params) or (params['logged_time_id'] is None):
-            raise ValueError("Missing the required parameter `logged_time_id` when calling `delete_logged_time_tag`")
-        # verify the required parameter 'logged_time_tag' is set
-        if ('logged_time_tag' not in params) or (params['logged_time_tag'] is None):
-            raise ValueError("Missing the required parameter `logged_time_tag` when calling `delete_logged_time_tag`")
-
-        resource_path = '/beta/loggedTime/{loggedTimeId}/tag/{loggedTimeTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'logged_time_id' in params:
-            path_params['loggedTimeId'] = params['logged_time_id']
-        if 'logged_time_tag' in params:
-            path_params['loggedTimeTag'] = params['logged_time_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
     def get_duplicate_logged_time_by_id(self, logged_time_id, **kwargs):
         """
         Get a duplicated a loggedTime by id
@@ -332,7 +83,7 @@ class LoggedTimeApi(object):
         if ('logged_time_id' not in params) or (params['logged_time_id'] is None):
             raise ValueError("Missing the required parameter `logged_time_id` when calling `get_duplicate_logged_time_by_id`")
 
-        resource_path = '/beta/loggedTime/duplicate/{loggedTimeId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/loggedTime/duplicate/{loggedTimeId}'.replace('{format}', 'json')
         path_params = {}
         if 'logged_time_id' in params:
             path_params['loggedTimeId'] = params['logged_time_id']
@@ -409,7 +160,7 @@ class LoggedTimeApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/loggedTime/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/loggedTime/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -492,7 +243,7 @@ class LoggedTimeApi(object):
         if ('logged_time_id' not in params) or (params['logged_time_id'] is None):
             raise ValueError("Missing the required parameter `logged_time_id` when calling `get_logged_time_by_id`")
 
-        resource_path = '/beta/loggedTime/{loggedTimeId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/loggedTime/{loggedTimeId}'.replace('{format}', 'json')
         path_params = {}
         if 'logged_time_id' in params:
             path_params['loggedTimeId'] = params['logged_time_id']
@@ -527,83 +278,6 @@ class LoggedTimeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LoggedTime',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_logged_time_tags(self, logged_time_id, **kwargs):
-        """
-        Get the tags for a loggedTime.
-        Get all existing loggedTime tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_logged_time_tags(logged_time_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int logged_time_id: Id of the loggedTime to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['logged_time_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_logged_time_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'logged_time_id' is set
-        if ('logged_time_id' not in params) or (params['logged_time_id'] is None):
-            raise ValueError("Missing the required parameter `logged_time_id` when calling `get_logged_time_tags`")
-
-        resource_path = '/beta/loggedTime/{loggedTimeId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'logged_time_id' in params:
-            path_params['loggedTimeId'] = params['logged_time_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -646,7 +320,7 @@ class LoggedTimeApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_logged_time_custom_fields`")
 
-        resource_path = '/beta/loggedTime/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/loggedTime/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

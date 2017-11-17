@@ -83,7 +83,7 @@ class ItemSubCategoryApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_item_sub_category`")
 
-        resource_path = '/beta/itemSubCategory'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemSubCategory'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class ItemSubCategoryApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ItemSubCategory',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_item_sub_category_audit(self, item_sub_category_id, item_sub_category_audit, **kwargs):
-        """
-        Add new audit for an itemSubCategory
-        Adds an audit to an existing itemSubCategory.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_item_sub_category_audit(item_sub_category_id, item_sub_category_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int item_sub_category_id: Id of the itemSubCategory to add an audit to (required)
-        :param str item_sub_category_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['item_sub_category_id', 'item_sub_category_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_item_sub_category_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'item_sub_category_id' is set
-        if ('item_sub_category_id' not in params) or (params['item_sub_category_id'] is None):
-            raise ValueError("Missing the required parameter `item_sub_category_id` when calling `add_item_sub_category_audit`")
-        # verify the required parameter 'item_sub_category_audit' is set
-        if ('item_sub_category_audit' not in params) or (params['item_sub_category_audit'] is None):
-            raise ValueError("Missing the required parameter `item_sub_category_audit` when calling `add_item_sub_category_audit`")
-
-        resource_path = '/beta/itemSubCategory/{itemSubCategoryId}/audit/{itemSubCategoryAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'item_sub_category_id' in params:
-            path_params['itemSubCategoryId'] = params['item_sub_category_id']
-        if 'item_sub_category_audit' in params:
-            path_params['itemSubCategoryAudit'] = params['item_sub_category_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_item_sub_category_tag(self, item_sub_category_id, item_sub_category_tag, **kwargs):
-        """
-        Add new tags for an itemSubCategory.
-        Adds a tag to an existing itemSubCategory.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_item_sub_category_tag(item_sub_category_id, item_sub_category_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int item_sub_category_id: Id of the itemSubCategory to add a tag to (required)
-        :param str item_sub_category_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['item_sub_category_id', 'item_sub_category_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_item_sub_category_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'item_sub_category_id' is set
-        if ('item_sub_category_id' not in params) or (params['item_sub_category_id'] is None):
-            raise ValueError("Missing the required parameter `item_sub_category_id` when calling `add_item_sub_category_tag`")
-        # verify the required parameter 'item_sub_category_tag' is set
-        if ('item_sub_category_tag' not in params) or (params['item_sub_category_tag'] is None):
-            raise ValueError("Missing the required parameter `item_sub_category_tag` when calling `add_item_sub_category_tag`")
-
-        resource_path = '/beta/itemSubCategory/{itemSubCategoryId}/tag/{itemSubCategoryTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'item_sub_category_id' in params:
-            path_params['itemSubCategoryId'] = params['item_sub_category_id']
-        if 'item_sub_category_tag' in params:
-            path_params['itemSubCategoryTag'] = params['item_sub_category_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class ItemSubCategoryApi(object):
         if ('item_sub_category_id' not in params) or (params['item_sub_category_id'] is None):
             raise ValueError("Missing the required parameter `item_sub_category_id` when calling `delete_item_sub_category`")
 
-        resource_path = '/beta/itemSubCategory/{itemSubCategoryId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemSubCategory/{itemSubCategoryId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_sub_category_id' in params:
             path_params['itemSubCategoryId'] = params['item_sub_category_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_item_sub_category_tag(self, item_sub_category_id, item_sub_category_tag, **kwargs):
-        """
-        Delete a tag for an itemSubCategory.
-        Deletes an existing itemSubCategory tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_item_sub_category_tag(item_sub_category_id, item_sub_category_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int item_sub_category_id: Id of the itemSubCategory to remove tag from (required)
-        :param str item_sub_category_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['item_sub_category_id', 'item_sub_category_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_item_sub_category_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'item_sub_category_id' is set
-        if ('item_sub_category_id' not in params) or (params['item_sub_category_id'] is None):
-            raise ValueError("Missing the required parameter `item_sub_category_id` when calling `delete_item_sub_category_tag`")
-        # verify the required parameter 'item_sub_category_tag' is set
-        if ('item_sub_category_tag' not in params) or (params['item_sub_category_tag'] is None):
-            raise ValueError("Missing the required parameter `item_sub_category_tag` when calling `delete_item_sub_category_tag`")
-
-        resource_path = '/beta/itemSubCategory/{itemSubCategoryId}/tag/{itemSubCategoryTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'item_sub_category_id' in params:
-            path_params['itemSubCategoryId'] = params['item_sub_category_id']
-        if 'item_sub_category_tag' in params:
-            path_params['itemSubCategoryTag'] = params['item_sub_category_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class ItemSubCategoryApi(object):
         if ('item_sub_category_id' not in params) or (params['item_sub_category_id'] is None):
             raise ValueError("Missing the required parameter `item_sub_category_id` when calling `get_duplicate_item_sub_category_by_id`")
 
-        resource_path = '/beta/itemSubCategory/duplicate/{itemSubCategoryId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemSubCategory/duplicate/{itemSubCategoryId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_sub_category_id' in params:
             path_params['itemSubCategoryId'] = params['item_sub_category_id']
@@ -563,7 +314,7 @@ class ItemSubCategoryApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/itemSubCategory/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemSubCategory/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -646,7 +397,7 @@ class ItemSubCategoryApi(object):
         if ('item_sub_category_id' not in params) or (params['item_sub_category_id'] is None):
             raise ValueError("Missing the required parameter `item_sub_category_id` when calling `get_item_sub_category_by_id`")
 
-        resource_path = '/beta/itemSubCategory/{itemSubCategoryId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemSubCategory/{itemSubCategoryId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_sub_category_id' in params:
             path_params['itemSubCategoryId'] = params['item_sub_category_id']
@@ -681,83 +432,6 @@ class ItemSubCategoryApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ItemSubCategory',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_item_sub_category_tags(self, item_sub_category_id, **kwargs):
-        """
-        Get the tags for an itemSubCategory.
-        Get all existing itemSubCategory tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_item_sub_category_tags(item_sub_category_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int item_sub_category_id: Id of the itemSubCategory to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['item_sub_category_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_item_sub_category_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'item_sub_category_id' is set
-        if ('item_sub_category_id' not in params) or (params['item_sub_category_id'] is None):
-            raise ValueError("Missing the required parameter `item_sub_category_id` when calling `get_item_sub_category_tags`")
-
-        resource_path = '/beta/itemSubCategory/{itemSubCategoryId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'item_sub_category_id' in params:
-            path_params['itemSubCategoryId'] = params['item_sub_category_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -800,7 +474,7 @@ class ItemSubCategoryApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_item_sub_category`")
 
-        resource_path = '/beta/itemSubCategory'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemSubCategory'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

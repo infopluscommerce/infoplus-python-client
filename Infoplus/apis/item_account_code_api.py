@@ -83,7 +83,7 @@ class ItemAccountCodeApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_item_account_code`")
 
-        resource_path = '/beta/itemAccountCode'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemAccountCode'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class ItemAccountCodeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ItemAccountCode',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_item_account_code_audit(self, item_account_code_id, item_account_code_audit, **kwargs):
-        """
-        Add new audit for an itemAccountCode
-        Adds an audit to an existing itemAccountCode.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_item_account_code_audit(item_account_code_id, item_account_code_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int item_account_code_id: Id of the itemAccountCode to add an audit to (required)
-        :param str item_account_code_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['item_account_code_id', 'item_account_code_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_item_account_code_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'item_account_code_id' is set
-        if ('item_account_code_id' not in params) or (params['item_account_code_id'] is None):
-            raise ValueError("Missing the required parameter `item_account_code_id` when calling `add_item_account_code_audit`")
-        # verify the required parameter 'item_account_code_audit' is set
-        if ('item_account_code_audit' not in params) or (params['item_account_code_audit'] is None):
-            raise ValueError("Missing the required parameter `item_account_code_audit` when calling `add_item_account_code_audit`")
-
-        resource_path = '/beta/itemAccountCode/{itemAccountCodeId}/audit/{itemAccountCodeAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'item_account_code_id' in params:
-            path_params['itemAccountCodeId'] = params['item_account_code_id']
-        if 'item_account_code_audit' in params:
-            path_params['itemAccountCodeAudit'] = params['item_account_code_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_item_account_code_tag(self, item_account_code_id, item_account_code_tag, **kwargs):
-        """
-        Add new tags for an itemAccountCode.
-        Adds a tag to an existing itemAccountCode.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_item_account_code_tag(item_account_code_id, item_account_code_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int item_account_code_id: Id of the itemAccountCode to add a tag to (required)
-        :param str item_account_code_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['item_account_code_id', 'item_account_code_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_item_account_code_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'item_account_code_id' is set
-        if ('item_account_code_id' not in params) or (params['item_account_code_id'] is None):
-            raise ValueError("Missing the required parameter `item_account_code_id` when calling `add_item_account_code_tag`")
-        # verify the required parameter 'item_account_code_tag' is set
-        if ('item_account_code_tag' not in params) or (params['item_account_code_tag'] is None):
-            raise ValueError("Missing the required parameter `item_account_code_tag` when calling `add_item_account_code_tag`")
-
-        resource_path = '/beta/itemAccountCode/{itemAccountCodeId}/tag/{itemAccountCodeTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'item_account_code_id' in params:
-            path_params['itemAccountCodeId'] = params['item_account_code_id']
-        if 'item_account_code_tag' in params:
-            path_params['itemAccountCodeTag'] = params['item_account_code_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class ItemAccountCodeApi(object):
         if ('item_account_code_id' not in params) or (params['item_account_code_id'] is None):
             raise ValueError("Missing the required parameter `item_account_code_id` when calling `delete_item_account_code`")
 
-        resource_path = '/beta/itemAccountCode/{itemAccountCodeId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemAccountCode/{itemAccountCodeId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_account_code_id' in params:
             path_params['itemAccountCodeId'] = params['item_account_code_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_item_account_code_tag(self, item_account_code_id, item_account_code_tag, **kwargs):
-        """
-        Delete a tag for an itemAccountCode.
-        Deletes an existing itemAccountCode tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_item_account_code_tag(item_account_code_id, item_account_code_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int item_account_code_id: Id of the itemAccountCode to remove tag from (required)
-        :param str item_account_code_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['item_account_code_id', 'item_account_code_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_item_account_code_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'item_account_code_id' is set
-        if ('item_account_code_id' not in params) or (params['item_account_code_id'] is None):
-            raise ValueError("Missing the required parameter `item_account_code_id` when calling `delete_item_account_code_tag`")
-        # verify the required parameter 'item_account_code_tag' is set
-        if ('item_account_code_tag' not in params) or (params['item_account_code_tag'] is None):
-            raise ValueError("Missing the required parameter `item_account_code_tag` when calling `delete_item_account_code_tag`")
-
-        resource_path = '/beta/itemAccountCode/{itemAccountCodeId}/tag/{itemAccountCodeTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'item_account_code_id' in params:
-            path_params['itemAccountCodeId'] = params['item_account_code_id']
-        if 'item_account_code_tag' in params:
-            path_params['itemAccountCodeTag'] = params['item_account_code_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class ItemAccountCodeApi(object):
         if ('item_account_code_id' not in params) or (params['item_account_code_id'] is None):
             raise ValueError("Missing the required parameter `item_account_code_id` when calling `get_duplicate_item_account_code_by_id`")
 
-        resource_path = '/beta/itemAccountCode/duplicate/{itemAccountCodeId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemAccountCode/duplicate/{itemAccountCodeId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_account_code_id' in params:
             path_params['itemAccountCodeId'] = params['item_account_code_id']
@@ -563,7 +314,7 @@ class ItemAccountCodeApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/itemAccountCode/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemAccountCode/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -646,7 +397,7 @@ class ItemAccountCodeApi(object):
         if ('item_account_code_id' not in params) or (params['item_account_code_id'] is None):
             raise ValueError("Missing the required parameter `item_account_code_id` when calling `get_item_account_code_by_id`")
 
-        resource_path = '/beta/itemAccountCode/{itemAccountCodeId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemAccountCode/{itemAccountCodeId}'.replace('{format}', 'json')
         path_params = {}
         if 'item_account_code_id' in params:
             path_params['itemAccountCodeId'] = params['item_account_code_id']
@@ -681,83 +432,6 @@ class ItemAccountCodeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ItemAccountCode',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_item_account_code_tags(self, item_account_code_id, **kwargs):
-        """
-        Get the tags for an itemAccountCode.
-        Get all existing itemAccountCode tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_item_account_code_tags(item_account_code_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int item_account_code_id: Id of the itemAccountCode to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['item_account_code_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_item_account_code_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'item_account_code_id' is set
-        if ('item_account_code_id' not in params) or (params['item_account_code_id'] is None):
-            raise ValueError("Missing the required parameter `item_account_code_id` when calling `get_item_account_code_tags`")
-
-        resource_path = '/beta/itemAccountCode/{itemAccountCodeId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'item_account_code_id' in params:
-            path_params['itemAccountCodeId'] = params['item_account_code_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -800,7 +474,7 @@ class ItemAccountCodeApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_item_account_code`")
 
-        resource_path = '/beta/itemAccountCode'.replace('{format}', 'json')
+        resource_path = '/v2.0/itemAccountCode'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

@@ -83,7 +83,7 @@ class ExternalShippingSystemApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_external_shipping_system`")
 
-        resource_path = '/beta/externalShippingSystem'.replace('{format}', 'json')
+        resource_path = '/v2.0/externalShippingSystem'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class ExternalShippingSystemApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ExternalShippingSystem',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_external_shipping_system_audit(self, external_shipping_system_id, external_shipping_system_audit, **kwargs):
-        """
-        Add new audit for an externalShippingSystem
-        Adds an audit to an existing externalShippingSystem.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_external_shipping_system_audit(external_shipping_system_id, external_shipping_system_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int external_shipping_system_id: Id of the externalShippingSystem to add an audit to (required)
-        :param str external_shipping_system_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['external_shipping_system_id', 'external_shipping_system_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_external_shipping_system_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'external_shipping_system_id' is set
-        if ('external_shipping_system_id' not in params) or (params['external_shipping_system_id'] is None):
-            raise ValueError("Missing the required parameter `external_shipping_system_id` when calling `add_external_shipping_system_audit`")
-        # verify the required parameter 'external_shipping_system_audit' is set
-        if ('external_shipping_system_audit' not in params) or (params['external_shipping_system_audit'] is None):
-            raise ValueError("Missing the required parameter `external_shipping_system_audit` when calling `add_external_shipping_system_audit`")
-
-        resource_path = '/beta/externalShippingSystem/{externalShippingSystemId}/audit/{externalShippingSystemAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'external_shipping_system_id' in params:
-            path_params['externalShippingSystemId'] = params['external_shipping_system_id']
-        if 'external_shipping_system_audit' in params:
-            path_params['externalShippingSystemAudit'] = params['external_shipping_system_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_external_shipping_system_tag(self, external_shipping_system_id, external_shipping_system_tag, **kwargs):
-        """
-        Add new tags for an externalShippingSystem.
-        Adds a tag to an existing externalShippingSystem.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_external_shipping_system_tag(external_shipping_system_id, external_shipping_system_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int external_shipping_system_id: Id of the externalShippingSystem to add a tag to (required)
-        :param str external_shipping_system_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['external_shipping_system_id', 'external_shipping_system_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_external_shipping_system_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'external_shipping_system_id' is set
-        if ('external_shipping_system_id' not in params) or (params['external_shipping_system_id'] is None):
-            raise ValueError("Missing the required parameter `external_shipping_system_id` when calling `add_external_shipping_system_tag`")
-        # verify the required parameter 'external_shipping_system_tag' is set
-        if ('external_shipping_system_tag' not in params) or (params['external_shipping_system_tag'] is None):
-            raise ValueError("Missing the required parameter `external_shipping_system_tag` when calling `add_external_shipping_system_tag`")
-
-        resource_path = '/beta/externalShippingSystem/{externalShippingSystemId}/tag/{externalShippingSystemTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'external_shipping_system_id' in params:
-            path_params['externalShippingSystemId'] = params['external_shipping_system_id']
-        if 'external_shipping_system_tag' in params:
-            path_params['externalShippingSystemTag'] = params['external_shipping_system_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class ExternalShippingSystemApi(object):
         if ('external_shipping_system_id' not in params) or (params['external_shipping_system_id'] is None):
             raise ValueError("Missing the required parameter `external_shipping_system_id` when calling `delete_external_shipping_system`")
 
-        resource_path = '/beta/externalShippingSystem/{externalShippingSystemId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/externalShippingSystem/{externalShippingSystemId}'.replace('{format}', 'json')
         path_params = {}
         if 'external_shipping_system_id' in params:
             path_params['externalShippingSystemId'] = params['external_shipping_system_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_external_shipping_system_tag(self, external_shipping_system_id, external_shipping_system_tag, **kwargs):
-        """
-        Delete a tag for an externalShippingSystem.
-        Deletes an existing externalShippingSystem tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_external_shipping_system_tag(external_shipping_system_id, external_shipping_system_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int external_shipping_system_id: Id of the externalShippingSystem to remove tag from (required)
-        :param str external_shipping_system_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['external_shipping_system_id', 'external_shipping_system_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_external_shipping_system_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'external_shipping_system_id' is set
-        if ('external_shipping_system_id' not in params) or (params['external_shipping_system_id'] is None):
-            raise ValueError("Missing the required parameter `external_shipping_system_id` when calling `delete_external_shipping_system_tag`")
-        # verify the required parameter 'external_shipping_system_tag' is set
-        if ('external_shipping_system_tag' not in params) or (params['external_shipping_system_tag'] is None):
-            raise ValueError("Missing the required parameter `external_shipping_system_tag` when calling `delete_external_shipping_system_tag`")
-
-        resource_path = '/beta/externalShippingSystem/{externalShippingSystemId}/tag/{externalShippingSystemTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'external_shipping_system_id' in params:
-            path_params['externalShippingSystemId'] = params['external_shipping_system_id']
-        if 'external_shipping_system_tag' in params:
-            path_params['externalShippingSystemTag'] = params['external_shipping_system_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class ExternalShippingSystemApi(object):
         if ('external_shipping_system_id' not in params) or (params['external_shipping_system_id'] is None):
             raise ValueError("Missing the required parameter `external_shipping_system_id` when calling `get_duplicate_external_shipping_system_by_id`")
 
-        resource_path = '/beta/externalShippingSystem/duplicate/{externalShippingSystemId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/externalShippingSystem/duplicate/{externalShippingSystemId}'.replace('{format}', 'json')
         path_params = {}
         if 'external_shipping_system_id' in params:
             path_params['externalShippingSystemId'] = params['external_shipping_system_id']
@@ -563,7 +314,7 @@ class ExternalShippingSystemApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/externalShippingSystem/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/externalShippingSystem/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -646,7 +397,7 @@ class ExternalShippingSystemApi(object):
         if ('external_shipping_system_id' not in params) or (params['external_shipping_system_id'] is None):
             raise ValueError("Missing the required parameter `external_shipping_system_id` when calling `get_external_shipping_system_by_id`")
 
-        resource_path = '/beta/externalShippingSystem/{externalShippingSystemId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/externalShippingSystem/{externalShippingSystemId}'.replace('{format}', 'json')
         path_params = {}
         if 'external_shipping_system_id' in params:
             path_params['externalShippingSystemId'] = params['external_shipping_system_id']
@@ -681,83 +432,6 @@ class ExternalShippingSystemApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ExternalShippingSystem',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_external_shipping_system_tags(self, external_shipping_system_id, **kwargs):
-        """
-        Get the tags for an externalShippingSystem.
-        Get all existing externalShippingSystem tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_external_shipping_system_tags(external_shipping_system_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int external_shipping_system_id: Id of the externalShippingSystem to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['external_shipping_system_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_external_shipping_system_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'external_shipping_system_id' is set
-        if ('external_shipping_system_id' not in params) or (params['external_shipping_system_id'] is None):
-            raise ValueError("Missing the required parameter `external_shipping_system_id` when calling `get_external_shipping_system_tags`")
-
-        resource_path = '/beta/externalShippingSystem/{externalShippingSystemId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'external_shipping_system_id' in params:
-            path_params['externalShippingSystemId'] = params['external_shipping_system_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -800,7 +474,7 @@ class ExternalShippingSystemApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_external_shipping_system`")
 
-        resource_path = '/beta/externalShippingSystem'.replace('{format}', 'json')
+        resource_path = '/v2.0/externalShippingSystem'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -877,7 +551,7 @@ class ExternalShippingSystemApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_external_shipping_system_custom_fields`")
 
-        resource_path = '/beta/externalShippingSystem/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/externalShippingSystem/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

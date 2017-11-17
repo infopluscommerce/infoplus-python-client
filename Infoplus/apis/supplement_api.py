@@ -83,7 +83,7 @@ class SupplementApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_supplement`")
 
-        resource_path = '/beta/supplement'.replace('{format}', 'json')
+        resource_path = '/v2.0/supplement'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class SupplementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Supplement',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_supplement_audit(self, supplement_id, supplement_audit, **kwargs):
-        """
-        Add new audit for a supplement
-        Adds an audit to an existing supplement.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_supplement_audit(supplement_id, supplement_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int supplement_id: Id of the supplement to add an audit to (required)
-        :param str supplement_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['supplement_id', 'supplement_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_supplement_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'supplement_id' is set
-        if ('supplement_id' not in params) or (params['supplement_id'] is None):
-            raise ValueError("Missing the required parameter `supplement_id` when calling `add_supplement_audit`")
-        # verify the required parameter 'supplement_audit' is set
-        if ('supplement_audit' not in params) or (params['supplement_audit'] is None):
-            raise ValueError("Missing the required parameter `supplement_audit` when calling `add_supplement_audit`")
-
-        resource_path = '/beta/supplement/{supplementId}/audit/{supplementAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'supplement_id' in params:
-            path_params['supplementId'] = params['supplement_id']
-        if 'supplement_audit' in params:
-            path_params['supplementAudit'] = params['supplement_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_supplement_tag(self, supplement_id, supplement_tag, **kwargs):
-        """
-        Add new tags for a supplement.
-        Adds a tag to an existing supplement.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_supplement_tag(supplement_id, supplement_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int supplement_id: Id of the supplement to add a tag to (required)
-        :param str supplement_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['supplement_id', 'supplement_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_supplement_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'supplement_id' is set
-        if ('supplement_id' not in params) or (params['supplement_id'] is None):
-            raise ValueError("Missing the required parameter `supplement_id` when calling `add_supplement_tag`")
-        # verify the required parameter 'supplement_tag' is set
-        if ('supplement_tag' not in params) or (params['supplement_tag'] is None):
-            raise ValueError("Missing the required parameter `supplement_tag` when calling `add_supplement_tag`")
-
-        resource_path = '/beta/supplement/{supplementId}/tag/{supplementTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'supplement_id' in params:
-            path_params['supplementId'] = params['supplement_id']
-        if 'supplement_tag' in params:
-            path_params['supplementTag'] = params['supplement_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class SupplementApi(object):
         if ('supplement_id' not in params) or (params['supplement_id'] is None):
             raise ValueError("Missing the required parameter `supplement_id` when calling `delete_supplement`")
 
-        resource_path = '/beta/supplement/{supplementId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/supplement/{supplementId}'.replace('{format}', 'json')
         path_params = {}
         if 'supplement_id' in params:
             path_params['supplementId'] = params['supplement_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_supplement_tag(self, supplement_id, supplement_tag, **kwargs):
-        """
-        Delete a tag for a supplement.
-        Deletes an existing supplement tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_supplement_tag(supplement_id, supplement_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int supplement_id: Id of the supplement to remove tag from (required)
-        :param str supplement_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['supplement_id', 'supplement_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_supplement_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'supplement_id' is set
-        if ('supplement_id' not in params) or (params['supplement_id'] is None):
-            raise ValueError("Missing the required parameter `supplement_id` when calling `delete_supplement_tag`")
-        # verify the required parameter 'supplement_tag' is set
-        if ('supplement_tag' not in params) or (params['supplement_tag'] is None):
-            raise ValueError("Missing the required parameter `supplement_tag` when calling `delete_supplement_tag`")
-
-        resource_path = '/beta/supplement/{supplementId}/tag/{supplementTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'supplement_id' in params:
-            path_params['supplementId'] = params['supplement_id']
-        if 'supplement_tag' in params:
-            path_params['supplementTag'] = params['supplement_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class SupplementApi(object):
         if ('supplement_id' not in params) or (params['supplement_id'] is None):
             raise ValueError("Missing the required parameter `supplement_id` when calling `get_duplicate_supplement_by_id`")
 
-        resource_path = '/beta/supplement/duplicate/{supplementId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/supplement/duplicate/{supplementId}'.replace('{format}', 'json')
         path_params = {}
         if 'supplement_id' in params:
             path_params['supplementId'] = params['supplement_id']
@@ -563,7 +314,7 @@ class SupplementApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/supplement/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/supplement/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -646,7 +397,7 @@ class SupplementApi(object):
         if ('supplement_id' not in params) or (params['supplement_id'] is None):
             raise ValueError("Missing the required parameter `supplement_id` when calling `get_supplement_by_id`")
 
-        resource_path = '/beta/supplement/{supplementId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/supplement/{supplementId}'.replace('{format}', 'json')
         path_params = {}
         if 'supplement_id' in params:
             path_params['supplementId'] = params['supplement_id']
@@ -681,83 +432,6 @@ class SupplementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Supplement',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_supplement_tags(self, supplement_id, **kwargs):
-        """
-        Get the tags for a supplement.
-        Get all existing supplement tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_supplement_tags(supplement_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int supplement_id: Id of the supplement to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['supplement_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_supplement_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'supplement_id' is set
-        if ('supplement_id' not in params) or (params['supplement_id'] is None):
-            raise ValueError("Missing the required parameter `supplement_id` when calling `get_supplement_tags`")
-
-        resource_path = '/beta/supplement/{supplementId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'supplement_id' in params:
-            path_params['supplementId'] = params['supplement_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -800,7 +474,7 @@ class SupplementApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_supplement`")
 
-        resource_path = '/beta/supplement'.replace('{format}', 'json')
+        resource_path = '/v2.0/supplement'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -877,7 +551,7 @@ class SupplementApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_supplement_custom_fields`")
 
-        resource_path = '/beta/supplement/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/supplement/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

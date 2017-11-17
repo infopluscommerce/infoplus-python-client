@@ -4,7 +4,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "Infoplus"
-VERSION = "beta"
+VERSION = "v2.0"
 
 
 

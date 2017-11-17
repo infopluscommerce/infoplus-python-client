@@ -83,7 +83,7 @@ class LegacyLowstockContactApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_legacy_lowstock_contact`")
 
-        resource_path = '/beta/legacyLowstockContact'.replace('{format}', 'json')
+        resource_path = '/v2.0/legacyLowstockContact'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class LegacyLowstockContactApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LegacyLowstockContact',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_legacy_lowstock_contact_audit(self, legacy_lowstock_contact_id, legacy_lowstock_contact_audit, **kwargs):
-        """
-        Add new audit for a legacyLowstockContact
-        Adds an audit to an existing legacyLowstockContact.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_legacy_lowstock_contact_audit(legacy_lowstock_contact_id, legacy_lowstock_contact_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int legacy_lowstock_contact_id: Id of the legacyLowstockContact to add an audit to (required)
-        :param str legacy_lowstock_contact_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['legacy_lowstock_contact_id', 'legacy_lowstock_contact_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_legacy_lowstock_contact_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'legacy_lowstock_contact_id' is set
-        if ('legacy_lowstock_contact_id' not in params) or (params['legacy_lowstock_contact_id'] is None):
-            raise ValueError("Missing the required parameter `legacy_lowstock_contact_id` when calling `add_legacy_lowstock_contact_audit`")
-        # verify the required parameter 'legacy_lowstock_contact_audit' is set
-        if ('legacy_lowstock_contact_audit' not in params) or (params['legacy_lowstock_contact_audit'] is None):
-            raise ValueError("Missing the required parameter `legacy_lowstock_contact_audit` when calling `add_legacy_lowstock_contact_audit`")
-
-        resource_path = '/beta/legacyLowstockContact/{legacyLowstockContactId}/audit/{legacyLowstockContactAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'legacy_lowstock_contact_id' in params:
-            path_params['legacyLowstockContactId'] = params['legacy_lowstock_contact_id']
-        if 'legacy_lowstock_contact_audit' in params:
-            path_params['legacyLowstockContactAudit'] = params['legacy_lowstock_contact_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_legacy_lowstock_contact_tag(self, legacy_lowstock_contact_id, legacy_lowstock_contact_tag, **kwargs):
-        """
-        Add new tags for a legacyLowstockContact.
-        Adds a tag to an existing legacyLowstockContact.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_legacy_lowstock_contact_tag(legacy_lowstock_contact_id, legacy_lowstock_contact_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int legacy_lowstock_contact_id: Id of the legacyLowstockContact to add a tag to (required)
-        :param str legacy_lowstock_contact_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['legacy_lowstock_contact_id', 'legacy_lowstock_contact_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_legacy_lowstock_contact_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'legacy_lowstock_contact_id' is set
-        if ('legacy_lowstock_contact_id' not in params) or (params['legacy_lowstock_contact_id'] is None):
-            raise ValueError("Missing the required parameter `legacy_lowstock_contact_id` when calling `add_legacy_lowstock_contact_tag`")
-        # verify the required parameter 'legacy_lowstock_contact_tag' is set
-        if ('legacy_lowstock_contact_tag' not in params) or (params['legacy_lowstock_contact_tag'] is None):
-            raise ValueError("Missing the required parameter `legacy_lowstock_contact_tag` when calling `add_legacy_lowstock_contact_tag`")
-
-        resource_path = '/beta/legacyLowstockContact/{legacyLowstockContactId}/tag/{legacyLowstockContactTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'legacy_lowstock_contact_id' in params:
-            path_params['legacyLowstockContactId'] = params['legacy_lowstock_contact_id']
-        if 'legacy_lowstock_contact_tag' in params:
-            path_params['legacyLowstockContactTag'] = params['legacy_lowstock_contact_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class LegacyLowstockContactApi(object):
         if ('legacy_lowstock_contact_id' not in params) or (params['legacy_lowstock_contact_id'] is None):
             raise ValueError("Missing the required parameter `legacy_lowstock_contact_id` when calling `delete_legacy_lowstock_contact`")
 
-        resource_path = '/beta/legacyLowstockContact/{legacyLowstockContactId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/legacyLowstockContact/{legacyLowstockContactId}'.replace('{format}', 'json')
         path_params = {}
         if 'legacy_lowstock_contact_id' in params:
             path_params['legacyLowstockContactId'] = params['legacy_lowstock_contact_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_legacy_lowstock_contact_tag(self, legacy_lowstock_contact_id, legacy_lowstock_contact_tag, **kwargs):
-        """
-        Delete a tag for a legacyLowstockContact.
-        Deletes an existing legacyLowstockContact tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_legacy_lowstock_contact_tag(legacy_lowstock_contact_id, legacy_lowstock_contact_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int legacy_lowstock_contact_id: Id of the legacyLowstockContact to remove tag from (required)
-        :param str legacy_lowstock_contact_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['legacy_lowstock_contact_id', 'legacy_lowstock_contact_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_legacy_lowstock_contact_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'legacy_lowstock_contact_id' is set
-        if ('legacy_lowstock_contact_id' not in params) or (params['legacy_lowstock_contact_id'] is None):
-            raise ValueError("Missing the required parameter `legacy_lowstock_contact_id` when calling `delete_legacy_lowstock_contact_tag`")
-        # verify the required parameter 'legacy_lowstock_contact_tag' is set
-        if ('legacy_lowstock_contact_tag' not in params) or (params['legacy_lowstock_contact_tag'] is None):
-            raise ValueError("Missing the required parameter `legacy_lowstock_contact_tag` when calling `delete_legacy_lowstock_contact_tag`")
-
-        resource_path = '/beta/legacyLowstockContact/{legacyLowstockContactId}/tag/{legacyLowstockContactTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'legacy_lowstock_contact_id' in params:
-            path_params['legacyLowstockContactId'] = params['legacy_lowstock_contact_id']
-        if 'legacy_lowstock_contact_tag' in params:
-            path_params['legacyLowstockContactTag'] = params['legacy_lowstock_contact_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class LegacyLowstockContactApi(object):
         if ('legacy_lowstock_contact_id' not in params) or (params['legacy_lowstock_contact_id'] is None):
             raise ValueError("Missing the required parameter `legacy_lowstock_contact_id` when calling `get_duplicate_legacy_lowstock_contact_by_id`")
 
-        resource_path = '/beta/legacyLowstockContact/duplicate/{legacyLowstockContactId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/legacyLowstockContact/duplicate/{legacyLowstockContactId}'.replace('{format}', 'json')
         path_params = {}
         if 'legacy_lowstock_contact_id' in params:
             path_params['legacyLowstockContactId'] = params['legacy_lowstock_contact_id']
@@ -563,7 +314,7 @@ class LegacyLowstockContactApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/legacyLowstockContact/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/legacyLowstockContact/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -646,7 +397,7 @@ class LegacyLowstockContactApi(object):
         if ('legacy_lowstock_contact_id' not in params) or (params['legacy_lowstock_contact_id'] is None):
             raise ValueError("Missing the required parameter `legacy_lowstock_contact_id` when calling `get_legacy_lowstock_contact_by_id`")
 
-        resource_path = '/beta/legacyLowstockContact/{legacyLowstockContactId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/legacyLowstockContact/{legacyLowstockContactId}'.replace('{format}', 'json')
         path_params = {}
         if 'legacy_lowstock_contact_id' in params:
             path_params['legacyLowstockContactId'] = params['legacy_lowstock_contact_id']
@@ -681,83 +432,6 @@ class LegacyLowstockContactApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LegacyLowstockContact',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_legacy_lowstock_contact_tags(self, legacy_lowstock_contact_id, **kwargs):
-        """
-        Get the tags for a legacyLowstockContact.
-        Get all existing legacyLowstockContact tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_legacy_lowstock_contact_tags(legacy_lowstock_contact_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int legacy_lowstock_contact_id: Id of the legacyLowstockContact to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['legacy_lowstock_contact_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_legacy_lowstock_contact_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'legacy_lowstock_contact_id' is set
-        if ('legacy_lowstock_contact_id' not in params) or (params['legacy_lowstock_contact_id'] is None):
-            raise ValueError("Missing the required parameter `legacy_lowstock_contact_id` when calling `get_legacy_lowstock_contact_tags`")
-
-        resource_path = '/beta/legacyLowstockContact/{legacyLowstockContactId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'legacy_lowstock_contact_id' in params:
-            path_params['legacyLowstockContactId'] = params['legacy_lowstock_contact_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -800,7 +474,7 @@ class LegacyLowstockContactApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_legacy_lowstock_contact`")
 
-        resource_path = '/beta/legacyLowstockContact'.replace('{format}', 'json')
+        resource_path = '/v2.0/legacyLowstockContact'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

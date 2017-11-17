@@ -83,7 +83,7 @@ class CarrierApi(object):
         if ('carrier_id' not in params) or (params['carrier_id'] is None):
             raise ValueError("Missing the required parameter `carrier_id` when calling `get_carrier_by_id`")
 
-        resource_path = '/beta/carrier/{carrierId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/carrier/{carrierId}'.replace('{format}', 'json')
         path_params = {}
         if 'carrier_id' in params:
             path_params['carrierId'] = params['carrier_id']
@@ -159,7 +159,7 @@ class CarrierApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/carrier/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/carrier/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

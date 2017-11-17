@@ -53,7 +53,6 @@ class Location(object):
             'number': 'int',
             'online': 'bool',
             'priority_code': 'int',
-            'cost': 'int',
             'allow_item_mixing': 'bool',
             'create_date': 'datetime',
             'modify_date': 'datetime',
@@ -77,7 +76,6 @@ class Location(object):
             'number': 'number',
             'online': 'online',
             'priority_code': 'priorityCode',
-            'cost': 'cost',
             'allow_item_mixing': 'allowItemMixing',
             'create_date': 'createDate',
             'modify_date': 'modifyDate',
@@ -100,7 +98,6 @@ class Location(object):
         self._number = None
         self._online = False
         self._priority_code = None
-        self._cost = None
         self._allow_item_mixing = False
         self._create_date = None
         self._modify_date = None
@@ -457,28 +454,6 @@ class Location(object):
         :type: int
         """
         self._priority_code = priority_code
-
-    @property
-    def cost(self):
-        """
-        Gets the cost of this Location.
-
-
-        :return: The cost of this Location.
-        :rtype: int
-        """
-        return self._cost
-
-    @cost.setter
-    def cost(self, cost):
-        """
-        Sets the cost of this Location.
-
-
-        :param cost: The cost of this Location.
-        :type: int
-        """
-        self._cost = cost
 
     @property
     def allow_item_mixing(self):

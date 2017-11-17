@@ -74,7 +74,6 @@ class Order(object):
             'number_of_pallets': 'int',
             'completion_status': 'str',
             'parcel_account_id': 'int',
-            'third_party_parcel_account_id': 'int',
             'cost_center': 'str',
             'create_date': 'datetime',
             'customer_po_no': 'str',
@@ -89,7 +88,6 @@ class Order(object):
             'hold_code': 'str',
             'integration_partner_id': 'int',
             'number_of_line_items': 'int',
-            'estimated_number_of_picks': 'int',
             'modify_date': 'datetime',
             'oms_order_no': 'int',
             'oms_customer_id': 'int',
@@ -98,11 +96,9 @@ class Order(object):
             'order_reason': 'int',
             'order_source_id': 'int',
             'packing_slip_template_id': 'int',
-            'order_invoice_template_id': 'int',
             'order_confirmation_email_template_id': 'int',
             'shipment_confirmation_email_template_id': 'int',
             'price_level': 'str',
-            'price_mode': 'str',
             'priority_code': 'int',
             'fulfillment_process_id': 'int',
             'ship_by': 'datetime',
@@ -173,7 +169,6 @@ class Order(object):
             'number_of_pallets': 'numberOfPallets',
             'completion_status': 'completionStatus',
             'parcel_account_id': 'parcelAccountId',
-            'third_party_parcel_account_id': 'thirdPartyParcelAccountId',
             'cost_center': 'costCenter',
             'create_date': 'createDate',
             'customer_po_no': 'customerPONo',
@@ -188,7 +183,6 @@ class Order(object):
             'hold_code': 'holdCode',
             'integration_partner_id': 'integrationPartnerId',
             'number_of_line_items': 'numberOfLineItems',
-            'estimated_number_of_picks': 'estimatedNumberOfPicks',
             'modify_date': 'modifyDate',
             'oms_order_no': 'omsOrderNo',
             'oms_customer_id': 'omsCustomerId',
@@ -197,11 +191,9 @@ class Order(object):
             'order_reason': 'orderReason',
             'order_source_id': 'orderSourceId',
             'packing_slip_template_id': 'packingSlipTemplateId',
-            'order_invoice_template_id': 'orderInvoiceTemplateId',
             'order_confirmation_email_template_id': 'orderConfirmationEmailTemplateId',
             'shipment_confirmation_email_template_id': 'shipmentConfirmationEmailTemplateId',
             'price_level': 'priceLevel',
-            'price_mode': 'priceMode',
             'priority_code': 'priorityCode',
             'fulfillment_process_id': 'fulfillmentProcessId',
             'ship_by': 'shipBy',
@@ -271,7 +263,6 @@ class Order(object):
         self._number_of_pallets = None
         self._completion_status = None
         self._parcel_account_id = None
-        self._third_party_parcel_account_id = None
         self._cost_center = None
         self._create_date = None
         self._customer_po_no = None
@@ -286,7 +277,6 @@ class Order(object):
         self._hold_code = None
         self._integration_partner_id = None
         self._number_of_line_items = None
-        self._estimated_number_of_picks = None
         self._modify_date = None
         self._oms_order_no = None
         self._oms_customer_id = None
@@ -295,11 +285,9 @@ class Order(object):
         self._order_reason = None
         self._order_source_id = None
         self._packing_slip_template_id = None
-        self._order_invoice_template_id = None
         self._order_confirmation_email_template_id = None
         self._shipment_confirmation_email_template_id = None
         self._price_level = None
-        self._price_mode = None
         self._priority_code = None
         self._fulfillment_process_id = None
         self._ship_by = None
@@ -1146,28 +1134,6 @@ class Order(object):
         self._parcel_account_id = parcel_account_id
 
     @property
-    def third_party_parcel_account_id(self):
-        """
-        Gets the third_party_parcel_account_id of this Order.
-
-
-        :return: The third_party_parcel_account_id of this Order.
-        :rtype: int
-        """
-        return self._third_party_parcel_account_id
-
-    @third_party_parcel_account_id.setter
-    def third_party_parcel_account_id(self, third_party_parcel_account_id):
-        """
-        Sets the third_party_parcel_account_id of this Order.
-
-
-        :param third_party_parcel_account_id: The third_party_parcel_account_id of this Order.
-        :type: int
-        """
-        self._third_party_parcel_account_id = third_party_parcel_account_id
-
-    @property
     def cost_center(self):
         """
         Gets the cost_center of this Order.
@@ -1476,28 +1442,6 @@ class Order(object):
         self._number_of_line_items = number_of_line_items
 
     @property
-    def estimated_number_of_picks(self):
-        """
-        Gets the estimated_number_of_picks of this Order.
-
-
-        :return: The estimated_number_of_picks of this Order.
-        :rtype: int
-        """
-        return self._estimated_number_of_picks
-
-    @estimated_number_of_picks.setter
-    def estimated_number_of_picks(self, estimated_number_of_picks):
-        """
-        Sets the estimated_number_of_picks of this Order.
-
-
-        :param estimated_number_of_picks: The estimated_number_of_picks of this Order.
-        :type: int
-        """
-        self._estimated_number_of_picks = estimated_number_of_picks
-
-    @property
     def modify_date(self):
         """
         Gets the modify_date of this Order.
@@ -1674,28 +1618,6 @@ class Order(object):
         self._packing_slip_template_id = packing_slip_template_id
 
     @property
-    def order_invoice_template_id(self):
-        """
-        Gets the order_invoice_template_id of this Order.
-
-
-        :return: The order_invoice_template_id of this Order.
-        :rtype: int
-        """
-        return self._order_invoice_template_id
-
-    @order_invoice_template_id.setter
-    def order_invoice_template_id(self, order_invoice_template_id):
-        """
-        Sets the order_invoice_template_id of this Order.
-
-
-        :param order_invoice_template_id: The order_invoice_template_id of this Order.
-        :type: int
-        """
-        self._order_invoice_template_id = order_invoice_template_id
-
-    @property
     def order_confirmation_email_template_id(self):
         """
         Gets the order_confirmation_email_template_id of this Order.
@@ -1760,28 +1682,6 @@ class Order(object):
         :type: str
         """
         self._price_level = price_level
-
-    @property
-    def price_mode(self):
-        """
-        Gets the price_mode of this Order.
-
-
-        :return: The price_mode of this Order.
-        :rtype: str
-        """
-        return self._price_mode
-
-    @price_mode.setter
-    def price_mode(self, price_mode):
-        """
-        Sets the price_mode of this Order.
-
-
-        :param price_mode: The price_mode of this Order.
-        :type: str
-        """
-        self._price_mode = price_mode
 
     @property
     def priority_code(self):

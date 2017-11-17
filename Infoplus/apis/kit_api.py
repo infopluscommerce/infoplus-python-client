@@ -83,7 +83,7 @@ class KitApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_kit`")
 
-        resource_path = '/beta/kit'.replace('{format}', 'json')
+        resource_path = '/v2.0/kit'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -118,172 +118,6 @@ class KitApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Kit',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_kit_audit(self, kit_id, kit_audit, **kwargs):
-        """
-        Add new audit for a kit
-        Adds an audit to an existing kit.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_kit_audit(kit_id, kit_audit, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int kit_id: Id of the kit to add an audit to (required)
-        :param str kit_audit: The audit to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['kit_id', 'kit_audit']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_kit_audit" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'kit_id' is set
-        if ('kit_id' not in params) or (params['kit_id'] is None):
-            raise ValueError("Missing the required parameter `kit_id` when calling `add_kit_audit`")
-        # verify the required parameter 'kit_audit' is set
-        if ('kit_audit' not in params) or (params['kit_audit'] is None):
-            raise ValueError("Missing the required parameter `kit_audit` when calling `add_kit_audit`")
-
-        resource_path = '/beta/kit/{kitId}/audit/{kitAudit}'.replace('{format}', 'json')
-        path_params = {}
-        if 'kit_id' in params:
-            path_params['kitId'] = params['kit_id']
-        if 'kit_audit' in params:
-            path_params['kitAudit'] = params['kit_audit']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def add_kit_tag(self, kit_id, kit_tag, **kwargs):
-        """
-        Add new tags for a kit.
-        Adds a tag to an existing kit.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.add_kit_tag(kit_id, kit_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int kit_id: Id of the kit to add a tag to (required)
-        :param str kit_tag: The tag to add (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['kit_id', 'kit_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method add_kit_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'kit_id' is set
-        if ('kit_id' not in params) or (params['kit_id'] is None):
-            raise ValueError("Missing the required parameter `kit_id` when calling `add_kit_tag`")
-        # verify the required parameter 'kit_tag' is set
-        if ('kit_tag' not in params) or (params['kit_tag'] is None):
-            raise ValueError("Missing the required parameter `kit_tag` when calling `add_kit_tag`")
-
-        resource_path = '/beta/kit/{kitId}/tag/{kitTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'kit_id' in params:
-            path_params['kitId'] = params['kit_id']
-        if 'kit_tag' in params:
-            path_params['kitTag'] = params['kit_tag']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -326,93 +160,10 @@ class KitApi(object):
         if ('kit_id' not in params) or (params['kit_id'] is None):
             raise ValueError("Missing the required parameter `kit_id` when calling `delete_kit`")
 
-        resource_path = '/beta/kit/{kitId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/kit/{kitId}'.replace('{format}', 'json')
         path_params = {}
         if 'kit_id' in params:
             path_params['kitId'] = params['kit_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_kit_tag(self, kit_id, kit_tag, **kwargs):
-        """
-        Delete a tag for a kit.
-        Deletes an existing kit tag using the specified data.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_kit_tag(kit_id, kit_tag, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int kit_id: Id of the kit to remove tag from (required)
-        :param str kit_tag: The tag to delete (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['kit_id', 'kit_tag']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_kit_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'kit_id' is set
-        if ('kit_id' not in params) or (params['kit_id'] is None):
-            raise ValueError("Missing the required parameter `kit_id` when calling `delete_kit_tag`")
-        # verify the required parameter 'kit_tag' is set
-        if ('kit_tag' not in params) or (params['kit_tag'] is None):
-            raise ValueError("Missing the required parameter `kit_tag` when calling `delete_kit_tag`")
-
-        resource_path = '/beta/kit/{kitId}/tag/{kitTag}'.replace('{format}', 'json')
-        path_params = {}
-        if 'kit_id' in params:
-            path_params['kitId'] = params['kit_id']
-        if 'kit_tag' in params:
-            path_params['kitTag'] = params['kit_tag']
 
         query_params = {}
 
@@ -486,7 +237,7 @@ class KitApi(object):
         if ('kit_id' not in params) or (params['kit_id'] is None):
             raise ValueError("Missing the required parameter `kit_id` when calling `get_duplicate_kit_by_id`")
 
-        resource_path = '/beta/kit/duplicate/{kitId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/kit/duplicate/{kitId}'.replace('{format}', 'json')
         path_params = {}
         if 'kit_id' in params:
             path_params['kitId'] = params['kit_id']
@@ -563,7 +314,7 @@ class KitApi(object):
         del params['kwargs']
 
 
-        resource_path = '/beta/kit/search'.replace('{format}', 'json')
+        resource_path = '/v2.0/kit/search'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -646,7 +397,7 @@ class KitApi(object):
         if ('kit_id' not in params) or (params['kit_id'] is None):
             raise ValueError("Missing the required parameter `kit_id` when calling `get_kit_by_id`")
 
-        resource_path = '/beta/kit/{kitId}'.replace('{format}', 'json')
+        resource_path = '/v2.0/kit/{kitId}'.replace('{format}', 'json')
         path_params = {}
         if 'kit_id' in params:
             path_params['kitId'] = params['kit_id']
@@ -681,83 +432,6 @@ class KitApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Kit',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_kit_tags(self, kit_id, **kwargs):
-        """
-        Get the tags for a kit.
-        Get all existing kit tags.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_kit_tags(kit_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int kit_id: Id of the kit to get tags for (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['kit_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_kit_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'kit_id' is set
-        if ('kit_id' not in params) or (params['kit_id'] is None):
-            raise ValueError("Missing the required parameter `kit_id` when calling `get_kit_tags`")
-
-        resource_path = '/beta/kit/{kitId}/tag'.replace('{format}', 'json')
-        path_params = {}
-        if 'kit_id' in params:
-            path_params['kitId'] = params['kit_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type([])
-
-        # Authentication setting
-        auth_settings = ['api_key']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -800,7 +474,7 @@ class KitApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_kit`")
 
-        resource_path = '/beta/kit'.replace('{format}', 'json')
+        resource_path = '/v2.0/kit'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -877,7 +551,7 @@ class KitApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_kit_custom_fields`")
 
-        resource_path = '/beta/kit/customFields'.replace('{format}', 'json')
+        resource_path = '/v2.0/kit/customFields'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
