@@ -108,6 +108,8 @@ class ItemReceipt(object):
             'modify_date': 'datetime',
             'impressions': 'int',
             'asn_line': 'int',
+            'upc': 'str',
+            'vendor_sku': 'str',
             'custom_fields': 'dict(str, object)'
         }
 
@@ -183,6 +185,8 @@ class ItemReceipt(object):
             'modify_date': 'modifyDate',
             'impressions': 'impressions',
             'asn_line': 'asnLine',
+            'upc': 'upc',
+            'vendor_sku': 'vendorSKU',
             'custom_fields': 'customFields'
         }
 
@@ -257,6 +261,8 @@ class ItemReceipt(object):
         self._modify_date = None
         self._impressions = None
         self._asn_line = None
+        self._upc = None
+        self._vendor_sku = None
         self._custom_fields = None
 
     @property
@@ -1820,6 +1826,50 @@ class ItemReceipt(object):
         :type: int
         """
         self._asn_line = asn_line
+
+    @property
+    def upc(self):
+        """
+        Gets the upc of this ItemReceipt.
+
+
+        :return: The upc of this ItemReceipt.
+        :rtype: str
+        """
+        return self._upc
+
+    @upc.setter
+    def upc(self, upc):
+        """
+        Sets the upc of this ItemReceipt.
+
+
+        :param upc: The upc of this ItemReceipt.
+        :type: str
+        """
+        self._upc = upc
+
+    @property
+    def vendor_sku(self):
+        """
+        Gets the vendor_sku of this ItemReceipt.
+
+
+        :return: The vendor_sku of this ItemReceipt.
+        :rtype: str
+        """
+        return self._vendor_sku
+
+    @vendor_sku.setter
+    def vendor_sku(self, vendor_sku):
+        """
+        Sets the vendor_sku of this ItemReceipt.
+
+
+        :param vendor_sku: The vendor_sku of this ItemReceipt.
+        :type: str
+        """
+        self._vendor_sku = vendor_sku
 
     @property
     def custom_fields(self):

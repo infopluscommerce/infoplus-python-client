@@ -82,10 +82,12 @@ class Order(object):
             'distribution_charges': 'float',
             'division': 'int',
             'entered_by': 'str',
+            'pre_allocation_estimated_weight': 'float',
             'estimated_weight_lbs': 'float',
             'freight': 'float',
             'gift_message': 'str',
             'group_order_id': 'float',
+            'parent_kod_order_id': 'float',
             'hold_code': 'str',
             'integration_partner_id': 'int',
             'number_of_line_items': 'int',
@@ -125,6 +127,7 @@ class Order(object):
             'subtotal': 'float',
             'tax': 'float',
             'total': 'float',
+            'total_discount': 'float',
             'total_paid': 'float',
             'total_qty': 'int',
             'weight_lbs': 'float',
@@ -182,10 +185,12 @@ class Order(object):
             'distribution_charges': 'distributionCharges',
             'division': 'division',
             'entered_by': 'enteredBy',
+            'pre_allocation_estimated_weight': 'preAllocationEstimatedWeight',
             'estimated_weight_lbs': 'estimatedWeightLbs',
             'freight': 'freight',
             'gift_message': 'giftMessage',
             'group_order_id': 'groupOrderId',
+            'parent_kod_order_id': 'parentKODOrderId',
             'hold_code': 'holdCode',
             'integration_partner_id': 'integrationPartnerId',
             'number_of_line_items': 'numberOfLineItems',
@@ -225,6 +230,7 @@ class Order(object):
             'subtotal': 'subtotal',
             'tax': 'tax',
             'total': 'total',
+            'total_discount': 'totalDiscount',
             'total_paid': 'totalPaid',
             'total_qty': 'totalQty',
             'weight_lbs': 'weightLbs',
@@ -281,10 +287,12 @@ class Order(object):
         self._distribution_charges = None
         self._division = None
         self._entered_by = None
+        self._pre_allocation_estimated_weight = None
         self._estimated_weight_lbs = None
         self._freight = None
         self._gift_message = None
         self._group_order_id = None
+        self._parent_kod_order_id = None
         self._hold_code = None
         self._integration_partner_id = None
         self._number_of_line_items = None
@@ -324,6 +332,7 @@ class Order(object):
         self._subtotal = None
         self._tax = None
         self._total = None
+        self._total_discount = None
         self._total_paid = None
         self._total_qty = None
         self._weight_lbs = None
@@ -1325,6 +1334,28 @@ class Order(object):
         self._entered_by = entered_by
 
     @property
+    def pre_allocation_estimated_weight(self):
+        """
+        Gets the pre_allocation_estimated_weight of this Order.
+
+
+        :return: The pre_allocation_estimated_weight of this Order.
+        :rtype: float
+        """
+        return self._pre_allocation_estimated_weight
+
+    @pre_allocation_estimated_weight.setter
+    def pre_allocation_estimated_weight(self, pre_allocation_estimated_weight):
+        """
+        Sets the pre_allocation_estimated_weight of this Order.
+
+
+        :param pre_allocation_estimated_weight: The pre_allocation_estimated_weight of this Order.
+        :type: float
+        """
+        self._pre_allocation_estimated_weight = pre_allocation_estimated_weight
+
+    @property
     def estimated_weight_lbs(self):
         """
         Gets the estimated_weight_lbs of this Order.
@@ -1411,6 +1442,28 @@ class Order(object):
         :type: float
         """
         self._group_order_id = group_order_id
+
+    @property
+    def parent_kod_order_id(self):
+        """
+        Gets the parent_kod_order_id of this Order.
+
+
+        :return: The parent_kod_order_id of this Order.
+        :rtype: float
+        """
+        return self._parent_kod_order_id
+
+    @parent_kod_order_id.setter
+    def parent_kod_order_id(self, parent_kod_order_id):
+        """
+        Sets the parent_kod_order_id of this Order.
+
+
+        :param parent_kod_order_id: The parent_kod_order_id of this Order.
+        :type: float
+        """
+        self._parent_kod_order_id = parent_kod_order_id
 
     @property
     def hold_code(self):
@@ -2269,6 +2322,28 @@ class Order(object):
         :type: float
         """
         self._total = total
+
+    @property
+    def total_discount(self):
+        """
+        Gets the total_discount of this Order.
+
+
+        :return: The total_discount of this Order.
+        :rtype: float
+        """
+        return self._total_discount
+
+    @total_discount.setter
+    def total_discount(self, total_discount):
+        """
+        Sets the total_discount of this Order.
+
+
+        :param total_discount: The total_discount of this Order.
+        :type: float
+        """
+        self._total_discount = total_discount
 
     @property
     def total_paid(self):

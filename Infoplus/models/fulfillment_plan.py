@@ -46,7 +46,8 @@ class FulfillmentPlan(object):
             'last_run_time': 'datetime',
             'order_smart_filter_id': 'int',
             'location_smart_filter_id': 'int',
-            'maximum_number_of_orders': 'int',
+            'max_orders': 'int',
+            'batch_size': 'int',
             'version': 'str',
             'create_pick_work': 'bool',
             'picking_rule': 'str',
@@ -85,7 +86,8 @@ class FulfillmentPlan(object):
             'last_run_time': 'lastRunTime',
             'order_smart_filter_id': 'orderSmartFilterId',
             'location_smart_filter_id': 'locationSmartFilterId',
-            'maximum_number_of_orders': 'maximumNumberOfOrders',
+            'max_orders': 'maxOrders',
+            'batch_size': 'batchSize',
             'version': 'version',
             'create_pick_work': 'createPickWork',
             'picking_rule': 'pickingRule',
@@ -123,7 +125,8 @@ class FulfillmentPlan(object):
         self._last_run_time = None
         self._order_smart_filter_id = None
         self._location_smart_filter_id = None
-        self._maximum_number_of_orders = None
+        self._max_orders = None
+        self._batch_size = None
         self._version = None
         self._create_pick_work = False
         self._picking_rule = None
@@ -350,26 +353,48 @@ class FulfillmentPlan(object):
         self._location_smart_filter_id = location_smart_filter_id
 
     @property
-    def maximum_number_of_orders(self):
+    def max_orders(self):
         """
-        Gets the maximum_number_of_orders of this FulfillmentPlan.
+        Gets the max_orders of this FulfillmentPlan.
 
 
-        :return: The maximum_number_of_orders of this FulfillmentPlan.
+        :return: The max_orders of this FulfillmentPlan.
         :rtype: int
         """
-        return self._maximum_number_of_orders
+        return self._max_orders
 
-    @maximum_number_of_orders.setter
-    def maximum_number_of_orders(self, maximum_number_of_orders):
+    @max_orders.setter
+    def max_orders(self, max_orders):
         """
-        Sets the maximum_number_of_orders of this FulfillmentPlan.
+        Sets the max_orders of this FulfillmentPlan.
 
 
-        :param maximum_number_of_orders: The maximum_number_of_orders of this FulfillmentPlan.
+        :param max_orders: The max_orders of this FulfillmentPlan.
         :type: int
         """
-        self._maximum_number_of_orders = maximum_number_of_orders
+        self._max_orders = max_orders
+
+    @property
+    def batch_size(self):
+        """
+        Gets the batch_size of this FulfillmentPlan.
+
+
+        :return: The batch_size of this FulfillmentPlan.
+        :rtype: int
+        """
+        return self._batch_size
+
+    @batch_size.setter
+    def batch_size(self, batch_size):
+        """
+        Sets the batch_size of this FulfillmentPlan.
+
+
+        :param batch_size: The batch_size of this FulfillmentPlan.
+        :type: int
+        """
+        self._batch_size = batch_size
 
     @property
     def version(self):

@@ -57,6 +57,7 @@ class Shipment(object):
             'estimated_zone': 'str',
             'parcel_account_no': 'str',
             'third_party_parcel_account_no': 'str',
+            'shipment_id': 'str',
             'manifest_id': 'int',
             'residential': 'bool',
             'billing_option': 'str',
@@ -68,6 +69,7 @@ class Shipment(object):
             'retail_freight_amount': 'float',
             'external_shipping_system_id': 'int',
             'shipment_type': 'str',
+            'carrier_company': 'str',
             'custom_fields': 'dict(str, object)'
         }
 
@@ -92,6 +94,7 @@ class Shipment(object):
             'estimated_zone': 'estimatedZone',
             'parcel_account_no': 'parcelAccountNo',
             'third_party_parcel_account_no': 'thirdPartyParcelAccountNo',
+            'shipment_id': 'shipmentID',
             'manifest_id': 'manifestId',
             'residential': 'residential',
             'billing_option': 'billingOption',
@@ -103,6 +106,7 @@ class Shipment(object):
             'retail_freight_amount': 'retailFreightAmount',
             'external_shipping_system_id': 'externalShippingSystemId',
             'shipment_type': 'shipmentType',
+            'carrier_company': 'carrierCompany',
             'custom_fields': 'customFields'
         }
 
@@ -126,6 +130,7 @@ class Shipment(object):
         self._estimated_zone = None
         self._parcel_account_no = None
         self._third_party_parcel_account_no = None
+        self._shipment_id = None
         self._manifest_id = None
         self._residential = False
         self._billing_option = None
@@ -137,6 +142,7 @@ class Shipment(object):
         self._retail_freight_amount = None
         self._external_shipping_system_id = None
         self._shipment_type = None
+        self._carrier_company = None
         self._custom_fields = None
 
     @property
@@ -580,6 +586,28 @@ class Shipment(object):
         self._third_party_parcel_account_no = third_party_parcel_account_no
 
     @property
+    def shipment_id(self):
+        """
+        Gets the shipment_id of this Shipment.
+
+
+        :return: The shipment_id of this Shipment.
+        :rtype: str
+        """
+        return self._shipment_id
+
+    @shipment_id.setter
+    def shipment_id(self, shipment_id):
+        """
+        Sets the shipment_id of this Shipment.
+
+
+        :param shipment_id: The shipment_id of this Shipment.
+        :type: str
+        """
+        self._shipment_id = shipment_id
+
+    @property
     def manifest_id(self):
         """
         Gets the manifest_id of this Shipment.
@@ -820,6 +848,28 @@ class Shipment(object):
         :type: str
         """
         self._shipment_type = shipment_type
+
+    @property
+    def carrier_company(self):
+        """
+        Gets the carrier_company of this Shipment.
+
+
+        :return: The carrier_company of this Shipment.
+        :rtype: str
+        """
+        return self._carrier_company
+
+    @carrier_company.setter
+    def carrier_company(self, carrier_company):
+        """
+        Sets the carrier_company of this Shipment.
+
+
+        :param carrier_company: The carrier_company of this Shipment.
+        :type: str
+        """
+        self._carrier_company = carrier_company
 
     @property
     def custom_fields(self):

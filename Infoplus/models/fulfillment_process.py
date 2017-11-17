@@ -48,8 +48,10 @@ class FulfillmentProcess(object):
             'status': 'str',
             'order_smart_filter_id': 'int',
             'location_smart_filter_id': 'int',
-            'order_limit': 'int',
+            'max_orders': 'int',
+            'batch_size': 'int',
             'version': 'str',
+            'fulfillment_process_group': 'int',
             'number_of_orders': 'int',
             'number_of_lines': 'int',
             'number_of_sk_us': 'int',
@@ -101,8 +103,10 @@ class FulfillmentProcess(object):
             'status': 'status',
             'order_smart_filter_id': 'orderSmartFilterId',
             'location_smart_filter_id': 'locationSmartFilterId',
-            'order_limit': 'orderLimit',
+            'max_orders': 'maxOrders',
+            'batch_size': 'batchSize',
             'version': 'version',
+            'fulfillment_process_group': 'fulfillmentProcessGroup',
             'number_of_orders': 'numberOfOrders',
             'number_of_lines': 'numberOfLines',
             'number_of_sk_us': 'numberOfSKUs',
@@ -153,8 +157,10 @@ class FulfillmentProcess(object):
         self._status = None
         self._order_smart_filter_id = None
         self._location_smart_filter_id = None
-        self._order_limit = None
+        self._max_orders = None
+        self._batch_size = None
         self._version = None
+        self._fulfillment_process_group = None
         self._number_of_orders = None
         self._number_of_lines = None
         self._number_of_sk_us = None
@@ -436,26 +442,48 @@ class FulfillmentProcess(object):
         self._location_smart_filter_id = location_smart_filter_id
 
     @property
-    def order_limit(self):
+    def max_orders(self):
         """
-        Gets the order_limit of this FulfillmentProcess.
+        Gets the max_orders of this FulfillmentProcess.
 
 
-        :return: The order_limit of this FulfillmentProcess.
+        :return: The max_orders of this FulfillmentProcess.
         :rtype: int
         """
-        return self._order_limit
+        return self._max_orders
 
-    @order_limit.setter
-    def order_limit(self, order_limit):
+    @max_orders.setter
+    def max_orders(self, max_orders):
         """
-        Sets the order_limit of this FulfillmentProcess.
+        Sets the max_orders of this FulfillmentProcess.
 
 
-        :param order_limit: The order_limit of this FulfillmentProcess.
+        :param max_orders: The max_orders of this FulfillmentProcess.
         :type: int
         """
-        self._order_limit = order_limit
+        self._max_orders = max_orders
+
+    @property
+    def batch_size(self):
+        """
+        Gets the batch_size of this FulfillmentProcess.
+
+
+        :return: The batch_size of this FulfillmentProcess.
+        :rtype: int
+        """
+        return self._batch_size
+
+    @batch_size.setter
+    def batch_size(self, batch_size):
+        """
+        Sets the batch_size of this FulfillmentProcess.
+
+
+        :param batch_size: The batch_size of this FulfillmentProcess.
+        :type: int
+        """
+        self._batch_size = batch_size
 
     @property
     def version(self):
@@ -478,6 +506,28 @@ class FulfillmentProcess(object):
         :type: str
         """
         self._version = version
+
+    @property
+    def fulfillment_process_group(self):
+        """
+        Gets the fulfillment_process_group of this FulfillmentProcess.
+
+
+        :return: The fulfillment_process_group of this FulfillmentProcess.
+        :rtype: int
+        """
+        return self._fulfillment_process_group
+
+    @fulfillment_process_group.setter
+    def fulfillment_process_group(self, fulfillment_process_group):
+        """
+        Sets the fulfillment_process_group of this FulfillmentProcess.
+
+
+        :param fulfillment_process_group: The fulfillment_process_group of this FulfillmentProcess.
+        :type: int
+        """
+        self._fulfillment_process_group = fulfillment_process_group
 
     @property
     def number_of_orders(self):

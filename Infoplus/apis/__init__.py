@@ -17,6 +17,8 @@ from .carton_activity_api import CartonActivityApi
 from .carton_content_api import CartonContentApi
 from .carton_type_api import CartonTypeApi
 from .customer_api import CustomerApi
+from .customer_invoice_template_api import CustomerInvoiceTemplateApi
+from .customer_invoice_template_line_api import CustomerInvoiceTemplateLineApi
 from .edi_document_type_api import EDIDocumentTypeApi
 from .email_template_api import EmailTemplateApi
 from .external_shipment_api import ExternalShipmentApi

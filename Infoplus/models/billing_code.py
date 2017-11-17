@@ -45,6 +45,8 @@ class BillingCode(object):
             'user_id': 'int',
             'lob_id': 'int',
             'billing_code_type_id': 'int',
+            'record_type': 'str',
+            'record_id': 'str',
             'note': 'str',
             'custom_fields': 'dict(str, object)'
         }
@@ -58,6 +60,8 @@ class BillingCode(object):
             'user_id': 'userId',
             'lob_id': 'lobId',
             'billing_code_type_id': 'billingCodeTypeId',
+            'record_type': 'recordType',
+            'record_id': 'recordId',
             'note': 'note',
             'custom_fields': 'customFields'
         }
@@ -70,6 +74,8 @@ class BillingCode(object):
         self._user_id = None
         self._lob_id = None
         self._billing_code_type_id = None
+        self._record_type = None
+        self._record_id = None
         self._note = None
         self._custom_fields = None
 
@@ -248,6 +254,50 @@ class BillingCode(object):
         :type: int
         """
         self._billing_code_type_id = billing_code_type_id
+
+    @property
+    def record_type(self):
+        """
+        Gets the record_type of this BillingCode.
+
+
+        :return: The record_type of this BillingCode.
+        :rtype: str
+        """
+        return self._record_type
+
+    @record_type.setter
+    def record_type(self, record_type):
+        """
+        Sets the record_type of this BillingCode.
+
+
+        :param record_type: The record_type of this BillingCode.
+        :type: str
+        """
+        self._record_type = record_type
+
+    @property
+    def record_id(self):
+        """
+        Gets the record_id of this BillingCode.
+
+
+        :return: The record_id of this BillingCode.
+        :rtype: str
+        """
+        return self._record_id
+
+    @record_id.setter
+    def record_id(self, record_id):
+        """
+        Sets the record_id of this BillingCode.
+
+
+        :param record_id: The record_id of this BillingCode.
+        :type: str
+        """
+        self._record_id = record_id
 
     @property
     def note(self):

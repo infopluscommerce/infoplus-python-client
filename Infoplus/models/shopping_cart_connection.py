@@ -49,6 +49,7 @@ class ShoppingCartConnection(object):
             'item_filter_id': 'int',
             'infoplus_sku_field_to_map': 'str',
             'shopping_cart_sku_field_to_map': 'str',
+            'script_id': 'int',
             'name': 'str',
             'shopping_cart_store_url': 'str',
             'access_code': 'str',
@@ -57,6 +58,7 @@ class ShoppingCartConnection(object):
             'password': 'str',
             'default_carrier_id': 'int',
             'order_shipment_level': 'str',
+            'create_invoices': 'bool',
             'sync_orders': 'bool',
             'sync_inventory': 'bool',
             'sync_tracking_data': 'bool',
@@ -81,6 +83,7 @@ class ShoppingCartConnection(object):
             'item_filter_id': 'itemFilterId',
             'infoplus_sku_field_to_map': 'infoplusSKUFieldToMap',
             'shopping_cart_sku_field_to_map': 'shoppingCartSKUFieldToMap',
+            'script_id': 'scriptId',
             'name': 'name',
             'shopping_cart_store_url': 'shoppingCartStoreURL',
             'access_code': 'accessCode',
@@ -89,6 +92,7 @@ class ShoppingCartConnection(object):
             'password': 'password',
             'default_carrier_id': 'defaultCarrierId',
             'order_shipment_level': 'orderShipmentLevel',
+            'create_invoices': 'createInvoices',
             'sync_orders': 'syncOrders',
             'sync_inventory': 'syncInventory',
             'sync_tracking_data': 'syncTrackingData',
@@ -112,6 +116,7 @@ class ShoppingCartConnection(object):
         self._item_filter_id = None
         self._infoplus_sku_field_to_map = None
         self._shopping_cart_sku_field_to_map = None
+        self._script_id = None
         self._name = None
         self._shopping_cart_store_url = None
         self._access_code = None
@@ -120,6 +125,7 @@ class ShoppingCartConnection(object):
         self._password = None
         self._default_carrier_id = None
         self._order_shipment_level = None
+        self._create_invoices = False
         self._sync_orders = False
         self._sync_inventory = False
         self._sync_tracking_data = False
@@ -395,6 +401,28 @@ class ShoppingCartConnection(object):
         self._shopping_cart_sku_field_to_map = shopping_cart_sku_field_to_map
 
     @property
+    def script_id(self):
+        """
+        Gets the script_id of this ShoppingCartConnection.
+
+
+        :return: The script_id of this ShoppingCartConnection.
+        :rtype: int
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id):
+        """
+        Sets the script_id of this ShoppingCartConnection.
+
+
+        :param script_id: The script_id of this ShoppingCartConnection.
+        :type: int
+        """
+        self._script_id = script_id
+
+    @property
     def name(self):
         """
         Gets the name of this ShoppingCartConnection.
@@ -569,6 +597,28 @@ class ShoppingCartConnection(object):
         :type: str
         """
         self._order_shipment_level = order_shipment_level
+
+    @property
+    def create_invoices(self):
+        """
+        Gets the create_invoices of this ShoppingCartConnection.
+
+
+        :return: The create_invoices of this ShoppingCartConnection.
+        :rtype: bool
+        """
+        return self._create_invoices
+
+    @create_invoices.setter
+    def create_invoices(self, create_invoices):
+        """
+        Sets the create_invoices of this ShoppingCartConnection.
+
+
+        :param create_invoices: The create_invoices of this ShoppingCartConnection.
+        :type: bool
+        """
+        self._create_invoices = create_invoices
 
     @property
     def sync_orders(self):

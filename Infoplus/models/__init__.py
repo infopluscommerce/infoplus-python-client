@@ -4,6 +4,8 @@ from __future__ import absolute_import
 from .aisle import Aisle
 from .alert import Alert
 from .api_response import ApiResponse
+from .apply_order_warehouse_fulfillment_plan_input import ApplyOrderWarehouseFulfillmentPlanInput
+from .apply_order_warehouse_fulfillment_plan_output import ApplyOrderWarehouseFulfillmentPlanOutput
 from .asn import Asn
 from .bill_of_lading import BillOfLading
 from .bill_of_lading_carrier_info_line import BillOfLadingCarrierInfoLine
@@ -20,6 +22,8 @@ from .carton_activity import CartonActivity
 from .carton_content import CartonContent
 from .carton_type import CartonType
 from .customer import Customer
+from .customer_invoice_template import CustomerInvoiceTemplate
+from .customer_invoice_template_line import CustomerInvoiceTemplateLine
 from .e_di_document_type import EDIDocumentType
 from .email_template import EmailTemplate
 from .execute_quick_adjustment_input_api_model import ExecuteQuickAdjustmentInputAPIModel
@@ -28,6 +32,8 @@ from .external_shipment import ExternalShipment
 from .external_shipping_system import ExternalShippingSystem
 from .fulfillment_plan import FulfillmentPlan
 from .fulfillment_process import FulfillmentProcess
+from .get_order_warehouse_fulfillment_data_input import GetOrderWarehouseFulfillmentDataInput
+from .get_order_warehouse_fulfillment_data_output import GetOrderWarehouseFulfillmentDataOutput
 from .integration_partner import IntegrationPartner
 from .inventory_adjustment import InventoryAdjustment
 from .inventory_detail import InventoryDetail
@@ -72,6 +78,10 @@ from .order_line_activity import OrderLineActivity
 from .order_load_program import OrderLoadProgram
 from .order_source import OrderSource
 from .order_source_reservation import OrderSourceReservation
+from .order_warehouse_fulfillment_plan import OrderWarehouseFulfillmentPlan
+from .order_warehouse_fulfillment_plan_detail import OrderWarehouseFulfillmentPlanDetail
+from .order_warehouse_fulfillment_raw_data import OrderWarehouseFulfillmentRawData
+from .order_warehouse_fulfillment_raw_sku_data import OrderWarehouseFulfillmentRawSkuData
 from .override_return_address import OverrideReturnAddress
 from .packing_slip_template_line_item_description_enum import PackingSlipTemplateLineItemDescriptionEnum
 from .parcel_account import ParcelAccount

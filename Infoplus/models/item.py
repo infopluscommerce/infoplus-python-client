@@ -96,6 +96,7 @@ class Item(object):
             'vendor_price': 'float',
             'vendor_per': 'str',
             'modify_date': 'datetime',
+            'behavior_type': 'str',
             'forward_lot_mixing_rule': 'str',
             'storage_lot_mixing_rule': 'str',
             'forward_item_mixing_rule': 'str',
@@ -198,6 +199,7 @@ class Item(object):
             'vendor_price': 'vendorPrice',
             'vendor_per': 'vendorPer',
             'modify_date': 'modifyDate',
+            'behavior_type': 'behaviorType',
             'forward_lot_mixing_rule': 'forwardLotMixingRule',
             'storage_lot_mixing_rule': 'storageLotMixingRule',
             'forward_item_mixing_rule': 'forwardItemMixingRule',
@@ -299,6 +301,7 @@ class Item(object):
         self._vendor_price = None
         self._vendor_per = None
         self._modify_date = None
+        self._behavior_type = None
         self._forward_lot_mixing_rule = None
         self._storage_lot_mixing_rule = None
         self._forward_item_mixing_rule = None
@@ -1637,6 +1640,28 @@ class Item(object):
         :type: datetime
         """
         self._modify_date = modify_date
+
+    @property
+    def behavior_type(self):
+        """
+        Gets the behavior_type of this Item.
+
+
+        :return: The behavior_type of this Item.
+        :rtype: str
+        """
+        return self._behavior_type
+
+    @behavior_type.setter
+    def behavior_type(self, behavior_type):
+        """
+        Sets the behavior_type of this Item.
+
+
+        :param behavior_type: The behavior_type of this Item.
+        :type: str
+        """
+        self._behavior_type = behavior_type
 
     @property
     def forward_lot_mixing_rule(self):

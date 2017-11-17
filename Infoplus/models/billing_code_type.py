@@ -39,35 +39,35 @@ class BillingCodeType(object):
         self.swagger_types = {
             'id': 'int',
             'client_id': 'int',
-            'create_date': 'datetime',
-            'modify_date': 'datetime',
+            'billing_code': 'str',
             'name': 'str',
             'description': 'str',
-            'billing_code': 'str',
             'is_active': 'bool',
+            'create_date': 'datetime',
+            'modify_date': 'datetime',
             'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'id': 'id',
             'client_id': 'clientId',
-            'create_date': 'createDate',
-            'modify_date': 'modifyDate',
+            'billing_code': 'billingCode',
             'name': 'name',
             'description': 'description',
-            'billing_code': 'billingCode',
             'is_active': 'isActive',
+            'create_date': 'createDate',
+            'modify_date': 'modifyDate',
             'custom_fields': 'customFields'
         }
 
         self._id = None
         self._client_id = None
-        self._create_date = None
-        self._modify_date = None
+        self._billing_code = None
         self._name = None
         self._description = None
-        self._billing_code = None
         self._is_active = False
+        self._create_date = None
+        self._modify_date = None
         self._custom_fields = None
 
     @property
@@ -115,48 +115,26 @@ class BillingCodeType(object):
         self._client_id = client_id
 
     @property
-    def create_date(self):
+    def billing_code(self):
         """
-        Gets the create_date of this BillingCodeType.
+        Gets the billing_code of this BillingCodeType.
 
 
-        :return: The create_date of this BillingCodeType.
-        :rtype: datetime
+        :return: The billing_code of this BillingCodeType.
+        :rtype: str
         """
-        return self._create_date
+        return self._billing_code
 
-    @create_date.setter
-    def create_date(self, create_date):
+    @billing_code.setter
+    def billing_code(self, billing_code):
         """
-        Sets the create_date of this BillingCodeType.
+        Sets the billing_code of this BillingCodeType.
 
 
-        :param create_date: The create_date of this BillingCodeType.
-        :type: datetime
+        :param billing_code: The billing_code of this BillingCodeType.
+        :type: str
         """
-        self._create_date = create_date
-
-    @property
-    def modify_date(self):
-        """
-        Gets the modify_date of this BillingCodeType.
-
-
-        :return: The modify_date of this BillingCodeType.
-        :rtype: datetime
-        """
-        return self._modify_date
-
-    @modify_date.setter
-    def modify_date(self, modify_date):
-        """
-        Sets the modify_date of this BillingCodeType.
-
-
-        :param modify_date: The modify_date of this BillingCodeType.
-        :type: datetime
-        """
-        self._modify_date = modify_date
+        self._billing_code = billing_code
 
     @property
     def name(self):
@@ -203,28 +181,6 @@ class BillingCodeType(object):
         self._description = description
 
     @property
-    def billing_code(self):
-        """
-        Gets the billing_code of this BillingCodeType.
-
-
-        :return: The billing_code of this BillingCodeType.
-        :rtype: str
-        """
-        return self._billing_code
-
-    @billing_code.setter
-    def billing_code(self, billing_code):
-        """
-        Sets the billing_code of this BillingCodeType.
-
-
-        :param billing_code: The billing_code of this BillingCodeType.
-        :type: str
-        """
-        self._billing_code = billing_code
-
-    @property
     def is_active(self):
         """
         Gets the is_active of this BillingCodeType.
@@ -245,6 +201,50 @@ class BillingCodeType(object):
         :type: bool
         """
         self._is_active = is_active
+
+    @property
+    def create_date(self):
+        """
+        Gets the create_date of this BillingCodeType.
+
+
+        :return: The create_date of this BillingCodeType.
+        :rtype: datetime
+        """
+        return self._create_date
+
+    @create_date.setter
+    def create_date(self, create_date):
+        """
+        Sets the create_date of this BillingCodeType.
+
+
+        :param create_date: The create_date of this BillingCodeType.
+        :type: datetime
+        """
+        self._create_date = create_date
+
+    @property
+    def modify_date(self):
+        """
+        Gets the modify_date of this BillingCodeType.
+
+
+        :return: The modify_date of this BillingCodeType.
+        :rtype: datetime
+        """
+        return self._modify_date
+
+    @modify_date.setter
+    def modify_date(self, modify_date):
+        """
+        Sets the modify_date of this BillingCodeType.
+
+
+        :param modify_date: The modify_date of this BillingCodeType.
+        :type: datetime
+        """
+        self._modify_date = modify_date
 
     @property
     def custom_fields(self):

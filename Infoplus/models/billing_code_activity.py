@@ -49,6 +49,9 @@ class BillingCodeActivity(object):
             'billing_code_type_id': 'int',
             'billing_code_type_name': 'str',
             'note': 'str',
+            'record_type_name': 'str',
+            'record_type_id': 'int',
+            'record_id': 'str',
             'custom_fields': 'dict(str, object)'
         }
 
@@ -65,6 +68,9 @@ class BillingCodeActivity(object):
             'billing_code_type_id': 'billingCodeTypeId',
             'billing_code_type_name': 'billingCodeTypeName',
             'note': 'note',
+            'record_type_name': 'recordTypeName',
+            'record_type_id': 'recordTypeId',
+            'record_id': 'recordId',
             'custom_fields': 'customFields'
         }
 
@@ -80,6 +86,9 @@ class BillingCodeActivity(object):
         self._billing_code_type_id = None
         self._billing_code_type_name = None
         self._note = None
+        self._record_type_name = None
+        self._record_type_id = None
+        self._record_id = None
         self._custom_fields = None
 
     @property
@@ -345,6 +354,72 @@ class BillingCodeActivity(object):
         :type: str
         """
         self._note = note
+
+    @property
+    def record_type_name(self):
+        """
+        Gets the record_type_name of this BillingCodeActivity.
+
+
+        :return: The record_type_name of this BillingCodeActivity.
+        :rtype: str
+        """
+        return self._record_type_name
+
+    @record_type_name.setter
+    def record_type_name(self, record_type_name):
+        """
+        Sets the record_type_name of this BillingCodeActivity.
+
+
+        :param record_type_name: The record_type_name of this BillingCodeActivity.
+        :type: str
+        """
+        self._record_type_name = record_type_name
+
+    @property
+    def record_type_id(self):
+        """
+        Gets the record_type_id of this BillingCodeActivity.
+
+
+        :return: The record_type_id of this BillingCodeActivity.
+        :rtype: int
+        """
+        return self._record_type_id
+
+    @record_type_id.setter
+    def record_type_id(self, record_type_id):
+        """
+        Sets the record_type_id of this BillingCodeActivity.
+
+
+        :param record_type_id: The record_type_id of this BillingCodeActivity.
+        :type: int
+        """
+        self._record_type_id = record_type_id
+
+    @property
+    def record_id(self):
+        """
+        Gets the record_id of this BillingCodeActivity.
+
+
+        :return: The record_id of this BillingCodeActivity.
+        :rtype: str
+        """
+        return self._record_id
+
+    @record_id.setter
+    def record_id(self, record_id):
+        """
+        Sets the record_id of this BillingCodeActivity.
+
+
+        :param record_id: The record_id of this BillingCodeActivity.
+        :type: str
+        """
+        self._record_id = record_id
 
     @property
     def custom_fields(self):
