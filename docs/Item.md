@@ -1,0 +1,109 @@
+# Item
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [optional] 
+**account_code_id** | **int** |  | [optional] 
+**low_stock_contact_id** | **int** |  | [optional] 
+**legacy_low_level_contact_id** | **int** |  | [optional] 
+**low_stock_code_id** | **int** |  | [optional] 
+**major_group_id** | **int** |  | 
+**sub_group_id** | **int** |  | 
+**product_code_id** | **int** |  | [optional] 
+**summary_code_id** | **int** |  | [optional] 
+**buyer_id** | **int** |  | [optional] 
+**lob_id** | **int** |  | 
+**sku** | **str** |  | 
+**vendor_sku** | **str** |  | [optional] 
+**upc** | **str** |  | [optional] 
+**item_description** | **str** |  | 
+**packing_slip_description** | **str** |  | [optional] 
+**absolute_max** | **str** |  | [optional] 
+**additional_description** | **str** |  | [optional] 
+**backorder** | **str** |  | 
+**charge_code** | **str** |  | 
+**commodity_code** | **str** |  | [optional] 
+**comp_code** | **int** |  | [optional] 
+**create_date** | **datetime** |  | [optional] 
+**critical_amount** | **int** |  | 
+**overall_fixed_reorder_point** | **int** |  | [optional] 
+**overall_lead_time** | **int** |  | [optional] 
+**sell_price** | **float** |  | [optional] 
+**pricing_per** | **str** |  | [optional] 
+**lot_control_flag** | **str** |  | [optional] 
+**max_cycle** | **int** |  | 
+**max_interim** | **int** |  | 
+**numeric_sort_order** | **int** |  | [optional] 
+**outside_vendor** | **int** |  | [optional] 
+**pick_no** | **str** |  | [optional] 
+**pod_order_suffix** | **int** |  | [optional] 
+**pod_rev_date** | **str** |  | [optional] 
+**status** | **str** |  | 
+**seasonal_item** | **str** |  | 
+**requires_production_lot** | **str** |  | [optional] 
+**sector** | **str** |  | [optional] 
+**secure** | **str** |  | 
+**serial_code** | **str** |  | 
+**unit_code** | **str** |  | 
+**units_per_wrap** | **int** |  | 
+**weight_per_wrap** | **float** |  | [optional] 
+**void_date** | **datetime** |  | [optional] 
+**wrap_code** | **str** |  | 
+**extrinsic_text1** | **str** |  | [optional] 
+**extrinsic_text2** | **str** |  | [optional] 
+**extrinsic_text3** | **str** |  | [optional] 
+**extrinsic_number1** | **int** |  | [optional] 
+**extrinsic_number2** | **int** |  | [optional] 
+**extrinsic_decimal1** | **float** |  | [optional] 
+**extrinsic_decimal2** | **float** |  | [optional] 
+**casebreak_enabled** | **str** |  | [optional] 
+**vendor_id** | **int** |  | [optional] 
+**vendor_price** | **float** |  | [optional] 
+**vendor_per** | **str** |  | [optional] 
+**modify_date** | **datetime** |  | [optional] 
+**behavior_type** | **str** |  | [optional] 
+**forward_lot_mixing_rule** | **str** |  | 
+**storage_lot_mixing_rule** | **str** |  | 
+**forward_item_mixing_rule** | **str** |  | 
+**storage_item_mixing_rule** | **str** |  | 
+**allocation_rule** | **str** |  | 
+**barcode_field** | **str** |  | [optional] 
+**warehouse_display_field** | **str** |  | [optional] 
+**product_id_tag_scheme_id** | **int** |  | [optional] 
+**hazmat** | **str** |  | 
+**is_alcohol** | **bool** |  | [optional] [default to False]
+**alcohol_type** | **str** |  | [optional] 
+**alcohol_content** | **float** |  | [optional] 
+**alcohol_container** | **str** |  | [optional] 
+**alcohol_vintage_year** | **str** |  | [optional] 
+**alcohol_country** | **str** |  | [optional] 
+**alcohol_state** | **str** |  | [optional] 
+**alcohol_region** | **str** |  | [optional] 
+**alcohol_brand** | **str** |  | [optional] 
+**alcohol_upc_code** | **str** |  | [optional] 
+**alcohol_nambca_code** | **str** |  | [optional] 
+**alcohol_unimerc_code** | **str** |  | [optional] 
+**alcohol_scc_code** | **str** |  | [optional] 
+**length** | **float** |  | [optional] 
+**width** | **float** |  | [optional] 
+**height** | **float** |  | [optional] 
+**top_up** | **bool** |  | [optional] [default to False]
+**ship_solo** | **bool** |  | [optional] [default to False]
+**inventory_update_timestamp** | **datetime** |  | [optional] 
+**available_quantity** | **int** |  | [optional] 
+**damaged_quantity** | **int** |  | [optional] 
+**in_fulfillment_process_quantity** | **int** |  | [optional] 
+**on_hand_quantity** | **int** |  | [optional] 
+**open_order_quantity** | **int** |  | [optional] 
+**open_po_quantity** | **int** |  | [optional] 
+**orderable_quantity** | **int** |  | [optional] 
+**unallocatable_quantity** | **int** |  | [optional] 
+**unavailable_quantity** | **int** |  | [optional] 
+**overall_days_on_hand** | **int** |  | [optional] 
+**overall_stock_status** | **str** |  | [optional] 
+**custom_fields** | **dict(str, object)** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
