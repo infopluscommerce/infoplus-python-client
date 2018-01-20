@@ -27,6 +27,7 @@ from Infoplus.api.external_shipment_api import ExternalShipmentApi
 from Infoplus.api.external_shipping_system_api import ExternalShippingSystemApi
 from Infoplus.api.fulfillment_plan_api import FulfillmentPlanApi
 from Infoplus.api.fulfillment_process_api import FulfillmentProcessApi
+from Infoplus.api.fulfillment_process_log_api import FulfillmentProcessLogApi
 from Infoplus.api.integration_partner_api import IntegrationPartnerApi
 from Infoplus.api.inventory_adjustment_api import InventoryAdjustmentApi
 from Infoplus.api.inventory_detail_api import InventoryDetailApi
@@ -89,6 +90,7 @@ from Infoplus.api.scheduled_plan_log_api import ScheduledPlanLogApi
 from Infoplus.api.service_type_api import ServiceTypeApi
 from Infoplus.api.shipment_api import ShipmentApi
 from Infoplus.api.shopping_cart_connection_api import ShoppingCartConnectionApi
+from Infoplus.api.sla_setup_api import SlaSetupApi
 from Infoplus.api.substitution_api import SubstitutionApi
 from Infoplus.api.supplement_api import SupplementApi
 from Infoplus.api.third_party_parcel_account_api import ThirdPartyParcelAccountApi

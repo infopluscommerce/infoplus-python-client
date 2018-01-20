@@ -46,6 +46,7 @@ class FulfillmentProcess(object):
         'batch_size': 'int',
         'version': 'str',
         'fulfillment_process_group': 'int',
+        'is_mass_distribution': 'bool',
         'number_of_orders': 'int',
         'number_of_lines': 'int',
         'number_of_sk_us': 'int',
@@ -74,6 +75,7 @@ class FulfillmentProcess(object):
         'pre_generate_parcel_labels': 'bool',
         'ship_date': 'datetime',
         'auto_ship_casebreak_cartons': 'bool',
+        'auto_ship_orders': 'bool',
         'cartonize_orders': 'bool',
         'create_packing_slip': 'str',
         'override_packing_slip_template_id': 'int',
@@ -101,6 +103,7 @@ class FulfillmentProcess(object):
         'batch_size': 'batchSize',
         'version': 'version',
         'fulfillment_process_group': 'fulfillmentProcessGroup',
+        'is_mass_distribution': 'isMassDistribution',
         'number_of_orders': 'numberOfOrders',
         'number_of_lines': 'numberOfLines',
         'number_of_sk_us': 'numberOfSKUs',
@@ -129,6 +132,7 @@ class FulfillmentProcess(object):
         'pre_generate_parcel_labels': 'preGenerateParcelLabels',
         'ship_date': 'shipDate',
         'auto_ship_casebreak_cartons': 'autoShipCasebreakCartons',
+        'auto_ship_orders': 'autoShipOrders',
         'cartonize_orders': 'cartonizeOrders',
         'create_packing_slip': 'createPackingSlip',
         'override_packing_slip_template_id': 'overridePackingSlipTemplateId',
@@ -140,7 +144,7 @@ class FulfillmentProcess(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, create_date=None, modify_date=None, process_no=None, work_batch_id=None, warehouse_id=None, fulfillment_plan_id=None, pick_scan_scheme_id=None, status=None, order_smart_filter_id=None, location_smart_filter_id=None, max_orders=None, batch_size=None, version=None, fulfillment_process_group=None, number_of_orders=None, number_of_lines=None, number_of_sk_us=None, completed_picks=None, total_picks=None, shipped_casebreaks=None, total_casebreaks_to_ship=None, shipped_orders=None, total_orders_to_ship=None, completed_to_do=None, total_to_do=None, create_pick_work=False, picking_rule=None, layout_rule=None, pick_sort_rule=None, first_pick_position=None, pick_list_format=None, pick_list_layout=None, pick_list_group=None, pick_list_sort=None, pick_summary_format=None, pick_summary_layout=None, pick_summary_sort=None, create_pick_summary=False, create_pick_list=False, pre_generate_parcel_labels=False, ship_date=None, auto_ship_casebreak_cartons=False, cartonize_orders=False, create_packing_slip=None, override_packing_slip_template_id=None, create_order_assembly_guide=False, create_order_invoice=None, override_order_invoice_template_id=None, send_to_external_shipping_system=False, external_shipping_system_id=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, create_date=None, modify_date=None, process_no=None, work_batch_id=None, warehouse_id=None, fulfillment_plan_id=None, pick_scan_scheme_id=None, status=None, order_smart_filter_id=None, location_smart_filter_id=None, max_orders=None, batch_size=None, version=None, fulfillment_process_group=None, is_mass_distribution=False, number_of_orders=None, number_of_lines=None, number_of_sk_us=None, completed_picks=None, total_picks=None, shipped_casebreaks=None, total_casebreaks_to_ship=None, shipped_orders=None, total_orders_to_ship=None, completed_to_do=None, total_to_do=None, create_pick_work=False, picking_rule=None, layout_rule=None, pick_sort_rule=None, first_pick_position=None, pick_list_format=None, pick_list_layout=None, pick_list_group=None, pick_list_sort=None, pick_summary_format=None, pick_summary_layout=None, pick_summary_sort=None, create_pick_summary=False, create_pick_list=False, pre_generate_parcel_labels=False, ship_date=None, auto_ship_casebreak_cartons=False, auto_ship_orders=False, cartonize_orders=False, create_packing_slip=None, override_packing_slip_template_id=None, create_order_assembly_guide=False, create_order_invoice=None, override_order_invoice_template_id=None, send_to_external_shipping_system=False, external_shipping_system_id=None, custom_fields=None):  # noqa: E501
         """FulfillmentProcess - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -158,6 +162,7 @@ class FulfillmentProcess(object):
         self._batch_size = None
         self._version = None
         self._fulfillment_process_group = None
+        self._is_mass_distribution = None
         self._number_of_orders = None
         self._number_of_lines = None
         self._number_of_sk_us = None
@@ -186,6 +191,7 @@ class FulfillmentProcess(object):
         self._pre_generate_parcel_labels = None
         self._ship_date = None
         self._auto_ship_casebreak_cartons = None
+        self._auto_ship_orders = None
         self._cartonize_orders = None
         self._create_packing_slip = None
         self._override_packing_slip_template_id = None
@@ -223,6 +229,8 @@ class FulfillmentProcess(object):
             self.version = version
         if fulfillment_process_group is not None:
             self.fulfillment_process_group = fulfillment_process_group
+        if is_mass_distribution is not None:
+            self.is_mass_distribution = is_mass_distribution
         if number_of_orders is not None:
             self.number_of_orders = number_of_orders
         if number_of_lines is not None:
@@ -279,6 +287,8 @@ class FulfillmentProcess(object):
             self.ship_date = ship_date
         if auto_ship_casebreak_cartons is not None:
             self.auto_ship_casebreak_cartons = auto_ship_casebreak_cartons
+        if auto_ship_orders is not None:
+            self.auto_ship_orders = auto_ship_orders
         if cartonize_orders is not None:
             self.cartonize_orders = cartonize_orders
         self.create_packing_slip = create_packing_slip
@@ -617,6 +627,27 @@ class FulfillmentProcess(object):
         """
 
         self._fulfillment_process_group = fulfillment_process_group
+
+    @property
+    def is_mass_distribution(self):
+        """Gets the is_mass_distribution of this FulfillmentProcess.  # noqa: E501
+
+
+        :return: The is_mass_distribution of this FulfillmentProcess.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_mass_distribution
+
+    @is_mass_distribution.setter
+    def is_mass_distribution(self, is_mass_distribution):
+        """Sets the is_mass_distribution of this FulfillmentProcess.
+
+
+        :param is_mass_distribution: The is_mass_distribution of this FulfillmentProcess.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_mass_distribution = is_mass_distribution
 
     @property
     def number_of_orders(self):
@@ -1205,6 +1236,27 @@ class FulfillmentProcess(object):
         """
 
         self._auto_ship_casebreak_cartons = auto_ship_casebreak_cartons
+
+    @property
+    def auto_ship_orders(self):
+        """Gets the auto_ship_orders of this FulfillmentProcess.  # noqa: E501
+
+
+        :return: The auto_ship_orders of this FulfillmentProcess.  # noqa: E501
+        :rtype: bool
+        """
+        return self._auto_ship_orders
+
+    @auto_ship_orders.setter
+    def auto_ship_orders(self, auto_ship_orders):
+        """Sets the auto_ship_orders of this FulfillmentProcess.
+
+
+        :param auto_ship_orders: The auto_ship_orders of this FulfillmentProcess.  # noqa: E501
+        :type: bool
+        """
+
+        self._auto_ship_orders = auto_ship_orders
 
     @property
     def cartonize_orders(self):

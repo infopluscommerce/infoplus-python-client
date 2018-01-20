@@ -130,6 +130,9 @@ class Order(object):
         'total_qty': 'int',
         'weight_lbs': 'float',
         'order_assembly_instructions': 'str',
+        'parcel_label_ref1': 'str',
+        'parcel_label_ref2': 'str',
+        'parcel_label_ref3': 'str',
         'line_items': 'list[OrderLine]',
         'extra_order_data': 'list[OrderExtraOrderData]',
         'extra_line_item_data': 'list[OrderExtraLineItemData]',
@@ -233,6 +236,9 @@ class Order(object):
         'total_qty': 'totalQty',
         'weight_lbs': 'weightLbs',
         'order_assembly_instructions': 'orderAssemblyInstructions',
+        'parcel_label_ref1': 'parcelLabelRef1',
+        'parcel_label_ref2': 'parcelLabelRef2',
+        'parcel_label_ref3': 'parcelLabelRef3',
         'line_items': 'lineItems',
         'extra_order_data': 'extraOrderData',
         'extra_line_item_data': 'extraLineItemData',
@@ -240,7 +246,7 @@ class Order(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, order_no=None, customer_order_no=None, lob_id=None, warehouse_id=None, order_date=None, customer_no=None, use_order_no_root=None, first_ship_date=None, last_ship_date=None, deliver_on_date=None, need_by_date=None, carrier_id=None, service_type_id=None, ship_via=None, media_code=None, legacy_restriction_type=None, alcohol_order_type=None, alternate_usage=None, authorization_amount=None, authorized_by=None, balance_due=None, batch_no=None, bill_to_attention=None, bill_to_company=None, bill_to_street=None, bill_to_street2=None, bill_to_street3=None, bill_to_city=None, bill_to_state=None, bill_to_zip=None, bill_to_country=None, bill_to_phone=None, bill_to_email=None, number_of_cartons=None, number_of_pallets=None, completion_status=None, parcel_account_id=None, third_party_parcel_account_id=None, cost_center=None, create_date=None, customer_po_no=None, distribution_channel=None, distribution_charges=None, division=None, entered_by=None, pre_allocation_estimated_weight=None, estimated_weight_lbs=None, freight=None, gift_message=None, group_order_id=None, parent_kod_order_id=None, hold_code=None, integration_partner_id=None, number_of_line_items=None, estimated_number_of_picks=None, modify_date=None, oms_order_no=None, oms_customer_id=None, order_load_program_id=None, order_message=None, order_reason=None, order_source_id=None, packing_slip_template_id=None, order_invoice_template_id=None, order_confirmation_email_template_id=None, shipment_confirmation_email_template_id=None, price_level=None, price_mode=None, priority_code=None, fulfillment_process_id=None, ship_by=None, ship_code=None, ship_date=None, ship_to_attention=None, ship_to_company=None, ship_to_street=None, ship_to_street2=None, ship_to_street3=None, ship_to_city=None, ship_to_state=None, ship_to_zip=None, ship_to_country=None, ship_to_phone=None, ship_to_email=None, shipping_charge=None, status=None, stop_back_orders=None, subtotal=None, tax=None, total=None, total_discount=None, total_paid=None, total_qty=None, weight_lbs=None, order_assembly_instructions=None, line_items=None, extra_order_data=None, extra_line_item_data=None, external_shipping_system_id=None, custom_fields=None):  # noqa: E501
+    def __init__(self, order_no=None, customer_order_no=None, lob_id=None, warehouse_id=None, order_date=None, customer_no=None, use_order_no_root=None, first_ship_date=None, last_ship_date=None, deliver_on_date=None, need_by_date=None, carrier_id=None, service_type_id=None, ship_via=None, media_code=None, legacy_restriction_type=None, alcohol_order_type=None, alternate_usage=None, authorization_amount=None, authorized_by=None, balance_due=None, batch_no=None, bill_to_attention=None, bill_to_company=None, bill_to_street=None, bill_to_street2=None, bill_to_street3=None, bill_to_city=None, bill_to_state=None, bill_to_zip=None, bill_to_country=None, bill_to_phone=None, bill_to_email=None, number_of_cartons=None, number_of_pallets=None, completion_status=None, parcel_account_id=None, third_party_parcel_account_id=None, cost_center=None, create_date=None, customer_po_no=None, distribution_channel=None, distribution_charges=None, division=None, entered_by=None, pre_allocation_estimated_weight=None, estimated_weight_lbs=None, freight=None, gift_message=None, group_order_id=None, parent_kod_order_id=None, hold_code=None, integration_partner_id=None, number_of_line_items=None, estimated_number_of_picks=None, modify_date=None, oms_order_no=None, oms_customer_id=None, order_load_program_id=None, order_message=None, order_reason=None, order_source_id=None, packing_slip_template_id=None, order_invoice_template_id=None, order_confirmation_email_template_id=None, shipment_confirmation_email_template_id=None, price_level=None, price_mode=None, priority_code=None, fulfillment_process_id=None, ship_by=None, ship_code=None, ship_date=None, ship_to_attention=None, ship_to_company=None, ship_to_street=None, ship_to_street2=None, ship_to_street3=None, ship_to_city=None, ship_to_state=None, ship_to_zip=None, ship_to_country=None, ship_to_phone=None, ship_to_email=None, shipping_charge=None, status=None, stop_back_orders=None, subtotal=None, tax=None, total=None, total_discount=None, total_paid=None, total_qty=None, weight_lbs=None, order_assembly_instructions=None, parcel_label_ref1=None, parcel_label_ref2=None, parcel_label_ref3=None, line_items=None, extra_order_data=None, extra_line_item_data=None, external_shipping_system_id=None, custom_fields=None):  # noqa: E501
         """Order - a model defined in Swagger"""  # noqa: E501
 
         self._order_no = None
@@ -338,6 +344,9 @@ class Order(object):
         self._total_qty = None
         self._weight_lbs = None
         self._order_assembly_instructions = None
+        self._parcel_label_ref1 = None
+        self._parcel_label_ref2 = None
+        self._parcel_label_ref3 = None
         self._line_items = None
         self._extra_order_data = None
         self._extra_line_item_data = None
@@ -530,6 +539,12 @@ class Order(object):
             self.weight_lbs = weight_lbs
         if order_assembly_instructions is not None:
             self.order_assembly_instructions = order_assembly_instructions
+        if parcel_label_ref1 is not None:
+            self.parcel_label_ref1 = parcel_label_ref1
+        if parcel_label_ref2 is not None:
+            self.parcel_label_ref2 = parcel_label_ref2
+        if parcel_label_ref3 is not None:
+            self.parcel_label_ref3 = parcel_label_ref3
         self.line_items = line_items
         if extra_order_data is not None:
             self.extra_order_data = extra_order_data
@@ -2544,6 +2559,69 @@ class Order(object):
         """
 
         self._order_assembly_instructions = order_assembly_instructions
+
+    @property
+    def parcel_label_ref1(self):
+        """Gets the parcel_label_ref1 of this Order.  # noqa: E501
+
+
+        :return: The parcel_label_ref1 of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._parcel_label_ref1
+
+    @parcel_label_ref1.setter
+    def parcel_label_ref1(self, parcel_label_ref1):
+        """Sets the parcel_label_ref1 of this Order.
+
+
+        :param parcel_label_ref1: The parcel_label_ref1 of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._parcel_label_ref1 = parcel_label_ref1
+
+    @property
+    def parcel_label_ref2(self):
+        """Gets the parcel_label_ref2 of this Order.  # noqa: E501
+
+
+        :return: The parcel_label_ref2 of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._parcel_label_ref2
+
+    @parcel_label_ref2.setter
+    def parcel_label_ref2(self, parcel_label_ref2):
+        """Sets the parcel_label_ref2 of this Order.
+
+
+        :param parcel_label_ref2: The parcel_label_ref2 of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._parcel_label_ref2 = parcel_label_ref2
+
+    @property
+    def parcel_label_ref3(self):
+        """Gets the parcel_label_ref3 of this Order.  # noqa: E501
+
+
+        :return: The parcel_label_ref3 of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._parcel_label_ref3
+
+    @parcel_label_ref3.setter
+    def parcel_label_ref3(self, parcel_label_ref3):
+        """Sets the parcel_label_ref3 of this Order.
+
+
+        :param parcel_label_ref3: The parcel_label_ref3 of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._parcel_label_ref3 = parcel_label_ref3
 
     @property
     def line_items(self):

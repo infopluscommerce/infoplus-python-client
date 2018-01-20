@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**get_order_by_id**](OrderApi.md#get_order_by_id) | **GET** /beta/order/{orderId} | Get an order by id
 [**get_order_tags**](OrderApi.md#get_order_tags) | **GET** /beta/order/{orderId}/tag | Get the tags for an order.
 [**get_order_warehouse_fulfillment_data**](OrderApi.md#get_order_warehouse_fulfillment_data) | **POST** /beta/order/getOrderWarehouseFulfillmentData | Run the Get Order Warehouse Fulfillment Plan method.
+[**run_fulfillment_plan**](OrderApi.md#run_fulfillment_plan) | **POST** /beta/order/runFulfillmentPlan | Run the RunFulfillmentPlan process.
 [**update_order**](OrderApi.md#update_order) | **PUT** /beta/order | Update an order
 [**update_order_custom_fields**](OrderApi.md#update_order_custom_fields) | **PUT** /beta/order/customFields | Update an order custom fields
 
@@ -608,6 +609,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetOrderWarehouseFulfillmentDataOutput**](GetOrderWarehouseFulfillmentDataOutput.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **run_fulfillment_plan**
+> list[ProcessOutputAPIModel] run_fulfillment_plan(body)
+
+Run the RunFulfillmentPlan process.
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import Infoplus
+from Infoplus.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api_key
+configuration = Infoplus.Configuration()
+configuration.api_key['API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['API-Key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = Infoplus.OrderApi(Infoplus.ApiClient(configuration))
+body = Infoplus.RunFulfillmentPlanInputAPIModel() # RunFulfillmentPlanInputAPIModel | Input data for RunFulfillmentPlan process.
+
+try:
+    # Run the RunFulfillmentPlan process.
+    api_response = api_instance.run_fulfillment_plan(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrderApi->run_fulfillment_plan: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RunFulfillmentPlanInputAPIModel**](RunFulfillmentPlanInputAPIModel.md)| Input data for RunFulfillmentPlan process. | 
+
+### Return type
+
+[**list[ProcessOutputAPIModel]**](ProcessOutputAPIModel.md)
 
 ### Authorization
 

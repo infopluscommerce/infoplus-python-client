@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **max_orders** | **int** |  | [optional] 
 **batch_size** | **int** |  | [optional] 
 **version** | **str** |  | [optional] 
+**is_mass_distribution** | **bool** |  | [optional] [default to False]
 **create_pick_work** | **bool** |  | [default to False]
 **picking_rule** | **str** |  | [optional] 
 **layout_rule** | **str** |  | [optional] 
@@ -31,6 +32,7 @@ Name | Type | Description | Notes
 **pick_scan_scheme_id** | **int** |  | 
 **cartonize_orders** | **bool** |  | [default to False]
 **auto_ship_casebreak_cartons** | **bool** |  | [optional] [default to False]
+**auto_ship_orders** | **bool** |  | [optional] [default to False]
 **pre_generate_parcel_labels** | **bool** |  | [optional] [default to False]
 **create_packing_slip** | **str** |  | 
 **override_packing_slip_template_id** | **int** |  | [optional] 

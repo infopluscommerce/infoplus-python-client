@@ -34,6 +34,7 @@ class ExternalShippingSystem(object):
         'id': 'int',
         'name': 'str',
         'system_type': 'str',
+        'script_id': 'int',
         'api_key': 'str',
         'api_secret': 'str',
         'create_date': 'datetime',
@@ -45,6 +46,7 @@ class ExternalShippingSystem(object):
         'id': 'id',
         'name': 'name',
         'system_type': 'systemType',
+        'script_id': 'scriptId',
         'api_key': 'apiKey',
         'api_secret': 'apiSecret',
         'create_date': 'createDate',
@@ -52,12 +54,13 @@ class ExternalShippingSystem(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, name=None, system_type=None, api_key=None, api_secret=None, create_date=None, modify_date=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, name=None, system_type=None, script_id=None, api_key=None, api_secret=None, create_date=None, modify_date=None, custom_fields=None):  # noqa: E501
         """ExternalShippingSystem - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
         self._system_type = None
+        self._script_id = None
         self._api_key = None
         self._api_secret = None
         self._create_date = None
@@ -69,6 +72,8 @@ class ExternalShippingSystem(object):
             self.id = id
         self.name = name
         self.system_type = system_type
+        if script_id is not None:
+            self.script_id = script_id
         self.api_key = api_key
         self.api_secret = api_secret
         if create_date is not None:
@@ -144,6 +149,27 @@ class ExternalShippingSystem(object):
             raise ValueError("Invalid value for `system_type`, must not be `None`")  # noqa: E501
 
         self._system_type = system_type
+
+    @property
+    def script_id(self):
+        """Gets the script_id of this ExternalShippingSystem.  # noqa: E501
+
+
+        :return: The script_id of this ExternalShippingSystem.  # noqa: E501
+        :rtype: int
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id):
+        """Sets the script_id of this ExternalShippingSystem.
+
+
+        :param script_id: The script_id of this ExternalShippingSystem.  # noqa: E501
+        :type: int
+        """
+
+        self._script_id = script_id
 
     @property
     def api_key(self):

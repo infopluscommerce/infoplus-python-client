@@ -121,6 +121,7 @@ Name | Type | Description | Notes
 **shipping_charge** | **float** |  | [optional] 
 **total_discount** | **float** |  | [optional] 
 **parcel_account_id** | **int** |  | [optional] 
+**third_party_parcel_account_id** | **int** |  | [optional] 
 **packing_slip_template_id** | **int** |  | [optional] 
 **gift_message** | **str** |  | [optional] 
 **branch_sector** | **str** |  | [optional] 

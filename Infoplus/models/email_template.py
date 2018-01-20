@@ -33,11 +33,18 @@ class EmailTemplate(object):
     swagger_types = {
         'id': 'int',
         'lob_id': 'int',
-        'subject_text': 'str',
+        'subject': 'str',
         'name': 'str',
         'from_name': 'str',
         'from_address': 'str',
+        'to_name': 'str',
+        'to_address': 'str',
+        'cc_address': 'str',
+        'bcc_address': 'str',
         'email_template_type': 'str',
+        'record_type': 'str',
+        'api_version': 'str',
+        'script_id': 'int',
         'create_date': 'datetime',
         'modify_date': 'datetime',
         'custom_fields': 'dict(str, object)'
@@ -46,26 +53,40 @@ class EmailTemplate(object):
     attribute_map = {
         'id': 'id',
         'lob_id': 'lobId',
-        'subject_text': 'subjectText',
+        'subject': 'subject',
         'name': 'name',
         'from_name': 'fromName',
         'from_address': 'fromAddress',
+        'to_name': 'toName',
+        'to_address': 'toAddress',
+        'cc_address': 'ccAddress',
+        'bcc_address': 'bccAddress',
         'email_template_type': 'emailTemplateType',
+        'record_type': 'recordType',
+        'api_version': 'apiVersion',
+        'script_id': 'scriptId',
         'create_date': 'createDate',
         'modify_date': 'modifyDate',
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, lob_id=None, subject_text=None, name=None, from_name=None, from_address=None, email_template_type=None, create_date=None, modify_date=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, lob_id=None, subject=None, name=None, from_name=None, from_address=None, to_name=None, to_address=None, cc_address=None, bcc_address=None, email_template_type=None, record_type=None, api_version=None, script_id=None, create_date=None, modify_date=None, custom_fields=None):  # noqa: E501
         """EmailTemplate - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._lob_id = None
-        self._subject_text = None
+        self._subject = None
         self._name = None
         self._from_name = None
         self._from_address = None
+        self._to_name = None
+        self._to_address = None
+        self._cc_address = None
+        self._bcc_address = None
         self._email_template_type = None
+        self._record_type = None
+        self._api_version = None
+        self._script_id = None
         self._create_date = None
         self._modify_date = None
         self._custom_fields = None
@@ -74,12 +95,25 @@ class EmailTemplate(object):
         if id is not None:
             self.id = id
         self.lob_id = lob_id
-        if subject_text is not None:
-            self.subject_text = subject_text
+        self.subject = subject
         self.name = name
         self.from_name = from_name
         self.from_address = from_address
+        if to_name is not None:
+            self.to_name = to_name
+        if to_address is not None:
+            self.to_address = to_address
+        if cc_address is not None:
+            self.cc_address = cc_address
+        if bcc_address is not None:
+            self.bcc_address = bcc_address
         self.email_template_type = email_template_type
+        if record_type is not None:
+            self.record_type = record_type
+        if api_version is not None:
+            self.api_version = api_version
+        if script_id is not None:
+            self.script_id = script_id
         if create_date is not None:
             self.create_date = create_date
         if modify_date is not None:
@@ -132,25 +166,27 @@ class EmailTemplate(object):
         self._lob_id = lob_id
 
     @property
-    def subject_text(self):
-        """Gets the subject_text of this EmailTemplate.  # noqa: E501
+    def subject(self):
+        """Gets the subject of this EmailTemplate.  # noqa: E501
 
 
-        :return: The subject_text of this EmailTemplate.  # noqa: E501
+        :return: The subject of this EmailTemplate.  # noqa: E501
         :rtype: str
         """
-        return self._subject_text
+        return self._subject
 
-    @subject_text.setter
-    def subject_text(self, subject_text):
-        """Sets the subject_text of this EmailTemplate.
+    @subject.setter
+    def subject(self, subject):
+        """Sets the subject of this EmailTemplate.
 
 
-        :param subject_text: The subject_text of this EmailTemplate.  # noqa: E501
+        :param subject: The subject of this EmailTemplate.  # noqa: E501
         :type: str
         """
+        if subject is None:
+            raise ValueError("Invalid value for `subject`, must not be `None`")  # noqa: E501
 
-        self._subject_text = subject_text
+        self._subject = subject
 
     @property
     def name(self):
@@ -222,6 +258,90 @@ class EmailTemplate(object):
         self._from_address = from_address
 
     @property
+    def to_name(self):
+        """Gets the to_name of this EmailTemplate.  # noqa: E501
+
+
+        :return: The to_name of this EmailTemplate.  # noqa: E501
+        :rtype: str
+        """
+        return self._to_name
+
+    @to_name.setter
+    def to_name(self, to_name):
+        """Sets the to_name of this EmailTemplate.
+
+
+        :param to_name: The to_name of this EmailTemplate.  # noqa: E501
+        :type: str
+        """
+
+        self._to_name = to_name
+
+    @property
+    def to_address(self):
+        """Gets the to_address of this EmailTemplate.  # noqa: E501
+
+
+        :return: The to_address of this EmailTemplate.  # noqa: E501
+        :rtype: str
+        """
+        return self._to_address
+
+    @to_address.setter
+    def to_address(self, to_address):
+        """Sets the to_address of this EmailTemplate.
+
+
+        :param to_address: The to_address of this EmailTemplate.  # noqa: E501
+        :type: str
+        """
+
+        self._to_address = to_address
+
+    @property
+    def cc_address(self):
+        """Gets the cc_address of this EmailTemplate.  # noqa: E501
+
+
+        :return: The cc_address of this EmailTemplate.  # noqa: E501
+        :rtype: str
+        """
+        return self._cc_address
+
+    @cc_address.setter
+    def cc_address(self, cc_address):
+        """Sets the cc_address of this EmailTemplate.
+
+
+        :param cc_address: The cc_address of this EmailTemplate.  # noqa: E501
+        :type: str
+        """
+
+        self._cc_address = cc_address
+
+    @property
+    def bcc_address(self):
+        """Gets the bcc_address of this EmailTemplate.  # noqa: E501
+
+
+        :return: The bcc_address of this EmailTemplate.  # noqa: E501
+        :rtype: str
+        """
+        return self._bcc_address
+
+    @bcc_address.setter
+    def bcc_address(self, bcc_address):
+        """Sets the bcc_address of this EmailTemplate.
+
+
+        :param bcc_address: The bcc_address of this EmailTemplate.  # noqa: E501
+        :type: str
+        """
+
+        self._bcc_address = bcc_address
+
+    @property
     def email_template_type(self):
         """Gets the email_template_type of this EmailTemplate.  # noqa: E501
 
@@ -243,6 +363,69 @@ class EmailTemplate(object):
             raise ValueError("Invalid value for `email_template_type`, must not be `None`")  # noqa: E501
 
         self._email_template_type = email_template_type
+
+    @property
+    def record_type(self):
+        """Gets the record_type of this EmailTemplate.  # noqa: E501
+
+
+        :return: The record_type of this EmailTemplate.  # noqa: E501
+        :rtype: str
+        """
+        return self._record_type
+
+    @record_type.setter
+    def record_type(self, record_type):
+        """Sets the record_type of this EmailTemplate.
+
+
+        :param record_type: The record_type of this EmailTemplate.  # noqa: E501
+        :type: str
+        """
+
+        self._record_type = record_type
+
+    @property
+    def api_version(self):
+        """Gets the api_version of this EmailTemplate.  # noqa: E501
+
+
+        :return: The api_version of this EmailTemplate.  # noqa: E501
+        :rtype: str
+        """
+        return self._api_version
+
+    @api_version.setter
+    def api_version(self, api_version):
+        """Sets the api_version of this EmailTemplate.
+
+
+        :param api_version: The api_version of this EmailTemplate.  # noqa: E501
+        :type: str
+        """
+
+        self._api_version = api_version
+
+    @property
+    def script_id(self):
+        """Gets the script_id of this EmailTemplate.  # noqa: E501
+
+
+        :return: The script_id of this EmailTemplate.  # noqa: E501
+        :rtype: int
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id):
+        """Sets the script_id of this EmailTemplate.
+
+
+        :param script_id: The script_id of this EmailTemplate.  # noqa: E501
+        :type: int
+        """
+
+        self._script_id = script_id
 
     @property
     def create_date(self):

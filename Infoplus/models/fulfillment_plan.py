@@ -43,6 +43,7 @@ class FulfillmentPlan(object):
         'max_orders': 'int',
         'batch_size': 'int',
         'version': 'str',
+        'is_mass_distribution': 'bool',
         'create_pick_work': 'bool',
         'picking_rule': 'str',
         'layout_rule': 'str',
@@ -59,6 +60,7 @@ class FulfillmentPlan(object):
         'pick_scan_scheme_id': 'int',
         'cartonize_orders': 'bool',
         'auto_ship_casebreak_cartons': 'bool',
+        'auto_ship_orders': 'bool',
         'pre_generate_parcel_labels': 'bool',
         'create_packing_slip': 'str',
         'override_packing_slip_template_id': 'int',
@@ -83,6 +85,7 @@ class FulfillmentPlan(object):
         'max_orders': 'maxOrders',
         'batch_size': 'batchSize',
         'version': 'version',
+        'is_mass_distribution': 'isMassDistribution',
         'create_pick_work': 'createPickWork',
         'picking_rule': 'pickingRule',
         'layout_rule': 'layoutRule',
@@ -99,6 +102,7 @@ class FulfillmentPlan(object):
         'pick_scan_scheme_id': 'pickScanSchemeId',
         'cartonize_orders': 'cartonizeOrders',
         'auto_ship_casebreak_cartons': 'autoShipCasebreakCartons',
+        'auto_ship_orders': 'autoShipOrders',
         'pre_generate_parcel_labels': 'preGenerateParcelLabels',
         'create_packing_slip': 'createPackingSlip',
         'override_packing_slip_template_id': 'overridePackingSlipTemplateId',
@@ -110,7 +114,7 @@ class FulfillmentPlan(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, create_date=None, modify_date=None, name=None, description=None, warehouse_id=None, last_run_time=None, order_smart_filter_id=None, location_smart_filter_id=None, max_orders=None, batch_size=None, version=None, create_pick_work=False, picking_rule=None, layout_rule=None, pick_sort_rule=None, create_pick_list=False, pick_list_format=None, pick_list_layout=None, pick_list_group=None, pick_list_sort=None, create_pick_summary=False, pick_summary_format=None, pick_summary_layout=None, pick_summary_sort=None, pick_scan_scheme_id=None, cartonize_orders=False, auto_ship_casebreak_cartons=False, pre_generate_parcel_labels=False, create_packing_slip=None, override_packing_slip_template_id=None, create_order_assembly_guide=False, create_order_invoice=None, override_order_invoice_template_id=None, send_to_external_shipping_system=False, external_shipping_system_id=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, create_date=None, modify_date=None, name=None, description=None, warehouse_id=None, last_run_time=None, order_smart_filter_id=None, location_smart_filter_id=None, max_orders=None, batch_size=None, version=None, is_mass_distribution=False, create_pick_work=False, picking_rule=None, layout_rule=None, pick_sort_rule=None, create_pick_list=False, pick_list_format=None, pick_list_layout=None, pick_list_group=None, pick_list_sort=None, create_pick_summary=False, pick_summary_format=None, pick_summary_layout=None, pick_summary_sort=None, pick_scan_scheme_id=None, cartonize_orders=False, auto_ship_casebreak_cartons=False, auto_ship_orders=False, pre_generate_parcel_labels=False, create_packing_slip=None, override_packing_slip_template_id=None, create_order_assembly_guide=False, create_order_invoice=None, override_order_invoice_template_id=None, send_to_external_shipping_system=False, external_shipping_system_id=None, custom_fields=None):  # noqa: E501
         """FulfillmentPlan - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -125,6 +129,7 @@ class FulfillmentPlan(object):
         self._max_orders = None
         self._batch_size = None
         self._version = None
+        self._is_mass_distribution = None
         self._create_pick_work = None
         self._picking_rule = None
         self._layout_rule = None
@@ -141,6 +146,7 @@ class FulfillmentPlan(object):
         self._pick_scan_scheme_id = None
         self._cartonize_orders = None
         self._auto_ship_casebreak_cartons = None
+        self._auto_ship_orders = None
         self._pre_generate_parcel_labels = None
         self._create_packing_slip = None
         self._override_packing_slip_template_id = None
@@ -173,6 +179,8 @@ class FulfillmentPlan(object):
             self.batch_size = batch_size
         if version is not None:
             self.version = version
+        if is_mass_distribution is not None:
+            self.is_mass_distribution = is_mass_distribution
         self.create_pick_work = create_pick_work
         if picking_rule is not None:
             self.picking_rule = picking_rule
@@ -202,6 +210,8 @@ class FulfillmentPlan(object):
         self.cartonize_orders = cartonize_orders
         if auto_ship_casebreak_cartons is not None:
             self.auto_ship_casebreak_cartons = auto_ship_casebreak_cartons
+        if auto_ship_orders is not None:
+            self.auto_ship_orders = auto_ship_orders
         if pre_generate_parcel_labels is not None:
             self.pre_generate_parcel_labels = pre_generate_parcel_labels
         self.create_packing_slip = create_packing_slip
@@ -475,6 +485,27 @@ class FulfillmentPlan(object):
         """
 
         self._version = version
+
+    @property
+    def is_mass_distribution(self):
+        """Gets the is_mass_distribution of this FulfillmentPlan.  # noqa: E501
+
+
+        :return: The is_mass_distribution of this FulfillmentPlan.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_mass_distribution
+
+    @is_mass_distribution.setter
+    def is_mass_distribution(self, is_mass_distribution):
+        """Sets the is_mass_distribution of this FulfillmentPlan.
+
+
+        :param is_mass_distribution: The is_mass_distribution of this FulfillmentPlan.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_mass_distribution = is_mass_distribution
 
     @property
     def create_pick_work(self):
@@ -817,6 +848,27 @@ class FulfillmentPlan(object):
         """
 
         self._auto_ship_casebreak_cartons = auto_ship_casebreak_cartons
+
+    @property
+    def auto_ship_orders(self):
+        """Gets the auto_ship_orders of this FulfillmentPlan.  # noqa: E501
+
+
+        :return: The auto_ship_orders of this FulfillmentPlan.  # noqa: E501
+        :rtype: bool
+        """
+        return self._auto_ship_orders
+
+    @auto_ship_orders.setter
+    def auto_ship_orders(self, auto_ship_orders):
+        """Sets the auto_ship_orders of this FulfillmentPlan.
+
+
+        :param auto_ship_orders: The auto_ship_orders of this FulfillmentPlan.  # noqa: E501
+        :type: bool
+        """
+
+        self._auto_ship_orders = auto_ship_orders
 
     @property
     def pre_generate_parcel_labels(self):

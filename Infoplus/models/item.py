@@ -90,6 +90,8 @@ class Item(object):
         'vendor_price': 'float',
         'vendor_per': 'str',
         'modify_date': 'datetime',
+        'primary_image': 'str',
+        'pick_image': 'str',
         'behavior_type': 'str',
         'forward_lot_mixing_rule': 'str',
         'storage_lot_mixing_rule': 'str',
@@ -193,6 +195,8 @@ class Item(object):
         'vendor_price': 'vendorPrice',
         'vendor_per': 'vendorPer',
         'modify_date': 'modifyDate',
+        'primary_image': 'primaryImage',
+        'pick_image': 'pickImage',
         'behavior_type': 'behaviorType',
         'forward_lot_mixing_rule': 'forwardLotMixingRule',
         'storage_lot_mixing_rule': 'storageLotMixingRule',
@@ -236,7 +240,7 @@ class Item(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, account_code_id=None, low_stock_contact_id=None, legacy_low_level_contact_id=None, low_stock_code_id=None, major_group_id=None, sub_group_id=None, product_code_id=None, summary_code_id=None, buyer_id=None, lob_id=None, sku=None, vendor_sku=None, upc=None, item_description=None, packing_slip_description=None, absolute_max=None, additional_description=None, backorder=None, charge_code=None, commodity_code=None, comp_code=None, create_date=None, critical_amount=None, overall_fixed_reorder_point=None, overall_lead_time=None, sell_price=None, pricing_per=None, lot_control_flag=None, max_cycle=None, max_interim=None, numeric_sort_order=None, outside_vendor=None, pick_no=None, pod_order_suffix=None, pod_rev_date=None, status=None, seasonal_item=None, requires_production_lot=None, sector=None, secure=None, serial_code=None, unit_code=None, units_per_wrap=None, weight_per_wrap=None, void_date=None, wrap_code=None, extrinsic_text1=None, extrinsic_text2=None, extrinsic_text3=None, extrinsic_number1=None, extrinsic_number2=None, extrinsic_decimal1=None, extrinsic_decimal2=None, casebreak_enabled=None, vendor_id=None, vendor_price=None, vendor_per=None, modify_date=None, behavior_type=None, forward_lot_mixing_rule=None, storage_lot_mixing_rule=None, forward_item_mixing_rule=None, storage_item_mixing_rule=None, allocation_rule=None, barcode_field=None, warehouse_display_field=None, product_id_tag_scheme_id=None, hazmat=None, is_alcohol=False, alcohol_type=None, alcohol_content=None, alcohol_container=None, alcohol_vintage_year=None, alcohol_country=None, alcohol_state=None, alcohol_region=None, alcohol_brand=None, alcohol_upc_code=None, alcohol_nambca_code=None, alcohol_unimerc_code=None, alcohol_scc_code=None, length=None, width=None, height=None, top_up=False, ship_solo=False, inventory_update_timestamp=None, available_quantity=None, damaged_quantity=None, in_fulfillment_process_quantity=None, on_hand_quantity=None, open_order_quantity=None, open_po_quantity=None, orderable_quantity=None, unallocatable_quantity=None, unavailable_quantity=None, overall_days_on_hand=None, overall_stock_status=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, account_code_id=None, low_stock_contact_id=None, legacy_low_level_contact_id=None, low_stock_code_id=None, major_group_id=None, sub_group_id=None, product_code_id=None, summary_code_id=None, buyer_id=None, lob_id=None, sku=None, vendor_sku=None, upc=None, item_description=None, packing_slip_description=None, absolute_max=None, additional_description=None, backorder=None, charge_code=None, commodity_code=None, comp_code=None, create_date=None, critical_amount=None, overall_fixed_reorder_point=None, overall_lead_time=None, sell_price=None, pricing_per=None, lot_control_flag=None, max_cycle=None, max_interim=None, numeric_sort_order=None, outside_vendor=None, pick_no=None, pod_order_suffix=None, pod_rev_date=None, status=None, seasonal_item=None, requires_production_lot=None, sector=None, secure=None, serial_code=None, unit_code=None, units_per_wrap=None, weight_per_wrap=None, void_date=None, wrap_code=None, extrinsic_text1=None, extrinsic_text2=None, extrinsic_text3=None, extrinsic_number1=None, extrinsic_number2=None, extrinsic_decimal1=None, extrinsic_decimal2=None, casebreak_enabled=None, vendor_id=None, vendor_price=None, vendor_per=None, modify_date=None, primary_image=None, pick_image=None, behavior_type=None, forward_lot_mixing_rule=None, storage_lot_mixing_rule=None, forward_item_mixing_rule=None, storage_item_mixing_rule=None, allocation_rule=None, barcode_field=None, warehouse_display_field=None, product_id_tag_scheme_id=None, hazmat=None, is_alcohol=False, alcohol_type=None, alcohol_content=None, alcohol_container=None, alcohol_vintage_year=None, alcohol_country=None, alcohol_state=None, alcohol_region=None, alcohol_brand=None, alcohol_upc_code=None, alcohol_nambca_code=None, alcohol_unimerc_code=None, alcohol_scc_code=None, length=None, width=None, height=None, top_up=False, ship_solo=False, inventory_update_timestamp=None, available_quantity=None, damaged_quantity=None, in_fulfillment_process_quantity=None, on_hand_quantity=None, open_order_quantity=None, open_po_quantity=None, orderable_quantity=None, unallocatable_quantity=None, unavailable_quantity=None, overall_days_on_hand=None, overall_stock_status=None, custom_fields=None):  # noqa: E501
         """Item - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -298,6 +302,8 @@ class Item(object):
         self._vendor_price = None
         self._vendor_per = None
         self._modify_date = None
+        self._primary_image = None
+        self._pick_image = None
         self._behavior_type = None
         self._forward_lot_mixing_rule = None
         self._storage_lot_mixing_rule = None
@@ -442,6 +448,10 @@ class Item(object):
             self.vendor_per = vendor_per
         if modify_date is not None:
             self.modify_date = modify_date
+        if primary_image is not None:
+            self.primary_image = primary_image
+        if pick_image is not None:
+            self.pick_image = pick_image
         if behavior_type is not None:
             self.behavior_type = behavior_type
         self.forward_lot_mixing_rule = forward_lot_mixing_rule
@@ -1791,6 +1801,48 @@ class Item(object):
         """
 
         self._modify_date = modify_date
+
+    @property
+    def primary_image(self):
+        """Gets the primary_image of this Item.  # noqa: E501
+
+
+        :return: The primary_image of this Item.  # noqa: E501
+        :rtype: str
+        """
+        return self._primary_image
+
+    @primary_image.setter
+    def primary_image(self, primary_image):
+        """Sets the primary_image of this Item.
+
+
+        :param primary_image: The primary_image of this Item.  # noqa: E501
+        :type: str
+        """
+
+        self._primary_image = primary_image
+
+    @property
+    def pick_image(self):
+        """Gets the pick_image of this Item.  # noqa: E501
+
+
+        :return: The pick_image of this Item.  # noqa: E501
+        :rtype: str
+        """
+        return self._pick_image
+
+    @pick_image.setter
+    def pick_image(self, pick_image):
+        """Sets the pick_image of this Item.
+
+
+        :param pick_image: The pick_image of this Item.  # noqa: E501
+        :type: str
+        """
+
+        self._pick_image = pick_image
 
     @property
     def behavior_type(self):

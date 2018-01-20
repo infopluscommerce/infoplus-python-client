@@ -62,6 +62,8 @@ Name | Type | Description | Notes
 **vendor_price** | **float** |  | [optional] 
 **vendor_per** | **str** |  | [optional] 
 **modify_date** | **datetime** |  | [optional] 
+**primary_image** | **str** |  | [optional] 
+**pick_image** | **str** |  | [optional] 
 **behavior_type** | **str** |  | [optional] 
 **forward_lot_mixing_rule** | **str** |  | 
 **storage_lot_mixing_rule** | **str** |  | 

@@ -181,6 +181,7 @@ class OrderLineActivity(object):
         'shipping_charge': 'float',
         'total_discount': 'float',
         'parcel_account_id': 'int',
+        'third_party_parcel_account_id': 'int',
         'packing_slip_template_id': 'int',
         'gift_message': 'str',
         'branch_sector': 'str',
@@ -349,6 +350,7 @@ class OrderLineActivity(object):
         'shipping_charge': 'shippingCharge',
         'total_discount': 'totalDiscount',
         'parcel_account_id': 'parcelAccountId',
+        'third_party_parcel_account_id': 'thirdPartyParcelAccountId',
         'packing_slip_template_id': 'packingSlipTemplateId',
         'gift_message': 'giftMessage',
         'branch_sector': 'branchSector',
@@ -366,7 +368,7 @@ class OrderLineActivity(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, create_date=None, modify_date=None, order_no=None, lob_id=None, sku=None, po_no_id=None, order_create_date=None, order_modify_date=None, cross_dock=None, process_no_id=None, ordered_qty=None, allowed_qty=None, shipped_qty=None, backorder_qty=None, adjust_code=None, process_flag=None, rev_date=None, restriction_rule=None, unit_cost=None, unit_sell=None, unit_discount=None, extended_cost=None, extended_sell=None, extended_discount=None, nc_extended_sell=None, per=None, charge_code=None, distribution_code=None, upc=None, vendor_sku=None, order_source_sku=None, item_major_group_id=None, master_major_group_name=None, item_sub_group_id=None, master_sub_group_name=None, item_product_code_id=None, master_production_code_name=None, item_account_code_id=None, master_account_code_name=None, item_summary_code_id=None, master_summary_code_name=None, item_legacy_low_stock_contact_id=None, low_stock_contact_name=None, sector=None, weight_per_wrap=None, item_weight=None, production_lot=None, number_of_wraps=None, number_of_cases=None, number_of_touches=None, alcohol_type_id=None, alcohol_type_name=None, alcohol_content=None, alcohol_container_id=None, alcohol_container_name=None, alcohol_container_volume=None, alcohol_vintage_year=None, alcohol_country_id=None, alcohol_country_name=None, alcohol_state=None, alcohol_region=None, alcohol_brand=None, alcohol_upc_code=None, alcohol_nabca_code=None, alcohol_unimerc_code=None, alcohol_scc_code=None, alternate_usage=None, group_order_id=None, order_status=None, order_status_name=None, carrier_id=None, carrier_name=None, media_code=None, legacy_restriction_type=None, req_type_name=None, service_type_id=None, service_type_name=None, alcohol_order_type=None, distribution_channel=None, distribution_channel_name=None, priority_code=None, order_date=None, entered_by=None, order_reason=None, customer_order_no=None, price_level=None, ship_by=None, stop_back_orders=None, order_source_id=None, order_source_name=None, integration_partner_id=None, integration_partner_name=None, order_load_program_id=None, order_load_program_name=None, oms_order_no=None, oms_customer_id=None, ship_to_attention=None, ship_to_company=None, ship_to_street=None, ship_to_street2=None, ship_to_street3=None, ship_to_city=None, ship_to_state=None, ship_to_zip=None, ship_to_country=None, ship_to_phone=None, ship_to_email=None, bill_to_attention=None, bill_to_company=None, bill_to_street=None, bill_to_street2=None, bill_to_street3=None, bill_to_city=None, bill_to_state=None, bill_to_zip=None, bill_to_country=None, bill_to_phone=None, bill_to_email=None, order_ship_date=None, freight=None, order_weight_lbs=None, order_estimated_weight_lbs=None, number_of_pallets=None, number_of_line_items=None, completion_status=None, hold_code=None, ship_code=None, order_message=None, division=None, cost_center=None, authorized_by=None, batch_no=None, first_ship_date=None, last_ship_date=None, deliver_on_date=None, customer_po_no=None, ship_via=None, need_by_date=None, total=None, balance_due=None, total_paid=None, authorization_amount=None, subtotal=None, tax_on_freight=None, tax=None, distribution_charges=None, shipping_charge=None, total_discount=None, parcel_account_id=None, packing_slip_template_id=None, gift_message=None, branch_sector=None, branch_area=None, branch_customer_type=None, branch_id=None, order_code=None, lead_package_id=None, total_qty=None, estimated_number_of_picks=None, order_confirmation_email_template_id=None, shipment_confirmation_email_template_id=None, order_invoice_template_id=None, price_mode=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, create_date=None, modify_date=None, order_no=None, lob_id=None, sku=None, po_no_id=None, order_create_date=None, order_modify_date=None, cross_dock=None, process_no_id=None, ordered_qty=None, allowed_qty=None, shipped_qty=None, backorder_qty=None, adjust_code=None, process_flag=None, rev_date=None, restriction_rule=None, unit_cost=None, unit_sell=None, unit_discount=None, extended_cost=None, extended_sell=None, extended_discount=None, nc_extended_sell=None, per=None, charge_code=None, distribution_code=None, upc=None, vendor_sku=None, order_source_sku=None, item_major_group_id=None, master_major_group_name=None, item_sub_group_id=None, master_sub_group_name=None, item_product_code_id=None, master_production_code_name=None, item_account_code_id=None, master_account_code_name=None, item_summary_code_id=None, master_summary_code_name=None, item_legacy_low_stock_contact_id=None, low_stock_contact_name=None, sector=None, weight_per_wrap=None, item_weight=None, production_lot=None, number_of_wraps=None, number_of_cases=None, number_of_touches=None, alcohol_type_id=None, alcohol_type_name=None, alcohol_content=None, alcohol_container_id=None, alcohol_container_name=None, alcohol_container_volume=None, alcohol_vintage_year=None, alcohol_country_id=None, alcohol_country_name=None, alcohol_state=None, alcohol_region=None, alcohol_brand=None, alcohol_upc_code=None, alcohol_nabca_code=None, alcohol_unimerc_code=None, alcohol_scc_code=None, alternate_usage=None, group_order_id=None, order_status=None, order_status_name=None, carrier_id=None, carrier_name=None, media_code=None, legacy_restriction_type=None, req_type_name=None, service_type_id=None, service_type_name=None, alcohol_order_type=None, distribution_channel=None, distribution_channel_name=None, priority_code=None, order_date=None, entered_by=None, order_reason=None, customer_order_no=None, price_level=None, ship_by=None, stop_back_orders=None, order_source_id=None, order_source_name=None, integration_partner_id=None, integration_partner_name=None, order_load_program_id=None, order_load_program_name=None, oms_order_no=None, oms_customer_id=None, ship_to_attention=None, ship_to_company=None, ship_to_street=None, ship_to_street2=None, ship_to_street3=None, ship_to_city=None, ship_to_state=None, ship_to_zip=None, ship_to_country=None, ship_to_phone=None, ship_to_email=None, bill_to_attention=None, bill_to_company=None, bill_to_street=None, bill_to_street2=None, bill_to_street3=None, bill_to_city=None, bill_to_state=None, bill_to_zip=None, bill_to_country=None, bill_to_phone=None, bill_to_email=None, order_ship_date=None, freight=None, order_weight_lbs=None, order_estimated_weight_lbs=None, number_of_pallets=None, number_of_line_items=None, completion_status=None, hold_code=None, ship_code=None, order_message=None, division=None, cost_center=None, authorized_by=None, batch_no=None, first_ship_date=None, last_ship_date=None, deliver_on_date=None, customer_po_no=None, ship_via=None, need_by_date=None, total=None, balance_due=None, total_paid=None, authorization_amount=None, subtotal=None, tax_on_freight=None, tax=None, distribution_charges=None, shipping_charge=None, total_discount=None, parcel_account_id=None, third_party_parcel_account_id=None, packing_slip_template_id=None, gift_message=None, branch_sector=None, branch_area=None, branch_customer_type=None, branch_id=None, order_code=None, lead_package_id=None, total_qty=None, estimated_number_of_picks=None, order_confirmation_email_template_id=None, shipment_confirmation_email_template_id=None, order_invoice_template_id=None, price_mode=None, custom_fields=None):  # noqa: E501
         """OrderLineActivity - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -519,6 +521,7 @@ class OrderLineActivity(object):
         self._shipping_charge = None
         self._total_discount = None
         self._parcel_account_id = None
+        self._third_party_parcel_account_id = None
         self._packing_slip_template_id = None
         self._gift_message = None
         self._branch_sector = None
@@ -826,6 +829,8 @@ class OrderLineActivity(object):
             self.total_discount = total_discount
         if parcel_account_id is not None:
             self.parcel_account_id = parcel_account_id
+        if third_party_parcel_account_id is not None:
+            self.third_party_parcel_account_id = third_party_parcel_account_id
         if packing_slip_template_id is not None:
             self.packing_slip_template_id = packing_slip_template_id
         if gift_message is not None:
@@ -4026,6 +4031,27 @@ class OrderLineActivity(object):
         """
 
         self._parcel_account_id = parcel_account_id
+
+    @property
+    def third_party_parcel_account_id(self):
+        """Gets the third_party_parcel_account_id of this OrderLineActivity.  # noqa: E501
+
+
+        :return: The third_party_parcel_account_id of this OrderLineActivity.  # noqa: E501
+        :rtype: int
+        """
+        return self._third_party_parcel_account_id
+
+    @third_party_parcel_account_id.setter
+    def third_party_parcel_account_id(self, third_party_parcel_account_id):
+        """Sets the third_party_parcel_account_id of this OrderLineActivity.
+
+
+        :param third_party_parcel_account_id: The third_party_parcel_account_id of this OrderLineActivity.  # noqa: E501
+        :type: int
+        """
+
+        self._third_party_parcel_account_id = third_party_parcel_account_id
 
     @property
     def packing_slip_template_id(self):

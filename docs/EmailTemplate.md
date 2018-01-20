@@ -5,11 +5,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
 **lob_id** | **int** |  | 
-**subject_text** | **str** |  | [optional] 
+**subject** | **str** |  | 
 **name** | **str** |  | 
 **from_name** | **str** |  | 
 **from_address** | **str** |  | 
+**to_name** | **str** |  | [optional] 
+**to_address** | **str** |  | [optional] 
+**cc_address** | **str** |  | [optional] 
+**bcc_address** | **str** |  | [optional] 
 **email_template_type** | **str** |  | 
+**record_type** | **str** |  | [optional] 
+**api_version** | **str** |  | [optional] 
+**script_id** | **int** |  | [optional] 
 **create_date** | **datetime** |  | [optional] 
 **modify_date** | **datetime** |  | [optional] 
 **custom_fields** | **dict(str, object)** |  | [optional] 

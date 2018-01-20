@@ -33,20 +33,23 @@ class ProcessOutputAPIModel(object):
     swagger_types = {
         'id': 'object',
         'status': 'str',
+        'entity': 'object',
         'message_list': 'list[str]'
     }
 
     attribute_map = {
         'id': 'id',
         'status': 'status',
+        'entity': 'entity',
         'message_list': 'messageList'
     }
 
-    def __init__(self, id=None, status=None, message_list=None):  # noqa: E501
+    def __init__(self, id=None, status=None, entity=None, message_list=None):  # noqa: E501
         """ProcessOutputAPIModel - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._status = None
+        self._entity = None
         self._message_list = None
         self.discriminator = None
 
@@ -54,6 +57,8 @@ class ProcessOutputAPIModel(object):
             self.id = id
         if status is not None:
             self.status = status
+        if entity is not None:
+            self.entity = entity
         if message_list is not None:
             self.message_list = message_list
 
@@ -98,6 +103,27 @@ class ProcessOutputAPIModel(object):
         """
 
         self._status = status
+
+    @property
+    def entity(self):
+        """Gets the entity of this ProcessOutputAPIModel.  # noqa: E501
+
+
+        :return: The entity of this ProcessOutputAPIModel.  # noqa: E501
+        :rtype: object
+        """
+        return self._entity
+
+    @entity.setter
+    def entity(self, entity):
+        """Sets the entity of this ProcessOutputAPIModel.
+
+
+        :param entity: The entity of this ProcessOutputAPIModel.  # noqa: E501
+        :type: object
+        """
+
+        self._entity = entity
 
     @property
     def message_list(self):

@@ -46,6 +46,7 @@ from Infoplus.models.external_shipment import ExternalShipment
 from Infoplus.models.external_shipping_system import ExternalShippingSystem
 from Infoplus.models.fulfillment_plan import FulfillmentPlan
 from Infoplus.models.fulfillment_process import FulfillmentProcess
+from Infoplus.models.fulfillment_process_log import FulfillmentProcessLog
 from Infoplus.models.get_order_warehouse_fulfillment_data_input import GetOrderWarehouseFulfillmentDataInput
 from Infoplus.models.get_order_warehouse_fulfillment_data_output import GetOrderWarehouseFulfillmentDataOutput
 from Infoplus.models.integration_partner import IntegrationPartner
@@ -53,6 +54,7 @@ from Infoplus.models.inventory_adjustment import InventoryAdjustment
 from Infoplus.models.inventory_detail import InventoryDetail
 from Infoplus.models.inventory_snapshot import InventorySnapshot
 from Infoplus.models.inventory_storage_activity import InventoryStorageActivity
+from Infoplus.models.invoice_template_line_price_level import InvoiceTemplateLinePriceLevel
 from Infoplus.models.invoice_worksheet import InvoiceWorksheet
 from Infoplus.models.invoice_worksheet_line import InvoiceWorksheetLine
 from Infoplus.models.item import Item
@@ -116,10 +118,12 @@ from Infoplus.models.receiving_worksheet_put_away_plan import ReceivingWorksheet
 from Infoplus.models.replenishment import Replenishment
 from Infoplus.models.replenishment_plan import ReplenishmentPlan
 from Infoplus.models.replenishment_process import ReplenishmentProcess
+from Infoplus.models.run_fulfillment_plan_input_api_model import RunFulfillmentPlanInputAPIModel
 from Infoplus.models.scheduled_plan_log import ScheduledPlanLog
 from Infoplus.models.service_type import ServiceType
 from Infoplus.models.shipment import Shipment
 from Infoplus.models.shopping_cart_connection import ShoppingCartConnection
+from Infoplus.models.sla_setup import SlaSetup
 from Infoplus.models.substitution import Substitution
 from Infoplus.models.supplement import Supplement
 from Infoplus.models.third_party_parcel_account import ThirdPartyParcelAccount

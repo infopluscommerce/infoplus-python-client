@@ -98,6 +98,9 @@ Name | Type | Description | Notes
 **total_qty** | **int** |  | [optional] 
 **weight_lbs** | **float** |  | [optional] 
 **order_assembly_instructions** | **str** |  | [optional] 
+**parcel_label_ref1** | **str** |  | [optional] 
+**parcel_label_ref2** | **str** |  | [optional] 
+**parcel_label_ref3** | **str** |  | [optional] 
 **line_items** | [**list[OrderLine]**](OrderLine.md) |  | 
 **extra_order_data** | [**list[OrderExtraOrderData]**](OrderExtraOrderData.md) |  | [optional] 
 **extra_line_item_data** | [**list[OrderExtraLineItemData]**](OrderExtraLineItemData.md) |  | [optional] 
