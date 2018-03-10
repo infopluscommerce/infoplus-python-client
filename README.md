@@ -454,6 +454,24 @@ Class | Method | HTTP request | Description
 *ItemSectorApi* | [**get_item_sector_by_id**](docs/ItemSectorApi.md#get_item_sector_by_id) | **GET** /beta/itemSector/{itemSectorId} | Get an itemSector by id
 *ItemSectorApi* | [**get_item_sector_tags**](docs/ItemSectorApi.md#get_item_sector_tags) | **GET** /beta/itemSector/{itemSectorId}/tag | Get the tags for an itemSector.
 *ItemSectorApi* | [**update_item_sector**](docs/ItemSectorApi.md#update_item_sector) | **PUT** /beta/itemSector | Update an itemSector
+*ItemSerialApi* | [**add_item_serial_audit**](docs/ItemSerialApi.md#add_item_serial_audit) | **PUT** /beta/itemSerial/{itemSerialId}/audit/{itemSerialAudit} | Add new audit for an itemSerial
+*ItemSerialApi* | [**add_item_serial_tag**](docs/ItemSerialApi.md#add_item_serial_tag) | **PUT** /beta/itemSerial/{itemSerialId}/tag/{itemSerialTag} | Add new tags for an itemSerial.
+*ItemSerialApi* | [**delete_item_serial**](docs/ItemSerialApi.md#delete_item_serial) | **DELETE** /beta/itemSerial/{itemSerialId} | Delete an itemSerial
+*ItemSerialApi* | [**delete_item_serial_tag**](docs/ItemSerialApi.md#delete_item_serial_tag) | **DELETE** /beta/itemSerial/{itemSerialId}/tag/{itemSerialTag} | Delete a tag for an itemSerial.
+*ItemSerialApi* | [**get_duplicate_item_serial_by_id**](docs/ItemSerialApi.md#get_duplicate_item_serial_by_id) | **GET** /beta/itemSerial/duplicate/{itemSerialId} | Get a duplicated an itemSerial by id
+*ItemSerialApi* | [**get_item_serial_by_filter**](docs/ItemSerialApi.md#get_item_serial_by_filter) | **GET** /beta/itemSerial/search | Search itemSerials by filter
+*ItemSerialApi* | [**get_item_serial_by_id**](docs/ItemSerialApi.md#get_item_serial_by_id) | **GET** /beta/itemSerial/{itemSerialId} | Get an itemSerial by id
+*ItemSerialApi* | [**get_item_serial_tags**](docs/ItemSerialApi.md#get_item_serial_tags) | **GET** /beta/itemSerial/{itemSerialId}/tag | Get the tags for an itemSerial.
+*ItemSerialSchemeApi* | [**add_item_serial_scheme**](docs/ItemSerialSchemeApi.md#add_item_serial_scheme) | **POST** /beta/itemSerialScheme | Create an itemSerialScheme
+*ItemSerialSchemeApi* | [**add_item_serial_scheme_audit**](docs/ItemSerialSchemeApi.md#add_item_serial_scheme_audit) | **PUT** /beta/itemSerialScheme/{itemSerialSchemeId}/audit/{itemSerialSchemeAudit} | Add new audit for an itemSerialScheme
+*ItemSerialSchemeApi* | [**add_item_serial_scheme_tag**](docs/ItemSerialSchemeApi.md#add_item_serial_scheme_tag) | **PUT** /beta/itemSerialScheme/{itemSerialSchemeId}/tag/{itemSerialSchemeTag} | Add new tags for an itemSerialScheme.
+*ItemSerialSchemeApi* | [**delete_item_serial_scheme**](docs/ItemSerialSchemeApi.md#delete_item_serial_scheme) | **DELETE** /beta/itemSerialScheme/{itemSerialSchemeId} | Delete an itemSerialScheme
+*ItemSerialSchemeApi* | [**delete_item_serial_scheme_tag**](docs/ItemSerialSchemeApi.md#delete_item_serial_scheme_tag) | **DELETE** /beta/itemSerialScheme/{itemSerialSchemeId}/tag/{itemSerialSchemeTag} | Delete a tag for an itemSerialScheme.
+*ItemSerialSchemeApi* | [**get_duplicate_item_serial_scheme_by_id**](docs/ItemSerialSchemeApi.md#get_duplicate_item_serial_scheme_by_id) | **GET** /beta/itemSerialScheme/duplicate/{itemSerialSchemeId} | Get a duplicated an itemSerialScheme by id
+*ItemSerialSchemeApi* | [**get_item_serial_scheme_by_filter**](docs/ItemSerialSchemeApi.md#get_item_serial_scheme_by_filter) | **GET** /beta/itemSerialScheme/search | Search itemSerialSchemes by filter
+*ItemSerialSchemeApi* | [**get_item_serial_scheme_by_id**](docs/ItemSerialSchemeApi.md#get_item_serial_scheme_by_id) | **GET** /beta/itemSerialScheme/{itemSerialSchemeId} | Get an itemSerialScheme by id
+*ItemSerialSchemeApi* | [**get_item_serial_scheme_tags**](docs/ItemSerialSchemeApi.md#get_item_serial_scheme_tags) | **GET** /beta/itemSerialScheme/{itemSerialSchemeId}/tag | Get the tags for an itemSerialScheme.
+*ItemSerialSchemeApi* | [**update_item_serial_scheme**](docs/ItemSerialSchemeApi.md#update_item_serial_scheme) | **PUT** /beta/itemSerialScheme | Update an itemSerialScheme
 *ItemSubCategoryApi* | [**add_item_sub_category**](docs/ItemSubCategoryApi.md#add_item_sub_category) | **POST** /beta/itemSubCategory | Create an itemSubCategory
 *ItemSubCategoryApi* | [**add_item_sub_category_audit**](docs/ItemSubCategoryApi.md#add_item_sub_category_audit) | **PUT** /beta/itemSubCategory/{itemSubCategoryId}/audit/{itemSubCategoryAudit} | Add new audit for an itemSubCategory
 *ItemSubCategoryApi* | [**add_item_sub_category_tag**](docs/ItemSubCategoryApi.md#add_item_sub_category_tag) | **PUT** /beta/itemSubCategory/{itemSubCategoryId}/tag/{itemSubCategoryTag} | Add new tags for an itemSubCategory.
@@ -606,6 +624,8 @@ Class | Method | HTTP request | Description
 *OrderApi* | [**apply_order_warehouse_fulfillment_plan**](docs/OrderApi.md#apply_order_warehouse_fulfillment_plan) | **POST** /beta/order/applyOrderWarehouseFulfillmentPlan | Run the Apply Order Warehouse Fulfillment Plan method.
 *OrderApi* | [**delete_order**](docs/OrderApi.md#delete_order) | **DELETE** /beta/order/{orderId} | Delete an order
 *OrderApi* | [**delete_order_tag**](docs/OrderApi.md#delete_order_tag) | **DELETE** /beta/order/{orderId}/tag/{orderTag} | Delete a tag for an order.
+*OrderApi* | [**edit_fulfillment_channel**](docs/OrderApi.md#edit_fulfillment_channel) | **POST** /beta/order/editFulfillmentChannel | Run the EditLineItemFulfillmentStrategy process.
+*OrderApi* | [**edit_line_items**](docs/OrderApi.md#edit_line_items) | **POST** /beta/order/editLineItems | Run the ReqManualSubstitution process.
 *OrderApi* | [**get_duplicate_order_by_id**](docs/OrderApi.md#get_duplicate_order_by_id) | **GET** /beta/order/duplicate/{orderId} | Get a duplicated an order by id
 *OrderApi* | [**get_order_by_filter**](docs/OrderApi.md#get_order_by_filter) | **GET** /beta/order/search | Search orders by filter
 *OrderApi* | [**get_order_by_id**](docs/OrderApi.md#get_order_by_id) | **GET** /beta/order/{orderId} | Get an order by id
@@ -990,6 +1010,7 @@ Class | Method | HTTP request | Description
  - [CustomerInvoiceTemplate](docs/CustomerInvoiceTemplate.md)
  - [CustomerInvoiceTemplateLine](docs/CustomerInvoiceTemplateLine.md)
  - [EDIDocumentType](docs/EDIDocumentType.md)
+ - [EditLineItemFulfillmentStrategyInputAPIModel](docs/EditLineItemFulfillmentStrategyInputAPIModel.md)
  - [EmailTemplate](docs/EmailTemplate.md)
  - [ExecuteQuickAdjustmentInputAPIModel](docs/ExecuteQuickAdjustmentInputAPIModel.md)
  - [ExecuteQuickReceiptInputAPIModel](docs/ExecuteQuickReceiptInputAPIModel.md)
@@ -1018,6 +1039,8 @@ Class | Method | HTTP request | Description
  - [ItemReceipt](docs/ItemReceipt.md)
  - [ItemReceiptActivity](docs/ItemReceiptActivity.md)
  - [ItemSector](docs/ItemSector.md)
+ - [ItemSerial](docs/ItemSerial.md)
+ - [ItemSerialScheme](docs/ItemSerialScheme.md)
  - [ItemSubCategory](docs/ItemSubCategory.md)
  - [ItemSummaryCode](docs/ItemSummaryCode.md)
  - [JobTime](docs/JobTime.md)
@@ -1069,6 +1092,7 @@ Class | Method | HTTP request | Description
  - [Replenishment](docs/Replenishment.md)
  - [ReplenishmentPlan](docs/ReplenishmentPlan.md)
  - [ReplenishmentProcess](docs/ReplenishmentProcess.md)
+ - [ReqManualSubstitutionInputAPIModel](docs/ReqManualSubstitutionInputAPIModel.md)
  - [RunFulfillmentPlanInputAPIModel](docs/RunFulfillmentPlanInputAPIModel.md)
  - [ScheduledPlanLog](docs/ScheduledPlanLog.md)
  - [ServiceType](docs/ServiceType.md)

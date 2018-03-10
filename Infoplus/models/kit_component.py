@@ -31,6 +31,7 @@ class KitComponent(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'invno': 'str',
         'sku': 'str',
         'quantity': 'int',
         'instructions': 'str',
@@ -40,6 +41,7 @@ class KitComponent(object):
     }
 
     attribute_map = {
+        'invno': 'invno',
         'sku': 'sku',
         'quantity': 'quantity',
         'instructions': 'instructions',
@@ -48,9 +50,10 @@ class KitComponent(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, sku=None, quantity=None, instructions=None, additional_services=None, critical=None, custom_fields=None):  # noqa: E501
+    def __init__(self, invno=None, sku=None, quantity=None, instructions=None, additional_services=None, critical=None, custom_fields=None):  # noqa: E501
         """KitComponent - a model defined in Swagger"""  # noqa: E501
 
+        self._invno = None
         self._sku = None
         self._quantity = None
         self._instructions = None
@@ -59,6 +62,8 @@ class KitComponent(object):
         self._custom_fields = None
         self.discriminator = None
 
+        if invno is not None:
+            self.invno = invno
         self.sku = sku
         self.quantity = quantity
         if instructions is not None:
@@ -68,6 +73,27 @@ class KitComponent(object):
         self.critical = critical
         if custom_fields is not None:
             self.custom_fields = custom_fields
+
+    @property
+    def invno(self):
+        """Gets the invno of this KitComponent.  # noqa: E501
+
+
+        :return: The invno of this KitComponent.  # noqa: E501
+        :rtype: str
+        """
+        return self._invno
+
+    @invno.setter
+    def invno(self, invno):
+        """Sets the invno of this KitComponent.
+
+
+        :param invno: The invno of this KitComponent.  # noqa: E501
+        :type: str
+        """
+
+        self._invno = invno
 
     @property
     def sku(self):

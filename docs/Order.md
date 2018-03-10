@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **customer_order_no** | **str** |  | [optional] 
 **lob_id** | **int** |  | 
 **warehouse_id** | **int** |  | 
-**order_date** | **datetime** |  | 
+**order_date** | **datetime** |  | [optional] 
 **customer_no** | **str** |  | [optional] 
 **use_order_no_root** | **int** |  | [optional] 
 **first_ship_date** | **datetime** |  | [optional] 
@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **carrier_id** | **int** |  | [optional] 
 **service_type_id** | **str** |  | [optional] 
 **ship_via** | **str** |  | [optional] 
-**media_code** | **str** |  | 
-**legacy_restriction_type** | **str** |  | 
+**media_code** | **str** |  | [optional] 
+**legacy_restriction_type** | **str** |  | [optional] 
 **alcohol_order_type** | **str** |  | [optional] 
 **alternate_usage** | **str** |  | [optional] 
 **authorization_amount** | **float** |  | [optional] 

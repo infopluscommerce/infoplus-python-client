@@ -39,6 +39,7 @@ from Infoplus.models.customer import Customer
 from Infoplus.models.customer_invoice_template import CustomerInvoiceTemplate
 from Infoplus.models.customer_invoice_template_line import CustomerInvoiceTemplateLine
 from Infoplus.models.e_di_document_type import EDIDocumentType
+from Infoplus.models.edit_line_item_fulfillment_strategy_input_api_model import EditLineItemFulfillmentStrategyInputAPIModel
 from Infoplus.models.email_template import EmailTemplate
 from Infoplus.models.execute_quick_adjustment_input_api_model import ExecuteQuickAdjustmentInputAPIModel
 from Infoplus.models.execute_quick_receipt_input_api_model import ExecuteQuickReceiptInputAPIModel
@@ -67,6 +68,8 @@ from Infoplus.models.item_product_code import ItemProductCode
 from Infoplus.models.item_receipt import ItemReceipt
 from Infoplus.models.item_receipt_activity import ItemReceiptActivity
 from Infoplus.models.item_sector import ItemSector
+from Infoplus.models.item_serial import ItemSerial
+from Infoplus.models.item_serial_scheme import ItemSerialScheme
 from Infoplus.models.item_sub_category import ItemSubCategory
 from Infoplus.models.item_summary_code import ItemSummaryCode
 from Infoplus.models.job_time import JobTime
@@ -118,6 +121,7 @@ from Infoplus.models.receiving_worksheet_put_away_plan import ReceivingWorksheet
 from Infoplus.models.replenishment import Replenishment
 from Infoplus.models.replenishment_plan import ReplenishmentPlan
 from Infoplus.models.replenishment_process import ReplenishmentProcess
+from Infoplus.models.req_manual_substitution_input_api_model import ReqManualSubstitutionInputAPIModel
 from Infoplus.models.run_fulfillment_plan_input_api_model import RunFulfillmentPlanInputAPIModel
 from Infoplus.models.scheduled_plan_log import ScheduledPlanLog
 from Infoplus.models.service_type import ServiceType

@@ -45,6 +45,8 @@ from Infoplus.api.item_product_code_api import ItemProductCodeApi
 from Infoplus.api.item_receipt_api import ItemReceiptApi
 from Infoplus.api.item_receipt_activity_api import ItemReceiptActivityApi
 from Infoplus.api.item_sector_api import ItemSectorApi
+from Infoplus.api.item_serial_api import ItemSerialApi
+from Infoplus.api.item_serial_scheme_api import ItemSerialSchemeApi
 from Infoplus.api.item_sub_category_api import ItemSubCategoryApi
 from Infoplus.api.item_summary_code_api import ItemSummaryCodeApi
 from Infoplus.api.job_time_api import JobTimeApi

@@ -44,12 +44,14 @@ class ReceivingWorksheetLineItem(object):
         'wrap_code': 'str',
         'units_per_wrap': 'int',
         'units_per_case': 'int',
-        'cases_per_pallet': 'int',
+        'quantity_per_inner_pack': 'int',
+        'quantity_per_pallet': 'int',
         'weight_per_wrap': 'float',
         'weight_per_case': 'float',
         'production_lot': 'str',
         'product_id_tag': 'str',
         'revision_date': 'str',
+        'expiration_date': 'datetime',
         'origin': 'str',
         'carton_length': 'float',
         'carton_width': 'float',
@@ -71,12 +73,14 @@ class ReceivingWorksheetLineItem(object):
         'wrap_code': 'wrapCode',
         'units_per_wrap': 'unitsPerWrap',
         'units_per_case': 'unitsPerCase',
-        'cases_per_pallet': 'casesPerPallet',
+        'quantity_per_inner_pack': 'quantityPerInnerPack',
+        'quantity_per_pallet': 'quantityPerPallet',
         'weight_per_wrap': 'weightPerWrap',
         'weight_per_case': 'weightPerCase',
         'production_lot': 'productionLot',
         'product_id_tag': 'productIdTag',
         'revision_date': 'revisionDate',
+        'expiration_date': 'expirationDate',
         'origin': 'origin',
         'carton_length': 'cartonLength',
         'carton_width': 'cartonWidth',
@@ -86,7 +90,7 @@ class ReceivingWorksheetLineItem(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, sku=None, sku2=None, full_description=None, ordered_qty=None, prev_received_qty=None, unreceived_qty=None, receiving_qty=None, unit_code=None, wrap_code=None, units_per_wrap=None, units_per_case=None, cases_per_pallet=None, weight_per_wrap=None, weight_per_case=None, production_lot=None, product_id_tag=None, revision_date=None, origin=None, carton_length=None, carton_width=None, carton_height=None, put_away_plans=None, quantity=None, custom_fields=None):  # noqa: E501
+    def __init__(self, sku=None, sku2=None, full_description=None, ordered_qty=None, prev_received_qty=None, unreceived_qty=None, receiving_qty=None, unit_code=None, wrap_code=None, units_per_wrap=None, units_per_case=None, quantity_per_inner_pack=None, quantity_per_pallet=None, weight_per_wrap=None, weight_per_case=None, production_lot=None, product_id_tag=None, revision_date=None, expiration_date=None, origin=None, carton_length=None, carton_width=None, carton_height=None, put_away_plans=None, quantity=None, custom_fields=None):  # noqa: E501
         """ReceivingWorksheetLineItem - a model defined in Swagger"""  # noqa: E501
 
         self._sku = None
@@ -100,12 +104,14 @@ class ReceivingWorksheetLineItem(object):
         self._wrap_code = None
         self._units_per_wrap = None
         self._units_per_case = None
-        self._cases_per_pallet = None
+        self._quantity_per_inner_pack = None
+        self._quantity_per_pallet = None
         self._weight_per_wrap = None
         self._weight_per_case = None
         self._production_lot = None
         self._product_id_tag = None
         self._revision_date = None
+        self._expiration_date = None
         self._origin = None
         self._carton_length = None
         self._carton_width = None
@@ -128,14 +134,18 @@ class ReceivingWorksheetLineItem(object):
         if unreceived_qty is not None:
             self.unreceived_qty = unreceived_qty
         self.receiving_qty = receiving_qty
-        self.unit_code = unit_code
-        self.wrap_code = wrap_code
+        if unit_code is not None:
+            self.unit_code = unit_code
+        if wrap_code is not None:
+            self.wrap_code = wrap_code
         if units_per_wrap is not None:
             self.units_per_wrap = units_per_wrap
         if units_per_case is not None:
             self.units_per_case = units_per_case
-        if cases_per_pallet is not None:
-            self.cases_per_pallet = cases_per_pallet
+        if quantity_per_inner_pack is not None:
+            self.quantity_per_inner_pack = quantity_per_inner_pack
+        if quantity_per_pallet is not None:
+            self.quantity_per_pallet = quantity_per_pallet
         self.weight_per_wrap = weight_per_wrap
         if weight_per_case is not None:
             self.weight_per_case = weight_per_case
@@ -145,6 +155,8 @@ class ReceivingWorksheetLineItem(object):
             self.product_id_tag = product_id_tag
         if revision_date is not None:
             self.revision_date = revision_date
+        if expiration_date is not None:
+            self.expiration_date = expiration_date
         if origin is not None:
             self.origin = origin
         if carton_length is not None:
@@ -327,8 +339,6 @@ class ReceivingWorksheetLineItem(object):
         :param unit_code: The unit_code of this ReceivingWorksheetLineItem.  # noqa: E501
         :type: str
         """
-        if unit_code is None:
-            raise ValueError("Invalid value for `unit_code`, must not be `None`")  # noqa: E501
 
         self._unit_code = unit_code
 
@@ -350,8 +360,6 @@ class ReceivingWorksheetLineItem(object):
         :param wrap_code: The wrap_code of this ReceivingWorksheetLineItem.  # noqa: E501
         :type: str
         """
-        if wrap_code is None:
-            raise ValueError("Invalid value for `wrap_code`, must not be `None`")  # noqa: E501
 
         self._wrap_code = wrap_code
 
@@ -398,25 +406,46 @@ class ReceivingWorksheetLineItem(object):
         self._units_per_case = units_per_case
 
     @property
-    def cases_per_pallet(self):
-        """Gets the cases_per_pallet of this ReceivingWorksheetLineItem.  # noqa: E501
+    def quantity_per_inner_pack(self):
+        """Gets the quantity_per_inner_pack of this ReceivingWorksheetLineItem.  # noqa: E501
 
 
-        :return: The cases_per_pallet of this ReceivingWorksheetLineItem.  # noqa: E501
+        :return: The quantity_per_inner_pack of this ReceivingWorksheetLineItem.  # noqa: E501
         :rtype: int
         """
-        return self._cases_per_pallet
+        return self._quantity_per_inner_pack
 
-    @cases_per_pallet.setter
-    def cases_per_pallet(self, cases_per_pallet):
-        """Sets the cases_per_pallet of this ReceivingWorksheetLineItem.
+    @quantity_per_inner_pack.setter
+    def quantity_per_inner_pack(self, quantity_per_inner_pack):
+        """Sets the quantity_per_inner_pack of this ReceivingWorksheetLineItem.
 
 
-        :param cases_per_pallet: The cases_per_pallet of this ReceivingWorksheetLineItem.  # noqa: E501
+        :param quantity_per_inner_pack: The quantity_per_inner_pack of this ReceivingWorksheetLineItem.  # noqa: E501
         :type: int
         """
 
-        self._cases_per_pallet = cases_per_pallet
+        self._quantity_per_inner_pack = quantity_per_inner_pack
+
+    @property
+    def quantity_per_pallet(self):
+        """Gets the quantity_per_pallet of this ReceivingWorksheetLineItem.  # noqa: E501
+
+
+        :return: The quantity_per_pallet of this ReceivingWorksheetLineItem.  # noqa: E501
+        :rtype: int
+        """
+        return self._quantity_per_pallet
+
+    @quantity_per_pallet.setter
+    def quantity_per_pallet(self, quantity_per_pallet):
+        """Sets the quantity_per_pallet of this ReceivingWorksheetLineItem.
+
+
+        :param quantity_per_pallet: The quantity_per_pallet of this ReceivingWorksheetLineItem.  # noqa: E501
+        :type: int
+        """
+
+        self._quantity_per_pallet = quantity_per_pallet
 
     @property
     def weight_per_wrap(self):
@@ -524,6 +553,27 @@ class ReceivingWorksheetLineItem(object):
         """
 
         self._revision_date = revision_date
+
+    @property
+    def expiration_date(self):
+        """Gets the expiration_date of this ReceivingWorksheetLineItem.  # noqa: E501
+
+
+        :return: The expiration_date of this ReceivingWorksheetLineItem.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._expiration_date
+
+    @expiration_date.setter
+    def expiration_date(self, expiration_date):
+        """Sets the expiration_date of this ReceivingWorksheetLineItem.
+
+
+        :param expiration_date: The expiration_date of this ReceivingWorksheetLineItem.  # noqa: E501
+        :type: datetime
+        """
+
+        self._expiration_date = expiration_date
 
     @property
     def origin(self):

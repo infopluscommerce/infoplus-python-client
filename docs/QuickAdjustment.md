@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **warehouse_id** | **int** |  | 
 **location_id** | **int** |  | 
 **adjustment_code** | **str** |  | 
-**total_quantity** | **int** |  | 
+**total_quantity** | **int** |  | [optional] 
+**change_quantity** | **int** |  | [optional] 
 **message** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
 **product_id_tag** | **str** |  | [optional] 

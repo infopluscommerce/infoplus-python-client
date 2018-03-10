@@ -55,6 +55,7 @@ class OrderLine(object):
         'nc_extended_sell': 'float',
         'item_weight': 'float',
         'production_lot': 'str',
+        'expiration_date': 'datetime',
         'weight_per_wrap': 'float',
         'sector': 'str',
         'order_assembly_instructions': 'str',
@@ -64,6 +65,7 @@ class OrderLine(object):
         'item_sub_group_id': 'int',
         'item_product_code_id': 'int',
         'item_summary_code_id': 'int',
+        'fulfillment_channel': 'str',
         'custom_fields': 'dict(str, object)'
     }
 
@@ -92,6 +94,7 @@ class OrderLine(object):
         'nc_extended_sell': 'ncExtendedSell',
         'item_weight': 'itemWeight',
         'production_lot': 'productionLot',
+        'expiration_date': 'expirationDate',
         'weight_per_wrap': 'weightPerWrap',
         'sector': 'sector',
         'order_assembly_instructions': 'orderAssemblyInstructions',
@@ -101,10 +104,11 @@ class OrderLine(object):
         'item_sub_group_id': 'itemSubGroupId',
         'item_product_code_id': 'itemProductCodeId',
         'item_summary_code_id': 'itemSummaryCodeId',
+        'fulfillment_channel': 'fulfillmentChannel',
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, order_no=None, lob_id=None, sku=None, po_no_id=None, ordered_qty=None, allowed_qty=None, shipped_qty=None, backorder_qty=None, rev_date=None, charge_code=None, distribution_code=None, upc=None, vendor_sku=None, order_source_sku=None, unit_cost=None, unit_sell=None, unit_discount=None, extended_cost=None, extended_sell=None, extended_discount=None, nc_extended_sell=None, item_weight=None, production_lot=None, weight_per_wrap=None, sector=None, order_assembly_instructions=None, item_account_code_id=None, item_legacy_low_stock_contact_id=None, item_major_group_id=None, item_sub_group_id=None, item_product_code_id=None, item_summary_code_id=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, order_no=None, lob_id=None, sku=None, po_no_id=None, ordered_qty=None, allowed_qty=None, shipped_qty=None, backorder_qty=None, rev_date=None, charge_code=None, distribution_code=None, upc=None, vendor_sku=None, order_source_sku=None, unit_cost=None, unit_sell=None, unit_discount=None, extended_cost=None, extended_sell=None, extended_discount=None, nc_extended_sell=None, item_weight=None, production_lot=None, expiration_date=None, weight_per_wrap=None, sector=None, order_assembly_instructions=None, item_account_code_id=None, item_legacy_low_stock_contact_id=None, item_major_group_id=None, item_sub_group_id=None, item_product_code_id=None, item_summary_code_id=None, fulfillment_channel=None, custom_fields=None):  # noqa: E501
         """OrderLine - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -131,6 +135,7 @@ class OrderLine(object):
         self._nc_extended_sell = None
         self._item_weight = None
         self._production_lot = None
+        self._expiration_date = None
         self._weight_per_wrap = None
         self._sector = None
         self._order_assembly_instructions = None
@@ -140,6 +145,7 @@ class OrderLine(object):
         self._item_sub_group_id = None
         self._item_product_code_id = None
         self._item_summary_code_id = None
+        self._fulfillment_channel = None
         self._custom_fields = None
         self.discriminator = None
 
@@ -188,6 +194,8 @@ class OrderLine(object):
             self.item_weight = item_weight
         if production_lot is not None:
             self.production_lot = production_lot
+        if expiration_date is not None:
+            self.expiration_date = expiration_date
         if weight_per_wrap is not None:
             self.weight_per_wrap = weight_per_wrap
         if sector is not None:
@@ -201,6 +209,7 @@ class OrderLine(object):
         if item_product_code_id is not None:
             self.item_product_code_id = item_product_code_id
         self.item_summary_code_id = item_summary_code_id
+        self.fulfillment_channel = fulfillment_channel
         if custom_fields is not None:
             self.custom_fields = custom_fields
 
@@ -715,6 +724,27 @@ class OrderLine(object):
         self._production_lot = production_lot
 
     @property
+    def expiration_date(self):
+        """Gets the expiration_date of this OrderLine.  # noqa: E501
+
+
+        :return: The expiration_date of this OrderLine.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._expiration_date
+
+    @expiration_date.setter
+    def expiration_date(self, expiration_date):
+        """Sets the expiration_date of this OrderLine.
+
+
+        :param expiration_date: The expiration_date of this OrderLine.  # noqa: E501
+        :type: datetime
+        """
+
+        self._expiration_date = expiration_date
+
+    @property
     def weight_per_wrap(self):
         """Gets the weight_per_wrap of this OrderLine.  # noqa: E501
 
@@ -912,6 +942,29 @@ class OrderLine(object):
             raise ValueError("Invalid value for `item_summary_code_id`, must not be `None`")  # noqa: E501
 
         self._item_summary_code_id = item_summary_code_id
+
+    @property
+    def fulfillment_channel(self):
+        """Gets the fulfillment_channel of this OrderLine.  # noqa: E501
+
+
+        :return: The fulfillment_channel of this OrderLine.  # noqa: E501
+        :rtype: str
+        """
+        return self._fulfillment_channel
+
+    @fulfillment_channel.setter
+    def fulfillment_channel(self, fulfillment_channel):
+        """Sets the fulfillment_channel of this OrderLine.
+
+
+        :param fulfillment_channel: The fulfillment_channel of this OrderLine.  # noqa: E501
+        :type: str
+        """
+        if fulfillment_channel is None:
+            raise ValueError("Invalid value for `fulfillment_channel`, must not be `None`")  # noqa: E501
+
+        self._fulfillment_channel = fulfillment_channel
 
     @property
     def custom_fields(self):

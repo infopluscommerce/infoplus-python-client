@@ -360,7 +360,8 @@ class Order(object):
             self.customer_order_no = customer_order_no
         self.lob_id = lob_id
         self.warehouse_id = warehouse_id
-        self.order_date = order_date
+        if order_date is not None:
+            self.order_date = order_date
         if customer_no is not None:
             self.customer_no = customer_no
         if use_order_no_root is not None:
@@ -379,8 +380,10 @@ class Order(object):
             self.service_type_id = service_type_id
         if ship_via is not None:
             self.ship_via = ship_via
-        self.media_code = media_code
-        self.legacy_restriction_type = legacy_restriction_type
+        if media_code is not None:
+            self.media_code = media_code
+        if legacy_restriction_type is not None:
+            self.legacy_restriction_type = legacy_restriction_type
         if alcohol_order_type is not None:
             self.alcohol_order_type = alcohol_order_type
         if alternate_usage is not None:
@@ -661,8 +664,6 @@ class Order(object):
         :param order_date: The order_date of this Order.  # noqa: E501
         :type: datetime
         """
-        if order_date is None:
-            raise ValueError("Invalid value for `order_date`, must not be `None`")  # noqa: E501
 
         self._order_date = order_date
 
@@ -873,8 +874,6 @@ class Order(object):
         :param media_code: The media_code of this Order.  # noqa: E501
         :type: str
         """
-        if media_code is None:
-            raise ValueError("Invalid value for `media_code`, must not be `None`")  # noqa: E501
 
         self._media_code = media_code
 
@@ -896,8 +895,6 @@ class Order(object):
         :param legacy_restriction_type: The legacy_restriction_type of this Order.  # noqa: E501
         :type: str
         """
-        if legacy_restriction_type is None:
-            raise ValueError("Invalid value for `legacy_restriction_type`, must not be `None`")  # noqa: E501
 
         self._legacy_restriction_type = legacy_restriction_type
 

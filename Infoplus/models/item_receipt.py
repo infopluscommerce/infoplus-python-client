@@ -56,6 +56,7 @@ class ItemReceipt(object):
         'void_date': 'datetime',
         'freeze_action': 'str',
         'rev_date': 'str',
+        'expiration_date': 'datetime',
         'art_back': 'str',
         'origin': 'str',
         'sample': 'int',
@@ -93,7 +94,9 @@ class ItemReceipt(object):
         'line_no': 'int',
         'prod_lot': 'str',
         'product_id_tag': 'str',
+        'units_per_inner_pack': 'int',
         'units_per_case': 'int',
+        'units_per_pallet': 'int',
         'case_weight': 'float',
         'height': 'float',
         'width': 'float',
@@ -133,6 +136,7 @@ class ItemReceipt(object):
         'void_date': 'voidDate',
         'freeze_action': 'freezeAction',
         'rev_date': 'revDate',
+        'expiration_date': 'expirationDate',
         'art_back': 'artBack',
         'origin': 'origin',
         'sample': 'sample',
@@ -170,7 +174,9 @@ class ItemReceipt(object):
         'line_no': 'lineNo',
         'prod_lot': 'prodLot',
         'product_id_tag': 'productIdTag',
+        'units_per_inner_pack': 'unitsPerInnerPack',
         'units_per_case': 'unitsPerCase',
+        'units_per_pallet': 'unitsPerPallet',
         'case_weight': 'caseWeight',
         'height': 'height',
         'width': 'width',
@@ -184,7 +190,7 @@ class ItemReceipt(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, po_no_id=None, lob_id=None, legacy_po_no=None, warehouse_id=None, order_date=None, full_description=None, fact_cost=None, ml_cost=None, sku=None, order_quantity=None, requested_delivery_date=None, unit_code=None, wrap_code=None, units_per_wrap=None, cost=None, sell_price=None, pricing_per=None, max_freight=None, charge_freight=None, max_other=None, dist_date=None, void_date=None, freeze_action=None, rev_date=None, art_back=None, origin=None, sample=None, sample_to=None, max_overs=None, max_unders=None, received_sfp=None, budget_code=None, accounting_code=None, tax_exempt=None, capitalize=None, accrual=None, odd_quantity=None, freight_cost=None, received_date=None, received_quantity=None, from_prod=None, sfp_complete=None, end_quantity=None, end_val=None, end_fact=None, interim_quantity=None, interim_val=None, interim_fact=None, last_act=None, weight_per_wrap=None, norcs=None, vendor_id=None, bs_vendor=None, ml_vendor=None, receipt_no=None, paid_full=None, entered_by=None, received_by=None, line_no=None, prod_lot=None, product_id_tag=None, units_per_case=None, case_weight=None, height=None, width=None, length=None, dock_date=None, modify_date=None, impressions=None, asn_line=None, upc=None, vendor_sku=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, po_no_id=None, lob_id=None, legacy_po_no=None, warehouse_id=None, order_date=None, full_description=None, fact_cost=None, ml_cost=None, sku=None, order_quantity=None, requested_delivery_date=None, unit_code=None, wrap_code=None, units_per_wrap=None, cost=None, sell_price=None, pricing_per=None, max_freight=None, charge_freight=None, max_other=None, dist_date=None, void_date=None, freeze_action=None, rev_date=None, expiration_date=None, art_back=None, origin=None, sample=None, sample_to=None, max_overs=None, max_unders=None, received_sfp=None, budget_code=None, accounting_code=None, tax_exempt=None, capitalize=None, accrual=None, odd_quantity=None, freight_cost=None, received_date=None, received_quantity=None, from_prod=None, sfp_complete=None, end_quantity=None, end_val=None, end_fact=None, interim_quantity=None, interim_val=None, interim_fact=None, last_act=None, weight_per_wrap=None, norcs=None, vendor_id=None, bs_vendor=None, ml_vendor=None, receipt_no=None, paid_full=None, entered_by=None, received_by=None, line_no=None, prod_lot=None, product_id_tag=None, units_per_inner_pack=None, units_per_case=None, units_per_pallet=None, case_weight=None, height=None, width=None, length=None, dock_date=None, modify_date=None, impressions=None, asn_line=None, upc=None, vendor_sku=None, custom_fields=None):  # noqa: E501
         """ItemReceipt - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -212,6 +218,7 @@ class ItemReceipt(object):
         self._void_date = None
         self._freeze_action = None
         self._rev_date = None
+        self._expiration_date = None
         self._art_back = None
         self._origin = None
         self._sample = None
@@ -249,7 +256,9 @@ class ItemReceipt(object):
         self._line_no = None
         self._prod_lot = None
         self._product_id_tag = None
+        self._units_per_inner_pack = None
         self._units_per_case = None
+        self._units_per_pallet = None
         self._case_weight = None
         self._height = None
         self._width = None
@@ -303,6 +312,8 @@ class ItemReceipt(object):
             self.freeze_action = freeze_action
         if rev_date is not None:
             self.rev_date = rev_date
+        if expiration_date is not None:
+            self.expiration_date = expiration_date
         if art_back is not None:
             self.art_back = art_back
         if origin is not None:
@@ -374,8 +385,12 @@ class ItemReceipt(object):
             self.prod_lot = prod_lot
         if product_id_tag is not None:
             self.product_id_tag = product_id_tag
+        if units_per_inner_pack is not None:
+            self.units_per_inner_pack = units_per_inner_pack
         if units_per_case is not None:
             self.units_per_case = units_per_case
+        if units_per_pallet is not None:
+            self.units_per_pallet = units_per_pallet
         if case_weight is not None:
             self.case_weight = case_weight
         if height is not None:
@@ -943,6 +958,27 @@ class ItemReceipt(object):
         """
 
         self._rev_date = rev_date
+
+    @property
+    def expiration_date(self):
+        """Gets the expiration_date of this ItemReceipt.  # noqa: E501
+
+
+        :return: The expiration_date of this ItemReceipt.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._expiration_date
+
+    @expiration_date.setter
+    def expiration_date(self, expiration_date):
+        """Sets the expiration_date of this ItemReceipt.
+
+
+        :param expiration_date: The expiration_date of this ItemReceipt.  # noqa: E501
+        :type: datetime
+        """
+
+        self._expiration_date = expiration_date
 
     @property
     def art_back(self):
@@ -1728,6 +1764,27 @@ class ItemReceipt(object):
         self._product_id_tag = product_id_tag
 
     @property
+    def units_per_inner_pack(self):
+        """Gets the units_per_inner_pack of this ItemReceipt.  # noqa: E501
+
+
+        :return: The units_per_inner_pack of this ItemReceipt.  # noqa: E501
+        :rtype: int
+        """
+        return self._units_per_inner_pack
+
+    @units_per_inner_pack.setter
+    def units_per_inner_pack(self, units_per_inner_pack):
+        """Sets the units_per_inner_pack of this ItemReceipt.
+
+
+        :param units_per_inner_pack: The units_per_inner_pack of this ItemReceipt.  # noqa: E501
+        :type: int
+        """
+
+        self._units_per_inner_pack = units_per_inner_pack
+
+    @property
     def units_per_case(self):
         """Gets the units_per_case of this ItemReceipt.  # noqa: E501
 
@@ -1747,6 +1804,27 @@ class ItemReceipt(object):
         """
 
         self._units_per_case = units_per_case
+
+    @property
+    def units_per_pallet(self):
+        """Gets the units_per_pallet of this ItemReceipt.  # noqa: E501
+
+
+        :return: The units_per_pallet of this ItemReceipt.  # noqa: E501
+        :rtype: int
+        """
+        return self._units_per_pallet
+
+    @units_per_pallet.setter
+    def units_per_pallet(self, units_per_pallet):
+        """Sets the units_per_pallet of this ItemReceipt.
+
+
+        :param units_per_pallet: The units_per_pallet of this ItemReceipt.  # noqa: E501
+        :type: int
+        """
+
+        self._units_per_pallet = units_per_pallet
 
     @property
     def case_weight(self):

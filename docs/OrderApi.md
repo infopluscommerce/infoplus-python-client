@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**apply_order_warehouse_fulfillment_plan**](OrderApi.md#apply_order_warehouse_fulfillment_plan) | **POST** /beta/order/applyOrderWarehouseFulfillmentPlan | Run the Apply Order Warehouse Fulfillment Plan method.
 [**delete_order**](OrderApi.md#delete_order) | **DELETE** /beta/order/{orderId} | Delete an order
 [**delete_order_tag**](OrderApi.md#delete_order_tag) | **DELETE** /beta/order/{orderId}/tag/{orderTag} | Delete a tag for an order.
+[**edit_fulfillment_channel**](OrderApi.md#edit_fulfillment_channel) | **POST** /beta/order/editFulfillmentChannel | Run the EditLineItemFulfillmentStrategy process.
+[**edit_line_items**](OrderApi.md#edit_line_items) | **POST** /beta/order/editLineItems | Run the ReqManualSubstitution process.
 [**get_duplicate_order_by_id**](OrderApi.md#get_duplicate_order_by_id) | **GET** /beta/order/duplicate/{orderId} | Get a duplicated an order by id
 [**get_order_by_filter**](OrderApi.md#get_order_by_filter) | **GET** /beta/order/search | Search orders by filter
 [**get_order_by_id**](OrderApi.md#get_order_by_id) | **GET** /beta/order/{orderId} | Get an order by id
@@ -334,6 +336,114 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_fulfillment_channel**
+> list[ProcessOutputAPIModel] edit_fulfillment_channel(body)
+
+Run the EditLineItemFulfillmentStrategy process.
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import Infoplus
+from Infoplus.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api_key
+configuration = Infoplus.Configuration()
+configuration.api_key['API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['API-Key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = Infoplus.OrderApi(Infoplus.ApiClient(configuration))
+body = Infoplus.EditLineItemFulfillmentStrategyInputAPIModel() # EditLineItemFulfillmentStrategyInputAPIModel | Input data for EditLineItemFulfillmentStrategy process.
+
+try:
+    # Run the EditLineItemFulfillmentStrategy process.
+    api_response = api_instance.edit_fulfillment_channel(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrderApi->edit_fulfillment_channel: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EditLineItemFulfillmentStrategyInputAPIModel**](EditLineItemFulfillmentStrategyInputAPIModel.md)| Input data for EditLineItemFulfillmentStrategy process. | 
+
+### Return type
+
+[**list[ProcessOutputAPIModel]**](ProcessOutputAPIModel.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **edit_line_items**
+> list[ProcessOutputAPIModel] edit_line_items(body)
+
+Run the ReqManualSubstitution process.
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import Infoplus
+from Infoplus.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api_key
+configuration = Infoplus.Configuration()
+configuration.api_key['API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['API-Key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = Infoplus.OrderApi(Infoplus.ApiClient(configuration))
+body = Infoplus.ReqManualSubstitutionInputAPIModel() # ReqManualSubstitutionInputAPIModel | Input data for ReqManualSubstitution process.
+
+try:
+    # Run the ReqManualSubstitution process.
+    api_response = api_instance.edit_line_items(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrderApi->edit_line_items: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ReqManualSubstitutionInputAPIModel**](ReqManualSubstitutionInputAPIModel.md)| Input data for ReqManualSubstitution process. | 
+
+### Return type
+
+[**list[ProcessOutputAPIModel]**](ProcessOutputAPIModel.md)
 
 ### Authorization
 

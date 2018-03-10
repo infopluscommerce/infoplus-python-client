@@ -63,7 +63,7 @@ class Item(object):
         'max_cycle': 'int',
         'max_interim': 'int',
         'numeric_sort_order': 'int',
-        'outside_vendor': 'int',
+        'outside_vendor_id': 'int',
         'pick_no': 'str',
         'pod_order_suffix': 'int',
         'pod_rev_date': 'str',
@@ -76,6 +76,9 @@ class Item(object):
         'unit_code': 'str',
         'units_per_wrap': 'int',
         'weight_per_wrap': 'float',
+        'quantity_per_inner_pack': 'int',
+        'quantity_per_case': 'int',
+        'quantity_per_pallet': 'int',
         'void_date': 'datetime',
         'wrap_code': 'str',
         'extrinsic_text1': 'str',
@@ -101,6 +104,7 @@ class Item(object):
         'barcode_field': 'str',
         'warehouse_display_field': 'str',
         'product_id_tag_scheme_id': 'int',
+        'item_serial_scheme_id': 'int',
         'hazmat': 'str',
         'is_alcohol': 'bool',
         'alcohol_type': 'str',
@@ -168,7 +172,7 @@ class Item(object):
         'max_cycle': 'maxCycle',
         'max_interim': 'maxInterim',
         'numeric_sort_order': 'numericSortOrder',
-        'outside_vendor': 'outsideVendor',
+        'outside_vendor_id': 'outsideVendorId',
         'pick_no': 'pickNo',
         'pod_order_suffix': 'podOrderSuffix',
         'pod_rev_date': 'podRevDate',
@@ -181,6 +185,9 @@ class Item(object):
         'unit_code': 'unitCode',
         'units_per_wrap': 'unitsPerWrap',
         'weight_per_wrap': 'weightPerWrap',
+        'quantity_per_inner_pack': 'quantityPerInnerPack',
+        'quantity_per_case': 'quantityPerCase',
+        'quantity_per_pallet': 'quantityPerPallet',
         'void_date': 'voidDate',
         'wrap_code': 'wrapCode',
         'extrinsic_text1': 'extrinsicText1',
@@ -206,6 +213,7 @@ class Item(object):
         'barcode_field': 'barcodeField',
         'warehouse_display_field': 'warehouseDisplayField',
         'product_id_tag_scheme_id': 'productIdTagSchemeId',
+        'item_serial_scheme_id': 'itemSerialSchemeId',
         'hazmat': 'hazmat',
         'is_alcohol': 'isAlcohol',
         'alcohol_type': 'alcoholType',
@@ -240,7 +248,7 @@ class Item(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, account_code_id=None, low_stock_contact_id=None, legacy_low_level_contact_id=None, low_stock_code_id=None, major_group_id=None, sub_group_id=None, product_code_id=None, summary_code_id=None, buyer_id=None, lob_id=None, sku=None, vendor_sku=None, upc=None, item_description=None, packing_slip_description=None, absolute_max=None, additional_description=None, backorder=None, charge_code=None, commodity_code=None, comp_code=None, create_date=None, critical_amount=None, overall_fixed_reorder_point=None, overall_lead_time=None, sell_price=None, pricing_per=None, lot_control_flag=None, max_cycle=None, max_interim=None, numeric_sort_order=None, outside_vendor=None, pick_no=None, pod_order_suffix=None, pod_rev_date=None, status=None, seasonal_item=None, requires_production_lot=None, sector=None, secure=None, serial_code=None, unit_code=None, units_per_wrap=None, weight_per_wrap=None, void_date=None, wrap_code=None, extrinsic_text1=None, extrinsic_text2=None, extrinsic_text3=None, extrinsic_number1=None, extrinsic_number2=None, extrinsic_decimal1=None, extrinsic_decimal2=None, casebreak_enabled=None, vendor_id=None, vendor_price=None, vendor_per=None, modify_date=None, primary_image=None, pick_image=None, behavior_type=None, forward_lot_mixing_rule=None, storage_lot_mixing_rule=None, forward_item_mixing_rule=None, storage_item_mixing_rule=None, allocation_rule=None, barcode_field=None, warehouse_display_field=None, product_id_tag_scheme_id=None, hazmat=None, is_alcohol=False, alcohol_type=None, alcohol_content=None, alcohol_container=None, alcohol_vintage_year=None, alcohol_country=None, alcohol_state=None, alcohol_region=None, alcohol_brand=None, alcohol_upc_code=None, alcohol_nambca_code=None, alcohol_unimerc_code=None, alcohol_scc_code=None, length=None, width=None, height=None, top_up=False, ship_solo=False, inventory_update_timestamp=None, available_quantity=None, damaged_quantity=None, in_fulfillment_process_quantity=None, on_hand_quantity=None, open_order_quantity=None, open_po_quantity=None, orderable_quantity=None, unallocatable_quantity=None, unavailable_quantity=None, overall_days_on_hand=None, overall_stock_status=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, account_code_id=None, low_stock_contact_id=None, legacy_low_level_contact_id=None, low_stock_code_id=None, major_group_id=None, sub_group_id=None, product_code_id=None, summary_code_id=None, buyer_id=None, lob_id=None, sku=None, vendor_sku=None, upc=None, item_description=None, packing_slip_description=None, absolute_max=None, additional_description=None, backorder=None, charge_code=None, commodity_code=None, comp_code=None, create_date=None, critical_amount=None, overall_fixed_reorder_point=None, overall_lead_time=None, sell_price=None, pricing_per=None, lot_control_flag=None, max_cycle=None, max_interim=None, numeric_sort_order=None, outside_vendor_id=None, pick_no=None, pod_order_suffix=None, pod_rev_date=None, status=None, seasonal_item=None, requires_production_lot=None, sector=None, secure=None, serial_code=None, unit_code=None, units_per_wrap=None, weight_per_wrap=None, quantity_per_inner_pack=None, quantity_per_case=None, quantity_per_pallet=None, void_date=None, wrap_code=None, extrinsic_text1=None, extrinsic_text2=None, extrinsic_text3=None, extrinsic_number1=None, extrinsic_number2=None, extrinsic_decimal1=None, extrinsic_decimal2=None, casebreak_enabled=None, vendor_id=None, vendor_price=None, vendor_per=None, modify_date=None, primary_image=None, pick_image=None, behavior_type=None, forward_lot_mixing_rule=None, storage_lot_mixing_rule=None, forward_item_mixing_rule=None, storage_item_mixing_rule=None, allocation_rule=None, barcode_field=None, warehouse_display_field=None, product_id_tag_scheme_id=None, item_serial_scheme_id=None, hazmat=None, is_alcohol=False, alcohol_type=None, alcohol_content=None, alcohol_container=None, alcohol_vintage_year=None, alcohol_country=None, alcohol_state=None, alcohol_region=None, alcohol_brand=None, alcohol_upc_code=None, alcohol_nambca_code=None, alcohol_unimerc_code=None, alcohol_scc_code=None, length=None, width=None, height=None, top_up=False, ship_solo=False, inventory_update_timestamp=None, available_quantity=None, damaged_quantity=None, in_fulfillment_process_quantity=None, on_hand_quantity=None, open_order_quantity=None, open_po_quantity=None, orderable_quantity=None, unallocatable_quantity=None, unavailable_quantity=None, overall_days_on_hand=None, overall_stock_status=None, custom_fields=None):  # noqa: E501
         """Item - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -275,7 +283,7 @@ class Item(object):
         self._max_cycle = None
         self._max_interim = None
         self._numeric_sort_order = None
-        self._outside_vendor = None
+        self._outside_vendor_id = None
         self._pick_no = None
         self._pod_order_suffix = None
         self._pod_rev_date = None
@@ -288,6 +296,9 @@ class Item(object):
         self._unit_code = None
         self._units_per_wrap = None
         self._weight_per_wrap = None
+        self._quantity_per_inner_pack = None
+        self._quantity_per_case = None
+        self._quantity_per_pallet = None
         self._void_date = None
         self._wrap_code = None
         self._extrinsic_text1 = None
@@ -313,6 +324,7 @@ class Item(object):
         self._barcode_field = None
         self._warehouse_display_field = None
         self._product_id_tag_scheme_id = None
+        self._item_serial_scheme_id = None
         self._hazmat = None
         self._is_alcohol = None
         self._alcohol_type = None
@@ -401,8 +413,8 @@ class Item(object):
         self.max_interim = max_interim
         if numeric_sort_order is not None:
             self.numeric_sort_order = numeric_sort_order
-        if outside_vendor is not None:
-            self.outside_vendor = outside_vendor
+        if outside_vendor_id is not None:
+            self.outside_vendor_id = outside_vendor_id
         if pick_no is not None:
             self.pick_no = pick_no
         if pod_order_suffix is not None:
@@ -416,14 +428,23 @@ class Item(object):
         if sector is not None:
             self.sector = sector
         self.secure = secure
-        self.serial_code = serial_code
+        if serial_code is not None:
+            self.serial_code = serial_code
         self.unit_code = unit_code
-        self.units_per_wrap = units_per_wrap
+        if units_per_wrap is not None:
+            self.units_per_wrap = units_per_wrap
         if weight_per_wrap is not None:
             self.weight_per_wrap = weight_per_wrap
+        if quantity_per_inner_pack is not None:
+            self.quantity_per_inner_pack = quantity_per_inner_pack
+        if quantity_per_case is not None:
+            self.quantity_per_case = quantity_per_case
+        if quantity_per_pallet is not None:
+            self.quantity_per_pallet = quantity_per_pallet
         if void_date is not None:
             self.void_date = void_date
-        self.wrap_code = wrap_code
+        if wrap_code is not None:
+            self.wrap_code = wrap_code
         if extrinsic_text1 is not None:
             self.extrinsic_text1 = extrinsic_text1
         if extrinsic_text2 is not None:
@@ -465,6 +486,8 @@ class Item(object):
             self.warehouse_display_field = warehouse_display_field
         if product_id_tag_scheme_id is not None:
             self.product_id_tag_scheme_id = product_id_tag_scheme_id
+        if item_serial_scheme_id is not None:
+            self.item_serial_scheme_id = item_serial_scheme_id
         self.hazmat = hazmat
         if is_alcohol is not None:
             self.is_alcohol = is_alcohol
@@ -1222,25 +1245,25 @@ class Item(object):
         self._numeric_sort_order = numeric_sort_order
 
     @property
-    def outside_vendor(self):
-        """Gets the outside_vendor of this Item.  # noqa: E501
+    def outside_vendor_id(self):
+        """Gets the outside_vendor_id of this Item.  # noqa: E501
 
 
-        :return: The outside_vendor of this Item.  # noqa: E501
+        :return: The outside_vendor_id of this Item.  # noqa: E501
         :rtype: int
         """
-        return self._outside_vendor
+        return self._outside_vendor_id
 
-    @outside_vendor.setter
-    def outside_vendor(self, outside_vendor):
-        """Sets the outside_vendor of this Item.
+    @outside_vendor_id.setter
+    def outside_vendor_id(self, outside_vendor_id):
+        """Sets the outside_vendor_id of this Item.
 
 
-        :param outside_vendor: The outside_vendor of this Item.  # noqa: E501
+        :param outside_vendor_id: The outside_vendor_id of this Item.  # noqa: E501
         :type: int
         """
 
-        self._outside_vendor = outside_vendor
+        self._outside_vendor_id = outside_vendor_id
 
     @property
     def pick_no(self):
@@ -1434,8 +1457,6 @@ class Item(object):
         :param serial_code: The serial_code of this Item.  # noqa: E501
         :type: str
         """
-        if serial_code is None:
-            raise ValueError("Invalid value for `serial_code`, must not be `None`")  # noqa: E501
 
         self._serial_code = serial_code
 
@@ -1480,8 +1501,6 @@ class Item(object):
         :param units_per_wrap: The units_per_wrap of this Item.  # noqa: E501
         :type: int
         """
-        if units_per_wrap is None:
-            raise ValueError("Invalid value for `units_per_wrap`, must not be `None`")  # noqa: E501
 
         self._units_per_wrap = units_per_wrap
 
@@ -1505,6 +1524,69 @@ class Item(object):
         """
 
         self._weight_per_wrap = weight_per_wrap
+
+    @property
+    def quantity_per_inner_pack(self):
+        """Gets the quantity_per_inner_pack of this Item.  # noqa: E501
+
+
+        :return: The quantity_per_inner_pack of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._quantity_per_inner_pack
+
+    @quantity_per_inner_pack.setter
+    def quantity_per_inner_pack(self, quantity_per_inner_pack):
+        """Sets the quantity_per_inner_pack of this Item.
+
+
+        :param quantity_per_inner_pack: The quantity_per_inner_pack of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._quantity_per_inner_pack = quantity_per_inner_pack
+
+    @property
+    def quantity_per_case(self):
+        """Gets the quantity_per_case of this Item.  # noqa: E501
+
+
+        :return: The quantity_per_case of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._quantity_per_case
+
+    @quantity_per_case.setter
+    def quantity_per_case(self, quantity_per_case):
+        """Sets the quantity_per_case of this Item.
+
+
+        :param quantity_per_case: The quantity_per_case of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._quantity_per_case = quantity_per_case
+
+    @property
+    def quantity_per_pallet(self):
+        """Gets the quantity_per_pallet of this Item.  # noqa: E501
+
+
+        :return: The quantity_per_pallet of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._quantity_per_pallet
+
+    @quantity_per_pallet.setter
+    def quantity_per_pallet(self, quantity_per_pallet):
+        """Sets the quantity_per_pallet of this Item.
+
+
+        :param quantity_per_pallet: The quantity_per_pallet of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._quantity_per_pallet = quantity_per_pallet
 
     @property
     def void_date(self):
@@ -1545,8 +1627,6 @@ class Item(object):
         :param wrap_code: The wrap_code of this Item.  # noqa: E501
         :type: str
         """
-        if wrap_code is None:
-            raise ValueError("Invalid value for `wrap_code`, must not be `None`")  # noqa: E501
 
         self._wrap_code = wrap_code
 
@@ -2042,6 +2122,27 @@ class Item(object):
         """
 
         self._product_id_tag_scheme_id = product_id_tag_scheme_id
+
+    @property
+    def item_serial_scheme_id(self):
+        """Gets the item_serial_scheme_id of this Item.  # noqa: E501
+
+
+        :return: The item_serial_scheme_id of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._item_serial_scheme_id
+
+    @item_serial_scheme_id.setter
+    def item_serial_scheme_id(self, item_serial_scheme_id):
+        """Sets the item_serial_scheme_id of this Item.
+
+
+        :param item_serial_scheme_id: The item_serial_scheme_id of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._item_serial_scheme_id = item_serial_scheme_id
 
     @property
     def hazmat(self):

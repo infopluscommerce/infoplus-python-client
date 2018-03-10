@@ -38,6 +38,7 @@ class QuickAdjustment(object):
         'location_id': 'int',
         'adjustment_code': 'str',
         'total_quantity': 'int',
+        'change_quantity': 'int',
         'message': 'str',
         'status': 'str',
         'product_id_tag': 'str',
@@ -53,6 +54,7 @@ class QuickAdjustment(object):
         'location_id': 'locationId',
         'adjustment_code': 'adjustmentCode',
         'total_quantity': 'totalQuantity',
+        'change_quantity': 'changeQuantity',
         'message': 'message',
         'status': 'status',
         'product_id_tag': 'productIdTag',
@@ -60,7 +62,7 @@ class QuickAdjustment(object):
         'sku': 'sku'
     }
 
-    def __init__(self, id=None, create_date=None, modify_date=None, warehouse_id=None, location_id=None, adjustment_code=None, total_quantity=None, message=None, status=None, product_id_tag=None, custom_fields=None, sku=None):  # noqa: E501
+    def __init__(self, id=None, create_date=None, modify_date=None, warehouse_id=None, location_id=None, adjustment_code=None, total_quantity=None, change_quantity=None, message=None, status=None, product_id_tag=None, custom_fields=None, sku=None):  # noqa: E501
         """QuickAdjustment - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -70,6 +72,7 @@ class QuickAdjustment(object):
         self._location_id = None
         self._adjustment_code = None
         self._total_quantity = None
+        self._change_quantity = None
         self._message = None
         self._status = None
         self._product_id_tag = None
@@ -86,7 +89,10 @@ class QuickAdjustment(object):
         self.warehouse_id = warehouse_id
         self.location_id = location_id
         self.adjustment_code = adjustment_code
-        self.total_quantity = total_quantity
+        if total_quantity is not None:
+            self.total_quantity = total_quantity
+        if change_quantity is not None:
+            self.change_quantity = change_quantity
         if message is not None:
             self.message = message
         if status is not None:
@@ -248,10 +254,29 @@ class QuickAdjustment(object):
         :param total_quantity: The total_quantity of this QuickAdjustment.  # noqa: E501
         :type: int
         """
-        if total_quantity is None:
-            raise ValueError("Invalid value for `total_quantity`, must not be `None`")  # noqa: E501
 
         self._total_quantity = total_quantity
+
+    @property
+    def change_quantity(self):
+        """Gets the change_quantity of this QuickAdjustment.  # noqa: E501
+
+
+        :return: The change_quantity of this QuickAdjustment.  # noqa: E501
+        :rtype: int
+        """
+        return self._change_quantity
+
+    @change_quantity.setter
+    def change_quantity(self, change_quantity):
+        """Sets the change_quantity of this QuickAdjustment.
+
+
+        :param change_quantity: The change_quantity of this QuickAdjustment.  # noqa: E501
+        :type: int
+        """
+
+        self._change_quantity = change_quantity
 
     @property
     def message(self):

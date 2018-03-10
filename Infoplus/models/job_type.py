@@ -78,8 +78,7 @@ class JobType(object):
         self.name = name
         if description is not None:
             self.description = description
-        if job_code is not None:
-            self.job_code = job_code
+        self.job_code = job_code
         if is_active is not None:
             self.is_active = is_active
         if custom_fields is not None:
@@ -233,6 +232,8 @@ class JobType(object):
         :param job_code: The job_code of this JobType.  # noqa: E501
         :type: str
         """
+        if job_code is None:
+            raise ValueError("Invalid value for `job_code`, must not be `None`")  # noqa: E501
 
         self._job_code = job_code
 

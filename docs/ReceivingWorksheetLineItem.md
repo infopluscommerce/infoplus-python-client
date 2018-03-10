@@ -10,16 +10,18 @@ Name | Type | Description | Notes
 **prev_received_qty** | **int** |  | [optional] 
 **unreceived_qty** | **int** |  | [optional] 
 **receiving_qty** | **int** |  | 
-**unit_code** | **str** |  | 
-**wrap_code** | **str** |  | 
+**unit_code** | **str** |  | [optional] 
+**wrap_code** | **str** |  | [optional] 
 **units_per_wrap** | **int** |  | [optional] 
 **units_per_case** | **int** |  | [optional] 
-**cases_per_pallet** | **int** |  | [optional] 
+**quantity_per_inner_pack** | **int** |  | [optional] 
+**quantity_per_pallet** | **int** |  | [optional] 
 **weight_per_wrap** | **float** |  | 
 **weight_per_case** | **float** |  | [optional] 
 **production_lot** | **str** |  | [optional] 
 **product_id_tag** | **str** |  | [optional] 
 **revision_date** | **str** |  | [optional] 
+**expiration_date** | **datetime** |  | [optional] 
 **origin** | **str** |  | [optional] 
 **carton_length** | **float** |  | [optional] 
 **carton_width** | **float** |  | [optional] 

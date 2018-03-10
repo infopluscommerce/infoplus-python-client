@@ -14,12 +14,13 @@ Name | Type | Description | Notes
 **vendor_id** | **int** |  | [optional] 
 **carrier** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
-**unit_code** | **str** |  | 
-**wrap_code** | **str** |  | 
+**unit_code** | **str** |  | [optional] 
+**wrap_code** | **str** |  | [optional] 
 **weight_per_wrap** | **float** |  | 
-**units_per_wrap** | **int** |  | 
+**units_per_wrap** | **int** |  | [optional] 
+**quantity_per_inner_pack** | **int** |  | [optional] 
 **units_per_case** | **int** |  | [optional] 
-**cases_per_pallet** | **int** |  | [optional] 
+**quantity_per_pallet** | **int** |  | [optional] 
 **case_weight** | **float** |  | [optional] 
 **production_lot** | **str** |  | [optional] 
 **revision_date** | **str** |  | [optional] 
@@ -34,6 +35,7 @@ Name | Type | Description | Notes
 **generated_asn_id** | **int** |  | [optional] 
 **dock_date** | **datetime** |  | [optional] 
 **product_id_tag** | **str** |  | [optional] 
+**expiration_date** | **datetime** |  | [optional] 
 **custom_fields** | **dict(str, object)** |  | [optional] 
 **sku** | **str** |  | [optional] 
 

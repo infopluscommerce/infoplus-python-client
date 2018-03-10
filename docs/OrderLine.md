@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **nc_extended_sell** | **float** |  | [optional] 
 **item_weight** | **float** |  | [optional] 
 **production_lot** | **str** |  | [optional] 
+**expiration_date** | **datetime** |  | [optional] 
 **weight_per_wrap** | **float** |  | [optional] 
 **sector** | **str** |  | [optional] 
 **order_assembly_instructions** | **str** |  | [optional] 
@@ -36,6 +37,7 @@ Name | Type | Description | Notes
 **item_sub_group_id** | **int** |  | 
 **item_product_code_id** | **int** |  | [optional] 
 **item_summary_code_id** | **int** |  | 
+**fulfillment_channel** | **str** |  | 
 **custom_fields** | **dict(str, object)** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

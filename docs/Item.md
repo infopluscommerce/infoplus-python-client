@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **max_cycle** | **int** |  | 
 **max_interim** | **int** |  | 
 **numeric_sort_order** | **int** |  | [optional] 
-**outside_vendor** | **int** |  | [optional] 
+**outside_vendor_id** | **int** |  | [optional] 
 **pick_no** | **str** |  | [optional] 
 **pod_order_suffix** | **int** |  | [optional] 
 **pod_rev_date** | **str** |  | [optional] 
@@ -44,12 +44,15 @@ Name | Type | Description | Notes
 **requires_production_lot** | **str** |  | [optional] 
 **sector** | **str** |  | [optional] 
 **secure** | **str** |  | 
-**serial_code** | **str** |  | 
+**serial_code** | **str** |  | [optional] 
 **unit_code** | **str** |  | 
-**units_per_wrap** | **int** |  | 
+**units_per_wrap** | **int** |  | [optional] 
 **weight_per_wrap** | **float** |  | [optional] 
+**quantity_per_inner_pack** | **int** |  | [optional] 
+**quantity_per_case** | **int** |  | [optional] 
+**quantity_per_pallet** | **int** |  | [optional] 
 **void_date** | **datetime** |  | [optional] 
-**wrap_code** | **str** |  | 
+**wrap_code** | **str** |  | [optional] 
 **extrinsic_text1** | **str** |  | [optional] 
 **extrinsic_text2** | **str** |  | [optional] 
 **extrinsic_text3** | **str** |  | [optional] 
@@ -73,6 +76,7 @@ Name | Type | Description | Notes
 **barcode_field** | **str** |  | [optional] 
 **warehouse_display_field** | **str** |  | [optional] 
 **product_id_tag_scheme_id** | **int** |  | [optional] 
+**item_serial_scheme_id** | **int** |  | [optional] 
 **hazmat** | **str** |  | 
 **is_alcohol** | **bool** |  | [optional] [default to False]
 **alcohol_type** | **str** |  | [optional] 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **modify_date** | **datetime** |  | [optional] 
 **name** | **str** |  | 
 **description** | **str** |  | [optional] 
-**job_code** | **str** |  | [optional] 
+**job_code** | **str** |  | 
 **is_active** | **bool** |  | [optional] [default to False]
 **custom_fields** | **dict(str, object)** |  | [optional] 
 
