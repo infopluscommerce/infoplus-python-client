@@ -42,7 +42,9 @@ class InventoryStorageActivity(object):
         'is_mixed_receipts': 'bool',
         'quantity': 'int',
         'address': 'str',
-        'number_of_cases': 'int',
+        'estimated_inner_packs': 'int',
+        'estimated_cases': 'int',
+        'estimated_pallets': 'int',
         'inventory_value': 'float',
         'inventory_age_days': 'int',
         'warehouse_id': 'int',
@@ -89,7 +91,9 @@ class InventoryStorageActivity(object):
         'po_no': 'str',
         'receipt_distribution_date': 'datetime',
         'receipt_units_per_wrap': 'int',
-        'receipt_units_per_case': 'int',
+        'receipt_quantity_per_inner_pack': 'int',
+        'receipt_quantity_per_case': 'int',
+        'receipt_quantity_per_pallet': 'int',
         'receipt_revision_date': 'str',
         'receipt_production_lot': 'str',
         'receipt_receive_date': 'datetime',
@@ -132,7 +136,9 @@ class InventoryStorageActivity(object):
         'is_mixed_receipts': 'isMixedReceipts',
         'quantity': 'quantity',
         'address': 'address',
-        'number_of_cases': 'numberOfCases',
+        'estimated_inner_packs': 'estimatedInnerPacks',
+        'estimated_cases': 'estimatedCases',
+        'estimated_pallets': 'estimatedPallets',
         'inventory_value': 'inventoryValue',
         'inventory_age_days': 'inventoryAgeDays',
         'warehouse_id': 'warehouseId',
@@ -179,7 +185,9 @@ class InventoryStorageActivity(object):
         'po_no': 'poNo',
         'receipt_distribution_date': 'receiptDistributionDate',
         'receipt_units_per_wrap': 'receiptUnitsPerWrap',
-        'receipt_units_per_case': 'receiptUnitsPerCase',
+        'receipt_quantity_per_inner_pack': 'receiptQuantityPerInnerPack',
+        'receipt_quantity_per_case': 'receiptQuantityPerCase',
+        'receipt_quantity_per_pallet': 'receiptQuantityPerPallet',
         'receipt_revision_date': 'receiptRevisionDate',
         'receipt_production_lot': 'receiptProductionLot',
         'receipt_receive_date': 'receiptReceiveDate',
@@ -210,7 +218,7 @@ class InventoryStorageActivity(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, imported_record_id=None, create_date=None, modify_date=None, warehouse_location_id=None, item_id=None, lob_id=None, snapshot_date=None, is_mixed_receipts=False, quantity=None, address=None, number_of_cases=None, inventory_value=None, inventory_age_days=None, warehouse_id=None, warehouse_name=None, warehouse_zone_id=None, warehouse_zone_name=None, warehouse_zone_address=None, warehouse_building_id=None, warehouse_building_name=None, warehouse_aisle_id=None, warehouse_aisle_address=None, warehouse_location_origin_id=None, warehouse_location_origin_name=None, warehouse_location_billing_type_id=None, warehouse_location_billing_type_name=None, warehouse_location_behavior_type_id=None, warehouse_location_behavior_type_name=None, warehouse_location_footprint_id=None, warehouse_location_footprint_name=None, warehouse_location_footprint_width=None, warehouse_location_footprint_height=None, warehouse_location_footprint_depth=None, warehouse_location_level=None, warehouse_location_bay=None, warehouse_location_number=None, warehouse_location_online=False, warehouse_location_priority_code=None, warehouse_location_allow_item_mixing=False, warehouse_location_cost=None, sku=None, item_vendor_sku=None, item_upc=None, item_major_group=None, item_major_group_name=None, item_sub_group=None, item_sub_group_name=None, item_product_code=None, item_product_code_name=None, item_account_code=None, item_account_code_name=None, item_summary_code=None, item_summary_code_name=None, item_sector=None, po_no=None, receipt_distribution_date=None, receipt_units_per_wrap=None, receipt_units_per_case=None, receipt_revision_date=None, receipt_production_lot=None, receipt_receive_date=None, receipt_status=None, receipt_status_name=None, receipt_unit_code=None, receipt_unit_code_text=None, receipt_wrap_code=None, receipt_wrap_code_text=None, receipt_case_weight=None, receipt_product_id_tag=None, alcohol_type_id=None, alcohol_type_name=None, alcohol_content=None, alcohol_container_id=None, alcohol_container_name=None, alcohol_container_volume=None, alcohol_vintage_year=None, alcohol_country_id=None, alcohol_country_name=None, alcohol_state=None, alcohol_region=None, alcohol_brand=None, alcohol_upc_code=None, alcohol_nabca_code=None, alcohol_unimerc_code=None, alcohol_scc_code=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, imported_record_id=None, create_date=None, modify_date=None, warehouse_location_id=None, item_id=None, lob_id=None, snapshot_date=None, is_mixed_receipts=False, quantity=None, address=None, estimated_inner_packs=None, estimated_cases=None, estimated_pallets=None, inventory_value=None, inventory_age_days=None, warehouse_id=None, warehouse_name=None, warehouse_zone_id=None, warehouse_zone_name=None, warehouse_zone_address=None, warehouse_building_id=None, warehouse_building_name=None, warehouse_aisle_id=None, warehouse_aisle_address=None, warehouse_location_origin_id=None, warehouse_location_origin_name=None, warehouse_location_billing_type_id=None, warehouse_location_billing_type_name=None, warehouse_location_behavior_type_id=None, warehouse_location_behavior_type_name=None, warehouse_location_footprint_id=None, warehouse_location_footprint_name=None, warehouse_location_footprint_width=None, warehouse_location_footprint_height=None, warehouse_location_footprint_depth=None, warehouse_location_level=None, warehouse_location_bay=None, warehouse_location_number=None, warehouse_location_online=False, warehouse_location_priority_code=None, warehouse_location_allow_item_mixing=False, warehouse_location_cost=None, sku=None, item_vendor_sku=None, item_upc=None, item_major_group=None, item_major_group_name=None, item_sub_group=None, item_sub_group_name=None, item_product_code=None, item_product_code_name=None, item_account_code=None, item_account_code_name=None, item_summary_code=None, item_summary_code_name=None, item_sector=None, po_no=None, receipt_distribution_date=None, receipt_units_per_wrap=None, receipt_quantity_per_inner_pack=None, receipt_quantity_per_case=None, receipt_quantity_per_pallet=None, receipt_revision_date=None, receipt_production_lot=None, receipt_receive_date=None, receipt_status=None, receipt_status_name=None, receipt_unit_code=None, receipt_unit_code_text=None, receipt_wrap_code=None, receipt_wrap_code_text=None, receipt_case_weight=None, receipt_product_id_tag=None, alcohol_type_id=None, alcohol_type_name=None, alcohol_content=None, alcohol_container_id=None, alcohol_container_name=None, alcohol_container_volume=None, alcohol_vintage_year=None, alcohol_country_id=None, alcohol_country_name=None, alcohol_state=None, alcohol_region=None, alcohol_brand=None, alcohol_upc_code=None, alcohol_nabca_code=None, alcohol_unimerc_code=None, alcohol_scc_code=None, custom_fields=None):  # noqa: E501
         """InventoryStorageActivity - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -224,7 +232,9 @@ class InventoryStorageActivity(object):
         self._is_mixed_receipts = None
         self._quantity = None
         self._address = None
-        self._number_of_cases = None
+        self._estimated_inner_packs = None
+        self._estimated_cases = None
+        self._estimated_pallets = None
         self._inventory_value = None
         self._inventory_age_days = None
         self._warehouse_id = None
@@ -271,7 +281,9 @@ class InventoryStorageActivity(object):
         self._po_no = None
         self._receipt_distribution_date = None
         self._receipt_units_per_wrap = None
-        self._receipt_units_per_case = None
+        self._receipt_quantity_per_inner_pack = None
+        self._receipt_quantity_per_case = None
+        self._receipt_quantity_per_pallet = None
         self._receipt_revision_date = None
         self._receipt_production_lot = None
         self._receipt_receive_date = None
@@ -323,8 +335,12 @@ class InventoryStorageActivity(object):
             self.quantity = quantity
         if address is not None:
             self.address = address
-        if number_of_cases is not None:
-            self.number_of_cases = number_of_cases
+        if estimated_inner_packs is not None:
+            self.estimated_inner_packs = estimated_inner_packs
+        if estimated_cases is not None:
+            self.estimated_cases = estimated_cases
+        if estimated_pallets is not None:
+            self.estimated_pallets = estimated_pallets
         if inventory_value is not None:
             self.inventory_value = inventory_value
         if inventory_age_days is not None:
@@ -417,8 +433,12 @@ class InventoryStorageActivity(object):
             self.receipt_distribution_date = receipt_distribution_date
         if receipt_units_per_wrap is not None:
             self.receipt_units_per_wrap = receipt_units_per_wrap
-        if receipt_units_per_case is not None:
-            self.receipt_units_per_case = receipt_units_per_case
+        if receipt_quantity_per_inner_pack is not None:
+            self.receipt_quantity_per_inner_pack = receipt_quantity_per_inner_pack
+        if receipt_quantity_per_case is not None:
+            self.receipt_quantity_per_case = receipt_quantity_per_case
+        if receipt_quantity_per_pallet is not None:
+            self.receipt_quantity_per_pallet = receipt_quantity_per_pallet
         if receipt_revision_date is not None:
             self.receipt_revision_date = receipt_revision_date
         if receipt_production_lot is not None:
@@ -710,25 +730,67 @@ class InventoryStorageActivity(object):
         self._address = address
 
     @property
-    def number_of_cases(self):
-        """Gets the number_of_cases of this InventoryStorageActivity.  # noqa: E501
+    def estimated_inner_packs(self):
+        """Gets the estimated_inner_packs of this InventoryStorageActivity.  # noqa: E501
 
 
-        :return: The number_of_cases of this InventoryStorageActivity.  # noqa: E501
+        :return: The estimated_inner_packs of this InventoryStorageActivity.  # noqa: E501
         :rtype: int
         """
-        return self._number_of_cases
+        return self._estimated_inner_packs
 
-    @number_of_cases.setter
-    def number_of_cases(self, number_of_cases):
-        """Sets the number_of_cases of this InventoryStorageActivity.
+    @estimated_inner_packs.setter
+    def estimated_inner_packs(self, estimated_inner_packs):
+        """Sets the estimated_inner_packs of this InventoryStorageActivity.
 
 
-        :param number_of_cases: The number_of_cases of this InventoryStorageActivity.  # noqa: E501
+        :param estimated_inner_packs: The estimated_inner_packs of this InventoryStorageActivity.  # noqa: E501
         :type: int
         """
 
-        self._number_of_cases = number_of_cases
+        self._estimated_inner_packs = estimated_inner_packs
+
+    @property
+    def estimated_cases(self):
+        """Gets the estimated_cases of this InventoryStorageActivity.  # noqa: E501
+
+
+        :return: The estimated_cases of this InventoryStorageActivity.  # noqa: E501
+        :rtype: int
+        """
+        return self._estimated_cases
+
+    @estimated_cases.setter
+    def estimated_cases(self, estimated_cases):
+        """Sets the estimated_cases of this InventoryStorageActivity.
+
+
+        :param estimated_cases: The estimated_cases of this InventoryStorageActivity.  # noqa: E501
+        :type: int
+        """
+
+        self._estimated_cases = estimated_cases
+
+    @property
+    def estimated_pallets(self):
+        """Gets the estimated_pallets of this InventoryStorageActivity.  # noqa: E501
+
+
+        :return: The estimated_pallets of this InventoryStorageActivity.  # noqa: E501
+        :rtype: int
+        """
+        return self._estimated_pallets
+
+    @estimated_pallets.setter
+    def estimated_pallets(self, estimated_pallets):
+        """Sets the estimated_pallets of this InventoryStorageActivity.
+
+
+        :param estimated_pallets: The estimated_pallets of this InventoryStorageActivity.  # noqa: E501
+        :type: int
+        """
+
+        self._estimated_pallets = estimated_pallets
 
     @property
     def inventory_value(self):
@@ -1697,25 +1759,67 @@ class InventoryStorageActivity(object):
         self._receipt_units_per_wrap = receipt_units_per_wrap
 
     @property
-    def receipt_units_per_case(self):
-        """Gets the receipt_units_per_case of this InventoryStorageActivity.  # noqa: E501
+    def receipt_quantity_per_inner_pack(self):
+        """Gets the receipt_quantity_per_inner_pack of this InventoryStorageActivity.  # noqa: E501
 
 
-        :return: The receipt_units_per_case of this InventoryStorageActivity.  # noqa: E501
+        :return: The receipt_quantity_per_inner_pack of this InventoryStorageActivity.  # noqa: E501
         :rtype: int
         """
-        return self._receipt_units_per_case
+        return self._receipt_quantity_per_inner_pack
 
-    @receipt_units_per_case.setter
-    def receipt_units_per_case(self, receipt_units_per_case):
-        """Sets the receipt_units_per_case of this InventoryStorageActivity.
+    @receipt_quantity_per_inner_pack.setter
+    def receipt_quantity_per_inner_pack(self, receipt_quantity_per_inner_pack):
+        """Sets the receipt_quantity_per_inner_pack of this InventoryStorageActivity.
 
 
-        :param receipt_units_per_case: The receipt_units_per_case of this InventoryStorageActivity.  # noqa: E501
+        :param receipt_quantity_per_inner_pack: The receipt_quantity_per_inner_pack of this InventoryStorageActivity.  # noqa: E501
         :type: int
         """
 
-        self._receipt_units_per_case = receipt_units_per_case
+        self._receipt_quantity_per_inner_pack = receipt_quantity_per_inner_pack
+
+    @property
+    def receipt_quantity_per_case(self):
+        """Gets the receipt_quantity_per_case of this InventoryStorageActivity.  # noqa: E501
+
+
+        :return: The receipt_quantity_per_case of this InventoryStorageActivity.  # noqa: E501
+        :rtype: int
+        """
+        return self._receipt_quantity_per_case
+
+    @receipt_quantity_per_case.setter
+    def receipt_quantity_per_case(self, receipt_quantity_per_case):
+        """Sets the receipt_quantity_per_case of this InventoryStorageActivity.
+
+
+        :param receipt_quantity_per_case: The receipt_quantity_per_case of this InventoryStorageActivity.  # noqa: E501
+        :type: int
+        """
+
+        self._receipt_quantity_per_case = receipt_quantity_per_case
+
+    @property
+    def receipt_quantity_per_pallet(self):
+        """Gets the receipt_quantity_per_pallet of this InventoryStorageActivity.  # noqa: E501
+
+
+        :return: The receipt_quantity_per_pallet of this InventoryStorageActivity.  # noqa: E501
+        :rtype: int
+        """
+        return self._receipt_quantity_per_pallet
+
+    @receipt_quantity_per_pallet.setter
+    def receipt_quantity_per_pallet(self, receipt_quantity_per_pallet):
+        """Sets the receipt_quantity_per_pallet of this InventoryStorageActivity.
+
+
+        :param receipt_quantity_per_pallet: The receipt_quantity_per_pallet of this InventoryStorageActivity.  # noqa: E501
+        :type: int
+        """
+
+        self._receipt_quantity_per_pallet = receipt_quantity_per_pallet
 
     @property
     def receipt_revision_date(self):

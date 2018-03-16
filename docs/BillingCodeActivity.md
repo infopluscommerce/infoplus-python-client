@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **create_date** | **datetime** |  | [optional] 
 **modify_date** | **datetime** |  | [optional] 
 **date** | **datetime** |  | [optional] 
-**quantity** | **int** |  | 
+**quantity** | **float** |  | 
 **lob_id** | **int** |  | 
 **user_id** | **int** |  | 
 **email** | **str** |  | [optional] 

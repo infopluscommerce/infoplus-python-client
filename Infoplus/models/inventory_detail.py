@@ -35,7 +35,12 @@ class InventoryDetail(object):
         'warehouse_location_id': 'int',
         'quantity': 'int',
         'distribution_date': 'datetime',
-        'units_per_case': 'int',
+        'quantity_per_inner_pack': 'int',
+        'quantity_per_case': 'int',
+        'quantity_per_pallet': 'int',
+        'estimated_inner_packs': 'int',
+        'estimated_cases': 'int',
+        'estimated_pallets': 'int',
         'units_per_wrap': 'int',
         'revision_date': 'str',
         'production_lot': 'str',
@@ -51,7 +56,12 @@ class InventoryDetail(object):
         'warehouse_location_id': 'warehouseLocationId',
         'quantity': 'quantity',
         'distribution_date': 'distributionDate',
-        'units_per_case': 'unitsPerCase',
+        'quantity_per_inner_pack': 'quantityPerInnerPack',
+        'quantity_per_case': 'quantityPerCase',
+        'quantity_per_pallet': 'quantityPerPallet',
+        'estimated_inner_packs': 'estimatedInnerPacks',
+        'estimated_cases': 'estimatedCases',
+        'estimated_pallets': 'estimatedPallets',
         'units_per_wrap': 'unitsPerWrap',
         'revision_date': 'revisionDate',
         'production_lot': 'productionLot',
@@ -62,14 +72,19 @@ class InventoryDetail(object):
         'sku': 'sku'
     }
 
-    def __init__(self, id=None, warehouse_location_id=None, quantity=None, distribution_date=None, units_per_case=None, units_per_wrap=None, revision_date=None, production_lot=None, oldest_receipt_date=None, lob_id=None, po_no=None, custom_fields=None, sku=None):  # noqa: E501
+    def __init__(self, id=None, warehouse_location_id=None, quantity=None, distribution_date=None, quantity_per_inner_pack=None, quantity_per_case=None, quantity_per_pallet=None, estimated_inner_packs=None, estimated_cases=None, estimated_pallets=None, units_per_wrap=None, revision_date=None, production_lot=None, oldest_receipt_date=None, lob_id=None, po_no=None, custom_fields=None, sku=None):  # noqa: E501
         """InventoryDetail - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._warehouse_location_id = None
         self._quantity = None
         self._distribution_date = None
-        self._units_per_case = None
+        self._quantity_per_inner_pack = None
+        self._quantity_per_case = None
+        self._quantity_per_pallet = None
+        self._estimated_inner_packs = None
+        self._estimated_cases = None
+        self._estimated_pallets = None
         self._units_per_wrap = None
         self._revision_date = None
         self._production_lot = None
@@ -87,8 +102,18 @@ class InventoryDetail(object):
             self.quantity = quantity
         if distribution_date is not None:
             self.distribution_date = distribution_date
-        if units_per_case is not None:
-            self.units_per_case = units_per_case
+        if quantity_per_inner_pack is not None:
+            self.quantity_per_inner_pack = quantity_per_inner_pack
+        if quantity_per_case is not None:
+            self.quantity_per_case = quantity_per_case
+        if quantity_per_pallet is not None:
+            self.quantity_per_pallet = quantity_per_pallet
+        if estimated_inner_packs is not None:
+            self.estimated_inner_packs = estimated_inner_packs
+        if estimated_cases is not None:
+            self.estimated_cases = estimated_cases
+        if estimated_pallets is not None:
+            self.estimated_pallets = estimated_pallets
         if units_per_wrap is not None:
             self.units_per_wrap = units_per_wrap
         if revision_date is not None:
@@ -193,25 +218,130 @@ class InventoryDetail(object):
         self._distribution_date = distribution_date
 
     @property
-    def units_per_case(self):
-        """Gets the units_per_case of this InventoryDetail.  # noqa: E501
+    def quantity_per_inner_pack(self):
+        """Gets the quantity_per_inner_pack of this InventoryDetail.  # noqa: E501
 
 
-        :return: The units_per_case of this InventoryDetail.  # noqa: E501
+        :return: The quantity_per_inner_pack of this InventoryDetail.  # noqa: E501
         :rtype: int
         """
-        return self._units_per_case
+        return self._quantity_per_inner_pack
 
-    @units_per_case.setter
-    def units_per_case(self, units_per_case):
-        """Sets the units_per_case of this InventoryDetail.
+    @quantity_per_inner_pack.setter
+    def quantity_per_inner_pack(self, quantity_per_inner_pack):
+        """Sets the quantity_per_inner_pack of this InventoryDetail.
 
 
-        :param units_per_case: The units_per_case of this InventoryDetail.  # noqa: E501
+        :param quantity_per_inner_pack: The quantity_per_inner_pack of this InventoryDetail.  # noqa: E501
         :type: int
         """
 
-        self._units_per_case = units_per_case
+        self._quantity_per_inner_pack = quantity_per_inner_pack
+
+    @property
+    def quantity_per_case(self):
+        """Gets the quantity_per_case of this InventoryDetail.  # noqa: E501
+
+
+        :return: The quantity_per_case of this InventoryDetail.  # noqa: E501
+        :rtype: int
+        """
+        return self._quantity_per_case
+
+    @quantity_per_case.setter
+    def quantity_per_case(self, quantity_per_case):
+        """Sets the quantity_per_case of this InventoryDetail.
+
+
+        :param quantity_per_case: The quantity_per_case of this InventoryDetail.  # noqa: E501
+        :type: int
+        """
+
+        self._quantity_per_case = quantity_per_case
+
+    @property
+    def quantity_per_pallet(self):
+        """Gets the quantity_per_pallet of this InventoryDetail.  # noqa: E501
+
+
+        :return: The quantity_per_pallet of this InventoryDetail.  # noqa: E501
+        :rtype: int
+        """
+        return self._quantity_per_pallet
+
+    @quantity_per_pallet.setter
+    def quantity_per_pallet(self, quantity_per_pallet):
+        """Sets the quantity_per_pallet of this InventoryDetail.
+
+
+        :param quantity_per_pallet: The quantity_per_pallet of this InventoryDetail.  # noqa: E501
+        :type: int
+        """
+
+        self._quantity_per_pallet = quantity_per_pallet
+
+    @property
+    def estimated_inner_packs(self):
+        """Gets the estimated_inner_packs of this InventoryDetail.  # noqa: E501
+
+
+        :return: The estimated_inner_packs of this InventoryDetail.  # noqa: E501
+        :rtype: int
+        """
+        return self._estimated_inner_packs
+
+    @estimated_inner_packs.setter
+    def estimated_inner_packs(self, estimated_inner_packs):
+        """Sets the estimated_inner_packs of this InventoryDetail.
+
+
+        :param estimated_inner_packs: The estimated_inner_packs of this InventoryDetail.  # noqa: E501
+        :type: int
+        """
+
+        self._estimated_inner_packs = estimated_inner_packs
+
+    @property
+    def estimated_cases(self):
+        """Gets the estimated_cases of this InventoryDetail.  # noqa: E501
+
+
+        :return: The estimated_cases of this InventoryDetail.  # noqa: E501
+        :rtype: int
+        """
+        return self._estimated_cases
+
+    @estimated_cases.setter
+    def estimated_cases(self, estimated_cases):
+        """Sets the estimated_cases of this InventoryDetail.
+
+
+        :param estimated_cases: The estimated_cases of this InventoryDetail.  # noqa: E501
+        :type: int
+        """
+
+        self._estimated_cases = estimated_cases
+
+    @property
+    def estimated_pallets(self):
+        """Gets the estimated_pallets of this InventoryDetail.  # noqa: E501
+
+
+        :return: The estimated_pallets of this InventoryDetail.  # noqa: E501
+        :rtype: int
+        """
+        return self._estimated_pallets
+
+    @estimated_pallets.setter
+    def estimated_pallets(self, estimated_pallets):
+        """Sets the estimated_pallets of this InventoryDetail.
+
+
+        :param estimated_pallets: The estimated_pallets of this InventoryDetail.  # noqa: E501
+        :type: int
+        """
+
+        self._estimated_pallets = estimated_pallets
 
     @property
     def units_per_wrap(self):

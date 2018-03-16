@@ -36,7 +36,7 @@ class BillingCodeActivity(object):
         'create_date': 'datetime',
         'modify_date': 'datetime',
         'date': 'datetime',
-        'quantity': 'int',
+        'quantity': 'float',
         'lob_id': 'int',
         'user_id': 'int',
         'email': 'str',
@@ -229,7 +229,7 @@ class BillingCodeActivity(object):
 
 
         :return: The quantity of this BillingCodeActivity.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._quantity
 
@@ -239,7 +239,7 @@ class BillingCodeActivity(object):
 
 
         :param quantity: The quantity of this BillingCodeActivity.  # noqa: E501
-        :type: int
+        :type: float
         """
         if quantity is None:
             raise ValueError("Invalid value for `quantity`, must not be `None`")  # noqa: E501

@@ -136,6 +136,24 @@ class Item(object):
         'unavailable_quantity': 'int',
         'overall_days_on_hand': 'int',
         'overall_stock_status': 'str',
+        'estimated_pallets': 'int',
+        'estimated_cases': 'int',
+        'estimated_inner_packs': 'int',
+        'w1_estimated_pallets': 'int',
+        'w1_estimated_cases': 'int',
+        'w1_estimated_inner_packs': 'int',
+        'w2_estimated_pallets': 'int',
+        'w2_estimated_cases': 'int',
+        'w2_estimated_inner_packs': 'int',
+        'w3_estimated_pallets': 'int',
+        'w3_estimated_cases': 'int',
+        'w3_estimated_inner_packs': 'int',
+        'w4_estimated_pallets': 'int',
+        'w4_estimated_cases': 'int',
+        'w4_estimated_inner_packs': 'int',
+        'w5_estimated_pallets': 'int',
+        'w5_estimated_cases': 'int',
+        'w5_estimated_inner_packs': 'int',
         'custom_fields': 'dict(str, object)'
     }
 
@@ -245,10 +263,28 @@ class Item(object):
         'unavailable_quantity': 'unavailableQuantity',
         'overall_days_on_hand': 'overallDaysOnHand',
         'overall_stock_status': 'overallStockStatus',
+        'estimated_pallets': 'estimatedPallets',
+        'estimated_cases': 'estimatedCases',
+        'estimated_inner_packs': 'estimatedInnerPacks',
+        'w1_estimated_pallets': 'w1EstimatedPallets',
+        'w1_estimated_cases': 'w1EstimatedCases',
+        'w1_estimated_inner_packs': 'w1EstimatedInnerPacks',
+        'w2_estimated_pallets': 'w2EstimatedPallets',
+        'w2_estimated_cases': 'w2EstimatedCases',
+        'w2_estimated_inner_packs': 'w2EstimatedInnerPacks',
+        'w3_estimated_pallets': 'w3EstimatedPallets',
+        'w3_estimated_cases': 'w3EstimatedCases',
+        'w3_estimated_inner_packs': 'w3EstimatedInnerPacks',
+        'w4_estimated_pallets': 'w4EstimatedPallets',
+        'w4_estimated_cases': 'w4EstimatedCases',
+        'w4_estimated_inner_packs': 'w4EstimatedInnerPacks',
+        'w5_estimated_pallets': 'w5EstimatedPallets',
+        'w5_estimated_cases': 'w5EstimatedCases',
+        'w5_estimated_inner_packs': 'w5EstimatedInnerPacks',
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, account_code_id=None, low_stock_contact_id=None, legacy_low_level_contact_id=None, low_stock_code_id=None, major_group_id=None, sub_group_id=None, product_code_id=None, summary_code_id=None, buyer_id=None, lob_id=None, sku=None, vendor_sku=None, upc=None, item_description=None, packing_slip_description=None, absolute_max=None, additional_description=None, backorder=None, charge_code=None, commodity_code=None, comp_code=None, create_date=None, critical_amount=None, overall_fixed_reorder_point=None, overall_lead_time=None, sell_price=None, pricing_per=None, lot_control_flag=None, max_cycle=None, max_interim=None, numeric_sort_order=None, outside_vendor_id=None, pick_no=None, pod_order_suffix=None, pod_rev_date=None, status=None, seasonal_item=None, requires_production_lot=None, sector=None, secure=None, serial_code=None, unit_code=None, units_per_wrap=None, weight_per_wrap=None, quantity_per_inner_pack=None, quantity_per_case=None, quantity_per_pallet=None, void_date=None, wrap_code=None, extrinsic_text1=None, extrinsic_text2=None, extrinsic_text3=None, extrinsic_number1=None, extrinsic_number2=None, extrinsic_decimal1=None, extrinsic_decimal2=None, casebreak_enabled=None, vendor_id=None, vendor_price=None, vendor_per=None, modify_date=None, primary_image=None, pick_image=None, behavior_type=None, forward_lot_mixing_rule=None, storage_lot_mixing_rule=None, forward_item_mixing_rule=None, storage_item_mixing_rule=None, allocation_rule=None, barcode_field=None, warehouse_display_field=None, product_id_tag_scheme_id=None, item_serial_scheme_id=None, hazmat=None, is_alcohol=False, alcohol_type=None, alcohol_content=None, alcohol_container=None, alcohol_vintage_year=None, alcohol_country=None, alcohol_state=None, alcohol_region=None, alcohol_brand=None, alcohol_upc_code=None, alcohol_nambca_code=None, alcohol_unimerc_code=None, alcohol_scc_code=None, length=None, width=None, height=None, top_up=False, ship_solo=False, inventory_update_timestamp=None, available_quantity=None, damaged_quantity=None, in_fulfillment_process_quantity=None, on_hand_quantity=None, open_order_quantity=None, open_po_quantity=None, orderable_quantity=None, unallocatable_quantity=None, unavailable_quantity=None, overall_days_on_hand=None, overall_stock_status=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, account_code_id=None, low_stock_contact_id=None, legacy_low_level_contact_id=None, low_stock_code_id=None, major_group_id=None, sub_group_id=None, product_code_id=None, summary_code_id=None, buyer_id=None, lob_id=None, sku=None, vendor_sku=None, upc=None, item_description=None, packing_slip_description=None, absolute_max=None, additional_description=None, backorder=None, charge_code=None, commodity_code=None, comp_code=None, create_date=None, critical_amount=None, overall_fixed_reorder_point=None, overall_lead_time=None, sell_price=None, pricing_per=None, lot_control_flag=None, max_cycle=None, max_interim=None, numeric_sort_order=None, outside_vendor_id=None, pick_no=None, pod_order_suffix=None, pod_rev_date=None, status=None, seasonal_item=None, requires_production_lot=None, sector=None, secure=None, serial_code=None, unit_code=None, units_per_wrap=None, weight_per_wrap=None, quantity_per_inner_pack=None, quantity_per_case=None, quantity_per_pallet=None, void_date=None, wrap_code=None, extrinsic_text1=None, extrinsic_text2=None, extrinsic_text3=None, extrinsic_number1=None, extrinsic_number2=None, extrinsic_decimal1=None, extrinsic_decimal2=None, casebreak_enabled=None, vendor_id=None, vendor_price=None, vendor_per=None, modify_date=None, primary_image=None, pick_image=None, behavior_type=None, forward_lot_mixing_rule=None, storage_lot_mixing_rule=None, forward_item_mixing_rule=None, storage_item_mixing_rule=None, allocation_rule=None, barcode_field=None, warehouse_display_field=None, product_id_tag_scheme_id=None, item_serial_scheme_id=None, hazmat=None, is_alcohol=False, alcohol_type=None, alcohol_content=None, alcohol_container=None, alcohol_vintage_year=None, alcohol_country=None, alcohol_state=None, alcohol_region=None, alcohol_brand=None, alcohol_upc_code=None, alcohol_nambca_code=None, alcohol_unimerc_code=None, alcohol_scc_code=None, length=None, width=None, height=None, top_up=False, ship_solo=False, inventory_update_timestamp=None, available_quantity=None, damaged_quantity=None, in_fulfillment_process_quantity=None, on_hand_quantity=None, open_order_quantity=None, open_po_quantity=None, orderable_quantity=None, unallocatable_quantity=None, unavailable_quantity=None, overall_days_on_hand=None, overall_stock_status=None, estimated_pallets=None, estimated_cases=None, estimated_inner_packs=None, w1_estimated_pallets=None, w1_estimated_cases=None, w1_estimated_inner_packs=None, w2_estimated_pallets=None, w2_estimated_cases=None, w2_estimated_inner_packs=None, w3_estimated_pallets=None, w3_estimated_cases=None, w3_estimated_inner_packs=None, w4_estimated_pallets=None, w4_estimated_cases=None, w4_estimated_inner_packs=None, w5_estimated_pallets=None, w5_estimated_cases=None, w5_estimated_inner_packs=None, custom_fields=None):  # noqa: E501
         """Item - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -356,6 +392,24 @@ class Item(object):
         self._unavailable_quantity = None
         self._overall_days_on_hand = None
         self._overall_stock_status = None
+        self._estimated_pallets = None
+        self._estimated_cases = None
+        self._estimated_inner_packs = None
+        self._w1_estimated_pallets = None
+        self._w1_estimated_cases = None
+        self._w1_estimated_inner_packs = None
+        self._w2_estimated_pallets = None
+        self._w2_estimated_cases = None
+        self._w2_estimated_inner_packs = None
+        self._w3_estimated_pallets = None
+        self._w3_estimated_cases = None
+        self._w3_estimated_inner_packs = None
+        self._w4_estimated_pallets = None
+        self._w4_estimated_cases = None
+        self._w4_estimated_inner_packs = None
+        self._w5_estimated_pallets = None
+        self._w5_estimated_cases = None
+        self._w5_estimated_inner_packs = None
         self._custom_fields = None
         self.discriminator = None
 
@@ -549,6 +603,42 @@ class Item(object):
             self.overall_days_on_hand = overall_days_on_hand
         if overall_stock_status is not None:
             self.overall_stock_status = overall_stock_status
+        if estimated_pallets is not None:
+            self.estimated_pallets = estimated_pallets
+        if estimated_cases is not None:
+            self.estimated_cases = estimated_cases
+        if estimated_inner_packs is not None:
+            self.estimated_inner_packs = estimated_inner_packs
+        if w1_estimated_pallets is not None:
+            self.w1_estimated_pallets = w1_estimated_pallets
+        if w1_estimated_cases is not None:
+            self.w1_estimated_cases = w1_estimated_cases
+        if w1_estimated_inner_packs is not None:
+            self.w1_estimated_inner_packs = w1_estimated_inner_packs
+        if w2_estimated_pallets is not None:
+            self.w2_estimated_pallets = w2_estimated_pallets
+        if w2_estimated_cases is not None:
+            self.w2_estimated_cases = w2_estimated_cases
+        if w2_estimated_inner_packs is not None:
+            self.w2_estimated_inner_packs = w2_estimated_inner_packs
+        if w3_estimated_pallets is not None:
+            self.w3_estimated_pallets = w3_estimated_pallets
+        if w3_estimated_cases is not None:
+            self.w3_estimated_cases = w3_estimated_cases
+        if w3_estimated_inner_packs is not None:
+            self.w3_estimated_inner_packs = w3_estimated_inner_packs
+        if w4_estimated_pallets is not None:
+            self.w4_estimated_pallets = w4_estimated_pallets
+        if w4_estimated_cases is not None:
+            self.w4_estimated_cases = w4_estimated_cases
+        if w4_estimated_inner_packs is not None:
+            self.w4_estimated_inner_packs = w4_estimated_inner_packs
+        if w5_estimated_pallets is not None:
+            self.w5_estimated_pallets = w5_estimated_pallets
+        if w5_estimated_cases is not None:
+            self.w5_estimated_cases = w5_estimated_cases
+        if w5_estimated_inner_packs is not None:
+            self.w5_estimated_inner_packs = w5_estimated_inner_packs
         if custom_fields is not None:
             self.custom_fields = custom_fields
 
@@ -2796,6 +2886,384 @@ class Item(object):
         """
 
         self._overall_stock_status = overall_stock_status
+
+    @property
+    def estimated_pallets(self):
+        """Gets the estimated_pallets of this Item.  # noqa: E501
+
+
+        :return: The estimated_pallets of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._estimated_pallets
+
+    @estimated_pallets.setter
+    def estimated_pallets(self, estimated_pallets):
+        """Sets the estimated_pallets of this Item.
+
+
+        :param estimated_pallets: The estimated_pallets of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._estimated_pallets = estimated_pallets
+
+    @property
+    def estimated_cases(self):
+        """Gets the estimated_cases of this Item.  # noqa: E501
+
+
+        :return: The estimated_cases of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._estimated_cases
+
+    @estimated_cases.setter
+    def estimated_cases(self, estimated_cases):
+        """Sets the estimated_cases of this Item.
+
+
+        :param estimated_cases: The estimated_cases of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._estimated_cases = estimated_cases
+
+    @property
+    def estimated_inner_packs(self):
+        """Gets the estimated_inner_packs of this Item.  # noqa: E501
+
+
+        :return: The estimated_inner_packs of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._estimated_inner_packs
+
+    @estimated_inner_packs.setter
+    def estimated_inner_packs(self, estimated_inner_packs):
+        """Sets the estimated_inner_packs of this Item.
+
+
+        :param estimated_inner_packs: The estimated_inner_packs of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._estimated_inner_packs = estimated_inner_packs
+
+    @property
+    def w1_estimated_pallets(self):
+        """Gets the w1_estimated_pallets of this Item.  # noqa: E501
+
+
+        :return: The w1_estimated_pallets of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._w1_estimated_pallets
+
+    @w1_estimated_pallets.setter
+    def w1_estimated_pallets(self, w1_estimated_pallets):
+        """Sets the w1_estimated_pallets of this Item.
+
+
+        :param w1_estimated_pallets: The w1_estimated_pallets of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._w1_estimated_pallets = w1_estimated_pallets
+
+    @property
+    def w1_estimated_cases(self):
+        """Gets the w1_estimated_cases of this Item.  # noqa: E501
+
+
+        :return: The w1_estimated_cases of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._w1_estimated_cases
+
+    @w1_estimated_cases.setter
+    def w1_estimated_cases(self, w1_estimated_cases):
+        """Sets the w1_estimated_cases of this Item.
+
+
+        :param w1_estimated_cases: The w1_estimated_cases of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._w1_estimated_cases = w1_estimated_cases
+
+    @property
+    def w1_estimated_inner_packs(self):
+        """Gets the w1_estimated_inner_packs of this Item.  # noqa: E501
+
+
+        :return: The w1_estimated_inner_packs of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._w1_estimated_inner_packs
+
+    @w1_estimated_inner_packs.setter
+    def w1_estimated_inner_packs(self, w1_estimated_inner_packs):
+        """Sets the w1_estimated_inner_packs of this Item.
+
+
+        :param w1_estimated_inner_packs: The w1_estimated_inner_packs of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._w1_estimated_inner_packs = w1_estimated_inner_packs
+
+    @property
+    def w2_estimated_pallets(self):
+        """Gets the w2_estimated_pallets of this Item.  # noqa: E501
+
+
+        :return: The w2_estimated_pallets of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._w2_estimated_pallets
+
+    @w2_estimated_pallets.setter
+    def w2_estimated_pallets(self, w2_estimated_pallets):
+        """Sets the w2_estimated_pallets of this Item.
+
+
+        :param w2_estimated_pallets: The w2_estimated_pallets of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._w2_estimated_pallets = w2_estimated_pallets
+
+    @property
+    def w2_estimated_cases(self):
+        """Gets the w2_estimated_cases of this Item.  # noqa: E501
+
+
+        :return: The w2_estimated_cases of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._w2_estimated_cases
+
+    @w2_estimated_cases.setter
+    def w2_estimated_cases(self, w2_estimated_cases):
+        """Sets the w2_estimated_cases of this Item.
+
+
+        :param w2_estimated_cases: The w2_estimated_cases of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._w2_estimated_cases = w2_estimated_cases
+
+    @property
+    def w2_estimated_inner_packs(self):
+        """Gets the w2_estimated_inner_packs of this Item.  # noqa: E501
+
+
+        :return: The w2_estimated_inner_packs of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._w2_estimated_inner_packs
+
+    @w2_estimated_inner_packs.setter
+    def w2_estimated_inner_packs(self, w2_estimated_inner_packs):
+        """Sets the w2_estimated_inner_packs of this Item.
+
+
+        :param w2_estimated_inner_packs: The w2_estimated_inner_packs of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._w2_estimated_inner_packs = w2_estimated_inner_packs
+
+    @property
+    def w3_estimated_pallets(self):
+        """Gets the w3_estimated_pallets of this Item.  # noqa: E501
+
+
+        :return: The w3_estimated_pallets of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._w3_estimated_pallets
+
+    @w3_estimated_pallets.setter
+    def w3_estimated_pallets(self, w3_estimated_pallets):
+        """Sets the w3_estimated_pallets of this Item.
+
+
+        :param w3_estimated_pallets: The w3_estimated_pallets of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._w3_estimated_pallets = w3_estimated_pallets
+
+    @property
+    def w3_estimated_cases(self):
+        """Gets the w3_estimated_cases of this Item.  # noqa: E501
+
+
+        :return: The w3_estimated_cases of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._w3_estimated_cases
+
+    @w3_estimated_cases.setter
+    def w3_estimated_cases(self, w3_estimated_cases):
+        """Sets the w3_estimated_cases of this Item.
+
+
+        :param w3_estimated_cases: The w3_estimated_cases of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._w3_estimated_cases = w3_estimated_cases
+
+    @property
+    def w3_estimated_inner_packs(self):
+        """Gets the w3_estimated_inner_packs of this Item.  # noqa: E501
+
+
+        :return: The w3_estimated_inner_packs of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._w3_estimated_inner_packs
+
+    @w3_estimated_inner_packs.setter
+    def w3_estimated_inner_packs(self, w3_estimated_inner_packs):
+        """Sets the w3_estimated_inner_packs of this Item.
+
+
+        :param w3_estimated_inner_packs: The w3_estimated_inner_packs of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._w3_estimated_inner_packs = w3_estimated_inner_packs
+
+    @property
+    def w4_estimated_pallets(self):
+        """Gets the w4_estimated_pallets of this Item.  # noqa: E501
+
+
+        :return: The w4_estimated_pallets of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._w4_estimated_pallets
+
+    @w4_estimated_pallets.setter
+    def w4_estimated_pallets(self, w4_estimated_pallets):
+        """Sets the w4_estimated_pallets of this Item.
+
+
+        :param w4_estimated_pallets: The w4_estimated_pallets of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._w4_estimated_pallets = w4_estimated_pallets
+
+    @property
+    def w4_estimated_cases(self):
+        """Gets the w4_estimated_cases of this Item.  # noqa: E501
+
+
+        :return: The w4_estimated_cases of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._w4_estimated_cases
+
+    @w4_estimated_cases.setter
+    def w4_estimated_cases(self, w4_estimated_cases):
+        """Sets the w4_estimated_cases of this Item.
+
+
+        :param w4_estimated_cases: The w4_estimated_cases of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._w4_estimated_cases = w4_estimated_cases
+
+    @property
+    def w4_estimated_inner_packs(self):
+        """Gets the w4_estimated_inner_packs of this Item.  # noqa: E501
+
+
+        :return: The w4_estimated_inner_packs of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._w4_estimated_inner_packs
+
+    @w4_estimated_inner_packs.setter
+    def w4_estimated_inner_packs(self, w4_estimated_inner_packs):
+        """Sets the w4_estimated_inner_packs of this Item.
+
+
+        :param w4_estimated_inner_packs: The w4_estimated_inner_packs of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._w4_estimated_inner_packs = w4_estimated_inner_packs
+
+    @property
+    def w5_estimated_pallets(self):
+        """Gets the w5_estimated_pallets of this Item.  # noqa: E501
+
+
+        :return: The w5_estimated_pallets of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._w5_estimated_pallets
+
+    @w5_estimated_pallets.setter
+    def w5_estimated_pallets(self, w5_estimated_pallets):
+        """Sets the w5_estimated_pallets of this Item.
+
+
+        :param w5_estimated_pallets: The w5_estimated_pallets of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._w5_estimated_pallets = w5_estimated_pallets
+
+    @property
+    def w5_estimated_cases(self):
+        """Gets the w5_estimated_cases of this Item.  # noqa: E501
+
+
+        :return: The w5_estimated_cases of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._w5_estimated_cases
+
+    @w5_estimated_cases.setter
+    def w5_estimated_cases(self, w5_estimated_cases):
+        """Sets the w5_estimated_cases of this Item.
+
+
+        :param w5_estimated_cases: The w5_estimated_cases of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._w5_estimated_cases = w5_estimated_cases
+
+    @property
+    def w5_estimated_inner_packs(self):
+        """Gets the w5_estimated_inner_packs of this Item.  # noqa: E501
+
+
+        :return: The w5_estimated_inner_packs of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._w5_estimated_inner_packs
+
+    @w5_estimated_inner_packs.setter
+    def w5_estimated_inner_packs(self, w5_estimated_inner_packs):
+        """Sets the w5_estimated_inner_packs of this Item.
+
+
+        :param w5_estimated_inner_packs: The w5_estimated_inner_packs of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._w5_estimated_inner_packs = w5_estimated_inner_packs
 
     @property
     def custom_fields(self):
