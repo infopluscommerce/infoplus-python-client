@@ -14,6 +14,8 @@ from Infoplus.api.building_api import BuildingApi
 from Infoplus.api.business_transaction_api import BusinessTransactionApi
 from Infoplus.api.carrier_api import CarrierApi
 from Infoplus.api.carrier_service_api import CarrierServiceApi
+from Infoplus.api.cart_api import CartApi
+from Infoplus.api.cart_location_api import CartLocationApi
 from Infoplus.api.carton_api import CartonApi
 from Infoplus.api.carton_activity_api import CartonActivityApi
 from Infoplus.api.carton_content_api import CartonContentApi

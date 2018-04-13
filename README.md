@@ -171,6 +171,23 @@ Class | Method | HTTP request | Description
 *CarrierApi* | [**get_carrier_by_search_text**](docs/CarrierApi.md#get_carrier_by_search_text) | **GET** /beta/carrier/search | Search carriers
 *CarrierServiceApi* | [**get_carrier_service_by_id**](docs/CarrierServiceApi.md#get_carrier_service_by_id) | **GET** /beta/carrierService/{carrierServiceId} | Get a carrierService by id
 *CarrierServiceApi* | [**get_carrier_service_by_search_text**](docs/CarrierServiceApi.md#get_carrier_service_by_search_text) | **GET** /beta/carrierService/search | Search carrierServices
+*CartApi* | [**add_cart**](docs/CartApi.md#add_cart) | **POST** /beta/cart | Create a cart
+*CartApi* | [**add_cart_audit**](docs/CartApi.md#add_cart_audit) | **PUT** /beta/cart/{cartId}/audit/{cartAudit} | Add new audit for a cart
+*CartApi* | [**add_cart_tag**](docs/CartApi.md#add_cart_tag) | **PUT** /beta/cart/{cartId}/tag/{cartTag} | Add new tags for a cart.
+*CartApi* | [**delete_cart**](docs/CartApi.md#delete_cart) | **DELETE** /beta/cart/{cartId} | Delete a cart
+*CartApi* | [**delete_cart_tag**](docs/CartApi.md#delete_cart_tag) | **DELETE** /beta/cart/{cartId}/tag/{cartTag} | Delete a tag for a cart.
+*CartApi* | [**get_cart_by_filter**](docs/CartApi.md#get_cart_by_filter) | **GET** /beta/cart/search | Search carts by filter
+*CartApi* | [**get_cart_by_id**](docs/CartApi.md#get_cart_by_id) | **GET** /beta/cart/{cartId} | Get a cart by id
+*CartApi* | [**get_cart_tags**](docs/CartApi.md#get_cart_tags) | **GET** /beta/cart/{cartId}/tag | Get the tags for a cart.
+*CartApi* | [**get_duplicate_cart_by_id**](docs/CartApi.md#get_duplicate_cart_by_id) | **GET** /beta/cart/duplicate/{cartId} | Get a duplicated a cart by id
+*CartApi* | [**update_cart**](docs/CartApi.md#update_cart) | **PUT** /beta/cart | Update a cart
+*CartLocationApi* | [**add_cart_location_audit**](docs/CartLocationApi.md#add_cart_location_audit) | **PUT** /beta/cartLocation/{cartLocationId}/audit/{cartLocationAudit} | Add new audit for a cartLocation
+*CartLocationApi* | [**add_cart_location_tag**](docs/CartLocationApi.md#add_cart_location_tag) | **PUT** /beta/cartLocation/{cartLocationId}/tag/{cartLocationTag} | Add new tags for a cartLocation.
+*CartLocationApi* | [**delete_cart_location_tag**](docs/CartLocationApi.md#delete_cart_location_tag) | **DELETE** /beta/cartLocation/{cartLocationId}/tag/{cartLocationTag} | Delete a tag for a cartLocation.
+*CartLocationApi* | [**get_cart_location_by_filter**](docs/CartLocationApi.md#get_cart_location_by_filter) | **GET** /beta/cartLocation/search | Search cartLocations by filter
+*CartLocationApi* | [**get_cart_location_by_id**](docs/CartLocationApi.md#get_cart_location_by_id) | **GET** /beta/cartLocation/{cartLocationId} | Get a cartLocation by id
+*CartLocationApi* | [**get_cart_location_tags**](docs/CartLocationApi.md#get_cart_location_tags) | **GET** /beta/cartLocation/{cartLocationId}/tag | Get the tags for a cartLocation.
+*CartLocationApi* | [**get_duplicate_cart_location_by_id**](docs/CartLocationApi.md#get_duplicate_cart_location_by_id) | **GET** /beta/cartLocation/duplicate/{cartLocationId} | Get a duplicated a cartLocation by id
 *CartonApi* | [**add_carton**](docs/CartonApi.md#add_carton) | **POST** /beta/carton | Create a carton
 *CartonApi* | [**add_carton_audit**](docs/CartonApi.md#add_carton_audit) | **PUT** /beta/carton/{cartonId}/audit/{cartonAudit} | Add new audit for a carton
 *CartonApi* | [**add_carton_tag**](docs/CartonApi.md#add_carton_tag) | **PUT** /beta/carton/{cartonId}/tag/{cartonTag} | Add new tags for a carton.
@@ -1002,6 +1019,8 @@ Class | Method | HTTP request | Description
  - [BusinessTransaction](docs/BusinessTransaction.md)
  - [Carrier](docs/Carrier.md)
  - [CarrierService](docs/CarrierService.md)
+ - [Cart](docs/Cart.md)
+ - [CartLocation](docs/CartLocation.md)
  - [Carton](docs/Carton.md)
  - [CartonActivity](docs/CartonActivity.md)
  - [CartonContent](docs/CartonContent.md)
@@ -1009,6 +1028,7 @@ Class | Method | HTTP request | Description
  - [Customer](docs/Customer.md)
  - [CustomerInvoiceTemplate](docs/CustomerInvoiceTemplate.md)
  - [CustomerInvoiceTemplateLine](docs/CustomerInvoiceTemplateLine.md)
+ - [DynamicKitComponentLine](docs/DynamicKitComponentLine.md)
  - [EDIDocumentType](docs/EDIDocumentType.md)
  - [EditLineItemFulfillmentStrategyInputAPIModel](docs/EditLineItemFulfillmentStrategyInputAPIModel.md)
  - [EmailTemplate](docs/EmailTemplate.md)

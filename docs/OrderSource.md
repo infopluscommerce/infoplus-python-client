@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **modify_date** | **datetime** |  | [optional] 
 **packing_notes** | **str** |  | [optional] 
 **require_cartonized_asn** | **bool** |  | [optional] [default to False]
+**uses_reservations** | **bool** |  | [optional] [default to False]
 **require_gs1128_label** | **bool** |  | [optional] [default to False]
 **shipping_notes** | **str** |  | [optional] 
 **packing_slip_id** | **int** |  | [optional] 

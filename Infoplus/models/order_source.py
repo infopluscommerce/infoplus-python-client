@@ -38,6 +38,7 @@ class OrderSource(object):
         'modify_date': 'datetime',
         'packing_notes': 'str',
         'require_cartonized_asn': 'bool',
+        'uses_reservations': 'bool',
         'require_gs1128_label': 'bool',
         'shipping_notes': 'str',
         'packing_slip_id': 'int',
@@ -55,6 +56,7 @@ class OrderSource(object):
         'modify_date': 'modifyDate',
         'packing_notes': 'packingNotes',
         'require_cartonized_asn': 'requireCartonizedASN',
+        'uses_reservations': 'usesReservations',
         'require_gs1128_label': 'requireGS1128Label',
         'shipping_notes': 'shippingNotes',
         'packing_slip_id': 'packingSlipId',
@@ -64,7 +66,7 @@ class OrderSource(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, lob_id=None, name=None, create_date=None, modify_date=None, packing_notes=None, require_cartonized_asn=False, require_gs1128_label=False, shipping_notes=None, packing_slip_id=None, order_invoice_id=None, order_confirmation_email_id=None, shipment_confirmation_email_id=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, lob_id=None, name=None, create_date=None, modify_date=None, packing_notes=None, require_cartonized_asn=False, uses_reservations=False, require_gs1128_label=False, shipping_notes=None, packing_slip_id=None, order_invoice_id=None, order_confirmation_email_id=None, shipment_confirmation_email_id=None, custom_fields=None):  # noqa: E501
         """OrderSource - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -74,6 +76,7 @@ class OrderSource(object):
         self._modify_date = None
         self._packing_notes = None
         self._require_cartonized_asn = None
+        self._uses_reservations = None
         self._require_gs1128_label = None
         self._shipping_notes = None
         self._packing_slip_id = None
@@ -95,6 +98,8 @@ class OrderSource(object):
             self.packing_notes = packing_notes
         if require_cartonized_asn is not None:
             self.require_cartonized_asn = require_cartonized_asn
+        if uses_reservations is not None:
+            self.uses_reservations = uses_reservations
         if require_gs1128_label is not None:
             self.require_gs1128_label = require_gs1128_label
         if shipping_notes is not None:
@@ -260,6 +265,27 @@ class OrderSource(object):
         """
 
         self._require_cartonized_asn = require_cartonized_asn
+
+    @property
+    def uses_reservations(self):
+        """Gets the uses_reservations of this OrderSource.  # noqa: E501
+
+
+        :return: The uses_reservations of this OrderSource.  # noqa: E501
+        :rtype: bool
+        """
+        return self._uses_reservations
+
+    @uses_reservations.setter
+    def uses_reservations(self, uses_reservations):
+        """Sets the uses_reservations of this OrderSource.
+
+
+        :param uses_reservations: The uses_reservations of this OrderSource.  # noqa: E501
+        :type: bool
+        """
+
+        self._uses_reservations = uses_reservations
 
     @property
     def require_gs1128_label(self):

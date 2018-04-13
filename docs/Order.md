@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **order_date** | **datetime** |  | [optional] 
 **customer_no** | **str** |  | [optional] 
 **use_order_no_root** | **int** |  | [optional] 
+**shipping_method** | **str** |  | [optional] 
 **first_ship_date** | **datetime** |  | [optional] 
 **last_ship_date** | **datetime** |  | [optional] 
 **deliver_on_date** | **datetime** |  | [optional] 

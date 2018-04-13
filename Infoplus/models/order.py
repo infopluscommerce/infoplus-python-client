@@ -42,6 +42,7 @@ class Order(object):
         'order_date': 'datetime',
         'customer_no': 'str',
         'use_order_no_root': 'int',
+        'shipping_method': 'str',
         'first_ship_date': 'datetime',
         'last_ship_date': 'datetime',
         'deliver_on_date': 'datetime',
@@ -148,6 +149,7 @@ class Order(object):
         'order_date': 'orderDate',
         'customer_no': 'customerNo',
         'use_order_no_root': 'useOrderNoRoot',
+        'shipping_method': 'shippingMethod',
         'first_ship_date': 'firstShipDate',
         'last_ship_date': 'lastShipDate',
         'deliver_on_date': 'deliverOnDate',
@@ -246,7 +248,7 @@ class Order(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, order_no=None, customer_order_no=None, lob_id=None, warehouse_id=None, order_date=None, customer_no=None, use_order_no_root=None, first_ship_date=None, last_ship_date=None, deliver_on_date=None, need_by_date=None, carrier_id=None, service_type_id=None, ship_via=None, media_code=None, legacy_restriction_type=None, alcohol_order_type=None, alternate_usage=None, authorization_amount=None, authorized_by=None, balance_due=None, batch_no=None, bill_to_attention=None, bill_to_company=None, bill_to_street=None, bill_to_street2=None, bill_to_street3=None, bill_to_city=None, bill_to_state=None, bill_to_zip=None, bill_to_country=None, bill_to_phone=None, bill_to_email=None, number_of_cartons=None, number_of_pallets=None, completion_status=None, parcel_account_id=None, third_party_parcel_account_id=None, cost_center=None, create_date=None, customer_po_no=None, distribution_channel=None, distribution_charges=None, division=None, entered_by=None, pre_allocation_estimated_weight=None, estimated_weight_lbs=None, freight=None, gift_message=None, group_order_id=None, parent_kod_order_id=None, hold_code=None, integration_partner_id=None, number_of_line_items=None, estimated_number_of_picks=None, modify_date=None, oms_order_no=None, oms_customer_id=None, order_load_program_id=None, order_message=None, order_reason=None, order_source_id=None, packing_slip_template_id=None, order_invoice_template_id=None, order_confirmation_email_template_id=None, shipment_confirmation_email_template_id=None, price_level=None, price_mode=None, priority_code=None, fulfillment_process_id=None, ship_by=None, ship_code=None, ship_date=None, ship_to_attention=None, ship_to_company=None, ship_to_street=None, ship_to_street2=None, ship_to_street3=None, ship_to_city=None, ship_to_state=None, ship_to_zip=None, ship_to_country=None, ship_to_phone=None, ship_to_email=None, shipping_charge=None, status=None, stop_back_orders=None, subtotal=None, tax=None, total=None, total_discount=None, total_paid=None, total_qty=None, weight_lbs=None, order_assembly_instructions=None, parcel_label_ref1=None, parcel_label_ref2=None, parcel_label_ref3=None, line_items=None, extra_order_data=None, extra_line_item_data=None, external_shipping_system_id=None, custom_fields=None):  # noqa: E501
+    def __init__(self, order_no=None, customer_order_no=None, lob_id=None, warehouse_id=None, order_date=None, customer_no=None, use_order_no_root=None, shipping_method=None, first_ship_date=None, last_ship_date=None, deliver_on_date=None, need_by_date=None, carrier_id=None, service_type_id=None, ship_via=None, media_code=None, legacy_restriction_type=None, alcohol_order_type=None, alternate_usage=None, authorization_amount=None, authorized_by=None, balance_due=None, batch_no=None, bill_to_attention=None, bill_to_company=None, bill_to_street=None, bill_to_street2=None, bill_to_street3=None, bill_to_city=None, bill_to_state=None, bill_to_zip=None, bill_to_country=None, bill_to_phone=None, bill_to_email=None, number_of_cartons=None, number_of_pallets=None, completion_status=None, parcel_account_id=None, third_party_parcel_account_id=None, cost_center=None, create_date=None, customer_po_no=None, distribution_channel=None, distribution_charges=None, division=None, entered_by=None, pre_allocation_estimated_weight=None, estimated_weight_lbs=None, freight=None, gift_message=None, group_order_id=None, parent_kod_order_id=None, hold_code=None, integration_partner_id=None, number_of_line_items=None, estimated_number_of_picks=None, modify_date=None, oms_order_no=None, oms_customer_id=None, order_load_program_id=None, order_message=None, order_reason=None, order_source_id=None, packing_slip_template_id=None, order_invoice_template_id=None, order_confirmation_email_template_id=None, shipment_confirmation_email_template_id=None, price_level=None, price_mode=None, priority_code=None, fulfillment_process_id=None, ship_by=None, ship_code=None, ship_date=None, ship_to_attention=None, ship_to_company=None, ship_to_street=None, ship_to_street2=None, ship_to_street3=None, ship_to_city=None, ship_to_state=None, ship_to_zip=None, ship_to_country=None, ship_to_phone=None, ship_to_email=None, shipping_charge=None, status=None, stop_back_orders=None, subtotal=None, tax=None, total=None, total_discount=None, total_paid=None, total_qty=None, weight_lbs=None, order_assembly_instructions=None, parcel_label_ref1=None, parcel_label_ref2=None, parcel_label_ref3=None, line_items=None, extra_order_data=None, extra_line_item_data=None, external_shipping_system_id=None, custom_fields=None):  # noqa: E501
         """Order - a model defined in Swagger"""  # noqa: E501
 
         self._order_no = None
@@ -256,6 +258,7 @@ class Order(object):
         self._order_date = None
         self._customer_no = None
         self._use_order_no_root = None
+        self._shipping_method = None
         self._first_ship_date = None
         self._last_ship_date = None
         self._deliver_on_date = None
@@ -366,6 +369,8 @@ class Order(object):
             self.customer_no = customer_no
         if use_order_no_root is not None:
             self.use_order_no_root = use_order_no_root
+        if shipping_method is not None:
+            self.shipping_method = shipping_method
         if first_ship_date is not None:
             self.first_ship_date = first_ship_date
         if last_ship_date is not None:
@@ -708,6 +713,27 @@ class Order(object):
         """
 
         self._use_order_no_root = use_order_no_root
+
+    @property
+    def shipping_method(self):
+        """Gets the shipping_method of this Order.  # noqa: E501
+
+
+        :return: The shipping_method of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._shipping_method
+
+    @shipping_method.setter
+    def shipping_method(self, shipping_method):
+        """Sets the shipping_method of this Order.
+
+
+        :param shipping_method: The shipping_method of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._shipping_method = shipping_method
 
     @property
     def first_ship_date(self):

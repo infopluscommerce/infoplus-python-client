@@ -31,6 +31,8 @@ from Infoplus.models.building import Building
 from Infoplus.models.business_transaction import BusinessTransaction
 from Infoplus.models.carrier import Carrier
 from Infoplus.models.carrier_service import CarrierService
+from Infoplus.models.cart import Cart
+from Infoplus.models.cart_location import CartLocation
 from Infoplus.models.carton import Carton
 from Infoplus.models.carton_activity import CartonActivity
 from Infoplus.models.carton_content import CartonContent
@@ -38,6 +40,7 @@ from Infoplus.models.carton_type import CartonType
 from Infoplus.models.customer import Customer
 from Infoplus.models.customer_invoice_template import CustomerInvoiceTemplate
 from Infoplus.models.customer_invoice_template_line import CustomerInvoiceTemplateLine
+from Infoplus.models.dynamic_kit_component_line import DynamicKitComponentLine
 from Infoplus.models.e_di_document_type import EDIDocumentType
 from Infoplus.models.edit_line_item_fulfillment_strategy_input_api_model import EditLineItemFulfillmentStrategyInputAPIModel
 from Infoplus.models.email_template import EmailTemplate
