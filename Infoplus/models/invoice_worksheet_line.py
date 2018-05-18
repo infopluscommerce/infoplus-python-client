@@ -119,8 +119,7 @@ class InvoiceWorksheetLine(object):
             self.backup_file = backup_file
         if backup_file_url is not None:
             self.backup_file_url = backup_file_url
-        if invoice_worksheet_id is not None:
-            self.invoice_worksheet_id = invoice_worksheet_id
+        self.invoice_worksheet_id = invoice_worksheet_id
         if invoice_template_line_id is not None:
             self.invoice_template_line_id = invoice_template_line_id
         if custom_fields is not None:
@@ -440,6 +439,8 @@ class InvoiceWorksheetLine(object):
         :param invoice_worksheet_id: The invoice_worksheet_id of this InvoiceWorksheetLine.  # noqa: E501
         :type: int
         """
+        if invoice_worksheet_id is None:
+            raise ValueError("Invalid value for `invoice_worksheet_id`, must not be `None`")  # noqa: E501
 
         self._invoice_worksheet_id = invoice_worksheet_id
 

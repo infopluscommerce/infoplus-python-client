@@ -73,6 +73,7 @@ from Infoplus.api.order_line_activity_api import OrderLineActivityApi
 from Infoplus.api.order_load_program_api import OrderLoadProgramApi
 from Infoplus.api.order_source_api import OrderSourceApi
 from Infoplus.api.order_source_reservation_api import OrderSourceReservationApi
+from Infoplus.api.order_source_stock_status_api import OrderSourceStockStatusApi
 from Infoplus.api.override_return_address_api import OverrideReturnAddressApi
 from Infoplus.api.packing_slip_template_line_item_description_enum_api import PackingSlipTemplateLineItemDescriptionEnumApi
 from Infoplus.api.parcel_account_api import ParcelAccountApi

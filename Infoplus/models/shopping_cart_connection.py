@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from Infoplus.models.store import Store  # noqa: F401,E501
 from Infoplus.models.warehouse import Warehouse  # noqa: F401,E501
 
 
@@ -63,6 +64,8 @@ class ShoppingCartConnection(object):
         'sync_orders_last_run_time': 'datetime',
         'inventory_level_warehouse_controls': 'str',
         'warehouse_list': 'list[Warehouse]',
+        'inventory_level_store_controls': 'str',
+        'store_list': 'list[Store]',
         'custom_fields': 'dict(str, object)'
     }
 
@@ -97,10 +100,12 @@ class ShoppingCartConnection(object):
         'sync_orders_last_run_time': 'syncOrdersLastRunTime',
         'inventory_level_warehouse_controls': 'inventoryLevelWarehouseControls',
         'warehouse_list': 'warehouseList',
+        'inventory_level_store_controls': 'inventoryLevelStoreControls',
+        'store_list': 'storeList',
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, create_date=None, modify_date=None, client_id=None, nonce=None, lob_id=None, order_source_id=None, integration_partner_id=None, connection_type=None, item_filter_id=None, infoplus_sku_field_to_map=None, shopping_cart_sku_field_to_map=None, script_id=None, name=None, shopping_cart_store_url=None, access_code=None, access_token=None, username=None, password=None, default_carrier_id=None, order_shipment_level=None, create_invoices=False, sync_orders=False, sync_inventory=False, sync_tracking_data=False, fulfill_all_items=False, sync_inventory_levels_last_run_time=None, sync_orders_last_run_time=None, inventory_level_warehouse_controls=None, warehouse_list=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, create_date=None, modify_date=None, client_id=None, nonce=None, lob_id=None, order_source_id=None, integration_partner_id=None, connection_type=None, item_filter_id=None, infoplus_sku_field_to_map=None, shopping_cart_sku_field_to_map=None, script_id=None, name=None, shopping_cart_store_url=None, access_code=None, access_token=None, username=None, password=None, default_carrier_id=None, order_shipment_level=None, create_invoices=False, sync_orders=False, sync_inventory=False, sync_tracking_data=False, fulfill_all_items=False, sync_inventory_levels_last_run_time=None, sync_orders_last_run_time=None, inventory_level_warehouse_controls=None, warehouse_list=None, inventory_level_store_controls=None, store_list=None, custom_fields=None):  # noqa: E501
         """ShoppingCartConnection - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -133,6 +138,8 @@ class ShoppingCartConnection(object):
         self._sync_orders_last_run_time = None
         self._inventory_level_warehouse_controls = None
         self._warehouse_list = None
+        self._inventory_level_store_controls = None
+        self._store_list = None
         self._custom_fields = None
         self.discriminator = None
 
@@ -178,6 +185,9 @@ class ShoppingCartConnection(object):
         self.inventory_level_warehouse_controls = inventory_level_warehouse_controls
         if warehouse_list is not None:
             self.warehouse_list = warehouse_list
+        self.inventory_level_store_controls = inventory_level_store_controls
+        if store_list is not None:
+            self.store_list = store_list
         if custom_fields is not None:
             self.custom_fields = custom_fields
 
@@ -846,6 +856,50 @@ class ShoppingCartConnection(object):
         """
 
         self._warehouse_list = warehouse_list
+
+    @property
+    def inventory_level_store_controls(self):
+        """Gets the inventory_level_store_controls of this ShoppingCartConnection.  # noqa: E501
+
+
+        :return: The inventory_level_store_controls of this ShoppingCartConnection.  # noqa: E501
+        :rtype: str
+        """
+        return self._inventory_level_store_controls
+
+    @inventory_level_store_controls.setter
+    def inventory_level_store_controls(self, inventory_level_store_controls):
+        """Sets the inventory_level_store_controls of this ShoppingCartConnection.
+
+
+        :param inventory_level_store_controls: The inventory_level_store_controls of this ShoppingCartConnection.  # noqa: E501
+        :type: str
+        """
+        if inventory_level_store_controls is None:
+            raise ValueError("Invalid value for `inventory_level_store_controls`, must not be `None`")  # noqa: E501
+
+        self._inventory_level_store_controls = inventory_level_store_controls
+
+    @property
+    def store_list(self):
+        """Gets the store_list of this ShoppingCartConnection.  # noqa: E501
+
+
+        :return: The store_list of this ShoppingCartConnection.  # noqa: E501
+        :rtype: list[Store]
+        """
+        return self._store_list
+
+    @store_list.setter
+    def store_list(self, store_list):
+        """Sets the store_list of this ShoppingCartConnection.
+
+
+        :param store_list: The store_list of this ShoppingCartConnection.  # noqa: E501
+        :type: list[Store]
+        """
+
+        self._store_list = store_list
 
     @property
     def custom_fields(self):

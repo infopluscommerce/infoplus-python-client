@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_work_batch_by_filter**](WorkBatchApi.md#get_work_batch_by_filter) | **GET** /beta/workBatch/search | Search workBatchs by filter
 [**get_work_batch_by_id**](WorkBatchApi.md#get_work_batch_by_id) | **GET** /beta/workBatch/{workBatchId} | Get a workBatch by id
 [**get_work_batch_tags**](WorkBatchApi.md#get_work_batch_tags) | **GET** /beta/workBatch/{workBatchId}/tag | Get the tags for a workBatch.
+[**update_work_batch**](WorkBatchApi.md#update_work_batch) | **PUT** /beta/workBatch | Update a workBatch
 [**update_work_batch_custom_fields**](WorkBatchApi.md#update_work_batch_custom_fields) | **PUT** /beta/workBatch/customFields | Update a workBatch custom fields
 
 
@@ -396,6 +397,59 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_work_batch**
+> update_work_batch(body)
+
+Update a workBatch
+
+Updates an existing workBatch using the specified data.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import Infoplus
+from Infoplus.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api_key
+configuration = Infoplus.Configuration()
+configuration.api_key['API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['API-Key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = Infoplus.WorkBatchApi(Infoplus.ApiClient(configuration))
+body = Infoplus.WorkBatch() # WorkBatch | WorkBatch to be updated.
+
+try:
+    # Update a workBatch
+    api_instance.update_work_batch(body)
+except ApiException as e:
+    print("Exception when calling WorkBatchApi->update_work_batch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**WorkBatch**](WorkBatch.md)| WorkBatch to be updated. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

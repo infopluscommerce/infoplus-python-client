@@ -33,6 +33,7 @@ class WorkBatch(object):
     swagger_types = {
         'id': 'int',
         'warehouse_id': 'int',
+        'batch_priority_code': 'int',
         'create_date': 'datetime',
         'modify_date': 'datetime',
         'custom_fields': 'dict(str, object)'
@@ -41,16 +42,18 @@ class WorkBatch(object):
     attribute_map = {
         'id': 'id',
         'warehouse_id': 'warehouseId',
+        'batch_priority_code': 'batchPriorityCode',
         'create_date': 'createDate',
         'modify_date': 'modifyDate',
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, warehouse_id=None, create_date=None, modify_date=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, warehouse_id=None, batch_priority_code=None, create_date=None, modify_date=None, custom_fields=None):  # noqa: E501
         """WorkBatch - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._warehouse_id = None
+        self._batch_priority_code = None
         self._create_date = None
         self._modify_date = None
         self._custom_fields = None
@@ -59,6 +62,8 @@ class WorkBatch(object):
         if id is not None:
             self.id = id
         self.warehouse_id = warehouse_id
+        if batch_priority_code is not None:
+            self.batch_priority_code = batch_priority_code
         if create_date is not None:
             self.create_date = create_date
         if modify_date is not None:
@@ -109,6 +114,27 @@ class WorkBatch(object):
             raise ValueError("Invalid value for `warehouse_id`, must not be `None`")  # noqa: E501
 
         self._warehouse_id = warehouse_id
+
+    @property
+    def batch_priority_code(self):
+        """Gets the batch_priority_code of this WorkBatch.  # noqa: E501
+
+
+        :return: The batch_priority_code of this WorkBatch.  # noqa: E501
+        :rtype: int
+        """
+        return self._batch_priority_code
+
+    @batch_priority_code.setter
+    def batch_priority_code(self, batch_priority_code):
+        """Sets the batch_priority_code of this WorkBatch.
+
+
+        :param batch_priority_code: The batch_priority_code of this WorkBatch.  # noqa: E501
+        :type: int
+        """
+
+        self._batch_priority_code = batch_priority_code
 
     @property
     def create_date(self):

@@ -43,10 +43,12 @@ class FulfillmentProcess(object):
         'order_smart_filter_id': 'int',
         'location_smart_filter_id': 'int',
         'max_orders': 'int',
-        'batch_size': 'int',
+        'batch_max_size': 'int',
+        'batch_min_size': 'int',
         'version': 'str',
         'fulfillment_process_group': 'int',
         'is_mass_distribution': 'bool',
+        'priority_code': 'int',
         'number_of_orders': 'int',
         'number_of_lines': 'int',
         'number_of_sk_us': 'int',
@@ -100,10 +102,12 @@ class FulfillmentProcess(object):
         'order_smart_filter_id': 'orderSmartFilterId',
         'location_smart_filter_id': 'locationSmartFilterId',
         'max_orders': 'maxOrders',
-        'batch_size': 'batchSize',
+        'batch_max_size': 'batchMaxSize',
+        'batch_min_size': 'batchMinSize',
         'version': 'version',
         'fulfillment_process_group': 'fulfillmentProcessGroup',
         'is_mass_distribution': 'isMassDistribution',
+        'priority_code': 'priorityCode',
         'number_of_orders': 'numberOfOrders',
         'number_of_lines': 'numberOfLines',
         'number_of_sk_us': 'numberOfSKUs',
@@ -144,7 +148,7 @@ class FulfillmentProcess(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, create_date=None, modify_date=None, process_no=None, work_batch_id=None, warehouse_id=None, fulfillment_plan_id=None, pick_scan_scheme_id=None, status=None, order_smart_filter_id=None, location_smart_filter_id=None, max_orders=None, batch_size=None, version=None, fulfillment_process_group=None, is_mass_distribution=False, number_of_orders=None, number_of_lines=None, number_of_sk_us=None, completed_picks=None, total_picks=None, shipped_casebreaks=None, total_casebreaks_to_ship=None, shipped_orders=None, total_orders_to_ship=None, completed_to_do=None, total_to_do=None, create_pick_work=False, picking_rule=None, layout_rule=None, pick_sort_rule=None, first_pick_position=None, pick_list_format=None, pick_list_layout=None, pick_list_group=None, pick_list_sort=None, pick_summary_format=None, pick_summary_layout=None, pick_summary_sort=None, create_pick_summary=False, create_pick_list=False, pre_generate_parcel_labels=False, ship_date=None, auto_ship_casebreak_cartons=False, auto_ship_orders=False, cartonize_orders=False, create_packing_slip=None, override_packing_slip_template_id=None, create_order_assembly_guide=False, create_order_invoice=None, override_order_invoice_template_id=None, send_to_external_shipping_system=False, external_shipping_system_id=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, create_date=None, modify_date=None, process_no=None, work_batch_id=None, warehouse_id=None, fulfillment_plan_id=None, pick_scan_scheme_id=None, status=None, order_smart_filter_id=None, location_smart_filter_id=None, max_orders=None, batch_max_size=None, batch_min_size=None, version=None, fulfillment_process_group=None, is_mass_distribution=False, priority_code=None, number_of_orders=None, number_of_lines=None, number_of_sk_us=None, completed_picks=None, total_picks=None, shipped_casebreaks=None, total_casebreaks_to_ship=None, shipped_orders=None, total_orders_to_ship=None, completed_to_do=None, total_to_do=None, create_pick_work=False, picking_rule=None, layout_rule=None, pick_sort_rule=None, first_pick_position=None, pick_list_format=None, pick_list_layout=None, pick_list_group=None, pick_list_sort=None, pick_summary_format=None, pick_summary_layout=None, pick_summary_sort=None, create_pick_summary=False, create_pick_list=False, pre_generate_parcel_labels=False, ship_date=None, auto_ship_casebreak_cartons=False, auto_ship_orders=False, cartonize_orders=False, create_packing_slip=None, override_packing_slip_template_id=None, create_order_assembly_guide=False, create_order_invoice=None, override_order_invoice_template_id=None, send_to_external_shipping_system=False, external_shipping_system_id=None, custom_fields=None):  # noqa: E501
         """FulfillmentProcess - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -159,10 +163,12 @@ class FulfillmentProcess(object):
         self._order_smart_filter_id = None
         self._location_smart_filter_id = None
         self._max_orders = None
-        self._batch_size = None
+        self._batch_max_size = None
+        self._batch_min_size = None
         self._version = None
         self._fulfillment_process_group = None
         self._is_mass_distribution = None
+        self._priority_code = None
         self._number_of_orders = None
         self._number_of_lines = None
         self._number_of_sk_us = None
@@ -223,14 +229,18 @@ class FulfillmentProcess(object):
             self.location_smart_filter_id = location_smart_filter_id
         if max_orders is not None:
             self.max_orders = max_orders
-        if batch_size is not None:
-            self.batch_size = batch_size
+        if batch_max_size is not None:
+            self.batch_max_size = batch_max_size
+        if batch_min_size is not None:
+            self.batch_min_size = batch_min_size
         if version is not None:
             self.version = version
         if fulfillment_process_group is not None:
             self.fulfillment_process_group = fulfillment_process_group
         if is_mass_distribution is not None:
             self.is_mass_distribution = is_mass_distribution
+        if priority_code is not None:
+            self.priority_code = priority_code
         if number_of_orders is not None:
             self.number_of_orders = number_of_orders
         if number_of_lines is not None:
@@ -566,25 +576,46 @@ class FulfillmentProcess(object):
         self._max_orders = max_orders
 
     @property
-    def batch_size(self):
-        """Gets the batch_size of this FulfillmentProcess.  # noqa: E501
+    def batch_max_size(self):
+        """Gets the batch_max_size of this FulfillmentProcess.  # noqa: E501
 
 
-        :return: The batch_size of this FulfillmentProcess.  # noqa: E501
+        :return: The batch_max_size of this FulfillmentProcess.  # noqa: E501
         :rtype: int
         """
-        return self._batch_size
+        return self._batch_max_size
 
-    @batch_size.setter
-    def batch_size(self, batch_size):
-        """Sets the batch_size of this FulfillmentProcess.
+    @batch_max_size.setter
+    def batch_max_size(self, batch_max_size):
+        """Sets the batch_max_size of this FulfillmentProcess.
 
 
-        :param batch_size: The batch_size of this FulfillmentProcess.  # noqa: E501
+        :param batch_max_size: The batch_max_size of this FulfillmentProcess.  # noqa: E501
         :type: int
         """
 
-        self._batch_size = batch_size
+        self._batch_max_size = batch_max_size
+
+    @property
+    def batch_min_size(self):
+        """Gets the batch_min_size of this FulfillmentProcess.  # noqa: E501
+
+
+        :return: The batch_min_size of this FulfillmentProcess.  # noqa: E501
+        :rtype: int
+        """
+        return self._batch_min_size
+
+    @batch_min_size.setter
+    def batch_min_size(self, batch_min_size):
+        """Sets the batch_min_size of this FulfillmentProcess.
+
+
+        :param batch_min_size: The batch_min_size of this FulfillmentProcess.  # noqa: E501
+        :type: int
+        """
+
+        self._batch_min_size = batch_min_size
 
     @property
     def version(self):
@@ -648,6 +679,27 @@ class FulfillmentProcess(object):
         """
 
         self._is_mass_distribution = is_mass_distribution
+
+    @property
+    def priority_code(self):
+        """Gets the priority_code of this FulfillmentProcess.  # noqa: E501
+
+
+        :return: The priority_code of this FulfillmentProcess.  # noqa: E501
+        :rtype: int
+        """
+        return self._priority_code
+
+    @priority_code.setter
+    def priority_code(self, priority_code):
+        """Sets the priority_code of this FulfillmentProcess.
+
+
+        :param priority_code: The priority_code of this FulfillmentProcess.  # noqa: E501
+        :type: int
+        """
+
+        self._priority_code = priority_code
 
     @property
     def number_of_orders(self):

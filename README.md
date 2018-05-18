@@ -705,6 +705,13 @@ Class | Method | HTTP request | Description
 *OrderSourceReservationApi* | [**get_order_source_reservation_tags**](docs/OrderSourceReservationApi.md#get_order_source_reservation_tags) | **GET** /beta/orderSourceReservation/{orderSourceReservationId}/tag | Get the tags for an orderSourceReservation.
 *OrderSourceReservationApi* | [**update_order_source_reservation**](docs/OrderSourceReservationApi.md#update_order_source_reservation) | **PUT** /beta/orderSourceReservation | Update an orderSourceReservation
 *OrderSourceReservationApi* | [**update_order_source_reservation_custom_fields**](docs/OrderSourceReservationApi.md#update_order_source_reservation_custom_fields) | **PUT** /beta/orderSourceReservation/customFields | Update an orderSourceReservation custom fields
+*OrderSourceStockStatusApi* | [**add_order_source_stock_status_audit**](docs/OrderSourceStockStatusApi.md#add_order_source_stock_status_audit) | **PUT** /beta/orderSourceStockStatus/{orderSourceStockStatusId}/audit/{orderSourceStockStatusAudit} | Add new audit for an orderSourceStockStatus
+*OrderSourceStockStatusApi* | [**add_order_source_stock_status_tag**](docs/OrderSourceStockStatusApi.md#add_order_source_stock_status_tag) | **PUT** /beta/orderSourceStockStatus/{orderSourceStockStatusId}/tag/{orderSourceStockStatusTag} | Add new tags for an orderSourceStockStatus.
+*OrderSourceStockStatusApi* | [**delete_order_source_stock_status_tag**](docs/OrderSourceStockStatusApi.md#delete_order_source_stock_status_tag) | **DELETE** /beta/orderSourceStockStatus/{orderSourceStockStatusId}/tag/{orderSourceStockStatusTag} | Delete a tag for an orderSourceStockStatus.
+*OrderSourceStockStatusApi* | [**get_duplicate_order_source_stock_status_by_id**](docs/OrderSourceStockStatusApi.md#get_duplicate_order_source_stock_status_by_id) | **GET** /beta/orderSourceStockStatus/duplicate/{orderSourceStockStatusId} | Get a duplicated an orderSourceStockStatus by id
+*OrderSourceStockStatusApi* | [**get_order_source_stock_status_by_filter**](docs/OrderSourceStockStatusApi.md#get_order_source_stock_status_by_filter) | **GET** /beta/orderSourceStockStatus/search | Search orderSourceStockStatuses by filter
+*OrderSourceStockStatusApi* | [**get_order_source_stock_status_by_id**](docs/OrderSourceStockStatusApi.md#get_order_source_stock_status_by_id) | **GET** /beta/orderSourceStockStatus/{orderSourceStockStatusId} | Get an orderSourceStockStatus by id
+*OrderSourceStockStatusApi* | [**get_order_source_stock_status_tags**](docs/OrderSourceStockStatusApi.md#get_order_source_stock_status_tags) | **GET** /beta/orderSourceStockStatus/{orderSourceStockStatusId}/tag | Get the tags for an orderSourceStockStatus.
 *OverrideReturnAddressApi* | [**add_override_return_address**](docs/OverrideReturnAddressApi.md#add_override_return_address) | **POST** /beta/overrideReturnAddress | Create an overrideReturnAddress
 *OverrideReturnAddressApi* | [**add_override_return_address_audit**](docs/OverrideReturnAddressApi.md#add_override_return_address_audit) | **PUT** /beta/overrideReturnAddress/{overrideReturnAddressId}/audit/{overrideReturnAddressAudit} | Add new audit for an overrideReturnAddress
 *OverrideReturnAddressApi* | [**add_override_return_address_tag**](docs/OverrideReturnAddressApi.md#add_override_return_address_tag) | **PUT** /beta/overrideReturnAddress/{overrideReturnAddressId}/tag/{overrideReturnAddressTag} | Add new tags for an overrideReturnAddress.
@@ -987,6 +994,7 @@ Class | Method | HTTP request | Description
 *WorkBatchApi* | [**get_work_batch_by_filter**](docs/WorkBatchApi.md#get_work_batch_by_filter) | **GET** /beta/workBatch/search | Search workBatchs by filter
 *WorkBatchApi* | [**get_work_batch_by_id**](docs/WorkBatchApi.md#get_work_batch_by_id) | **GET** /beta/workBatch/{workBatchId} | Get a workBatch by id
 *WorkBatchApi* | [**get_work_batch_tags**](docs/WorkBatchApi.md#get_work_batch_tags) | **GET** /beta/workBatch/{workBatchId}/tag | Get the tags for a workBatch.
+*WorkBatchApi* | [**update_work_batch**](docs/WorkBatchApi.md#update_work_batch) | **PUT** /beta/workBatch | Update a workBatch
 *WorkBatchApi* | [**update_work_batch_custom_fields**](docs/WorkBatchApi.md#update_work_batch_custom_fields) | **PUT** /beta/workBatch/customFields | Update a workBatch custom fields
 *ZoneApi* | [**add_zone**](docs/ZoneApi.md#add_zone) | **POST** /beta/zone | Create a zone
 *ZoneApi* | [**add_zone_audit**](docs/ZoneApi.md#add_zone_audit) | **PUT** /beta/zone/{zoneId}/audit/{zoneAudit} | Add new audit for a zone
@@ -1088,6 +1096,7 @@ Class | Method | HTTP request | Description
  - [OrderLoadProgram](docs/OrderLoadProgram.md)
  - [OrderSource](docs/OrderSource.md)
  - [OrderSourceReservation](docs/OrderSourceReservation.md)
+ - [OrderSourceStockStatus](docs/OrderSourceStockStatus.md)
  - [OrderWarehouseFulfillmentPlan](docs/OrderWarehouseFulfillmentPlan.md)
  - [OrderWarehouseFulfillmentPlanDetail](docs/OrderWarehouseFulfillmentPlanDetail.md)
  - [OrderWarehouseFulfillmentRawData](docs/OrderWarehouseFulfillmentRawData.md)
@@ -1119,6 +1128,7 @@ Class | Method | HTTP request | Description
  - [Shipment](docs/Shipment.md)
  - [ShoppingCartConnection](docs/ShoppingCartConnection.md)
  - [SlaSetup](docs/SlaSetup.md)
+ - [Store](docs/Store.md)
  - [Substitution](docs/Substitution.md)
  - [Supplement](docs/Supplement.md)
  - [ThirdPartyParcelAccount](docs/ThirdPartyParcelAccount.md)

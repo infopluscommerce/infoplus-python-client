@@ -100,6 +100,7 @@ from Infoplus.models.order_line_activity import OrderLineActivity
 from Infoplus.models.order_load_program import OrderLoadProgram
 from Infoplus.models.order_source import OrderSource
 from Infoplus.models.order_source_reservation import OrderSourceReservation
+from Infoplus.models.order_source_stock_status import OrderSourceStockStatus
 from Infoplus.models.order_warehouse_fulfillment_plan import OrderWarehouseFulfillmentPlan
 from Infoplus.models.order_warehouse_fulfillment_plan_detail import OrderWarehouseFulfillmentPlanDetail
 from Infoplus.models.order_warehouse_fulfillment_raw_data import OrderWarehouseFulfillmentRawData
@@ -131,6 +132,7 @@ from Infoplus.models.service_type import ServiceType
 from Infoplus.models.shipment import Shipment
 from Infoplus.models.shopping_cart_connection import ShoppingCartConnection
 from Infoplus.models.sla_setup import SlaSetup
+from Infoplus.models.store import Store
 from Infoplus.models.substitution import Substitution
 from Infoplus.models.supplement import Supplement
 from Infoplus.models.third_party_parcel_account import ThirdPartyParcelAccount

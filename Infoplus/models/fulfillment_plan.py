@@ -37,11 +37,13 @@ class FulfillmentPlan(object):
         'name': 'str',
         'description': 'str',
         'warehouse_id': 'int',
+        'priority_code': 'int',
         'last_run_time': 'datetime',
         'order_smart_filter_id': 'int',
         'location_smart_filter_id': 'int',
         'max_orders': 'int',
-        'batch_size': 'int',
+        'batch_size_max': 'int',
+        'batch_size_min': 'int',
         'version': 'str',
         'is_mass_distribution': 'bool',
         'create_pick_work': 'bool',
@@ -79,11 +81,13 @@ class FulfillmentPlan(object):
         'name': 'name',
         'description': 'description',
         'warehouse_id': 'warehouseId',
+        'priority_code': 'priorityCode',
         'last_run_time': 'lastRunTime',
         'order_smart_filter_id': 'orderSmartFilterId',
         'location_smart_filter_id': 'locationSmartFilterId',
         'max_orders': 'maxOrders',
-        'batch_size': 'batchSize',
+        'batch_size_max': 'batchSizeMax',
+        'batch_size_min': 'batchSizeMin',
         'version': 'version',
         'is_mass_distribution': 'isMassDistribution',
         'create_pick_work': 'createPickWork',
@@ -114,7 +118,7 @@ class FulfillmentPlan(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, create_date=None, modify_date=None, name=None, description=None, warehouse_id=None, last_run_time=None, order_smart_filter_id=None, location_smart_filter_id=None, max_orders=None, batch_size=None, version=None, is_mass_distribution=False, create_pick_work=False, picking_rule=None, layout_rule=None, pick_sort_rule=None, create_pick_list=False, pick_list_format=None, pick_list_layout=None, pick_list_group=None, pick_list_sort=None, create_pick_summary=False, pick_summary_format=None, pick_summary_layout=None, pick_summary_sort=None, pick_scan_scheme_id=None, cartonize_orders=False, auto_ship_casebreak_cartons=False, auto_ship_orders=False, pre_generate_parcel_labels=False, create_packing_slip=None, override_packing_slip_template_id=None, create_order_assembly_guide=False, create_order_invoice=None, override_order_invoice_template_id=None, send_to_external_shipping_system=False, external_shipping_system_id=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, create_date=None, modify_date=None, name=None, description=None, warehouse_id=None, priority_code=None, last_run_time=None, order_smart_filter_id=None, location_smart_filter_id=None, max_orders=None, batch_size_max=None, batch_size_min=None, version=None, is_mass_distribution=False, create_pick_work=False, picking_rule=None, layout_rule=None, pick_sort_rule=None, create_pick_list=False, pick_list_format=None, pick_list_layout=None, pick_list_group=None, pick_list_sort=None, create_pick_summary=False, pick_summary_format=None, pick_summary_layout=None, pick_summary_sort=None, pick_scan_scheme_id=None, cartonize_orders=False, auto_ship_casebreak_cartons=False, auto_ship_orders=False, pre_generate_parcel_labels=False, create_packing_slip=None, override_packing_slip_template_id=None, create_order_assembly_guide=False, create_order_invoice=None, override_order_invoice_template_id=None, send_to_external_shipping_system=False, external_shipping_system_id=None, custom_fields=None):  # noqa: E501
         """FulfillmentPlan - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -123,11 +127,13 @@ class FulfillmentPlan(object):
         self._name = None
         self._description = None
         self._warehouse_id = None
+        self._priority_code = None
         self._last_run_time = None
         self._order_smart_filter_id = None
         self._location_smart_filter_id = None
         self._max_orders = None
-        self._batch_size = None
+        self._batch_size_max = None
+        self._batch_size_min = None
         self._version = None
         self._is_mass_distribution = None
         self._create_pick_work = None
@@ -168,6 +174,8 @@ class FulfillmentPlan(object):
         if description is not None:
             self.description = description
         self.warehouse_id = warehouse_id
+        if priority_code is not None:
+            self.priority_code = priority_code
         if last_run_time is not None:
             self.last_run_time = last_run_time
         self.order_smart_filter_id = order_smart_filter_id
@@ -175,8 +183,10 @@ class FulfillmentPlan(object):
             self.location_smart_filter_id = location_smart_filter_id
         if max_orders is not None:
             self.max_orders = max_orders
-        if batch_size is not None:
-            self.batch_size = batch_size
+        if batch_size_max is not None:
+            self.batch_size_max = batch_size_max
+        if batch_size_min is not None:
+            self.batch_size_min = batch_size_min
         if version is not None:
             self.version = version
         if is_mass_distribution is not None:
@@ -359,6 +369,27 @@ class FulfillmentPlan(object):
         self._warehouse_id = warehouse_id
 
     @property
+    def priority_code(self):
+        """Gets the priority_code of this FulfillmentPlan.  # noqa: E501
+
+
+        :return: The priority_code of this FulfillmentPlan.  # noqa: E501
+        :rtype: int
+        """
+        return self._priority_code
+
+    @priority_code.setter
+    def priority_code(self, priority_code):
+        """Sets the priority_code of this FulfillmentPlan.
+
+
+        :param priority_code: The priority_code of this FulfillmentPlan.  # noqa: E501
+        :type: int
+        """
+
+        self._priority_code = priority_code
+
+    @property
     def last_run_time(self):
         """Gets the last_run_time of this FulfillmentPlan.  # noqa: E501
 
@@ -445,25 +476,46 @@ class FulfillmentPlan(object):
         self._max_orders = max_orders
 
     @property
-    def batch_size(self):
-        """Gets the batch_size of this FulfillmentPlan.  # noqa: E501
+    def batch_size_max(self):
+        """Gets the batch_size_max of this FulfillmentPlan.  # noqa: E501
 
 
-        :return: The batch_size of this FulfillmentPlan.  # noqa: E501
+        :return: The batch_size_max of this FulfillmentPlan.  # noqa: E501
         :rtype: int
         """
-        return self._batch_size
+        return self._batch_size_max
 
-    @batch_size.setter
-    def batch_size(self, batch_size):
-        """Sets the batch_size of this FulfillmentPlan.
+    @batch_size_max.setter
+    def batch_size_max(self, batch_size_max):
+        """Sets the batch_size_max of this FulfillmentPlan.
 
 
-        :param batch_size: The batch_size of this FulfillmentPlan.  # noqa: E501
+        :param batch_size_max: The batch_size_max of this FulfillmentPlan.  # noqa: E501
         :type: int
         """
 
-        self._batch_size = batch_size
+        self._batch_size_max = batch_size_max
+
+    @property
+    def batch_size_min(self):
+        """Gets the batch_size_min of this FulfillmentPlan.  # noqa: E501
+
+
+        :return: The batch_size_min of this FulfillmentPlan.  # noqa: E501
+        :rtype: int
+        """
+        return self._batch_size_min
+
+    @batch_size_min.setter
+    def batch_size_min(self, batch_size_min):
+        """Sets the batch_size_min of this FulfillmentPlan.
+
+
+        :param batch_size_min: The batch_size_min of this FulfillmentPlan.  # noqa: E501
+        :type: int
+        """
+
+        self._batch_size_min = batch_size_min
 
     @property
     def version(self):

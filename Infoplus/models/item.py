@@ -134,6 +134,33 @@ class Item(object):
         'orderable_quantity': 'int',
         'unallocatable_quantity': 'int',
         'unavailable_quantity': 'int',
+        'available_quantity_inner_packs': 'int',
+        'damaged_quantity_inner_packs': 'int',
+        'in_fulfillment_process_quantity_inner_packs': 'int',
+        'on_hand_quantity_inner_packs': 'int',
+        'open_order_quantity_inner_packs': 'int',
+        'open_po_quantity_inner_packs': 'int',
+        'orderable_quantity_inner_packs': 'int',
+        'unallocatable_quantity_inner_packs': 'int',
+        'unavailable_quantity_inner_packs': 'int',
+        'available_quantity_cases': 'int',
+        'damaged_quantity_cases': 'int',
+        'in_fulfillment_process_quantity_cases': 'int',
+        'on_hand_quantity_cases': 'int',
+        'open_order_quantity_cases': 'int',
+        'open_po_quantity_cases': 'int',
+        'orderable_quantity_cases': 'int',
+        'unallocatable_quantity_cases': 'int',
+        'unavailable_quantity_cases': 'int',
+        'available_quantity_pallets': 'int',
+        'damaged_quantity_pallets': 'int',
+        'in_fulfillment_process_quantity_pallets': 'int',
+        'on_hand_quantity_pallets': 'int',
+        'open_order_quantity_pallets': 'int',
+        'open_po_quantity_pallets': 'int',
+        'orderable_quantity_pallets': 'int',
+        'unallocatable_quantity_pallets': 'int',
+        'unavailable_quantity_pallets': 'int',
         'overall_days_on_hand': 'int',
         'overall_stock_status': 'str',
         'estimated_pallets': 'int',
@@ -261,6 +288,33 @@ class Item(object):
         'orderable_quantity': 'orderableQuantity',
         'unallocatable_quantity': 'unallocatableQuantity',
         'unavailable_quantity': 'unavailableQuantity',
+        'available_quantity_inner_packs': 'availableQuantityInnerPacks',
+        'damaged_quantity_inner_packs': 'damagedQuantityInnerPacks',
+        'in_fulfillment_process_quantity_inner_packs': 'inFulfillmentProcessQuantityInnerPacks',
+        'on_hand_quantity_inner_packs': 'onHandQuantityInnerPacks',
+        'open_order_quantity_inner_packs': 'openOrderQuantityInnerPacks',
+        'open_po_quantity_inner_packs': 'openPOQuantityInnerPacks',
+        'orderable_quantity_inner_packs': 'orderableQuantityInnerPacks',
+        'unallocatable_quantity_inner_packs': 'unallocatableQuantityInnerPacks',
+        'unavailable_quantity_inner_packs': 'unavailableQuantityInnerPacks',
+        'available_quantity_cases': 'availableQuantityCases',
+        'damaged_quantity_cases': 'damagedQuantityCases',
+        'in_fulfillment_process_quantity_cases': 'inFulfillmentProcessQuantityCases',
+        'on_hand_quantity_cases': 'onHandQuantityCases',
+        'open_order_quantity_cases': 'openOrderQuantityCases',
+        'open_po_quantity_cases': 'openPOQuantityCases',
+        'orderable_quantity_cases': 'orderableQuantityCases',
+        'unallocatable_quantity_cases': 'unallocatableQuantityCases',
+        'unavailable_quantity_cases': 'unavailableQuantityCases',
+        'available_quantity_pallets': 'availableQuantityPallets',
+        'damaged_quantity_pallets': 'damagedQuantityPallets',
+        'in_fulfillment_process_quantity_pallets': 'inFulfillmentProcessQuantityPallets',
+        'on_hand_quantity_pallets': 'onHandQuantityPallets',
+        'open_order_quantity_pallets': 'openOrderQuantityPallets',
+        'open_po_quantity_pallets': 'openPOQuantityPallets',
+        'orderable_quantity_pallets': 'orderableQuantityPallets',
+        'unallocatable_quantity_pallets': 'unallocatableQuantityPallets',
+        'unavailable_quantity_pallets': 'unavailableQuantityPallets',
         'overall_days_on_hand': 'overallDaysOnHand',
         'overall_stock_status': 'overallStockStatus',
         'estimated_pallets': 'estimatedPallets',
@@ -284,7 +338,7 @@ class Item(object):
         'custom_fields': 'customFields'
     }
 
-    def __init__(self, id=None, account_code_id=None, low_stock_contact_id=None, legacy_low_level_contact_id=None, low_stock_code_id=None, major_group_id=None, sub_group_id=None, product_code_id=None, summary_code_id=None, buyer_id=None, lob_id=None, sku=None, vendor_sku=None, upc=None, item_description=None, packing_slip_description=None, absolute_max=None, additional_description=None, backorder=None, charge_code=None, commodity_code=None, comp_code=None, create_date=None, critical_amount=None, overall_fixed_reorder_point=None, overall_lead_time=None, sell_price=None, pricing_per=None, lot_control_flag=None, max_cycle=None, max_interim=None, numeric_sort_order=None, outside_vendor_id=None, pick_no=None, pod_order_suffix=None, pod_rev_date=None, status=None, seasonal_item=None, requires_production_lot=None, sector=None, secure=None, serial_code=None, unit_code=None, units_per_wrap=None, weight_per_wrap=None, quantity_per_inner_pack=None, quantity_per_case=None, quantity_per_pallet=None, void_date=None, wrap_code=None, extrinsic_text1=None, extrinsic_text2=None, extrinsic_text3=None, extrinsic_number1=None, extrinsic_number2=None, extrinsic_decimal1=None, extrinsic_decimal2=None, casebreak_enabled=None, vendor_id=None, vendor_price=None, vendor_per=None, modify_date=None, primary_image=None, pick_image=None, behavior_type=None, forward_lot_mixing_rule=None, storage_lot_mixing_rule=None, forward_item_mixing_rule=None, storage_item_mixing_rule=None, allocation_rule=None, barcode_field=None, warehouse_display_field=None, product_id_tag_scheme_id=None, item_serial_scheme_id=None, hazmat=None, is_alcohol=False, alcohol_type=None, alcohol_content=None, alcohol_container=None, alcohol_vintage_year=None, alcohol_country=None, alcohol_state=None, alcohol_region=None, alcohol_brand=None, alcohol_upc_code=None, alcohol_nambca_code=None, alcohol_unimerc_code=None, alcohol_scc_code=None, length=None, width=None, height=None, top_up=False, ship_solo=False, inventory_update_timestamp=None, available_quantity=None, damaged_quantity=None, in_fulfillment_process_quantity=None, on_hand_quantity=None, open_order_quantity=None, open_po_quantity=None, orderable_quantity=None, unallocatable_quantity=None, unavailable_quantity=None, overall_days_on_hand=None, overall_stock_status=None, estimated_pallets=None, estimated_cases=None, estimated_inner_packs=None, w1_estimated_pallets=None, w1_estimated_cases=None, w1_estimated_inner_packs=None, w2_estimated_pallets=None, w2_estimated_cases=None, w2_estimated_inner_packs=None, w3_estimated_pallets=None, w3_estimated_cases=None, w3_estimated_inner_packs=None, w4_estimated_pallets=None, w4_estimated_cases=None, w4_estimated_inner_packs=None, w5_estimated_pallets=None, w5_estimated_cases=None, w5_estimated_inner_packs=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, account_code_id=None, low_stock_contact_id=None, legacy_low_level_contact_id=None, low_stock_code_id=None, major_group_id=None, sub_group_id=None, product_code_id=None, summary_code_id=None, buyer_id=None, lob_id=None, sku=None, vendor_sku=None, upc=None, item_description=None, packing_slip_description=None, absolute_max=None, additional_description=None, backorder=None, charge_code=None, commodity_code=None, comp_code=None, create_date=None, critical_amount=None, overall_fixed_reorder_point=None, overall_lead_time=None, sell_price=None, pricing_per=None, lot_control_flag=None, max_cycle=None, max_interim=None, numeric_sort_order=None, outside_vendor_id=None, pick_no=None, pod_order_suffix=None, pod_rev_date=None, status=None, seasonal_item=None, requires_production_lot=None, sector=None, secure=None, serial_code=None, unit_code=None, units_per_wrap=None, weight_per_wrap=None, quantity_per_inner_pack=None, quantity_per_case=None, quantity_per_pallet=None, void_date=None, wrap_code=None, extrinsic_text1=None, extrinsic_text2=None, extrinsic_text3=None, extrinsic_number1=None, extrinsic_number2=None, extrinsic_decimal1=None, extrinsic_decimal2=None, casebreak_enabled=None, vendor_id=None, vendor_price=None, vendor_per=None, modify_date=None, primary_image=None, pick_image=None, behavior_type=None, forward_lot_mixing_rule=None, storage_lot_mixing_rule=None, forward_item_mixing_rule=None, storage_item_mixing_rule=None, allocation_rule=None, barcode_field=None, warehouse_display_field=None, product_id_tag_scheme_id=None, item_serial_scheme_id=None, hazmat=None, is_alcohol=False, alcohol_type=None, alcohol_content=None, alcohol_container=None, alcohol_vintage_year=None, alcohol_country=None, alcohol_state=None, alcohol_region=None, alcohol_brand=None, alcohol_upc_code=None, alcohol_nambca_code=None, alcohol_unimerc_code=None, alcohol_scc_code=None, length=None, width=None, height=None, top_up=False, ship_solo=False, inventory_update_timestamp=None, available_quantity=None, damaged_quantity=None, in_fulfillment_process_quantity=None, on_hand_quantity=None, open_order_quantity=None, open_po_quantity=None, orderable_quantity=None, unallocatable_quantity=None, unavailable_quantity=None, available_quantity_inner_packs=None, damaged_quantity_inner_packs=None, in_fulfillment_process_quantity_inner_packs=None, on_hand_quantity_inner_packs=None, open_order_quantity_inner_packs=None, open_po_quantity_inner_packs=None, orderable_quantity_inner_packs=None, unallocatable_quantity_inner_packs=None, unavailable_quantity_inner_packs=None, available_quantity_cases=None, damaged_quantity_cases=None, in_fulfillment_process_quantity_cases=None, on_hand_quantity_cases=None, open_order_quantity_cases=None, open_po_quantity_cases=None, orderable_quantity_cases=None, unallocatable_quantity_cases=None, unavailable_quantity_cases=None, available_quantity_pallets=None, damaged_quantity_pallets=None, in_fulfillment_process_quantity_pallets=None, on_hand_quantity_pallets=None, open_order_quantity_pallets=None, open_po_quantity_pallets=None, orderable_quantity_pallets=None, unallocatable_quantity_pallets=None, unavailable_quantity_pallets=None, overall_days_on_hand=None, overall_stock_status=None, estimated_pallets=None, estimated_cases=None, estimated_inner_packs=None, w1_estimated_pallets=None, w1_estimated_cases=None, w1_estimated_inner_packs=None, w2_estimated_pallets=None, w2_estimated_cases=None, w2_estimated_inner_packs=None, w3_estimated_pallets=None, w3_estimated_cases=None, w3_estimated_inner_packs=None, w4_estimated_pallets=None, w4_estimated_cases=None, w4_estimated_inner_packs=None, w5_estimated_pallets=None, w5_estimated_cases=None, w5_estimated_inner_packs=None, custom_fields=None):  # noqa: E501
         """Item - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -390,6 +444,33 @@ class Item(object):
         self._orderable_quantity = None
         self._unallocatable_quantity = None
         self._unavailable_quantity = None
+        self._available_quantity_inner_packs = None
+        self._damaged_quantity_inner_packs = None
+        self._in_fulfillment_process_quantity_inner_packs = None
+        self._on_hand_quantity_inner_packs = None
+        self._open_order_quantity_inner_packs = None
+        self._open_po_quantity_inner_packs = None
+        self._orderable_quantity_inner_packs = None
+        self._unallocatable_quantity_inner_packs = None
+        self._unavailable_quantity_inner_packs = None
+        self._available_quantity_cases = None
+        self._damaged_quantity_cases = None
+        self._in_fulfillment_process_quantity_cases = None
+        self._on_hand_quantity_cases = None
+        self._open_order_quantity_cases = None
+        self._open_po_quantity_cases = None
+        self._orderable_quantity_cases = None
+        self._unallocatable_quantity_cases = None
+        self._unavailable_quantity_cases = None
+        self._available_quantity_pallets = None
+        self._damaged_quantity_pallets = None
+        self._in_fulfillment_process_quantity_pallets = None
+        self._on_hand_quantity_pallets = None
+        self._open_order_quantity_pallets = None
+        self._open_po_quantity_pallets = None
+        self._orderable_quantity_pallets = None
+        self._unallocatable_quantity_pallets = None
+        self._unavailable_quantity_pallets = None
         self._overall_days_on_hand = None
         self._overall_stock_status = None
         self._estimated_pallets = None
@@ -599,6 +680,60 @@ class Item(object):
             self.unallocatable_quantity = unallocatable_quantity
         if unavailable_quantity is not None:
             self.unavailable_quantity = unavailable_quantity
+        if available_quantity_inner_packs is not None:
+            self.available_quantity_inner_packs = available_quantity_inner_packs
+        if damaged_quantity_inner_packs is not None:
+            self.damaged_quantity_inner_packs = damaged_quantity_inner_packs
+        if in_fulfillment_process_quantity_inner_packs is not None:
+            self.in_fulfillment_process_quantity_inner_packs = in_fulfillment_process_quantity_inner_packs
+        if on_hand_quantity_inner_packs is not None:
+            self.on_hand_quantity_inner_packs = on_hand_quantity_inner_packs
+        if open_order_quantity_inner_packs is not None:
+            self.open_order_quantity_inner_packs = open_order_quantity_inner_packs
+        if open_po_quantity_inner_packs is not None:
+            self.open_po_quantity_inner_packs = open_po_quantity_inner_packs
+        if orderable_quantity_inner_packs is not None:
+            self.orderable_quantity_inner_packs = orderable_quantity_inner_packs
+        if unallocatable_quantity_inner_packs is not None:
+            self.unallocatable_quantity_inner_packs = unallocatable_quantity_inner_packs
+        if unavailable_quantity_inner_packs is not None:
+            self.unavailable_quantity_inner_packs = unavailable_quantity_inner_packs
+        if available_quantity_cases is not None:
+            self.available_quantity_cases = available_quantity_cases
+        if damaged_quantity_cases is not None:
+            self.damaged_quantity_cases = damaged_quantity_cases
+        if in_fulfillment_process_quantity_cases is not None:
+            self.in_fulfillment_process_quantity_cases = in_fulfillment_process_quantity_cases
+        if on_hand_quantity_cases is not None:
+            self.on_hand_quantity_cases = on_hand_quantity_cases
+        if open_order_quantity_cases is not None:
+            self.open_order_quantity_cases = open_order_quantity_cases
+        if open_po_quantity_cases is not None:
+            self.open_po_quantity_cases = open_po_quantity_cases
+        if orderable_quantity_cases is not None:
+            self.orderable_quantity_cases = orderable_quantity_cases
+        if unallocatable_quantity_cases is not None:
+            self.unallocatable_quantity_cases = unallocatable_quantity_cases
+        if unavailable_quantity_cases is not None:
+            self.unavailable_quantity_cases = unavailable_quantity_cases
+        if available_quantity_pallets is not None:
+            self.available_quantity_pallets = available_quantity_pallets
+        if damaged_quantity_pallets is not None:
+            self.damaged_quantity_pallets = damaged_quantity_pallets
+        if in_fulfillment_process_quantity_pallets is not None:
+            self.in_fulfillment_process_quantity_pallets = in_fulfillment_process_quantity_pallets
+        if on_hand_quantity_pallets is not None:
+            self.on_hand_quantity_pallets = on_hand_quantity_pallets
+        if open_order_quantity_pallets is not None:
+            self.open_order_quantity_pallets = open_order_quantity_pallets
+        if open_po_quantity_pallets is not None:
+            self.open_po_quantity_pallets = open_po_quantity_pallets
+        if orderable_quantity_pallets is not None:
+            self.orderable_quantity_pallets = orderable_quantity_pallets
+        if unallocatable_quantity_pallets is not None:
+            self.unallocatable_quantity_pallets = unallocatable_quantity_pallets
+        if unavailable_quantity_pallets is not None:
+            self.unavailable_quantity_pallets = unavailable_quantity_pallets
         if overall_days_on_hand is not None:
             self.overall_days_on_hand = overall_days_on_hand
         if overall_stock_status is not None:
@@ -2844,6 +2979,573 @@ class Item(object):
         """
 
         self._unavailable_quantity = unavailable_quantity
+
+    @property
+    def available_quantity_inner_packs(self):
+        """Gets the available_quantity_inner_packs of this Item.  # noqa: E501
+
+
+        :return: The available_quantity_inner_packs of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._available_quantity_inner_packs
+
+    @available_quantity_inner_packs.setter
+    def available_quantity_inner_packs(self, available_quantity_inner_packs):
+        """Sets the available_quantity_inner_packs of this Item.
+
+
+        :param available_quantity_inner_packs: The available_quantity_inner_packs of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._available_quantity_inner_packs = available_quantity_inner_packs
+
+    @property
+    def damaged_quantity_inner_packs(self):
+        """Gets the damaged_quantity_inner_packs of this Item.  # noqa: E501
+
+
+        :return: The damaged_quantity_inner_packs of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._damaged_quantity_inner_packs
+
+    @damaged_quantity_inner_packs.setter
+    def damaged_quantity_inner_packs(self, damaged_quantity_inner_packs):
+        """Sets the damaged_quantity_inner_packs of this Item.
+
+
+        :param damaged_quantity_inner_packs: The damaged_quantity_inner_packs of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._damaged_quantity_inner_packs = damaged_quantity_inner_packs
+
+    @property
+    def in_fulfillment_process_quantity_inner_packs(self):
+        """Gets the in_fulfillment_process_quantity_inner_packs of this Item.  # noqa: E501
+
+
+        :return: The in_fulfillment_process_quantity_inner_packs of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._in_fulfillment_process_quantity_inner_packs
+
+    @in_fulfillment_process_quantity_inner_packs.setter
+    def in_fulfillment_process_quantity_inner_packs(self, in_fulfillment_process_quantity_inner_packs):
+        """Sets the in_fulfillment_process_quantity_inner_packs of this Item.
+
+
+        :param in_fulfillment_process_quantity_inner_packs: The in_fulfillment_process_quantity_inner_packs of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._in_fulfillment_process_quantity_inner_packs = in_fulfillment_process_quantity_inner_packs
+
+    @property
+    def on_hand_quantity_inner_packs(self):
+        """Gets the on_hand_quantity_inner_packs of this Item.  # noqa: E501
+
+
+        :return: The on_hand_quantity_inner_packs of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._on_hand_quantity_inner_packs
+
+    @on_hand_quantity_inner_packs.setter
+    def on_hand_quantity_inner_packs(self, on_hand_quantity_inner_packs):
+        """Sets the on_hand_quantity_inner_packs of this Item.
+
+
+        :param on_hand_quantity_inner_packs: The on_hand_quantity_inner_packs of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._on_hand_quantity_inner_packs = on_hand_quantity_inner_packs
+
+    @property
+    def open_order_quantity_inner_packs(self):
+        """Gets the open_order_quantity_inner_packs of this Item.  # noqa: E501
+
+
+        :return: The open_order_quantity_inner_packs of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._open_order_quantity_inner_packs
+
+    @open_order_quantity_inner_packs.setter
+    def open_order_quantity_inner_packs(self, open_order_quantity_inner_packs):
+        """Sets the open_order_quantity_inner_packs of this Item.
+
+
+        :param open_order_quantity_inner_packs: The open_order_quantity_inner_packs of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._open_order_quantity_inner_packs = open_order_quantity_inner_packs
+
+    @property
+    def open_po_quantity_inner_packs(self):
+        """Gets the open_po_quantity_inner_packs of this Item.  # noqa: E501
+
+
+        :return: The open_po_quantity_inner_packs of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._open_po_quantity_inner_packs
+
+    @open_po_quantity_inner_packs.setter
+    def open_po_quantity_inner_packs(self, open_po_quantity_inner_packs):
+        """Sets the open_po_quantity_inner_packs of this Item.
+
+
+        :param open_po_quantity_inner_packs: The open_po_quantity_inner_packs of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._open_po_quantity_inner_packs = open_po_quantity_inner_packs
+
+    @property
+    def orderable_quantity_inner_packs(self):
+        """Gets the orderable_quantity_inner_packs of this Item.  # noqa: E501
+
+
+        :return: The orderable_quantity_inner_packs of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._orderable_quantity_inner_packs
+
+    @orderable_quantity_inner_packs.setter
+    def orderable_quantity_inner_packs(self, orderable_quantity_inner_packs):
+        """Sets the orderable_quantity_inner_packs of this Item.
+
+
+        :param orderable_quantity_inner_packs: The orderable_quantity_inner_packs of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._orderable_quantity_inner_packs = orderable_quantity_inner_packs
+
+    @property
+    def unallocatable_quantity_inner_packs(self):
+        """Gets the unallocatable_quantity_inner_packs of this Item.  # noqa: E501
+
+
+        :return: The unallocatable_quantity_inner_packs of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._unallocatable_quantity_inner_packs
+
+    @unallocatable_quantity_inner_packs.setter
+    def unallocatable_quantity_inner_packs(self, unallocatable_quantity_inner_packs):
+        """Sets the unallocatable_quantity_inner_packs of this Item.
+
+
+        :param unallocatable_quantity_inner_packs: The unallocatable_quantity_inner_packs of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._unallocatable_quantity_inner_packs = unallocatable_quantity_inner_packs
+
+    @property
+    def unavailable_quantity_inner_packs(self):
+        """Gets the unavailable_quantity_inner_packs of this Item.  # noqa: E501
+
+
+        :return: The unavailable_quantity_inner_packs of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._unavailable_quantity_inner_packs
+
+    @unavailable_quantity_inner_packs.setter
+    def unavailable_quantity_inner_packs(self, unavailable_quantity_inner_packs):
+        """Sets the unavailable_quantity_inner_packs of this Item.
+
+
+        :param unavailable_quantity_inner_packs: The unavailable_quantity_inner_packs of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._unavailable_quantity_inner_packs = unavailable_quantity_inner_packs
+
+    @property
+    def available_quantity_cases(self):
+        """Gets the available_quantity_cases of this Item.  # noqa: E501
+
+
+        :return: The available_quantity_cases of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._available_quantity_cases
+
+    @available_quantity_cases.setter
+    def available_quantity_cases(self, available_quantity_cases):
+        """Sets the available_quantity_cases of this Item.
+
+
+        :param available_quantity_cases: The available_quantity_cases of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._available_quantity_cases = available_quantity_cases
+
+    @property
+    def damaged_quantity_cases(self):
+        """Gets the damaged_quantity_cases of this Item.  # noqa: E501
+
+
+        :return: The damaged_quantity_cases of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._damaged_quantity_cases
+
+    @damaged_quantity_cases.setter
+    def damaged_quantity_cases(self, damaged_quantity_cases):
+        """Sets the damaged_quantity_cases of this Item.
+
+
+        :param damaged_quantity_cases: The damaged_quantity_cases of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._damaged_quantity_cases = damaged_quantity_cases
+
+    @property
+    def in_fulfillment_process_quantity_cases(self):
+        """Gets the in_fulfillment_process_quantity_cases of this Item.  # noqa: E501
+
+
+        :return: The in_fulfillment_process_quantity_cases of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._in_fulfillment_process_quantity_cases
+
+    @in_fulfillment_process_quantity_cases.setter
+    def in_fulfillment_process_quantity_cases(self, in_fulfillment_process_quantity_cases):
+        """Sets the in_fulfillment_process_quantity_cases of this Item.
+
+
+        :param in_fulfillment_process_quantity_cases: The in_fulfillment_process_quantity_cases of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._in_fulfillment_process_quantity_cases = in_fulfillment_process_quantity_cases
+
+    @property
+    def on_hand_quantity_cases(self):
+        """Gets the on_hand_quantity_cases of this Item.  # noqa: E501
+
+
+        :return: The on_hand_quantity_cases of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._on_hand_quantity_cases
+
+    @on_hand_quantity_cases.setter
+    def on_hand_quantity_cases(self, on_hand_quantity_cases):
+        """Sets the on_hand_quantity_cases of this Item.
+
+
+        :param on_hand_quantity_cases: The on_hand_quantity_cases of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._on_hand_quantity_cases = on_hand_quantity_cases
+
+    @property
+    def open_order_quantity_cases(self):
+        """Gets the open_order_quantity_cases of this Item.  # noqa: E501
+
+
+        :return: The open_order_quantity_cases of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._open_order_quantity_cases
+
+    @open_order_quantity_cases.setter
+    def open_order_quantity_cases(self, open_order_quantity_cases):
+        """Sets the open_order_quantity_cases of this Item.
+
+
+        :param open_order_quantity_cases: The open_order_quantity_cases of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._open_order_quantity_cases = open_order_quantity_cases
+
+    @property
+    def open_po_quantity_cases(self):
+        """Gets the open_po_quantity_cases of this Item.  # noqa: E501
+
+
+        :return: The open_po_quantity_cases of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._open_po_quantity_cases
+
+    @open_po_quantity_cases.setter
+    def open_po_quantity_cases(self, open_po_quantity_cases):
+        """Sets the open_po_quantity_cases of this Item.
+
+
+        :param open_po_quantity_cases: The open_po_quantity_cases of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._open_po_quantity_cases = open_po_quantity_cases
+
+    @property
+    def orderable_quantity_cases(self):
+        """Gets the orderable_quantity_cases of this Item.  # noqa: E501
+
+
+        :return: The orderable_quantity_cases of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._orderable_quantity_cases
+
+    @orderable_quantity_cases.setter
+    def orderable_quantity_cases(self, orderable_quantity_cases):
+        """Sets the orderable_quantity_cases of this Item.
+
+
+        :param orderable_quantity_cases: The orderable_quantity_cases of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._orderable_quantity_cases = orderable_quantity_cases
+
+    @property
+    def unallocatable_quantity_cases(self):
+        """Gets the unallocatable_quantity_cases of this Item.  # noqa: E501
+
+
+        :return: The unallocatable_quantity_cases of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._unallocatable_quantity_cases
+
+    @unallocatable_quantity_cases.setter
+    def unallocatable_quantity_cases(self, unallocatable_quantity_cases):
+        """Sets the unallocatable_quantity_cases of this Item.
+
+
+        :param unallocatable_quantity_cases: The unallocatable_quantity_cases of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._unallocatable_quantity_cases = unallocatable_quantity_cases
+
+    @property
+    def unavailable_quantity_cases(self):
+        """Gets the unavailable_quantity_cases of this Item.  # noqa: E501
+
+
+        :return: The unavailable_quantity_cases of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._unavailable_quantity_cases
+
+    @unavailable_quantity_cases.setter
+    def unavailable_quantity_cases(self, unavailable_quantity_cases):
+        """Sets the unavailable_quantity_cases of this Item.
+
+
+        :param unavailable_quantity_cases: The unavailable_quantity_cases of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._unavailable_quantity_cases = unavailable_quantity_cases
+
+    @property
+    def available_quantity_pallets(self):
+        """Gets the available_quantity_pallets of this Item.  # noqa: E501
+
+
+        :return: The available_quantity_pallets of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._available_quantity_pallets
+
+    @available_quantity_pallets.setter
+    def available_quantity_pallets(self, available_quantity_pallets):
+        """Sets the available_quantity_pallets of this Item.
+
+
+        :param available_quantity_pallets: The available_quantity_pallets of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._available_quantity_pallets = available_quantity_pallets
+
+    @property
+    def damaged_quantity_pallets(self):
+        """Gets the damaged_quantity_pallets of this Item.  # noqa: E501
+
+
+        :return: The damaged_quantity_pallets of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._damaged_quantity_pallets
+
+    @damaged_quantity_pallets.setter
+    def damaged_quantity_pallets(self, damaged_quantity_pallets):
+        """Sets the damaged_quantity_pallets of this Item.
+
+
+        :param damaged_quantity_pallets: The damaged_quantity_pallets of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._damaged_quantity_pallets = damaged_quantity_pallets
+
+    @property
+    def in_fulfillment_process_quantity_pallets(self):
+        """Gets the in_fulfillment_process_quantity_pallets of this Item.  # noqa: E501
+
+
+        :return: The in_fulfillment_process_quantity_pallets of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._in_fulfillment_process_quantity_pallets
+
+    @in_fulfillment_process_quantity_pallets.setter
+    def in_fulfillment_process_quantity_pallets(self, in_fulfillment_process_quantity_pallets):
+        """Sets the in_fulfillment_process_quantity_pallets of this Item.
+
+
+        :param in_fulfillment_process_quantity_pallets: The in_fulfillment_process_quantity_pallets of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._in_fulfillment_process_quantity_pallets = in_fulfillment_process_quantity_pallets
+
+    @property
+    def on_hand_quantity_pallets(self):
+        """Gets the on_hand_quantity_pallets of this Item.  # noqa: E501
+
+
+        :return: The on_hand_quantity_pallets of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._on_hand_quantity_pallets
+
+    @on_hand_quantity_pallets.setter
+    def on_hand_quantity_pallets(self, on_hand_quantity_pallets):
+        """Sets the on_hand_quantity_pallets of this Item.
+
+
+        :param on_hand_quantity_pallets: The on_hand_quantity_pallets of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._on_hand_quantity_pallets = on_hand_quantity_pallets
+
+    @property
+    def open_order_quantity_pallets(self):
+        """Gets the open_order_quantity_pallets of this Item.  # noqa: E501
+
+
+        :return: The open_order_quantity_pallets of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._open_order_quantity_pallets
+
+    @open_order_quantity_pallets.setter
+    def open_order_quantity_pallets(self, open_order_quantity_pallets):
+        """Sets the open_order_quantity_pallets of this Item.
+
+
+        :param open_order_quantity_pallets: The open_order_quantity_pallets of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._open_order_quantity_pallets = open_order_quantity_pallets
+
+    @property
+    def open_po_quantity_pallets(self):
+        """Gets the open_po_quantity_pallets of this Item.  # noqa: E501
+
+
+        :return: The open_po_quantity_pallets of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._open_po_quantity_pallets
+
+    @open_po_quantity_pallets.setter
+    def open_po_quantity_pallets(self, open_po_quantity_pallets):
+        """Sets the open_po_quantity_pallets of this Item.
+
+
+        :param open_po_quantity_pallets: The open_po_quantity_pallets of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._open_po_quantity_pallets = open_po_quantity_pallets
+
+    @property
+    def orderable_quantity_pallets(self):
+        """Gets the orderable_quantity_pallets of this Item.  # noqa: E501
+
+
+        :return: The orderable_quantity_pallets of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._orderable_quantity_pallets
+
+    @orderable_quantity_pallets.setter
+    def orderable_quantity_pallets(self, orderable_quantity_pallets):
+        """Sets the orderable_quantity_pallets of this Item.
+
+
+        :param orderable_quantity_pallets: The orderable_quantity_pallets of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._orderable_quantity_pallets = orderable_quantity_pallets
+
+    @property
+    def unallocatable_quantity_pallets(self):
+        """Gets the unallocatable_quantity_pallets of this Item.  # noqa: E501
+
+
+        :return: The unallocatable_quantity_pallets of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._unallocatable_quantity_pallets
+
+    @unallocatable_quantity_pallets.setter
+    def unallocatable_quantity_pallets(self, unallocatable_quantity_pallets):
+        """Sets the unallocatable_quantity_pallets of this Item.
+
+
+        :param unallocatable_quantity_pallets: The unallocatable_quantity_pallets of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._unallocatable_quantity_pallets = unallocatable_quantity_pallets
+
+    @property
+    def unavailable_quantity_pallets(self):
+        """Gets the unavailable_quantity_pallets of this Item.  # noqa: E501
+
+
+        :return: The unavailable_quantity_pallets of this Item.  # noqa: E501
+        :rtype: int
+        """
+        return self._unavailable_quantity_pallets
+
+    @unavailable_quantity_pallets.setter
+    def unavailable_quantity_pallets(self, unavailable_quantity_pallets):
+        """Sets the unavailable_quantity_pallets of this Item.
+
+
+        :param unavailable_quantity_pallets: The unavailable_quantity_pallets of this Item.  # noqa: E501
+        :type: int
+        """
+
+        self._unavailable_quantity_pallets = unavailable_quantity_pallets
 
     @property
     def overall_days_on_hand(self):

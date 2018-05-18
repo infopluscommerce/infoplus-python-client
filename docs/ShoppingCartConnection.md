@@ -33,6 +33,8 @@ Name | Type | Description | Notes
 **sync_orders_last_run_time** | **datetime** |  | [optional] 
 **inventory_level_warehouse_controls** | **str** |  | 
 **warehouse_list** | [**list[Warehouse]**](Warehouse.md) |  | [optional] 
+**inventory_level_store_controls** | **str** |  | 
+**store_list** | [**list[Store]**](Store.md) |  | [optional] 
 **custom_fields** | **dict(str, object)** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
