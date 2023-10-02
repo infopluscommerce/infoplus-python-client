@@ -38,11 +38,11 @@ class ReportApi(object):
 
         Run a specified report  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.run_report(report_id, format, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.run_report(report_id, format, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int report_id: Id of the report to run. (required)
         :param str format: Format of the report. (required)
         :return: None
@@ -50,7 +50,7 @@ class ReportApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.run_report_with_http_info(report_id, format, **kwargs)  # noqa: E501
         else:
             (data) = self.run_report_with_http_info(report_id, format, **kwargs)  # noqa: E501
@@ -61,11 +61,11 @@ class ReportApi(object):
 
         Run a specified report  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.run_report_with_http_info(report_id, format, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.run_report_with_http_info(report_id, format, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int report_id: Id of the report to run. (required)
         :param str format: Format of the report. (required)
         :return: None
@@ -74,7 +74,7 @@ class ReportApi(object):
         """
 
         all_params = ['report_id', 'format']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -130,7 +130,7 @@ class ReportApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

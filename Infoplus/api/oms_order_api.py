@@ -38,18 +38,18 @@ class OmsOrderApi(object):
 
         Inserts a new omsOrder using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_oms_order(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_oms_order(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param OmsOrder body: OmsOrder to be inserted. (required)
         :return: OmsOrder
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_oms_order_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.add_oms_order_with_http_info(body, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class OmsOrderApi(object):
 
         Inserts a new omsOrder using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_oms_order_with_http_info(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_oms_order_with_http_info(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param OmsOrder body: OmsOrder to be inserted. (required)
         :return: OmsOrder
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class OmsOrderApi(object):
         """
 
         all_params = ['body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class OmsOrderApi(object):
             files=local_var_files,
             response_type='OmsOrder',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,11 +137,11 @@ class OmsOrderApi(object):
 
         Adds an audit to an existing omsOrder.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_oms_order_audit(oms_order_id, oms_order_audit, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_oms_order_audit(oms_order_id, oms_order_audit, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to add an audit to (required)
         :param str oms_order_audit: The audit to add (required)
         :return: None
@@ -149,7 +149,7 @@ class OmsOrderApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_oms_order_audit_with_http_info(oms_order_id, oms_order_audit, **kwargs)  # noqa: E501
         else:
             (data) = self.add_oms_order_audit_with_http_info(oms_order_id, oms_order_audit, **kwargs)  # noqa: E501
@@ -160,11 +160,11 @@ class OmsOrderApi(object):
 
         Adds an audit to an existing omsOrder.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_oms_order_audit_with_http_info(oms_order_id, oms_order_audit, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_oms_order_audit_with_http_info(oms_order_id, oms_order_audit, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to add an audit to (required)
         :param str oms_order_audit: The audit to add (required)
         :return: None
@@ -173,7 +173,7 @@ class OmsOrderApi(object):
         """
 
         all_params = ['oms_order_id', 'oms_order_audit']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -233,7 +233,7 @@ class OmsOrderApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -244,11 +244,11 @@ class OmsOrderApi(object):
 
         Adds a file to an existing omsOrder.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_oms_order_file(oms_order_id, file_name, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_oms_order_file(oms_order_id, file_name, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to add a file to (required)
         :param str file_name: Name of file (required)
         :return: None
@@ -256,7 +256,7 @@ class OmsOrderApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_oms_order_file_with_http_info(oms_order_id, file_name, **kwargs)  # noqa: E501
         else:
             (data) = self.add_oms_order_file_with_http_info(oms_order_id, file_name, **kwargs)  # noqa: E501
@@ -267,11 +267,11 @@ class OmsOrderApi(object):
 
         Adds a file to an existing omsOrder.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_oms_order_file_with_http_info(oms_order_id, file_name, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_oms_order_file_with_http_info(oms_order_id, file_name, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to add a file to (required)
         :param str file_name: Name of file (required)
         :return: None
@@ -280,7 +280,7 @@ class OmsOrderApi(object):
         """
 
         all_params = ['oms_order_id', 'file_name']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -336,7 +336,7 @@ class OmsOrderApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -347,11 +347,11 @@ class OmsOrderApi(object):
 
         Adds a file to an existing omsOrder by URL.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_oms_order_file_by_url(body, oms_order_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_oms_order_file_by_url(body, oms_order_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param RecordFile body: The url and optionly fileName to be used. (required)
         :param int oms_order_id: Id of the omsOrder to add an file to (required)
         :return: None
@@ -359,7 +359,7 @@ class OmsOrderApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_oms_order_file_by_url_with_http_info(body, oms_order_id, **kwargs)  # noqa: E501
         else:
             (data) = self.add_oms_order_file_by_url_with_http_info(body, oms_order_id, **kwargs)  # noqa: E501
@@ -370,11 +370,11 @@ class OmsOrderApi(object):
 
         Adds a file to an existing omsOrder by URL.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_oms_order_file_by_url_with_http_info(body, oms_order_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_oms_order_file_by_url_with_http_info(body, oms_order_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param RecordFile body: The url and optionly fileName to be used. (required)
         :param int oms_order_id: Id of the omsOrder to add an file to (required)
         :return: None
@@ -383,7 +383,7 @@ class OmsOrderApi(object):
         """
 
         all_params = ['body', 'oms_order_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -443,7 +443,7 @@ class OmsOrderApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -454,11 +454,11 @@ class OmsOrderApi(object):
 
         Adds a tag to an existing omsOrder.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_oms_order_tag(oms_order_id, oms_order_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_oms_order_tag(oms_order_id, oms_order_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to add a tag to (required)
         :param str oms_order_tag: The tag to add (required)
         :return: None
@@ -466,7 +466,7 @@ class OmsOrderApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_oms_order_tag_with_http_info(oms_order_id, oms_order_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.add_oms_order_tag_with_http_info(oms_order_id, oms_order_tag, **kwargs)  # noqa: E501
@@ -477,11 +477,11 @@ class OmsOrderApi(object):
 
         Adds a tag to an existing omsOrder.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_oms_order_tag_with_http_info(oms_order_id, oms_order_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_oms_order_tag_with_http_info(oms_order_id, oms_order_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to add a tag to (required)
         :param str oms_order_tag: The tag to add (required)
         :return: None
@@ -490,7 +490,7 @@ class OmsOrderApi(object):
         """
 
         all_params = ['oms_order_id', 'oms_order_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -550,7 +550,7 @@ class OmsOrderApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -561,11 +561,11 @@ class OmsOrderApi(object):
 
         Deletes an existing omsOrder file using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_oms_order_file(oms_order_id, file_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_oms_order_file(oms_order_id, file_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to remove file from (required)
         :param int file_id: Id of the file to delete (required)
         :return: None
@@ -573,7 +573,7 @@ class OmsOrderApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.delete_oms_order_file_with_http_info(oms_order_id, file_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_oms_order_file_with_http_info(oms_order_id, file_id, **kwargs)  # noqa: E501
@@ -584,11 +584,11 @@ class OmsOrderApi(object):
 
         Deletes an existing omsOrder file using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_oms_order_file_with_http_info(oms_order_id, file_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_oms_order_file_with_http_info(oms_order_id, file_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to remove file from (required)
         :param int file_id: Id of the file to delete (required)
         :return: None
@@ -597,7 +597,7 @@ class OmsOrderApi(object):
         """
 
         all_params = ['oms_order_id', 'file_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -653,7 +653,7 @@ class OmsOrderApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -664,11 +664,11 @@ class OmsOrderApi(object):
 
         Deletes an existing omsOrder tag using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_oms_order_tag(oms_order_id, oms_order_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_oms_order_tag(oms_order_id, oms_order_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to remove tag from (required)
         :param str oms_order_tag: The tag to delete (required)
         :return: None
@@ -676,7 +676,7 @@ class OmsOrderApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.delete_oms_order_tag_with_http_info(oms_order_id, oms_order_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_oms_order_tag_with_http_info(oms_order_id, oms_order_tag, **kwargs)  # noqa: E501
@@ -687,11 +687,11 @@ class OmsOrderApi(object):
 
         Deletes an existing omsOrder tag using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_oms_order_tag_with_http_info(oms_order_id, oms_order_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_oms_order_tag_with_http_info(oms_order_id, oms_order_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to remove tag from (required)
         :param str oms_order_tag: The tag to delete (required)
         :return: None
@@ -700,7 +700,7 @@ class OmsOrderApi(object):
         """
 
         all_params = ['oms_order_id', 'oms_order_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -756,7 +756,7 @@ class OmsOrderApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -767,18 +767,18 @@ class OmsOrderApi(object):
 
         Returns a duplicated omsOrder identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_duplicate_oms_order_by_id(oms_order_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_duplicate_oms_order_by_id(oms_order_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to be duplicated. (required)
         :return: OmsOrder
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_duplicate_oms_order_by_id_with_http_info(oms_order_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_duplicate_oms_order_by_id_with_http_info(oms_order_id, **kwargs)  # noqa: E501
@@ -789,11 +789,11 @@ class OmsOrderApi(object):
 
         Returns a duplicated omsOrder identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_duplicate_oms_order_by_id_with_http_info(oms_order_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_duplicate_oms_order_by_id_with_http_info(oms_order_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to be duplicated. (required)
         :return: OmsOrder
                  If the method is called asynchronously,
@@ -801,7 +801,7 @@ class OmsOrderApi(object):
         """
 
         all_params = ['oms_order_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -851,7 +851,7 @@ class OmsOrderApi(object):
             files=local_var_files,
             response_type='OmsOrder',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -862,11 +862,11 @@ class OmsOrderApi(object):
 
         Returns the list of omsOrders that match the given filter.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_oms_order_by_filter(async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_oms_order_by_filter(_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str filter: Query string, used to filter results.
         :param int page: Result page number.  Defaults to 1.
         :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
@@ -876,7 +876,7 @@ class OmsOrderApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_oms_order_by_filter_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_oms_order_by_filter_with_http_info(**kwargs)  # noqa: E501
@@ -887,11 +887,11 @@ class OmsOrderApi(object):
 
         Returns the list of omsOrders that match the given filter.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_oms_order_by_filter_with_http_info(async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_oms_order_by_filter_with_http_info(_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str filter: Query string, used to filter results.
         :param int page: Result page number.  Defaults to 1.
         :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
@@ -902,7 +902,7 @@ class OmsOrderApi(object):
         """
 
         all_params = ['filter', 'page', 'limit', 'sort']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -954,7 +954,7 @@ class OmsOrderApi(object):
             files=local_var_files,
             response_type='list[OmsOrder]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -965,18 +965,18 @@ class OmsOrderApi(object):
 
         Returns the omsOrder identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_oms_order_by_id(oms_order_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_oms_order_by_id(oms_order_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to be returned. (required)
         :return: OmsOrder
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_oms_order_by_id_with_http_info(oms_order_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_oms_order_by_id_with_http_info(oms_order_id, **kwargs)  # noqa: E501
@@ -987,11 +987,11 @@ class OmsOrderApi(object):
 
         Returns the omsOrder identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_oms_order_by_id_with_http_info(oms_order_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_oms_order_by_id_with_http_info(oms_order_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to be returned. (required)
         :return: OmsOrder
                  If the method is called asynchronously,
@@ -999,7 +999,7 @@ class OmsOrderApi(object):
         """
 
         all_params = ['oms_order_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1049,7 +1049,7 @@ class OmsOrderApi(object):
             files=local_var_files,
             response_type='OmsOrder',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1060,18 +1060,18 @@ class OmsOrderApi(object):
 
         Get all existing omsOrder files.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_oms_order_files(oms_order_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_oms_order_files(oms_order_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to get files for (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_oms_order_files_with_http_info(oms_order_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_oms_order_files_with_http_info(oms_order_id, **kwargs)  # noqa: E501
@@ -1082,11 +1082,11 @@ class OmsOrderApi(object):
 
         Get all existing omsOrder files.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_oms_order_files_with_http_info(oms_order_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_oms_order_files_with_http_info(oms_order_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to get files for (required)
         :return: None
                  If the method is called asynchronously,
@@ -1094,7 +1094,7 @@ class OmsOrderApi(object):
         """
 
         all_params = ['oms_order_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1144,7 +1144,7 @@ class OmsOrderApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1155,18 +1155,18 @@ class OmsOrderApi(object):
 
         Get all existing omsOrder tags.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_oms_order_tags(oms_order_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_oms_order_tags(oms_order_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to get tags for (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_oms_order_tags_with_http_info(oms_order_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_oms_order_tags_with_http_info(oms_order_id, **kwargs)  # noqa: E501
@@ -1177,11 +1177,11 @@ class OmsOrderApi(object):
 
         Get all existing omsOrder tags.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_oms_order_tags_with_http_info(oms_order_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_oms_order_tags_with_http_info(oms_order_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int oms_order_id: Id of the omsOrder to get tags for (required)
         :return: None
                  If the method is called asynchronously,
@@ -1189,7 +1189,7 @@ class OmsOrderApi(object):
         """
 
         all_params = ['oms_order_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1239,7 +1239,7 @@ class OmsOrderApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1250,18 +1250,18 @@ class OmsOrderApi(object):
 
         Updates an existing omsOrder using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_oms_order(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_oms_order(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param OmsOrder body: OmsOrder to be updated. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.update_oms_order_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.update_oms_order_with_http_info(body, **kwargs)  # noqa: E501
@@ -1272,11 +1272,11 @@ class OmsOrderApi(object):
 
         Updates an existing omsOrder using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_oms_order_with_http_info(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_oms_order_with_http_info(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param OmsOrder body: OmsOrder to be updated. (required)
         :return: None
                  If the method is called asynchronously,
@@ -1284,7 +1284,7 @@ class OmsOrderApi(object):
         """
 
         all_params = ['body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1338,7 +1338,7 @@ class OmsOrderApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1349,18 +1349,18 @@ class OmsOrderApi(object):
 
         Updates an existing omsOrder custom fields using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_oms_order_custom_fields(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_oms_order_custom_fields(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param OmsOrder body: OmsOrder to be updated. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.update_oms_order_custom_fields_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.update_oms_order_custom_fields_with_http_info(body, **kwargs)  # noqa: E501
@@ -1371,11 +1371,11 @@ class OmsOrderApi(object):
 
         Updates an existing omsOrder custom fields using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_oms_order_custom_fields_with_http_info(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_oms_order_custom_fields_with_http_info(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param OmsOrder body: OmsOrder to be updated. (required)
         :return: None
                  If the method is called asynchronously,
@@ -1383,7 +1383,7 @@ class OmsOrderApi(object):
         """
 
         all_params = ['body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1437,7 +1437,7 @@ class OmsOrderApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
