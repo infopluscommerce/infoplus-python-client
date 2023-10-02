@@ -265,7 +265,7 @@ class ApiClient(object):
         elif klass == object:
             return self.__deserialize_object(data)
         elif klass == datetime.date:
-            return self.__deserialize_date(data)`
+            return self.__deserialize_date(data)
         elif klass == datetime.datetime:
             return self.__deserialize_datatime(data)
         else:
