@@ -38,18 +38,18 @@ class BusinessTransactionApi(object):
 
         Inserts a new businessTransaction using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_business_transaction(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_business_transaction(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param BusinessTransaction body: BusinessTransaction to be inserted. (required)
         :return: BusinessTransaction
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_business_transaction_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.add_business_transaction_with_http_info(body, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class BusinessTransactionApi(object):
 
         Inserts a new businessTransaction using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_business_transaction_with_http_info(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_business_transaction_with_http_info(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param BusinessTransaction body: BusinessTransaction to be inserted. (required)
         :return: BusinessTransaction
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class BusinessTransactionApi(object):
         """
 
         all_params = ['body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class BusinessTransactionApi(object):
             files=local_var_files,
             response_type='BusinessTransaction',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,11 +137,11 @@ class BusinessTransactionApi(object):
 
         Adds an audit to an existing businessTransaction.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_business_transaction_audit(business_transaction_id, business_transaction_audit, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_business_transaction_audit(business_transaction_id, business_transaction_audit, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to add an audit to (required)
         :param str business_transaction_audit: The audit to add (required)
         :return: None
@@ -149,7 +149,7 @@ class BusinessTransactionApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_business_transaction_audit_with_http_info(business_transaction_id, business_transaction_audit, **kwargs)  # noqa: E501
         else:
             (data) = self.add_business_transaction_audit_with_http_info(business_transaction_id, business_transaction_audit, **kwargs)  # noqa: E501
@@ -160,11 +160,11 @@ class BusinessTransactionApi(object):
 
         Adds an audit to an existing businessTransaction.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_business_transaction_audit_with_http_info(business_transaction_id, business_transaction_audit, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_business_transaction_audit_with_http_info(business_transaction_id, business_transaction_audit, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to add an audit to (required)
         :param str business_transaction_audit: The audit to add (required)
         :return: None
@@ -173,7 +173,7 @@ class BusinessTransactionApi(object):
         """
 
         all_params = ['business_transaction_id', 'business_transaction_audit']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -233,7 +233,7 @@ class BusinessTransactionApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -244,11 +244,11 @@ class BusinessTransactionApi(object):
 
         Adds a file to an existing businessTransaction.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_business_transaction_file(business_transaction_id, file_name, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_business_transaction_file(business_transaction_id, file_name, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to add a file to (required)
         :param str file_name: Name of file (required)
         :return: None
@@ -256,7 +256,7 @@ class BusinessTransactionApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_business_transaction_file_with_http_info(business_transaction_id, file_name, **kwargs)  # noqa: E501
         else:
             (data) = self.add_business_transaction_file_with_http_info(business_transaction_id, file_name, **kwargs)  # noqa: E501
@@ -267,11 +267,11 @@ class BusinessTransactionApi(object):
 
         Adds a file to an existing businessTransaction.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_business_transaction_file_with_http_info(business_transaction_id, file_name, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_business_transaction_file_with_http_info(business_transaction_id, file_name, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to add a file to (required)
         :param str file_name: Name of file (required)
         :return: None
@@ -280,7 +280,7 @@ class BusinessTransactionApi(object):
         """
 
         all_params = ['business_transaction_id', 'file_name']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -336,7 +336,7 @@ class BusinessTransactionApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -347,11 +347,11 @@ class BusinessTransactionApi(object):
 
         Adds a file to an existing businessTransaction by URL.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_business_transaction_file_by_url(body, business_transaction_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_business_transaction_file_by_url(body, business_transaction_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param RecordFile body: The url and optionly fileName to be used. (required)
         :param int business_transaction_id: Id of the businessTransaction to add an file to (required)
         :return: None
@@ -359,7 +359,7 @@ class BusinessTransactionApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_business_transaction_file_by_url_with_http_info(body, business_transaction_id, **kwargs)  # noqa: E501
         else:
             (data) = self.add_business_transaction_file_by_url_with_http_info(body, business_transaction_id, **kwargs)  # noqa: E501
@@ -370,11 +370,11 @@ class BusinessTransactionApi(object):
 
         Adds a file to an existing businessTransaction by URL.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_business_transaction_file_by_url_with_http_info(body, business_transaction_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_business_transaction_file_by_url_with_http_info(body, business_transaction_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param RecordFile body: The url and optionly fileName to be used. (required)
         :param int business_transaction_id: Id of the businessTransaction to add an file to (required)
         :return: None
@@ -383,7 +383,7 @@ class BusinessTransactionApi(object):
         """
 
         all_params = ['body', 'business_transaction_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -443,7 +443,7 @@ class BusinessTransactionApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -454,11 +454,11 @@ class BusinessTransactionApi(object):
 
         Adds a tag to an existing businessTransaction.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_business_transaction_tag(business_transaction_id, business_transaction_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_business_transaction_tag(business_transaction_id, business_transaction_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to add a tag to (required)
         :param str business_transaction_tag: The tag to add (required)
         :return: None
@@ -466,7 +466,7 @@ class BusinessTransactionApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_business_transaction_tag_with_http_info(business_transaction_id, business_transaction_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.add_business_transaction_tag_with_http_info(business_transaction_id, business_transaction_tag, **kwargs)  # noqa: E501
@@ -477,11 +477,11 @@ class BusinessTransactionApi(object):
 
         Adds a tag to an existing businessTransaction.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_business_transaction_tag_with_http_info(business_transaction_id, business_transaction_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_business_transaction_tag_with_http_info(business_transaction_id, business_transaction_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to add a tag to (required)
         :param str business_transaction_tag: The tag to add (required)
         :return: None
@@ -490,7 +490,7 @@ class BusinessTransactionApi(object):
         """
 
         all_params = ['business_transaction_id', 'business_transaction_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -550,7 +550,7 @@ class BusinessTransactionApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -561,11 +561,11 @@ class BusinessTransactionApi(object):
 
         Deletes an existing businessTransaction file using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_business_transaction_file(business_transaction_id, file_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_business_transaction_file(business_transaction_id, file_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to remove file from (required)
         :param int file_id: Id of the file to delete (required)
         :return: None
@@ -573,7 +573,7 @@ class BusinessTransactionApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.delete_business_transaction_file_with_http_info(business_transaction_id, file_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_business_transaction_file_with_http_info(business_transaction_id, file_id, **kwargs)  # noqa: E501
@@ -584,11 +584,11 @@ class BusinessTransactionApi(object):
 
         Deletes an existing businessTransaction file using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_business_transaction_file_with_http_info(business_transaction_id, file_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_business_transaction_file_with_http_info(business_transaction_id, file_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to remove file from (required)
         :param int file_id: Id of the file to delete (required)
         :return: None
@@ -597,7 +597,7 @@ class BusinessTransactionApi(object):
         """
 
         all_params = ['business_transaction_id', 'file_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -653,7 +653,7 @@ class BusinessTransactionApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -664,11 +664,11 @@ class BusinessTransactionApi(object):
 
         Deletes an existing businessTransaction tag using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_business_transaction_tag(business_transaction_id, business_transaction_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_business_transaction_tag(business_transaction_id, business_transaction_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to remove tag from (required)
         :param str business_transaction_tag: The tag to delete (required)
         :return: None
@@ -676,7 +676,7 @@ class BusinessTransactionApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.delete_business_transaction_tag_with_http_info(business_transaction_id, business_transaction_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_business_transaction_tag_with_http_info(business_transaction_id, business_transaction_tag, **kwargs)  # noqa: E501
@@ -687,11 +687,11 @@ class BusinessTransactionApi(object):
 
         Deletes an existing businessTransaction tag using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_business_transaction_tag_with_http_info(business_transaction_id, business_transaction_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_business_transaction_tag_with_http_info(business_transaction_id, business_transaction_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to remove tag from (required)
         :param str business_transaction_tag: The tag to delete (required)
         :return: None
@@ -700,7 +700,7 @@ class BusinessTransactionApi(object):
         """
 
         all_params = ['business_transaction_id', 'business_transaction_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -756,7 +756,7 @@ class BusinessTransactionApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -767,11 +767,11 @@ class BusinessTransactionApi(object):
 
         Returns the list of businessTransactions that match the given filter.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_business_transaction_by_filter(async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_business_transaction_by_filter(_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str filter: Query string, used to filter results.
         :param int page: Result page number.  Defaults to 1.
         :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
@@ -781,7 +781,7 @@ class BusinessTransactionApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_business_transaction_by_filter_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_business_transaction_by_filter_with_http_info(**kwargs)  # noqa: E501
@@ -792,11 +792,11 @@ class BusinessTransactionApi(object):
 
         Returns the list of businessTransactions that match the given filter.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_business_transaction_by_filter_with_http_info(async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_business_transaction_by_filter_with_http_info(_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str filter: Query string, used to filter results.
         :param int page: Result page number.  Defaults to 1.
         :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
@@ -807,7 +807,7 @@ class BusinessTransactionApi(object):
         """
 
         all_params = ['filter', 'page', 'limit', 'sort']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -859,7 +859,7 @@ class BusinessTransactionApi(object):
             files=local_var_files,
             response_type='list[BusinessTransaction]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -870,18 +870,18 @@ class BusinessTransactionApi(object):
 
         Returns the businessTransaction identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_business_transaction_by_id(business_transaction_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_business_transaction_by_id(business_transaction_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to be returned. (required)
         :return: BusinessTransaction
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_business_transaction_by_id_with_http_info(business_transaction_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_business_transaction_by_id_with_http_info(business_transaction_id, **kwargs)  # noqa: E501
@@ -892,11 +892,11 @@ class BusinessTransactionApi(object):
 
         Returns the businessTransaction identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_business_transaction_by_id_with_http_info(business_transaction_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_business_transaction_by_id_with_http_info(business_transaction_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to be returned. (required)
         :return: BusinessTransaction
                  If the method is called asynchronously,
@@ -904,7 +904,7 @@ class BusinessTransactionApi(object):
         """
 
         all_params = ['business_transaction_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -954,7 +954,7 @@ class BusinessTransactionApi(object):
             files=local_var_files,
             response_type='BusinessTransaction',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -965,18 +965,18 @@ class BusinessTransactionApi(object):
 
         Get all existing businessTransaction files.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_business_transaction_files(business_transaction_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_business_transaction_files(business_transaction_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to get files for (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_business_transaction_files_with_http_info(business_transaction_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_business_transaction_files_with_http_info(business_transaction_id, **kwargs)  # noqa: E501
@@ -987,11 +987,11 @@ class BusinessTransactionApi(object):
 
         Get all existing businessTransaction files.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_business_transaction_files_with_http_info(business_transaction_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_business_transaction_files_with_http_info(business_transaction_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to get files for (required)
         :return: None
                  If the method is called asynchronously,
@@ -999,7 +999,7 @@ class BusinessTransactionApi(object):
         """
 
         all_params = ['business_transaction_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1049,7 +1049,7 @@ class BusinessTransactionApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1060,18 +1060,18 @@ class BusinessTransactionApi(object):
 
         Get all existing businessTransaction tags.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_business_transaction_tags(business_transaction_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_business_transaction_tags(business_transaction_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to get tags for (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_business_transaction_tags_with_http_info(business_transaction_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_business_transaction_tags_with_http_info(business_transaction_id, **kwargs)  # noqa: E501
@@ -1082,11 +1082,11 @@ class BusinessTransactionApi(object):
 
         Get all existing businessTransaction tags.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_business_transaction_tags_with_http_info(business_transaction_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_business_transaction_tags_with_http_info(business_transaction_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to get tags for (required)
         :return: None
                  If the method is called asynchronously,
@@ -1094,7 +1094,7 @@ class BusinessTransactionApi(object):
         """
 
         all_params = ['business_transaction_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1144,7 +1144,7 @@ class BusinessTransactionApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1155,18 +1155,18 @@ class BusinessTransactionApi(object):
 
         Returns a duplicated businessTransaction identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_duplicate_business_transaction_by_id(business_transaction_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_duplicate_business_transaction_by_id(business_transaction_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to be duplicated. (required)
         :return: BusinessTransaction
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_duplicate_business_transaction_by_id_with_http_info(business_transaction_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_duplicate_business_transaction_by_id_with_http_info(business_transaction_id, **kwargs)  # noqa: E501
@@ -1177,11 +1177,11 @@ class BusinessTransactionApi(object):
 
         Returns a duplicated businessTransaction identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_duplicate_business_transaction_by_id_with_http_info(business_transaction_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_duplicate_business_transaction_by_id_with_http_info(business_transaction_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int business_transaction_id: Id of the businessTransaction to be duplicated. (required)
         :return: BusinessTransaction
                  If the method is called asynchronously,
@@ -1189,7 +1189,7 @@ class BusinessTransactionApi(object):
         """
 
         all_params = ['business_transaction_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1239,7 +1239,7 @@ class BusinessTransactionApi(object):
             files=local_var_files,
             response_type='BusinessTransaction',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1250,18 +1250,18 @@ class BusinessTransactionApi(object):
 
         Updates an existing businessTransaction using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_business_transaction(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_business_transaction(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param BusinessTransaction body: BusinessTransaction to be updated. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.update_business_transaction_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.update_business_transaction_with_http_info(body, **kwargs)  # noqa: E501
@@ -1272,11 +1272,11 @@ class BusinessTransactionApi(object):
 
         Updates an existing businessTransaction using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_business_transaction_with_http_info(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_business_transaction_with_http_info(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param BusinessTransaction body: BusinessTransaction to be updated. (required)
         :return: None
                  If the method is called asynchronously,
@@ -1284,7 +1284,7 @@ class BusinessTransactionApi(object):
         """
 
         all_params = ['body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1338,7 +1338,7 @@ class BusinessTransactionApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1349,18 +1349,18 @@ class BusinessTransactionApi(object):
 
         Updates an existing businessTransaction custom fields using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_business_transaction_custom_fields(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_business_transaction_custom_fields(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param BusinessTransaction body: BusinessTransaction to be updated. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.update_business_transaction_custom_fields_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.update_business_transaction_custom_fields_with_http_info(body, **kwargs)  # noqa: E501
@@ -1371,11 +1371,11 @@ class BusinessTransactionApi(object):
 
         Updates an existing businessTransaction custom fields using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_business_transaction_custom_fields_with_http_info(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_business_transaction_custom_fields_with_http_info(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param BusinessTransaction body: BusinessTransaction to be updated. (required)
         :return: None
                  If the method is called asynchronously,
@@ -1383,7 +1383,7 @@ class BusinessTransactionApi(object):
         """
 
         all_params = ['body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1437,7 +1437,7 @@ class BusinessTransactionApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

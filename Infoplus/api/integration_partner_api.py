@@ -38,18 +38,18 @@ class IntegrationPartnerApi(object):
 
         Returns the integrationPartner identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_integration_partner_by_id(integration_partner_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_integration_partner_by_id(integration_partner_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str integration_partner_id: Id of integrationPartner to be returned. (required)
         :return: IntegrationPartner
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_integration_partner_by_id_with_http_info(integration_partner_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_integration_partner_by_id_with_http_info(integration_partner_id, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class IntegrationPartnerApi(object):
 
         Returns the integrationPartner identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_integration_partner_by_id_with_http_info(integration_partner_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_integration_partner_by_id_with_http_info(integration_partner_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str integration_partner_id: Id of integrationPartner to be returned. (required)
         :return: IntegrationPartner
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class IntegrationPartnerApi(object):
         """
 
         all_params = ['integration_partner_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -122,7 +122,7 @@ class IntegrationPartnerApi(object):
             files=local_var_files,
             response_type='IntegrationPartner',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -133,11 +133,11 @@ class IntegrationPartnerApi(object):
 
         Returns the list of integrationPartners that match the given searchText.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_integration_partner_by_search_text(async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_integration_partner_by_search_text(_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str search_text: Search text, used to filter results.
         :param int page: Result page number.  Defaults to 1.
         :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
@@ -146,7 +146,7 @@ class IntegrationPartnerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_integration_partner_by_search_text_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_integration_partner_by_search_text_with_http_info(**kwargs)  # noqa: E501
@@ -157,11 +157,11 @@ class IntegrationPartnerApi(object):
 
         Returns the list of integrationPartners that match the given searchText.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_integration_partner_by_search_text_with_http_info(async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_integration_partner_by_search_text_with_http_info(_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str search_text: Search text, used to filter results.
         :param int page: Result page number.  Defaults to 1.
         :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
@@ -171,7 +171,7 @@ class IntegrationPartnerApi(object):
         """
 
         all_params = ['search_text', 'page', 'limit']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -221,7 +221,7 @@ class IntegrationPartnerApi(object):
             files=local_var_files,
             response_type='list[IntegrationPartner]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

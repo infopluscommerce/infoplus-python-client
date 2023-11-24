@@ -38,11 +38,11 @@ class ItemReceiptApi(object):
 
         Adds an audit to an existing itemReceipt.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_item_receipt_audit(item_receipt_id, item_receipt_audit, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_item_receipt_audit(item_receipt_id, item_receipt_audit, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to add an audit to (required)
         :param str item_receipt_audit: The audit to add (required)
         :return: None
@@ -50,7 +50,7 @@ class ItemReceiptApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_item_receipt_audit_with_http_info(item_receipt_id, item_receipt_audit, **kwargs)  # noqa: E501
         else:
             (data) = self.add_item_receipt_audit_with_http_info(item_receipt_id, item_receipt_audit, **kwargs)  # noqa: E501
@@ -61,11 +61,11 @@ class ItemReceiptApi(object):
 
         Adds an audit to an existing itemReceipt.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_item_receipt_audit_with_http_info(item_receipt_id, item_receipt_audit, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_item_receipt_audit_with_http_info(item_receipt_id, item_receipt_audit, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to add an audit to (required)
         :param str item_receipt_audit: The audit to add (required)
         :return: None
@@ -74,7 +74,7 @@ class ItemReceiptApi(object):
         """
 
         all_params = ['item_receipt_id', 'item_receipt_audit']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -134,7 +134,7 @@ class ItemReceiptApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -145,11 +145,11 @@ class ItemReceiptApi(object):
 
         Adds a file to an existing itemReceipt.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_item_receipt_file(item_receipt_id, file_name, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_item_receipt_file(item_receipt_id, file_name, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to add a file to (required)
         :param str file_name: Name of file (required)
         :return: None
@@ -157,7 +157,7 @@ class ItemReceiptApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_item_receipt_file_with_http_info(item_receipt_id, file_name, **kwargs)  # noqa: E501
         else:
             (data) = self.add_item_receipt_file_with_http_info(item_receipt_id, file_name, **kwargs)  # noqa: E501
@@ -168,11 +168,11 @@ class ItemReceiptApi(object):
 
         Adds a file to an existing itemReceipt.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_item_receipt_file_with_http_info(item_receipt_id, file_name, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_item_receipt_file_with_http_info(item_receipt_id, file_name, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to add a file to (required)
         :param str file_name: Name of file (required)
         :return: None
@@ -181,7 +181,7 @@ class ItemReceiptApi(object):
         """
 
         all_params = ['item_receipt_id', 'file_name']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -237,7 +237,7 @@ class ItemReceiptApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -248,11 +248,11 @@ class ItemReceiptApi(object):
 
         Adds a file to an existing itemReceipt by URL.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_item_receipt_file_by_url(body, item_receipt_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_item_receipt_file_by_url(body, item_receipt_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param RecordFile body: The url and optionly fileName to be used. (required)
         :param int item_receipt_id: Id of the itemReceipt to add an file to (required)
         :return: None
@@ -260,7 +260,7 @@ class ItemReceiptApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_item_receipt_file_by_url_with_http_info(body, item_receipt_id, **kwargs)  # noqa: E501
         else:
             (data) = self.add_item_receipt_file_by_url_with_http_info(body, item_receipt_id, **kwargs)  # noqa: E501
@@ -271,11 +271,11 @@ class ItemReceiptApi(object):
 
         Adds a file to an existing itemReceipt by URL.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_item_receipt_file_by_url_with_http_info(body, item_receipt_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_item_receipt_file_by_url_with_http_info(body, item_receipt_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param RecordFile body: The url and optionly fileName to be used. (required)
         :param int item_receipt_id: Id of the itemReceipt to add an file to (required)
         :return: None
@@ -284,7 +284,7 @@ class ItemReceiptApi(object):
         """
 
         all_params = ['body', 'item_receipt_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -344,7 +344,7 @@ class ItemReceiptApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -355,11 +355,11 @@ class ItemReceiptApi(object):
 
         Adds a tag to an existing itemReceipt.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_item_receipt_tag(item_receipt_id, item_receipt_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_item_receipt_tag(item_receipt_id, item_receipt_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to add a tag to (required)
         :param str item_receipt_tag: The tag to add (required)
         :return: None
@@ -367,7 +367,7 @@ class ItemReceiptApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_item_receipt_tag_with_http_info(item_receipt_id, item_receipt_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.add_item_receipt_tag_with_http_info(item_receipt_id, item_receipt_tag, **kwargs)  # noqa: E501
@@ -378,11 +378,11 @@ class ItemReceiptApi(object):
 
         Adds a tag to an existing itemReceipt.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_item_receipt_tag_with_http_info(item_receipt_id, item_receipt_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_item_receipt_tag_with_http_info(item_receipt_id, item_receipt_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to add a tag to (required)
         :param str item_receipt_tag: The tag to add (required)
         :return: None
@@ -391,7 +391,7 @@ class ItemReceiptApi(object):
         """
 
         all_params = ['item_receipt_id', 'item_receipt_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -451,7 +451,7 @@ class ItemReceiptApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -462,11 +462,11 @@ class ItemReceiptApi(object):
 
         Deletes an existing itemReceipt file using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_item_receipt_file(item_receipt_id, file_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_item_receipt_file(item_receipt_id, file_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to remove file from (required)
         :param int file_id: Id of the file to delete (required)
         :return: None
@@ -474,7 +474,7 @@ class ItemReceiptApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.delete_item_receipt_file_with_http_info(item_receipt_id, file_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_item_receipt_file_with_http_info(item_receipt_id, file_id, **kwargs)  # noqa: E501
@@ -485,11 +485,11 @@ class ItemReceiptApi(object):
 
         Deletes an existing itemReceipt file using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_item_receipt_file_with_http_info(item_receipt_id, file_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_item_receipt_file_with_http_info(item_receipt_id, file_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to remove file from (required)
         :param int file_id: Id of the file to delete (required)
         :return: None
@@ -498,7 +498,7 @@ class ItemReceiptApi(object):
         """
 
         all_params = ['item_receipt_id', 'file_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -554,7 +554,7 @@ class ItemReceiptApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -565,11 +565,11 @@ class ItemReceiptApi(object):
 
         Deletes an existing itemReceipt tag using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_item_receipt_tag(item_receipt_id, item_receipt_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_item_receipt_tag(item_receipt_id, item_receipt_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to remove tag from (required)
         :param str item_receipt_tag: The tag to delete (required)
         :return: None
@@ -577,7 +577,7 @@ class ItemReceiptApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.delete_item_receipt_tag_with_http_info(item_receipt_id, item_receipt_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_item_receipt_tag_with_http_info(item_receipt_id, item_receipt_tag, **kwargs)  # noqa: E501
@@ -588,11 +588,11 @@ class ItemReceiptApi(object):
 
         Deletes an existing itemReceipt tag using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_item_receipt_tag_with_http_info(item_receipt_id, item_receipt_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_item_receipt_tag_with_http_info(item_receipt_id, item_receipt_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to remove tag from (required)
         :param str item_receipt_tag: The tag to delete (required)
         :return: None
@@ -601,7 +601,7 @@ class ItemReceiptApi(object):
         """
 
         all_params = ['item_receipt_id', 'item_receipt_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -657,7 +657,7 @@ class ItemReceiptApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -668,18 +668,18 @@ class ItemReceiptApi(object):
 
         Returns a duplicated itemReceipt identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_duplicate_item_receipt_by_id(item_receipt_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_duplicate_item_receipt_by_id(item_receipt_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to be duplicated. (required)
         :return: ItemReceipt
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_duplicate_item_receipt_by_id_with_http_info(item_receipt_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_duplicate_item_receipt_by_id_with_http_info(item_receipt_id, **kwargs)  # noqa: E501
@@ -690,11 +690,11 @@ class ItemReceiptApi(object):
 
         Returns a duplicated itemReceipt identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_duplicate_item_receipt_by_id_with_http_info(item_receipt_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_duplicate_item_receipt_by_id_with_http_info(item_receipt_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to be duplicated. (required)
         :return: ItemReceipt
                  If the method is called asynchronously,
@@ -702,7 +702,7 @@ class ItemReceiptApi(object):
         """
 
         all_params = ['item_receipt_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -752,7 +752,7 @@ class ItemReceiptApi(object):
             files=local_var_files,
             response_type='ItemReceipt',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -763,11 +763,11 @@ class ItemReceiptApi(object):
 
         Returns the list of itemReceipts that match the given filter.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_item_receipt_by_filter(async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_item_receipt_by_filter(_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str filter: Query string, used to filter results.
         :param int page: Result page number.  Defaults to 1.
         :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
@@ -777,7 +777,7 @@ class ItemReceiptApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_item_receipt_by_filter_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_item_receipt_by_filter_with_http_info(**kwargs)  # noqa: E501
@@ -788,11 +788,11 @@ class ItemReceiptApi(object):
 
         Returns the list of itemReceipts that match the given filter.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_item_receipt_by_filter_with_http_info(async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_item_receipt_by_filter_with_http_info(_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str filter: Query string, used to filter results.
         :param int page: Result page number.  Defaults to 1.
         :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
@@ -803,7 +803,7 @@ class ItemReceiptApi(object):
         """
 
         all_params = ['filter', 'page', 'limit', 'sort']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -855,7 +855,7 @@ class ItemReceiptApi(object):
             files=local_var_files,
             response_type='list[ItemReceipt]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -866,18 +866,18 @@ class ItemReceiptApi(object):
 
         Returns the itemReceipt identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_item_receipt_by_id(item_receipt_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_item_receipt_by_id(item_receipt_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to be returned. (required)
         :return: ItemReceipt
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_item_receipt_by_id_with_http_info(item_receipt_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_item_receipt_by_id_with_http_info(item_receipt_id, **kwargs)  # noqa: E501
@@ -888,11 +888,11 @@ class ItemReceiptApi(object):
 
         Returns the itemReceipt identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_item_receipt_by_id_with_http_info(item_receipt_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_item_receipt_by_id_with_http_info(item_receipt_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to be returned. (required)
         :return: ItemReceipt
                  If the method is called asynchronously,
@@ -900,7 +900,7 @@ class ItemReceiptApi(object):
         """
 
         all_params = ['item_receipt_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -950,7 +950,7 @@ class ItemReceiptApi(object):
             files=local_var_files,
             response_type='ItemReceipt',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -961,18 +961,18 @@ class ItemReceiptApi(object):
 
         Get all existing itemReceipt files.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_item_receipt_files(item_receipt_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_item_receipt_files(item_receipt_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to get files for (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_item_receipt_files_with_http_info(item_receipt_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_item_receipt_files_with_http_info(item_receipt_id, **kwargs)  # noqa: E501
@@ -983,11 +983,11 @@ class ItemReceiptApi(object):
 
         Get all existing itemReceipt files.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_item_receipt_files_with_http_info(item_receipt_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_item_receipt_files_with_http_info(item_receipt_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to get files for (required)
         :return: None
                  If the method is called asynchronously,
@@ -995,7 +995,7 @@ class ItemReceiptApi(object):
         """
 
         all_params = ['item_receipt_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1045,7 +1045,7 @@ class ItemReceiptApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1056,18 +1056,18 @@ class ItemReceiptApi(object):
 
         Get all existing itemReceipt tags.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_item_receipt_tags(item_receipt_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_item_receipt_tags(item_receipt_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to get tags for (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_item_receipt_tags_with_http_info(item_receipt_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_item_receipt_tags_with_http_info(item_receipt_id, **kwargs)  # noqa: E501
@@ -1078,11 +1078,11 @@ class ItemReceiptApi(object):
 
         Get all existing itemReceipt tags.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_item_receipt_tags_with_http_info(item_receipt_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_item_receipt_tags_with_http_info(item_receipt_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int item_receipt_id: Id of the itemReceipt to get tags for (required)
         :return: None
                  If the method is called asynchronously,
@@ -1090,7 +1090,7 @@ class ItemReceiptApi(object):
         """
 
         all_params = ['item_receipt_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1140,7 +1140,7 @@ class ItemReceiptApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1151,18 +1151,18 @@ class ItemReceiptApi(object):
 
         Updates an existing itemReceipt using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_item_receipt(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_item_receipt(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param ItemReceipt body: ItemReceipt to be updated. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.update_item_receipt_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.update_item_receipt_with_http_info(body, **kwargs)  # noqa: E501
@@ -1173,11 +1173,11 @@ class ItemReceiptApi(object):
 
         Updates an existing itemReceipt using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_item_receipt_with_http_info(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_item_receipt_with_http_info(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param ItemReceipt body: ItemReceipt to be updated. (required)
         :return: None
                  If the method is called asynchronously,
@@ -1185,7 +1185,7 @@ class ItemReceiptApi(object):
         """
 
         all_params = ['body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1239,7 +1239,7 @@ class ItemReceiptApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1250,18 +1250,18 @@ class ItemReceiptApi(object):
 
         Updates an existing itemReceipt custom fields using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_item_receipt_custom_fields(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_item_receipt_custom_fields(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param ItemReceipt body: ItemReceipt to be updated. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.update_item_receipt_custom_fields_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.update_item_receipt_custom_fields_with_http_info(body, **kwargs)  # noqa: E501
@@ -1272,11 +1272,11 @@ class ItemReceiptApi(object):
 
         Updates an existing itemReceipt custom fields using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_item_receipt_custom_fields_with_http_info(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_item_receipt_custom_fields_with_http_info(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param ItemReceipt body: ItemReceipt to be updated. (required)
         :return: None
                  If the method is called asynchronously,
@@ -1284,7 +1284,7 @@ class ItemReceiptApi(object):
         """
 
         all_params = ['body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1338,7 +1338,7 @@ class ItemReceiptApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
