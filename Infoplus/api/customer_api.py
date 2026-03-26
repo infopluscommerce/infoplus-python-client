@@ -38,18 +38,18 @@ class CustomerApi(object):
 
         Inserts a new customer using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_customer(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_customer(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param Customer body: Customer to be inserted. (required)
         :return: Customer
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_customer_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.add_customer_with_http_info(body, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class CustomerApi(object):
 
         Inserts a new customer using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_customer_with_http_info(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_customer_with_http_info(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param Customer body: Customer to be inserted. (required)
         :return: Customer
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class CustomerApi(object):
         """
 
         all_params = ['body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type='Customer',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,11 +137,11 @@ class CustomerApi(object):
 
         Adds an audit to an existing customer.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_customer_audit(customer_id, customer_audit, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_customer_audit(customer_id, customer_audit, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to add an audit to (required)
         :param str customer_audit: The audit to add (required)
         :return: None
@@ -149,7 +149,7 @@ class CustomerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_customer_audit_with_http_info(customer_id, customer_audit, **kwargs)  # noqa: E501
         else:
             (data) = self.add_customer_audit_with_http_info(customer_id, customer_audit, **kwargs)  # noqa: E501
@@ -160,11 +160,11 @@ class CustomerApi(object):
 
         Adds an audit to an existing customer.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_customer_audit_with_http_info(customer_id, customer_audit, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_customer_audit_with_http_info(customer_id, customer_audit, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to add an audit to (required)
         :param str customer_audit: The audit to add (required)
         :return: None
@@ -173,7 +173,7 @@ class CustomerApi(object):
         """
 
         all_params = ['customer_id', 'customer_audit']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -233,7 +233,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -244,11 +244,11 @@ class CustomerApi(object):
 
         Adds a file to an existing customer.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_customer_file(customer_id, file_name, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_customer_file(customer_id, file_name, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to add a file to (required)
         :param str file_name: Name of file (required)
         :return: None
@@ -256,7 +256,7 @@ class CustomerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_customer_file_with_http_info(customer_id, file_name, **kwargs)  # noqa: E501
         else:
             (data) = self.add_customer_file_with_http_info(customer_id, file_name, **kwargs)  # noqa: E501
@@ -267,11 +267,11 @@ class CustomerApi(object):
 
         Adds a file to an existing customer.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_customer_file_with_http_info(customer_id, file_name, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_customer_file_with_http_info(customer_id, file_name, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to add a file to (required)
         :param str file_name: Name of file (required)
         :return: None
@@ -280,7 +280,7 @@ class CustomerApi(object):
         """
 
         all_params = ['customer_id', 'file_name']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -336,7 +336,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -347,11 +347,11 @@ class CustomerApi(object):
 
         Adds a file to an existing customer by URL.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_customer_file_by_url(body, customer_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_customer_file_by_url(body, customer_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param RecordFile body: The url and optionly fileName to be used. (required)
         :param int customer_id: Id of the customer to add an file to (required)
         :return: None
@@ -359,7 +359,7 @@ class CustomerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_customer_file_by_url_with_http_info(body, customer_id, **kwargs)  # noqa: E501
         else:
             (data) = self.add_customer_file_by_url_with_http_info(body, customer_id, **kwargs)  # noqa: E501
@@ -370,11 +370,11 @@ class CustomerApi(object):
 
         Adds a file to an existing customer by URL.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_customer_file_by_url_with_http_info(body, customer_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_customer_file_by_url_with_http_info(body, customer_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param RecordFile body: The url and optionly fileName to be used. (required)
         :param int customer_id: Id of the customer to add an file to (required)
         :return: None
@@ -383,7 +383,7 @@ class CustomerApi(object):
         """
 
         all_params = ['body', 'customer_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -443,7 +443,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -454,11 +454,11 @@ class CustomerApi(object):
 
         Adds a tag to an existing customer.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_customer_tag(customer_id, customer_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_customer_tag(customer_id, customer_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to add a tag to (required)
         :param str customer_tag: The tag to add (required)
         :return: None
@@ -466,7 +466,7 @@ class CustomerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_customer_tag_with_http_info(customer_id, customer_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.add_customer_tag_with_http_info(customer_id, customer_tag, **kwargs)  # noqa: E501
@@ -477,11 +477,11 @@ class CustomerApi(object):
 
         Adds a tag to an existing customer.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_customer_tag_with_http_info(customer_id, customer_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_customer_tag_with_http_info(customer_id, customer_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to add a tag to (required)
         :param str customer_tag: The tag to add (required)
         :return: None
@@ -490,7 +490,7 @@ class CustomerApi(object):
         """
 
         all_params = ['customer_id', 'customer_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -550,7 +550,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -561,18 +561,18 @@ class CustomerApi(object):
 
         Deletes the customer identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_customer(customer_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_customer(customer_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to be deleted. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.delete_customer_with_http_info(customer_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_customer_with_http_info(customer_id, **kwargs)  # noqa: E501
@@ -583,11 +583,11 @@ class CustomerApi(object):
 
         Deletes the customer identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_customer_with_http_info(customer_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_customer_with_http_info(customer_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to be deleted. (required)
         :return: None
                  If the method is called asynchronously,
@@ -595,7 +595,7 @@ class CustomerApi(object):
         """
 
         all_params = ['customer_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -645,7 +645,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -656,11 +656,11 @@ class CustomerApi(object):
 
         Deletes an existing customer file using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_customer_file(customer_id, file_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_customer_file(customer_id, file_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to remove file from (required)
         :param int file_id: Id of the file to delete (required)
         :return: None
@@ -668,7 +668,7 @@ class CustomerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.delete_customer_file_with_http_info(customer_id, file_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_customer_file_with_http_info(customer_id, file_id, **kwargs)  # noqa: E501
@@ -679,11 +679,11 @@ class CustomerApi(object):
 
         Deletes an existing customer file using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_customer_file_with_http_info(customer_id, file_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_customer_file_with_http_info(customer_id, file_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to remove file from (required)
         :param int file_id: Id of the file to delete (required)
         :return: None
@@ -692,7 +692,7 @@ class CustomerApi(object):
         """
 
         all_params = ['customer_id', 'file_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -748,7 +748,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -759,11 +759,11 @@ class CustomerApi(object):
 
         Deletes an existing customer tag using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_customer_tag(customer_id, customer_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_customer_tag(customer_id, customer_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to remove tag from (required)
         :param str customer_tag: The tag to delete (required)
         :return: None
@@ -771,7 +771,7 @@ class CustomerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.delete_customer_tag_with_http_info(customer_id, customer_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_customer_tag_with_http_info(customer_id, customer_tag, **kwargs)  # noqa: E501
@@ -782,11 +782,11 @@ class CustomerApi(object):
 
         Deletes an existing customer tag using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_customer_tag_with_http_info(customer_id, customer_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_customer_tag_with_http_info(customer_id, customer_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to remove tag from (required)
         :param str customer_tag: The tag to delete (required)
         :return: None
@@ -795,7 +795,7 @@ class CustomerApi(object):
         """
 
         all_params = ['customer_id', 'customer_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -851,7 +851,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -862,11 +862,11 @@ class CustomerApi(object):
 
         Returns the customer identified by the specified parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_by_customer_no(lob_id, customer_no, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_by_customer_no(lob_id, customer_no, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int lob_id: lobId of the customer to be returned. (required)
         :param str customer_no: customerNo of the customer to be returned. (required)
         :return: Customer
@@ -874,7 +874,7 @@ class CustomerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_by_customer_no_with_http_info(lob_id, customer_no, **kwargs)  # noqa: E501
         else:
             (data) = self.get_by_customer_no_with_http_info(lob_id, customer_no, **kwargs)  # noqa: E501
@@ -885,11 +885,11 @@ class CustomerApi(object):
 
         Returns the customer identified by the specified parameters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_by_customer_no_with_http_info(lob_id, customer_no, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_by_customer_no_with_http_info(lob_id, customer_no, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int lob_id: lobId of the customer to be returned. (required)
         :param str customer_no: customerNo of the customer to be returned. (required)
         :return: Customer
@@ -898,7 +898,7 @@ class CustomerApi(object):
         """
 
         all_params = ['lob_id', 'customer_no']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -954,7 +954,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type='Customer',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -965,11 +965,11 @@ class CustomerApi(object):
 
         Returns the list of customers that match the given filter.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_customer_by_filter(async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_customer_by_filter(_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str filter: Query string, used to filter results.
         :param int page: Result page number.  Defaults to 1.
         :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
@@ -979,7 +979,7 @@ class CustomerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_customer_by_filter_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_customer_by_filter_with_http_info(**kwargs)  # noqa: E501
@@ -990,11 +990,11 @@ class CustomerApi(object):
 
         Returns the list of customers that match the given filter.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_customer_by_filter_with_http_info(async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_customer_by_filter_with_http_info(_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str filter: Query string, used to filter results.
         :param int page: Result page number.  Defaults to 1.
         :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
@@ -1005,7 +1005,7 @@ class CustomerApi(object):
         """
 
         all_params = ['filter', 'page', 'limit', 'sort']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1057,7 +1057,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type='list[Customer]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1068,18 +1068,18 @@ class CustomerApi(object):
 
         Returns the customer identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_customer_by_id(customer_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_customer_by_id(customer_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to be returned. (required)
         :return: Customer
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_customer_by_id_with_http_info(customer_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_customer_by_id_with_http_info(customer_id, **kwargs)  # noqa: E501
@@ -1090,11 +1090,11 @@ class CustomerApi(object):
 
         Returns the customer identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_customer_by_id_with_http_info(customer_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_customer_by_id_with_http_info(customer_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to be returned. (required)
         :return: Customer
                  If the method is called asynchronously,
@@ -1102,7 +1102,7 @@ class CustomerApi(object):
         """
 
         all_params = ['customer_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1152,7 +1152,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type='Customer',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1163,18 +1163,18 @@ class CustomerApi(object):
 
         Get all existing customer files.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_customer_files(customer_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_customer_files(customer_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to get files for (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_customer_files_with_http_info(customer_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_customer_files_with_http_info(customer_id, **kwargs)  # noqa: E501
@@ -1185,11 +1185,11 @@ class CustomerApi(object):
 
         Get all existing customer files.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_customer_files_with_http_info(customer_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_customer_files_with_http_info(customer_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to get files for (required)
         :return: None
                  If the method is called asynchronously,
@@ -1197,7 +1197,7 @@ class CustomerApi(object):
         """
 
         all_params = ['customer_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1247,7 +1247,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1258,18 +1258,18 @@ class CustomerApi(object):
 
         Get all existing customer tags.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_customer_tags(customer_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_customer_tags(customer_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to get tags for (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_customer_tags_with_http_info(customer_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_customer_tags_with_http_info(customer_id, **kwargs)  # noqa: E501
@@ -1280,11 +1280,11 @@ class CustomerApi(object):
 
         Get all existing customer tags.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_customer_tags_with_http_info(customer_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_customer_tags_with_http_info(customer_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to get tags for (required)
         :return: None
                  If the method is called asynchronously,
@@ -1292,7 +1292,7 @@ class CustomerApi(object):
         """
 
         all_params = ['customer_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1342,7 +1342,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1353,18 +1353,18 @@ class CustomerApi(object):
 
         Returns a duplicated customer identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_duplicate_customer_by_id(customer_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_duplicate_customer_by_id(customer_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to be duplicated. (required)
         :return: Customer
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_duplicate_customer_by_id_with_http_info(customer_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_duplicate_customer_by_id_with_http_info(customer_id, **kwargs)  # noqa: E501
@@ -1375,11 +1375,11 @@ class CustomerApi(object):
 
         Returns a duplicated customer identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_duplicate_customer_by_id_with_http_info(customer_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_duplicate_customer_by_id_with_http_info(customer_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int customer_id: Id of the customer to be duplicated. (required)
         :return: Customer
                  If the method is called asynchronously,
@@ -1387,7 +1387,7 @@ class CustomerApi(object):
         """
 
         all_params = ['customer_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1437,7 +1437,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type='Customer',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1448,18 +1448,18 @@ class CustomerApi(object):
 
         Updates an existing customer using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_customer(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_customer(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param Customer body: Customer to be updated. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.update_customer_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.update_customer_with_http_info(body, **kwargs)  # noqa: E501
@@ -1470,11 +1470,11 @@ class CustomerApi(object):
 
         Updates an existing customer using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_customer_with_http_info(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_customer_with_http_info(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param Customer body: Customer to be updated. (required)
         :return: None
                  If the method is called asynchronously,
@@ -1482,7 +1482,7 @@ class CustomerApi(object):
         """
 
         all_params = ['body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1536,7 +1536,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1547,18 +1547,18 @@ class CustomerApi(object):
 
         Updates an existing customer custom fields using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_customer_custom_fields(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_customer_custom_fields(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param Customer body: Customer to be updated. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.update_customer_custom_fields_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.update_customer_custom_fields_with_http_info(body, **kwargs)  # noqa: E501
@@ -1569,11 +1569,11 @@ class CustomerApi(object):
 
         Updates an existing customer custom fields using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_customer_custom_fields_with_http_info(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_customer_custom_fields_with_http_info(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param Customer body: Customer to be updated. (required)
         :return: None
                  If the method is called asynchronously,
@@ -1581,7 +1581,7 @@ class CustomerApi(object):
         """
 
         all_params = ['body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1635,7 +1635,7 @@ class CustomerApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

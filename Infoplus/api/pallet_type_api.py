@@ -38,18 +38,18 @@ class PalletTypeApi(object):
 
         Inserts a new palletType using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_pallet_type(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_pallet_type(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param PalletType body: PalletType to be inserted. (required)
         :return: PalletType
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_pallet_type_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.add_pallet_type_with_http_info(body, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class PalletTypeApi(object):
 
         Inserts a new palletType using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_pallet_type_with_http_info(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_pallet_type_with_http_info(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param PalletType body: PalletType to be inserted. (required)
         :return: PalletType
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class PalletTypeApi(object):
         """
 
         all_params = ['body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class PalletTypeApi(object):
             files=local_var_files,
             response_type='PalletType',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,11 +137,11 @@ class PalletTypeApi(object):
 
         Adds an audit to an existing palletType.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_pallet_type_audit(pallet_type_id, pallet_type_audit, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_pallet_type_audit(pallet_type_id, pallet_type_audit, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to add an audit to (required)
         :param str pallet_type_audit: The audit to add (required)
         :return: None
@@ -149,7 +149,7 @@ class PalletTypeApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_pallet_type_audit_with_http_info(pallet_type_id, pallet_type_audit, **kwargs)  # noqa: E501
         else:
             (data) = self.add_pallet_type_audit_with_http_info(pallet_type_id, pallet_type_audit, **kwargs)  # noqa: E501
@@ -160,11 +160,11 @@ class PalletTypeApi(object):
 
         Adds an audit to an existing palletType.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_pallet_type_audit_with_http_info(pallet_type_id, pallet_type_audit, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_pallet_type_audit_with_http_info(pallet_type_id, pallet_type_audit, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to add an audit to (required)
         :param str pallet_type_audit: The audit to add (required)
         :return: None
@@ -173,7 +173,7 @@ class PalletTypeApi(object):
         """
 
         all_params = ['pallet_type_id', 'pallet_type_audit']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -233,7 +233,7 @@ class PalletTypeApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -244,11 +244,11 @@ class PalletTypeApi(object):
 
         Adds a file to an existing palletType.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_pallet_type_file(pallet_type_id, file_name, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_pallet_type_file(pallet_type_id, file_name, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to add a file to (required)
         :param str file_name: Name of file (required)
         :return: None
@@ -256,7 +256,7 @@ class PalletTypeApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_pallet_type_file_with_http_info(pallet_type_id, file_name, **kwargs)  # noqa: E501
         else:
             (data) = self.add_pallet_type_file_with_http_info(pallet_type_id, file_name, **kwargs)  # noqa: E501
@@ -267,11 +267,11 @@ class PalletTypeApi(object):
 
         Adds a file to an existing palletType.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_pallet_type_file_with_http_info(pallet_type_id, file_name, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_pallet_type_file_with_http_info(pallet_type_id, file_name, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to add a file to (required)
         :param str file_name: Name of file (required)
         :return: None
@@ -280,7 +280,7 @@ class PalletTypeApi(object):
         """
 
         all_params = ['pallet_type_id', 'file_name']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -336,7 +336,7 @@ class PalletTypeApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -347,11 +347,11 @@ class PalletTypeApi(object):
 
         Adds a file to an existing palletType by URL.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_pallet_type_file_by_url(body, pallet_type_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_pallet_type_file_by_url(body, pallet_type_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param RecordFile body: The url and optionly fileName to be used. (required)
         :param int pallet_type_id: Id of the palletType to add an file to (required)
         :return: None
@@ -359,7 +359,7 @@ class PalletTypeApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_pallet_type_file_by_url_with_http_info(body, pallet_type_id, **kwargs)  # noqa: E501
         else:
             (data) = self.add_pallet_type_file_by_url_with_http_info(body, pallet_type_id, **kwargs)  # noqa: E501
@@ -370,11 +370,11 @@ class PalletTypeApi(object):
 
         Adds a file to an existing palletType by URL.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_pallet_type_file_by_url_with_http_info(body, pallet_type_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_pallet_type_file_by_url_with_http_info(body, pallet_type_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param RecordFile body: The url and optionly fileName to be used. (required)
         :param int pallet_type_id: Id of the palletType to add an file to (required)
         :return: None
@@ -383,7 +383,7 @@ class PalletTypeApi(object):
         """
 
         all_params = ['body', 'pallet_type_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -443,7 +443,7 @@ class PalletTypeApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -454,11 +454,11 @@ class PalletTypeApi(object):
 
         Adds a tag to an existing palletType.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_pallet_type_tag(pallet_type_id, pallet_type_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_pallet_type_tag(pallet_type_id, pallet_type_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to add a tag to (required)
         :param str pallet_type_tag: The tag to add (required)
         :return: None
@@ -466,7 +466,7 @@ class PalletTypeApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_pallet_type_tag_with_http_info(pallet_type_id, pallet_type_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.add_pallet_type_tag_with_http_info(pallet_type_id, pallet_type_tag, **kwargs)  # noqa: E501
@@ -477,11 +477,11 @@ class PalletTypeApi(object):
 
         Adds a tag to an existing palletType.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_pallet_type_tag_with_http_info(pallet_type_id, pallet_type_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_pallet_type_tag_with_http_info(pallet_type_id, pallet_type_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to add a tag to (required)
         :param str pallet_type_tag: The tag to add (required)
         :return: None
@@ -490,7 +490,7 @@ class PalletTypeApi(object):
         """
 
         all_params = ['pallet_type_id', 'pallet_type_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -550,7 +550,7 @@ class PalletTypeApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -561,18 +561,18 @@ class PalletTypeApi(object):
 
         Deletes the palletType identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_pallet_type(pallet_type_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_pallet_type(pallet_type_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to be deleted. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.delete_pallet_type_with_http_info(pallet_type_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_pallet_type_with_http_info(pallet_type_id, **kwargs)  # noqa: E501
@@ -583,11 +583,11 @@ class PalletTypeApi(object):
 
         Deletes the palletType identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_pallet_type_with_http_info(pallet_type_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_pallet_type_with_http_info(pallet_type_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to be deleted. (required)
         :return: None
                  If the method is called asynchronously,
@@ -595,7 +595,7 @@ class PalletTypeApi(object):
         """
 
         all_params = ['pallet_type_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -645,7 +645,7 @@ class PalletTypeApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -656,11 +656,11 @@ class PalletTypeApi(object):
 
         Deletes an existing palletType file using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_pallet_type_file(pallet_type_id, file_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_pallet_type_file(pallet_type_id, file_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to remove file from (required)
         :param int file_id: Id of the file to delete (required)
         :return: None
@@ -668,7 +668,7 @@ class PalletTypeApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.delete_pallet_type_file_with_http_info(pallet_type_id, file_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_pallet_type_file_with_http_info(pallet_type_id, file_id, **kwargs)  # noqa: E501
@@ -679,11 +679,11 @@ class PalletTypeApi(object):
 
         Deletes an existing palletType file using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_pallet_type_file_with_http_info(pallet_type_id, file_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_pallet_type_file_with_http_info(pallet_type_id, file_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to remove file from (required)
         :param int file_id: Id of the file to delete (required)
         :return: None
@@ -692,7 +692,7 @@ class PalletTypeApi(object):
         """
 
         all_params = ['pallet_type_id', 'file_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -748,7 +748,7 @@ class PalletTypeApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -759,11 +759,11 @@ class PalletTypeApi(object):
 
         Deletes an existing palletType tag using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_pallet_type_tag(pallet_type_id, pallet_type_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_pallet_type_tag(pallet_type_id, pallet_type_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to remove tag from (required)
         :param str pallet_type_tag: The tag to delete (required)
         :return: None
@@ -771,7 +771,7 @@ class PalletTypeApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.delete_pallet_type_tag_with_http_info(pallet_type_id, pallet_type_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_pallet_type_tag_with_http_info(pallet_type_id, pallet_type_tag, **kwargs)  # noqa: E501
@@ -782,11 +782,11 @@ class PalletTypeApi(object):
 
         Deletes an existing palletType tag using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_pallet_type_tag_with_http_info(pallet_type_id, pallet_type_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_pallet_type_tag_with_http_info(pallet_type_id, pallet_type_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to remove tag from (required)
         :param str pallet_type_tag: The tag to delete (required)
         :return: None
@@ -795,7 +795,7 @@ class PalletTypeApi(object):
         """
 
         all_params = ['pallet_type_id', 'pallet_type_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -851,7 +851,7 @@ class PalletTypeApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -862,18 +862,18 @@ class PalletTypeApi(object):
 
         Returns a duplicated palletType identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_duplicate_pallet_type_by_id(pallet_type_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_duplicate_pallet_type_by_id(pallet_type_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to be duplicated. (required)
         :return: PalletType
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_duplicate_pallet_type_by_id_with_http_info(pallet_type_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_duplicate_pallet_type_by_id_with_http_info(pallet_type_id, **kwargs)  # noqa: E501
@@ -884,11 +884,11 @@ class PalletTypeApi(object):
 
         Returns a duplicated palletType identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_duplicate_pallet_type_by_id_with_http_info(pallet_type_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_duplicate_pallet_type_by_id_with_http_info(pallet_type_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to be duplicated. (required)
         :return: PalletType
                  If the method is called asynchronously,
@@ -896,7 +896,7 @@ class PalletTypeApi(object):
         """
 
         all_params = ['pallet_type_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -946,7 +946,7 @@ class PalletTypeApi(object):
             files=local_var_files,
             response_type='PalletType',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -957,11 +957,11 @@ class PalletTypeApi(object):
 
         Returns the list of palletTypes that match the given filter.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_pallet_type_by_filter(async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_pallet_type_by_filter(_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str filter: Query string, used to filter results.
         :param int page: Result page number.  Defaults to 1.
         :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
@@ -971,7 +971,7 @@ class PalletTypeApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_pallet_type_by_filter_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_pallet_type_by_filter_with_http_info(**kwargs)  # noqa: E501
@@ -982,11 +982,11 @@ class PalletTypeApi(object):
 
         Returns the list of palletTypes that match the given filter.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_pallet_type_by_filter_with_http_info(async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_pallet_type_by_filter_with_http_info(_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str filter: Query string, used to filter results.
         :param int page: Result page number.  Defaults to 1.
         :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
@@ -997,7 +997,7 @@ class PalletTypeApi(object):
         """
 
         all_params = ['filter', 'page', 'limit', 'sort']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1049,7 +1049,7 @@ class PalletTypeApi(object):
             files=local_var_files,
             response_type='list[PalletType]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1060,18 +1060,18 @@ class PalletTypeApi(object):
 
         Returns the palletType identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_pallet_type_by_id(pallet_type_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_pallet_type_by_id(pallet_type_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to be returned. (required)
         :return: PalletType
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_pallet_type_by_id_with_http_info(pallet_type_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_pallet_type_by_id_with_http_info(pallet_type_id, **kwargs)  # noqa: E501
@@ -1082,11 +1082,11 @@ class PalletTypeApi(object):
 
         Returns the palletType identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_pallet_type_by_id_with_http_info(pallet_type_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_pallet_type_by_id_with_http_info(pallet_type_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to be returned. (required)
         :return: PalletType
                  If the method is called asynchronously,
@@ -1094,7 +1094,7 @@ class PalletTypeApi(object):
         """
 
         all_params = ['pallet_type_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1144,7 +1144,7 @@ class PalletTypeApi(object):
             files=local_var_files,
             response_type='PalletType',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1155,18 +1155,18 @@ class PalletTypeApi(object):
 
         Get all existing palletType files.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_pallet_type_files(pallet_type_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_pallet_type_files(pallet_type_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to get files for (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_pallet_type_files_with_http_info(pallet_type_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_pallet_type_files_with_http_info(pallet_type_id, **kwargs)  # noqa: E501
@@ -1177,11 +1177,11 @@ class PalletTypeApi(object):
 
         Get all existing palletType files.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_pallet_type_files_with_http_info(pallet_type_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_pallet_type_files_with_http_info(pallet_type_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to get files for (required)
         :return: None
                  If the method is called asynchronously,
@@ -1189,7 +1189,7 @@ class PalletTypeApi(object):
         """
 
         all_params = ['pallet_type_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1239,7 +1239,7 @@ class PalletTypeApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1250,18 +1250,18 @@ class PalletTypeApi(object):
 
         Get all existing palletType tags.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_pallet_type_tags(pallet_type_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_pallet_type_tags(pallet_type_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to get tags for (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_pallet_type_tags_with_http_info(pallet_type_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_pallet_type_tags_with_http_info(pallet_type_id, **kwargs)  # noqa: E501
@@ -1272,11 +1272,11 @@ class PalletTypeApi(object):
 
         Get all existing palletType tags.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_pallet_type_tags_with_http_info(pallet_type_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_pallet_type_tags_with_http_info(pallet_type_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int pallet_type_id: Id of the palletType to get tags for (required)
         :return: None
                  If the method is called asynchronously,
@@ -1284,7 +1284,7 @@ class PalletTypeApi(object):
         """
 
         all_params = ['pallet_type_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1334,7 +1334,7 @@ class PalletTypeApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1345,18 +1345,18 @@ class PalletTypeApi(object):
 
         Updates an existing palletType using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_pallet_type(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_pallet_type(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param PalletType body: PalletType to be updated. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.update_pallet_type_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.update_pallet_type_with_http_info(body, **kwargs)  # noqa: E501
@@ -1367,11 +1367,11 @@ class PalletTypeApi(object):
 
         Updates an existing palletType using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_pallet_type_with_http_info(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_pallet_type_with_http_info(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param PalletType body: PalletType to be updated. (required)
         :return: None
                  If the method is called asynchronously,
@@ -1379,7 +1379,7 @@ class PalletTypeApi(object):
         """
 
         all_params = ['body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1433,7 +1433,7 @@ class PalletTypeApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1444,18 +1444,18 @@ class PalletTypeApi(object):
 
         Updates an existing palletType custom fields using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_pallet_type_custom_fields(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_pallet_type_custom_fields(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param PalletType body: PalletType to be updated. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.update_pallet_type_custom_fields_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.update_pallet_type_custom_fields_with_http_info(body, **kwargs)  # noqa: E501
@@ -1466,11 +1466,11 @@ class PalletTypeApi(object):
 
         Updates an existing palletType custom fields using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_pallet_type_custom_fields_with_http_info(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_pallet_type_custom_fields_with_http_info(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param PalletType body: PalletType to be updated. (required)
         :return: None
                  If the method is called asynchronously,
@@ -1478,7 +1478,7 @@ class PalletTypeApi(object):
         """
 
         all_params = ['body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1532,7 +1532,7 @@ class PalletTypeApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

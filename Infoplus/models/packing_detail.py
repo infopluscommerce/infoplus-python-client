@@ -16,7 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from Infoplus.models.gs1128_label_dto import GS1128LabelDTO  # noqa: F401,E501
 
 
 class PackingDetail(object):

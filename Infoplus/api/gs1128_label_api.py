@@ -38,11 +38,11 @@ class Gs1128LabelApi(object):
 
         Adds an audit to an existing gs1128Label.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_gs1128_label_audit(gs1128_label_id, gs1128_label_audit, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_gs1128_label_audit(gs1128_label_id, gs1128_label_audit, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to add an audit to (required)
         :param str gs1128_label_audit: The audit to add (required)
         :return: None
@@ -50,7 +50,7 @@ class Gs1128LabelApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_gs1128_label_audit_with_http_info(gs1128_label_id, gs1128_label_audit, **kwargs)  # noqa: E501
         else:
             (data) = self.add_gs1128_label_audit_with_http_info(gs1128_label_id, gs1128_label_audit, **kwargs)  # noqa: E501
@@ -61,11 +61,11 @@ class Gs1128LabelApi(object):
 
         Adds an audit to an existing gs1128Label.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_gs1128_label_audit_with_http_info(gs1128_label_id, gs1128_label_audit, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_gs1128_label_audit_with_http_info(gs1128_label_id, gs1128_label_audit, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to add an audit to (required)
         :param str gs1128_label_audit: The audit to add (required)
         :return: None
@@ -74,7 +74,7 @@ class Gs1128LabelApi(object):
         """
 
         all_params = ['gs1128_label_id', 'gs1128_label_audit']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -134,7 +134,7 @@ class Gs1128LabelApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -145,11 +145,11 @@ class Gs1128LabelApi(object):
 
         Adds a file to an existing gs1128Label.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_gs1128_label_file(gs1128_label_id, file_name, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_gs1128_label_file(gs1128_label_id, file_name, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to add a file to (required)
         :param str file_name: Name of file (required)
         :return: None
@@ -157,7 +157,7 @@ class Gs1128LabelApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_gs1128_label_file_with_http_info(gs1128_label_id, file_name, **kwargs)  # noqa: E501
         else:
             (data) = self.add_gs1128_label_file_with_http_info(gs1128_label_id, file_name, **kwargs)  # noqa: E501
@@ -168,11 +168,11 @@ class Gs1128LabelApi(object):
 
         Adds a file to an existing gs1128Label.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_gs1128_label_file_with_http_info(gs1128_label_id, file_name, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_gs1128_label_file_with_http_info(gs1128_label_id, file_name, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to add a file to (required)
         :param str file_name: Name of file (required)
         :return: None
@@ -181,7 +181,7 @@ class Gs1128LabelApi(object):
         """
 
         all_params = ['gs1128_label_id', 'file_name']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -237,7 +237,7 @@ class Gs1128LabelApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -248,11 +248,11 @@ class Gs1128LabelApi(object):
 
         Adds a file to an existing gs1128Label by URL.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_gs1128_label_file_by_url(body, gs1128_label_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_gs1128_label_file_by_url(body, gs1128_label_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param RecordFile body: The url and optionly fileName to be used. (required)
         :param int gs1128_label_id: Id of the gs1128Label to add an file to (required)
         :return: None
@@ -260,7 +260,7 @@ class Gs1128LabelApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_gs1128_label_file_by_url_with_http_info(body, gs1128_label_id, **kwargs)  # noqa: E501
         else:
             (data) = self.add_gs1128_label_file_by_url_with_http_info(body, gs1128_label_id, **kwargs)  # noqa: E501
@@ -271,11 +271,11 @@ class Gs1128LabelApi(object):
 
         Adds a file to an existing gs1128Label by URL.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_gs1128_label_file_by_url_with_http_info(body, gs1128_label_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_gs1128_label_file_by_url_with_http_info(body, gs1128_label_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param RecordFile body: The url and optionly fileName to be used. (required)
         :param int gs1128_label_id: Id of the gs1128Label to add an file to (required)
         :return: None
@@ -284,7 +284,7 @@ class Gs1128LabelApi(object):
         """
 
         all_params = ['body', 'gs1128_label_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -344,7 +344,7 @@ class Gs1128LabelApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -355,11 +355,11 @@ class Gs1128LabelApi(object):
 
         Adds a tag to an existing gs1128Label.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_gs1128_label_tag(gs1128_label_id, gs1128_label_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_gs1128_label_tag(gs1128_label_id, gs1128_label_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to add a tag to (required)
         :param str gs1128_label_tag: The tag to add (required)
         :return: None
@@ -367,7 +367,7 @@ class Gs1128LabelApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.add_gs1128_label_tag_with_http_info(gs1128_label_id, gs1128_label_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.add_gs1128_label_tag_with_http_info(gs1128_label_id, gs1128_label_tag, **kwargs)  # noqa: E501
@@ -378,11 +378,11 @@ class Gs1128LabelApi(object):
 
         Adds a tag to an existing gs1128Label.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_gs1128_label_tag_with_http_info(gs1128_label_id, gs1128_label_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.add_gs1128_label_tag_with_http_info(gs1128_label_id, gs1128_label_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to add a tag to (required)
         :param str gs1128_label_tag: The tag to add (required)
         :return: None
@@ -391,7 +391,7 @@ class Gs1128LabelApi(object):
         """
 
         all_params = ['gs1128_label_id', 'gs1128_label_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -451,7 +451,7 @@ class Gs1128LabelApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -462,18 +462,18 @@ class Gs1128LabelApi(object):
 
         Deletes the gs1128Label identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_gs1128_label(gs1128_label_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_gs1128_label(gs1128_label_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to be deleted. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.delete_gs1128_label_with_http_info(gs1128_label_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_gs1128_label_with_http_info(gs1128_label_id, **kwargs)  # noqa: E501
@@ -484,11 +484,11 @@ class Gs1128LabelApi(object):
 
         Deletes the gs1128Label identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_gs1128_label_with_http_info(gs1128_label_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_gs1128_label_with_http_info(gs1128_label_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to be deleted. (required)
         :return: None
                  If the method is called asynchronously,
@@ -496,7 +496,7 @@ class Gs1128LabelApi(object):
         """
 
         all_params = ['gs1128_label_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -546,7 +546,7 @@ class Gs1128LabelApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -557,11 +557,11 @@ class Gs1128LabelApi(object):
 
         Deletes an existing gs1128Label file using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_gs1128_label_file(gs1128_label_id, file_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_gs1128_label_file(gs1128_label_id, file_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to remove file from (required)
         :param int file_id: Id of the file to delete (required)
         :return: None
@@ -569,7 +569,7 @@ class Gs1128LabelApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.delete_gs1128_label_file_with_http_info(gs1128_label_id, file_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_gs1128_label_file_with_http_info(gs1128_label_id, file_id, **kwargs)  # noqa: E501
@@ -580,11 +580,11 @@ class Gs1128LabelApi(object):
 
         Deletes an existing gs1128Label file using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_gs1128_label_file_with_http_info(gs1128_label_id, file_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_gs1128_label_file_with_http_info(gs1128_label_id, file_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to remove file from (required)
         :param int file_id: Id of the file to delete (required)
         :return: None
@@ -593,7 +593,7 @@ class Gs1128LabelApi(object):
         """
 
         all_params = ['gs1128_label_id', 'file_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -649,7 +649,7 @@ class Gs1128LabelApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -660,11 +660,11 @@ class Gs1128LabelApi(object):
 
         Deletes an existing gs1128Label tag using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_gs1128_label_tag(gs1128_label_id, gs1128_label_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_gs1128_label_tag(gs1128_label_id, gs1128_label_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to remove tag from (required)
         :param str gs1128_label_tag: The tag to delete (required)
         :return: None
@@ -672,7 +672,7 @@ class Gs1128LabelApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.delete_gs1128_label_tag_with_http_info(gs1128_label_id, gs1128_label_tag, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_gs1128_label_tag_with_http_info(gs1128_label_id, gs1128_label_tag, **kwargs)  # noqa: E501
@@ -683,11 +683,11 @@ class Gs1128LabelApi(object):
 
         Deletes an existing gs1128Label tag using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_gs1128_label_tag_with_http_info(gs1128_label_id, gs1128_label_tag, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.delete_gs1128_label_tag_with_http_info(gs1128_label_id, gs1128_label_tag, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to remove tag from (required)
         :param str gs1128_label_tag: The tag to delete (required)
         :return: None
@@ -696,7 +696,7 @@ class Gs1128LabelApi(object):
         """
 
         all_params = ['gs1128_label_id', 'gs1128_label_tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -752,7 +752,7 @@ class Gs1128LabelApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -763,18 +763,18 @@ class Gs1128LabelApi(object):
 
         Returns a duplicated gs1128Label identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_duplicate_gs1128_label_by_id(gs1128_label_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_duplicate_gs1128_label_by_id(gs1128_label_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to be duplicated. (required)
         :return: Gs1128Label
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_duplicate_gs1128_label_by_id_with_http_info(gs1128_label_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_duplicate_gs1128_label_by_id_with_http_info(gs1128_label_id, **kwargs)  # noqa: E501
@@ -785,11 +785,11 @@ class Gs1128LabelApi(object):
 
         Returns a duplicated gs1128Label identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_duplicate_gs1128_label_by_id_with_http_info(gs1128_label_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_duplicate_gs1128_label_by_id_with_http_info(gs1128_label_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to be duplicated. (required)
         :return: Gs1128Label
                  If the method is called asynchronously,
@@ -797,7 +797,7 @@ class Gs1128LabelApi(object):
         """
 
         all_params = ['gs1128_label_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -847,7 +847,7 @@ class Gs1128LabelApi(object):
             files=local_var_files,
             response_type='Gs1128Label',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -858,11 +858,11 @@ class Gs1128LabelApi(object):
 
         Returns the list of gs1128Labels that match the given filter.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_gs1128_label_by_filter(async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_gs1128_label_by_filter(_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str filter: Query string, used to filter results.
         :param int page: Result page number.  Defaults to 1.
         :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
@@ -872,7 +872,7 @@ class Gs1128LabelApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_gs1128_label_by_filter_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_gs1128_label_by_filter_with_http_info(**kwargs)  # noqa: E501
@@ -883,11 +883,11 @@ class Gs1128LabelApi(object):
 
         Returns the list of gs1128Labels that match the given filter.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_gs1128_label_by_filter_with_http_info(async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_gs1128_label_by_filter_with_http_info(_async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param str filter: Query string, used to filter results.
         :param int page: Result page number.  Defaults to 1.
         :param int limit: Maximum results per page.  Defaults to 20.  Max allowed value is 250.
@@ -898,7 +898,7 @@ class Gs1128LabelApi(object):
         """
 
         all_params = ['filter', 'page', 'limit', 'sort']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -950,7 +950,7 @@ class Gs1128LabelApi(object):
             files=local_var_files,
             response_type='list[Gs1128Label]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -961,18 +961,18 @@ class Gs1128LabelApi(object):
 
         Returns the gs1128Label identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_gs1128_label_by_id(gs1128_label_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_gs1128_label_by_id(gs1128_label_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to be returned. (required)
         :return: Gs1128Label
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_gs1128_label_by_id_with_http_info(gs1128_label_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_gs1128_label_by_id_with_http_info(gs1128_label_id, **kwargs)  # noqa: E501
@@ -983,11 +983,11 @@ class Gs1128LabelApi(object):
 
         Returns the gs1128Label identified by the specified id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_gs1128_label_by_id_with_http_info(gs1128_label_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_gs1128_label_by_id_with_http_info(gs1128_label_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to be returned. (required)
         :return: Gs1128Label
                  If the method is called asynchronously,
@@ -995,7 +995,7 @@ class Gs1128LabelApi(object):
         """
 
         all_params = ['gs1128_label_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1045,7 +1045,7 @@ class Gs1128LabelApi(object):
             files=local_var_files,
             response_type='Gs1128Label',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1056,18 +1056,18 @@ class Gs1128LabelApi(object):
 
         Get all existing gs1128Label files.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_gs1128_label_files(gs1128_label_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_gs1128_label_files(gs1128_label_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to get files for (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_gs1128_label_files_with_http_info(gs1128_label_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_gs1128_label_files_with_http_info(gs1128_label_id, **kwargs)  # noqa: E501
@@ -1078,11 +1078,11 @@ class Gs1128LabelApi(object):
 
         Get all existing gs1128Label files.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_gs1128_label_files_with_http_info(gs1128_label_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_gs1128_label_files_with_http_info(gs1128_label_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to get files for (required)
         :return: None
                  If the method is called asynchronously,
@@ -1090,7 +1090,7 @@ class Gs1128LabelApi(object):
         """
 
         all_params = ['gs1128_label_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1140,7 +1140,7 @@ class Gs1128LabelApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1151,18 +1151,18 @@ class Gs1128LabelApi(object):
 
         Get all existing gs1128Label tags.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_gs1128_label_tags(gs1128_label_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_gs1128_label_tags(gs1128_label_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to get tags for (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.get_gs1128_label_tags_with_http_info(gs1128_label_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_gs1128_label_tags_with_http_info(gs1128_label_id, **kwargs)  # noqa: E501
@@ -1173,11 +1173,11 @@ class Gs1128LabelApi(object):
 
         Get all existing gs1128Label tags.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_gs1128_label_tags_with_http_info(gs1128_label_id, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.get_gs1128_label_tags_with_http_info(gs1128_label_id, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param int gs1128_label_id: Id of the gs1128Label to get tags for (required)
         :return: None
                  If the method is called asynchronously,
@@ -1185,7 +1185,7 @@ class Gs1128LabelApi(object):
         """
 
         all_params = ['gs1128_label_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1235,7 +1235,7 @@ class Gs1128LabelApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1246,18 +1246,18 @@ class Gs1128LabelApi(object):
 
         Updates an existing gs1128Label custom fields using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_gs1128_label_custom_fields(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_gs1128_label_custom_fields(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param Gs1128Label body: Gs1128Label to be updated. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('_async'):
             return self.update_gs1128_label_custom_fields_with_http_info(body, **kwargs)  # noqa: E501
         else:
             (data) = self.update_gs1128_label_custom_fields_with_http_info(body, **kwargs)  # noqa: E501
@@ -1268,11 +1268,11 @@ class Gs1128LabelApi(object):
 
         Updates an existing gs1128Label custom fields using the specified data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_gs1128_label_custom_fields_with_http_info(body, async=True)
+        asynchronous HTTP request, please pass _async=True
+        >>> thread = api.update_gs1128_label_custom_fields_with_http_info(body, _async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param _async bool
         :param Gs1128Label body: Gs1128Label to be updated. (required)
         :return: None
                  If the method is called asynchronously,
@@ -1280,7 +1280,7 @@ class Gs1128LabelApi(object):
         """
 
         all_params = ['body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('_async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1334,7 +1334,7 @@ class Gs1128LabelApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            _async=params.get('_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
